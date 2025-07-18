@@ -6,13 +6,13 @@
     },
     "weights": {
         "frontier": {
-            "weight": 2
+            "weight": 4
         },
         "ascent": {
-            "weight": 1
+            "weight": 2
         },
         "summit": {
-            "weight": 3
+            "weight": 6
         }
     }
 }

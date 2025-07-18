@@ -6,13 +6,13 @@
     },
     "weights": {
         "ascent": {
-            "weight": 5
+            "weight": 10
         },
         "summit": {
-            "weight": 5
+            "weight": 10
         },
         "pinnacle": {
-            "weight": 1
+            "weight": 2
         }
     }
 }
