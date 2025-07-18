@@ -1,4 +1,4 @@
-Rabid Balance v.0.1.0
+Rabid Balance v.0.1.1
 
 
 ~ LIST OF CHANGES ~
@@ -16,12 +16,11 @@ Fixed structure separation values on a few mods that were causing their structur
 Added exclusions to a few structure sets
 
 Aptheosis loot affix entries added for:
-- Epic Knights weapons, armor and shields
+- Simply Weapons (standard weapons)
 - Immersive Armors
 - Kobold equipment
 - Armor, weapons and tools for Tax's mods
 - Armor, weapons and tools rebalanced for Twilight Forest (much more rare)
-- Minecraft chainmail removed from the tables (since Epic Knights has chainmail)
 
 Supplementaries flax item additions/changes:
 - Added to desert house loot
