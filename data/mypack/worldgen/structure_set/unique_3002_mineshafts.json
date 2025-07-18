@@ -1,0 +1,16 @@
+{
+  "placement": {
+    "type": "repurposed_structures:advanced_random_spread",
+    "spacing": 1,
+    "separation": 0,
+    "frequency_reduction_method": "legacy_type_3",
+    "frequency": 0.00275,
+    "salt": 3002
+  },
+  "structures": [
+    {
+      "structure": "repurposed_structures:mineshaft_end",
+      "weight": 10
+    }
+  ]
+}

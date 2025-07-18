@@ -1,0 +1,12 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "twilight_forest:yeti_helmet"
+    },
+    "weights": {
+        "pinnacle": {
+            "weight": 1
+        }
+    }
+}

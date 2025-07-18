@@ -1,0 +1,16 @@
+{
+  "placement": {
+    "type": "betterstrongholds:stronghold",
+    "spacing": 85,
+    "separation": 50,
+    "chunk_distance_to_first_ring": 80,
+    "ring_chunk_thickness": 96,
+    "salt": 1005
+  },
+  "structures": [
+    {
+      "structure": "betterstrongholds:stronghold",
+      "weight": 10
+    }
+  ]
+}

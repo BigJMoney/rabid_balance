@@ -1,0 +1,15 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "taxbt:armor_grim_leggings"
+    },
+    "weights": {
+        "ascent": {
+            "weight": 1
+        },
+        "summit": {
+            "weight": 1
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "taxbt:armor_pillager_chestplate"
+    },
+    "weights": {
+        "haven": {
+            "weight": 1
+        },
+        "frontier": {
+            "weight": 1
+        }
+    }
+}

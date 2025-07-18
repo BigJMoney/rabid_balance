@@ -1,0 +1,18 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "twilightforest:steeleaf_shovel"
+    },
+    "weights": {
+        "ascent": {
+            "weight": 1
+        },
+        "summit": {
+            "weight": 1
+        },
+        "pinnacle": {
+            "weight": 1
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "magistuarmory:steel_target"
+    },
+    "weights": {
+        "frontier": {
+            "weight": 1
+        },
+        "ascent": {
+            "weight": 5
+        },
+        "summit": {
+            "weight": 1
+        }
+    }
+}

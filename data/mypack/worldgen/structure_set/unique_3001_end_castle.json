@@ -1,0 +1,16 @@
+{
+  "placement": {
+    "type": "minecraft:concentric_rings",
+    "count": 219,
+    "distance": 32,
+    "spread": 3,
+    "preferred_biomes": "#nova_structures:collections/end_voids",
+    "salt": 3001
+  },
+  "structures": [
+    {
+      "structure": "nova_structures:end_castle",
+      "weight": 10
+    }
+  ]
+}

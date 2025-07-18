@@ -1,0 +1,12 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "magistuarmory:heavy_crossbow"
+    },
+    "weights": {
+        "haven": {
+            "weight": 5
+        }
+    }
+}

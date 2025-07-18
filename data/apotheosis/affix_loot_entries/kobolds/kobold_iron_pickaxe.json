@@ -1,0 +1,18 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "kobolds:kobold_iron_pickaxe"
+    },
+    "weights": {
+        "frontier": {
+            "weight": 15
+        },
+        "ascent": {
+            "weight": 5
+        },
+        "summit": {
+            "weight": 5
+        }
+    }
+}

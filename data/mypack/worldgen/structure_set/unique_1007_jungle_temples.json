@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "betterjungletemples:jungle_temple",
+    "spacing": 50,
+    "separation": 13,
+    "salt": 1007
+  },
+  "structures": [
+    {
+      "structure": "betterjungletemples:jungle_temple",
+      "weight": 10
+    }
+  ]
+}

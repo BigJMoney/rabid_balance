@@ -1,0 +1,15 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "immersive_armors:divine_leggings"
+    },
+    "weights": {
+        "summit": {
+            "weight": 5
+        },
+        "pinnacle": {
+            "weight": 5
+        }
+    }
+}

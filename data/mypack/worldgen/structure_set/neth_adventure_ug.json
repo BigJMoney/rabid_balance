@@ -1,0 +1,15 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 50,
+    "separation": 25,
+    "spread_type": "linear",
+    "salt": 2101
+  },
+  "structures": [
+    {
+      "structure": "betterdungeons:small_nether_dungeon",
+      "weight": 10
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "placement": {
+    "type": "repurposed_structures:advanced_random_spread",
+    "spacing": 100,
+    "separation": 55,
+    "min_distance_from_world_origin": 8000,
+    "salt": 3003
+  },
+  "structures": [
+    {
+      "structure": "repurposed_structures:stronghold_end",
+      "weight": 10
+    }
+  ]
+}

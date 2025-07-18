@@ -1,0 +1,8 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "twilightforest:triple_bow"
+    },
+    "weight": "0"
+}

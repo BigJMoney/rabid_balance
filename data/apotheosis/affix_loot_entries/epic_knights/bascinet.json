@@ -1,0 +1,18 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "magistuarmory:bascinet"
+    },
+    "weights": {
+        "frontier": {
+            "weight": 5
+        },
+        "ascent": {
+            "weight": 25
+        },
+        "summit": {
+            "weight": 25
+        }
+    }
+}

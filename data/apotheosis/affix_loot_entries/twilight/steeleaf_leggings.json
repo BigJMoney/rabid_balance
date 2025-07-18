@@ -1,0 +1,15 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "twilight_forest:steeleaf_leggings"
+    },
+    "weights": {
+        "ascent": {
+            "weight": 5
+        },
+        "summit": {
+            "weight": 5
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 25,
+    "separation": 12,
+    "spread_type": "linear",
+    "salt": 1111
+  },
+  "structures": [
+    {
+      "structure": "nova_structures:deepslate_camp",
+      "weight": 10
+    }
+  ]
+}

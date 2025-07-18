@@ -1,0 +1,15 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "magistuarmory:iron_kiteshield"
+    },
+    "weights": {
+        "frontier": {
+            "weight": 5
+        },
+        "ascent": {
+            "weight": 1
+        }
+    }
+}

@@ -1,0 +1,104 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 1,
+    "separation": 0,
+    "frequency_reduction_method": "legacy_type_3",
+    "frequency": 0.004,
+    "salt": 1002
+  },
+  "structures": [
+    {
+      "structure": "bettermineshafts:mineshaft_acacia",
+      "weight": 10
+    },
+    {
+      "structure": "bettermineshafts:mineshaft_desert",
+      "weight": 10
+    },
+    {
+      "structure": "bettermineshafts:mineshaft_dripstone",
+      "weight": 10
+    },
+    {
+      "structure": "bettermineshafts:mineshaft_ice",
+      "weight": 10
+    },
+    {
+      "structure": "bettermineshafts:mineshaft_jungle",
+      "weight": 10
+    },
+    {
+      "structure": "bettermineshafts:mineshaft_lush",
+      "weight": 10
+    },
+    {
+      "structure": "bettermineshafts:mineshaft_mesa",
+      "weight": 10
+    },
+    {
+      "structure": "bettermineshafts:mineshaft_mushroom",
+      "weight": 10
+    },
+    {
+      "structure": "bettermineshafts:mineshaft_oak",
+      "weight": 10
+    },
+    {
+      "structure": "bettermineshafts:mineshaft_overgrown",
+      "weight": 10
+    },
+    {
+      "structure": "bettermineshafts:mineshaft_red_desert",
+      "weight": 10
+    },
+    {
+      "structure": "bettermineshafts:mineshaft_spruce",
+      "weight": 10
+    },
+    {
+      "structure": "bettermineshafts:mineshaft_spruce_snowy",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:mineshaft_birch",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:mineshaft_dark_forest",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:mineshaft_desert",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:mineshaft_icy",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:mineshaft_jungle",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:mineshaft_ocean",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:mineshaft_savanna",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:mineshaft_stone",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:mineshaft_swamp",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:mineshaft_taiga",
+      "weight": 10
+    }
+  ]
+}

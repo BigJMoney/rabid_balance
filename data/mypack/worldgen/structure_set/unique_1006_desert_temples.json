@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "betterdeserttemples:desert_temple",
+    "spacing": 50,
+    "separation": 13,
+    "salt": 1006
+  },
+  "structures": [
+    {
+      "structure": "betterdeserttemples:desert_temple",
+      "weight": 10
+    }
+  ]
+}

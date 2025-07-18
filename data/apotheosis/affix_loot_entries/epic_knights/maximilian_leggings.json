@@ -1,0 +1,15 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "magistuarmory:maximilian_leggings"
+    },
+    "weights": {
+        "ascent": {
+            "weight": 25
+        },
+        "summit": {
+            "weight": 25
+        }
+    }
+}

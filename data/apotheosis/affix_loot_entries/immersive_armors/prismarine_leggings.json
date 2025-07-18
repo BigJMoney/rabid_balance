@@ -1,0 +1,15 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "immersive_armors:prismarine_leggings"
+    },
+    "weights": {
+        "ascent": {
+            "weight": 5
+        },
+        "summit": {
+            "weight": 5
+        }
+    }
+}

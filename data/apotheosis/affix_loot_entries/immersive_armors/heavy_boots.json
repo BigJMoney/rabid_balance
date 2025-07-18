@@ -1,0 +1,15 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "immersive_armors:heavy_boots"
+    },
+    "weights": {
+        "frontier": {
+            "weight": 1
+        },
+        "ascent": {
+            "weight": 5
+        }
+    }
+}

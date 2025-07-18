@@ -1,0 +1,18 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "magistuarmory:diamond_ellipticalshield"
+    },
+    "weights": {
+        "ascent": {
+            "weight": 5
+        },
+        "summit": {
+            "weight": 5
+        },
+        "pinnacle": {
+            "weight": 1
+        }
+    }
+}

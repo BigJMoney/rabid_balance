@@ -1,0 +1,15 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "magistuarmory:netherite_kiteshield"
+    },
+    "weights": {
+        "summit": {
+            "weight": 1
+        },
+        "pinnacle": {
+            "weight": 5
+        }
+    }
+}

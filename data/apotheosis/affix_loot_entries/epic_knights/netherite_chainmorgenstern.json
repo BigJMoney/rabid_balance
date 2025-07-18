@@ -1,0 +1,15 @@
+{
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "magistuarmory:netherite_chainmorgenstern"
+    },
+    "weights": {
+        "summit": {
+            "weight": 5
+        },
+        "pinnacle": {
+            "weight": 25
+        }
+    }
+}
