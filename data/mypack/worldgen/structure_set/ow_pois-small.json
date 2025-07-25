@@ -40,10 +40,6 @@
       "weight": 10
     },
     {
-      "structure": "minecraft:ruined_portal_ocean",
-      "weight": 10
-    },
-    {
       "structure": "minecraft:ruined_portal_swamp",
       "weight": 15
     },

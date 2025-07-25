@@ -164,10 +164,6 @@
       "weight": 10
     },
     {
-      "structure": "repurposed_structures:village_ocean",
-      "weight": 10
-    },
-    {
       "structure": "repurposed_structures:village_swamp",
       "weight": 10
     },
@@ -198,14 +194,6 @@
     {
       "structure": "taxbt:structure_trader_plains",
       "weight": 5
-    },
-    {
-      "structure": "taxov:marine_ship",
-      "weight": 10
-    },
-    {
-      "structure": "taxov:pirate_ship",
-      "weight": 10
     },
     {
       "structure": "towns_and_towers:village_badlands",
@@ -241,10 +229,6 @@
     },
     {
       "structure": "towns_and_towers:village_mushroom_fields",
-      "weight": 10
-    },
-    {
-      "structure": "towns_and_towers:village_ocean",
       "weight": 10
     },
     {
