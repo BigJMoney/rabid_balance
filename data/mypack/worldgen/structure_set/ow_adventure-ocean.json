@@ -86,6 +86,22 @@
     {
       "structure": "towns_and_towers:wreckage_ocean",
       "weight": 10
+    },
+    {
+      "structure": "seadwellers:collector_seadwellerss",
+      "weight": 10
+    },
+    {
+      "structure": "seadwellers:dragon_seadwellerss",
+      "weight": 10
+    },
+    {
+      "structure": "seadwellers:ice_seadwellerss",
+      "weight": 10
+    },
+    {
+      "structure": "seadwellers:seadwellerss",
+      "weight": 10
     }
   ]
 }

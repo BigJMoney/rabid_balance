@@ -194,6 +194,10 @@
     {
       "structure": "taxbt:structure_trader_plains",
       "weight": 5
+    },
+    {
+      "structure": "mowziesmobs:monastery",
+      "weight": 10
     }
   ]
 }

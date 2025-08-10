@@ -406,6 +406,18 @@
     {
       "structure": "repurposed_structures:witch_hut_taiga",
       "weight": 10
+    },
+    {
+      "structure": "mowziesmobs:frostmaw_spawn",
+      "weight": 10
+    },
+    {
+      "structure": "mowziesmobs:umuvuthana_grove",
+      "weight": 10
+    },
+    {
+      "structure": "mowziesmobs:wrought_chamber",
+      "weight": 10
     }
   ]
 }

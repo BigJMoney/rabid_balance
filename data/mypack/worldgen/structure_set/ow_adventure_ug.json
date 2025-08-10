@@ -34,6 +34,10 @@
     {
       "structure": "nova_structures:underground_house",
       "weight": 10
+    },
+    {
+      "structure": "seadwellers:axolotl_seadwellers",
+      "weight": 10
     }
   ]
 }
