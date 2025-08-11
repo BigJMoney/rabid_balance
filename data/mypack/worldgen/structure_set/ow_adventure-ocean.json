@@ -88,19 +88,19 @@
       "weight": 10
     },
     {
-      "structure": "seadwellers:collector_seadwellerss",
+      "structure": "seadwellers:collector_seadwellers",
       "weight": 10
     },
     {
-      "structure": "seadwellers:dragon_seadwellerss",
+      "structure": "seadwellers:dragon_seadwellers",
       "weight": 10
     },
     {
-      "structure": "seadwellers:ice_seadwellerss",
+      "structure": "seadwellers:ice_seadwellers",
       "weight": 10
     },
     {
-      "structure": "seadwellers:seadwellerss",
+      "structure": "seadwellers:seadwellers",
       "weight": 10
     }
   ]
