@@ -1,4 +1,11 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "supplementaries"
+    }
+  ],
+
   "feature": {
     "type": "minecraft:random_patch",
     "config": {
