@@ -12,5 +12,5 @@
       "loot_table_id": "minecraft:chests/village/village_desert_house"
     }
   ],
-  "table": "mypack:inject/village_desert_house_supplementaries"
+  "table": "rabidbalance:inject/village_desert_house_supplementaries"
 }

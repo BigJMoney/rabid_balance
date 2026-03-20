@@ -6,7 +6,7 @@
     "spread_type": "triangular",
     "exclusion_zone": {
       "chunk_count": 10,
-      "other_set": "mypack:ow_adventure"
+      "other_set": "rabidbalance:ow_adventure"
     },
     "salt": 1120
   },

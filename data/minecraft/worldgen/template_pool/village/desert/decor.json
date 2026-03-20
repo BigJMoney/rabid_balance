@@ -29,7 +29,7 @@
     {
       "element": {
         "element_type": "minecraft:feature_pool_element",
-        "feature": "mypack:pile_flax",
+        "feature": "rabidbalance:pile_flax",
         "projection": "rigid"
       },
       "weight": 4
