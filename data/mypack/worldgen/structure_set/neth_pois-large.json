@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 80,
+    "separation": 20,
+    "spread_type": "linear",
+    "exclusion_zone": {
+      "chunk_count": 10,
+      "other_set": "mypack:neth_pois-small"
+    },
+    "salt": 2310
+  },
+  "structures": []
+}
