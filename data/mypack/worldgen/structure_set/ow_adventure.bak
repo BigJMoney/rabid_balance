@@ -1,0 +1,423 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 60,
+    "separation": 15,
+    "spread_type": "linear",
+    "exclusion_zone": {
+      "chunk_count": 10,
+      "other_set": "mypack:ow_homesteads"
+    },
+    "salt": 1100
+  },
+  "structures": [
+    {
+      "structure": "ars_nouveau:guardian_wilden_den",
+      "weight": 10
+    },
+    {
+      "structure": "ars_nouveau:hunter_wilden_den",
+      "weight": 10
+    },
+    {
+      "structure": "ars_nouveau:stalker_wilden_den",
+      "weight": 10
+    },
+    {
+      "structure": "bosses_of_mass_destruction:void_blossom",
+      "weight": 10
+    },
+    {
+      "structure": "explorify:badlands_pyramid",
+      "weight": 10
+    },
+    {
+      "structure": "illagerinvasion:illusioner_tower",
+      "weight": 10
+    },
+    {
+      "structure": "illagerinvasion:labyrinth",
+      "weight": 10
+    },
+    {
+      "structure": "minecolonies:amazon_camp",
+      "weight": 10
+    },
+    {
+      "structure": "minecolonies:barbarian_camp",
+      "weight": 10
+    },
+    {
+      "structure": "minecolonies:desert_camp",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:desert_pyramid",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:jungle_pyramid",
+      "weight": 10
+    },
+    {
+      "structure": "mobs_of_mythology:automaton_structure",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:bunker",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:desert_ruins",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:jungle_ruins",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:shrine_combat_tier_1",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:shrine_combat_tier_2",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:shrine_combat_tier_3",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:shrine_combat_tier_4",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:shrine_combat_tier_5",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:fortress_jungle",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:monument_desert",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:monument_icy",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:monument_jungle",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:outpost_badlands",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:outpost_birch",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:outpost_desert",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:outpost_giant_tree_taiga",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:outpost_icy",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:outpost_jungle",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:outpost_mangrove",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:outpost_oak",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:outpost_savanna",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:outpost_snowy",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:outpost_taiga",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:pyramid_badlands",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:pyramid_dark_forest",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:pyramid_flower_forest",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:pyramid_giant_tree_taiga",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:pyramid_icy",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:pyramid_jungle",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:pyramid_mushroom",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:pyramid_snowy",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:ruins_land_cold",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:ruins_land_hot",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:ruins_land_icy",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:ruins_land_warm",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:temple_taiga",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:mimic_desert",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_badlands",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_beach",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_birch_forest",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_desert",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_flower_forest",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_forest",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_grove",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_jungle",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_meadow",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_mushroom_fields",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_old_growth_taiga",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_savanna",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_savanna_plateau",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_snowy_beach",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_snowy_plains",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_snowy_slopes",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_snowy_taiga",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_sparse_jungle",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_sunflower_plains",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_swamp",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_taiga",
+      "weight": 10
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_wooded_badlands",
+      "weight": 10
+    },
+    {
+      "structure": "apotheosis:tower_leaf",
+      "weight": 10
+    },
+    {
+      "structure": "apotheosis:tower_main",
+      "weight": 5
+    },
+    {
+      "structure": "apotheosis:tower_sand",
+      "weight": 10
+    },
+    {
+      "structure": "apotheosis:tower_spruce",
+      "weight": 10
+    },
+    {
+      "structure": "betterwitchhuts:witch_circle",
+      "weight": 10
+    },
+    {
+      "structure": "betterwitchhuts:witch_hut",
+      "weight": 10
+    },
+    {
+      "structure": "explorify:mangrove_hut",
+      "weight": 10
+    },
+    {
+      "structure": "explorify:mausoleum",
+      "weight": 10
+    },
+    {
+      "structure": "explorify:supply_cache/birch",
+      "weight": 10
+    },
+    {
+      "structure": "explorify:supply_cache/dark",
+      "weight": 10
+    },
+    {
+      "structure": "explorify:supply_cache/desert",
+      "weight": 10
+    },
+    {
+      "structure": "explorify:supply_cache/forest",
+      "weight": 10
+    },
+    {
+      "structure": "explorify:supply_cache/jungle",
+      "weight": 10
+    },
+    {
+      "structure": "explorify:supply_cache/mangrove",
+      "weight": 10
+    },
+    {
+      "structure": "explorify:supply_cache/taiga",
+      "weight": 10
+    },
+    {
+      "structure": "illagerinvasion:firecaller_hut",
+      "weight": 10
+    },
+    {
+      "structure": "illagerinvasion:sorcerer_hut",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:shipwreck_beached",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:swamp_hut",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:illager_camp",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:mangrove_witch_hut",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:witch_hut_birch",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:witch_hut_dark_forest",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:witch_hut_giant_tree_taiga",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:witch_hut_mangrove",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:witch_hut_oak",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:witch_hut_taiga",
+      "weight": 10
+    },
+    {
+      "structure": "mowziesmobs:frostmaw_spawn",
+      "weight": 10
+    },
+    {
+      "structure": "mowziesmobs:umvuthana_grove",
+      "weight": 10
+    },
+    {
+      "structure": "mowziesmobs:wrought_chamber",
+      "weight": 10
+    }
+  ]
+}

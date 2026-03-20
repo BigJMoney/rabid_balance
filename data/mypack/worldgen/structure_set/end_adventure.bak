@@ -1,0 +1,51 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 75,
+    "separation": 25,
+    "spread_type": "triangular",
+    "salt": 3100
+  },
+  "structures": [
+    {
+      "structure": "bosses_of_mass_destruction:obsidilith_arena",
+      "weight": 10
+    },
+    {
+      "structure": "cataclysm:ruined_citadel",
+      "weight": 10
+    },
+    {
+      "structure": "explorify:end_shipwreck",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:end_city",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:end_lighthouse",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:end_ship",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:ancient_city_end",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:outpost_end",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:pyramid_end",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:shipwreck_end",
+      "weight": 10
+    }
+  ]
+}
