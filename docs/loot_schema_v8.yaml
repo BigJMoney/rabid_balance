@@ -1177,7 +1177,6 @@ loot_classification:
         - minecraft:stick
         - minecraft:flint
         - minecraft:target
-        - "#c:ores"
         - "#minecraft:arrows"
         - "#c:tools/bow"
         - "#c:feathers"

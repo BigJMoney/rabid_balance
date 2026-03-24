@@ -22,7 +22,7 @@ minecraft:allium,material,[],rare,small,material_items,#minecraft:flowers,
 minecraft:amethyst_block,block_building,[],rare,large,block_building,minecraft:amethyst_block,
 minecraft:amethyst_cluster,block_raw,[],rare,large,block_raw,minecraft:amethyst_cluster,
 minecraft:amethyst_shard,material,"['underground', 'treasure']",uncommon,small,material_items,minecraft:amethyst_shard,"['#c:gems', '#c:gems']"
-minecraft:ancient_debris,block_raw,"['nether', 'underground', 'smithing', 'fletching']",epic,large,block_raw,minecraft:ancient_debris,"['minecraft:ancient_debris', '#c:ores', '#c:ores', '#c:ores']"
+minecraft:ancient_debris,block_raw,"['nether', 'underground', 'smithing']",epic,large,block_raw,minecraft:ancient_debris,"['minecraft:ancient_debris', '#c:ores', '#c:ores']"
 minecraft:andesite,block_junk,['underground'],junk,chaotic,block_junk,minecraft:andesite,['#c:stones']
 minecraft:andesite_slab,block_building,[],filler,large,block_building,*_slab,
 minecraft:andesite_stairs,block_building,[],filler,large,block_building,*_stairs,
@@ -138,7 +138,7 @@ minecraft:book,material,['library'],uncommon,singleton,material_items,minecraft:
 minecraft:bookshelf,block_utility,['library'],rare,singleton,block_utility,minecraft:bookshelf,['#c:bookshelves']
 minecraft:bow,combat,['fletching'],uncommon,singleton,combat_items,minecraft:bow,['#c:tools/bow']
 minecraft:bowl,cosmetic,[],uncommon,singleton,cosmetic_items,#minecraft:skulls,
-minecraft:brain_coral,block_raw,"['underground', 'sea', 'smithing', 'fletching']",junk,large,block_raw,*_coral*,"['#c:ores', '*_coral*', '#c:ores', '#c:ores']"
+minecraft:brain_coral,block_raw,"['underground', 'sea', 'smithing']",junk,large,block_raw,*_coral*,"['#c:ores', '*_coral*', '#c:ores']"
 minecraft:brain_coral_block,block_raw,"['sea', 'archaeology']",junk,large,block_raw,*_coral*,"['*_coral*', '#minecraft:decorated_pot_sherds']"
 minecraft:brain_coral_fan,block_raw,"['sea', 'village']",junk,large,block_raw,*_coral*,"['*_coral*', '#minecraft:candles']"
 minecraft:bread,food,[],common,small,food_items,#c:foods,
@@ -236,7 +236,7 @@ minecraft:clay_ball,material,['masonry'],common,tiny,material_items,minecraft:cl
 minecraft:clock,tool,[],rare,singleton,tool_items,minecraft:clock,
 minecraft:coal,material,['fortification'],common,medium,material_items,minecraft:coal,['minecraft:coal']
 minecraft:coal_block,material,['fortification'],uncommon,tiny,material_items,minecraft:coal_block,['minecraft:coal_block']
-minecraft:coal_ore,material,"['underground', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['#c:ores', '#c:ores', '#c:ores']"
+minecraft:coal_ore,material,"['underground', 'smithing']",rare,small,material_items,*_ore,"['#c:ores', '#c:ores']"
 minecraft:coarse_dirt,block_junk,[],junk,chaotic,block_junk,minecraft:coarse_dirt,
 minecraft:coast_armor_trim_smithing_template,material,['treasure'],rare,tiny,material_items,*_armor_trim_smithing_template,['#minecraft:trim_templates']
 minecraft:cobbled_deepslate,block_raw,"['deep_underground', 'masonry']",junk,large,block_raw,minecraft:cobbled_deepslate,"['*deepslate*', '#c:cobblestones']"
@@ -271,7 +271,7 @@ minecraft:copper_bulb,block_technical,['masonry'],rare,small,block_technical,min
 minecraft:copper_door,block_utility,[],uncommon,small,block_utility,*_door,
 minecraft:copper_grate,block_building,[],filler,large,block_building,*_grate,
 minecraft:copper_ingot,material,['smithing'],rare,small,material_items,*_ingot,['#c:ingots']
-minecraft:copper_ore,material,"['underground', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['#c:ores', '#c:ores', '#c:ores']"
+minecraft:copper_ore,material,"['underground', 'smithing']",rare,small,material_items,*_ore,"['#c:ores', '#c:ores']"
 minecraft:copper_trapdoor,block_utility,[],uncommon,small,block_utility,*_trapdoor,
 minecraft:cornflower,material,[],rare,small,material_items,#minecraft:flowers,
 minecraft:cow_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,
@@ -370,14 +370,14 @@ minecraft:deepslate_brick_slab,block_building,['deep_underground'],filler,large,
 minecraft:deepslate_brick_stairs,block_building,['deep_underground'],filler,large,block_building,*_stairs,['*deepslate*']
 minecraft:deepslate_brick_wall,block_building,['deep_underground'],filler,large,block_building,*_wall,['*deepslate*']
 minecraft:deepslate_bricks,block_building,['deep_underground'],filler,large,block_building,*_bricks,['*deepslate*']
-minecraft:deepslate_coal_ore,material,"['underground', 'deep_underground', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['#c:ores', '*deepslate*', '#c:ores', '#c:ores']"
-minecraft:deepslate_copper_ore,material,"['underground', 'deep_underground', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['#c:ores', '*deepslate*', '#c:ores', '#c:ores']"
-minecraft:deepslate_diamond_ore,material,"['underground', 'deep_underground', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['#c:ores', '*deepslate*', '#c:ores', '#c:ores']"
-minecraft:deepslate_emerald_ore,material,"['underground', 'deep_underground', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['#c:ores', '*deepslate*', '#c:ores', '#c:ores']"
-minecraft:deepslate_gold_ore,material,"['underground', 'deep_underground', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['#c:ores', '*deepslate*', '#c:ores', '#c:ores']"
-minecraft:deepslate_iron_ore,material,"['underground', 'deep_underground', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['#c:ores', '*deepslate*', '#c:ores', '#c:ores']"
-minecraft:deepslate_lapis_ore,material,"['underground', 'deep_underground', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['#c:ores', '*deepslate*', '#c:ores', '#c:ores']"
-minecraft:deepslate_redstone_ore,material,"['underground', 'deep_underground', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['#c:ores', '*deepslate*', '#c:ores', '#c:ores']"
+minecraft:deepslate_coal_ore,material,"['underground', 'deep_underground', 'smithing']",rare,small,material_items,*_ore,"['#c:ores', '*deepslate*', '#c:ores']"
+minecraft:deepslate_copper_ore,material,"['underground', 'deep_underground', 'smithing']",rare,small,material_items,*_ore,"['#c:ores', '*deepslate*', '#c:ores']"
+minecraft:deepslate_diamond_ore,material,"['underground', 'deep_underground', 'smithing']",rare,small,material_items,*_ore,"['#c:ores', '*deepslate*', '#c:ores']"
+minecraft:deepslate_emerald_ore,material,"['underground', 'deep_underground', 'smithing']",rare,small,material_items,*_ore,"['#c:ores', '*deepslate*', '#c:ores']"
+minecraft:deepslate_gold_ore,material,"['underground', 'deep_underground', 'smithing']",rare,small,material_items,*_ore,"['#c:ores', '*deepslate*', '#c:ores']"
+minecraft:deepslate_iron_ore,material,"['underground', 'deep_underground', 'smithing']",rare,small,material_items,*_ore,"['#c:ores', '*deepslate*', '#c:ores']"
+minecraft:deepslate_lapis_ore,material,"['underground', 'deep_underground', 'smithing']",rare,small,material_items,*_ore,"['#c:ores', '*deepslate*', '#c:ores']"
+minecraft:deepslate_redstone_ore,material,"['underground', 'deep_underground', 'smithing']",rare,small,material_items,*_ore,"['#c:ores', '*deepslate*', '#c:ores']"
 minecraft:deepslate_tile_slab,block_building,['deep_underground'],filler,large,block_building,*_slab,['*deepslate*']
 minecraft:deepslate_tile_stairs,block_building,['deep_underground'],filler,large,block_building,*_stairs,['*deepslate*']
 minecraft:deepslate_tile_wall,block_building,['deep_underground'],filler,large,block_building,*_wall,['*deepslate*']
@@ -392,7 +392,7 @@ minecraft:diamond_helmet,combat,[],uncommon,singleton,combat_items,*_helmet,
 minecraft:diamond_hoe,tool,['village'],uncommon,singleton,tool_items,*_hoe,['*_hoe']
 minecraft:diamond_horse_armor,combat,[],epic,singleton,combat_items,*_horse_armor,
 minecraft:diamond_leggings,combat,[],uncommon,singleton,combat_items,*_leggings,
-minecraft:diamond_ore,material,"['underground', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['#c:ores', '#c:ores', '#c:ores']"
+minecraft:diamond_ore,material,"['underground', 'smithing']",rare,small,material_items,*_ore,"['#c:ores', '#c:ores']"
 minecraft:diamond_pickaxe,tool,['underground'],uncommon,singleton,tool_items,*_pickaxe,['*_pickaxe']
 minecraft:diamond_shovel,tool,['village'],uncommon,singleton,tool_items,*_shovel,['*_shovel']
 minecraft:diamond_sword,combat,[],uncommon,singleton,combat_items,*_sword,
@@ -421,7 +421,7 @@ minecraft:elder_guardian_spawn_egg,nonloot,[],none,singleton,excluded_items,*_sp
 minecraft:elytra,utility,[],unique,singleton,utility_items,minecraft:elytra,
 minecraft:emerald,material,"['underground', 'treasure', 'clerical']",rare,small,material_items,minecraft:emerald,"['#c:gems', '#c:gems', 'minecraft:emerald']"
 minecraft:emerald_block,material,[],epic,tiny,material_items,minecraft:emerald_block,
-minecraft:emerald_ore,material,"['underground', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['#c:ores', '#c:ores', '#c:ores']"
+minecraft:emerald_ore,material,"['underground', 'smithing']",rare,small,material_items,*_ore,"['#c:ores', '#c:ores']"
 minecraft:enchanted_book,magic,"['treasure', 'library']",rare,singleton,magic_items,minecraft:enchanted_book,"['minecraft:enchanted_book', '#minecraft:bookshelf_books']"
 minecraft:enchanted_golden_apple,food,['treasure'],epic,singleton,food_items,#c:foods,['#c:foods/golden']
 minecraft:enchanting_table,block_functional,['village'],epic,singleton,block_functional,minecraft:enchanting_table,['#c:fences/wooden']
@@ -500,7 +500,7 @@ minecraft:goat_spawn_egg,nonloot,['village'],none,singleton,excluded_items,*_spa
 minecraft:gold_block,material,['treasure'],epic,tiny,material_items,minecraft:gold_block,['gold*']
 minecraft:gold_ingot,material,"['treasure', 'smithing']",rare,small,material_items,*_ingot,"['gold*', '#c:ingots']"
 minecraft:gold_nugget,material,"['treasure', 'clerical']",rare,small,material_items,*_nugget,"['gold*', 'minecraft:gold_nugget']"
-minecraft:gold_ore,material,"['underground', 'treasure', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['#c:ores', 'gold*', '#c:ores', '#c:ores']"
+minecraft:gold_ore,material,"['underground', 'treasure', 'smithing']",rare,small,material_items,*_ore,"['#c:ores', 'gold*', '#c:ores']"
 minecraft:golden_apple,food,['treasure'],rare,tiny,food_items,#c:foods,['gold*']
 minecraft:golden_axe,tool,['treasure'],uncommon,singleton,tool_items,*_axe,['gold*']
 minecraft:golden_boots,combat,['treasure'],uncommon,singleton,combat_items,*_boots,['gold*']
@@ -593,7 +593,7 @@ minecraft:iron_horse_armor,combat,['fortification'],rare,singleton,combat_items,
 minecraft:iron_ingot,material,"['fortification', 'smithing']",rare,small,material_items,*_ingot,"['iron_*', '#c:ingots']"
 minecraft:iron_leggings,combat,['fortification'],uncommon,singleton,combat_items,*_leggings,['iron_*']
 minecraft:iron_nugget,material,"['fortification', 'leatherworking']",rare,small,material_items,*_nugget,"['iron_*', '#rabidbalance:leather_joinery']"
-minecraft:iron_ore,material,"['underground', 'fortification', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['#c:ores', 'iron_*', '#c:ores', '#c:ores']"
+minecraft:iron_ore,material,"['underground', 'fortification', 'smithing']",rare,small,material_items,*_ore,"['#c:ores', 'iron_*', '#c:ores']"
 minecraft:iron_pickaxe,tool,"['underground', 'fortification']",uncommon,singleton,tool_items,*_pickaxe,"['*_pickaxe', 'iron_*']"
 minecraft:iron_shovel,tool,"['fortification', 'village']",uncommon,singleton,tool_items,*_shovel,"['iron_*', '*_shovel']"
 minecraft:iron_sword,combat,['fortification'],uncommon,singleton,combat_items,*_sword,['iron_*']
@@ -625,7 +625,7 @@ minecraft:ladder,block_utility,['archaeology'],common,small,block_utility,minecr
 minecraft:lantern,block_utility,['underground'],uncommon,small,block_utility,minecraft:lantern,['#c:raw_materials']
 minecraft:lapis_block,material,[],epic,tiny,material_items,minecraft:lapis_block,
 minecraft:lapis_lazuli,material,"['underground', 'treasure']",uncommon,small,material_items,minecraft:lapis_lazuli,"['#c:gems', '#c:gems']"
-minecraft:lapis_ore,material,"['underground', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['#c:ores', '#c:ores', '#c:ores']"
+minecraft:lapis_ore,material,"['underground', 'smithing']",rare,small,material_items,*_ore,"['#c:ores', '#c:ores']"
 minecraft:large_amethyst_bud,block_raw,[],junk,large,block_raw,*_amethyst_bud,
 minecraft:large_fern,food,['butchery'],common,small,food_items,#c:foods,['#c:foods/raw_meat']
 minecraft:lava_bucket,tool,['deep_underground'],rare,singleton,tool_items,*_bucket,['minecraft:lava_bucket']
@@ -781,8 +781,8 @@ minecraft:nether_brick_slab,block_building,['nether'],filler,large,block_buildin
 minecraft:nether_brick_stairs,block_building,['nether'],filler,large,block_building,*_stairs,['nether_*']
 minecraft:nether_brick_wall,block_building,['nether'],filler,large,block_building,*_wall,['nether_*']
 minecraft:nether_bricks,block_building,"['end', 'nether']",filler,large,block_building,*_bricks,"['#c:shulker_boxes', 'nether_*']"
-minecraft:nether_gold_ore,material,"['nether', 'underground', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['nether_*', '#c:ores', '#c:ores', '#c:ores']"
-minecraft:nether_quartz_ore,material,"['nether', 'underground', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['nether_*', '#c:ores', '#c:ores', '#c:ores']"
+minecraft:nether_gold_ore,material,"['nether', 'underground', 'smithing']",rare,small,material_items,*_ore,"['nether_*', '#c:ores', '#c:ores']"
+minecraft:nether_quartz_ore,material,"['nether', 'underground', 'smithing']",rare,small,material_items,*_ore,"['nether_*', '#c:ores', '#c:ores']"
 minecraft:nether_sprouts,plantable,['nether'],uncommon,small,plantable_items,minecraft:nether_sprouts,['nether_*']
 minecraft:nether_star,material,['nether'],unique,small,material_items,minecraft:nether_star,['nether_*']
 minecraft:nether_wart,material,"['nether', 'farming']",rare,small,material_items,minecraft:nether_wart,"['nether_*', '#c:crops']"
@@ -819,7 +819,7 @@ minecraft:oak_slab,block_building,['village'],filler,large,block_building,*_slab
 minecraft:oak_stairs,block_building,['village'],filler,large,block_building,*_stairs,['oak_*']
 minecraft:oak_trapdoor,block_utility,['village'],uncommon,small,block_utility,*_trapdoor,['oak_*']
 minecraft:oak_wood,block_raw,['village'],junk,small,block_raw,*_wood,['oak_*']
-minecraft:observer,block_technical,"['underground', 'smithing', 'fletching']",rare,singleton,block_technical,minecraft:observer,"['#c:ores', '#c:ores', '#c:ores']"
+minecraft:observer,block_technical,"['underground', 'smithing']",rare,singleton,block_technical,minecraft:observer,"['#c:ores', '#c:ores']"
 minecraft:obsidian,block_raw,"['nether', 'deep_underground']",rare,large,block_raw,minecraft:obsidian,"['#c:obsidians', 'minecraft:obsidian']"
 minecraft:ocelot_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,
 minecraft:ochre_froglight,block_utility,['clerical'],epic,small,block_utility,*_froglight,['#c:glass_panes']
@@ -1007,10 +1007,10 @@ minecraft:red_wool,material,['woolworking'],common,small,material_items,*_wool,[
 minecraft:redstone,material,['deep_underground'],uncommon,medium,material_items,minecraft:redstone,['minecraft:redstone']
 minecraft:redstone_block,block_technical,['deep_underground'],rare,tiny,block_technical,minecraft:redstone_block,['minecraft:redstone_block']
 minecraft:redstone_lamp,block_technical,['clerical'],rare,small,block_technical,minecraft:redstone_lamp,['#c:glass_panes']
-minecraft:redstone_ore,material,"['underground', 'smithing', 'fletching']",rare,small,material_items,*_ore,"['#c:ores', '#c:ores', '#c:ores']"
+minecraft:redstone_ore,material,"['underground', 'smithing']",rare,small,material_items,*_ore,"['#c:ores', '#c:ores']"
 minecraft:redstone_torch,block_technical,[],uncommon,small,block_technical,minecraft:redstone_torch,
 minecraft:reinforced_deepslate,block_junk,"['deep_underground', 'treasure']",junk,chaotic,block_junk,minecraft:reinforced_deepslate,"['*deepslate*', '#c:music_discs']"
-minecraft:repeater,block_technical,"['underground', 'smithing', 'fletching']",rare,singleton,block_technical,minecraft:repeater,"['#c:ores', '#c:ores', '#c:ores']"
+minecraft:repeater,block_technical,"['underground', 'smithing']",rare,singleton,block_technical,minecraft:repeater,"['#c:ores', '#c:ores']"
 minecraft:repeating_command_block,nonloot,"['leatherworking', 'woolworking']",none,singleton,excluded_items,minecraft:repeating_command_block,"['#c:dyes', '#c:dyes']"
 minecraft:respawn_anchor,block_functional,[],unique,singleton,block_functional,minecraft:respawn_anchor,
 minecraft:rib_armor_trim_smithing_template,material,['treasure'],rare,tiny,material_items,*_armor_trim_smithing_template,['#minecraft:trim_templates']
@@ -1166,7 +1166,7 @@ minecraft:suspicious_stew,food,[],common,small,food_items,*_stew,
 minecraft:sweet_berries,food,[],common,small,food_items,#c:foods,
 minecraft:tadpole_bucket,tool,['swamp'],rare,singleton,tool_items,*_bucket,['minecraft:tadpole_bucket']
 minecraft:tadpole_spawn_egg,nonloot,"['desert', 'masonry']",none,singleton,excluded_items,*_spawn_egg,"['#c:glazed_terracottas', '#c:glazed_terracottas']"
-minecraft:tall_grass,block_junk,"['underground', 'smithing', 'fletching']",junk,chaotic,block_junk,minecraft:tall_grass,"['#c:ores', '#c:ores', '#c:ores']"
+minecraft:tall_grass,block_junk,"['underground', 'smithing']",junk,chaotic,block_junk,minecraft:tall_grass,"['#c:ores', '#c:ores']"
 minecraft:target,block_technical,['fletching'],rare,singleton,block_technical,minecraft:target,['minecraft:target']
 minecraft:terracotta,block_building,['desert'],filler,large,block_building,minecraft:terracotta,['#minecraft:terracotta']
 minecraft:tide_armor_trim_smithing_template,material,['treasure'],rare,tiny,material_items,*_armor_trim_smithing_template,['#minecraft:trim_templates']
@@ -1259,7 +1259,7 @@ minecraft:waxed_oxidized_copper_trapdoor,block_utility,[],uncommon,small,block_u
 minecraft:waxed_oxidized_cut_copper,block_building,[],filler,large,block_building,waxed_*,
 minecraft:waxed_oxidized_cut_copper_slab,block_building,[],filler,large,block_building,*_slab,
 minecraft:waxed_oxidized_cut_copper_stairs,block_building,[],filler,large,block_building,*_stairs,
-minecraft:waxed_weathered_chiseled_copper,block_building,"['underground', 'smithing', 'fletching']",filler,large,block_building,waxed_*,"['#c:ores', '#c:ores', '#c:ores']"
+minecraft:waxed_weathered_chiseled_copper,block_building,"['underground', 'smithing']",filler,large,block_building,waxed_*,"['#c:ores', '#c:ores']"
 minecraft:waxed_weathered_copper,block_building,[],filler,large,block_building,waxed_*,
 minecraft:waxed_weathered_copper_bulb,block_technical,[],rare,singleton,block_technical,*_copper_bulb,
 minecraft:waxed_weathered_copper_door,block_utility,[],uncommon,small,block_utility,*_door,

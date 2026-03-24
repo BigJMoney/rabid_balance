@@ -34,11 +34,11 @@ affinities:
   smithing: 36
   archaeology: 36
   leatherworking: 36
-  fletching: 34
   clerical: 28
   swamp: 23
   farming: 22
   butchery: 15
+  fletching: 10
   forest: 9
   fishing: 9
   library: 7
