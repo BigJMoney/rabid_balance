@@ -5,9 +5,7 @@ $itemIds = Invoke-RestMethod "$baseUrl/api/registries/minecraft/item/keys" | Sor
 $byItem = [ordered]@{}
 
 foreach ($id in $itemIds) {
-  if ($id -eq 'minecraft:air') {
-    continue
-  }
+  $byItem[$id] = $tags
 
   $parts = $id -split ':', 2
   $namespace = $parts[0]

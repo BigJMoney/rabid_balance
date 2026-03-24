@@ -4,14 +4,14 @@
  *
  */
 
-const woods = ['spruce', 'cherry', 'mangrove', 'oak', 'dark_oak', 'birch', 'jungle', 'acacia']
 
+const WOODS = ['spruce', 'cherry', 'mangrove', 'oak', 'dark_oak', 'birch', 'jungle', 'acacia'];
 
 // NOTE: Disabled for now to test if backport mods fix this
 // Lodestone is easier to craft (for 1.21.1)
-// function lodestoneRecipe(kevent) {
-//   kevent.remove({ output: 'minecraft:lodestone' });
-//   kevent.shaped(
+// function lodestoneRecipe(recipeEvent) {
+//   recipeEvent.remove({ output: 'minecraft:lodestone' });
+//   recipeEvent.shaped(
 //     Item.of('minecraft:lodestone', 1),
 //     [
 //       'AAA',
@@ -22,14 +22,15 @@ const woods = ['spruce', 'cherry', 'mangrove', 'oak', 'dark_oak', 'birch', 'jung
 //       A: 'minecraft:chiseled_stone_bricks',
 //       B: 'minecraft:iron_ingot'
 //     }
-//   );
+//   ).id("minecraft:lodestone");
 //}
 
 // Boats are more difficult to craft
-function boatRecipe(kevent) {
-  woods.forEach(wood => {
-    kevent.remove({ output: `minecraft:${wood}_boat` });
-    kevent.shaped(
+function boatRecipes(recipeEvent) {
+
+  WOODS.forEach(wood => {
+    recipeEvent.remove({ output: `minecraft:${wood}_boat` });
+    recipeEvent.shaped(
       Item.of(`minecraft:${wood}_boat`, 1),
       [
         'ABA',
@@ -39,18 +40,33 @@ function boatRecipe(kevent) {
         A: `minecraft:${wood}_planks`,
         B: 'minecraft:iron_nugget'
       }
-    );
+    ).id(`minecraft:${wood}_boat`);
   })
+
+  // ...except the bamboo raft cause that's fun
+  recipeEvent.remove({ output: `minecraft:bamboo_raft` });
+  recipeEvent.shaped(
+    Item.of('minecraft:bamboo_raft', 1),
+    [
+      '   ',
+      'AAA'
+    ],
+    {
+      A: 'minecraft:bamboo_planks'
+    }
+  ).id('minecraft:bamboo_raft');
+
 }
+
 
 // TODO: ? Update the Twilight boat recipes? (IDK anything about Twilight, yet)
 
 // Skipping the Honey Lead (again to test backport mods)
 
 // Rails are easier to craft
-function railRecipe(kevent) {
-  kevent.remove({ output: 'minecraft:rail' });
-  kevent.shaped(
+function railRecipe(recipeEvent) {
+  recipeEvent.remove({ output: 'minecraft:rail' });
+  recipeEvent.shaped(
     Item.of('minecraft:rail', 24),
     [
       'A A',
@@ -65,9 +81,9 @@ function railRecipe(kevent) {
   );
 }
 
-function poweredRailRecipe(kevent) {
-  kevent.remove({ output: 'minecraft:powered_rail' });
-  kevent.shaped(
+function poweredRailRecipe(recipeEvent) {
+  recipeEvent.remove({ output: 'minecraft:powered_rail' });
+  recipeEvent.shaped(
     Item.of('minecraft:powered_rail', 6),
     [
       'A A',
@@ -83,9 +99,9 @@ function poweredRailRecipe(kevent) {
   );
 }
 
-function detectorRailRecipe(kevent) {
-  kevent.remove({ output: 'minecraft:detector_rail' });
-  kevent.shaped(
+function detectorRailRecipe(recipeEvent) {
+  recipeEvent.remove({ output: 'minecraft:detector_rail' });
+  recipeEvent.shaped(
     Item.of('minecraft:detector_rail', 6),
     [
       'A A',
@@ -101,9 +117,9 @@ function detectorRailRecipe(kevent) {
   );
 }
 
-function activatorRailRecipe(kevent) {
-  kevent.remove({ output: 'minecraft:activator_rail' });
-  kevent.shaped(
+function activatorRailRecipe(recipeEvent) {
+  recipeEvent.remove({ output: 'minecraft:activator_rail' });
+  recipeEvent.shaped(
     Item.of('minecraft:activator_rail', 6),
     [
       'A A',
@@ -119,10 +135,18 @@ function activatorRailRecipe(kevent) {
   );
 }
 
+
 // Leather armor recipes use joinery
-function leatherHelmetRecipe(kevent) {
-  kevent.remove({ output: 'minecraft:leather_helmet' });
-  kevent.shaped(
+function addLeatherJoineryTag(tagEvent) {
+  const joinery = ["minecraft:bone", "minecraft:string", "minecraft:copper_nugget", "minecraft:iron_nugget"];
+  joinery.forEach(j => {
+    tagEvent.add("rabidbalance:leather_joinery", j)
+  });
+}
+
+function leatherHelmetRecipe(recipeEvent) {
+  recipeEvent.remove({ output: 'minecraft:leather_helmet' });
+  recipeEvent.shaped(
     Item.of('minecraft:leather_helmet', 1),
     [
       'BAB',
@@ -130,14 +154,14 @@ function leatherHelmetRecipe(kevent) {
     ],
     {
       A: 'minecraft:leather',
-      B: '#minecraft:leather_joinery'
+      B: '#rabidbalance:leather_joinery'
     }
-  );
+  ).id('minecraft:leather_helmet');
 }
 
-function leatherChestplateRecipe(kevent) {
-  kevent.remove({ output: 'minecraft:leather_chestplate' });
-  kevent.shaped(
+function leatherChestplateRecipe(recipeEvent) {
+  recipeEvent.remove({ output: 'minecraft:leather_chestplate' });
+  recipeEvent.shaped(
     Item.of('minecraft:leather_chestplate', 1),
     [
       'A A',
@@ -146,14 +170,14 @@ function leatherChestplateRecipe(kevent) {
     ],
     {
       A: 'minecraft:leather',
-      B: '#minecraft:leather_joinery'
+      B: '#rabidbalance:leather_joinery'
     }
-  );
+  ).id('minecraft:leather_chestplate');
 }
 
-function leatherLeggingsRecipe(kevent) {
-  kevent.remove({ output: 'minecraft:leather_leggings' });
-  kevent.shaped(
+function leatherLeggingsRecipe(recipeEvent) {
+  recipeEvent.remove({ output: 'minecraft:leather_leggings' });
+  recipeEvent.shaped(
     Item.of('minecraft:leather_leggings', 1),
     [
       'ABA',
@@ -162,14 +186,14 @@ function leatherLeggingsRecipe(kevent) {
     ],
     {
       A: 'minecraft:leather',
-      B: '#minecraft:leather_joinery'
+      B: '#rabidbalance:leather_joinery'
     }
-  );
+  ).id('minecraft:leather_leggings');
 }
 
-function leatherBootsRecipe(kevent) {
-  kevent.remove({ output: 'minecraft:leather_boots' });
-  kevent.shaped(
+function leatherBootsRecipe(recipeEvent) {
+  recipeEvent.remove({ output: 'minecraft:leather_boots' });
+  recipeEvent.shaped(
     Item.of('minecraft:leather_boots', 1),
     [
       'B B',
@@ -177,32 +201,32 @@ function leatherBootsRecipe(kevent) {
     ],
     {
       A: 'minecraft:leather',
-      B: '#minecraft:leather_joinery'
+      B: '#rabidbalance:leather_joinery'
     }
-  );
+  ).id('minecraft:leather_boots');
 }
 
 // Leather armor can be recycled (leather enhancement #1)
-function recycledLeatherRecipes(kevent) {
-  kevent.shapeless(
+function recycledLeatherRecipes(recipeEvent) {
+  recipeEvent.shapeless(
     Item.of('minecraft:leather', 1),
     [
       'minecraft:leather_helmet'
     ]
   );
-  kevent.shapeless(
-    Item.of('minecraft:leather', 1),
+  recipeEvent.shapeless(
+    Item.of('minecraft:leather', 3),
     [
       'minecraft:leather_chestplate'
     ]
   );
-  kevent.shapeless(
-    Item.of('minecraft:leather', 1),
+  recipeEvent.shapeless(
+    Item.of('minecraft:leather', 2),
     [
       'minecraft:leather_leggings'
     ]
   );
-  kevent.shapeless(
+  recipeEvent.shapeless(
     Item.of('minecraft:leather', 1),
     [
       'minecraft:leather_boots'
@@ -211,10 +235,22 @@ function recycledLeatherRecipes(kevent) {
 }
 
 
-// Register recipe callbacks
+// Remove junk tools
+//  These tools are useless with the Primitiy mod
+function removeUselessTools(recipeEvent) {
+  recipeEvent.remove({ output: 'minecraft:wooden_axe' });
+  recipeEvent.remove({ output: 'minecraft:wooden_pickaxe' });
+  recipeEvent.remove({ output: 'minecraft:wooden_shovel' });
+  recipeEvent.remove({ output: 'minecraft:wooden_hoe' });
+
+  recipeEvent.remove({ output: 'minecraft:stone_pickaxe' });
+}
+
+
+// Register recipe event callbacks
 //ServerEvents.recipes(lodestoneRecipe);
 
-ServerEvents.recipes(boatRecipe);
+ServerEvents.recipes(boatRecipes);
 
 //ServerEvents.recipes(honeyLeadRecipe);
 
@@ -228,3 +264,8 @@ ServerEvents.recipes(leatherChestplateRecipe);
 ServerEvents.recipes(leatherLeggingsRecipe);
 ServerEvents.recipes(leatherBootsRecipe);
 ServerEvents.recipes(recycledLeatherRecipes);
+
+ServerEvents.recipes(removeUselessTools);
+
+// Register tag event callbacks
+ServerEvents.tags("item", addLeatherJoineryTag);

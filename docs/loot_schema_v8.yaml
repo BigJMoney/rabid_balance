@@ -18,13 +18,13 @@ loot_classification:
     - block_technical
     - block_utility
     - cosmetic              # items and blocks
+    - plantable
     - food
     # - food_ingredients ?
     - magic
     - combat
     - tool
     - material
-    - plantable
     - utility
     - block_building
     - block_raw
@@ -71,6 +71,11 @@ loot_classification:
         - minecraft:vault
         - minecraft:dragon_egg
         - minecraft:knowledge_book
+        - minecraft:suspicious_gravel
+        - minecraft:suspicious_sand
+        - minecraft:dirt_path
+        - minecraft:farmland
+        - minecraft:frogspawn
         - "*_spawn_egg"
         - "sculk*"                                # Change when Apotheosis is added if it doesn't add them globally (actually I think it does)
       assign:
@@ -280,8 +285,6 @@ loot_classification:
         - minecraft:sea_pickle
         - minecraft:shroomlight
         - minecraft:glowstone
-        - minecraft:skeleton_skull
-        - minecraft:wither_skeleton_skull
         - "*_banner"
         - "*_head"            
         - "music_disc_*"
@@ -289,47 +292,48 @@ loot_classification:
         - "*_banner_pattern"
         - "*_pottery_sherd"
         - "*_carpet"
+        - "#minecraft:skulls"
+        - "#c:pumpkins"
       assign:
         kind: cosmetic
         value:
           default: uncommon
           rare:
             - minecraft:sea_lantern
+            - minecraft:glow_item_frame
+            - "*_banner_pattern"
           epic:
             - minecraft:wither_skeleton_skull
             - "*_head"
+          unique:
+            - minecraft:dragon_head
         amount_class:
           default: singleton
       reason: >
         Collectible, expressive, or prestige items should usually appear as singleton finds.
 
-    - id: food_items
-      priority: 35
+    - id: plantable_items
+      priority: 16
       match:
-        - "cooked_*"
-        - "*_stew"
-        - "#c:foods"
+        - minecraft:potato
+        - minecraft:sugar_cane
+        - minecraft:bamboo
+        - minecraft:cocoa_beans
+        - minecraft:nether_sprouts
+        - minecraft:glow_berries
+        - "*_seeds"
+        - "#minecraft:saplings"
       assign:
-        kind: food
+        kind: plantable
         value:
-          default: common
-          rare:
-            - minecraft:golden_carrot
-            - minecraft:golden_apple
-          epic:
-            - minecraft:enchanted_golden_apple
+          default: uncommon
         amount_class:
           default: small
-          tiny:
-            - minecraft:golden_carrot
-            - minecraft:golden_apple
-          singleton:
-            - minecraft:enchanted_golden_apple
       reason: >
-        Most food is ordinary sustain. Special-effect food deserves stronger rarity and smaller amounts.
+        Things the player can plant.
 
-    - id: magic_items
-      priority: 30
+    - id: magic_items                   # todo: consider breaking this up and having
+      priority: 35                      #  an arcane affinity instead
       match:
         - minecraft:ender_pearl
         - minecraft:blaze_rod
@@ -370,6 +374,33 @@ loot_classification:
             - minecraft:recovery_compass
       reason: >
         Magic and progression items should be tightly controlled by both rarity and amount.
+
+    - id: food_items
+      priority: 30
+      match:
+        - "cooked_*"
+        - "*_stew"
+        - "#c:foods"  # todo: go through these
+      assign:
+        kind: food
+        value:
+          default: common
+          junk:
+            - minecraft:rotten_flesh
+          rare:
+            - minecraft:golden_carrot
+            - minecraft:golden_apple
+          epic:
+            - minecraft:enchanted_golden_apple
+        amount_class:
+          default: small
+          tiny:
+            - minecraft:golden_carrot
+            - minecraft:golden_apple
+          singleton:
+            - minecraft:enchanted_golden_apple
+      reason: >
+        Most food is ordinary sustain. Special-effect food deserves stronger rarity and smaller amounts.
 
     - id: combat_items
       priority: 25
@@ -477,24 +508,6 @@ loot_classification:
       reason: >
         Durable tools and utility implements should generally appear one at a time.
 
-    - id: plantable_items
-      priority: 16
-      match:
-        - minecraft:potato
-        - minecraft:sugar_cane
-        - minecraft:bamboo
-        - minecraft:cocoa_beans
-        - "*_seeds"
-        - "*_sapling"
-      assign:
-        kind: plantable
-        value:
-          default: uncommon
-        amount_class:
-          default: small
-      reason: >
-        Things the player can plant.
-
     - id: material_items
       priority: 15
       match:
@@ -515,6 +528,8 @@ loot_classification:
         - minecraft:melon                   # food_ingredient?
         - minecraft:leather
         - minecraft:flint
+        - minecraft:kelp
+        - "#minecraft:flowers"
         # Uncommon
         - minecraft:glowstone_dust
         - minecraft:lapis_lazuli
@@ -550,6 +565,12 @@ loot_classification:
         - minecraft:turtle_egg
         - minecraft:turtle_scute
         - minecraft:dragon_breath
+        - minecraft:bone_block
+        - minecraft:brown_mushroom_block
+        - minecraft:dried_kelp_block
+        - minecraft:honeycomb_block
+        - minecraft:nether_wart_block
+        - minecraft:nautilus_shell
         # Epic
         - minecraft:diamond_block
         - minecraft:emerald_block
@@ -558,8 +579,11 @@ loot_classification:
         - minecraft:netherite_scrap
         - minecraft:chorus_plant
         - minecraft:chorus_flower
+        - minecraft:popped_chorus_fruit
         - minecraft:silence_armor_trim_smithing_template
         - minecraft:netherite_upgrade_smithing_template
+        - minecraft:shulker_shell
+        - minecraft:sniffer_egg
         # Unique
         - minecraft:end_crystal
         - minecraft:wither_rose
@@ -570,7 +594,7 @@ loot_classification:
         - "*_bars"
         - "*_nugget"
         - "*_ore"
-        - "raw_*"
+        - "raw_*"                   # includes both raw_* and raw_*_block
         - "*_wool"
         - "*_concrete_powder"
         - "*_dye"
@@ -598,6 +622,7 @@ loot_classification:
             - minecraft:melon
             - minecraft:leather
             - minecraft:flint
+            - minecraft:kelp
             - "#copper"                 # Known issue: These style tags don't exist yet (probably want to add aa #c:metals/copper style tag)
             - "*_wool"
             - "*_mushroom"
@@ -630,8 +655,12 @@ loot_classification:
             - minecraft:netherite_scrap
             - minecraft:chorus_plant
             - minecraft:chorus_flower
+            - minecraft:popped_chorus_fruit
             - minecraft:silence_armor_trim_smithing_template
             - minecraft:netherite_upgrade_smithing_template
+            - minecraft:shulker_shell
+            - minecraft:sniffer_egg
+            - "#c:storage_blocks"
           unique:
             - minecraft:netherite_ingot
             - minecraft:end_crystal
@@ -650,6 +679,8 @@ loot_classification:
             - minecraft:netherite_ingot
             - minecraft:silence_armor_trim_smithing_template
             - minecraft:netherite_upgrade_smithing_template
+            - minecraft:shulker_shell
+            - minecraft:sniffer_egg
           tiny:
             - minecraft:diamond_block
             - minecraft:emerald_block
@@ -657,6 +688,7 @@ loot_classification:
             - minecraft:clay_ball
             - minecraft:brick
             - "*_armor_trim_smithing_template"
+            - "#c:storage_blocks"
           medium:
             - minecraft:glass
             - minecraft:redstone
@@ -664,7 +696,7 @@ loot_classification:
             - minecraft:charcoal
             - minecraft:bone
             - minecraft:wheat
-            - "raw_*"
+            - "#c:raw_materials"
       reason: >
         Materials are primarily economy inputs. Rare compact-value materials stay small; bulk basics can stack higher.
 
@@ -691,11 +723,8 @@ loot_classification:
         - minecraft:bone_meal
         - minecraft:trial_key
         - minecraft:ominous_trial_key
-        - "*_boat"
-        - "*_chest_boat"
-        - "*_raft"
-        - "*_chest_raft"
         - "*_minecart"
+        - "#minecraft:boats"
       assign:
         kind: utility
         value:
@@ -765,10 +794,10 @@ loot_classification:
           default: filler
           rare:
             - minecraft:amethyst_block
-            - minecraft:quartz_block
+            - "quartz*"
         kind: block_building
         amount_class: 
-          default: bulk
+          default: large
       reason: >
         Structural or decorative blocks that are somewhat useful filler
 
@@ -838,30 +867,70 @@ loot_classification:
     - id: block_junk
       priority: 40
       match:
-        - minecraft:granite
-        - minecraft:diorite
         - minecraft:andesite
-        - minecraft:deepslate
-        - minecraft:calcite
-        - minecraft:tuff
-        - minecraft:grass_block
-        - minecraft:dirt
-        - minecraft:coarse_dirt
-        - minecraft:podzol
-        - minecraft:rooted_dirt
-        - minecraft:mycelium
-        - minecraft:packed_mud
-        - minecraft:netherrack
-        - minecraft:crying_obsidian
-        - minecraft:mud
-        - minecraft:blackstone
         - minecraft:basalt
+        - minecraft:big_dripleaf
+        - minecraft:blackstone
+        - minecraft:bricks
+        - minecraft:calcite
+        - minecraft:coarse_dirt
+        - minecraft:conduit
+        - minecraft:crying_obsidian
+        - minecraft:dead_bush
+        - minecraft:deepslate
+        - minecraft:diorite
+        - minecraft:dirt
         - minecraft:end_stone
+        - minecraft:fern
+        - minecraft:gilded_blackstone
+        - minecraft:glow_lichen
+        - minecraft:granite
+        - minecraft:grass_block
+        - minecraft:hanging_roots
+        - minecraft:lily_pad
+        - minecraft:mangrove_roots
+        - minecraft:mossy_cobblestone
+        - minecraft:mud
+        - minecraft:mushroom_stem
+        - minecraft:mycelium
+        - minecraft:nether_brick
+        - minecraft:netherrack
+        - minecraft:packed_mud
+        - minecraft:pitcher_pod
+        - minecraft:podzol
+        - minecraft:red_mushroom_block
+        - minecraft:red_sand
+        - minecraft:red_sandstone
+        - minecraft:reinforced_deepslate
+        - minecraft:rooted_dirt
+        - minecraft:sandstone
+        - minecraft:seagrass
+        - minecraft:short_grass
+        - minecraft:small_dripleaf
+        - minecraft:snow
+        - minecraft:snow_block
+        - minecraft:snowball
+        - minecraft:stripped_bamboo_block
+        - minecraft:stripped_warped_hyphae
+        - minecraft:stripped_warped_stem
+        - minecraft:tall_grass
+        - minecraft:tuff
+        - minecraft:warped_hyphae
+        - minecraft:warped_nylium
+        - minecraft:warped_roots
+        - minecraft:warped_stem
+        - minecraft:warped_wart_block
+        - minecraft:weeping_vines
         - "*_leaves"
         - "infested_*"
+        - "*crimson_*"                      # Should be safe since items are grabbed above
+        - "*hyphae_*"
+        - "#minecraft:dirt"
       assign:
         value:
           default: junk
+          epic:
+            - "#c:storage_blocks"
         kind: block_junk
         amount_class:
           default: chaotic
@@ -882,50 +951,325 @@ loot_classification:
         Conservative fallback for uncategorized items pending manual review.
 
   affinity_rules:
+    
+    # ---- Realms
+
     - id: affinity_end
       priority: 50
       match:
         - minecraft:chorus_flower
-        - "#c:end_materials"
+        - minecraft:chorus_fruit
+        - minecraft:popped_chorus_fruit
+        - minecraft:recovery_compass
+        - "dragon_*"
+        - "purpur*"
+        - "end_stone*"
+        - "shulker_*"
+        - "#c:shulker_boxes"
+        - "#c:chests/ender"
+        - "#c:netherracks"
       add: end
 
     - id: affinity_nether
       priority: 50
       match:
-        - blaze_rod
-        - "minecraft:nether_carver_replaceables"
+        - minecraft:ancient_debris
+        - minecraft:blaze_rod
+        - minecraft:weeping_vines
+        - minecraft:twisting_vines
+        - "crimson_*"               # This makes the dyed items rarer too, I think it's neat
+        - "ghast_*"
+        - "magma*"
+        - "nether_*"
+        - "red_nether_*"
+        - "netherite_*"
+        - "soul_*"
+        - "warped_*"
+        - "glowstone*"
+        - "wither_*"
+        - "#c:obsidians"
       add: nether
 
-    - id: affinity_underground
+    - id: affinity_underground        # Y-based
       priority: 40
       match:
         - minecraft:pointed_dripstone
+        - minecraft:axolotl_bucket
+        - minecraft:glow_berries
         - "*_pickaxe"
-        - "*_minecart"
+        - "*minecart*"
+        - "*dripleaf*"
+        - "#minecraft:rails"
+        - "#c:raw_materials"
         - "#c:ores"
+        - "#c:gems"
+        - "#c:stones"
       add: underground
+
+    - id: affinity_deep_under         # Y-based, not biome-based
+      priority: 40
+      match:
+        - minecraft:redstone
+        - minecraft:redstone_block
+        - minecraft:lava_bucket
+        - magma_block
+        - minecraft:obsidian
+        - "*deepslate*"
+        - "#buds"
+        - "#c:slime_balls"
+        - "#c:slimeballs"
+        - "#c:storage_blocks/slime"
+      add: deep_underground
 
     - id: affinity_sea
       priority: 40
       match:
         - minecraft:sponge
         - minecraft:wet_sponge
+        - minecraft:pufferfish_bucket
+        - minecraft:seagrass
+        - "*kelp*"
+        - "*prismarine*"
+        - "*_coral*"
+        - "#minecraft:boats"
+        - "#minecraft:fishes"
+        - "#minecraft:enchantable/trident"
       add: sea
+
+    
+    # ---- Biome-Based Environments
 
     - id: affinity_desert
       priority: 40
       match:
-        - minecraft:sandstone
+        - "red_sandstone*"
+        - "sandstone*"
+        - "#c:sands"
+        - "#minecraft:terracotta"
+        - "#c:glazed_terracottas"
+        - "#c:crops/cactus"
+        - "#minecraft:camel_food"
       add: desert
+
+    - id: affinity_jungle
+      priority: 40
+      match:
+        - minecraft:cocoa_beans
+        - minecraft:tropical_fish
+        - minecraft:tropical_fish_bucket
+        - "bamboo_*"
+        - "jungle_*"
+      add: jungle
 
     - id: affinity_arctic
       priority: 40
       match:
+        - minecraft:ice
         - minecraft:snow
+        - minecraft:powder_snow_bucket
+        - "*_ice"
       add: arctic
+
+    - id: affinity_swamp
+      priority: 40
+      match:
+        - minecraft:mud
+        - minecraft:tadpole_bucket
+        - minecraft:packed_mud
+        - "mangrove_*"
+        - "mushroom_*"
+      add: swamp
+
+    - id: affinity_forest
+      priority: 40
+      match:
+        - minecraft:campfire
+        - "mossy_*"
+      add: forest
+
+    
+    # ---- Settlements
+
+    - id: affinity_fortification
+      priority: 30
+      match:
+        - minecraft:coal
+        - minecraft:coal_block
+        - minecraft:tnt
+        - "iron_*"
+        - "*_banner_pattern"
+        - "#minecraft:banners"
+        - "#c:concretes"
+        - "#c:concrete_powders"
+        - "#c:gunpowders"
+      add: fortification
+
+    - id: affinity_ruins
+      priority: 30
+      match:
+        - minecraft:tripwire_hook
+      add: ruins
 
     - id: affinity_village
       priority: 30
       match:
         - minecraft:wheat
+        - minecraft:azalea
+        - minecraft:flowering_azalea
+        - minecraft:charcoal
+        - minecraft:egg
+        - minecraft:sugar
+        - minecraft:flint_and_steel
+        - minecraft:furnace
+        - minecraft:milk_bucket
+        - minecraft:water_bucket
+        - minecraft:item_frame
+        - "*_hoe"
+        - "*_shovel"
+        - "oak_*"
+        - "birch_*"
+        - "spruce_*"
+        - "#c:barrels"
+        - "#c:fences/wooden"
+        - "#minecraft:hanging_signs"
+        - "#minecraft:candles"
       add: village
+
+    - id: affinity_treasure
+      priority: 30
+      match:
+        - minecraft:enchanted_book
+        - "firework_*"
+        - "gold*"
+        - "#c:gems"
+        - "#minecraft:trim_templates"
+        - "#c:foods/golden"
+        - "#c:potions"
+        - "#c:music_discs"
+      add: treasure
+
+    # todo: Figure out how/where I want to handle weapons and armor as separate concepts
+
+    
+    # ---- Occupational
+
+    - id: affinity_archaeology
+      priority: 30
+      match:
+        - minecraft:brush
+        - "#minecraft:decorated_pot_sherds"
+      add: archaeology
+
+    - id: affinity_smithing
+      priority: 20
+      match:
+        - minecraft:cauldron
+        - minecraft:gilded_blackstone
+        - "#c:ores"
+        - "#c:ingots"
+        - "#minecraft:anvil"
+        - "#c:chains"
+      add: smithing
+
+    - id: affinity_fletching
+      priority: 20
+      match:
+        - minecraft:stick
+        - minecraft:flint
+        - minecraft:target
+        - "#c:ores"
+        - "#minecraft:arrows"
+        - "#c:tools/bow"
+        - "#c:feathers"
+        - "#c:strings"
+      add: fletching
+
+    - id: affinity_leatherworking
+      priority: 20
+      match:
+        - minecraft:rabbit_hide
+        - minecraft:rabbit_foot
+        - minecraft:bundle
+        - "#c:dyes"
+        - "#c:leathers"
+        - "#minecraft:dyeable"
+        - "#rabidbalance:leather_joinery"
+      add: leatherworking
+
+    - id: affinity_clerical
+      priority: 20
+      match:
+        - minecraft:rotten_flesh
+        - minecraft:gold_nugget
+        - minecraft:emerald
+        - minecraft:brewing_stand
+        - minecraft:glass_bottle
+        - "#c:glass_panes"
+      add: clerical
+
+    - id: affinity_woolworking
+      priority: 20
+      match:
+        - "*_banner_pattern"
+        - "#c:tools/shear"
+        - "#c:dyes"
+        - "#minecraft:wool"
+        - "#minecraft:wool_carpets"
+        - "#minecraft:banners"
+      add: woolworking
+
+    - id: affinity_masonry
+      priority: 20
+      match:
+        - minecraft:clay_ball
+        - "chiseled_*"
+        - "cut_*"
+        - "polished_*"
+        - "smooth_*"
+        - "brick_*"
+        - "stone_brick_*"
+        - "_tile*"
+        - "#c:glazed_terracottas"
+        - "#c:bricks"
+        - "#minecraft:slabs/stone"  # doesn't exist yet
+        - "#c:cobblestones"
+      add: masonry
+
+    - id: affinity_farming
+      priority: 20
+      match:
+        - minecraft:composter
+        - "#c:fertilizers"
+        - "#c:crops"
+        - "#c:seeds"
+      add: farming
+
+    - id: affinity_library
+      priority: 20
+      match:
+        - "#minecraft:bookshelf_books"
+        - "#c:bookshelves"
+      add: library
+
+    - id: affinity_cartography
+      priority: 20
+      match:
+        - minecraft:compass
+      add: cartography
+
+    - id: affinity_butchery
+      priority: 20
+      match:
+        - minecraft:rabbit_stew
+        - "#c:foods/cooked_meat"
+        - "#c:foods/raw_meat"
+      add: butchery
+
+    - id: affinity_fishing
+      priority: 20
+      match:
+        - minecraft:cod_bucket
+        - minecraft:salmon_bucket
+        - "#c:foods/raw_fish"
+        - "#c:tools/fishing_rod"
+      add: fishing
