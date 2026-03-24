@@ -11,9 +11,7 @@
     [
         "minecraft:buttons",
         "minecraft:wooden_buttons",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:acacia_chest_boat":
     [
@@ -28,9 +26,7 @@
     [
         "minecraft:doors",
         "minecraft:wooden_doors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:acacia_fence":
     [
@@ -48,9 +44,7 @@
         "c:fence_gates",
         "c:fence_gates/wooden",
         "minecraft:fence_gates",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:acacia_hanging_sign":
     [
@@ -64,9 +58,7 @@
     [
         "minecraft:completes_find_tree_tutorial",
         "minecraft:leaves",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:acacia_log":
     [
@@ -74,61 +66,45 @@
         "minecraft:completes_find_tree_tutorial",
         "minecraft:logs",
         "minecraft:logs_that_burn",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:acacia_planks":
     [
         "minecraft:planks",
-        "rabidbalance:loot/amount/bulk",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:acacia_pressure_plate":
     [
         "minecraft:wooden_pressure_plates",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:acacia_sapling":
     [
         "minecraft:saplings",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/plantable",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/plantable"
     ],
     "minecraft:acacia_sign":
     [
         "minecraft:signs",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:acacia_slab":
     [
         "minecraft:slabs",
         "minecraft:wooden_slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:acacia_stairs":
     [
         "minecraft:stairs",
         "minecraft:wooden_stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:acacia_trapdoor":
     [
         "minecraft:trapdoors",
         "minecraft:wooden_trapdoors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:acacia_wood":
     [
@@ -136,9 +112,7 @@
         "minecraft:completes_find_tree_tutorial",
         "minecraft:logs",
         "minecraft:logs_that_burn",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:activator_rail":
     [
@@ -160,9 +134,7 @@
     ],
     "minecraft:allay_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:allium":
     [
@@ -170,22 +142,16 @@
         "minecraft:bee_food",
         "minecraft:flowers",
         "minecraft:small_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:amethyst_block":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:amethyst_cluster":
     [
         "c:clusters",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:amethyst_shard":
     [
@@ -203,7 +169,6 @@
         "c:ore_rates/singular",
         "c:ores",
         "c:ores/netherite_scrap",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/nether",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
@@ -222,23 +187,17 @@
     "minecraft:andesite_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:andesite_stairs":
     [
         "minecraft:stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:andesite_wall":
     [
         "minecraft:walls",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:angler_pottery_sherd":
     [
@@ -263,9 +222,7 @@
         "c:foods",
         "c:foods/fruit",
         "minecraft:horse_food",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/food",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/food"
     ],
     "minecraft:archer_pottery_sherd":
     [
@@ -278,15 +235,11 @@
     ],
     "minecraft:armadillo_scute":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:armadillo_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:armor_stand":
     [
@@ -323,9 +276,7 @@
     ],
     "minecraft:axolotl_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:azalea":
     [
@@ -339,9 +290,7 @@
     [
         "minecraft:completes_find_tree_tutorial",
         "minecraft:leaves",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:azure_bluet":
     [
@@ -349,24 +298,18 @@
         "minecraft:bee_food",
         "minecraft:flowers",
         "minecraft:small_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:baked_potato":
     [
         "c:foods",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/food",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/food"
     ],
     "minecraft:bamboo":
     [
         "c:animal_foods",
         "minecraft:panda_food",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/plantable",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/plantable"
     ],
     "minecraft:bamboo_block":
     [
@@ -530,45 +473,31 @@
     ],
     "minecraft:barrier":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:basalt":
     [
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:bat_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:beacon":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_functional",
-        "rabidbalance:loot/value/unique"
+        "rabidbalance:loot/kind/block_functional"
     ],
     "minecraft:bedrock":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:bee_nest":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_functional",
-        "rabidbalance:loot/value/unique"
+        "rabidbalance:loot/kind/block_functional"
     ],
     "minecraft:bee_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:beef":
     [
@@ -619,16 +548,12 @@
     [
         "c:foods",
         "c:foods/soup",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/food",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/food"
     ],
     "minecraft:bell":
     [
         "minecraft:piglin_loved",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_functional",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_functional"
     ],
     "minecraft:big_dripleaf":
     [
@@ -809,9 +734,7 @@
         "c:dyed",
         "c:dyed/black",
         "minecraft:beds",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:black_candle":
     [
@@ -891,9 +814,7 @@
         "c:dyed/black",
         "c:glass_blocks",
         "c:glass_blocks/cheap",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:black_stained_glass_pane":
     [
@@ -930,30 +851,22 @@
     [
         "minecraft:stone_crafting_materials",
         "minecraft:stone_tool_materials",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:blackstone_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:blackstone_stairs":
     [
         "minecraft:stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:blackstone_wall":
     [
         "minecraft:walls",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:blade_pottery_sherd":
     [
@@ -967,15 +880,11 @@
     "minecraft:blast_furnace":
     [
         "c:villager_job_sites",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_functional",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_functional"
     ],
     "minecraft:blaze_powder":
     [
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:blaze_rod":
     [
@@ -988,9 +897,7 @@
     ],
     "minecraft:blaze_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:blue_banner":
     [
@@ -1008,9 +915,7 @@
         "c:dyed",
         "c:dyed/blue",
         "minecraft:beds",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:blue_candle":
     [
@@ -1088,9 +993,7 @@
         "minecraft:bee_food",
         "minecraft:flowers",
         "minecraft:small_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:blue_shulker_box":
     [
@@ -1108,9 +1011,7 @@
         "c:dyed/blue",
         "c:glass_blocks",
         "c:glass_blocks/cheap",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:blue_stained_glass_pane":
     [
@@ -1171,9 +1072,7 @@
     [
         "c:storage_blocks",
         "c:storage_blocks/bone_meal",
-        "rabidbalance:loot/amount/tiny",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:bone_meal":
     [
@@ -1215,13 +1114,10 @@
     ],
     "minecraft:bowl":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/cosmetic",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/cosmetic"
     ],
     "minecraft:brain_coral":
     [
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/sea",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
@@ -1249,23 +1145,17 @@
     [
         "c:foods",
         "c:foods/bread",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/food",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/food"
     ],
     "minecraft:breeze_rod":
     [
         "c:rods",
         "c:rods/breeze",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/magic",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/magic"
     ],
     "minecraft:breeze_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:brewer_pottery_sherd":
     [
@@ -1320,9 +1210,7 @@
     ],
     "minecraft:bricks":
     [
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:brown_banner":
     [
@@ -1340,9 +1228,7 @@
         "c:dyed",
         "c:dyed/brown",
         "minecraft:beds",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:brown_candle":
     [
@@ -1409,15 +1295,11 @@
     "minecraft:brown_mushroom":
     [
         "c:mushrooms",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:brown_mushroom_block":
     [
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:brown_shulker_box":
     [
@@ -1435,9 +1317,7 @@
         "c:dyed/brown",
         "c:glass_blocks",
         "c:glass_blocks/cheap",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:brown_stained_glass_pane":
     [
@@ -1509,16 +1389,12 @@
     [
         "c:buckets",
         "c:buckets/empty",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/tool",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/tool"
     ],
     "minecraft:budding_amethyst":
     [
         "c:budding_blocks",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:bundle":
     [
@@ -1552,15 +1428,11 @@
     [
         "c:foods",
         "c:foods/edible_when_placed",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/food",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/food"
     ],
     "minecraft:calcite":
     [
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:calibrated_sculk_sensor":
     [
@@ -1571,9 +1443,7 @@
     ],
     "minecraft:camel_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:campfire":
     [
@@ -1610,16 +1480,12 @@
         "c:enchantables",
         "minecraft:enchantable/durability",
         "minecraft:enchantable/vanishing",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/utility",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/utility"
     ],
     "minecraft:cartography_table":
     [
         "c:villager_job_sites",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_functional",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_functional"
     ],
     "minecraft:carved_pumpkin":
     [
@@ -1628,9 +1494,7 @@
         "c:pumpkins/carved",
         "minecraft:enchantable/equippable",
         "minecraft:enchantable/vanishing",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/cosmetic",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/cosmetic"
     ],
     "minecraft:cat_spawn_egg":
     [
@@ -1649,9 +1513,7 @@
     ],
     "minecraft:cave_spider_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:chain":
     [
@@ -1663,9 +1525,7 @@
     ],
     "minecraft:chain_command_block":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:chainmail_boots":
     [
@@ -1678,9 +1538,7 @@
         "minecraft:enchantable/vanishing",
         "minecraft:foot_armor",
         "minecraft:trimmable_armor",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/combat",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/combat"
     ],
     "minecraft:chainmail_chestplate":
     [
@@ -1693,9 +1551,7 @@
         "minecraft:enchantable/equippable",
         "minecraft:enchantable/vanishing",
         "minecraft:trimmable_armor",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/combat",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/combat"
     ],
     "minecraft:chainmail_helmet":
     [
@@ -1708,9 +1564,7 @@
         "minecraft:enchantable/vanishing",
         "minecraft:head_armor",
         "minecraft:trimmable_armor",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/combat",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/combat"
     ],
     "minecraft:chainmail_leggings":
     [
@@ -1723,9 +1577,7 @@
         "minecraft:enchantable/vanishing",
         "minecraft:leg_armor",
         "minecraft:trimmable_armor",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/combat",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/combat"
     ],
     "minecraft:charcoal":
     [
@@ -1747,9 +1599,7 @@
     [
         "minecraft:buttons",
         "minecraft:wooden_buttons",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:cherry_chest_boat":
     [
@@ -1764,9 +1614,7 @@
     [
         "minecraft:doors",
         "minecraft:wooden_doors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:cherry_fence":
     [
@@ -1784,9 +1632,7 @@
         "c:fence_gates",
         "c:fence_gates/wooden",
         "minecraft:fence_gates",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:cherry_hanging_sign":
     [
@@ -1803,9 +1649,7 @@
         "minecraft:completes_find_tree_tutorial",
         "minecraft:flowers",
         "minecraft:leaves",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:cherry_log":
     [
@@ -1813,61 +1657,45 @@
         "minecraft:completes_find_tree_tutorial",
         "minecraft:logs",
         "minecraft:logs_that_burn",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:cherry_planks":
     [
         "minecraft:planks",
-        "rabidbalance:loot/amount/bulk",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:cherry_pressure_plate":
     [
         "minecraft:wooden_pressure_plates",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:cherry_sapling":
     [
         "minecraft:saplings",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/plantable",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/plantable"
     ],
     "minecraft:cherry_sign":
     [
         "minecraft:signs",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:cherry_slab":
     [
         "minecraft:slabs",
         "minecraft:wooden_slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:cherry_stairs":
     [
         "minecraft:stairs",
         "minecraft:wooden_stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:cherry_trapdoor":
     [
         "minecraft:trapdoors",
         "minecraft:wooden_trapdoors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:cherry_wood":
     [
@@ -1875,17 +1703,13 @@
         "minecraft:completes_find_tree_tutorial",
         "minecraft:logs",
         "minecraft:logs_that_burn",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:chest":
     [
         "c:chests",
         "c:chests/wooden",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_storage",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/block_storage"
     ],
     "minecraft:chest_minecart":
     [
@@ -1909,9 +1733,7 @@
     ],
     "minecraft:chicken_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:chipped_anvil":
     [
@@ -2053,9 +1875,7 @@
     "minecraft:clock":
     [
         "minecraft:piglin_loved",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/tool",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/tool"
     ],
     "minecraft:coal":
     [
@@ -2081,7 +1901,6 @@
         "c:ores/coal",
         "c:ores_in_ground/stone",
         "minecraft:coal_ores",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/small",
@@ -2091,9 +1910,7 @@
     "minecraft:coarse_dirt":
     [
         "minecraft:dirt",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:coast_armor_trim_smithing_template":
     [
@@ -2153,23 +1970,17 @@
     "minecraft:cobblestone_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:cobblestone_stairs":
     [
         "minecraft:stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:cobblestone_wall":
     [
         "minecraft:walls",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:cobweb":
     [
@@ -2213,15 +2024,11 @@
     ],
     "minecraft:cod_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:command_block":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:command_block_minecart":
     [
@@ -2232,9 +2039,7 @@
     ],
     "minecraft:comparator":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:compass":
     [
@@ -2347,17 +2152,13 @@
         "c:foods",
         "c:foods/cookie",
         "minecraft:parrot_poisonous_food",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/food",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/food"
     ],
     "minecraft:copper_block":
     [
         "c:storage_blocks",
         "c:storage_blocks/copper",
-        "rabidbalance:loot/amount/tiny",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:copper_bulb":
     [
@@ -2369,15 +2170,11 @@
     "minecraft:copper_door":
     [
         "minecraft:doors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:copper_grate":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:copper_ingot":
     [
@@ -2396,7 +2193,6 @@
         "c:ores/copper",
         "c:ores_in_ground/stone",
         "minecraft:copper_ores",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/small",
@@ -2406,9 +2202,7 @@
     "minecraft:copper_trapdoor":
     [
         "minecraft:trapdoors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:cornflower":
     [
@@ -2416,15 +2210,11 @@
         "minecraft:bee_food",
         "minecraft:flowers",
         "minecraft:small_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:cow_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:cracked_deepslate_bricks":
     [
@@ -2444,9 +2234,7 @@
     ],
     "minecraft:cracked_nether_bricks":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:cracked_polished_blackstone_bricks":
     [
@@ -2458,22 +2246,16 @@
     "minecraft:cracked_stone_bricks":
     [
         "minecraft:stone_bricks",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:crafter":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:crafting_table":
     [
         "c:player_workstations/crafting_tables",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_functional",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_functional"
     ],
     "minecraft:creeper_banner_pattern":
     [
@@ -2490,9 +2272,7 @@
         "minecraft:enchantable/vanishing",
         "minecraft:noteblock_top_instruments",
         "minecraft:skulls",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/cosmetic",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/cosmetic"
     ],
     "minecraft:creeper_spawn_egg":
     [
@@ -2666,9 +2446,7 @@
         "minecraft:enchantable/crossbow",
         "minecraft:enchantable/durability",
         "minecraft:enchantable/vanishing",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/combat",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/combat"
     ],
     "minecraft:crying_obsidian":
     [
@@ -2756,9 +2534,7 @@
         "c:dyed",
         "c:dyed/cyan",
         "minecraft:beds",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:cyan_candle":
     [
@@ -2838,9 +2614,7 @@
         "c:dyed/cyan",
         "c:glass_blocks",
         "c:glass_blocks/cheap",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:cyan_stained_glass_pane":
     [
@@ -2888,9 +2662,7 @@
         "minecraft:flowers",
         "minecraft:rabbit_food",
         "minecraft:small_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:danger_pottery_sherd":
     [
@@ -2913,9 +2685,7 @@
     [
         "minecraft:buttons",
         "minecraft:wooden_buttons",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:dark_oak_chest_boat":
     [
@@ -2930,9 +2700,7 @@
     [
         "minecraft:doors",
         "minecraft:wooden_doors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:dark_oak_fence":
     [
@@ -2950,9 +2718,7 @@
         "c:fence_gates",
         "c:fence_gates/wooden",
         "minecraft:fence_gates",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:dark_oak_hanging_sign":
     [
@@ -2966,9 +2732,7 @@
     [
         "minecraft:completes_find_tree_tutorial",
         "minecraft:leaves",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:dark_oak_log":
     [
@@ -2976,61 +2740,45 @@
         "minecraft:dark_oak_logs",
         "minecraft:logs",
         "minecraft:logs_that_burn",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:dark_oak_planks":
     [
         "minecraft:planks",
-        "rabidbalance:loot/amount/bulk",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:dark_oak_pressure_plate":
     [
         "minecraft:wooden_pressure_plates",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:dark_oak_sapling":
     [
         "minecraft:saplings",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/plantable",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/plantable"
     ],
     "minecraft:dark_oak_sign":
     [
         "minecraft:signs",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:dark_oak_slab":
     [
         "minecraft:slabs",
         "minecraft:wooden_slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:dark_oak_stairs":
     [
         "minecraft:stairs",
         "minecraft:wooden_stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:dark_oak_trapdoor":
     [
         "minecraft:trapdoors",
         "minecraft:wooden_trapdoors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:dark_oak_wood":
     [
@@ -3038,9 +2786,7 @@
         "minecraft:dark_oak_logs",
         "minecraft:logs",
         "minecraft:logs_that_burn",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:dark_prismarine":
     [
@@ -3116,9 +2862,7 @@
     ],
     "minecraft:dead_bush":
     [
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:dead_fire_coral":
     [
@@ -3196,9 +2940,7 @@
     ],
     "minecraft:decorated_pot":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/cosmetic",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/cosmetic"
     ],
     "minecraft:deepslate":
     [
@@ -3249,7 +2991,6 @@
         "c:ores_in_ground/deepslate",
         "minecraft:coal_ores",
         "rabidbalance:loot/affinity/deep_underground",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/small",
@@ -3264,7 +3005,6 @@
         "c:ores_in_ground/deepslate",
         "minecraft:copper_ores",
         "rabidbalance:loot/affinity/deep_underground",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/small",
@@ -3279,7 +3019,6 @@
         "c:ores_in_ground/deepslate",
         "minecraft:diamond_ores",
         "rabidbalance:loot/affinity/deep_underground",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/small",
@@ -3294,7 +3033,6 @@
         "c:ores_in_ground/deepslate",
         "minecraft:emerald_ores",
         "rabidbalance:loot/affinity/deep_underground",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/small",
@@ -3310,7 +3048,6 @@
         "minecraft:gold_ores",
         "minecraft:piglin_loved",
         "rabidbalance:loot/affinity/deep_underground",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/small",
@@ -3325,7 +3062,6 @@
         "c:ores_in_ground/deepslate",
         "minecraft:iron_ores",
         "rabidbalance:loot/affinity/deep_underground",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/small",
@@ -3340,7 +3076,6 @@
         "c:ores_in_ground/deepslate",
         "minecraft:lapis_ores",
         "rabidbalance:loot/affinity/deep_underground",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/small",
@@ -3355,7 +3090,6 @@
         "c:ores_in_ground/deepslate",
         "minecraft:redstone_ores",
         "rabidbalance:loot/affinity/deep_underground",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/small",
@@ -3426,17 +3160,13 @@
         "minecraft:enchantable/sharp_weapon",
         "minecraft:enchantable/vanishing",
         "minecraft:enchantable/weapon",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/tool",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/tool"
     ],
     "minecraft:diamond_block":
     [
         "c:storage_blocks",
         "c:storage_blocks/diamond",
-        "rabidbalance:loot/amount/tiny",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:diamond_boots":
     [
@@ -3449,9 +3179,7 @@
         "minecraft:enchantable/vanishing",
         "minecraft:foot_armor",
         "minecraft:trimmable_armor",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/combat",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/combat"
     ],
     "minecraft:diamond_chestplate":
     [
@@ -3464,9 +3192,7 @@
         "minecraft:enchantable/equippable",
         "minecraft:enchantable/vanishing",
         "minecraft:trimmable_armor",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/combat",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/combat"
     ],
     "minecraft:diamond_helmet":
     [
@@ -3479,9 +3205,7 @@
         "minecraft:enchantable/vanishing",
         "minecraft:head_armor",
         "minecraft:trimmable_armor",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/combat",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/combat"
     ],
     "minecraft:diamond_hoe":
     [
@@ -3500,9 +3224,7 @@
     ],
     "minecraft:diamond_horse_armor":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/combat",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/combat"
     ],
     "minecraft:diamond_leggings":
     [
@@ -3515,9 +3237,7 @@
         "minecraft:enchantable/vanishing",
         "minecraft:leg_armor",
         "minecraft:trimmable_armor",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/combat",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/combat"
     ],
     "minecraft:diamond_ore":
     [
@@ -3526,7 +3246,6 @@
         "c:ores/diamond",
         "c:ores_in_ground/stone",
         "minecraft:diamond_ores",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/small",
@@ -3578,9 +3297,7 @@
         "minecraft:enchantable/vanishing",
         "minecraft:enchantable/weapon",
         "minecraft:swords",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/combat",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/combat"
     ],
     "minecraft:diorite":
     [
@@ -3593,60 +3310,42 @@
     "minecraft:diorite_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:diorite_stairs":
     [
         "minecraft:stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:diorite_wall":
     [
         "minecraft:walls",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:dirt":
     [
         "minecraft:dirt",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:dirt_path":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:disc_fragment_5":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/cosmetic",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/cosmetic"
     ],
     "minecraft:dispenser":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:dolphin_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:donkey_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:dragon_breath":
     [
@@ -3701,15 +3400,11 @@
     ],
     "minecraft:dropper":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:drowned_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:dune_armor_trim_smithing_template":
     [
@@ -3721,9 +3416,7 @@
     ],
     "minecraft:echo_shard":
     [
-        "rabidbalance:loot/amount/tiny",
-        "rabidbalance:loot/kind/magic",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/magic"
     ],
     "minecraft:egg":
     [
@@ -3735,9 +3428,7 @@
     ],
     "minecraft:elder_guardian_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:elytra":
     [
@@ -3745,9 +3436,7 @@
         "minecraft:enchantable/durability",
         "minecraft:enchantable/equippable",
         "minecraft:enchantable/vanishing",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/utility",
-        "rabidbalance:loot/value/unique"
+        "rabidbalance:loot/kind/utility"
     ],
     "minecraft:emerald":
     [
@@ -3766,9 +3455,7 @@
     [
         "c:storage_blocks",
         "c:storage_blocks/emerald",
-        "rabidbalance:loot/amount/tiny",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:emerald_ore":
     [
@@ -3777,7 +3464,6 @@
         "c:ores/emerald",
         "c:ores_in_ground/stone",
         "minecraft:emerald_ores",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/small",
@@ -3816,9 +3502,7 @@
     ],
     "minecraft:end_crystal":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/unique"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:end_portal_frame":
     [
@@ -3884,28 +3568,20 @@
     ],
     "minecraft:ender_dragon_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:ender_eye":
     [
-        "rabidbalance:loot/amount/tiny",
-        "rabidbalance:loot/kind/magic",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/magic"
     ],
     "minecraft:ender_pearl":
     [
         "c:ender_pearls",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/magic",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/magic"
     ],
     "minecraft:enderman_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:endermite_spawn_egg":
     [
@@ -3916,15 +3592,11 @@
     ],
     "minecraft:evoker_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:experience_bottle":
     [
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/magic",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/magic"
     ],
     "minecraft:explorer_pottery_sherd":
     [
@@ -3937,9 +3609,7 @@
     ],
     "minecraft:exposed_chiseled_copper":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:exposed_copper":
     [
@@ -3958,42 +3628,30 @@
     "minecraft:exposed_copper_door":
     [
         "minecraft:doors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:exposed_copper_grate":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:exposed_copper_trapdoor":
     [
         "minecraft:trapdoors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:exposed_cut_copper":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:exposed_cut_copper_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:exposed_cut_copper_stairs":
     [
         "minecraft:stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:eye_armor_trim_smithing_template":
     [
@@ -4005,9 +3663,7 @@
     ],
     "minecraft:farmland":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:feather":
     [
@@ -4026,22 +3682,16 @@
     ],
     "minecraft:fern":
     [
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:filled_map":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/tool",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/tool"
     ],
     "minecraft:fire_charge":
     [
         "minecraft:creeper_igniters",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/magic",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/magic"
     ],
     "minecraft:fire_coral":
     [
@@ -4097,9 +3747,7 @@
     "minecraft:fletching_table":
     [
         "c:villager_job_sites",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_functional",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_functional"
     ],
     "minecraft:flint":
     [
@@ -4156,9 +3804,7 @@
     ],
     "minecraft:flower_pot":
     [
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:flowering_azalea":
     [
@@ -4178,15 +3824,11 @@
         "minecraft:completes_find_tree_tutorial",
         "minecraft:flowers",
         "minecraft:leaves",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:fox_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:friend_pottery_sherd":
     [
@@ -4199,9 +3841,7 @@
     ],
     "minecraft:frog_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:frogspawn":
     [
@@ -4253,9 +3893,7 @@
         "c:glass_blocks",
         "c:glass_blocks/cheap",
         "c:glass_blocks/colorless",
-        "rabidbalance:loot/amount/medium",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:glass_bottle":
     [
@@ -4276,9 +3914,7 @@
     "minecraft:glistering_melon_slice":
     [
         "minecraft:piglin_loved",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:globe_banner_pattern":
     [
@@ -4309,9 +3945,7 @@
     ],
     "minecraft:glow_item_frame":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/cosmetic",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/cosmetic"
     ],
     "minecraft:glow_lichen":
     [
@@ -4322,9 +3956,7 @@
     ],
     "minecraft:glow_squid_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:glowstone":
     [
@@ -4397,7 +4029,6 @@
         "c:ores_in_ground/stone",
         "minecraft:gold_ores",
         "minecraft:piglin_loved",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/treasure",
         "rabidbalance:loot/affinity/underground",
@@ -4612,37 +4243,27 @@
     "minecraft:granite_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:granite_stairs":
     [
         "minecraft:stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:granite_wall":
     [
         "minecraft:walls",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:grass_block":
     [
         "minecraft:dirt",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:gravel":
     [
         "c:gravels",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:gray_banner":
     [
@@ -4660,9 +4281,7 @@
         "c:dyed",
         "c:dyed/gray",
         "minecraft:beds",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:gray_candle":
     [
@@ -4742,9 +4361,7 @@
         "c:dyed/gray",
         "c:glass_blocks",
         "c:glass_blocks/cheap",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:gray_stained_glass_pane":
     [
@@ -4793,9 +4410,7 @@
         "c:dyed",
         "c:dyed/green",
         "minecraft:beds",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:green_candle":
     [
@@ -4875,9 +4490,7 @@
         "c:dyed/green",
         "c:glass_blocks",
         "c:glass_blocks/cheap",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:green_stained_glass_pane":
     [
@@ -4913,9 +4526,7 @@
     "minecraft:grindstone":
     [
         "c:villager_job_sites",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_functional",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_functional"
     ],
     "minecraft:guardian_spawn_egg":
     [
@@ -4952,9 +4563,7 @@
     ],
     "minecraft:hanging_roots":
     [
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:hay_block":
     [
@@ -4964,9 +4573,7 @@
         "minecraft:horse_food",
         "minecraft:llama_food",
         "minecraft:llama_tempt_items",
-        "rabidbalance:loot/amount/tiny",
-        "rabidbalance:loot/kind/utility",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/utility"
     ],
     "minecraft:heart_of_the_sea":
     [
@@ -4995,36 +4602,26 @@
     ],
     "minecraft:heavy_core":
     [
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/unique"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:heavy_weighted_pressure_plate":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:hoglin_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:honey_block":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/cosmetic",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/cosmetic"
     ],
     "minecraft:honey_bottle":
     [
         "c:drinks",
         "c:drinks/honey",
         "c:foods",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/food",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/food"
     ],
     "minecraft:honeycomb":
     [
@@ -5042,9 +4639,7 @@
     ],
     "minecraft:hopper":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:hopper_minecart":
     [
@@ -5115,9 +4710,7 @@
     ],
     "minecraft:infested_chiseled_stone_bricks":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:infested_cobblestone":
     [
@@ -5130,9 +4723,7 @@
     ],
     "minecraft:infested_cracked_stone_bricks":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:infested_deepslate":
     [
@@ -5157,15 +4748,11 @@
     ],
     "minecraft:infested_stone_bricks":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:ink_sac":
     [
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:iron_axe":
     [
@@ -5333,7 +4920,6 @@
         "c:ores/iron",
         "c:ores_in_ground/stone",
         "minecraft:iron_ores",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/fortification",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
@@ -5412,9 +4998,7 @@
     [
         "c:pumpkins",
         "c:pumpkins/jack_o_lanterns",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/cosmetic",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/cosmetic"
     ],
     "minecraft:jigsaw":
     [
@@ -5623,9 +5207,7 @@
     [
         "c:storage_blocks",
         "c:storage_blocks/lapis",
-        "rabidbalance:loot/amount/tiny",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:lapis_lazuli":
     [
@@ -5646,7 +5228,6 @@
         "c:ores/lapis",
         "c:ores_in_ground/stone",
         "minecraft:lapis_ores",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/small",
@@ -5656,9 +5237,7 @@
     "minecraft:large_amethyst_bud":
     [
         "c:buds",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:large_fern":
     [
@@ -5777,21 +5356,15 @@
     "minecraft:lectern":
     [
         "c:villager_job_sites",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_functional",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_functional"
     ],
     "minecraft:lever":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:light":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:light_blue_banner":
     [
@@ -5809,9 +5382,7 @@
         "c:dyed",
         "c:dyed/light_blue",
         "minecraft:beds",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:light_blue_candle":
     [
@@ -5891,9 +5462,7 @@
         "c:dyed/light_blue",
         "c:glass_blocks",
         "c:glass_blocks/cheap",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:light_blue_stained_glass_pane":
     [
@@ -5942,9 +5511,7 @@
         "c:dyed",
         "c:dyed/light_gray",
         "minecraft:beds",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:light_gray_candle":
     [
@@ -6024,9 +5591,7 @@
         "c:dyed/light_gray",
         "c:glass_blocks",
         "c:glass_blocks/cheap",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:light_gray_stained_glass_pane":
     [
@@ -6062,15 +5627,11 @@
     "minecraft:light_weighted_pressure_plate":
     [
         "minecraft:piglin_loved",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:lightning_rod":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:lilac":
     [
@@ -6078,9 +5639,7 @@
         "minecraft:bee_food",
         "minecraft:flowers",
         "minecraft:tall_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:lily_of_the_valley":
     [
@@ -6088,9 +5647,7 @@
         "minecraft:bee_food",
         "minecraft:flowers",
         "minecraft:small_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:lily_pad":
     [
@@ -6115,9 +5672,7 @@
         "c:dyed",
         "c:dyed/lime",
         "minecraft:beds",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:lime_candle":
     [
@@ -6197,9 +5752,7 @@
         "c:dyed/lime",
         "c:glass_blocks",
         "c:glass_blocks/cheap",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:lime_stained_glass_pane":
     [
@@ -6243,22 +5796,16 @@
     ],
     "minecraft:llama_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:lodestone":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_functional",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_functional"
     ],
     "minecraft:loom":
     [
         "c:villager_job_sites",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_functional",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_functional"
     ],
     "minecraft:mace":
     [
@@ -6272,9 +5819,7 @@
         "minecraft:enchantable/mace",
         "minecraft:enchantable/vanishing",
         "minecraft:enchantable/weapon",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/combat",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/combat"
     ],
     "minecraft:magenta_banner":
     [
@@ -6292,9 +5837,7 @@
         "c:dyed",
         "c:dyed/magenta",
         "minecraft:beds",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:magenta_candle":
     [
@@ -6374,9 +5917,7 @@
         "c:dyed/magenta",
         "c:glass_blocks",
         "c:glass_blocks/cheap",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:magenta_stained_glass_pane":
     [
@@ -6602,16 +6143,12 @@
     ],
     "minecraft:map":
     [
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/tool",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/tool"
     ],
     "minecraft:medium_amethyst_bud":
     [
         "c:buds",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:melon":
     [
@@ -6638,9 +6175,7 @@
     [
         "c:foods",
         "c:foods/fruit",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/food",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/food"
     ],
     "minecraft:milk_bucket":
     [
@@ -6679,22 +6214,16 @@
     ],
     "minecraft:mooshroom_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:moss_block":
     [
         "minecraft:dirt",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:moss_carpet":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/cosmetic",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/cosmetic"
     ],
     "minecraft:mossy_cobblestone":
     [
@@ -6782,42 +6311,30 @@
     "minecraft:mud_brick_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:mud_brick_stairs":
     [
         "minecraft:stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:mud_brick_wall":
     [
         "minecraft:walls",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:mud_bricks":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:muddy_mangrove_roots":
     [
         "minecraft:dirt",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:mule_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:mushroom_stem":
     [
@@ -7015,9 +6532,7 @@
     "minecraft:mycelium":
     [
         "minecraft:dirt",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:name_tag":
     [
@@ -7028,9 +6543,7 @@
     ],
     "minecraft:nautilus_shell":
     [
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:nether_brick":
     [
@@ -7092,7 +6605,6 @@
         "c:ores_in_ground/netherrack",
         "minecraft:gold_ores",
         "minecraft:piglin_loved",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/nether",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
@@ -7106,7 +6618,6 @@
         "c:ores",
         "c:ores/quartz",
         "c:ores_in_ground/netherrack",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/nether",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
@@ -7344,9 +6855,7 @@
     ],
     "minecraft:note_block":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:oak_boat":
     [
@@ -7506,7 +7015,6 @@
     ],
     "minecraft:observer":
     [
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/singleton",
@@ -7525,9 +7033,7 @@
     ],
     "minecraft:ocelot_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:ochre_froglight":
     [
@@ -7542,15 +7048,11 @@
         "c:drinks/magic",
         "c:drinks/ominous",
         "c:foods",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/magic",
-        "rabidbalance:loot/value/unique"
+        "rabidbalance:loot/kind/magic"
     ],
     "minecraft:ominous_trial_key":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/utility",
-        "rabidbalance:loot/value/unique"
+        "rabidbalance:loot/kind/utility"
     ],
     "minecraft:orange_banner":
     [
@@ -7568,9 +7070,7 @@
         "c:dyed",
         "c:dyed/orange",
         "minecraft:beds",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:orange_candle":
     [
@@ -7650,9 +7150,7 @@
         "c:dyed/orange",
         "c:glass_blocks",
         "c:glass_blocks/cheap",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:orange_stained_glass_pane":
     [
@@ -7680,9 +7178,7 @@
         "minecraft:bee_food",
         "minecraft:flowers",
         "minecraft:small_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:orange_wool":
     [
@@ -7701,9 +7197,7 @@
         "minecraft:bee_food",
         "minecraft:flowers",
         "minecraft:small_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:oxidized_chiseled_copper":
     [
@@ -7714,22 +7208,16 @@
     ],
     "minecraft:oxidized_copper":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:oxidized_copper_bulb":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:oxidized_copper_door":
     [
         "minecraft:doors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:oxidized_copper_grate":
     [
@@ -7741,9 +7229,7 @@
     "minecraft:oxidized_copper_trapdoor":
     [
         "minecraft:trapdoors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:oxidized_cut_copper":
     [
@@ -7755,16 +7241,12 @@
     "minecraft:oxidized_cut_copper_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:oxidized_cut_copper_stairs":
     [
         "minecraft:stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:packed_ice":
     [
@@ -7790,27 +7272,19 @@
     ],
     "minecraft:panda_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:paper":
     [
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:parrot_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:pearlescent_froglight":
     [
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:peony":
     [
@@ -7818,22 +7292,16 @@
         "minecraft:bee_food",
         "minecraft:flowers",
         "minecraft:tall_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:petrified_oak_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:phantom_membrane":
     [
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:phantom_spawn_egg":
     [
@@ -7859,9 +7327,7 @@
     ],
     "minecraft:piglin_brute_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:piglin_head":
     [
@@ -7870,9 +7336,7 @@
         "minecraft:enchantable/vanishing",
         "minecraft:noteblock_top_instruments",
         "minecraft:skulls",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/cosmetic",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/cosmetic"
     ],
     "minecraft:piglin_spawn_egg":
     [
@@ -7905,9 +7369,7 @@
         "c:dyed",
         "c:dyed/pink",
         "minecraft:beds",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:pink_candle":
     [
@@ -7976,9 +7438,7 @@
         "c:animal_foods",
         "minecraft:bee_food",
         "minecraft:flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:pink_shulker_box":
     [
@@ -7996,9 +7456,7 @@
         "c:dyed/pink",
         "c:glass_blocks",
         "c:glass_blocks/cheap",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:pink_stained_glass_pane":
     [
@@ -8026,9 +7484,7 @@
         "minecraft:bee_food",
         "minecraft:flowers",
         "minecraft:small_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:pink_wool":
     [
@@ -8043,9 +7499,7 @@
     ],
     "minecraft:piston":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:pitcher_plant":
     [
@@ -8053,9 +7507,7 @@
         "minecraft:bee_food",
         "minecraft:flowers",
         "minecraft:tall_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:pitcher_pod":
     [
@@ -8063,9 +7515,7 @@
         "minecraft:chicken_food",
         "minecraft:parrot_food",
         "minecraft:villager_plantable_seeds",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:player_head":
     [
@@ -8074,9 +7524,7 @@
         "minecraft:enchantable/vanishing",
         "minecraft:noteblock_top_instruments",
         "minecraft:skulls",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/cosmetic",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/cosmetic"
     ],
     "minecraft:plenty_pottery_sherd":
     [
@@ -8090,9 +7538,7 @@
     "minecraft:podzol":
     [
         "minecraft:dirt",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:pointed_dripstone":
     [
@@ -8105,9 +7551,7 @@
     [
         "c:foods",
         "c:foods/food_poisoning",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/food",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/food"
     ],
     "minecraft:polar_bear_spawn_egg":
     [
@@ -8354,9 +7798,7 @@
         "minecraft:bee_food",
         "minecraft:flowers",
         "minecraft:small_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:porkchop":
     [
@@ -8519,9 +7961,7 @@
     ],
     "minecraft:pufferfish_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:pumpkin":
     [
@@ -8538,9 +7978,7 @@
     [
         "c:foods",
         "c:foods/pie",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/food",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/food"
     ],
     "minecraft:pumpkin_seeds":
     [
@@ -8570,9 +8008,7 @@
         "c:dyed",
         "c:dyed/purple",
         "minecraft:beds",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:purple_candle":
     [
@@ -8652,9 +8088,7 @@
         "c:dyed/purple",
         "c:glass_blocks",
         "c:glass_blocks/cheap",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:purple_stained_glass_pane":
     [
@@ -8732,35 +8166,25 @@
     ],
     "minecraft:quartz_block":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:quartz_bricks":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:quartz_pillar":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:quartz_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:quartz_stairs":
     [
         "minecraft:stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:rabbit":
     [
@@ -8790,9 +8214,7 @@
     ],
     "minecraft:rabbit_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:rabbit_stew":
     [
@@ -8839,9 +8261,7 @@
     [
         "c:storage_blocks",
         "c:storage_blocks/raw_copper",
-        "rabidbalance:loot/amount/tiny",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:raw_gold":
     [
@@ -8858,9 +8278,7 @@
         "c:storage_blocks",
         "c:storage_blocks/raw_gold",
         "minecraft:piglin_loved",
-        "rabidbalance:loot/amount/tiny",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:raw_iron":
     [
@@ -8875,9 +8293,7 @@
     [
         "c:storage_blocks",
         "c:storage_blocks/raw_iron",
-        "rabidbalance:loot/amount/tiny",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:recovery_compass":
     [
@@ -8903,9 +8319,7 @@
         "c:dyed",
         "c:dyed/red",
         "minecraft:beds",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:red_candle":
     [
@@ -8972,15 +8386,11 @@
     "minecraft:red_mushroom":
     [
         "c:mushrooms",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:red_mushroom_block":
     [
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:red_nether_brick_slab":
     [
@@ -9077,9 +8487,7 @@
         "c:dyed/red",
         "c:glass_blocks",
         "c:glass_blocks/cheap",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:red_stained_glass_pane":
     [
@@ -9107,9 +8515,7 @@
         "minecraft:bee_food",
         "minecraft:flowers",
         "minecraft:small_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:red_wool":
     [
@@ -9155,7 +8561,6 @@
         "c:ores/redstone",
         "c:ores_in_ground/stone",
         "minecraft:redstone_ores",
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/small",
@@ -9164,9 +8569,7 @@
     ],
     "minecraft:redstone_torch":
     [
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:reinforced_deepslate":
     [
@@ -9178,7 +8581,6 @@
     ],
     "minecraft:repeater":
     [
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/singleton",
@@ -9195,9 +8597,7 @@
     ],
     "minecraft:respawn_anchor":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_functional",
-        "rabidbalance:loot/value/unique"
+        "rabidbalance:loot/kind/block_functional"
     ],
     "minecraft:rib_armor_trim_smithing_template":
     [
@@ -9210,9 +8610,7 @@
     "minecraft:rooted_dirt":
     [
         "minecraft:dirt",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:rose_bush":
     [
@@ -9220,9 +8618,7 @@
         "minecraft:bee_food",
         "minecraft:flowers",
         "minecraft:tall_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:rotten_flesh":
     [
@@ -9238,9 +8634,7 @@
     ],
     "minecraft:saddle":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/utility"
     ],
     "minecraft:salmon":
     [
@@ -9267,9 +8661,7 @@
     ],
     "minecraft:salmon_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:sand":
     [
@@ -9321,9 +8713,7 @@
     ],
     "minecraft:scaffolding":
     [
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:scrape_pottery_sherd":
     [
@@ -9336,15 +8726,11 @@
     ],
     "minecraft:sculk":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:sculk_catalyst":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:sculk_sensor":
     [
@@ -9362,9 +8748,7 @@
     ],
     "minecraft:sculk_vein":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:sea_lantern":
     [
@@ -9430,9 +8814,7 @@
     ],
     "minecraft:sheep_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:shelter_pottery_sherd":
     [
@@ -9450,9 +8832,7 @@
         "c:tools/shield",
         "minecraft:enchantable/durability",
         "minecraft:enchantable/vanishing",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/combat",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/combat"
     ],
     "minecraft:short_grass":
     [
@@ -9463,9 +8843,7 @@
     ],
     "minecraft:shroomlight":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/cosmetic",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/cosmetic"
     ],
     "minecraft:shulker_box":
     [
@@ -9506,9 +8884,7 @@
     ],
     "minecraft:skeleton_horse_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:skeleton_skull":
     [
@@ -9517,15 +8893,11 @@
         "minecraft:enchantable/vanishing",
         "minecraft:noteblock_top_instruments",
         "minecraft:skulls",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/cosmetic",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/cosmetic"
     ],
     "minecraft:skeleton_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:skull_banner_pattern":
     [
@@ -9574,9 +8946,7 @@
     "minecraft:small_amethyst_bud":
     [
         "c:buds",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:small_dripleaf":
     [
@@ -9588,16 +8958,12 @@
     "minecraft:smithing_table":
     [
         "c:villager_job_sites",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_functional",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_functional"
     ],
     "minecraft:smoker":
     [
         "c:villager_job_sites",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_functional",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_functional"
     ],
     "minecraft:smooth_basalt":
     [
@@ -9706,9 +9072,7 @@
     ],
     "minecraft:sniffer_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:sniffer_spawn_egg":
     [
@@ -9750,15 +9114,11 @@
     ],
     "minecraft:snow_golem_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:snowball":
     [
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:soul_campfire":
     [
@@ -9821,15 +9181,11 @@
         "c:foods",
         "c:foods/food_poisoning",
         "minecraft:armadillo_food",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/food",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/food"
     ],
     "minecraft:spider_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:spire_armor_trim_smithing_template":
     [
@@ -9860,9 +9216,7 @@
         "c:animal_foods",
         "minecraft:bee_food",
         "minecraft:flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:spruce_boat":
     [
@@ -10029,9 +9383,7 @@
     ],
     "minecraft:squid_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:stick":
     [
@@ -10044,9 +9396,7 @@
     ],
     "minecraft:sticky_piston":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:stone":
     [
@@ -10070,9 +9420,7 @@
         "minecraft:enchantable/sharp_weapon",
         "minecraft:enchantable/vanishing",
         "minecraft:enchantable/weapon",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/tool",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/tool"
     ],
     "minecraft:stone_brick_slab":
     [
@@ -10101,17 +9449,13 @@
     "minecraft:stone_bricks":
     [
         "minecraft:stone_bricks",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:stone_button":
     [
         "minecraft:buttons",
         "minecraft:stone_buttons",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:stone_hoe":
     [
@@ -10147,9 +9491,7 @@
     ],
     "minecraft:stone_pressure_plate":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:stone_shovel":
     [
@@ -10169,16 +9511,12 @@
     "minecraft:stone_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:stone_stairs":
     [
         "minecraft:stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:stone_sword":
     [
@@ -10193,28 +9531,20 @@
         "minecraft:enchantable/vanishing",
         "minecraft:enchantable/weapon",
         "minecraft:swords",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/combat",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/combat"
     ],
     "minecraft:stonecutter":
     [
         "c:villager_job_sites",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_functional",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_functional"
     ],
     "minecraft:stray_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:strider_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:string":
     [
@@ -10233,9 +9563,7 @@
         "minecraft:completes_find_tree_tutorial",
         "minecraft:logs",
         "minecraft:logs_that_burn",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:stripped_acacia_wood":
     [
@@ -10244,17 +9572,13 @@
         "minecraft:completes_find_tree_tutorial",
         "minecraft:logs",
         "minecraft:logs_that_burn",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:stripped_bamboo_block":
     [
         "c:stripped_logs",
         "minecraft:bamboo_blocks",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:stripped_birch_log":
     [
@@ -10263,9 +9587,7 @@
         "minecraft:completes_find_tree_tutorial",
         "minecraft:logs",
         "minecraft:logs_that_burn",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:stripped_birch_wood":
     [
@@ -10274,9 +9596,7 @@
         "minecraft:completes_find_tree_tutorial",
         "minecraft:logs",
         "minecraft:logs_that_burn",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:stripped_cherry_log":
     [
@@ -10285,9 +9605,7 @@
         "minecraft:completes_find_tree_tutorial",
         "minecraft:logs",
         "minecraft:logs_that_burn",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:stripped_cherry_wood":
     [
@@ -10296,9 +9614,7 @@
         "minecraft:completes_find_tree_tutorial",
         "minecraft:logs",
         "minecraft:logs_that_burn",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:stripped_crimson_hyphae":
     [
@@ -10307,9 +9623,7 @@
         "minecraft:crimson_stems",
         "minecraft:logs",
         "minecraft:non_flammable_wood",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:stripped_crimson_stem":
     [
@@ -10318,9 +9632,7 @@
         "minecraft:crimson_stems",
         "minecraft:logs",
         "minecraft:non_flammable_wood",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:stripped_dark_oak_log":
     [
@@ -10329,9 +9641,7 @@
         "minecraft:dark_oak_logs",
         "minecraft:logs",
         "minecraft:logs_that_burn",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:stripped_dark_oak_wood":
     [
@@ -10340,9 +9650,7 @@
         "minecraft:dark_oak_logs",
         "minecraft:logs",
         "minecraft:logs_that_burn",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:stripped_jungle_log":
     [
@@ -10351,9 +9659,7 @@
         "minecraft:jungle_logs",
         "minecraft:logs",
         "minecraft:logs_that_burn",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:stripped_jungle_wood":
     [
@@ -10362,9 +9668,7 @@
         "minecraft:jungle_logs",
         "minecraft:logs",
         "minecraft:logs_that_burn",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:stripped_mangrove_log":
     [
@@ -10373,9 +9677,7 @@
         "minecraft:logs",
         "minecraft:logs_that_burn",
         "minecraft:mangrove_logs",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:stripped_mangrove_wood":
     [
@@ -10384,9 +9686,7 @@
         "minecraft:logs",
         "minecraft:logs_that_burn",
         "minecraft:mangrove_logs",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:stripped_oak_log":
     [
@@ -10395,9 +9695,7 @@
         "minecraft:logs",
         "minecraft:logs_that_burn",
         "minecraft:oak_logs",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:stripped_oak_wood":
     [
@@ -10406,9 +9704,7 @@
         "minecraft:logs",
         "minecraft:logs_that_burn",
         "minecraft:oak_logs",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:stripped_spruce_log":
     [
@@ -10417,9 +9713,7 @@
         "minecraft:logs",
         "minecraft:logs_that_burn",
         "minecraft:spruce_logs",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:stripped_spruce_wood":
     [
@@ -10428,9 +9722,7 @@
         "minecraft:logs",
         "minecraft:logs_that_burn",
         "minecraft:spruce_logs",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:stripped_warped_hyphae":
     [
@@ -10439,9 +9731,7 @@
         "minecraft:logs",
         "minecraft:non_flammable_wood",
         "minecraft:warped_stems",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:stripped_warped_stem":
     [
@@ -10450,15 +9740,11 @@
         "minecraft:logs",
         "minecraft:non_flammable_wood",
         "minecraft:warped_stems",
-        "rabidbalance:loot/amount/chaotic",
-        "rabidbalance:loot/kind/block_junk",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_junk"
     ],
     "minecraft:structure_block":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:structure_void":
     [
@@ -10491,30 +9777,22 @@
         "minecraft:bee_food",
         "minecraft:flowers",
         "minecraft:tall_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:suspicious_gravel":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:suspicious_sand":
     [
         "minecraft:sand",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:suspicious_stew":
     [
         "c:foods",
         "c:foods/soup",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/food",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/food"
     ],
     "minecraft:sweet_berries":
     [
@@ -10522,9 +9800,7 @@
         "c:foods",
         "c:foods/berry",
         "minecraft:fox_food",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/food",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/food"
     ],
     "minecraft:tadpole_bucket":
     [
@@ -10545,7 +9821,6 @@
     ],
     "minecraft:tall_grass":
     [
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/chaotic",
@@ -10579,9 +9854,7 @@
     [
         "c:glass_blocks",
         "c:glass_blocks/tinted",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:tipped_arrow":
     [
@@ -10608,9 +9881,7 @@
     ],
     "minecraft:torch":
     [
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/common"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:torchflower":
     [
@@ -10618,9 +9889,7 @@
         "minecraft:bee_food",
         "minecraft:flowers",
         "minecraft:small_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:torchflower_seeds":
     [
@@ -10638,24 +9907,18 @@
     ],
     "minecraft:totem_of_undying":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/magic",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/magic"
     ],
     "minecraft:trader_llama_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:trapped_chest":
     [
         "c:chests",
         "c:chests/trapped",
         "c:chests/wooden",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_storage",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_storage"
     ],
     "minecraft:trial_key":
     [
@@ -10666,9 +9929,7 @@
     ],
     "minecraft:trial_spawner":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:trident":
     [
@@ -10757,50 +10018,36 @@
     "minecraft:tuff_brick_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:tuff_brick_stairs":
     [
         "minecraft:stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:tuff_brick_wall":
     [
         "minecraft:walls",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:tuff_bricks":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:tuff_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:tuff_stairs":
     [
         "minecraft:stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:tuff_wall":
     [
         "minecraft:walls",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:turtle_egg":
     [
@@ -10820,9 +10067,7 @@
         "minecraft:enchantable/vanishing",
         "minecraft:head_armor",
         "minecraft:trimmable_armor",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/combat",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/combat"
     ],
     "minecraft:turtle_scute":
     [
@@ -10834,9 +10079,7 @@
     ],
     "minecraft:turtle_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:twisting_vines":
     [
@@ -10849,15 +10092,11 @@
     ],
     "minecraft:vault":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:verdant_froglight":
     [
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:vex_armor_trim_smithing_template":
     [
@@ -10869,9 +10108,7 @@
     ],
     "minecraft:vex_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:villager_spawn_egg":
     [
@@ -10889,15 +10126,11 @@
     ],
     "minecraft:vine":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_raw",
-        "rabidbalance:loot/value/junk"
+        "rabidbalance:loot/kind/block_raw"
     ],
     "minecraft:wandering_trader_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:ward_armor_trim_smithing_template":
     [
@@ -11103,41 +10336,29 @@
     ],
     "minecraft:waxed_chiseled_copper":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_copper_block":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_copper_bulb":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:waxed_copper_door":
     [
         "minecraft:doors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:waxed_copper_grate":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_copper_trapdoor":
     [
         "minecraft:trapdoors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:waxed_cut_copper":
     [
@@ -11149,28 +10370,20 @@
     "minecraft:waxed_cut_copper_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_cut_copper_stairs":
     [
         "minecraft:stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_exposed_chiseled_copper":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_exposed_copper":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_exposed_copper_bulb":
     [
@@ -11182,22 +10395,16 @@
     "minecraft:waxed_exposed_copper_door":
     [
         "minecraft:doors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:waxed_exposed_copper_grate":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_exposed_copper_trapdoor":
     [
         "minecraft:trapdoors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:waxed_exposed_cut_copper":
     [
@@ -11209,16 +10416,12 @@
     "minecraft:waxed_exposed_cut_copper_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_exposed_cut_copper_stairs":
     [
         "minecraft:stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_oxidized_chiseled_copper":
     [
@@ -11229,9 +10432,7 @@
     ],
     "minecraft:waxed_oxidized_copper":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_oxidized_copper_bulb":
     [
@@ -11243,46 +10444,33 @@
     "minecraft:waxed_oxidized_copper_door":
     [
         "minecraft:doors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:waxed_oxidized_copper_grate":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_oxidized_copper_trapdoor":
     [
         "minecraft:trapdoors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:waxed_oxidized_cut_copper":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_oxidized_cut_copper_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_oxidized_cut_copper_stairs":
     [
         "minecraft:stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_weathered_chiseled_copper":
     [
-        "rabidbalance:loot/affinity/fletching",
         "rabidbalance:loot/affinity/smithing",
         "rabidbalance:loot/affinity/underground",
         "rabidbalance:loot/amount/large",
@@ -11291,35 +10479,25 @@
     ],
     "minecraft:waxed_weathered_copper":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_weathered_copper_bulb":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:waxed_weathered_copper_door":
     [
         "minecraft:doors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:waxed_weathered_copper_grate":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_weathered_copper_trapdoor":
     [
         "minecraft:trapdoors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:waxed_weathered_cut_copper":
     [
@@ -11331,16 +10509,12 @@
     "minecraft:waxed_weathered_cut_copper_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:waxed_weathered_cut_copper_stairs":
     [
         "minecraft:stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:wayfinder_armor_trim_smithing_template":
     [
@@ -11359,55 +10533,39 @@
     ],
     "minecraft:weathered_copper":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:weathered_copper_bulb":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_technical",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/block_technical"
     ],
     "minecraft:weathered_copper_door":
     [
         "minecraft:doors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:weathered_copper_grate":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:weathered_copper_trapdoor":
     [
         "minecraft:trapdoors",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:weathered_cut_copper":
     [
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:weathered_cut_copper_slab":
     [
         "minecraft:slabs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:weathered_cut_copper_stairs":
     [
         "minecraft:stairs",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:weeping_vines":
     [
@@ -11469,9 +10627,7 @@
         "c:dyed",
         "c:dyed/white",
         "minecraft:beds",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:white_candle":
     [
@@ -11551,9 +10707,7 @@
         "c:dyed/white",
         "c:glass_blocks",
         "c:glass_blocks/cheap",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:white_stained_glass_pane":
     [
@@ -11581,9 +10735,7 @@
         "minecraft:bee_food",
         "minecraft:flowers",
         "minecraft:small_flowers",
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/material",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/material"
     ],
     "minecraft:white_wool":
     [
@@ -11606,15 +10758,11 @@
     ],
     "minecraft:wind_charge":
     [
-        "rabidbalance:loot/amount/small",
-        "rabidbalance:loot/kind/magic",
-        "rabidbalance:loot/value/rare"
+        "rabidbalance:loot/kind/magic"
     ],
     "minecraft:witch_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:wither_rose":
     [
@@ -11663,9 +10811,7 @@
     ],
     "minecraft:wolf_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:wooden_axe":
     [
@@ -11680,9 +10826,7 @@
         "minecraft:enchantable/sharp_weapon",
         "minecraft:enchantable/vanishing",
         "minecraft:enchantable/weapon",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/tool",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/tool"
     ],
     "minecraft:wooden_hoe":
     [
@@ -11744,9 +10888,7 @@
         "minecraft:enchantable/vanishing",
         "minecraft:enchantable/weapon",
         "minecraft:swords",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/combat",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/combat"
     ],
     "minecraft:writable_book":
     [
@@ -11782,9 +10924,7 @@
         "c:dyed",
         "c:dyed/yellow",
         "minecraft:beds",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/block_utility",
-        "rabidbalance:loot/value/uncommon"
+        "rabidbalance:loot/kind/block_utility"
     ],
     "minecraft:yellow_candle":
     [
@@ -11864,9 +11004,7 @@
         "c:dyed/yellow",
         "c:glass_blocks",
         "c:glass_blocks/cheap",
-        "rabidbalance:loot/amount/large",
-        "rabidbalance:loot/kind/block_building",
-        "rabidbalance:loot/value/filler"
+        "rabidbalance:loot/kind/block_building"
     ],
     "minecraft:yellow_stained_glass_pane":
     [
@@ -11913,32 +11051,22 @@
         "minecraft:enchantable/vanishing",
         "minecraft:noteblock_top_instruments",
         "minecraft:skulls",
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/cosmetic",
-        "rabidbalance:loot/value/epic"
+        "rabidbalance:loot/kind/cosmetic"
     ],
     "minecraft:zombie_horse_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:zombie_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:zombie_villager_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ],
     "minecraft:zombified_piglin_spawn_egg":
     [
-        "rabidbalance:loot/amount/singleton",
-        "rabidbalance:loot/kind/nonloot",
-        "rabidbalance:loot/value/none"
+        "rabidbalance:loot/kind/nonloot"
     ]
 }
