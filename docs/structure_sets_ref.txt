@@ -1,0 +1,784 @@
+{
+  "structure": "apotheosis:tower_leaf",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "apotheosis:tower_main",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "apotheosis:tower_sand",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "apotheosis:tower_spruce",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "ars_nouveau:wilden_den_set",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "betterdeserttemples:desert_temples",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "betterdungeons:skeleton_dungeons",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "betterdungeons:small_dungeons",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "betterdungeons:small_nether_dungeons",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "betterdungeons:spider_dungeons",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "betterdungeons:zombie_dungeons",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "betterjungletemples:jungle_temples",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "bettermineshafts:mineshafts",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "betteroceanmonuments:ocean_monument",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "betterstrongholds:stronghold",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "betterwitchhuts:witch_circle",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "betterwitchhuts:witch_hut",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "bosses_of_mass_destruction:gauntlet_arena",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "bosses_of_mass_destruction:lich_tower",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "bosses_of_mass_destruction:obsidilith_arena",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "bosses_of_mass_destruction:void_blossom",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "cataclysm:ancient_factory",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "cataclysm:burning_arena",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "cataclysm:cursed_pyramid",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "cataclysm:frosted_prison",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "cataclysm:ruined_citadel",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "cataclysm:soul_black_smith",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "cataclysm:sunken_city",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "dungeoncrawl:dungeons",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "dungeons_arise_seven_seas:minor_structures",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "explorify:badlands_pyramids",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "explorify:black_spirals",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "explorify:campsites",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "explorify:dark_forest_settlements",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "explorify:desert_shrines",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "explorify:end_shipwrecks",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "explorify:farmsteads",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "explorify:guide_posts",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "explorify:mangrove_huts",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "explorify:mausoleums",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "explorify:ruins",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "explorify:supply_caches",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "explorify:taverns",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "explorify:watchtowers",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "friendsandfoes:beekeeper_hut",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "friendsandfoes:citadel",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "friendsandfoes:iceologer_cabin",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "friendsandfoes:illusioner_shack",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "friendsandfoes:illusioner_training_grounds",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "illagerinvasion:firecaller_hut",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "illagerinvasion:illager_fort",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "illagerinvasion:illusioner_tower",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "illagerinvasion:labyrinth",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "illagerinvasion:sorcerer_hut",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "kobolds:kobold_den",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "kobolds:kobold_den_pirate",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecolonies:amazon_camp",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecolonies:barbarian_camp",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecolonies:desert_camp",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecolonies:empty_colony",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecolonies:ship",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:ancient_cities",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:buried_treasures",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:desert_pyramids",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:end_cities",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:igloos",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:jungle_temples",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:mineshafts",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:nether_complexes",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:nether_fossils",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:ocean_monuments",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:ocean_ruins",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:pillager_outposts",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:ruined_portals",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:shipwrecks",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:swamp_huts",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:trail_ruins",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:trial_chambers",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:villages",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "minecraft:woodland_mansions",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "mobs_of_mythology:automaton_structure",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:badlands_miner_outpost",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:badlands_miner_outpost_mineshafts",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:bunker",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:conduit_ruin",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:creeping_crypt",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:deepslate_camp",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:desert_ruins",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:end_lighthouses",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:end_ship",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:firewatch_towers",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:illager_camp",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:illager_hideout",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:jungle_ruins",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:mangrove_witch_hut",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:nether_camps",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:nether_skeleton_towers",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:nether_structures",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:remnants",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:ruin_town",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:shrine_tower",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:shrines",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:stray_fort",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:swamp_structure",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:taverns",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:trident_trial_monument",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:undead_crypt",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:underground_house",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:villages_birch",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:villages_jungle",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:villages_swamp",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:wells",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "nova_structures:wild_ruin",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:ancient_cities_end",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:ancient_cities_nether",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:ancient_cities_overworld",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:bastions_overworld",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:cities_nether",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:cities_overworld",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:fortresses_overworld",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:igloos_overworld",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:mansions_mangrove",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:mansions_overworld",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:mineshafts_end",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:mineshafts_nether",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:mineshafts_ocean",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:mineshafts_overworld",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:monuments_nether",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:monuments_overworld",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:outposts_end",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:outposts_nether",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:outposts_ocean",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:outposts_overworld",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:pyramids_end",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:pyramids_mushroom",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:pyramids_nether",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:pyramids_overworld",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:ruined_portals_end",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:ruins_nether",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:ruins_overworld",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:shipwrecks_end",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:shipwrecks_nether",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:strongholds_end",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:strongholds_nether",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:temples_nether",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:temples_overworld",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:villages_mushroom",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:villages_nether",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:villages_overworld",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "repurposed_structures:witch_huts_overworld",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "ribbits:ribbit_village",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "supplementaries:way_signs",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "taxbt:structure_trader_desert",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "taxbt:structure_trader_end",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "taxbt:structure_trader_illager",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "taxbt:structure_trader_jungle",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "taxbt:structure_trader_lushcave",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "taxbt:structure_trader_mushroom",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "taxbt:structure_trader_nether",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "taxbt:structure_trader_ocean",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "taxbt:structure_trader_plains",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "taxov:illager_king_ship",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "taxov:marine_ship",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "taxov:pirate_ship",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "taxov:witch_ship",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "taxov:zombie_marine_ship",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "taxov:zombie_pirate_ship",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "towns_and_towers:other",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "towns_and_towers:towers",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "towns_and_towers:towns",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:aurora_palace",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:dark_tower",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:fallen_trunk",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:final_castle",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:giant_house",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:hedge_maze",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:hollow_tree",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:hydra_lair",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:knight_stronghold",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:labyrinth",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:large_hollow_hill",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:lich_tower",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:medium_hollow_hill",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:naga_courtyard",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:quest_grove",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:small_hollow_hill",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:troll_cave",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "twilightforest:yeti_cave",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "wythers:banyan_sparse_jungle",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "wythers:baobab_dry_tropical_forest",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "wythers:baobab_savanna",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "wythers:baobab_tropical_forest",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "wythers:el_dorado",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "wythers:elephant_graveyard_fossils",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "wythers:features",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},
+{
+  "structure": "wythers:villages",
+  "factor": 1//REPLACE WITH YOUR CUSTOM SPREADING FACTOR HERE
+},

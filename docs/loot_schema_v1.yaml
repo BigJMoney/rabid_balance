@@ -1,0 +1,248 @@
+loot_classification:
+
+  roles:
+    - common
+    - uncommon
+    - rare
+    - epic
+    - junk
+    - exclude
+
+  kinds:
+    - material
+    - food
+    - tool
+    - combat
+    - magic
+    - utility
+    - cosmetic
+    - block
+
+  amount_ranges:
+  singleton: [1, 1]
+  tiny: [1, 2]
+  small: [1, 3]
+  medium: [2, 5]
+  large: [4, 8]
+  bulk: [6, 16]
+
+  location_modifiers:  # WIP - Possibly deprecated already by multi-dimensional discussion
+  overworld_surface:   #  but these values could be useful for score calculation
+    role_weights: { common: 70, uncommon: 25, rare: 5, epic: 0 }
+
+  overworld_underground:
+    role_weights: { common: 50, uncommon: 35, rare: 13, epic: 2 }
+
+  ocean:
+    role_weights: { common: 40, uncommon: 35, rare: 20, epic: 5 }
+
+  nether:
+    role_weights: { common: 30, uncommon: 40, rare: 20, epic: 10 }
+
+  end:
+    role_weights: { common: 20, uncommon: 40, rare: 30, epic: 10 }
+
+  rules:
+
+    - id: structural_blocks
+      match:
+        any:
+          - has_block_form: true
+          - name_patterns:
+              - "*_planks"
+              - "*_log"
+              - "*_wood"
+              - "*_slab"
+              - "*_stairs"
+              - "*_wall"
+              - "*_block"
+              - "*_bricks"
+              - "*_glass"
+              - "*_wool"
+              - "*_terracotta"
+              - "*_concrete"
+              - "*_leaves"
+              - "*_sapling"
+      assign:
+        role: junk
+        kind: block
+      reason: >
+        High-volume, low-value, non-exciting loot. Including them preserves flavor
+        without polluting meaningful loot pools.
+
+    - id: tools_and_armor
+      match:
+        name_patterns:
+          - "*_sword"
+          - "*_axe"
+          - "*_pickaxe"
+          - "*_shovel"
+          - "*_hoe"
+          - "*_helmet"
+          - "*_chestplate"
+          - "*_leggings"
+          - "*_boots"
+      assign:
+        kind: tool_or_combat
+        role_by_material:
+          wooden: common
+          stone: common
+          iron: uncommon
+          golden: uncommon
+          diamond: rare
+          netherite: epic
+      reason: >
+        Power scales directly with material tier; aligns with vanilla progression.
+
+    - id: raw_materials
+      match:
+        any:
+          - name_patterns:
+              - "*_ingot"
+              - "*_nugget"
+              - "*_ore"
+              - "*_shard"
+          - explicit:
+              - minecraft:coal
+              - minecraft:redstone
+              - minecraft:lapis_lazuli
+              - minecraft:diamond
+              - minecraft:emerald
+              - minecraft:quartz
+              - minecraft:amethyst_shard
+      assign:
+        kind: material
+        role_by_tier:
+          low:
+            items: [coal, copper]
+            role: common
+          mid:
+            items: [iron]
+            role: common
+          utility:
+            items: [redstone, lapis]
+            role: uncommon
+          high:
+            items: [gold]
+            role: uncommon
+          rare:
+            items: [diamond, emerald]
+            role: rare
+          end:
+            items: [netherite]
+            role: epic
+      reason: >
+        Represents progression currency; rarity reflects acquisition difficulty
+        and crafting impact.
+
+    - id: food
+      match:
+        any:
+          - is_food: true
+          - name_patterns:
+              - "cooked_*"
+              - "*_stew"
+      assign:
+        kind: food
+        role_by_type:
+          basic: common
+          cooked: common
+          utility:
+            items: [golden_carrot]
+            role: rare
+          special:
+            items: [golden_apple]
+            role: rare
+          exceptional:
+            items: [enchanted_golden_apple]
+            role: epic
+      reason: >
+        Most food is abundant; only special-effect food should influence loot rarity.
+
+    - id: magic_items
+      match:
+        explicit:
+          - minecraft:ender_pearl
+          - minecraft:blaze_rod
+          - minecraft:ghast_tear
+          - minecraft:nether_star
+          - minecraft:totem_of_undying
+          - minecraft:ender_eye
+      assign:
+        kind: magic
+        role_by_item:
+          ender_pearl: uncommon
+          blaze_rod: uncommon
+          ghast_tear: rare
+          totem_of_undying: epic
+          nether_star: epic
+          ender_eye: rare
+      reason: >
+        These gate or enhance progression systems (nether, end, survival mechanics).
+
+    - id: utility_items
+      match:
+        explicit:
+          - minecraft:bucket
+          - minecraft:water_bucket
+          - minecraft:lava_bucket
+          - minecraft:compass
+          - minecraft:clock
+          - minecraft:map
+          - minecraft:shears
+          - minecraft:flint_and_steel
+      assign:
+        kind: utility
+        role: uncommon
+      reason: >
+        Useful but not progression-breaking; moderate desirability.
+
+    - id: combat_items
+      match:
+        explicit:
+          - minecraft:bow
+          - minecraft:crossbow
+          - minecraft:shield
+          - minecraft:trident
+      assign:
+        kind: combat
+        role_by_item:
+          bow: uncommon
+          crossbow: uncommon
+          shield: uncommon
+          trident: epic
+      reason: >
+        Functional combat upgrades; rarity reflects impact vs accessibility.
+
+    - id: cosmetic_items
+      match:
+        name_patterns:
+          - "music_disc_*"
+          - "*_banner"
+          - "*_trim*"
+          - "*_pottery_sherd"
+      assign:
+        kind: cosmetic
+        role: rare
+      reason: >
+        Non-functional but desirable; rarity creates collectibility.
+
+    - id: excluded_items
+      match:
+        any:
+          - name_patterns:
+              - "*_spawn_egg"
+          - explicit:
+              - minecraft:command_block
+              - minecraft:chain_command_block
+              - minecraft:repeating_command_block
+              - minecraft:structure_block
+              - minecraft:jigsaw
+              - minecraft:debug_stick
+              - minecraft:barrier
+              - minecraft:light
+      assign:
+        role: exclude
+        kind: utility
+      reason: >
+        Break gameplay or are not intended for survival acquisition.

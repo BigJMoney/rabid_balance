@@ -1,0 +1,13 @@
+{
+    "type": "placebo:basic_trade",
+    "input_1": {
+        "count": 10,
+        "id": "minecraft:diamond"
+    },
+    "output": {
+        "count": 1,
+        "id": "minecraft:diamond_horse_armor"
+    },
+    "rare": true,
+    "xp": 50
+}

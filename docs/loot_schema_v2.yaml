@@ -1,0 +1,509 @@
+loot_classification:
+  version: 2
+
+  roles:
+    - junk
+    - common
+    - uncommon
+    - rare
+    - epic
+    - exclude
+
+  kinds:
+    - material
+    - food
+    - tool
+    - combat
+    - magic
+    - utility
+    - cosmetic
+    - block_junk
+    - block_utility
+    - block_functional
+    - block_storage
+    - block_technical
+
+  amount_ranges:
+    singleton: [1, 1]
+    tiny: [1, 2]
+    small: [1, 3]
+    medium: [2, 5]
+    large: [3, 8]
+    bulk: [5, 16]
+
+  amount_policy:
+    summary: >
+      Amount is resolved separately from appearance weight. Each item gets a base
+      amount_class, then context may optionally modify it, and hard caps can clamp
+      the result for special items.
+    resolution_order:
+      - base amount_class from item rule
+      - optional context modifier by location / structure / danger / budget
+      - hard caps for singleton or progression-sensitive items
+
+  rules:
+    - id: excluded_items
+      priority: 100
+      match:
+        any:
+          - name_patterns: ["*_spawn_egg"]
+          - explicit:
+              - minecraft:command_block
+              - minecraft:chain_command_block
+              - minecraft:repeating_command_block
+              - minecraft:structure_block
+              - minecraft:jigsaw
+              - minecraft:debug_stick
+              - minecraft:barrier
+              - minecraft:light
+              - minecraft:structure_void
+              - minecraft:bedrock
+              - minecraft:end_portal_frame
+              - minecraft:spawner
+              - minecraft:trial_spawner
+              - minecraft:vault
+              - minecraft:dragon_egg
+              - minecraft:knowledge_book
+      assign:
+        role: exclude
+        kind: utility
+        amount_class: singleton
+      reason: >
+        Admin/debug/unobtainable/problematic items that should not enter ordinary survival loot.
+
+    - id: block_storage
+      priority: 90
+      match:
+        any:
+          - explicit: [minecraft:chest, minecraft:trapped_chest, minecraft:barrel, minecraft:ender_chest, minecraft:shulker_box]
+          - name_patterns: ["*_shulker_box"]
+      assign:
+        kind: block_storage
+        role:
+          default: common
+          overrides:
+            minecraft:ender_chest: rare
+            minecraft:shulker_box: rare
+            "*_shulker_box": rare
+        amount_class: singleton
+      reason: >
+        Storage blocks are placeable, but their gameplay meaning is storage expansion, not generic block filler.
+
+    - id: block_functional
+      priority: 80
+      match:
+        explicit:
+          - minecraft:crafting_table
+          - minecraft:furnace
+          - minecraft:smoker
+          - minecraft:blast_furnace
+          - minecraft:brewing_stand
+          - minecraft:cauldron
+          - minecraft:enchanting_table
+          - minecraft:anvil
+          - minecraft:chipped_anvil
+          - minecraft:damaged_anvil
+          - minecraft:cartography_table
+          - minecraft:fletching_table
+          - minecraft:smithing_table
+          - minecraft:grindstone
+          - minecraft:stonecutter
+          - minecraft:loom
+          - minecraft:lectern
+          - minecraft:composter
+          - minecraft:bee_nest
+          - minecraft:beehive
+          - minecraft:jukebox
+          - minecraft:lodestone
+          - minecraft:beacon
+          - minecraft:respawn_anchor
+          - minecraft:crafter
+          - minecraft:bell
+          - minecraft:decorated_pot
+      assign:
+        kind: block_functional
+        role:
+          default: uncommon
+          overrides:
+            minecraft:enchanting_table: rare
+            minecraft:beacon: rare
+            minecraft:lodestone: rare
+            minecraft:respawn_anchor: rare
+        amount_class: singleton
+      reason: >
+        Functional blocks unlock capabilities or systems and should usually appear as single meaningful finds.
+
+    - id: block_technical
+      priority: 70
+      match:
+        explicit:
+          - minecraft:redstone_torch
+          - minecraft:repeater
+          - minecraft:comparator
+          - minecraft:piston
+          - minecraft:sticky_piston
+          - minecraft:observer
+          - minecraft:hopper
+          - minecraft:dispenser
+          - minecraft:dropper
+          - minecraft:target
+          - minecraft:lever
+          - minecraft:lightning_rod
+          - minecraft:daylight_detector
+          - minecraft:sculk_sensor
+          - minecraft:calibrated_sculk_sensor
+          - minecraft:tripwire_hook
+          - minecraft:tnt
+          - minecraft:redstone_lamp
+          - minecraft:note_block
+          - minecraft:powered_rail
+          - minecraft:detector_rail
+          - minecraft:rail
+          - minecraft:activator_rail
+      assign:
+        kind: block_technical
+        role: uncommon
+        amount_class:
+          default: singleton
+          overrides:
+            minecraft:powered_rail: small
+            minecraft:detector_rail: small
+            minecraft:rail: small
+            minecraft:activator_rail: small
+      reason: >
+        Technical blocks are not junk; they enable redstone and logistics systems and should be controlled accordingly.
+
+    - id: block_utility
+      priority: 60
+      match:
+        any:
+          - explicit:
+              - minecraft:torch
+              - minecraft:soul_torch
+              - minecraft:lantern
+              - minecraft:soul_lantern
+              - minecraft:ladder
+              - minecraft:scaffolding
+              - minecraft:flower_pot
+              - minecraft:end_rod
+          - name_patterns:
+              - "*_door"
+              - "*_trapdoor"
+              - "*_fence_gate"
+              - "*_sign"
+              - "*_hanging_sign"
+              - "*_bed"
+              - "*_button"
+              - "*_pressure_plate"
+              - "*_candle"
+              - "*_banner"
+      assign:
+        kind: block_utility
+        role: common
+        amount_class:
+          default: singleton
+          overrides:
+            minecraft:torch: small
+            minecraft:soul_torch: small
+            minecraft:lantern: small
+            minecraft:soul_lantern: small
+            minecraft:ladder: small
+            minecraft:scaffolding: small
+        
+      reason: >
+        These are placeable but meaningfully useful; classify by behavior rather than by mere block form.
+
+    - id: block_junk
+      priority: 50
+      match:
+        summary: structural / decorative / terrain-like placeable blocks not matched above
+      assign:
+        role: junk
+        kind: block_junk
+        amount_class: bulk
+      reason: >
+        High-volume structural or decorative blocks are valid filler, but should not crowd out meaningful loot.
+
+    - id: cosmetic_items
+      priority: 40
+      match:
+        any:
+          - name_patterns: ["music_disc_*", "*_banner_pattern", "*_pottery_sherd", "*_armor_trim_smithing_template"]
+          - explicit: [minecraft:painting, minecraft:item_frame, minecraft:glow_item_frame, minecraft:armor_stand, minecraft:goat_horn]
+      assign:
+        kind: cosmetic
+        role:
+          default: rare
+          overrides:
+            minecraft:silence_armor_trim_smithing_template: epic
+            minecraft:netherite_upgrade_smithing_template: epic
+        amount_class: singleton
+      reason: >
+        Collectible, expressive, or prestige items should usually appear as singleton finds.
+
+    - id: food_items
+      priority: 35
+      match:
+        any:
+          - is_food: true
+          - name_patterns: ["cooked_*", "*_stew"]
+      assign:
+        kind: food
+        role:
+          default: common
+          overrides:
+            minecraft:golden_carrot: rare
+            minecraft:golden_apple: rare
+            minecraft:enchanted_golden_apple: epic
+        amount_class:
+          default: medium
+          overrides:
+            minecraft:golden_carrot: tiny
+            minecraft:golden_apple: tiny
+            minecraft:enchanted_golden_apple: singleton
+      reason: >
+        Most food is ordinary sustain. Special-effect food deserves stronger rarity and smaller amounts.
+
+    - id: magic_items
+      priority: 30
+      match:
+        explicit:
+          - minecraft:ender_pearl
+          - minecraft:blaze_rod
+          - minecraft:ghast_tear
+          - minecraft:nether_star
+          - minecraft:totem_of_undying
+          - minecraft:ender_eye
+          - minecraft:potion
+          - minecraft:splash_potion
+          - minecraft:lingering_potion
+          - minecraft:experience_bottle
+          - minecraft:dragon_breath
+          - minecraft:ominous_bottle
+          - minecraft:echo_shard
+          - minecraft:enchanted_book
+          - minecraft:wind_charge
+          - minecraft:fire_charge
+          - minecraft:breeze_rod
+          - minecraft:trial_key
+          - minecraft:ominous_trial_key
+          - minecraft:heavy_core
+          - minecraft:recovery_compass
+      assign:
+        kind: magic
+        role:
+          default: uncommon
+          overrides:
+            minecraft:ghast_tear: rare
+            minecraft:ender_eye: rare
+            minecraft:ominous_bottle: rare
+            minecraft:enchanted_book: rare
+            minecraft:echo_shard: rare
+            minecraft:trial_key: rare
+            minecraft:ominous_trial_key: rare
+            minecraft:heavy_core: rare
+            minecraft:totem_of_undying: epic
+            minecraft:nether_star: epic
+        amount_class:
+          default: small
+          overrides:
+            minecraft:ghast_tear: tiny
+            minecraft:ender_eye: tiny
+            minecraft:trial_key: tiny
+            minecraft:ominous_trial_key: tiny
+            minecraft:enchanted_book: singleton
+            minecraft:totem_of_undying: singleton
+            minecraft:nether_star: singleton
+            minecraft:recovery_compass: singleton
+      reason: >
+        Magic and progression items should be tightly controlled by both rarity and amount.
+
+    - id: combat_items
+      priority: 25
+      match:
+        any:
+          - name_patterns:
+              - "*_sword"
+              - "*_helmet"
+              - "*_chestplate"
+              - "*_leggings"
+              - "*_boots"
+          - explicit: [minecraft:bow, minecraft:crossbow, minecraft:shield, minecraft:trident, minecraft:mace, minecraft:arrow, minecraft:spectral_arrow, minecraft:tipped_arrow, minecraft:wolf_armor, minecraft:turtle_helmet]
+      assign:
+        kind: combat
+        role_by_material:
+          wooden: common
+          stone: common
+          leather: common
+          golden: uncommon
+          chainmail: uncommon
+          iron: uncommon
+          diamond: rare
+          netherite: epic
+        overrides:
+          minecraft:bow: uncommon
+          minecraft:crossbow: uncommon
+          minecraft:shield: uncommon
+          minecraft:trident: epic
+          minecraft:mace: epic
+          minecraft:arrow: common
+          minecraft:spectral_arrow: rare
+          minecraft:tipped_arrow: rare
+        amount_class:
+          default: singleton
+          overrides:
+            minecraft:arrow: large
+            minecraft:spectral_arrow: small
+            minecraft:tipped_arrow: small
+      reason: >
+        Durable combat gear should generally be singleton. Ammunition can stack higher.
+
+    - id: tool_items
+      priority: 20
+      match:
+        any:
+          - name_patterns: ["*_axe", "*_pickaxe", "*_shovel", "*_hoe"]
+          - explicit:
+              - minecraft:shears
+              - minecraft:fishing_rod
+              - minecraft:flint_and_steel
+              - minecraft:spyglass
+              - minecraft:compass
+              - minecraft:clock
+              - minecraft:map
+              - minecraft:filled_map
+              - minecraft:bucket
+              - minecraft:water_bucket
+              - minecraft:lava_bucket
+              - minecraft:powder_snow_bucket
+              - minecraft:milk_bucket
+              - minecraft:bundle
+      assign:
+        kind: tool
+        role_by_material:
+          wooden: common
+          stone: common
+          golden: uncommon
+          iron: uncommon
+          diamond: rare
+          netherite: epic
+        overrides:
+          minecraft:compass: uncommon
+          minecraft:clock: uncommon
+          minecraft:map: uncommon
+          minecraft:filled_map: uncommon
+          minecraft:spyglass: uncommon
+          minecraft:bucket: uncommon
+          minecraft:water_bucket: uncommon
+          minecraft:lava_bucket: uncommon
+          minecraft:powder_snow_bucket: uncommon
+          minecraft:milk_bucket: uncommon
+          minecraft:bundle: uncommon
+        amount_class: singleton
+      reason: >
+        Durable tools and utility implements should generally appear one at a time.
+
+    - id: material_items
+      priority: 15
+      match:
+        any:
+          - name_patterns: ["*_ingot", "*_nugget", "*_ore", "raw_*", "*_shard"]
+          - explicit:
+              - minecraft:coal
+              - minecraft:charcoal
+              - minecraft:diamond
+              - minecraft:emerald
+              - minecraft:lapis_lazuli
+              - minecraft:quartz
+              - minecraft:redstone
+              - minecraft:amethyst_shard
+              - minecraft:netherite_scrap
+              - minecraft:slime_ball
+              - minecraft:clay_ball
+              - minecraft:brick
+              - minecraft:paper
+              - minecraft:book
+              - minecraft:string
+              - minecraft:feather
+              - minecraft:gunpowder
+              - minecraft:wheat_seeds
+              - minecraft:wheat
+              - minecraft:leather
+              - minecraft:ink_sac
+              - minecraft:glow_ink_sac
+              - minecraft:cocoa_beans
+              - minecraft:bone_meal
+              - minecraft:bone
+              - minecraft:sugar
+              - minecraft:nether_wart
+              - minecraft:spider_eye
+              - minecraft:fermented_spider_eye
+              - minecraft:blaze_powder
+              - minecraft:magma_cream
+              - minecraft:glistering_melon_slice
+              - minecraft:prismarine_shard
+              - minecraft:prismarine_crystals
+              - minecraft:honeycomb
+      assign:
+        kind: material
+        role:
+          default: common
+          overrides:
+            minecraft:diamond: rare
+            minecraft:emerald: rare
+            minecraft:netherite_ingot: epic
+            minecraft:netherite_scrap: epic
+            minecraft:gold_ingot: uncommon
+            minecraft:gold_nugget: uncommon
+            minecraft:lapis_lazuli: uncommon
+            minecraft:quartz: uncommon
+            minecraft:amethyst_shard: uncommon
+            minecraft:blaze_powder: uncommon
+            minecraft:magma_cream: uncommon
+            minecraft:prismarine_shard: uncommon
+            minecraft:prismarine_crystals: uncommon
+          raw_source_policy:
+            raw_*: junk
+            "*_ore": junk
+        amount_class:
+          default: small
+          overrides:
+            minecraft:diamond: tiny
+            minecraft:emerald: tiny
+            minecraft:netherite_ingot: tiny
+            minecraft:netherite_scrap: tiny
+            minecraft:redstone: large
+            minecraft:coal: large
+            minecraft:charcoal: large
+            minecraft:bone: large
+            minecraft:bone_meal: large
+            raw_*: small
+            "*_ore": small
+      reason: >
+        Materials are primarily economy inputs. Rare compact-value materials stay small; bulk basics can stack higher.
+
+    - id: utility_items
+      priority: 10
+      match:
+        summary: remaining general utility / transport / container-like non-block items
+      assign:
+        kind: utility
+        role:
+          default: uncommon
+          overrides:
+            minecraft:elytra: epic
+        amount_class:
+          default: singleton
+      reason: >
+        Utility items are useful but not all are progression-breaking. Durable or high-impact utility should usually be singleton.
+
+    - id: fallback
+      priority: 0
+      match:
+        summary: any item not matched above
+      assign:
+        role: junk
+        kind: utility
+        amount_class: small
+      reason: >
+        Conservative fallback for uncategorized items pending manual review.

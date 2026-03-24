@@ -1,0 +1,13 @@
+{
+    "type": "placebo:basic_trade",
+    "input_1": {
+        "count": 5,
+        "id": "minecraft:emerald"
+    },
+    "max_trades": 3,
+    "output": {
+        "count": 3,
+        "id": "minecraft:blaze_powder"
+    },
+    "xp": 5
+}
