@@ -1,0 +1,176 @@
+# -----
+
+# Global Policy Doc Example
+
+# This is a context category
+realm:
+  # This is a context value
+  Underworld:
+    # We can allow, disallow, favor or disfavor both kinds of loot (mechanical) or affinities (thematic)
+    allow: [material, tool, utility]
+    disallow: [sea]
+    favor: [underground, deep_underground]
+    disfavor: [smithing]
+
+
+# This is just an example of another category
+activity:
+  Mining:
+    allow: [material, tool]
+    # disallow isn't used, so it doesn't need to be specified
+    favor: [smithing, treasure]
+    disfavor: [farming, fishing]
+
+    # This is an example of controlling how the buckets are combined in this block
+    #  It is optional, and the default values are shown
+
+    # allow_method: union
+    # disallow_method: union
+    # favor_method: union
+    # disfavor_method: union
+
+# ----
+
+# Loot Context Profile Example (Several per doc, organizable by files/dirs)
+
+- id: abandoned_mineshaft
+  
+  realm: underworld
+  activity: mining
+  structure_class: dungeon
+
+  value_table: uncommon_loot
+  rolls: [3, 10]
+  
+  guarantee_kinds:  # Implementation note: lock down first
+    consumable: 2
+
+  # More control is optional; the default values are shown
+
+  # max_duplicates_per_item: 1  # commenting out default
+  # max_duplicates_per_kind:
+  #   tool: 1
+
+
+
+  # Not sure how I want to format this yet, but it should be possible
+  # overrides:
+
+# ----
+
+# Value Weight Tables Doc Example
+
+-id: common_loot
+  junk: 0.05
+  filler: 0.25
+  common: 1
+  uncommon: 0.25
+  rare: 0.025
+  epic: 0.005
+
+-id: uncommon_loot
+  junk: 0.05
+  filler: 0.1
+  common: 0.5
+  uncommon: 0.75
+  rare: 0.075
+  epic: 0.005
+
+# ----
+
+# The below examples are old versions of loot context tables that don't use
+#  a global policy document. I'm keeping them here for posterity, and perhaps
+#  as an example of how to do a manual override of the global table
+
+# ----
+
+# Style A (Canonical Model)
+id: abandoned_mineshaft
+
+  # allow, disallow, favor and disfavor are all allowed in both blocks
+  context:
+    allow:
+      realm: underworld
+      activity: mining
+    favor:
+      structure_class: treasure_hoard
+    disfavor:
+      activity: smithing
+
+  kind:
+    allow: [material, tool, utility]
+    disallow: [cosmetic, combat]
+
+  # An external scheme defines all value tables
+  value_table: uncommon_loot
+
+  # Optional; defaults are shown here
+  # allow_method: union     
+  # filter_method: union    
+  # favor_weight: 2         
+  # disfavor_weight: 0.5
+
+----
+
+# Style B (Actual Authored Syntax)
+id: abandoned_mineshaft
+
+  context:
+    realm: underworld                   # all simple values comprise the allowed bucket
+    activity: [mining, "-smithing"]     # -values are part of disfavored weighting
+    structure_class: "+treasure_hoard"  # +values are part of favored weighting
+
+  kind:
+    - material
+    - tool
+    - utility
+    - "!cosmetic"                       # !values comprise the disallowed bucket
+    - "!combat"
+
+  # An external scheme defines all value tables
+  value_table: uncommon_loot
+
+  # Optional; defaults are shown here
+  # allow_method: union     
+  # filter_method: union    
+  # favor_weight: 2         
+  # disfavor_weight: 0.5
+
+----
+
+# Value Table Example from another scheme document
+# uncommon_loot_value_weights:
+#   junk: 0.05
+#   filler: 0.1
+#   common: 0.5
+#   uncommon: 0.75
+#   rare: 0.075
+#   epic: 0.005
+
+----
+
+A whole other prototype:
+
+"Instead of mapping affinity directly to loot context values, have an intermediate 
+policy document:
+
+  affinity_policy:
+  village:
+    favor:
+      structure_class: [village, settlement]
+  sea:
+    favor:
+      realm: [ocean]
+      activity: [fishing, sailing]
+  desert:
+    favor:
+      environment: [desert]
+  end:
+    disfavor:
+      realm: [overworld, nether]
+    favor:
+      realm: [end]
+
+This would allow easier global tweaking"
+
+

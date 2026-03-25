@@ -14,21 +14,21 @@ loot_classification:
   kind:
     - nonloot               # Never place; none:nonloot
     - block_storage
-    - block_functional
-    - block_technical
+    - block_functional      # todo: consider "block_crafting" or "block_output"
+    - block_technical       # todo: consider splitting up
     - block_utility
     - cosmetic              # items and blocks
     - plantable
-    - food
+    - food                  # todo: DO change to consumable
     # - food_ingredients ?
-    - magic
-    - combat
-    - tool
+    - magic                 # todo: DO split up
+    - combat                # todo: consider equipment
+    - tool                  # todo: consider equipment
     - material
-    - utility
+    - utility               # todo: consider spliting up
     - block_building
-    - block_raw
-    - block_junk
+    - block_raw             # todo: consider consolidating (think mechanical purpose)
+    - block_junk            # todo: consider consolidating (think mechanical purpose)
     - unmatched
 
   amount_ranges:

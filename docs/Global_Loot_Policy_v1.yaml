@@ -1,0 +1,138 @@
+# Global Policy Doc
+
+
+realm:
+  
+  Upperworld:
+    allow:
+    disallow:
+    favor:
+    disfavor:
+
+  Underworld:
+
+  Deep_Underworld:
+
+  Ocean_Realm:
+
+  Nether:
+
+  End:
+
+  Twilight_Forest:
+
+
+environment:
+
+  Hot:
+
+  Cold:
+
+  Wet:
+
+  Dry:
+
+  Badlands:
+
+  Beach:
+
+  Forest:
+
+  Hill:
+
+  Jungle:
+
+  Mountain:
+
+  River:
+
+  Savanna:
+
+  Taiga:
+
+
+danger:
+
+  # Hostiles aren't expected here
+  Safe:
+
+  # Bit more than usual
+  Dangerous:
+
+  # Tough enemies or hordes
+  Very_Dangerous:
+
+  # E.g. Twilight Forest
+  Boss:
+
+  # E.g. Cataclysm; Ender Dragon
+  Epic_Boss:
+
+
+distance_from_spawn:  # I don't know how to control this, or if it's even a thing for MC
+                      #  MC loot tables
+  # Within n chunks
+  Close:
+
+  # Outside o chunks
+  Far:
+
+  # Outside p chunks
+  Very_Far:
+
+
+y_level:
+  
+  # 190+
+  High:
+  
+  # -33 to 33
+  Underground:
+  
+  # -63 to -32
+  Deep_Underground:
+
+
+structure_class:
+
+  Village:
+
+  Waystation:  # Ex. Inn or tavern
+
+  Tower:
+
+  Fortification:
+
+  Ruin:
+
+
+activity:
+
+  Mining:
+
+
+# From Apotheosis (not yet enabled)
+world_tier:
+
+  Haven:
+
+  Frontier:
+
+  Ascent:
+
+  Summit:
+
+  Pinnacle:
+
+
+category:
+  Value:
+    allow:
+    disallow:
+    favor:
+    disfavor:
+
+    # allow_method: union
+    # disallow_method: union
+    # favor_method: union
+    # disfavor_method: union

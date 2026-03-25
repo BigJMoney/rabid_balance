@@ -13,12 +13,13 @@ Loot is not authored per chest.
 Instead, loot is generated from:
 
 ```text
-item_profile + context_profile + economy_rules → loot
+item_profile + context_profile + policy + value_model → loot
 ```
 
 * **item_profile** = what the item is
 * **context_profile** = what kind of loot opportunity this is
-* **economy_rules** = global balance constraints
+* **policy** = how context influences selection
+* **value_model** = how rarity/power is distributed
 
 ---
 
@@ -26,118 +27,148 @@ item_profile + context_profile + economy_rules → loot
 
 Items are classified once into a canonical dataset.
 
-### Source Files
+### Properties
 
-* Schema: `loot_schema_v7.yaml`
-* Item universe: `minecraft_item_ids.json`
-* Tag source: `item_tags_by_item.json` 
-* Tag generator: `generate_tags_by_items.ps1`
-
-### Current properties
-
-* `kind` — primary category (required, exclusive)
+* `kind` — primary category (exclusive)
 * `value` — rarity / power band
 * `amount_class` — quantity band
+* `affinities` — contextual tags (0–many)
 
 ### Invariants
 
 * Every item has exactly one `kind`
 * Classification is **first-match / authoritative**
 * `value` and `amount_class` are defaults attached to `kind`
+* `affinities` are additive and non-exclusive
 
 ### Implementation
 
-* Resolver: `resolve_items_to_table.py` 
+* Schema: `loot_schema_v8.yaml`
+* Resolver: `resolve_items_to_table.py`
 
-This script:
-
-* loads item IDs + tags
-* applies schema rules
-* outputs the canonical dataset
-
----
-
-## Tag Generation (Upstream)
-
-Tags are not authored manually per item.
-
-They are generated via:
-
-* `generate_tags_by_items.ps1`
-
-This script produces:
-
-* `item_tags_by_item.json` (used by the resolver) 
-* a parallel tag dataset for KubeJS
-
-### Role in the system
-
-This is a **shared upstream dependency**:
-
-1. **Classification input**
-   → provides the initial tag surface for rule matching
-
-2. **Runtime tagging (KubeJS)**
-   → ensures the same tag semantics exist in-game
-
-This keeps **classification and runtime behavior aligned**.
-
----
-
-## Next Property: Affinity
-
-Affinity adds contextual meaning to items.
-
-Examples:
-
-* `nether`, `end`, `underground`
-* `sea`, `desert`, `arctic`
-* `village`, `nature`
-
-### Invariants
-
-* Optional (not all items need it)
-* Additive (0–many values)
-* Not resolved the same way as `kind`
+This produces the canonical item dataset used by all downstream systems.
 
 ---
 
 ## Loot Context
 
-Loot context describes the **type of loot opportunity**, not the loot itself.
+Loot context describes the **type of loot opportunity**, not specific loot.
 
-Contexts are derived primarily from **structures / loot sources**.
+Contexts are derived from structures / sources:
+
+```yaml
+abandoned_mineshaft:
+  realm: underworld
+  activity: mining
+  structure_class: dungeon
+```
+
+### Key Role
+
+Context provides **descriptive inputs** used by policy to shape loot.
+
+It does not directly define allowed items or weights.
+
+---
+
+## Policy Layer
+
+Policy converts context into **selection behavior**.
+
+It operates over both:
+
+* **kinds** (mechanical categories)
+* **affinities** (thematic categories)
+
+### Rule Types
+
+* `allow`
+* `disallow`
+* `favor`
+* `disfavor`
+
+### Structure
+
+Policy is typically defined globally:
+
+```yaml
+realm:
+  Underworld:
+    allow: [material, tool]
+    favor: [underground]
+
+activity:
+  Mining:
+    allow: [material]
+    favor: [smithing]
+    disfavor: [farming]
+```
+
+### Behavior
+
+```text
+context facts
+→ policy lookup
+→ combined rule sets
+→ candidate shaping
+```
+
+Policy is reusable and consistent across all contexts.
+
+---
+
+## Local Overrides
+
+Contexts may optionally define **local overrides**.
+
+Used for:
+
+* unique or special loot sources
+* exceptions to global economy rules
+* hand-authored thematic deviations
+
+These apply after global policy and can:
+
+* add/remove allowed items
+* adjust favor/disfavor
+* admit otherwise disallowed items
+
+---
+
+## Value Model
+
+Value tables control **distribution of rarity**.
 
 Example:
 
 ```yaml
-basic_adventure:
-  location: overworld_underground
-  structure_class: dungeon
-  environment: underground
+uncommon_loot:
+  junk: 0.05
+  filler: 0.1
+  common: 0.5
+  uncommon: 0.75
+  rare: 0.075
+  epic: 0.005
 ```
 
-### Key idea
+This layer shapes:
 
-Loot context is **not hypothetical** — it is the input to generation.
+* progression pacing
+* loot quality curves
+* overall economy balance
 
 ---
 
-## Loot Generation (Planned)
+## Loot Generation Flow
 
-The system will generate loot tables from:
-
-1. item dataset (resolver output)
-2. context definition
-3. economy rules
-
-High-level flow:
-
-* filter valid items
-* apply base weighting (`value`, `kind`)
-* apply context influence (`affinity`, etc.)
-* apply global balancing rules
-* output a loot table
+```text
+item dataset
+→ filter by allow/disallow (kind + affinity)
+→ apply favor/disfavor weighting
+→ apply value table
+→ apply amount rules
+→ output loot table
+```
 
 ---
 
@@ -153,78 +184,97 @@ Example:
 
 ```text
 minecraft:chests/simple_dungeon
-  → basic_adventure
-  → yourpack:generated/basic_adventure
+  → abandoned_mineshaft
+  → yourpack:generated/abandoned_mineshaft
 ```
 
-### Important
-
-* You map **loot sources**, not blocks
-* This mapping is the main manual step
-
 ---
 
-## Minecraft Integration
-
-LootJS (via KubeJS) is used to:
-
-* replace loot tables by ID
-* redirect sources to generated tables
-* consume generated tag datasets
-
-### Boundary
-
-LootJS is the **application layer**, not the source of truth.
-
----
-
-## Pipeline
+## System Structure
 
 ```text
-Minecraft world load
-  → KubeJS server scripts run
-  → tag webserver becomes available
-  → generate_tags_by_items.ps1
-  → item_tags_by_item.json (base tags)
-  → resolve_items_to_table.py
-  → generated loot-tag mapping / canonical loot outputs
-  → copy generated loot-tag table into kubejs export/input location
-  → reload world so KubeJS applies new loot tags
-  → generate_tags_by_items.ps1 again
-  → item_tags_by_item.json now includes rabidbalance loot tags
-  → (future) loot table generator
+item classification (authoritative)
+        ↓
+context (descriptive)
+        ↓
+global policy (default behavior)
+        ↓
+local overrides (exceptions)
+        ↓
+value model (distribution)
+        ↓
+loot generation
 ```
->**Current workflow note:** the upstream tag export is currently iterative, not one-shot. Minecraft/KubeJS must run once to expose the base tag data, then again after resolver output is fed back into KubeJS so the exported tag set includes the newly assigned loot tags.
----
-
-## Current Status
-
-Implemented:
-
-* item classification system (`kind`, `value`, `amount_class`)
-* resolver + outputs (see report) 
-
-In progress:
-
-* affinity dimension
-* context modeling
-
-Not yet implemented:
-
-* loot table generator
-* full routing map
-* full modded loot interception
 
 ---
 
 ## Summary
 
-This system builds a **canonical loot authority layer** that:
+This system builds a **centralized loot authority layer** that:
 
-* classifies items once (resolver + schema)
-* derives tags from a shared generator
-* defines reusable loot contexts
-* generates loot programmatically
-* replaces all existing loot sources
+* classifies items once
+* separates description (context) from behavior (policy)
+* allows global consistency with local exceptions
+* generates loot programmatically instead of hand-authoring tables
 
-The end goal is consistent, controlled, and extensible loot across the entire pack.
+The result is a **controlled, extensible, and coherent loot economy** across the entire pack.
+
+---
+
+Here’s a concise section you can drop into your Summary doc:
+
+---
+
+## Future Exploration 1: Economy Control Layer
+
+The current system handles:
+
+* **selection** via policy (`allow` / `disallow` / `favor` / `disfavor`)
+* **rarity distribution** via value tables
+
+This may be extended with an additional **economy control layer** applied after selection and value weighting.
+
+### Purpose
+
+Ensure overall loot economy health beyond contextual fit and rarity.
+
+This layer answers:
+
+> Even if an item fits the context and is correctly weighted, should it still be adjusted, limited, or suppressed?
+
+### Potential Responsibilities
+
+* **Abundance control**
+  Prevent overrepresented items (e.g. bread, arrows) from dominating rolls
+
+* **Progression gating**
+  Suppress items that skip intended progression in early contexts
+
+* **Craftability / replaceability adjustment**
+  Reduce presence of easily crafted or trivial items in high-value loot
+
+* **Duplicate suppression**
+  Limit repeated items within a single loot container
+
+* **Global scarcity tuning**
+  Adjust overall availability of high-impact items across the pack
+
+* **Stack / quantity caps**
+  Enforce per-item or per-context quantity limits
+
+### Conceptual Placement
+
+```text
+selection → weighting → economy control → final loot
+```
+
+### Notes
+
+* This layer operates on **resolved item properties**, not raw context
+* It is intended as a **global rule system**, not per-context mapping
+* It complements, but does not replace, policy or value tables
+* It may reuse existing item dimensions (e.g. value, affinities) or introduce new ones (e.g. progression tier, craftability)
+
+---
+
+This layer is not required for initial implementation, but may become important for maintaining long-term balance and consistency across the loot economy.
