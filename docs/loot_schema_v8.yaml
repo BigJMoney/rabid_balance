@@ -1,7 +1,8 @@
 loot_classification:
   version: 8
 
-  value:                    # Buckets of value, power and exclusivity
+  # Buckets of power and/or exclusivity (which go hand-in-hand in MC)
+  value:
     - none                  # Never place; none:nonloot
     - junk
     - filler

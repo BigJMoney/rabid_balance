@@ -1,6 +1,5 @@
 # Global Policy Doc
 
-
 realm:
   
   Upperworld:
@@ -9,17 +8,70 @@ realm:
     favor:
     disfavor:
 
+    # allow_method: union
+    # disallow_method: union
+    # favor_method: union
+    # disfavor_method: union
+
   Underworld:
+    allow:
+    disallow:
+    favor:
+    disfavor:
 
   Deep_Underworld:
+    allow:
+    disallow:
+    favor:
+    disfavor:
 
   Ocean_Realm:
+    allow:
+    disallow:
+    favor:
+    disfavor:
 
   Nether:
+    allow:
+    disallow:
+    favor:
+    disfavor:
 
   End:
+    allow:
+    disallow:
+    favor:
+    disfavor:
 
   Twilight_Forest:
+    allow:
+    disallow:
+    favor:
+    disfavor:
+
+
+structure_class:
+
+  Village:
+
+  Waystation:  # Ex. Inn or tavern
+
+  Tower:
+
+  Fortification:
+
+  Ruin:
+
+
+activity:
+
+  Mining:
+
+  Battle:
+
+  Occult:
+
+  # Likely all the villager jobs...
 
 
 environment:
@@ -69,18 +121,6 @@ danger:
   Epic_Boss:
 
 
-distance_from_spawn:  # I don't know how to control this, or if it's even a thing for MC
-                      #  MC loot tables
-  # Within n chunks
-  Close:
-
-  # Outside o chunks
-  Far:
-
-  # Outside p chunks
-  Very_Far:
-
-
 y_level:
   
   # 190+
@@ -93,22 +133,18 @@ y_level:
   Deep_Underground:
 
 
-structure_class:
+## I don't know how to control this, or if it's even a thing for MC
 
-  Village:
+# distance_from_spawn:
 
-  Waystation:  # Ex. Inn or tavern
+#   # Within n chunks
+#   Close:
 
-  Tower:
+#   # Outside o chunks
+#   Far:
 
-  Fortification:
-
-  Ruin:
-
-
-activity:
-
-  Mining:
+#   # Outside p chunks
+#   Very_Far:
 
 
 # From Apotheosis (not yet enabled)
@@ -123,16 +159,3 @@ world_tier:
   Summit:
 
   Pinnacle:
-
-
-category:
-  Value:
-    allow:
-    disallow:
-    favor:
-    disfavor:
-
-    # allow_method: union
-    # disallow_method: union
-    # favor_method: union
-    # disfavor_method: union

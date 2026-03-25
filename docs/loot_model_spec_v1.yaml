@@ -23,6 +23,7 @@ activity:
 
     # This is an example of controlling how the buckets are combined in this block
     #  It is optional, and the default values are shown
+    #  (union, intersection, difference, symmetric difference)
 
     # allow_method: union
     # disallow_method: union
