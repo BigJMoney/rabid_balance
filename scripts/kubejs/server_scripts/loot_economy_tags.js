@@ -4,7 +4,7 @@
  */
 
 const DO_LOOT_TAG_IMPORT = true
-const IMPORT_PATH = 'kubejs/export/resolved_loot_v8.json'
+const IMPORT_PATH = 'kubejs/export/resolved_loot_v9.json'
 
 /**
  * Import loot properties from a JSON file table, and assign loot tags to all affected MC items.
@@ -25,7 +25,7 @@ function importLootTagsFromTable(tagEvent) {
   var i
   var itemId
   var row
-  var kind
+  var func
   var affinities
   var value
   var amountClass
@@ -34,25 +34,27 @@ function importLootTagsFromTable(tagEvent) {
     itemId = itemIds[i]
     row = rows[itemId]
 
-    kind = row.kind
+    func = row.function
     affinities = row.affinities
     value = row.value
     amountClass = row.amount_class
 
-    if (kind) {
-      if (kind === 'unmatched') continue
-      tagEvent.add('rabidbalance:loot/kind/' + kind, itemId)
+    if (func) {
+      if (func === 'unmatched') continue
+      tagEvent.add('rabbal:function/' + func, itemId)
     }
     if (affinities) {
-      affinities.forEach(affinity => {
-        tagEvent.add('rabidbalance:loot/affinity/' + affinity, itemId)
+      if (affinities.length > 0) {
+        affinities.forEach(affinity => {
+        tagEvent.add('rabbal:affinity/' + affinity, itemId)
       })
+      }
     }
     if (value) {
-      tagEvent.add('rabidbalance:loot/value/' + value, itemId)
+      tagEvent.add('rabbal:loot/value/' + value, itemId)
     }
     if (amountClass) {
-      tagEvent.add('rabidbalance:loot/amount/' + amountClass, itemId)
+      tagEvent.add('rabbal:loot/amount/' + amountClass, itemId)
     }
   }
 
