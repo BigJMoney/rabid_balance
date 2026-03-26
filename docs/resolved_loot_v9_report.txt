@@ -1,0 +1,71 @@
+total items: 1332
+fallback count: 0
+
+kinds:
+  block_building: 329
+  item_material: 242
+  block_misc_use: 174
+  block_material: 125
+  nonloot: 108
+  consumable: 67
+  block_technical: 61
+  misc_tool: 55
+  gather_tool: 47
+  wearable: 42
+  garden: 25
+  block_storage: 22
+  block_crafting: 19
+  weapon: 16
+affinities:
+  village: 120
+  masonry: 98
+  woolworking: 95
+  fortification: 93
+  nether: 89
+  sea: 81
+  treasure: 81
+  underground: 64
+  desert: 52
+  end: 44
+  deep_under: 42
+  jungle: 37
+  smithing: 36
+  archaeology: 36
+  leatherworking: 36
+  clerical: 28
+  swamp: 23
+  farming: 22
+  butchery: 15
+  fletching: 10
+  forest: 9
+  fishing: 9
+  library: 7
+  arctic: 5
+  cartography: 1
+  ruins: 1
+
+values:
+  uncommon: 423
+  filler: 287
+  rare: 255
+  common: 117
+  none: 112
+  epic: 47
+  junk: 46
+  legendary: 33
+  unique: 12
+
+amount_classes:
+  small: 463
+  singleton: 415
+  large: 397
+  tiny: 27
+  bulk: 15
+  medium: 15
+
+dead rules:
+  fallback
+
+dead affinities:
+
+fallback items:

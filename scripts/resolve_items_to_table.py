@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent
 
 DOCS_PATH = "../docs/"
 
-YAML_PATH = DOCS_PATH + "loot_schema_v8.yaml"
+YAML_PATH = DOCS_PATH + "loot_schema_v9.yaml"
 ITEMS_PATH = DOCS_PATH + "minecraft_item_ids.json"
 TAGS_BY_ITEM_PATH = DOCS_PATH + "item_tags_by_item-no_loot_tags.json"
 
@@ -35,7 +35,7 @@ class RuleSchema:
     rule_id: str
     priority: int
     match_selectors: list[str] | None
-    assign_kind: str
+    assign_function: str
     assign_value: AssignBlock
     assign_amount_class: AssignBlock
     reason: str | None = None
@@ -72,7 +72,7 @@ class CompiledRule:
     rule_id: str
     priority: int
     match_selectors: list[str] | None
-    assign_kind: str
+    assign_function: str
     assign_value: AssignBlock
     assign_amount_class: AssignBlock
     reason: str | None
@@ -100,7 +100,7 @@ class ResolvedItem:
     item_id: str
     value: str
     value_detail: str | None
-    kind: str
+    function: str
     amount_class: str
     amount_detail: str | None
     affinities: list[str]
@@ -236,9 +236,9 @@ def parse_rule_schema(raw_rule: Any, index: int) -> RuleSchema:
     if not isinstance(raw_assign, dict):
         raise ValueError(f"{where}.assign must be a dict")
 
-    assign_kind = raw_assign.get("kind")
-    if not isinstance(assign_kind, str) or not assign_kind:
-        raise ValueError(f"{where}.assign.kind must be a non-empty string")
+    assign_function = raw_assign.get("function")
+    if not isinstance(assign_function, str) or not assign_function:
+        raise ValueError(f"{where}.assign.function must be a non-empty string")
 
     assign_value = parse_assign_block(raw_assign.get("value"), f"{where}.assign.value")
     assign_amount_class = parse_assign_block(
@@ -254,7 +254,7 @@ def parse_rule_schema(raw_rule: Any, index: int) -> RuleSchema:
         rule_id=rule_id,
         priority=priority,
         match_selectors=match_selectors,
-        assign_kind=assign_kind,
+        assign_function=assign_function,
         assign_value=assign_value,
         assign_amount_class=assign_amount_class,
         reason=reason,
@@ -279,15 +279,15 @@ def parse_affinity_schema(raw_arule: Any, index: int) -> AffinitySchema:
     raw_match = raw_arule.get("match")
     match_selectors = parse_selector_list(raw_match, f"{where}.match")
 
-    add = raw_arule.get("add")
-    if not isinstance(add, str) or not add:
-        raise ValueError(f"{where}.add must be a nonstring")
+    # add = raw_arule.get("add")
+    # if not isinstance(add, str) or not add:
+    #     raise ValueError(f"{where}.add must be a nonstring")
 
     return AffinitySchema(
         affinity_id=affinity_id,
         priority=priority,
         match_selectors=match_selectors,
-        add=add
+        add=affinity_id
     )
 
 
@@ -348,7 +348,7 @@ def compile_rules(schema: LootSchema) -> list[CompiledRule]:
             rule_id=rule.rule_id,
             priority=rule.priority,
             match_selectors=rule.match_selectors,
-            assign_kind=rule.assign_kind,
+            assign_function=rule.assign_function,
             assign_value=rule.assign_value,
             assign_amount_class=rule.assign_amount_class,
             reason=rule.reason,
@@ -393,7 +393,7 @@ def resolve_item(
 ) -> ResolvedItem:
     rule, match = find_first_matching_rule(item, rules)
 
-    kind = resolve_assign_kind(rule.assign_kind)
+    kind = resolve_assign_kind(rule.assign_function)
     value, _value_detail = resolve_assign_property(item, rule.assign_value)
     amount_class, _amount_detail = resolve_assign_property(item, rule.assign_amount_class)
 
@@ -411,7 +411,7 @@ def resolve_item(
         item_id=item.item_id,
         value=value,
         value_detail=_value_detail,
-        kind=kind,
+        function=kind,
         amount_class=amount_class,
         amount_detail=_amount_detail,
         affinities=affinities,
@@ -541,7 +541,7 @@ def validate_results(results: list[ResolvedItem], item_ids: list[str]):
             raise ValueError(f"duplicate item_id: {r.item_id}")
         seen.add(r.item_id)
 
-        if not r.kind or not r.value or not r.amount_class:
+        if not r.function or not r.value or not r.amount_class:
             raise ValueError(f"incomplete assignment for {r.item_id}")
 
 
@@ -569,7 +569,7 @@ def write_csv(results: list[ResolvedItem], path: str):
         for r in results:
             writer.writerow({
                 "item_id": r.item_id,
-                "kind": r.kind,
+                "kind": r.function,
                 "affinities": r.affinities,
                 "value": r.value,
                 "amount_class": r.amount_class,
@@ -592,7 +592,7 @@ def write_json(results: list[ResolvedItem], path: str):
 
         for r in results:
             json_item = {
-                "kind": r.kind,
+                "kind": r.function,
                 "affinities": r.affinities,
                 "value": r.value,
                 "amount_class": r.amount_class
@@ -609,7 +609,7 @@ def write_report(
         arules: list[AffinityRule],
         path: str
 ) -> None:
-    kind_counts = Counter(r.kind for r in results)
+    kind_counts = Counter(r.function for r in results)
     affinity_counts = Counter(c for r in results for c in r.affinities)
     value_counts = Counter(r.value for r in results)
     amount_counts = Counter(r.amount_class for r in results)

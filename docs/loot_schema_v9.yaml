@@ -50,7 +50,12 @@ loot_classification:
       - optional context modifier by location / structure / danger / budget
       - hard caps for singleton or progression-sensitive items
 
+  
+  #--------------------
+
   rules:
+
+  #--------------------
     
     - id: excluded_items
       priority: 100
@@ -364,6 +369,7 @@ loot_classification:
         - minecraft:leather
         - minecraft:flint
         - minecraft:kelp
+        - minecraft:nether_brick
         # Unc
         - dried_kelp_block
         - minecraft:glowstone_dust
@@ -422,6 +428,7 @@ loot_classification:
         - minecraft:rabbit_foot
         - minecraft:shulker_shell
         - minecraft:sniffer_egg
+        - minecraft:netherite_upgrade_smithing_template
         - minecraft:honey_block
         - minecraft:iron_block
         - minecraft:gold_block
@@ -526,6 +533,7 @@ loot_classification:
             - minecraft:leather
             - minecraft:flint
             - minecraft:kelp
+            - minecraft:nether_brick
             - "#minecraft:wool"
             - "*_mushroom"
             - "*_fungus"
@@ -748,6 +756,7 @@ loot_classification:
         - minecraft:podzol
         - minecraft:mycelium
         - minecraft:rooted_dirt
+        - minecraft:hay_block
         - "infested_*"
         - "*_froglight"
         - "#c:fence_gates"
@@ -804,6 +813,7 @@ loot_classification:
             - minecraft:bell
             - minecraft:armor_stand
             - minecraft:jukebox
+            - minecraft:hay_block
             - "#minecraft:beds"
       reason: >
         These blocks are meaningfully useful, but have too specialized purposes to categorize (or to want to categorize, like doorways).
@@ -830,7 +840,6 @@ loot_classification:
         - minecraft:purpur_block
         - minecraft:bricks
         - minecraft:mossy_cobblestone
-        - minecraft:nether_brick
         - minecraft:packed_mud
         - minecraft:red_sand
         - minecraft:red_sandstone
@@ -848,7 +857,8 @@ loot_classification:
         - minecraft:granite
         - minecraft:end_stone
         - minecraft:mangrove_roots
-        # - "*_bricks"                      # Testing
+        - minecraft:bamboo_block
+        - "*_bricks"
         - "#c:buds"
         - "#c:stripped_logs"
         - "#minecraft:logs"
@@ -906,7 +916,6 @@ loot_classification:
         - minecraft:fern
         - minecraft:glow_lichen
         - minecraft:grass_block
-        - minecraft:hanging_roots
         - minecraft:mushroom_stem
         - minecraft:pitcher_pod
         - minecraft:red_mushroom_block
@@ -916,28 +925,8 @@ loot_classification:
         - minecraft:snow
         - minecraft:tall_grass
         - minecraft:warped_nylium
-        - minecraft:warped_roots
         - minecraft:warped_wart_block
         - minecraft:lily_pad
-        - "#minecraft:dirt"
-        - "#minecraft:leaves"
-        # Filler
-        - "smooth_*"
-        - "polished_*"
-        - "chiseled_*"
-        - "cut_*"
-        - "*_tiles"
-        - "exposed_*"
-        - "weathered_*"
-        - "oxidized_*"
-        - "*_coral*"
-        - "#minecraft:walls"
-        - "#minecraft:stairs"
-        - "#minecraft:slabs"
-        - "#c:fences"
-        - "#minecraft:wool_carpets"
-        - "#c:glass_blocks"
-        - "#minecraft:terracotta"
         # Nicer
         - minecraft:painting
         - minecraft:sea_pickle
@@ -945,6 +934,30 @@ loot_classification:
         - minecraft:reinforced_deepslate
         - minecraft:gilded_blackstone
         - minecraft:lily_pad
+        - minecraft:quartz_bricks
+        # Filters
+        - "#minecraft:dirt"
+        - "#minecraft:leaves"
+        - "*_roots"
+
+        - "smooth_*"
+        - "polished_*"
+        - "chiseled_*"
+        - "cut_*"
+        - "exposed_*"
+        - "weathered_*"
+        - "oxidized_*"
+        - "cracked*_bricks"
+        - "*_coral*"
+        - "*_tiles"
+        - "#minecraft:walls"
+        - "#minecraft:stairs"
+        - "#minecraft:slabs"
+        - "#c:fences"
+        - "#minecraft:wool_carpets"
+        - "#c:glass_blocks"
+        - "#minecraft:terracotta"
+
         - "bamboo_mosaic*"
         - "waxed_*"
         - "*_bars"
@@ -955,7 +968,6 @@ loot_classification:
         - "#c:pumpkins"
         - "#c:concretes"
         - "#c:glazed_terracottas"
-        #- "#c:storage_blocks"                 # Catch all
       assign:
         value:
           default: filler
@@ -969,7 +981,6 @@ loot_classification:
             - minecraft:fern
             - minecraft:glow_lichen
             - minecraft:grass_block
-            - minecraft:hanging_roots
             - minecraft:mushroom_stem
             - minecraft:pitcher_pod
             - minecraft:red_mushroom_block
@@ -979,9 +990,9 @@ loot_classification:
             - minecraft:snow
             - minecraft:tall_grass
             - minecraft:warped_nylium
-            - minecraft:warped_roots
             - minecraft:warped_wart_block
             - minecraft:lily_pad
+            - "*_roots"
             - "#minecraft:dirt"
             - "#minecraft:leaves"
           legendary:
@@ -1024,7 +1035,14 @@ loot_classification:
       reason: >
         Conservative fallback for uncategorized items pending manual review.
 
+
+
+  #--------------------
+
   affinity_rules:
+
+  #--------------------
+
     
     # ---- Realms
 
@@ -1348,21 +1366,21 @@ loot_classification:
         - "#c:potions"
         - "#c:music_discs"
 
-    - id: furniture
+    # - id: furniture
 
-    - id: light
+    # - id: light
 
-    - id: weapon
+    # - id: weapon
 
-    - id: protection
+    # - id: protection
 
-    - id: tool
+    # - id: tool
 
-    - id: cosmetic
+    # - id: cosmetic
 
-    - id: lightsource
+    # - id: lightsource
 
 
     # ---- Character / Motif / Theme
 
-    - id: arcane
+    # - id: arcane
