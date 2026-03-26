@@ -753,7 +753,9 @@ loot_classification:
         - minecraft:blue_ice
         - minecraft:conduit
         - minecraft:weeping_vines
+        - minecraft:twisting_vines
         - minecraft:podzol
+        - minecraft:moss_block
         - minecraft:mycelium
         - minecraft:rooted_dirt
         - minecraft:hay_block
@@ -914,6 +916,7 @@ loot_classification:
         - minecraft:dead_bush
         - minecraft:dirt
         - minecraft:fern
+        - minecraft:large_fern
         - minecraft:glow_lichen
         - minecraft:grass_block
         - minecraft:mushroom_stem
@@ -924,9 +927,11 @@ loot_classification:
         - minecraft:small_dripleaf
         - minecraft:snow
         - minecraft:tall_grass
+        - minecraft:crimson_nylium
         - minecraft:warped_nylium
         - minecraft:warped_wart_block
         - minecraft:lily_pad
+        - minecraft:moss_carpet
         # Nicer
         - minecraft:painting
         - minecraft:sea_pickle
@@ -979,6 +984,7 @@ loot_classification:
             - minecraft:dead_bush
             - minecraft:dirt
             - minecraft:fern
+            - minecraft:large_fern
             - minecraft:glow_lichen
             - minecraft:grass_block
             - minecraft:mushroom_stem
@@ -989,9 +995,11 @@ loot_classification:
             - minecraft:small_dripleaf
             - minecraft:snow
             - minecraft:tall_grass
+            - minecraft:crimson_nylium
             - minecraft:warped_nylium
             - minecraft:warped_wart_block
             - minecraft:lily_pad
+            - minecraft:moss_carpet
             - "*_roots"
             - "#minecraft:dirt"
             - "#minecraft:leaves"

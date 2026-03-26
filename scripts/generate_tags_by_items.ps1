@@ -5,18 +5,12 @@ $itemIds = Invoke-RestMethod "$baseUrl/api/registries/minecraft/item/keys" | Sor
 $byItem = [ordered]@{}
 
 foreach ($id in $itemIds) {
-  $byItem[$id] = $tags
-
   $parts = $id -split ':', 2
   $namespace = $parts[0]
   $path = $parts[1]
 
   $rawTags = Invoke-RestMethod "$baseUrl/api/tags/minecraft/item/keys/$namespace/$path"
   $tags = @($rawTags | ForEach-Object { $_.ToString() } | Sort-Object)
-
-  if ($tags.Count -eq 0) {
-    continue
-  }
 
   $byItem[$id] = $tags
 }

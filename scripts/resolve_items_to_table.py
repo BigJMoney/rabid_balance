@@ -1,5 +1,6 @@
 """
-Resolve a list of Minecraft items, using a provided loot schema, to create a table that sets item value, kind and amount class for each item.
+Resolve a list of Minecraft items, using a provided loot schema, to create a table that sets item value,
+function and amount class for each item.
 
 """
 
@@ -393,7 +394,7 @@ def resolve_item(
 ) -> ResolvedItem:
     rule, match = find_first_matching_rule(item, rules)
 
-    kind = resolve_assign_kind(rule.assign_function)
+    function = resolve_assign_function(rule.assign_function)
     value, _value_detail = resolve_assign_property(item, rule.assign_value)
     amount_class, _amount_detail = resolve_assign_property(item, rule.assign_amount_class)
 
@@ -411,7 +412,7 @@ def resolve_item(
         item_id=item.item_id,
         value=value,
         value_detail=_value_detail,
-        function=kind,
+        function=function,
         amount_class=amount_class,
         amount_detail=_amount_detail,
         affinities=affinities,
@@ -520,8 +521,8 @@ def resolve_assign_property(
     return default_value, "default"
 
 
-def resolve_assign_kind(assign_kind: str) -> str:
-    return assign_kind
+def resolve_assign_function(assign_function: str) -> str:
+    return assign_function
 
 
 def resolve_add_affinity(add_affinity: str) -> str:
@@ -551,7 +552,7 @@ def write_csv(results: list[ResolvedItem], path: str):
 
     fieldnames = [
         "item_id",
-        "kind",
+        "function",
         "affinities",
         "value",
         "amount_class",
@@ -569,7 +570,7 @@ def write_csv(results: list[ResolvedItem], path: str):
         for r in results:
             writer.writerow({
                 "item_id": r.item_id,
-                "kind": r.function,
+                "function": r.function,
                 "affinities": r.affinities,
                 "value": r.value,
                 "amount_class": r.amount_class,
@@ -592,7 +593,7 @@ def write_json(results: list[ResolvedItem], path: str):
 
         for r in results:
             json_item = {
-                "kind": r.function,
+                "function": r.function,
                 "affinities": r.affinities,
                 "value": r.value,
                 "amount_class": r.amount_class
@@ -609,7 +610,7 @@ def write_report(
         arules: list[AffinityRule],
         path: str
 ) -> None:
-    kind_counts = Counter(r.function for r in results)
+    function_counts = Counter(r.function for r in results)
     affinity_counts = Counter(c for r in results for c in r.affinities)
     value_counts = Counter(r.value for r in results)
     amount_counts = Counter(r.amount_class for r in results)
@@ -624,13 +625,16 @@ def write_report(
         f.write(f"total items: {len(results)}\n")
         f.write(f"fallback count: {len(fallback_items)}\n\n")
 
-        f.write("kinds:\n")
-        for k, v in kind_counts.most_common():
+        f.write("functions:\n")
+        for k, v in function_counts.most_common():
             f.write(f"  {k}: {v}\n")
 
-        f.write("affinities:\n")
+        f.write("\naffinities:\n")
+        count = 0
         for k, v in affinity_counts.most_common():
             f.write(f"  {k}: {v}\n")
+            count += v
+        f.write(f" Total Affinities: {count}\n")
 
         f.write("\nvalues:\n")
         for k, v in value_counts.most_common():

@@ -1,67 +1,69 @@
 total items: 1332
 fallback count: 0
 
-kinds:
-  block_building: 329
-  item_material: 242
-  block_misc_use: 174
+functions:
+  block_building: 382
+  item_material: 218
+  block_misc_use: 170
   block_material: 125
   nonloot: 108
-  consumable: 67
-  block_technical: 61
-  misc_tool: 55
-  gather_tool: 47
-  wearable: 42
-  garden: 25
+  block_technical: 64
+  consumable: 58
+  misc_tool: 53
+  gather_tool: 38
+  wearable: 38
+  garden: 22
   block_storage: 22
-  block_crafting: 19
-  weapon: 16
+  block_crafting: 20
+  weapon: 14
+
 affinities:
-  village: 120
-  masonry: 98
-  woolworking: 95
-  fortification: 93
-  nether: 89
-  sea: 81
-  treasure: 81
-  underground: 64
-  desert: 52
-  end: 44
-  deep_under: 42
+  village: 108
+  masonry: 92
+  nether: 87
+  fortification: 78
+  sea: 75
+  woolworking: 73
+  treasure: 66
+  underground: 55
+  desert: 44
+  deep_under: 40
   jungle: 37
-  smithing: 36
-  archaeology: 36
-  leatherworking: 36
-  clerical: 28
+  end: 36
+  smithing: 29
+  leatherworking: 29
+  archaeology: 24
   swamp: 23
-  farming: 22
-  butchery: 15
-  fletching: 10
+  clerical: 22
+  farming: 17
+  butchery: 11
+  fletching: 9
   forest: 9
-  fishing: 9
-  library: 7
+  fishing: 7
+  library: 6
   arctic: 5
   cartography: 1
   ruins: 1
+ Total Affinities: 984
 
 values:
-  uncommon: 423
-  filler: 287
-  rare: 255
-  common: 117
+  uncommon: 411
+  filler: 303
+  rare: 251
   none: 112
-  epic: 47
-  junk: 46
+  common: 102
+  junk: 58
+  epic: 50
   legendary: 33
   unique: 12
 
 amount_classes:
-  small: 463
-  singleton: 415
-  large: 397
-  tiny: 27
-  bulk: 15
-  medium: 15
+  large: 457
+  small: 428
+  singleton: 398
+  tiny: 24
+  medium: 14
+  bulk: 11
 
 dead rules:
   fallback

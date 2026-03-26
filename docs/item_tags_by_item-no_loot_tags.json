@@ -90,17 +90,9 @@
         "minecraft:rails"
     ],
     "minecraft:air":
-    [
-        "c:dyed",
-        "c:dyed/cyan",
-        "minecraft:terracotta"
-    ],
+    [],
     "minecraft:allay_spawn_egg":
-    [
-        "c:fences",
-        "c:fences/nether_brick",
-        "minecraft:fences"
-    ],
+    [],
     "minecraft:allium":
     [
         "c:animal_foods",
@@ -109,9 +101,7 @@
         "minecraft:small_flowers"
     ],
     "minecraft:amethyst_block":
-    [
-        "minecraft:saplings"
-    ],
+    [],
     "minecraft:amethyst_cluster":
     [
         "c:clusters"
@@ -166,19 +156,11 @@
         "minecraft:decorated_pot_sherds"
     ],
     "minecraft:armadillo_scute":
-    [
-        "c:storage_blocks",
-        "c:storage_blocks/netherite"
-    ],
+    [],
     "minecraft:armadillo_spawn_egg":
-    [
-        "minecraft:trapdoors",
-        "minecraft:wooden_trapdoors"
-    ],
+    [],
     "minecraft:armor_stand":
-    [
-        "minecraft:hanging_signs"
-    ],
+    [],
     "minecraft:arms_up_pottery_sherd":
     [
         "minecraft:decorated_pot_ingredients",
@@ -257,11 +239,7 @@
         "minecraft:hanging_signs"
     ],
     "minecraft:bamboo_mosaic":
-    [
-        "c:dyed",
-        "c:dyed/light_blue",
-        "minecraft:beds"
-    ],
+    [],
     "minecraft:bamboo_mosaic_slab":
     [
         "minecraft:slabs"
@@ -310,31 +288,17 @@
     "minecraft:barrier":
     [],
     "minecraft:basalt":
-    [
-        "minecraft:saplings"
-    ],
+    [],
     "minecraft:bat_spawn_egg":
     [],
     "minecraft:beacon":
     [],
     "minecraft:bedrock":
-    [
-        "c:armors",
-        "c:enchantables",
-        "minecraft:enchantable/armor",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/equippable",
-        "minecraft:enchantable/foot_armor",
-        "minecraft:enchantable/vanishing",
-        "minecraft:foot_armor",
-        "minecraft:trimmable_armor"
-    ],
+    [],
     "minecraft:bee_nest":
     [],
     "minecraft:bee_spawn_egg":
-    [
-        "minecraft:stairs"
-    ],
+    [],
     "minecraft:beef":
     [
         "c:animal_foods",
@@ -344,10 +308,7 @@
         "minecraft:wolf_food"
     ],
     "minecraft:beehive":
-    [
-        "minecraft:decorated_pot_ingredients",
-        "minecraft:decorated_pot_sherds"
-    ],
+    [],
     "minecraft:beetroot":
     [
         "c:animal_foods",
@@ -376,9 +337,7 @@
         "minecraft:piglin_loved"
     ],
     "minecraft:big_dripleaf":
-    [
-        "c:gravels"
-    ],
+    [],
     "minecraft:birch_boat":
     [
         "minecraft:boats"
@@ -572,11 +531,7 @@
         "c:villager_job_sites"
     ],
     "minecraft:blaze_powder":
-    [
-        "c:sandstone/stairs",
-        "c:sandstone/uncolored_stairs",
-        "minecraft:stairs"
-    ],
+    [],
     "minecraft:blaze_rod":
     [
         "c:rods",
@@ -633,10 +588,7 @@
         "c:glazed_terracottas"
     ],
     "minecraft:blue_ice":
-    [
-        "c:potions",
-        "c:potions/bottle"
-    ],
+    [],
     "minecraft:blue_orchid":
     [
         "c:animal_foods",
@@ -677,10 +629,7 @@
         "minecraft:wool"
     ],
     "minecraft:bogged_spawn_egg":
-    [
-        "minecraft:decorated_pot_ingredients",
-        "minecraft:decorated_pot_sherds"
-    ],
+    [],
     "minecraft:bolt_armor_trim_smithing_template":
     [
         "minecraft:trim_templates"
@@ -718,31 +667,13 @@
         "minecraft:enchantable/vanishing"
     ],
     "minecraft:bowl":
-    [
-        "c:enchantables",
-        "minecraft:enchantable/equippable",
-        "minecraft:enchantable/vanishing",
-        "minecraft:noteblock_top_instruments",
-        "minecraft:skulls"
-    ],
+    [],
     "minecraft:brain_coral":
-    [
-        "c:ore_rates/singular",
-        "c:ores",
-        "c:ores/quartz",
-        "c:ores_in_ground/netherrack"
-    ],
+    [],
     "minecraft:brain_coral_block":
-    [
-        "minecraft:decorated_pot_ingredients",
-        "minecraft:decorated_pot_sherds"
-    ],
+    [],
     "minecraft:brain_coral_fan":
-    [
-        "c:dyed",
-        "c:dyed/purple",
-        "minecraft:candles"
-    ],
+    [],
     "minecraft:bread":
     [
         "c:foods",
@@ -754,13 +685,7 @@
         "c:rods/breeze"
     ],
     "minecraft:breeze_spawn_egg":
-    [
-        "c:stripped_woods",
-        "minecraft:completes_find_tree_tutorial",
-        "minecraft:jungle_logs",
-        "minecraft:logs",
-        "minecraft:logs_that_burn"
-    ],
+    [],
     "minecraft:brewer_pottery_sherd":
     [
         "minecraft:decorated_pot_ingredients",
@@ -789,11 +714,7 @@
         "minecraft:walls"
     ],
     "minecraft:bricks":
-    [
-        "c:sandstone/red_slabs",
-        "c:sandstone/slabs",
-        "minecraft:slabs"
-    ],
+    [],
     "minecraft:brown_banner":
     [
         "c:dyed",
@@ -847,10 +768,7 @@
         "c:mushrooms"
     ],
     "minecraft:brown_mushroom_block":
-    [
-        "minecraft:buttons",
-        "minecraft:wooden_buttons"
-    ],
+    [],
     "minecraft:brown_shulker_box":
     [
         "c:dyed",
@@ -892,27 +810,11 @@
         "minecraft:enchantable/vanishing"
     ],
     "minecraft:bubble_coral":
-    [
-        "c:dyed",
-        "c:dyed/light_gray",
-        "minecraft:dampens_vibrations",
-        "minecraft:wool_carpets"
-    ],
+    [],
     "minecraft:bubble_coral_block":
-    [
-        "c:animal_foods",
-        "minecraft:bee_food",
-        "minecraft:flowers",
-        "minecraft:small_flowers"
-    ],
+    [],
     "minecraft:bubble_coral_fan":
-    [
-        "c:animal_foods",
-        "c:seeds",
-        "c:seeds/melon",
-        "minecraft:chicken_food",
-        "minecraft:parrot_food"
-    ],
+    [],
     "minecraft:bucket":
     [
         "c:buckets",
@@ -942,20 +844,11 @@
         "c:foods/edible_when_placed"
     ],
     "minecraft:calcite":
-    [
-        "minecraft:slabs"
-    ],
+    [],
     "minecraft:calibrated_sculk_sensor":
-    [
-        "c:dyed",
-        "c:dyed/yellow",
-        "c:shulker_boxes"
-    ],
+    [],
     "minecraft:camel_spawn_egg":
-    [
-        "minecraft:trapdoors",
-        "minecraft:wooden_trapdoors"
-    ],
+    [],
     "minecraft:campfire":
     [],
     "minecraft:candle":
@@ -992,19 +885,13 @@
         "minecraft:enchantable/vanishing"
     ],
     "minecraft:cat_spawn_egg":
-    [
-        "minecraft:hanging_signs"
-    ],
+    [],
     "minecraft:cauldron":
     [
         "c:villager_job_sites"
     ],
     "minecraft:cave_spider_spawn_egg":
-    [
-        "c:sandstone/red_stairs",
-        "c:sandstone/stairs",
-        "minecraft:stairs"
-    ],
+    [],
     "minecraft:chain":
     [
         "c:chains"
@@ -1158,9 +1045,7 @@
         "c:chests/wooden"
     ],
     "minecraft:chest_minecart":
-    [
-        "minecraft:signs"
-    ],
+    [],
     "minecraft:chicken":
     [
         "c:animal_foods",
@@ -1171,40 +1056,23 @@
         "minecraft:wolf_food"
     ],
     "minecraft:chicken_spawn_egg":
-    [
-        "minecraft:buttons",
-        "minecraft:stone_buttons"
-    ],
+    [],
     "minecraft:chipped_anvil":
     [
         "minecraft:anvil"
     ],
     "minecraft:chiseled_bookshelf":
-    [
-        "minecraft:boats"
-    ],
+    [],
     "minecraft:chiseled_copper":
     [],
     "minecraft:chiseled_deepslate":
     [],
     "minecraft:chiseled_nether_bricks":
-    [
-        "c:animal_foods",
-        "c:foods",
-        "c:foods/fruit",
-        "c:foods/golden",
-        "minecraft:horse_food",
-        "minecraft:horse_tempt_items",
-        "minecraft:piglin_loved"
-    ],
+    [],
     "minecraft:chiseled_polished_blackstone":
     [],
     "minecraft:chiseled_quartz_block":
-    [
-        "c:dyed",
-        "c:dyed/pink",
-        "minecraft:banners"
-    ],
+    [],
     "minecraft:chiseled_red_sandstone":
     [
         "c:sandstone/blocks",
@@ -1220,18 +1088,9 @@
         "minecraft:stone_bricks"
     ],
     "minecraft:chiseled_tuff":
-    [
-        "minecraft:decorated_pot_ingredients",
-        "minecraft:decorated_pot_sherds"
-    ],
+    [],
     "minecraft:chiseled_tuff_bricks":
-    [
-        "c:ingots",
-        "c:ingots/gold",
-        "minecraft:beacon_payment_items",
-        "minecraft:piglin_loved",
-        "minecraft:trim_materials"
-    ],
+    [],
     "minecraft:chorus_flower":
     [
         "c:animal_foods",
@@ -1244,15 +1103,9 @@
         "c:foods/fruit"
     ],
     "minecraft:chorus_plant":
-    [
-        "c:bricks",
-        "c:bricks/nether"
-    ],
+    [],
     "minecraft:clay":
-    [
-        "c:potions",
-        "c:potions/bottle"
-    ],
+    [],
     "minecraft:clay_ball":
     [],
     "minecraft:clock":
@@ -1323,12 +1176,7 @@
         "minecraft:walls"
     ],
     "minecraft:cobweb":
-    [
-        "c:dyed",
-        "c:dyed/brown",
-        "minecraft:dampens_vibrations",
-        "minecraft:wool_carpets"
-    ],
+    [],
     "minecraft:cocoa_beans":
     [
         "c:crops",
@@ -1367,11 +1215,7 @@
         "c:villager_job_sites"
     ],
     "minecraft:conduit":
-    [
-        "c:concrete_powders",
-        "c:dyed",
-        "c:dyed/cyan"
-    ],
+    [],
     "minecraft:cooked_beef":
     [
         "c:animal_foods",
@@ -1437,10 +1281,7 @@
         "c:storage_blocks/copper"
     ],
     "minecraft:copper_bulb":
-    [
-        "c:cobblestones",
-        "c:cobblestones/infested"
-    ],
+    [],
     "minecraft:copper_door":
     [
         "minecraft:doors"
@@ -1473,29 +1314,15 @@
         "minecraft:small_flowers"
     ],
     "minecraft:cow_spawn_egg":
-    [
-        "minecraft:saplings"
-    ],
+    [],
     "minecraft:cracked_deepslate_bricks":
-    [
-        "minecraft:trim_templates"
-    ],
+    [],
     "minecraft:cracked_deepslate_tiles":
-    [
-        "c:fences",
-        "c:fences/wooden",
-        "minecraft:fences",
-        "minecraft:wooden_fences"
-    ],
+    [],
     "minecraft:cracked_nether_bricks":
     [],
     "minecraft:cracked_polished_blackstone_bricks":
-    [
-        "c:sands",
-        "c:sands/red",
-        "minecraft:sand",
-        "minecraft:smelts_to_glass"
-    ],
+    [],
     "minecraft:cracked_stone_bricks":
     [
         "minecraft:stone_bricks"
@@ -1507,9 +1334,7 @@
         "c:player_workstations/crafting_tables"
     ],
     "minecraft:creeper_banner_pattern":
-    [
-        "c:buds"
-    ],
+    [],
     "minecraft:creeper_head":
     [
         "c:enchantables",
@@ -1519,9 +1344,7 @@
         "minecraft:skulls"
     ],
     "minecraft:creeper_spawn_egg":
-    [
-        "minecraft:hanging_signs"
-    ],
+    [],
     "minecraft:crimson_button":
     [
         "minecraft:buttons",
@@ -1567,12 +1390,7 @@
         "minecraft:non_flammable_wood"
     ],
     "minecraft:crimson_nylium":
-    [
-        "c:animal_foods",
-        "minecraft:bee_food",
-        "minecraft:flowers",
-        "minecraft:small_flowers"
-    ],
+    [],
     "minecraft:crimson_planks":
     [
         "minecraft:non_flammable_wood",
@@ -1631,17 +1449,7 @@
         "c:obsidians/crying"
     ],
     "minecraft:cut_copper":
-    [
-        "c:enchantables",
-        "c:tools",
-        "minecraft:breaks_decorated_pots",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/mining",
-        "minecraft:enchantable/mining_loot",
-        "minecraft:enchantable/vanishing",
-        "minecraft:piglin_loved",
-        "minecraft:shovels"
-    ],
+    [],
     "minecraft:cut_copper_slab":
     [
         "minecraft:slabs"
@@ -1856,10 +1664,7 @@
         "minecraft:logs_that_burn"
     ],
     "minecraft:dark_prismarine":
-    [
-        "minecraft:completes_find_tree_tutorial",
-        "minecraft:wart_blocks"
-    ],
+    [],
     "minecraft:dark_prismarine_slab":
     [
         "minecraft:slabs"
@@ -1869,35 +1674,13 @@
         "minecraft:stairs"
     ],
     "minecraft:daylight_detector":
-    [
-        "c:dyed",
-        "c:dyed/cyan",
-        "c:glass_panes"
-    ],
+    [],
     "minecraft:dead_brain_coral":
-    [
-        "c:enchantables",
-        "c:tools",
-        "c:tools/melee_weapon",
-        "minecraft:axes",
-        "minecraft:breaks_decorated_pots",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/mining",
-        "minecraft:enchantable/mining_loot",
-        "minecraft:enchantable/sharp_weapon",
-        "minecraft:enchantable/vanishing",
-        "minecraft:enchantable/weapon"
-    ],
+    [],
     "minecraft:dead_brain_coral_block":
-    [
-        "c:fence_gates",
-        "c:fence_gates/wooden",
-        "minecraft:fence_gates"
-    ],
+    [],
     "minecraft:dead_brain_coral_fan":
-    [
-        "minecraft:planks"
-    ],
+    [],
     "minecraft:dead_bubble_coral":
     [],
     "minecraft:dead_bubble_coral_block":
@@ -1907,69 +1690,25 @@
     "minecraft:dead_bush":
     [],
     "minecraft:dead_fire_coral":
-    [
-        "c:concrete_powders",
-        "c:dyed",
-        "c:dyed/red"
-    ],
+    [],
     "minecraft:dead_fire_coral_block":
     [],
     "minecraft:dead_fire_coral_fan":
     [],
     "minecraft:dead_horn_coral":
-    [
-        "c:gems",
-        "c:gems/lapis",
-        "minecraft:trim_materials",
-        "neoforge:enchanting_fuels"
-    ],
+    [],
     "minecraft:dead_horn_coral_block":
-    [
-        "minecraft:non_flammable_wood",
-        "minecraft:planks"
-    ],
+    [],
     "minecraft:dead_horn_coral_fan":
-    [
-        "c:armors",
-        "c:enchantables",
-        "minecraft:dyeable",
-        "minecraft:enchantable/armor",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/equippable",
-        "minecraft:enchantable/leg_armor",
-        "minecraft:enchantable/vanishing",
-        "minecraft:freeze_immune_wearables",
-        "minecraft:leg_armor",
-        "minecraft:trimmable_armor"
-    ],
+    [],
     "minecraft:dead_tube_coral":
-    [
-        "c:enchantables",
-        "c:tools",
-        "minecraft:breaks_decorated_pots",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/mining",
-        "minecraft:enchantable/mining_loot",
-        "minecraft:enchantable/vanishing",
-        "minecraft:shovels"
-    ],
+    [],
     "minecraft:dead_tube_coral_block":
-    [
-        "c:fence_gates",
-        "c:fence_gates/wooden",
-        "minecraft:fence_gates",
-        "minecraft:non_flammable_wood"
-    ],
+    [],
     "minecraft:dead_tube_coral_fan":
-    [
-        "minecraft:signs"
-    ],
+    [],
     "minecraft:debug_stick":
-    [
-        "c:dyed",
-        "c:dyed/white",
-        "c:shulker_boxes"
-    ],
+    [],
     "minecraft:decorated_pot":
     [],
     "minecraft:deepslate":
@@ -1990,11 +1729,7 @@
         "minecraft:walls"
     ],
     "minecraft:deepslate_bricks":
-    [
-        "c:storage_blocks",
-        "c:storage_blocks/raw_gold",
-        "minecraft:piglin_loved"
-    ],
+    [],
     "minecraft:deepslate_coal_ore":
     [
         "c:ore_rates/singular",
@@ -2152,11 +1887,7 @@
         "minecraft:hoes"
     ],
     "minecraft:diamond_horse_armor":
-    [
-        "c:dyed",
-        "c:dyed/lime",
-        "minecraft:beds"
-    ],
+    [],
     "minecraft:diamond_leggings":
     [
         "c:armors",
@@ -2236,30 +1967,15 @@
         "minecraft:dirt"
     ],
     "minecraft:dirt_path":
-    [
-        "c:enchantables",
-        "c:tools",
-        "c:tools/crossbow",
-        "c:tools/ranged_weapon",
-        "minecraft:enchantable/crossbow",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/vanishing"
-    ],
+    [],
     "minecraft:disc_fragment_5":
-    [
-        "minecraft:doors",
-        "minecraft:non_flammable_wood",
-        "minecraft:wooden_doors"
-    ],
+    [],
     "minecraft:dispenser":
     [],
     "minecraft:dolphin_spawn_egg":
     [],
     "minecraft:donkey_spawn_egg":
-    [
-        "c:storage_blocks",
-        "c:storage_blocks/dried_kelp"
-    ],
+    [],
     "minecraft:dragon_breath":
     [],
     "minecraft:dragon_egg":
@@ -2282,33 +1998,23 @@
         "c:storage_blocks/dried_kelp"
     ],
     "minecraft:dripstone_block":
-    [
-        "c:dyed",
-        "c:dyed/cyan",
-        "minecraft:banners"
-    ],
+    [],
     "minecraft:dropper":
     [],
     "minecraft:drowned_spawn_egg":
-    [
-        "minecraft:trapdoors"
-    ],
+    [],
     "minecraft:dune_armor_trim_smithing_template":
     [
         "minecraft:trim_templates"
     ],
     "minecraft:echo_shard":
-    [
-        "minecraft:stairs"
-    ],
+    [],
     "minecraft:egg":
     [
         "c:eggs"
     ],
     "minecraft:elder_guardian_spawn_egg":
-    [
-        "minecraft:stairs"
-    ],
+    [],
     "minecraft:elytra":
     [
         "c:enchantables",
@@ -2351,29 +2057,13 @@
         "minecraft:piglin_loved"
     ],
     "minecraft:enchanting_table":
-    [
-        "c:fences",
-        "c:fences/wooden",
-        "minecraft:fences",
-        "minecraft:wooden_fences"
-    ],
+    [],
     "minecraft:end_crystal":
-    [
-        "c:sandstone/red_stairs",
-        "c:sandstone/stairs",
-        "minecraft:stairs"
-    ],
+    [],
     "minecraft:end_portal_frame":
-    [
-        "minecraft:trim_templates"
-    ],
+    [],
     "minecraft:end_rod":
-    [
-        "c:dyed",
-        "c:dyed/black",
-        "minecraft:dampens_vibrations",
-        "minecraft:wool_carpets"
-    ],
+    [],
     "minecraft:end_stone":
     [
         "c:end_stones"
@@ -2398,84 +2088,44 @@
         "c:chests/ender"
     ],
     "minecraft:ender_dragon_spawn_egg":
-    [
-        "c:enchantables",
-        "c:tools",
-        "c:tools/melee_weapon",
-        "minecraft:breaks_decorated_pots",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/fire_aspect",
-        "minecraft:enchantable/sharp_weapon",
-        "minecraft:enchantable/sword",
-        "minecraft:enchantable/vanishing",
-        "minecraft:enchantable/weapon",
-        "minecraft:swords"
-    ],
+    [],
     "minecraft:ender_eye":
-    [
-        "c:sandstone/stairs",
-        "c:sandstone/uncolored_stairs",
-        "minecraft:stairs"
-    ],
+    [],
     "minecraft:ender_pearl":
     [
         "c:ender_pearls"
     ],
     "minecraft:enderman_spawn_egg":
-    [
-        "minecraft:doors"
-    ],
+    [],
     "minecraft:endermite_spawn_egg":
-    [
-        "c:dyed",
-        "c:dyed/orange",
-        "minecraft:candles"
-    ],
+    [],
     "minecraft:evoker_spawn_egg":
     [],
     "minecraft:experience_bottle":
-    [
-        "minecraft:non_flammable_wood",
-        "minecraft:trapdoors",
-        "minecraft:wooden_trapdoors"
-    ],
+    [],
     "minecraft:explorer_pottery_sherd":
     [
         "minecraft:decorated_pot_ingredients",
         "minecraft:decorated_pot_sherds"
     ],
     "minecraft:exposed_chiseled_copper":
-    [
-        "c:buckets",
-        "c:buckets/entity_water"
-    ],
+    [],
     "minecraft:exposed_copper":
-    [
-        "c:bones",
-        "rabidbalance:leather_joinery"
-    ],
+    [],
     "minecraft:exposed_copper_bulb":
-    [
-        "minecraft:trim_templates"
-    ],
+    [],
     "minecraft:exposed_copper_door":
     [
         "minecraft:doors"
     ],
     "minecraft:exposed_copper_grate":
-    [
-        "minecraft:buttons",
-        "minecraft:non_flammable_wood",
-        "minecraft:wooden_buttons"
-    ],
+    [],
     "minecraft:exposed_copper_trapdoor":
     [
         "minecraft:trapdoors"
     ],
     "minecraft:exposed_cut_copper":
-    [
-        "minecraft:stairs"
-    ],
+    [],
     "minecraft:exposed_cut_copper_slab":
     [
         "minecraft:slabs"
@@ -2489,22 +2139,13 @@
         "minecraft:trim_templates"
     ],
     "minecraft:farmland":
-    [
-        "c:stripped_woods",
-        "minecraft:completes_find_tree_tutorial",
-        "minecraft:logs",
-        "minecraft:logs_that_burn",
-        "minecraft:mangrove_logs"
-    ],
+    [],
     "minecraft:feather":
     [
         "c:feathers"
     ],
     "minecraft:fermented_spider_eye":
-    [
-        "c:obsidians",
-        "c:obsidians/normal"
-    ],
+    [],
     "minecraft:fern":
     [],
     "minecraft:filled_map":
@@ -2514,29 +2155,15 @@
         "minecraft:creeper_igniters"
     ],
     "minecraft:fire_coral":
-    [
-        "minecraft:stairs"
-    ],
+    [],
     "minecraft:fire_coral_block":
-    [
-        "c:dyed",
-        "c:dyed/purple",
-        "minecraft:dampens_vibrations",
-        "minecraft:wool_carpets"
-    ],
+    [],
     "minecraft:fire_coral_fan":
-    [
-        "minecraft:decorated_pot_ingredients",
-        "minecraft:decorated_pot_sherds"
-    ],
+    [],
     "minecraft:firework_rocket":
     [],
     "minecraft:firework_star":
-    [
-        "c:concrete_powders",
-        "c:dyed",
-        "c:dyed/green"
-    ],
+    [],
     "minecraft:fishing_rod":
     [
         "c:enchantables",
@@ -2573,22 +2200,9 @@
         "minecraft:decorated_pot_sherds"
     ],
     "minecraft:flower_banner_pattern":
-    [
-        "minecraft:wooden_pressure_plates"
-    ],
+    [],
     "minecraft:flower_pot":
-    [
-        "c:enchantables",
-        "c:tools",
-        "c:tools/mining_tool",
-        "minecraft:breaks_decorated_pots",
-        "minecraft:cluster_max_harvestables",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/mining",
-        "minecraft:enchantable/mining_loot",
-        "minecraft:enchantable/vanishing",
-        "minecraft:pickaxes"
-    ],
+    [],
     "minecraft:flowering_azalea":
     [
         "c:animal_foods",
@@ -2605,16 +2219,7 @@
         "minecraft:leaves"
     ],
     "minecraft:fox_spawn_egg":
-    [
-        "c:enchantables",
-        "c:tools",
-        "minecraft:breaks_decorated_pots",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/mining",
-        "minecraft:enchantable/mining_loot",
-        "minecraft:enchantable/vanishing",
-        "minecraft:hoes"
-    ],
+    [],
     "minecraft:friend_pottery_sherd":
     [
         "minecraft:decorated_pot_ingredients",
@@ -2623,10 +2228,7 @@
     "minecraft:frog_spawn_egg":
     [],
     "minecraft:frogspawn":
-    [
-        "c:music_discs",
-        "minecraft:creeper_drop_music_discs"
-    ],
+    [],
     "minecraft:furnace":
     [
         "c:player_workstations/furnaces"
@@ -2634,13 +2236,7 @@
     "minecraft:furnace_minecart":
     [],
     "minecraft:ghast_spawn_egg":
-    [
-        "c:animal_foods",
-        "c:seeds",
-        "c:seeds/pumpkin",
-        "minecraft:chicken_food",
-        "minecraft:parrot_food"
-    ],
+    [],
     "minecraft:ghast_tear":
     [],
     "minecraft:gilded_blackstone":
@@ -2674,49 +2270,24 @@
         "minecraft:fox_food"
     ],
     "minecraft:glow_ink_sac":
-    [
-        "c:dyes",
-        "c:dyes/magenta"
-    ],
+    [],
     "minecraft:glow_item_frame":
     [],
     "minecraft:glow_lichen":
-    [
-        "c:dyed",
-        "c:dyed/blue",
-        "minecraft:dampens_vibrations",
-        "minecraft:wool"
-    ],
+    [],
     "minecraft:glow_squid_spawn_egg":
-    [
-        "c:enchantables",
-        "c:tools",
-        "c:tools/igniter",
-        "minecraft:creeper_igniters",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/vanishing"
-    ],
+    [],
     "minecraft:glowstone":
-    [
-        "c:animal_foods",
-        "minecraft:bee_food",
-        "minecraft:flowers",
-        "minecraft:small_flowers"
-    ],
+    [],
     "minecraft:glowstone_dust":
     [
         "c:dusts",
         "c:dusts/glowstone"
     ],
     "minecraft:goat_horn":
-    [
-        "minecraft:hanging_signs",
-        "minecraft:non_flammable_wood"
-    ],
+    [],
     "minecraft:goat_spawn_egg":
-    [
-        "minecraft:hanging_signs"
-    ],
+    [],
     "minecraft:gold_block":
     [
         "c:storage_blocks",
@@ -3079,34 +2650,20 @@
         "c:villager_job_sites"
     ],
     "minecraft:guardian_spawn_egg":
-    [
-        "c:dyed",
-        "c:dyed/light_blue",
-        "minecraft:dampens_vibrations",
-        "minecraft:wool_carpets"
-    ],
+    [],
     "minecraft:gunpowder":
     [
         "c:gunpowders"
     ],
     "minecraft:guster_banner_pattern":
-    [
-        "c:dyed",
-        "c:dyed/red",
-        "minecraft:candles"
-    ],
+    [],
     "minecraft:guster_pottery_sherd":
     [
         "minecraft:decorated_pot_ingredients",
         "minecraft:decorated_pot_sherds"
     ],
     "minecraft:hanging_roots":
-    [
-        "c:dyed",
-        "c:dyed/blue",
-        "c:glass_blocks",
-        "c:glass_blocks/cheap"
-    ],
+    [],
     "minecraft:hay_block":
     [
         "c:animal_foods",
@@ -3117,11 +2674,7 @@
         "minecraft:llama_tempt_items"
     ],
     "minecraft:heart_of_the_sea":
-    [
-        "c:concretes",
-        "c:dyed",
-        "c:dyed/orange"
-    ],
+    [],
     "minecraft:heart_pottery_sherd":
     [
         "minecraft:decorated_pot_ingredients",
@@ -3137,17 +2690,9 @@
     "minecraft:heavy_weighted_pressure_plate":
     [],
     "minecraft:hoglin_spawn_egg":
-    [
-        "minecraft:slabs"
-    ],
+    [],
     "minecraft:honey_block":
-    [
-        "c:enchantables",
-        "minecraft:enchantable/equippable",
-        "minecraft:enchantable/vanishing",
-        "minecraft:noteblock_top_instruments",
-        "minecraft:skulls"
-    ],
+    [],
     "minecraft:honey_bottle":
     [
         "c:drinks",
@@ -3155,35 +2700,13 @@
         "c:foods"
     ],
     "minecraft:honeycomb":
-    [
-        "c:animal_foods",
-        "c:foods",
-        "c:foods/cooked_meat",
-        "minecraft:meat",
-        "minecraft:piglin_food",
-        "minecraft:wolf_food"
-    ],
+    [],
     "minecraft:honeycomb_block":
-    [
-        "c:animal_foods",
-        "c:crops",
-        "c:crops/wheat",
-        "minecraft:cow_food",
-        "minecraft:goat_food",
-        "minecraft:horse_food",
-        "minecraft:llama_food",
-        "minecraft:sheep_food"
-    ],
+    [],
     "minecraft:hopper":
-    [
-        "c:chests",
-        "c:chests/trapped",
-        "c:chests/wooden"
-    ],
+    [],
     "minecraft:hopper_minecart":
-    [
-        "minecraft:slabs"
-    ],
+    [],
     "minecraft:horn_coral":
     [],
     "minecraft:horn_coral_block":
@@ -3191,12 +2714,7 @@
     "minecraft:horn_coral_fan":
     [],
     "minecraft:horse_spawn_egg":
-    [
-        "c:animal_foods",
-        "c:slime_balls",
-        "c:slimeballs",
-        "minecraft:frog_food"
-    ],
+    [],
     "minecraft:host_armor_trim_smithing_template":
     [
         "minecraft:trim_templates"
@@ -3207,15 +2725,9 @@
         "minecraft:decorated_pot_sherds"
     ],
     "minecraft:husk_spawn_egg":
-    [
-        "c:crops",
-        "c:crops/cocoa_bean"
-    ],
+    [],
     "minecraft:ice":
-    [
-        "minecraft:decorated_pot_ingredients",
-        "minecraft:decorated_pot_sherds"
-    ],
+    [],
     "minecraft:infested_chiseled_stone_bricks":
     [],
     "minecraft:infested_cobblestone":
@@ -3224,44 +2736,17 @@
         "c:cobblestones/infested"
     ],
     "minecraft:infested_cracked_stone_bricks":
-    [
-        "c:enchantables",
-        "c:tools",
-        "c:tools/melee_weapon",
-        "minecraft:axes",
-        "minecraft:breaks_decorated_pots",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/mining",
-        "minecraft:enchantable/mining_loot",
-        "minecraft:enchantable/sharp_weapon",
-        "minecraft:enchantable/vanishing",
-        "minecraft:enchantable/weapon",
-        "minecraft:piglin_loved"
-    ],
+    [],
     "minecraft:infested_deepslate":
-    [
-        "minecraft:piglin_loved"
-    ],
+    [],
     "minecraft:infested_mossy_stone_bricks":
-    [
-        "c:music_discs",
-        "minecraft:creeper_drop_music_discs"
-    ],
+    [],
     "minecraft:infested_stone":
-    [
-        "c:concrete_powders",
-        "c:dyed",
-        "c:dyed/black"
-    ],
+    [],
     "minecraft:infested_stone_bricks":
-    [
-        "minecraft:stairs",
-        "minecraft:wooden_stairs"
-    ],
+    [],
     "minecraft:ink_sac":
-    [
-        "minecraft:signs"
-    ],
+    [],
     "minecraft:iron_axe":
     [
         "c:enchantables",
@@ -3277,10 +2762,7 @@
         "minecraft:enchantable/weapon"
     ],
     "minecraft:iron_bars":
-    [
-        "c:nuggets",
-        "c:nuggets/gold"
-    ],
+    [],
     "minecraft:iron_block":
     [
         "c:storage_blocks",
@@ -3315,11 +2797,7 @@
         "minecraft:doors"
     ],
     "minecraft:iron_golem_spawn_egg":
-    [
-        "c:glass_blocks",
-        "c:glass_blocks/cheap",
-        "c:glass_blocks/colorless"
-    ],
+    [],
     "minecraft:iron_helmet":
     [
         "c:armors",
@@ -3344,9 +2822,7 @@
         "minecraft:hoes"
     ],
     "minecraft:iron_horse_armor":
-    [
-        "minecraft:slabs"
-    ],
+    [],
     "minecraft:iron_ingot":
     [
         "c:ingots",
@@ -3430,19 +2906,9 @@
         "c:pumpkins/jack_o_lanterns"
     ],
     "minecraft:jigsaw":
-    [
-        "c:gems",
-        "c:gems/emerald",
-        "minecraft:beacon_payment_items",
-        "minecraft:trim_materials"
-    ],
+    [],
     "minecraft:jukebox":
-    [
-        "c:animal_foods",
-        "c:crops",
-        "c:crops/cactus",
-        "minecraft:camel_food"
-    ],
+    [],
     "minecraft:jungle_boat":
     [
         "minecraft:boats"
@@ -3530,24 +2996,15 @@
         "minecraft:logs_that_burn"
     ],
     "minecraft:kelp":
-    [
-        "minecraft:doors"
-    ],
+    [],
     "minecraft:knowledge_book":
     [
         "minecraft:bookshelf_books"
     ],
     "minecraft:ladder":
-    [
-        "minecraft:decorated_pot_ingredients",
-        "minecraft:decorated_pot_sherds"
-    ],
+    [],
     "minecraft:lantern":
-    [
-        "c:raw_materials",
-        "c:raw_materials/gold",
-        "minecraft:piglin_loved"
-    ],
+    [],
     "minecraft:lapis_block":
     [
         "c:storage_blocks",
@@ -3573,24 +3030,14 @@
         "c:buds"
     ],
     "minecraft:large_fern":
-    [
-        "c:animal_foods",
-        "c:foods",
-        "c:foods/raw_meat",
-        "minecraft:meat",
-        "minecraft:wolf_food"
-    ],
+    [],
     "minecraft:lava_bucket":
     [
         "c:buckets",
         "c:buckets/lava"
     ],
     "minecraft:lead":
-    [
-        "c:dyed",
-        "c:dyed/red",
-        "c:glazed_terracottas"
-    ],
+    [],
     "minecraft:leather":
     [
         "c:leathers",
@@ -3662,16 +3109,9 @@
         "c:villager_job_sites"
     ],
     "minecraft:lever":
-    [
-        "minecraft:saplings"
-    ],
+    [],
     "minecraft:light":
-    [
-        "c:animal_foods",
-        "minecraft:bee_food",
-        "minecraft:flowers",
-        "minecraft:small_flowers"
-    ],
+    [],
     "minecraft:light_blue_banner":
     [
         "c:dyed",
@@ -3853,12 +3293,7 @@
         "minecraft:small_flowers"
     ],
     "minecraft:lily_pad":
-    [
-        "c:dyed",
-        "c:dyed/green",
-        "minecraft:dampens_vibrations",
-        "minecraft:wool"
-    ],
+    [],
     "minecraft:lime_banner":
     [
         "c:dyed",
@@ -3945,10 +3380,7 @@
         "c:potions/bottle"
     ],
     "minecraft:llama_spawn_egg":
-    [
-        "minecraft:completes_find_tree_tutorial",
-        "minecraft:leaves"
-    ],
+    [],
     "minecraft:lodestone":
     [],
     "minecraft:loom":
@@ -4051,14 +3483,9 @@
     "minecraft:magma_block":
     [],
     "minecraft:magma_cream":
-    [
-        "minecraft:decorated_pot_ingredients",
-        "minecraft:decorated_pot_sherds"
-    ],
+    [],
     "minecraft:magma_cube_spawn_egg":
-    [
-        "minecraft:signs"
-    ],
+    [],
     "minecraft:mangrove_boat":
     [
         "minecraft:boats"
@@ -4123,9 +3550,7 @@
         "minecraft:saplings"
     ],
     "minecraft:mangrove_roots":
-    [
-        "minecraft:planks"
-    ],
+    [],
     "minecraft:mangrove_sign":
     [
         "minecraft:signs"
@@ -4153,18 +3578,7 @@
         "minecraft:mangrove_logs"
     ],
     "minecraft:map":
-    [
-        "c:enchantables",
-        "c:tools",
-        "c:tools/mining_tool",
-        "minecraft:breaks_decorated_pots",
-        "minecraft:cluster_max_harvestables",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/mining",
-        "minecraft:enchantable/mining_loot",
-        "minecraft:enchantable/vanishing",
-        "minecraft:pickaxes"
-    ],
+    [],
     "minecraft:medium_amethyst_bud":
     [
         "c:buds"
@@ -4204,28 +3618,13 @@
     "minecraft:mojang_banner_pattern":
     [],
     "minecraft:mooshroom_spawn_egg":
-    [
-        "c:animal_foods",
-        "c:foods",
-        "c:foods/berry",
-        "minecraft:fox_food"
-    ],
+    [],
     "minecraft:moss_block":
     [
         "minecraft:dirt"
     ],
     "minecraft:moss_carpet":
-    [
-        "c:armors",
-        "c:enchantables",
-        "minecraft:enchantable/armor",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/equippable",
-        "minecraft:enchantable/foot_armor",
-        "minecraft:enchantable/vanishing",
-        "minecraft:foot_armor",
-        "minecraft:trimmable_armor"
-    ],
+    [],
     "minecraft:mossy_cobblestone":
     [
         "c:cobblestones",
@@ -4281,29 +3680,15 @@
         "minecraft:walls"
     ],
     "minecraft:mud_bricks":
-    [
-        "c:stripped_logs",
-        "minecraft:completes_find_tree_tutorial",
-        "minecraft:logs",
-        "minecraft:non_flammable_wood",
-        "minecraft:warped_stems"
-    ],
+    [],
     "minecraft:muddy_mangrove_roots":
     [
         "minecraft:dirt"
     ],
     "minecraft:mule_spawn_egg":
-    [
-        "c:fence_gates",
-        "c:fence_gates/wooden",
-        "minecraft:fence_gates"
-    ],
+    [],
     "minecraft:mushroom_stem":
-    [
-        "c:dyed",
-        "c:dyed/lime",
-        "minecraft:candles"
-    ],
+    [],
     "minecraft:mushroom_stew":
     [
         "c:foods",
@@ -4410,19 +3795,9 @@
         "minecraft:dirt"
     ],
     "minecraft:name_tag":
-    [
-        "c:enchantables",
-        "c:tools",
-        "c:tools/shear",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/mining",
-        "minecraft:enchantable/vanishing"
-    ],
+    [],
     "minecraft:nautilus_shell":
-    [
-        "minecraft:buttons",
-        "minecraft:wooden_buttons"
-    ],
+    [],
     "minecraft:nether_brick":
     [
         "c:bricks",
@@ -4447,11 +3822,7 @@
         "minecraft:walls"
     ],
     "minecraft:nether_bricks":
-    [
-        "c:dyed",
-        "c:dyed/cyan",
-        "c:shulker_boxes"
-    ],
+    [],
     "minecraft:nether_gold_ore":
     [
         "c:ore_rates/sparse",
@@ -4583,9 +3954,7 @@
         "minecraft:pickaxes"
     ],
     "minecraft:netherite_scrap":
-    [
-        "minecraft:walls"
-    ],
+    [],
     "minecraft:netherite_shovel":
     [
         "c:enchantables",
@@ -4619,9 +3988,7 @@
         "c:ore_bearing_ground/netherrack"
     ],
     "minecraft:note_block":
-    [
-        "minecraft:stairs"
-    ],
+    [],
     "minecraft:oak_boat":
     [
         "minecraft:boats"
@@ -4709,13 +4076,7 @@
         "minecraft:oak_logs"
     ],
     "minecraft:observer":
-    [
-        "c:ore_rates/singular",
-        "c:ores",
-        "c:ores/diamond",
-        "c:ores_in_ground/deepslate",
-        "minecraft:diamond_ores"
-    ],
+    [],
     "minecraft:obsidian":
     [
         "c:obsidians",
@@ -4724,11 +4085,7 @@
     "minecraft:ocelot_spawn_egg":
     [],
     "minecraft:ochre_froglight":
-    [
-        "c:dyed",
-        "c:dyed/red",
-        "c:glass_panes"
-    ],
+    [],
     "minecraft:ominous_bottle":
     [
         "c:drinks",
@@ -4737,9 +4094,7 @@
         "c:foods"
     ],
     "minecraft:ominous_trial_key":
-    [
-        "minecraft:slabs"
-    ],
+    [],
     "minecraft:orange_banner":
     [
         "c:dyed",
@@ -4835,37 +4190,23 @@
         "minecraft:small_flowers"
     ],
     "minecraft:oxidized_chiseled_copper":
-    [
-        "minecraft:trim_templates"
-    ],
+    [],
     "minecraft:oxidized_copper":
     [],
     "minecraft:oxidized_copper_bulb":
-    [
-        "c:sandstone/red_slabs",
-        "c:sandstone/slabs",
-        "minecraft:slabs"
-    ],
+    [],
     "minecraft:oxidized_copper_door":
     [
         "minecraft:doors"
     ],
     "minecraft:oxidized_copper_grate":
-    [
-        "c:dyed",
-        "c:dyed/black",
-        "c:shulker_boxes"
-    ],
+    [],
     "minecraft:oxidized_copper_trapdoor":
     [
         "minecraft:trapdoors"
     ],
     "minecraft:oxidized_cut_copper":
-    [
-        "c:dyed",
-        "c:dyed/blue",
-        "c:glass_panes"
-    ],
+    [],
     "minecraft:oxidized_cut_copper_slab":
     [
         "minecraft:slabs"
@@ -4877,51 +4218,17 @@
     "minecraft:packed_ice":
     [],
     "minecraft:packed_mud":
-    [
-        "minecraft:completes_find_tree_tutorial",
-        "minecraft:jungle_logs",
-        "minecraft:logs",
-        "minecraft:logs_that_burn"
-    ],
+    [],
     "minecraft:painting":
-    [
-        "c:dyed",
-        "c:dyed/black",
-        "minecraft:banners"
-    ],
+    [],
     "minecraft:panda_spawn_egg":
-    [
-        "c:animal_foods",
-        "minecraft:bee_food",
-        "minecraft:flowers",
-        "minecraft:saplings"
-    ],
+    [],
     "minecraft:paper":
-    [
-        "minecraft:walls"
-    ],
+    [],
     "minecraft:parrot_spawn_egg":
-    [
-        "c:animal_foods",
-        "c:foods",
-        "c:foods/food_poisoning",
-        "minecraft:meat",
-        "minecraft:wolf_food"
-    ],
+    [],
     "minecraft:pearlescent_froglight":
-    [
-        "c:enchantables",
-        "c:tools",
-        "c:tools/melee_weapon",
-        "minecraft:breaks_decorated_pots",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/fire_aspect",
-        "minecraft:enchantable/sharp_weapon",
-        "minecraft:enchantable/sword",
-        "minecraft:enchantable/vanishing",
-        "minecraft:enchantable/weapon",
-        "minecraft:swords"
-    ],
+    [],
     "minecraft:peony":
     [
         "c:animal_foods",
@@ -4936,27 +4243,13 @@
     "minecraft:phantom_membrane":
     [],
     "minecraft:phantom_spawn_egg":
-    [
-        "c:dyed",
-        "c:dyed/brown",
-        "minecraft:dampens_vibrations",
-        "minecraft:wool"
-    ],
+    [],
     "minecraft:pig_spawn_egg":
-    [
-        "minecraft:hanging_signs"
-    ],
+    [],
     "minecraft:piglin_banner_pattern":
-    [
-        "c:buckets",
-        "c:buckets/powder_snow"
-    ],
+    [],
     "minecraft:piglin_brute_spawn_egg":
-    [
-        "c:dyed",
-        "c:dyed/yellow",
-        "minecraft:beds"
-    ],
+    [],
     "minecraft:piglin_head":
     [
         "c:enchantables",
@@ -4966,16 +4259,9 @@
         "minecraft:skulls"
     ],
     "minecraft:piglin_spawn_egg":
-    [
-        "c:dyes",
-        "c:dyes/blue"
-    ],
+    [],
     "minecraft:pillager_spawn_egg":
-    [
-        "c:concrete_powders",
-        "c:dyed",
-        "c:dyed/light_gray"
-    ],
+    [],
     "minecraft:pink_banner":
     [
         "c:dyed",
@@ -5070,9 +4356,7 @@
         "minecraft:wool"
     ],
     "minecraft:piston":
-    [
-        "minecraft:walls"
-    ],
+    [],
     "minecraft:pitcher_plant":
     [
         "c:animal_foods",
@@ -5105,21 +4389,14 @@
         "minecraft:dirt"
     ],
     "minecraft:pointed_dripstone":
-    [
-        "c:rods",
-        "c:rods/wooden"
-    ],
+    [],
     "minecraft:poisonous_potato":
     [
         "c:foods",
         "c:foods/food_poisoning"
     ],
     "minecraft:polar_bear_spawn_egg":
-    [
-        "c:dyed",
-        "c:dyed/magenta",
-        "c:glazed_terracottas"
-    ],
+    [],
     "minecraft:polished_andesite":
     [],
     "minecraft:polished_andesite_slab":
@@ -5133,12 +4410,7 @@
     "minecraft:polished_basalt":
     [],
     "minecraft:polished_blackstone":
-    [
-        "c:animal_foods",
-        "minecraft:bee_food",
-        "minecraft:flowers",
-        "minecraft:small_flowers"
-    ],
+    [],
     "minecraft:polished_blackstone_brick_slab":
     [
         "minecraft:slabs"
@@ -5152,12 +4424,7 @@
         "minecraft:walls"
     ],
     "minecraft:polished_blackstone_bricks":
-    [
-        "c:dyed",
-        "c:dyed/green",
-        "minecraft:dampens_vibrations",
-        "minecraft:wool_carpets"
-    ],
+    [],
     "minecraft:polished_blackstone_button":
     [
         "minecraft:buttons",
@@ -5192,13 +4459,7 @@
         "minecraft:walls"
     ],
     "minecraft:polished_diorite":
-    [
-        "c:animal_foods",
-        "c:foods",
-        "c:foods/raw_meat",
-        "minecraft:meat",
-        "minecraft:wolf_food"
-    ],
+    [],
     "minecraft:polished_diorite_slab":
     [
         "minecraft:slabs"
@@ -5208,11 +4469,7 @@
         "minecraft:stairs"
     ],
     "minecraft:polished_granite":
-    [
-        "c:dyed",
-        "c:dyed/purple",
-        "c:glass_panes"
-    ],
+    [],
     "minecraft:polished_granite_slab":
     [
         "minecraft:slabs"
@@ -5222,9 +4479,7 @@
         "minecraft:stairs"
     ],
     "minecraft:polished_tuff":
-    [
-        "minecraft:boats"
-    ],
+    [],
     "minecraft:polished_tuff_slab":
     [
         "minecraft:slabs"
@@ -5283,9 +4538,7 @@
         "minecraft:rails"
     ],
     "minecraft:prismarine":
-    [
-        "c:villager_job_sites"
-    ],
+    [],
     "minecraft:prismarine_brick_slab":
     [
         "minecraft:slabs"
@@ -5295,20 +4548,14 @@
         "minecraft:stairs"
     ],
     "minecraft:prismarine_bricks":
-    [
-        "c:dyed",
-        "c:dyed/black",
-        "c:glass_panes"
-    ],
+    [],
     "minecraft:prismarine_crystals":
     [
         "c:gems",
         "c:gems/prismarine"
     ],
     "minecraft:prismarine_shard":
-    [
-        "minecraft:piglin_repellents"
-    ],
+    [],
     "minecraft:prismarine_slab":
     [
         "minecraft:slabs"
@@ -5339,10 +4586,7 @@
         "c:buckets/entity_water"
     ],
     "minecraft:pufferfish_spawn_egg":
-    [
-        "minecraft:non_flammable_wood",
-        "minecraft:signs"
-    ],
+    [],
     "minecraft:pumpkin":
     [
         "c:crops",
@@ -5444,17 +4688,9 @@
         "minecraft:wool"
     ],
     "minecraft:purpur_block":
-    [
-        "c:dyed",
-        "c:dyed/gray",
-        "c:shulker_boxes"
-    ],
+    [],
     "minecraft:purpur_pillar":
-    [
-        "c:dyed",
-        "c:dyed/red",
-        "minecraft:banners"
-    ],
+    [],
     "minecraft:purpur_slab":
     [
         "minecraft:slabs"
@@ -5474,16 +4710,7 @@
     "minecraft:quartz_bricks":
     [],
     "minecraft:quartz_pillar":
-    [
-        "c:enchantables",
-        "c:tools",
-        "minecraft:breaks_decorated_pots",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/mining",
-        "minecraft:enchantable/mining_loot",
-        "minecraft:enchantable/vanishing",
-        "minecraft:hoes"
-    ],
+    [],
     "minecraft:quartz_slab":
     [
         "minecraft:slabs"
@@ -5520,13 +4747,7 @@
         "minecraft:trim_templates"
     ],
     "minecraft:ravager_spawn_egg":
-    [
-        "c:animal_foods",
-        "c:foods",
-        "c:foods/cooked_meat",
-        "minecraft:meat",
-        "minecraft:wolf_food"
-    ],
+    [],
     "minecraft:raw_copper":
     [
         "c:raw_materials",
@@ -5616,9 +4837,7 @@
         "c:mushrooms"
     ],
     "minecraft:red_mushroom_block":
-    [
-        "c:mushrooms"
-    ],
+    [],
     "minecraft:red_nether_brick_slab":
     [
         "minecraft:slabs"
@@ -5712,11 +4931,7 @@
         "c:storage_blocks/redstone"
     ],
     "minecraft:redstone_lamp":
-    [
-        "c:dyed",
-        "c:dyed/yellow",
-        "c:glass_panes"
-    ],
+    [],
     "minecraft:redstone_ore":
     [
         "c:ore_rates/dense",
@@ -5728,23 +4943,11 @@
     "minecraft:redstone_torch":
     [],
     "minecraft:reinforced_deepslate":
-    [
-        "c:music_discs",
-        "minecraft:creeper_drop_music_discs"
-    ],
+    [],
     "minecraft:repeater":
-    [
-        "c:ore_rates/dense",
-        "c:ores",
-        "c:ores/copper",
-        "c:ores_in_ground/deepslate",
-        "minecraft:copper_ores"
-    ],
+    [],
     "minecraft:repeating_command_block":
-    [
-        "c:dyes",
-        "c:dyes/lime"
-    ],
+    [],
     "minecraft:respawn_anchor":
     [],
     "minecraft:rib_armor_trim_smithing_template":
@@ -5771,10 +4974,7 @@
         "minecraft:wolf_food"
     ],
     "minecraft:saddle":
-    [
-        "c:buckets",
-        "c:buckets/entity_water"
-    ],
+    [],
     "minecraft:salmon":
     [
         "c:animal_foods",
@@ -5790,9 +4990,7 @@
         "c:buckets/entity_water"
     ],
     "minecraft:salmon_spawn_egg":
-    [
-        "minecraft:stairs"
-    ],
+    [],
     "minecraft:sand":
     [
         "c:sands",
@@ -5822,53 +5020,26 @@
         "minecraft:walls"
     ],
     "minecraft:scaffolding":
-    [
-        "minecraft:completes_find_tree_tutorial",
-        "minecraft:logs",
-        "minecraft:logs_that_burn",
-        "minecraft:oak_logs"
-    ],
+    [],
     "minecraft:scrape_pottery_sherd":
     [
         "minecraft:decorated_pot_ingredients",
         "minecraft:decorated_pot_sherds"
     ],
     "minecraft:sculk":
-    [
-        "c:animal_foods",
-        "minecraft:bee_food",
-        "minecraft:completes_find_tree_tutorial",
-        "minecraft:flowers",
-        "minecraft:leaves"
-    ],
+    [],
     "minecraft:sculk_catalyst":
-    [
-        "minecraft:slabs"
-    ],
+    [],
     "minecraft:sculk_sensor":
-    [
-        "minecraft:trim_templates"
-    ],
+    [],
     "minecraft:sculk_shrieker":
-    [
-        "c:obsidians",
-        "c:obsidians/crying"
-    ],
+    [],
     "minecraft:sculk_vein":
     [],
     "minecraft:sea_lantern":
-    [
-        "c:dyed",
-        "c:dyed/yellow",
-        "minecraft:dampens_vibrations",
-        "minecraft:wool_carpets"
-    ],
+    [],
     "minecraft:sea_pickle":
-    [
-        "c:dyed",
-        "c:dyed/light_gray",
-        "minecraft:banners"
-    ],
+    [],
     "minecraft:seagrass":
     [
         "c:animal_foods",
@@ -5897,9 +5068,7 @@
         "minecraft:enchantable/vanishing"
     ],
     "minecraft:sheep_spawn_egg":
-    [
-        "minecraft:stairs"
-    ],
+    [],
     "minecraft:shelter_pottery_sherd":
     [
         "minecraft:decorated_pot_ingredients",
@@ -5914,15 +5083,9 @@
         "minecraft:enchantable/vanishing"
     ],
     "minecraft:short_grass":
-    [
-        "minecraft:decorated_pot_ingredients",
-        "minecraft:decorated_pot_sherds"
-    ],
+    [],
     "minecraft:shroomlight":
-    [
-        "minecraft:buttons",
-        "minecraft:wooden_buttons"
-    ],
+    [],
     "minecraft:shulker_box":
     [
         "c:shulker_boxes"
@@ -5930,17 +5093,13 @@
     "minecraft:shulker_shell":
     [],
     "minecraft:shulker_spawn_egg":
-    [
-        "minecraft:compasses"
-    ],
+    [],
     "minecraft:silence_armor_trim_smithing_template":
     [
         "minecraft:trim_templates"
     ],
     "minecraft:silverfish_spawn_egg":
-    [
-        "c:music_discs"
-    ],
+    [],
     "minecraft:skeleton_horse_spawn_egg":
     [],
     "minecraft:skeleton_skull":
@@ -5952,15 +5111,9 @@
         "minecraft:skulls"
     ],
     "minecraft:skeleton_spawn_egg":
-    [
-        "minecraft:slabs",
-        "minecraft:wooden_slabs"
-    ],
+    [],
     "minecraft:skull_banner_pattern":
-    [
-        "minecraft:completes_find_tree_tutorial",
-        "minecraft:leaves"
-    ],
+    [],
     "minecraft:skull_pottery_sherd":
     [
         "minecraft:decorated_pot_ingredients",
@@ -5979,20 +5132,13 @@
         "c:storage_blocks/slime"
     ],
     "minecraft:slime_spawn_egg":
-    [
-        "c:concretes",
-        "c:dyed",
-        "c:dyed/red"
-    ],
+    [],
     "minecraft:small_amethyst_bud":
     [
         "c:buds"
     ],
     "minecraft:small_dripleaf":
-    [
-        "minecraft:doors",
-        "minecraft:wooden_doors"
-    ],
+    [],
     "minecraft:smithing_table":
     [
         "c:villager_job_sites"
@@ -6004,11 +5150,7 @@
     "minecraft:smooth_basalt":
     [],
     "minecraft:smooth_quartz":
-    [
-        "c:dyed",
-        "c:dyed/white",
-        "minecraft:banners"
-    ],
+    [],
     "minecraft:smooth_quartz_slab":
     [
         "minecraft:slabs"
@@ -6052,30 +5194,15 @@
         "minecraft:stairs"
     ],
     "minecraft:smooth_stone":
-    [
-        "minecraft:sand"
-    ],
+    [],
     "minecraft:smooth_stone_slab":
     [
         "minecraft:slabs"
     ],
     "minecraft:sniffer_egg":
-    [
-        "minecraft:doors",
-        "minecraft:wooden_doors"
-    ],
+    [],
     "minecraft:sniffer_spawn_egg":
-    [
-        "c:enchantables",
-        "c:tools",
-        "c:tools/melee_weapon",
-        "c:tools/ranged_weapon",
-        "c:tools/spear",
-        "minecraft:breaks_decorated_pots",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/trident",
-        "minecraft:enchantable/vanishing"
-    ],
+    [],
     "minecraft:snort_pottery_sherd":
     [
         "minecraft:decorated_pot_ingredients",
@@ -6086,31 +5213,13 @@
         "minecraft:trim_templates"
     ],
     "minecraft:snow":
-    [
-        "minecraft:planks"
-    ],
+    [],
     "minecraft:snow_block":
-    [
-        "c:dyed",
-        "c:dyed/magenta",
-        "c:shulker_boxes"
-    ],
+    [],
     "minecraft:snow_golem_spawn_egg":
-    [
-        "c:stripped_woods",
-        "minecraft:completes_find_tree_tutorial",
-        "minecraft:logs",
-        "minecraft:logs_that_burn",
-        "minecraft:spruce_logs"
-    ],
+    [],
     "minecraft:snowball":
-    [
-        "c:stripped_logs",
-        "minecraft:completes_find_tree_tutorial",
-        "minecraft:jungle_logs",
-        "minecraft:logs",
-        "minecraft:logs_that_burn"
-    ],
+    [],
     "minecraft:soul_campfire":
     [
         "minecraft:piglin_repellents"
@@ -6132,10 +5241,7 @@
         "minecraft:piglin_repellents"
     ],
     "minecraft:spawner":
-    [
-        "c:music_discs",
-        "minecraft:creeper_drop_music_discs"
-    ],
+    [],
     "minecraft:spectral_arrow":
     [
         "minecraft:arrows"
@@ -6253,9 +5359,7 @@
         "minecraft:spruce_logs"
     ],
     "minecraft:spyglass":
-    [
-        "minecraft:anvil"
-    ],
+    [],
     "minecraft:squid_spawn_egg":
     [],
     "minecraft:stick":
@@ -6264,9 +5368,7 @@
         "c:rods/wooden"
     ],
     "minecraft:sticky_piston":
-    [
-        "minecraft:trapdoors"
-    ],
+    [],
     "minecraft:stone":
     [
         "c:ore_bearing_ground/stone",
@@ -6332,9 +5434,7 @@
         "minecraft:pickaxes"
     ],
     "minecraft:stone_pressure_plate":
-    [
-        "minecraft:stairs"
-    ],
+    [],
     "minecraft:stone_shovel":
     [
         "c:enchantables",
@@ -6373,11 +5473,7 @@
         "c:villager_job_sites"
     ],
     "minecraft:stray_spawn_egg":
-    [
-        "c:dyed",
-        "c:dyed/green",
-        "minecraft:beds"
-    ],
+    [],
     "minecraft:strider_spawn_egg":
     [],
     "minecraft:string":
@@ -6551,25 +5647,9 @@
         "minecraft:warped_stems"
     ],
     "minecraft:structure_block":
-    [
-        "c:enchantables",
-        "c:tools",
-        "c:tools/melee_weapon",
-        "minecraft:axes",
-        "minecraft:breaks_decorated_pots",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/mining",
-        "minecraft:enchantable/mining_loot",
-        "minecraft:enchantable/sharp_weapon",
-        "minecraft:enchantable/vanishing",
-        "minecraft:enchantable/weapon"
-    ],
+    [],
     "minecraft:structure_void":
-    [
-        "c:dyed",
-        "c:dyed/light_gray",
-        "c:shulker_boxes"
-    ],
+    [],
     "minecraft:sugar":
     [
         "c:animal_foods",
@@ -6611,20 +5691,9 @@
         "c:buckets/entity_water"
     ],
     "minecraft:tadpole_spawn_egg":
-    [
-        "c:dyed",
-        "c:dyed/black",
-        "c:glazed_terracottas"
-    ],
+    [],
     "minecraft:tall_grass":
-    [
-        "c:ore_rates/singular",
-        "c:ores",
-        "c:ores/gold",
-        "c:ores_in_ground/deepslate",
-        "minecraft:gold_ores",
-        "minecraft:piglin_loved"
-    ],
+    [],
     "minecraft:target":
     [],
     "minecraft:terracotta":
@@ -6647,18 +5716,9 @@
     "minecraft:tnt":
     [],
     "minecraft:tnt_minecart":
-    [
-        "c:dyed",
-        "c:dyed/green",
-        "minecraft:terracotta"
-    ],
+    [],
     "minecraft:torch":
-    [
-        "c:drinks",
-        "c:drinks/magic",
-        "c:drinks/ominous",
-        "c:foods"
-    ],
+    [],
     "minecraft:torchflower":
     [
         "c:animal_foods",
@@ -6677,30 +5737,9 @@
         "minecraft:villager_plantable_seeds"
     ],
     "minecraft:totem_of_undying":
-    [
-        "c:enchantables",
-        "c:tools",
-        "c:tools/mace",
-        "c:tools/melee_weapon",
-        "minecraft:breaks_decorated_pots",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/fire_aspect",
-        "minecraft:enchantable/mace",
-        "minecraft:enchantable/vanishing",
-        "minecraft:enchantable/weapon"
-    ],
+    [],
     "minecraft:trader_llama_spawn_egg":
-    [
-        "c:armors",
-        "c:enchantables",
-        "minecraft:enchantable/armor",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/equippable",
-        "minecraft:enchantable/head_armor",
-        "minecraft:enchantable/vanishing",
-        "minecraft:head_armor",
-        "minecraft:trimmable_armor"
-    ],
+    [],
     "minecraft:trapped_chest":
     [
         "c:chests",
@@ -6708,15 +5747,9 @@
         "c:chests/wooden"
     ],
     "minecraft:trial_key":
-    [
-        "c:concretes",
-        "c:dyed",
-        "c:dyed/pink"
-    ],
+    [],
     "minecraft:trial_spawner":
-    [
-        "minecraft:stairs"
-    ],
+    [],
     "minecraft:trident":
     [
         "c:enchantables",
@@ -6745,34 +5778,13 @@
         "minecraft:axolotl_food"
     ],
     "minecraft:tropical_fish_spawn_egg":
-    [
-        "c:armors",
-        "c:enchantables",
-        "minecraft:dyeable",
-        "minecraft:enchantable/armor",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/equippable",
-        "minecraft:enchantable/head_armor",
-        "minecraft:enchantable/vanishing",
-        "minecraft:freeze_immune_wearables",
-        "minecraft:head_armor",
-        "minecraft:trimmable_armor"
-    ],
+    [],
     "minecraft:tube_coral":
-    [
-        "minecraft:bookshelf_books"
-    ],
+    [],
     "minecraft:tube_coral_block":
-    [
-        "minecraft:slabs"
-    ],
+    [],
     "minecraft:tube_coral_fan":
-    [
-        "c:dyed",
-        "c:dyed/light_gray",
-        "minecraft:dampens_vibrations",
-        "minecraft:wool"
-    ],
+    [],
     "minecraft:tuff":
     [
         "c:stones"
@@ -6790,18 +5802,7 @@
         "minecraft:walls"
     ],
     "minecraft:tuff_bricks":
-    [
-        "c:armors",
-        "c:enchantables",
-        "minecraft:enchantable/armor",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/equippable",
-        "minecraft:enchantable/foot_armor",
-        "minecraft:enchantable/vanishing",
-        "minecraft:foot_armor",
-        "minecraft:piglin_loved",
-        "minecraft:trimmable_armor"
-    ],
+    [],
     "minecraft:tuff_slab":
     [
         "minecraft:slabs"
@@ -6815,11 +5816,7 @@
         "minecraft:walls"
     ],
     "minecraft:turtle_egg":
-    [
-        "c:dyed",
-        "c:dyed/magenta",
-        "minecraft:terracotta"
-    ],
+    [],
     "minecraft:turtle_helmet":
     [
         "c:armors",
@@ -6833,29 +5830,11 @@
         "minecraft:trimmable_armor"
     ],
     "minecraft:turtle_scute":
-    [
-        "c:dyed",
-        "c:dyed/light_gray",
-        "c:glazed_terracottas"
-    ],
+    [],
     "minecraft:turtle_spawn_egg":
-    [
-        "c:enchantables",
-        "c:tools",
-        "minecraft:breaks_decorated_pots",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/mining",
-        "minecraft:enchantable/mining_loot",
-        "minecraft:enchantable/vanishing",
-        "minecraft:shovels"
-    ],
+    [],
     "minecraft:twisting_vines":
-    [
-        "c:foods",
-        "c:foods/food_poisoning",
-        "c:foods/raw_fish",
-        "minecraft:fishes"
-    ],
+    [],
     "minecraft:vault":
     [],
     "minecraft:verdant_froglight":
@@ -6865,35 +5844,21 @@
         "minecraft:trim_templates"
     ],
     "minecraft:vex_spawn_egg":
-    [
-        "minecraft:birch_logs",
-        "minecraft:completes_find_tree_tutorial",
-        "minecraft:logs",
-        "minecraft:logs_that_burn"
-    ],
+    [],
     "minecraft:villager_spawn_egg":
-    [
-        "c:stones"
-    ],
+    [],
     "minecraft:vindicator_spawn_egg":
-    [
-        "c:shulker_boxes"
-    ],
+    [],
     "minecraft:vine":
     [],
     "minecraft:wandering_trader_spawn_egg":
-    [
-        "minecraft:wooden_pressure_plates"
-    ],
+    [],
     "minecraft:ward_armor_trim_smithing_template":
     [
         "minecraft:trim_templates"
     ],
     "minecraft:warden_spawn_egg":
-    [
-        "minecraft:decorated_pot_ingredients",
-        "minecraft:decorated_pot_sherds"
-    ],
+    [],
     "minecraft:warped_button":
     [
         "minecraft:buttons",
@@ -6947,9 +5912,7 @@
         "minecraft:warped_stems"
     ],
     "minecraft:warped_nylium":
-    [
-        "minecraft:walls"
-    ],
+    [],
     "minecraft:warped_planks":
     [
         "minecraft:non_flammable_wood",
@@ -6961,11 +5924,7 @@
         "minecraft:wooden_pressure_plates"
     ],
     "minecraft:warped_roots":
-    [
-        "c:dyed",
-        "c:dyed/pink",
-        "c:shulker_boxes"
-    ],
+    [],
     "minecraft:warped_sign":
     [
         "minecraft:non_flammable_wood",
@@ -7007,19 +5966,9 @@
         "c:buckets/water"
     ],
     "minecraft:waxed_chiseled_copper":
-    [
-        "c:dyed",
-        "c:dyed/brown",
-        "minecraft:beds"
-    ],
+    [],
     "minecraft:waxed_copper_block":
-    [
-        "c:stripped_woods",
-        "minecraft:cherry_logs",
-        "minecraft:completes_find_tree_tutorial",
-        "minecraft:logs",
-        "minecraft:logs_that_burn"
-    ],
+    [],
     "minecraft:waxed_copper_bulb":
     [],
     "minecraft:waxed_copper_door":
@@ -7033,10 +5982,7 @@
         "minecraft:trapdoors"
     ],
     "minecraft:waxed_cut_copper":
-    [
-        "minecraft:boats",
-        "minecraft:chest_boats"
-    ],
+    [],
     "minecraft:waxed_cut_copper_slab":
     [
         "minecraft:slabs"
@@ -7048,16 +5994,9 @@
     "minecraft:waxed_exposed_chiseled_copper":
     [],
     "minecraft:waxed_exposed_copper":
-    [
-        "c:dyed",
-        "c:dyed/pink",
-        "minecraft:beds"
-    ],
+    [],
     "minecraft:waxed_exposed_copper_bulb":
-    [
-        "minecraft:decorated_pot_ingredients",
-        "minecraft:decorated_pot_sherds"
-    ],
+    [],
     "minecraft:waxed_exposed_copper_door":
     [
         "minecraft:doors"
@@ -7069,15 +6008,7 @@
         "minecraft:trapdoors"
     ],
     "minecraft:waxed_exposed_cut_copper":
-    [
-        "c:enchantables",
-        "c:tools",
-        "c:tools/bow",
-        "c:tools/ranged_weapon",
-        "minecraft:enchantable/bow",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/vanishing"
-    ],
+    [],
     "minecraft:waxed_exposed_cut_copper_slab":
     [
         "minecraft:slabs"
@@ -7087,47 +6018,23 @@
         "minecraft:stairs"
     ],
     "minecraft:waxed_oxidized_chiseled_copper":
-    [
-        "minecraft:decorated_pot_ingredients",
-        "minecraft:decorated_pot_sherds"
-    ],
+    [],
     "minecraft:waxed_oxidized_copper":
     [],
     "minecraft:waxed_oxidized_copper_bulb":
-    [
-        "c:enchantables",
-        "c:tools",
-        "c:tools/fishing_rod",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/fishing",
-        "minecraft:enchantable/vanishing"
-    ],
+    [],
     "minecraft:waxed_oxidized_copper_door":
     [
         "minecraft:doors"
     ],
     "minecraft:waxed_oxidized_copper_grate":
-    [
-        "c:drinks",
-        "c:drinks/honey",
-        "c:foods"
-    ],
+    [],
     "minecraft:waxed_oxidized_copper_trapdoor":
     [
         "minecraft:trapdoors"
     ],
     "minecraft:waxed_oxidized_cut_copper":
-    [
-        "c:armors",
-        "c:enchantables",
-        "minecraft:enchantable/armor",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/equippable",
-        "minecraft:enchantable/head_armor",
-        "minecraft:enchantable/vanishing",
-        "minecraft:head_armor",
-        "minecraft:trimmable_armor"
-    ],
+    [],
     "minecraft:waxed_oxidized_cut_copper_slab":
     [
         "minecraft:slabs"
@@ -7137,24 +6044,11 @@
         "minecraft:stairs"
     ],
     "minecraft:waxed_weathered_chiseled_copper":
-    [
-        "c:ore_rates/dense",
-        "c:ores",
-        "c:ores/redstone",
-        "c:ores_in_ground/deepslate",
-        "minecraft:redstone_ores"
-    ],
+    [],
     "minecraft:waxed_weathered_copper":
-    [
-        "minecraft:slabs"
-    ],
+    [],
     "minecraft:waxed_weathered_copper_bulb":
-    [
-        "c:dyed",
-        "c:dyed/light_blue",
-        "c:glass_blocks",
-        "c:glass_blocks/cheap"
-    ],
+    [],
     "minecraft:waxed_weathered_copper_door":
     [
         "minecraft:doors"
@@ -7166,12 +6060,7 @@
         "minecraft:trapdoors"
     ],
     "minecraft:waxed_weathered_cut_copper":
-    [
-        "c:dyed",
-        "c:dyed/orange",
-        "minecraft:dampens_vibrations",
-        "minecraft:wool_carpets"
-    ],
+    [],
     "minecraft:waxed_weathered_cut_copper_slab":
     [
         "minecraft:slabs"
@@ -7185,37 +6074,23 @@
         "minecraft:trim_templates"
     ],
     "minecraft:weathered_chiseled_copper":
-    [
-        "minecraft:dyeable"
-    ],
+    [],
     "minecraft:weathered_copper":
-    [
-        "minecraft:slabs"
-    ],
+    [],
     "minecraft:weathered_copper_bulb":
-    [
-        "c:villager_job_sites"
-    ],
+    [],
     "minecraft:weathered_copper_door":
     [
         "minecraft:doors"
     ],
     "minecraft:weathered_copper_grate":
-    [
-        "c:fence_gates",
-        "c:fence_gates/wooden",
-        "minecraft:fence_gates"
-    ],
+    [],
     "minecraft:weathered_copper_trapdoor":
     [
         "minecraft:trapdoors"
     ],
     "minecraft:weathered_cut_copper":
-    [
-        "c:animal_foods",
-        "minecraft:bee_food",
-        "minecraft:flowers"
-    ],
+    [],
     "minecraft:weathered_cut_copper_slab":
     [
         "minecraft:slabs"
@@ -7225,18 +6100,9 @@
         "minecraft:stairs"
     ],
     "minecraft:weeping_vines":
-    [
-        "minecraft:completes_find_tree_tutorial",
-        "minecraft:logs",
-        "minecraft:logs_that_burn",
-        "minecraft:oak_logs"
-    ],
+    [],
     "minecraft:wet_sponge":
-    [
-        "c:concrete_powders",
-        "c:dyed",
-        "c:dyed/white"
-    ],
+    [],
     "minecraft:wheat":
     [
         "c:animal_foods",
@@ -7370,26 +6236,13 @@
     "minecraft:wither_skeleton_spawn_egg":
     [],
     "minecraft:wither_spawn_egg":
-    [
-        "c:pumpkins",
-        "c:pumpkins/jack_o_lanterns"
-    ],
+    [],
     "minecraft:wolf_armor":
     [
         "minecraft:dyeable"
     ],
     "minecraft:wolf_spawn_egg":
-    [
-        "c:armors",
-        "c:enchantables",
-        "minecraft:enchantable/armor",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/equippable",
-        "minecraft:enchantable/leg_armor",
-        "minecraft:enchantable/vanishing",
-        "minecraft:leg_armor",
-        "minecraft:trimmable_armor"
-    ],
+    [],
     "minecraft:wooden_axe":
     [
         "c:enchantables",
@@ -7544,10 +6397,7 @@
         "minecraft:wool"
     ],
     "minecraft:zoglin_spawn_egg":
-    [
-        "minecraft:boats",
-        "minecraft:chest_boats"
-    ],
+    [],
     "minecraft:zombie_head":
     [
         "c:enchantables",
@@ -7557,17 +6407,9 @@
         "minecraft:skulls"
     ],
     "minecraft:zombie_horse_spawn_egg":
-    [
-        "c:animal_foods",
-        "minecraft:chicken_food",
-        "minecraft:parrot_food",
-        "minecraft:villager_plantable_seeds"
-    ],
+    [],
     "minecraft:zombie_spawn_egg":
-    [
-        "c:rods",
-        "c:rods/breeze"
-    ],
+    [],
     "minecraft:zombie_villager_spawn_egg":
     [],
     "minecraft:zombified_piglin_spawn_egg":
