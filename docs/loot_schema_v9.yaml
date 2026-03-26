@@ -137,10 +137,18 @@ loot_classification:
         function: consumable
         value:
           default: common
+          unique:
+            - minecraft:ominous_bottle
+            - minecraft:ominous_trial_key
           junk:
             - minecraft:rotten_flesh
-          uncommon:
-            - minecraft:experience_bottle
+          legendary:
+            - minecraft:totem_of_undying
+            - minecraft:ender_eye
+          epic:
+            - minecraft:enchanted_golden_apple
+            - minecraft:firework_star
+            - minecraft:trial_key
           rare:
             - minecraft:golden_carrot
             - minecraft:golden_apple
@@ -154,16 +162,8 @@ loot_classification:
             - minecraft:wet_sponge
             - minecraft:chorus_fruit
             - "#c:potions"
-          epic:
-            - minecraft:enchanted_golden_apple
-            - minecraft:firework_star
-            - minecraft:trial_key
-          legendary:
-            - minecraft:totem_of_undying
-            - minecraft:ender_eye
-          unique:
-            - minecraft:ominous_bottle
-            - minecraft:ominous_trial_key
+          uncommon:
+            - minecraft:experience_bottle
         amount_class:
           default: small
           tiny:
@@ -188,25 +188,25 @@ loot_classification:
         function: wearable
         value:
           default: uncommon
-          common:
-            - "#leather"                      # todo: These style tags don't exist yet (probably want to add aa #c:equipment/wooden style tag)
-          uncommon:
-            - "#golden"
-            - "#chainmail"
+          unique:
+            - minecraft:elytra
+          legendary:
+            - "#netherite"
+          epic:
+            - minecraft:diamond_horse_armor
+            - "#diamond"
+            - "*_head"
           rare:
             - minecraft:wolf_armor
             - minecraft:iron_horse_armor
             - minecraft:golden_horse_armor
             - minecraft:turtle_helmet
             - "#iron"
-          epic:
-            - minecraft:diamond_horse_armor
-            - "#diamond"
-            - "*_head"
-          legendary:
-            - "#netherite"
-          unique:
-            - minecraft:elytra
+          uncommon:
+            - "#golden"
+            - "#chainmail"
+          common:
+            - "#leather"                      # todo: These style tags don't exist yet (probably want to add aa #c:equipment/wooden style tag)
         amount_class:
           default: singleton
       reason: >
@@ -228,23 +228,23 @@ loot_classification:
           default: uncommon
           junk:
             - minecraft:snowball
-          common:
-            - minecraft:arrow
-            - "#wooden"                     # Known issue: These style tags don't exist yet (probably want to add aa #c:equipment/wooden style tag)
-            - "#stone"
-          uncommon:
-            - "#golden"
+          legendary:
+            - "#netherite"
+          epic:
+            - minecraft:trident
+            - minecraft:mace
+            - "#diamond"
           rare:
             - minecraft:spectral_arrow
             - minecraft:tipped_arrow
             - minecraft:crossbow
             - "#iron"
-          epic:
-            - minecraft:trident
-            - minecraft:mace
-            - "#diamond"
-          legendary:
-            - "#netherite"
+          uncommon:
+            - "#golden"
+          common:
+            - minecraft:arrow
+            - "#wooden"                     # Known issue: These style tags don't exist yet (probably want to add aa #c:equipment/wooden style tag)
+            - "#stone"
         amount_class:
           default: singleton
           large:
@@ -273,19 +273,19 @@ loot_classification:
           none:
             - minecraft:stone_pickaxe   # Because of primity mod
             - "#wooden"                 # Because of primity mod            
-          common:                       #   Also, known issue: These style tags don't exist yet (probably want to add aa #c:equipment/wooden style tag)
-            - "#stone"
+          legendary:
+            - "#netherite"
+          epic:
+            - "#diamond"
+          rare:
+            - "#iron"
+            - "#c:buckets"
           uncommon:
             - minecraft:bucket
             - "#copper"
             - "#golden"
-          rare:
-            - "#iron"
-            - "#c:buckets"
-          epic:
-            - "#diamond"
-          legendary:
-            - "#netherite"
+          common:                       #   Also, known issue: These style tags don't exist yet (probably want to add aa #c:equipment/wooden style tag)
+            - "#stone"
         amount_class:
           default: singleton
       reason: >
@@ -319,8 +319,10 @@ loot_classification:
           none:
             - minecraft:filled_map      # I don't think player is supposed to get these
             - minecraft:written_book    # I don't think player is supposed to get these
-          common:
-            - minecraft:bowl
+          unique:
+            - minecraft:recovery_compass
+          epic:
+            - "music_disc_*"
           rare:
             - minecraft:compass
             - minecraft:clock
@@ -329,10 +331,8 @@ loot_classification:
             - minecraft:carrot_on_a_stick
             - minecraft:warped_fungus_on_a_stick
             - minecraft:writable_book
-          epic:
-            - "music_disc_*"
-          unique:
-            - minecraft:recovery_compass
+          common:
+            - minecraft:bowl
         amount_class:
           default: singleton
           tiny:
@@ -456,31 +456,33 @@ loot_classification:
         function: item_material
         value:
           default: rare
+          unique:
+            - minecraft:netherite_ingot
+            - minecraft:end_crystal
+            - minecraft:wither_rose
+            - minecraft:heavy_core
+            - minecraft:nether_star
+            - minecraft:netherite_block
           filler:
             - minecraft:stick
-          common:
-            - minecraft:coal
-            - minecraft:raw_copper
-            # - minecraft:copper_nugget
-            - minecraft:charcoal
-            - minecraft:clay_ball
-            - minecraft:brick
-            - minecraft:string
-            - minecraft:feather
-            - minecraft:wheat
-            - minecraft:ink_sac
-            - minecraft:bone
-            - minecraft:sugar
-            - minecraft:egg
-            - minecraft:melon
-            - minecraft:leather
-            - minecraft:flint
-            - minecraft:kelp
-            - "#minecraft:wool"
-            - "*_mushroom"
-            - "*_fungus"
-            - "#c:ores/copper"
-            - "#minecraft:flowers"
+          legendary:
+            - minecraft:diamond_block
+            - minecraft:emerald_block
+            - minecraft:nether_wart_block
+            - minecraft:heart_of_the_sea
+            - minecraft:ancient_debris
+            - minecraft:netherite_scrap
+            - "raw_*_block"
+          epic:
+            - minecraft:rabbit_foot
+            - minecraft:silence_armor_trim_smithing_template
+            - minecraft:netherite_upgrade_smithing_template
+            - minecraft:shulker_shell
+            - minecraft:sniffer_egg
+            - minecraft:honey_block
+            - minecraft:iron_block
+            - minecraft:gold_block
+            - minecraft:amethyst_block
           uncommon:
             - dried_kelp_block
             - minecraft:raw_iron
@@ -506,31 +508,29 @@ loot_classification:
             - "#c:ores/iron"
             - "#c:ores/gold"
             - "#minecraft:decorated_pot_sherds"
-          epic:
-            - minecraft:rabbit_foot
-            - minecraft:silence_armor_trim_smithing_template
-            - minecraft:netherite_upgrade_smithing_template
-            - minecraft:shulker_shell
-            - minecraft:sniffer_egg
-            - minecraft:honey_block
-            - minecraft:iron_block
-            - minecraft:gold_block
-            - minecraft:amethyst_block
-          legendary:
-            - minecraft:diamond_block
-            - minecraft:emerald_block
-            - minecraft:nether_wart_block
-            - minecraft:heart_of_the_sea
-            - minecraft:ancient_debris
-            - minecraft:netherite_scrap
-            - "raw_*_block"
-          unique:
-            - minecraft:netherite_ingot
-            - minecraft:end_crystal
-            - minecraft:wither_rose
-            - minecraft:heavy_core
-            - minecraft:nether_star
-            - minecraft:netherite_block
+          common:
+            - minecraft:coal
+            - minecraft:raw_copper
+            # - minecraft:copper_nugget
+            - minecraft:charcoal
+            - minecraft:clay_ball
+            - minecraft:brick
+            - minecraft:string
+            - minecraft:feather
+            - minecraft:wheat
+            - minecraft:ink_sac
+            - minecraft:bone
+            - minecraft:sugar
+            - minecraft:egg
+            - minecraft:melon
+            - minecraft:leather
+            - minecraft:flint
+            - minecraft:kelp
+            - "#minecraft:wool"
+            - "*_mushroom"
+            - "*_fungus"
+            - "#c:ores/copper"
+            - "#minecraft:flowers"
         amount_class:
           default: small
           singleton:
@@ -581,14 +581,14 @@ loot_classification:
         function: block_storage
         value:
           default: common
-          uncommon:
-            - minecraft:decorated_pot
-          rare:
-            - minecraft:trapped_chest
           legendary:
             - minecraft:ender_chest
             - minecraft:shulker_box
             - "*_shulker_box"
+          rare:
+            - minecraft:trapped_chest
+          uncommon:
+            - minecraft:decorated_pot
         amount_class: 
           default: singleton
       reason: >
@@ -621,6 +621,14 @@ loot_classification:
         function: block_crafting
         value:
           default: rare
+          unique:
+            - minecraft:bee_nest
+          legendary:
+            - minecraft:enchanting_table
+          epic:
+            - minecraft:beehive
+            - minecraft:soul_campfire
+            - minecraft:anvil
           uncommon:
             - minecraft:campfire
             - minecraft:crafting_table
@@ -629,14 +637,6 @@ loot_classification:
             - minecraft:damaged_anvil
             - minecraft:stonecutter
             - minecraft:composter
-          epic:
-            - minecraft:beehive
-            - minecraft:soul_campfire
-            - minecraft:anvil
-          legendary:
-            - minecraft:enchanting_table
-          unique:
-            - minecraft:bee_nest
         amount_class:
           default: singleton
       reason: >
@@ -677,8 +677,10 @@ loot_classification:
         function: block_technical
         value:
           default: rare
-          common:
-            - minecraft:rail
+          legendary:
+            - minecraft:calibrated_sculk_sensor
+          epic:
+            - minecraft:crafter
           uncommon:
             - minecraft:lever
             - minecraft:redstone_torch
@@ -687,10 +689,8 @@ loot_classification:
             - minecraft:minecart
             - "*_button"
             - "*_pressure_plate"
-          epic:
-            - minecraft:crafter
-          legendary:
-            - minecraft:calibrated_sculk_sensor
+          common:
+            - minecraft:rail
         amount_class:
           default: singleton
           tiny:
@@ -762,6 +762,8 @@ loot_classification:
         function: block_misc_use
         value:
           default: uncommon
+          unique:
+            - minecraft:beacon
           junk:
             - minecraft:podzol
             - minecraft:mycelium
@@ -769,8 +771,15 @@ loot_classification:
             - "infested_*"
           filler:
             - minecraft:ice
-          common:
-            - minecraft:torch
+          legendary:
+            - minecraft:respawn_anchor
+            - minecraft:conduit
+          epic:
+            - minecraft:lodestone
+            - minecraft:jukebox
+            - minecraft:sea_lantern
+            - minecraft:slime_block
+            - "*_froglight"
           rare:
             - minecraft:bookshelf
             - minecraft:bell
@@ -780,17 +789,8 @@ loot_classification:
             - minecraft:pointed_dripstone
             - minecraft:blue_ice
             - "#minecraft:banners"
-          epic:
-            - minecraft:lodestone
-            - minecraft:jukebox
-            - minecraft:sea_lantern
-            - minecraft:slime_block
-            - "*_froglight"
-          legendary:
-            - minecraft:respawn_anchor
-            - minecraft:conduit
-          unique:
-            - minecraft:beacon
+          common:
+            - minecraft:torch
         amount_class:
           default: small
           singleton:
@@ -871,9 +871,6 @@ loot_classification:
             - minecraft:granite
             - minecraft:end_stone
             - minecraft:mangrove_roots
-          uncommon:
-            - minecraft:glass
-            - "#c:concrete_powders"
           rare:
             - minecraft:amethyst_cluster
             - minecraft:obsidian
@@ -883,6 +880,9 @@ loot_classification:
             - minecraft:purpur_block
             - "#c:stripped_logs"
             - "#c:buds"
+          uncommon:
+            - minecraft:glass
+            - "#c:concrete_powders"
         function: block_material
         amount_class:
           default: large
@@ -984,6 +984,14 @@ loot_classification:
             - minecraft:lily_pad
             - "#minecraft:dirt"
             - "#minecraft:leaves"
+          legendary:
+            - "#c:storage_blocks"
+          rare:
+            - "quartz*"
+            - "waxed_*"
+            - "#c:pumpkins"
+            - "#c:glass_panes"
+            - "#c:glazed_terracottas"
           uncommon:
             - minecraft:painting
             - minecraft:sea_pickle
@@ -995,14 +1003,6 @@ loot_classification:
             - "*_pillar"
             - "#minecraft:skulls"
             - "#c:concretes"
-          rare:
-            - "quartz*"
-            - "waxed_*"
-            - "#c:pumpkins"
-            - "#c:glass_panes"
-            - "#c:glazed_terracottas"
-          legendary:
-            - "#c:storage_blocks"
         function: block_building
         amount_class: 
           default: large
