@@ -31,3 +31,64 @@
   uncommon: 0.75
   rare: 0.075
   epic: 0.005
+
+
+# Plunking this down here; not yet sure how to represent it
+# These should becomed modifiers to the above
+
+danger:
+
+  # Hostiles aren't expected here
+  Safe:
+
+  # Bit more than usual
+  Dangerous:
+
+  # Tough enemies or hordes
+  Very_Dangerous:
+
+  # E.g. Twilight Forest
+  Boss:
+
+  # E.g. Cataclysm; Ender Dragon
+  Epic_Boss:
+
+
+y_level:
+  
+  # 190+
+  High:
+  
+  # -33 to 33
+  Underground:
+  
+  # -63 to -32
+  Deep_Underground:
+
+
+## I don't know how to control this, or if it's even a thing for MC
+
+# distance_from_spawn:
+
+#   # Within n chunks
+#   Close:
+
+#   # Outside o chunks
+#   Far:
+
+#   # Outside p chunks
+#   Very_Far:
+
+
+# From Apotheosis (not yet enabled)
+world_tier:
+
+  Haven:
+
+  Frontier:
+
+  Ascent:
+
+  Summit:
+
+  Pinnacle:
