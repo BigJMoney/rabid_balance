@@ -29,10 +29,10 @@ Items are classified once into a canonical dataset.
 
 ### Properties
 
-* `function` — primary category (exclusive)
+* `function` — required category (exclusive)
 * `value` — rarity / power band
 * `amount_class` — quantity band
-* `affinities` — contextual tags (0–many)
+* `affinities` — authoritatve but optional additive category (0–many)
 
 ### Invariants
 
@@ -163,7 +163,7 @@ This layer shapes:
 
 ```text
 item dataset
-→ filter by allow/disallow (function + affinity)
+→ filter by allow/disallow (function and/or affinity)
 → apply favor/disfavor weighting
 → apply value table
 → apply amount rules
