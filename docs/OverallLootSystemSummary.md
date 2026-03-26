@@ -29,16 +29,16 @@ Items are classified once into a canonical dataset.
 
 ### Properties
 
-* `kind` — primary category (exclusive)
+* `function` — primary category (exclusive)
 * `value` — rarity / power band
 * `amount_class` — quantity band
 * `affinities` — contextual tags (0–many)
 
 ### Invariants
 
-* Every item has exactly one `kind`
+* Every item has exactly one `function`
 * Classification is **first-match / authoritative**
-* `value` and `amount_class` are defaults attached to `kind`
+* `value` and `amount_class` are defaults attached to `function`
 * `affinities` are additive and non-exclusive
 
 ### Implementation
@@ -77,7 +77,7 @@ Policy converts context into **selection behavior**.
 
 It operates over both:
 
-* **kinds** (mechanical categories)
+* **functions** (mechanical categories)
 * **affinities** (thematic categories)
 
 ### Rule Types
@@ -163,7 +163,7 @@ This layer shapes:
 
 ```text
 item dataset
-→ filter by allow/disallow (kind + affinity)
+→ filter by allow/disallow (function + affinity)
 → apply favor/disfavor weighting
 → apply value table
 → apply amount rules

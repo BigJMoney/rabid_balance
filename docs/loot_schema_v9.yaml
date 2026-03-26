@@ -371,7 +371,7 @@ loot_classification:
         - minecraft:kelp
         - minecraft:nether_brick
         # Unc
-        - dried_kelp_block
+        - minecraft:dried_kelp_block
         - minecraft:glowstone_dust
         - minecraft:lapis_lazuli
         - minecraft:quartz
@@ -938,7 +938,6 @@ loot_classification:
         - minecraft:chain
         - minecraft:reinforced_deepslate
         - minecraft:gilded_blackstone
-        - minecraft:lily_pad
         - minecraft:quartz_bricks
         # Filters
         - "#minecraft:dirt"
