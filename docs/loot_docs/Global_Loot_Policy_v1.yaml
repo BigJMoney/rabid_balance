@@ -4,9 +4,9 @@ realm:
   
   Upperworld:
     allow:
-    disallow:
+    disallow: [end, nether, deep_underground]
     favor:
-    disfavor:
+    disfavor: [sea, underground]
 
     # allow_method: union
     # disallow_method: union

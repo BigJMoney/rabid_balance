@@ -1,5 +1,5 @@
 $baseUrl = 'http://localhost:61423'
-$outFile = 'D:\keep\mods\Minecraft\my_tweaks\docs\item_tags_by_item.json'
+$outFile = 'D:\keep\mods\Minecraft\my_tweaks\docs\loot_docs\item_tags_by_item.json'
 
 $itemIds = Invoke-RestMethod "$baseUrl/api/registries/minecraft/item/keys" | Sort-Object
 $byItem = [ordered]@{}

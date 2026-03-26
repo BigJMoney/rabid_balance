@@ -35,7 +35,7 @@ activity:
 # Loot Context Profile Example (Several per doc, organizable by files/dirs)
 
 - id: abandoned_mineshaft
-  
+
   realm: underworld
   activity: mining
   structure_class: dungeon
@@ -43,14 +43,36 @@ activity:
   value_table: uncommon_loot
   rolls: [3, 10]
   
-  guarantee_kinds:  # Implementation note: lock down first
-    consumable: 2
-
   # More control is optional; the default values are shown
 
-  # max_duplicates_per_item: 1  # commenting out default
-  # max_duplicates_per_kind:
+  # Guarantee this number of item slots of this function
+  guarantee_functions:  # Implementation note: lock down first
+    consumable: 2
+  # Guarantee this number of item slots of this affinity
+  guarantee_affinities:
+    upperworld: 2
+
+  # Max number of items slots of this function type
+  max_functions:
+    consumable: 2
+  # Max number of items slots of this affinity type
+  guarantee_affinities:
+    upperworld: 2
+
+  # Max number of duplicate items in this function bucket
+  # max_duplicates_per_function:
   #   tool: 1
+  # Max number of duplicate items in this affinity bucket
+  # max_duplicates_per_affinity:
+  #   sea: 1
+
+  # max_duplicates_per_item: 1  # commenting out default
+
+
+  # Optional; used to replace an existing chest instead of adding a new one
+  replaces: minecraft:chests/simple_dungeon
+  # Optional; used to retain random_sequence from the table it replaces
+  # random_sequence: minecraft:chests/spawn_bonus_chest
 
 
 

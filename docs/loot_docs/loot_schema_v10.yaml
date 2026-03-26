@@ -1,5 +1,5 @@
 loot_classification:
-  version: 9
+  version: 10
 
   # Buckets of power and/or exclusivity (which go hand-in-hand in MC)
   value:
@@ -233,6 +233,7 @@ loot_classification:
           default: uncommon
           junk:
             - minecraft:snowball
+            - "#wooden"                     # Known issue: These style tags don't exist yet (probably want to add aa #c:equipment/wooden style tag)
           legendary:
             - "#netherite"
           epic:
@@ -248,7 +249,6 @@ loot_classification:
             - "#golden"
           common:
             - minecraft:arrow
-            - "#wooden"                     # Known issue: These style tags don't exist yet (probably want to add aa #c:equipment/wooden style tag)
             - "#stone"
         amount_class:
           default: singleton
@@ -1373,6 +1373,11 @@ loot_classification:
         - "#c:potions"
         - "#c:music_discs"
 
+    - id: food
+      priority: 25
+      match:
+        - "#c:foods"
+
     # - id: furniture
 
     # - id: light
@@ -1389,5 +1394,18 @@ loot_classification:
 
 
     # ---- Character / Motif / Theme
+
+    - id: wooden
+      priority: 20
+      match:
+        - "wooden_*"
+        - "#minecraft:logs_that_burn"
+        - "#minecraft:wooden*"  # todo: make sure my script can handle this
+        - "minecraft:planks"
+        - "#c:fence_gates/wooden"
+        - "#c:barrels/wooden"
+        - "#c:rods/wooden"
+      remove:                   # todo: implement this in script
+        - "#minecraft:non_flammable_wood"
 
     # - id: arcane

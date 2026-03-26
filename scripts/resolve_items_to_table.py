@@ -16,7 +16,7 @@ import csv
 
 BASE_DIR = Path(__file__).resolve().parent
 
-DOCS_PATH = "../docs/"
+DOCS_PATH = "../docs/loot_docs/"
 
 YAML_PATH = DOCS_PATH + "loot_schema_v9.yaml"
 ITEMS_PATH = DOCS_PATH + "minecraft_item_ids.json"
