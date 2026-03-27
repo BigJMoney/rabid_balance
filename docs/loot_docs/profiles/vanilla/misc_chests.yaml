@@ -24,7 +24,48 @@
 
   max_dupes_per_item_global: 1
 
-  max_duplicates_per_item_global: 1
-
   replaces: minecraft:chests/spawn_bonus_chest
   random_sequence: minecraft:chests/spawn_bonus_chest
+
+
+- id: ...
+  
+  realm: ...
+
+  value_table: ...
+  rolls: [...]
+  
+  min_slots_by_tag:
+    gather_tool: ...
+
+  max_slots_by_tag:
+    gather_tool: ...
+
+  max_dupes_per_item_by_tag:
+    gather_tool: ...
+
+  max_dupes_per_item_global: 1
+
+  replaces: minecraft:chests/village/village_plains_house
+  # random_sequence: minecraft:chests/...
+
+- id: ...
+  
+  realm: ...
+
+  value_table: ...
+  rolls: [...]
+  
+  min_slots_by_tag:
+    gather_tool: ...
+
+  max_slots_by_tag:
+    gather_tool: ...
+
+  max_dupes_per_item_by_tag:
+    gather_tool: ...
+
+  max_dupes_per_item_global: 1
+
+  replaces: minecraft:chests/...
+  # random_sequence: minecraft:chests/...

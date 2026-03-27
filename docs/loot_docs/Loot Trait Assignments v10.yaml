@@ -1,9 +1,10 @@
-loot_classification:
+loot_classification_by_trait:
+  
   version: 10
 
   # Buckets of power and/or exclusivity (which go hand-in-hand in MC)
   value:
-    - none                  # Never place; none:nonloot
+    - none                  # Never place; none/nonloot
     - unique                # Hand placed only
     - junk
     - filler
@@ -13,9 +14,8 @@ loot_classification:
     - uncommon
     - common
 
-  # todo: fix file ordering when done
   function:
-    - nonloot               # Never place; none:nonloot
+    - nonloot               # Never place; none/nonloot
     - garden
     - consumable
     - wearable
@@ -51,11 +51,13 @@ loot_classification:
       - hard caps for singleton or progression-sensitive items
 
   
-  #--------------------
+#-----------------------------
 
-  rules:
+  # Classification by gameplay
 
-  #--------------------
+  function_trait_assignment:
+
+#-----------------------------
     
     - id: excluded_items
       priority: 100
@@ -1044,14 +1046,16 @@ loot_classification:
 
 
 
-  #--------------------
+#-----------------------------
 
-  affinity_rules:
+  # Classification by theme
 
-  #--------------------
+  affinity_trait_assignment:
+
+#-----------------------------
 
     
-    # ---- Realms
+    # ---- Realms, Appearing In
 
     - id: end
       priority: 50
@@ -1138,7 +1142,7 @@ loot_classification:
 
 
     
-    # ---- Biome-Based Environments
+    # ---- Biome-Based Environments, Appearing In
 
     - id: desert
       priority: 40
@@ -1186,10 +1190,19 @@ loot_classification:
       match:
         - minecraft:campfire
         - "mossy_*"
+        - "#c:logs_that_burn"
+
+
+    - id: plains
+      priority: 40
+      match:
+        - minecraft:dandelion
+        - minecraft:poppy
+        - "oak_*"
 
 
     
-    # ---- Settlements
+    # ---- Settlements, Appearing In
 
     - id: fortification
       priority: 35
@@ -1236,7 +1249,17 @@ loot_classification:
         - "#minecraft:candles"
 
     
-    # ---- Occupational
+    # ---- Occupational, Used In
+
+    - id: household
+      priority: 35
+      match:
+        - minecraft:book
+        - minecraft:emerald
+        - minecraft:gold_nugget
+        - "#minecraft:flowers"
+        - "#c:foods"
+        - "#minecraft:saplings"
 
     - id: archaeology
       priority: 35
@@ -1359,7 +1382,7 @@ loot_classification:
 
 
 
-    # ---- Purpose
+    # ---- Purpose, Used For
 
     - id: treasure
       priority: 25
@@ -1393,7 +1416,7 @@ loot_classification:
     # - id: lightsource
 
 
-    # ---- Character / Motif / Theme
+    # ---- Character / Motif, Innate
 
     - id: wooden
       priority: 20

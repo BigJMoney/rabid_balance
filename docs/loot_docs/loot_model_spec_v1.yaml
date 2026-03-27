@@ -36,13 +36,20 @@ activity:
 
 - id: abandoned_mineshaft
 
+  # Loot Context: Situations and Affinities
+  #  or
+  # Loot Pool: situations, affinities and (gameplay) functions
+
   realm: underworld
   activity: mining
   structure_class: dungeon
+  affinity: treasure  # Can optionally be a list
 
   value_table: uncommon_loot
   rolls: [3, 10]
   
+  # Loot Composition: affinities and (gameplay) functions
+
   min_slots_by_tag:
     gather_tool: 2
     food: 3
