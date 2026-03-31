@@ -1,0 +1,24 @@
+{
+  "source_root": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\neoforge-21.1.162_ref\\data\\minecraft\\loot_table",
+  "output_dir": "D:\\keep\\mods\\Minecraft\\my_tweaks\\docs\\loot_docs\\vanilla_loot_v1",
+  "named_table_count": 65,
+  "inline_table_count": 3,
+  "table_count": 68,
+  "pool_count": 128,
+  "entry_count": 752,
+  "leaf_candidate_count": 810,
+  "named_reference_count": 10,
+  "inline_reference_count": 3,
+  "table_role_summary_count": 65,
+  "table_role_evidence_count": 176,
+  "raw_role_counts": {
+    "direct_from_data": 35,
+    "helper_from_data": 7,
+    "unknown_directness": 23
+  },
+  "effective_role_counts": {
+    "assumed_direct_for_tableau": 23,
+    "direct_from_data": 35,
+    "helper_from_data": 7
+  }
+}
