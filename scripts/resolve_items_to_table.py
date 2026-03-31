@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent
 
 DOCS_PATH = "../docs/loot_docs/"
 
-YAML_PATH = DOCS_PATH + "loot_schema_v9.yaml"
+YAML_PATH = DOCS_PATH + "Loot Trait Assignments v10.yaml"
 ITEMS_PATH = DOCS_PATH + "minecraft_item_ids.json"
 TAGS_BY_ITEM_PATH = DOCS_PATH + "item_tags_by_item-no_loot_tags.json"
 
@@ -148,13 +148,13 @@ def load_tags_by_item(path: str) -> dict[str, set[str]]:
 
 
 def get_loot_classification(doc: dict[str, Any]) -> dict[str, Any]:
-    schema = doc.get("loot_classification")
+    schema = doc.get("loot_classification_by_trait")
     if not isinstance(schema, dict):
-        raise ValueError("Missing or invalid root key: loot_classification")
+        raise ValueError("Missing or invalid root key: loot_classification_by_trait")
     return schema
 
 
-# ---- Schema Rules
+# ---- Schema Function Trait Assignment Rules
 
 def validate_schema(raw_schema: dict[str, Any]) -> LootSchema:
     if not isinstance(raw_schema, dict):
@@ -165,9 +165,9 @@ def validate_schema(raw_schema: dict[str, Any]) -> LootSchema:
     schema_version = str(version)
 
     # -- Property Rules
-    raw_rules = raw_schema.get("rules")
+    raw_rules = raw_schema.get("function_trait_assignment")
     if not isinstance(raw_rules, list) or not raw_rules:
-        raise ValueError("schema.rules must be a non-empty list")
+        raise ValueError("schema.function_trait_assignment must be a non-empty list")
 
     rules: list[RuleSchema] = []
     seen_rule_ids: set[str] = set()
@@ -192,9 +192,9 @@ def validate_schema(raw_schema: dict[str, Any]) -> LootSchema:
         raise ValueError("fallback rule must be last in schema.rules")
 
     # -- Affinity Rules
-    raw_arules = raw_schema.get("affinity_rules")
+    raw_arules = raw_schema.get("affinity_trait_assignment")
     if not isinstance(raw_arules, list) or not raw_arules:
-        raise ValueError("schema.affinity_rules must be a non-empty list")
+        raise ValueError("schema.affinity_trait_assignment must be a non-empty list")
 
     affinity_rules: list[AffinitySchema] = []
     seen_arule_ids: set[str] = set()
