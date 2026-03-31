@@ -1,0 +1,39 @@
+{
+  "scope_config_source": "<in-memory scope override>",
+  "pack_order_source": null,
+  "ignore_roots": [
+    "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\ignore"
+  ],
+  "ignored_sources": [],
+  "discovered_packs": [
+    {
+      "pack_id": "base",
+      "role": "base",
+      "kind": "directory",
+      "explicit": false,
+      "discovery_source": "implicit_base",
+      "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\neoforge-21.1.162_ref",
+      "resource_count": 6796
+    }
+  ],
+  "selected_packs": [
+    {
+      "pack_id": "base",
+      "role": "base",
+      "kind": "directory",
+      "explicit": false,
+      "discovery_source": "implicit_base",
+      "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\neoforge-21.1.162_ref",
+      "resource_count": 6796,
+      "order_index": 0
+    }
+  ],
+  "effective_order": [
+    "base"
+  ],
+  "duplicate_source_issues": [],
+  "replacements": [],
+  "overlap_groups": [],
+  "resolved_overlaps": [],
+  "fatal_errors": []
+}

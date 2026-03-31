@@ -1,5 +1,15 @@
 {
-  "source_root": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\neoforge-21.1.162_ref\\data\\minecraft\\loot_table",
+  "scope_config_source": "<in-memory scope override>",
+  "allowed_loot_dirs": [
+    "chests",
+    "equipment",
+    "pots",
+    "spawners"
+  ],
+  "deferred_loot_dirs": [
+    "inject"
+  ],
+  "base_source_root": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\neoforge-21.1.162_ref\\data",
   "included_dirs": [
     {
       "name": "chests",
@@ -44,6 +54,94 @@
       "file_count": 1
     }
   ],
+  "deferred_dirs": [],
+  "base_encountered_loot_dirs": [
+    {
+      "name": "archaeology",
+      "file_count": 6
+    },
+    {
+      "name": "blocks",
+      "file_count": 982
+    },
+    {
+      "name": "chests",
+      "file_count": 56
+    },
+    {
+      "name": "dispensers",
+      "file_count": 3
+    },
+    {
+      "name": "entities",
+      "file_count": 100
+    },
+    {
+      "name": "equipment",
+      "file_count": 3
+    },
+    {
+      "name": "gameplay",
+      "file_count": 21
+    },
+    {
+      "name": "pots",
+      "file_count": 1
+    },
+    {
+      "name": "shearing",
+      "file_count": 1
+    },
+    {
+      "name": "spawners",
+      "file_count": 5
+    }
+  ],
+  "stack_encountered_loot_dirs": [
+    {
+      "name": "archaeology",
+      "file_count": 6
+    },
+    {
+      "name": "blocks",
+      "file_count": 982
+    },
+    {
+      "name": "chests",
+      "file_count": 56
+    },
+    {
+      "name": "dispensers",
+      "file_count": 3
+    },
+    {
+      "name": "entities",
+      "file_count": 100
+    },
+    {
+      "name": "equipment",
+      "file_count": 3
+    },
+    {
+      "name": "gameplay",
+      "file_count": 21
+    },
+    {
+      "name": "pots",
+      "file_count": 1
+    },
+    {
+      "name": "shearing",
+      "file_count": 1
+    },
+    {
+      "name": "spawners",
+      "file_count": 5
+    }
+  ],
   "included_table_total": 65,
-  "excluded_table_total": 1113
+  "excluded_table_total": 1113,
+  "deferred_table_total": 0,
+  "new_excluded_loot_dirs_from_mods": [],
+  "warnings": []
 }

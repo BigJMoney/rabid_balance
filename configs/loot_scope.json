@@ -1,0 +1,11 @@
+{
+  "allowed_loot_dirs": [
+    "chests",
+    "equipment",
+    "pots",
+    "spawners"
+  ],
+  "deferred_loot_dirs": [
+    "inject"
+  ]
+}

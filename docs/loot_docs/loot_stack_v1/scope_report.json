@@ -1,0 +1,156 @@
+{
+  "scope_config_source": "D:\\keep\\mods\\Minecraft\\my_tweaks\\configs\\loot_scope.json",
+  "allowed_loot_dirs": [
+    "chests",
+    "equipment",
+    "pots",
+    "spawners"
+  ],
+  "deferred_loot_dirs": [
+    "inject"
+  ],
+  "base_source_root": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\neoforge-21.1.162_ref\\data",
+  "included_dirs": [
+    {
+      "name": "chests",
+      "file_count": 63
+    },
+    {
+      "name": "equipment",
+      "file_count": 3
+    },
+    {
+      "name": "pots",
+      "file_count": 1
+    },
+    {
+      "name": "spawners",
+      "file_count": 5
+    }
+  ],
+  "excluded_dirs": [
+    {
+      "name": "archaeology",
+      "file_count": 6
+    },
+    {
+      "name": "blocks",
+      "file_count": 990
+    },
+    {
+      "name": "dispensers",
+      "file_count": 3
+    },
+    {
+      "name": "entities",
+      "file_count": 114
+    },
+    {
+      "name": "gameplay",
+      "file_count": 21
+    },
+    {
+      "name": "shearing",
+      "file_count": 1
+    }
+  ],
+  "deferred_dirs": [
+    {
+      "name": "inject",
+      "file_count": 9
+    }
+  ],
+  "base_encountered_loot_dirs": [
+    {
+      "name": "archaeology",
+      "file_count": 6
+    },
+    {
+      "name": "blocks",
+      "file_count": 982
+    },
+    {
+      "name": "chests",
+      "file_count": 56
+    },
+    {
+      "name": "dispensers",
+      "file_count": 3
+    },
+    {
+      "name": "entities",
+      "file_count": 100
+    },
+    {
+      "name": "equipment",
+      "file_count": 3
+    },
+    {
+      "name": "gameplay",
+      "file_count": 21
+    },
+    {
+      "name": "pots",
+      "file_count": 1
+    },
+    {
+      "name": "shearing",
+      "file_count": 1
+    },
+    {
+      "name": "spawners",
+      "file_count": 5
+    }
+  ],
+  "stack_encountered_loot_dirs": [
+    {
+      "name": "archaeology",
+      "file_count": 6
+    },
+    {
+      "name": "blocks",
+      "file_count": 990
+    },
+    {
+      "name": "chests",
+      "file_count": 63
+    },
+    {
+      "name": "dispensers",
+      "file_count": 3
+    },
+    {
+      "name": "entities",
+      "file_count": 114
+    },
+    {
+      "name": "equipment",
+      "file_count": 3
+    },
+    {
+      "name": "gameplay",
+      "file_count": 21
+    },
+    {
+      "name": "inject",
+      "file_count": 9
+    },
+    {
+      "name": "pots",
+      "file_count": 1
+    },
+    {
+      "name": "shearing",
+      "file_count": 1
+    },
+    {
+      "name": "spawners",
+      "file_count": 5
+    }
+  ],
+  "included_table_total": 72,
+  "excluded_table_total": 1135,
+  "deferred_table_total": 9,
+  "new_excluded_loot_dirs_from_mods": [],
+  "warnings": []
+}

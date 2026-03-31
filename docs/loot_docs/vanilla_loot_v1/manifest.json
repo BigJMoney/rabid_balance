@@ -1,6 +1,12 @@
 {
-  "source_root": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\neoforge-21.1.162_ref\\data\\minecraft\\loot_table",
+  "base_pack_root": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\neoforge-21.1.162_ref",
+  "scope_config_source": "<in-memory scope override>",
+  "pack_order_source": null,
   "output_dir": "D:\\keep\\mods\\Minecraft\\my_tweaks\\docs\\loot_docs\\vanilla_loot_v1",
+  "selected_pack_ids": [
+    "base"
+  ],
+  "selected_pack_count": 1,
   "named_table_count": 65,
   "inline_table_count": 3,
   "table_count": 68,
