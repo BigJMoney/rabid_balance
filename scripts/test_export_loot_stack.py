@@ -46,6 +46,7 @@ class ExportLootStackTests(unittest.TestCase):
         cls.scope_report = json.loads((cls.output_dir / "scope_report.json").read_text(encoding="utf-8"))
         cls.manifest = json.loads((cls.output_dir / "manifest.json").read_text(encoding="utf-8"))
         cls.tables = read_csv_rows(cls.output_dir / "tables.csv")
+        cls.leaf_rows = read_csv_rows(cls.output_dir / "leaf_candidates.csv")
         cls.evidence = read_csv_rows(cls.output_dir / "table_role_evidence.csv")
 
     @classmethod
@@ -53,13 +54,21 @@ class ExportLootStackTests(unittest.TestCase):
         cls.tempdir.cleanup()
 
     def test_default_stack_discovers_mod_dirs_and_defers_inject(self) -> None:
-        self.assertEqual(self.manifest["selected_pack_ids"], ["base", "illagerinvasion", "sophisticatedbackpacks"])
+        expected_pack_ids = ["base"]
+        if ILLAGER_DIR.exists():
+            expected_pack_ids.append("illagerinvasion")
+        if SOPHISTICATED_DIR.exists():
+            expected_pack_ids.append("sophisticatedbackpacks")
+        self.assertEqual(self.manifest["selected_pack_ids"], expected_pack_ids)
         deferred = {item["name"]: item["file_count"] for item in self.scope_report["deferred_dirs"]}
-        self.assertEqual(deferred, {"inject": 9})
+        if SOPHISTICATED_DIR.exists():
+            self.assertEqual(deferred, {"inject": 9})
+        else:
+            self.assertEqual(deferred, {})
         self.assertEqual(self.scope_report["warnings"], [])
         self.assertGreaterEqual(
             sum(1 for row in self.tables if row["table_id"].startswith("illagerinvasion:")),
-            7,
+            7 if ILLAGER_DIR.exists() else 0,
         )
         self.assertFalse(any(row["table_id"].startswith("sophisticatedbackpacks:inject/") for row in self.tables))
 
@@ -73,7 +82,15 @@ class ExportLootStackTests(unittest.TestCase):
         ]
         self.assertTrue(matching_rows)
 
+    def test_illager_leaf_rows_have_path_weight_fields(self) -> None:
+        row = next(row for row in self.leaf_rows if row["root_table_id"] == "illagerinvasion:chests/illager_fort_ground")
+        self.assertIn("root_entry_weight", row)
+        self.assertIn("path_explicit_weights_json", row)
+        self.assertIn("path_has_implicit_default_weights", row)
+
     def test_explicit_archive_replaces_auto_discovered_directory(self) -> None:
+        if not ILLAGER_ARCHIVE.exists():
+            self.skipTest("Illager archive fixture is not present in libs")
         with tempfile.TemporaryDirectory() as tempdir:
             output_dir = Path(tempdir) / "archive_replace"
             exporter.export_loot_stack(
@@ -86,6 +103,8 @@ class ExportLootStackTests(unittest.TestCase):
             self.assertEqual(Path(illager_row["path"]), ILLAGER_ARCHIVE)
 
     def test_archive_root_discovers_archives(self) -> None:
+        if not ILLAGER_ARCHIVE.exists():
+            self.skipTest("Illager archive fixture is not present in libs")
         with tempfile.TemporaryDirectory() as tempdir:
             output_dir = Path(tempdir) / "archive_root"
             result = exporter.export_loot_stack(
@@ -200,17 +219,29 @@ class ExportLootStackTests(unittest.TestCase):
 
     def test_unknown_manifest_pack_id_is_fatal(self) -> None:
         with tempfile.TemporaryDirectory() as tempdir:
+            mods_root = Path(tempdir) / "mods"
             output_dir = Path(tempdir) / "out"
             manifest_path = Path(tempdir) / "pack_order.json"
             manifest_path.write_text(json.dumps(["not_a_real_pack"]), encoding="utf-8")
+            write_mod_pack(
+                mods_root / "real_mod",
+                "realm",
+                {
+                    "data/realm/loot_table/chests/example.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:stick"}]}],
+                        }
+                    )
+                },
+            )
 
             with self.assertRaises(exporter.PrecheckFailed):
                 exporter.export_loot_stack(
                     output_dir=output_dir,
-                    auto_discover_mod_dirs=False,
-                    mods_root=PROJECT_ROOT / "__unused_mods_root__",
+                    mods_root=mods_root,
                     archive_roots=[],
-                    explicit_packs=[SOPHISTICATED_DIR],
+                    explicit_packs=[],
                     pack_order_manifest=manifest_path,
                 )
 
@@ -250,6 +281,144 @@ class ExportLootStackTests(unittest.TestCase):
             self.assertEqual(result["manifest"]["selected_pack_ids"], ["base", "visiblemod"])
             precheck = json.loads((output_dir / "precheck_report.json").read_text(encoding="utf-8"))
             self.assertIn(str(ignore_root), precheck["ignored_sources"])
+
+    def test_synthetic_path_weight_fields_cover_multi_hop_cases(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            mods_root = Path(tempdir) / "mods"
+            output_dir = Path(tempdir) / "out"
+            write_mod_pack(
+                mods_root / "weights_mod",
+                "weightsmod",
+                {
+                    "data/weightsmod/loot_table/chests/root_weighted.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [
+                                {
+                                    "rolls": 1,
+                                    "entries": [
+                                        {
+                                            "type": "minecraft:loot_table",
+                                            "value": "weightsmod:chests/mid_weighted",
+                                            "weight": 3,
+                                        }
+                                    ],
+                                }
+                            ],
+                        }
+                    ),
+                    "data/weightsmod/loot_table/chests/mid_weighted.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [
+                                {
+                                    "rolls": 1,
+                                    "entries": [
+                                        {
+                                            "type": "minecraft:item",
+                                            "name": "minecraft:diamond",
+                                            "weight": 5,
+                                        }
+                                    ],
+                                }
+                            ],
+                        }
+                    ),
+                    "data/weightsmod/loot_table/chests/root_unweighted.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [
+                                {
+                                    "rolls": 1,
+                                    "entries": [
+                                        {
+                                            "type": "minecraft:loot_table",
+                                            "value": "weightsmod:chests/mid_weighted",
+                                        }
+                                    ],
+                                }
+                            ],
+                        }
+                    ),
+                    "data/weightsmod/loot_table/chests/root_all_unweighted.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [
+                                {
+                                    "rolls": 1,
+                                    "entries": [
+                                        {
+                                            "type": "minecraft:loot_table",
+                                            "value": "weightsmod:chests/mid_unweighted",
+                                        }
+                                    ],
+                                }
+                            ],
+                        }
+                    ),
+                    "data/weightsmod/loot_table/chests/mid_unweighted.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [
+                                {
+                                    "rolls": 1,
+                                    "entries": [
+                                        {
+                                            "type": "minecraft:item",
+                                            "name": "minecraft:stick",
+                                        }
+                                    ],
+                                }
+                            ],
+                        }
+                    ),
+                },
+            )
+
+            exporter.export_loot_stack(
+                output_dir=output_dir,
+                mods_root=mods_root,
+                archive_roots=[],
+                explicit_packs=[],
+            )
+
+            leaf_rows = read_csv_rows(output_dir / "leaf_candidates.csv")
+
+            weighted_row = next(
+                row
+                for row in leaf_rows
+                if row["root_table_id"] == "weightsmod:chests/root_weighted" and row["item_id"] == "minecraft:diamond"
+            )
+            self.assertEqual(weighted_row["root_entry_weight"], "3")
+            self.assertEqual(weighted_row["leaf_weight"], "5")
+            self.assertEqual(weighted_row["path_explicit_weights_json"], "[3,5]")
+            self.assertEqual(weighted_row["path_explicit_weight_product"], "15")
+            self.assertEqual(weighted_row["path_missing_weight_count"], "0")
+            self.assertEqual(weighted_row["path_has_implicit_default_weights"], "false")
+
+            root_missing_row = next(
+                row
+                for row in leaf_rows
+                if row["root_table_id"] == "weightsmod:chests/root_unweighted" and row["item_id"] == "minecraft:diamond"
+            )
+            self.assertEqual(root_missing_row["root_entry_weight"], "")
+            self.assertEqual(root_missing_row["leaf_weight"], "5")
+            self.assertEqual(root_missing_row["path_explicit_weights_json"], "[5]")
+            self.assertEqual(root_missing_row["path_explicit_weight_product"], "5")
+            self.assertEqual(root_missing_row["path_missing_weight_count"], "1")
+            self.assertEqual(root_missing_row["path_has_implicit_default_weights"], "true")
+
+            all_missing_row = next(
+                row
+                for row in leaf_rows
+                if row["root_table_id"] == "weightsmod:chests/root_all_unweighted" and row["item_id"] == "minecraft:stick"
+            )
+            self.assertEqual(all_missing_row["root_entry_weight"], "")
+            self.assertEqual(all_missing_row["leaf_weight"], "")
+            self.assertEqual(all_missing_row["path_explicit_weights_json"], "[]")
+            self.assertEqual(all_missing_row["path_explicit_weight_product"], "")
+            self.assertEqual(all_missing_row["path_missing_weight_count"], "2")
+            self.assertEqual(all_missing_row["path_has_implicit_default_weights"], "true")
 
 
 if __name__ == "__main__":

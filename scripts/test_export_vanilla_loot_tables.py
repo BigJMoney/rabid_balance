@@ -179,6 +179,12 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
             and "minecraft:equipment/trial_chamber" in row["selection_chain_json"]
         )
         self.assertTrue(melee_leaf["selection_chain_json"])
+        self.assertEqual(melee_leaf["root_entry_weight"], "")
+        self.assertEqual(melee_leaf["leaf_weight"], "")
+        self.assertEqual(melee_leaf["path_explicit_weights_json"], "[4]")
+        self.assertEqual(melee_leaf["path_explicit_weight_product"], "4")
+        self.assertEqual(melee_leaf["path_missing_weight_count"], "2")
+        self.assertEqual(melee_leaf["path_has_implicit_default_weights"], "true")
 
     def test_pots_corridor_preserves_weight_and_literal_count(self) -> None:
         emerald_row = next(
@@ -187,7 +193,12 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
             if row["root_table_id"] == "minecraft:pots/trial_chambers/corridor"
             and row["item_id"] == "minecraft:emerald"
         )
+        self.assertEqual(emerald_row["root_entry_weight"], "125")
         self.assertEqual(emerald_row["leaf_weight"], "125")
+        self.assertEqual(emerald_row["path_explicit_weights_json"], "[125]")
+        self.assertEqual(emerald_row["path_explicit_weight_product"], "125")
+        self.assertEqual(emerald_row["path_missing_weight_count"], "0")
+        self.assertEqual(emerald_row["path_has_implicit_default_weights"], "false")
         self.assertEqual(emerald_row["set_count_min"], "1.0")
         self.assertEqual(emerald_row["set_count_max"], "3.0")
 
@@ -197,6 +208,9 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
             if row["root_table_id"] == "minecraft:pots/trial_chambers/corridor"
             and row["item_id"] == "minecraft:diamond_block"
         )
+        self.assertEqual(diamond_block_row["path_explicit_weight_product"], "")
+        self.assertEqual(diamond_block_row["path_missing_weight_count"], "1")
+        self.assertEqual(diamond_block_row["path_has_implicit_default_weights"], "true")
         self.assertEqual(diamond_block_row["set_count_min"], "1.0")
         self.assertEqual(diamond_block_row["set_count_max"], "1.0")
 
@@ -218,6 +232,8 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         self.assertTrue(sample["leaf_kind"])
         self.assertIsInstance(chain, list)
         self.assertTrue(chain)
+        self.assertIn("root_entry_weight", sample)
+        self.assertIn("path_explicit_weights_json", sample)
 
     def test_table_role_rows_cover_named_scope(self) -> None:
         self.assertEqual(len(self.table_roles), 65)

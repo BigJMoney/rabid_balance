@@ -90,8 +90,14 @@ LEAF_FIELDNAMES = [
     "selection_chain_json",
     "path_condition_types",
     "path_function_types",
+    "root_entry_weight",
+    "root_entry_quality",
     "leaf_weight",
     "leaf_quality",
+    "path_explicit_weights_json",
+    "path_explicit_weight_product",
+    "path_missing_weight_count",
+    "path_has_implicit_default_weights",
     "set_count_min",
     "set_count_max",
     "unresolved_reason",
@@ -370,6 +376,10 @@ def join_types(values: list[str] | tuple[str, ...]) -> str:
 
 def as_csv_value(value: Any) -> Any:
     return "" if value is None else value
+
+
+def is_explicit_number(value: Any) -> bool:
+    return isinstance(value, (int, float)) and not isinstance(value, bool)
 
 
 def ensure_list(value: Any, where: str) -> list[Any]:
@@ -1426,6 +1436,15 @@ class LootStackExporter:
         unresolved_reason: str,
     ) -> None:
         set_count_min, set_count_max = extract_set_count_range(leaf_entry.functions)
+        root_chain_step = chain[0]
+        explicit_weights = [step["weight"] for step in chain if is_explicit_number(step.get("weight"))]
+        missing_weight_count = sum(1 for step in chain if not is_explicit_number(step.get("weight")))
+        path_weight_product: int | float | None = None
+        if explicit_weights:
+            product: int | float = 1
+            for value in explicit_weights:
+                product *= value
+            path_weight_product = product
         leaf_rows.append(
             {
                 "root_table_id": root_table.table_id,
@@ -1441,8 +1460,14 @@ class LootStackExporter:
                 "selection_chain_json": json_cell(chain),
                 "path_condition_types": join_types(sorted(path_condition_types)),
                 "path_function_types": join_types(sorted(path_function_types)),
+                "root_entry_weight": as_csv_value(root_chain_step.get("weight")),
+                "root_entry_quality": as_csv_value(root_chain_step.get("quality")),
                 "leaf_weight": as_csv_value(leaf_entry.weight),
                 "leaf_quality": as_csv_value(leaf_entry.quality),
+                "path_explicit_weights_json": json_cell(explicit_weights),
+                "path_explicit_weight_product": as_csv_value(path_weight_product),
+                "path_missing_weight_count": missing_weight_count,
+                "path_has_implicit_default_weights": "true" if missing_weight_count > 0 else "false",
                 "set_count_min": as_csv_value(set_count_min),
                 "set_count_max": as_csv_value(set_count_max),
                 "unresolved_reason": unresolved_reason,
@@ -1838,6 +1863,11 @@ class LootStackExporter:
             "- Inline tables use synthetic IDs in the form `inline:{entry_id}`.",
             "- `entries.csv.conditions_json` stores only conditions declared directly on entry objects. In many vanilla and modded tables, real conditions may still live at the pool level instead.",
             "- `entries.csv.quality` and `leaf_candidates.csv.leaf_quality` remain in the schema because they are valid loot fields even when blank in a given scope.",
+            "- `leaf_candidates.csv.root_entry_weight` and `leaf_candidates.csv.root_entry_quality` come from the first chain step only.",
+            "- `leaf_candidates.csv.leaf_weight` remains terminal-entry-only for backward compatibility; it is not a path weight or probability.",
+            "- `leaf_candidates.csv.path_explicit_weights_json` lists only explicitly declared weights encountered along the resolved path.",
+            "- `leaf_candidates.csv.path_explicit_weight_product` is the product of explicit path weights only; it is not normalized chance.",
+            "- `leaf_candidates.csv.path_has_implicit_default_weights = true` means at least one chain step omitted `weight`, so the explicit product is incomplete as a chance-like proxy.",
             "- `set_count_min` and `set_count_max` only reflect explicit terminal `minecraft:set_count` functions.",
             "- `leaf_candidates.csv` is a path table. For source counts in Tableau, join it to `table_role_summary.csv` on `root_table_id = table_id` and filter `count_as_direct = true`.",
             "- `raw_role` keeps the conservative local-data provenance result; `effective_role` converts `unknown_directness` to `assumed_direct_for_tableau`.",

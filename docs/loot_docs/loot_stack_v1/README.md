@@ -7,7 +7,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Base pack root: `D:\keep\mods\Minecraft\my_tweaks\libs\neoforge-21.1.162_ref`
 - Scope config: `D:\keep\mods\Minecraft\my_tweaks\configs\loot_scope.json`
 - Ignore roots: `D:\keep\mods\Minecraft\my_tweaks\libs\ignore`
-- Selected pack count: 3
+- Selected pack count: 2
 - Named table rows: 72
 - Inline table rows: 3
 - Pool rows: 201
@@ -20,7 +20,6 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 
 - `base` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\neoforge-21.1.162_ref`
 - `illagerinvasion` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\IllagerInvasion-v21.1.6-NeoForge`
-- `sophisticatedbackpacks` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\sophisticatedbackpacks-3.25.34.1581`
 
 ## Files
 
@@ -52,7 +51,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 ## Excluded Folders
 
 - `archaeology`: 6 effective loot-table resources
-- `blocks`: 990 effective loot-table resources
+- `blocks`: 984 effective loot-table resources
 - `dispensers`: 3 effective loot-table resources
 - `entities`: 114 effective loot-table resources
 - `gameplay`: 21 effective loot-table resources
@@ -60,7 +59,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 
 ## Deferred Stage 2 Folders
 
-- `inject`: 9 effective loot-table resources
+- None
 
 ## Warnings
 
@@ -75,6 +74,11 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Inline tables use synthetic IDs in the form `inline:{entry_id}`.
 - `entries.csv.conditions_json` stores only conditions declared directly on entry objects. In many vanilla and modded tables, real conditions may still live at the pool level instead.
 - `entries.csv.quality` and `leaf_candidates.csv.leaf_quality` remain in the schema because they are valid loot fields even when blank in a given scope.
+- `leaf_candidates.csv.root_entry_weight` and `leaf_candidates.csv.root_entry_quality` come from the first chain step only.
+- `leaf_candidates.csv.leaf_weight` remains terminal-entry-only for backward compatibility; it is not a path weight or probability.
+- `leaf_candidates.csv.path_explicit_weights_json` lists only explicitly declared weights encountered along the resolved path.
+- `leaf_candidates.csv.path_explicit_weight_product` is the product of explicit path weights only; it is not normalized chance.
+- `leaf_candidates.csv.path_has_implicit_default_weights = true` means at least one chain step omitted `weight`, so the explicit product is incomplete as a chance-like proxy.
 - `set_count_min` and `set_count_max` only reflect explicit terminal `minecraft:set_count` functions.
 - `leaf_candidates.csv` is a path table. For source counts in Tableau, join it to `table_role_summary.csv` on `root_table_id = table_id` and filter `count_as_direct = true`.
 - `raw_role` keeps the conservative local-data provenance result; `effective_role` converts `unknown_directness` to `assumed_direct_for_tableau`.
