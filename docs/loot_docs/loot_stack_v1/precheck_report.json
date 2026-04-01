@@ -25,6 +25,15 @@
       "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
       "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\IllagerInvasion-v21.1.6-NeoForge",
       "resource_count": 145
+    },
+    {
+      "pack_id": "sophisticatedbackpacks",
+      "role": "mod",
+      "kind": "directory",
+      "explicit": false,
+      "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
+      "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\sophisticatedbackpacks-3.25.34.1581",
+      "resource_count": 220
     }
   ],
   "selected_packs": [
@@ -47,11 +56,22 @@
       "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\IllagerInvasion-v21.1.6-NeoForge",
       "resource_count": 145,
       "order_index": 1
+    },
+    {
+      "pack_id": "sophisticatedbackpacks",
+      "role": "mod",
+      "kind": "directory",
+      "explicit": false,
+      "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
+      "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\sophisticatedbackpacks-3.25.34.1581",
+      "resource_count": 220,
+      "order_index": 2
     }
   ],
   "effective_order": [
     "base",
-    "illagerinvasion"
+    "illagerinvasion",
+    "sophisticatedbackpacks"
   ],
   "duplicate_source_issues": [],
   "replacements": [],

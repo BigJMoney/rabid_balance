@@ -46,6 +46,8 @@ class ExportLootStackTests(unittest.TestCase):
         cls.scope_report = json.loads((cls.output_dir / "scope_report.json").read_text(encoding="utf-8"))
         cls.manifest = json.loads((cls.output_dir / "manifest.json").read_text(encoding="utf-8"))
         cls.tables = read_csv_rows(cls.output_dir / "tables.csv")
+        cls.pools = read_csv_rows(cls.output_dir / "pools.csv")
+        cls.entries = read_csv_rows(cls.output_dir / "entries.csv")
         cls.leaf_rows = read_csv_rows(cls.output_dir / "leaf_candidates.csv")
         cls.evidence = read_csv_rows(cls.output_dir / "table_role_evidence.csv")
         cls.item_classification = read_csv_rows(cls.output_dir / "item_classification.csv")
@@ -88,8 +90,16 @@ class ExportLootStackTests(unittest.TestCase):
     def test_illager_leaf_rows_have_path_weight_fields(self) -> None:
         row = next(row for row in self.leaf_rows if row["root_table_id"] == "illagerinvasion:chests/illager_fort_ground")
         self.assertIn("root_entry_weight", row)
+        self.assertIn("root_pool_weight_share", row)
+        self.assertIn("path_pool_shares_json", row)
         self.assertIn("path_explicit_weights_json", row)
-        self.assertIn("path_has_implicit_default_weights", row)
+
+    def test_default_stack_raw_tables_include_normalized_weight_fields(self) -> None:
+        pool_row = next(iter(self.pools))
+        entry_row = next(iter(self.entries))
+        self.assertNotIn("pool_defaulted_weight_entry_count", pool_row)
+        self.assertNotIn("weight_was_defaulted", entry_row)
+        self.assertIn("pool_weight_share", entry_row)
 
     def test_default_stack_writes_stage15_classification_tables(self) -> None:
         self.assertTrue(self.item_classification)
@@ -326,7 +336,12 @@ class ExportLootStackTests(unittest.TestCase):
                                             "type": "minecraft:loot_table",
                                             "value": "weightsmod:chests/mid_weighted",
                                             "weight": 3,
-                                        }
+                                        },
+                                        {
+                                            "type": "minecraft:item",
+                                            "name": "minecraft:stone",
+                                            "weight": 1,
+                                        },
                                     ],
                                 }
                             ],
@@ -343,7 +358,12 @@ class ExportLootStackTests(unittest.TestCase):
                                             "type": "minecraft:item",
                                             "name": "minecraft:diamond",
                                             "weight": 5,
-                                        }
+                                        },
+                                        {
+                                            "type": "minecraft:item",
+                                            "name": "minecraft:gold_ingot",
+                                            "weight": 5,
+                                        },
                                     ],
                                 }
                             ],
@@ -360,6 +380,11 @@ class ExportLootStackTests(unittest.TestCase):
                                             "type": "minecraft:loot_table",
                                             "value": "weightsmod:chests/mid_weighted",
                                         }
+                                        ,
+                                        {
+                                            "type": "minecraft:item",
+                                            "name": "minecraft:cobblestone",
+                                        },
                                     ],
                                 }
                             ],
@@ -376,6 +401,11 @@ class ExportLootStackTests(unittest.TestCase):
                                             "type": "minecraft:loot_table",
                                             "value": "weightsmod:chests/mid_unweighted",
                                         }
+                                        ,
+                                        {
+                                            "type": "minecraft:item",
+                                            "name": "minecraft:dirt",
+                                        },
                                     ],
                                 }
                             ],
@@ -392,6 +422,11 @@ class ExportLootStackTests(unittest.TestCase):
                                             "type": "minecraft:item",
                                             "name": "minecraft:stick",
                                         }
+                                        ,
+                                        {
+                                            "type": "minecraft:item",
+                                            "name": "minecraft:oak_planks",
+                                        },
                                     ],
                                 }
                             ],
@@ -408,6 +443,21 @@ class ExportLootStackTests(unittest.TestCase):
             )
 
             leaf_rows = read_csv_rows(output_dir / "leaf_candidates.csv")
+            pool_rows = read_csv_rows(output_dir / "pools.csv")
+            entry_rows = read_csv_rows(output_dir / "entries.csv")
+
+            root_weighted_pool = next(
+                row for row in pool_rows if row["table_id"] == "weightsmod:chests/root_weighted"
+            )
+            self.assertNotIn("pool_defaulted_weight_entry_count", root_weighted_pool)
+
+            root_unweighted_entry = next(
+                row
+                for row in entry_rows
+                if row["table_id"] == "weightsmod:chests/root_unweighted" and row["entry_type"] == "minecraft:loot_table"
+            )
+            self.assertNotIn("weight_was_defaulted", root_unweighted_entry)
+            self.assertEqual(root_unweighted_entry["pool_weight_share"], "0.5")
 
             weighted_row = next(
                 row
@@ -416,10 +466,14 @@ class ExportLootStackTests(unittest.TestCase):
             )
             self.assertEqual(weighted_row["root_entry_weight"], "3")
             self.assertEqual(weighted_row["leaf_weight"], "5")
+            self.assertNotIn("root_entry_weight_was_defaulted", weighted_row)
+            self.assertEqual(weighted_row["root_pool_weight_share"], "0.75")
+            self.assertEqual(weighted_row["path_pool_shares_json"], "[0.75,0.5]")
+            self.assertEqual(weighted_row["path_pool_share_product"], "0.375")
             self.assertEqual(weighted_row["path_explicit_weights_json"], "[3,5]")
             self.assertEqual(weighted_row["path_explicit_weight_product"], "15")
-            self.assertEqual(weighted_row["path_missing_weight_count"], "0")
-            self.assertEqual(weighted_row["path_has_implicit_default_weights"], "false")
+            self.assertNotIn("path_missing_weight_count", weighted_row)
+            self.assertNotIn("path_has_implicit_default_weights", weighted_row)
 
             root_missing_row = next(
                 row
@@ -428,10 +482,14 @@ class ExportLootStackTests(unittest.TestCase):
             )
             self.assertEqual(root_missing_row["root_entry_weight"], "")
             self.assertEqual(root_missing_row["leaf_weight"], "5")
+            self.assertNotIn("root_entry_weight_was_defaulted", root_missing_row)
+            self.assertEqual(root_missing_row["root_pool_weight_share"], "0.5")
+            self.assertEqual(root_missing_row["path_pool_shares_json"], "[0.5,0.5]")
+            self.assertEqual(root_missing_row["path_pool_share_product"], "0.25")
             self.assertEqual(root_missing_row["path_explicit_weights_json"], "[5]")
             self.assertEqual(root_missing_row["path_explicit_weight_product"], "5")
-            self.assertEqual(root_missing_row["path_missing_weight_count"], "1")
-            self.assertEqual(root_missing_row["path_has_implicit_default_weights"], "true")
+            self.assertNotIn("path_missing_weight_count", root_missing_row)
+            self.assertNotIn("path_has_implicit_default_weights", root_missing_row)
 
             all_missing_row = next(
                 row
@@ -440,10 +498,14 @@ class ExportLootStackTests(unittest.TestCase):
             )
             self.assertEqual(all_missing_row["root_entry_weight"], "")
             self.assertEqual(all_missing_row["leaf_weight"], "")
+            self.assertNotIn("root_entry_weight_was_defaulted", all_missing_row)
+            self.assertEqual(all_missing_row["root_pool_weight_share"], "0.5")
+            self.assertEqual(all_missing_row["path_pool_shares_json"], "[0.5,0.5]")
+            self.assertEqual(all_missing_row["path_pool_share_product"], "0.25")
             self.assertEqual(all_missing_row["path_explicit_weights_json"], "[]")
             self.assertEqual(all_missing_row["path_explicit_weight_product"], "")
-            self.assertEqual(all_missing_row["path_missing_weight_count"], "2")
-            self.assertEqual(all_missing_row["path_has_implicit_default_weights"], "true")
+            self.assertNotIn("path_missing_weight_count", all_missing_row)
+            self.assertNotIn("path_has_implicit_default_weights", all_missing_row)
 
     def test_custom_classification_csv_handles_mod_items_and_normalized_affinities(self) -> None:
         with tempfile.TemporaryDirectory() as tempdir:

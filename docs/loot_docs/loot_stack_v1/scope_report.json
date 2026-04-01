@@ -35,7 +35,7 @@
     },
     {
       "name": "blocks",
-      "file_count": 984
+      "file_count": 990
     },
     {
       "name": "dispensers",
@@ -54,7 +54,12 @@
       "file_count": 1
     }
   ],
-  "deferred_dirs": [],
+  "deferred_dirs": [
+    {
+      "name": "inject",
+      "file_count": 9
+    }
+  ],
   "base_encountered_loot_dirs": [
     {
       "name": "archaeology",
@@ -104,7 +109,7 @@
     },
     {
       "name": "blocks",
-      "file_count": 984
+      "file_count": 990
     },
     {
       "name": "chests",
@@ -127,6 +132,10 @@
       "file_count": 21
     },
     {
+      "name": "inject",
+      "file_count": 9
+    },
+    {
       "name": "pots",
       "file_count": 1
     },
@@ -140,8 +149,8 @@
     }
   ],
   "included_table_total": 72,
-  "excluded_table_total": 1129,
-  "deferred_table_total": 0,
+  "excluded_table_total": 1135,
+  "deferred_table_total": 9,
   "new_excluded_loot_dirs_from_mods": [],
   "warnings": []
 }

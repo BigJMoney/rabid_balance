@@ -72,6 +72,7 @@ ENTRIES_FIELDNAMES = [
     "inline_table_id",
     "weight",
     "quality",
+    "pool_weight_share",
     "condition_types",
     "function_types",
     "conditions_json",
@@ -97,10 +98,11 @@ LEAF_FIELDNAMES = [
     "root_entry_quality",
     "leaf_weight",
     "leaf_quality",
+    "root_pool_weight_share",
+    "path_pool_shares_json",
+    "path_pool_share_product",
     "path_explicit_weights_json",
     "path_explicit_weight_product",
-    "path_missing_weight_count",
-    "path_has_implicit_default_weights",
     "set_count_min",
     "set_count_max",
     "unresolved_reason",
@@ -287,6 +289,7 @@ class PoolRecord:
     condition_types: list[str]
     conditions: list[Any]
     raw_pool: dict[str, Any]
+    pool_total_effective_weight: int | float | None = None
 
     def to_row(self) -> dict[str, Any]:
         return {
@@ -319,6 +322,9 @@ class EntryRecord:
     inline_table_id: str
     weight: int | float | None
     quality: int | float | None
+    effective_weight: int | float | None
+    pool_total_effective_weight: int | float | None
+    pool_weight_share: float | None
     condition_types: list[str]
     function_types: list[str]
     conditions: list[Any]
@@ -338,6 +344,7 @@ class EntryRecord:
             "inline_table_id": self.inline_table_id,
             "weight": as_csv_value(self.weight),
             "quality": as_csv_value(self.quality),
+            "pool_weight_share": as_csv_value(self.pool_weight_share),
             "condition_types": join_types(self.condition_types),
             "function_types": join_types(self.function_types),
             "conditions_json": json_cell(self.conditions),
@@ -436,6 +443,12 @@ def as_csv_value(value: Any) -> Any:
 
 def is_explicit_number(value: Any) -> bool:
     return isinstance(value, (int, float)) and not isinstance(value, bool)
+
+
+def get_effective_weight(value: Any) -> int | float:
+    if is_explicit_number(value):
+        return value
+    return 1
 
 
 def parse_boolish(value: Any) -> bool:
@@ -889,6 +902,7 @@ class LootStackExporter:
         scope_report = self._discover_scope_report()
         self._parse_named_tables()
         self._validate_references()
+        self._compute_pool_weight_metrics()
         self._build_leaf_rows()
         self._build_table_roles()
         self._build_item_classification_outputs()
@@ -1361,6 +1375,9 @@ class LootStackExporter:
             inline_table_id=inline_table_id,
             weight=entry.get("weight"),
             quality=entry.get("quality"),
+            effective_weight=None,
+            pool_total_effective_weight=None,
+            pool_weight_share=None,
             condition_types=collect_condition_types(conditions),
             function_types=collect_function_types(functions),
             conditions=conditions,
@@ -1400,6 +1417,30 @@ class LootStackExporter:
                 raw_table=inline_value,
             )
             self._parse_table_contents(inline_table)
+
+    def _compute_pool_weight_metrics(self) -> None:
+        for pool_id, pool in self.pools.items():
+            entry_ids = self.entry_ids_by_pool.get(pool_id, [])
+            effective_weights: dict[str, int | float] = {}
+            total_effective_weight: int | float = 0
+
+            for entry_id in entry_ids:
+                entry = self.entries[entry_id]
+                effective_weight = get_effective_weight(entry.weight)
+                effective_weights[entry_id] = effective_weight
+                total_effective_weight += effective_weight
+                entry.effective_weight = effective_weight
+
+            pool.pool_total_effective_weight = total_effective_weight
+
+            for entry_id in entry_ids:
+                entry = self.entries[entry_id]
+                entry.pool_total_effective_weight = total_effective_weight
+                effective_weight = effective_weights[entry_id]
+                if total_effective_weight:
+                    entry.pool_weight_share = effective_weight / total_effective_weight
+                else:
+                    entry.pool_weight_share = None
 
     def _validate_references(self) -> None:
         missing_inline_tables = sorted(
@@ -1578,13 +1619,19 @@ class LootStackExporter:
         set_count_min, set_count_max = extract_set_count_range(leaf_entry.functions)
         root_chain_step = chain[0]
         explicit_weights = [step["weight"] for step in chain if is_explicit_number(step.get("weight"))]
-        missing_weight_count = sum(1 for step in chain if not is_explicit_number(step.get("weight")))
+        path_pool_shares = [step["pool_weight_share"] for step in chain if is_explicit_number(step.get("pool_weight_share"))]
         path_weight_product: int | float | None = None
         if explicit_weights:
             product: int | float = 1
             for value in explicit_weights:
                 product *= value
             path_weight_product = product
+        path_pool_share_product: float | None = None
+        if len(path_pool_shares) == len(chain) and path_pool_shares:
+            share_product = 1.0
+            for value in path_pool_shares:
+                share_product *= float(value)
+            path_pool_share_product = share_product
         leaf_rows.append(
             {
                 "root_table_id": root_table.table_id,
@@ -1604,10 +1651,11 @@ class LootStackExporter:
                 "root_entry_quality": as_csv_value(root_chain_step.get("quality")),
                 "leaf_weight": as_csv_value(leaf_entry.weight),
                 "leaf_quality": as_csv_value(leaf_entry.quality),
+                "root_pool_weight_share": as_csv_value(root_chain_step.get("pool_weight_share")),
+                "path_pool_shares_json": json_cell(path_pool_shares),
+                "path_pool_share_product": as_csv_value(path_pool_share_product),
                 "path_explicit_weights_json": json_cell(explicit_weights),
                 "path_explicit_weight_product": as_csv_value(path_weight_product),
-                "path_missing_weight_count": missing_weight_count,
-                "path_has_implicit_default_weights": "true" if missing_weight_count > 0 else "false",
                 "set_count_min": as_csv_value(set_count_min),
                 "set_count_max": as_csv_value(set_count_max),
                 "unresolved_reason": unresolved_reason,
@@ -1629,6 +1677,7 @@ class LootStackExporter:
             "inline_table_id": entry.inline_table_id,
             "weight": entry.weight,
             "quality": entry.quality,
+            "pool_weight_share": entry.pool_weight_share,
             "condition_types": entry.condition_types,
             "function_types": entry.function_types,
         }
@@ -2072,8 +2121,8 @@ class LootStackExporter:
             "- `precheck_report.json`: discovered packs, selected packs, effective order, overlap groups, and fatal precheck errors.",
             "- `tables.csv`: one row per effective named table plus synthetic inline table.",
             "- `pools.csv`: one row per pool with roll metadata and pool-level conditions.",
-            "- `entries.csv`: one row per entry with direct metadata, raw JSON, and reference targets.",
-            "- `leaf_candidates.csv`: denormalized root-to-leaf paths for Tableau-style analysis.",
+            "- `entries.csv`: one row per entry with direct metadata, raw JSON, reference targets, and entry-level pool weight shares.",
+            "- `leaf_candidates.csv`: denormalized root-to-leaf paths for Tableau-style analysis, including raw path weights and normalized pool-share metrics.",
             "- `table_role_summary.csv`: one row per named effective table with raw and Tableau-facing directness roles.",
             "- `table_role_evidence.csv`: evidence edges behind the table role classification.",
             "- `item_classification.csv`: one row per classified item_id sourced from the canonical resolved_loot export.",
@@ -2118,13 +2167,20 @@ class LootStackExporter:
             "- Inline tables use synthetic IDs in the form `inline:{entry_id}`.",
             "- `entries.csv.conditions_json` stores only conditions declared directly on entry objects. In many vanilla and modded tables, real conditions may still live at the pool level instead.",
             "- `entries.csv.quality` and `leaf_candidates.csv.leaf_quality` remain in the schema because they are valid loot fields even when blank in a given scope.",
+            "- Raw `weight` values are not standardized across unrelated pools or tables, so compare normalized share fields when you need cross-table weighting context.",
+            "- For the current scope, normalization is pool-based because the parsed entries are all top-level pool entries rather than nested composite siblings.",
+            "- Missing entry `weight` values are normalized as Minecraft's implicit default of `1` for the pool-share calculations.",
+            "- `entries.csv.pool_weight_share` is the entry's local share of its pool total and is the authoritative raw normalized-weight field for this scope.",
             "- `leaf_candidates.csv.root_entry_weight` and `leaf_candidates.csv.root_entry_quality` come from the first chain step only.",
+            "- `leaf_candidates.csv.root_pool_weight_share` describes the normalized root-step context without restating an effective-weight denominator column.",
+            "- `leaf_candidates.csv.path_pool_shares_json` lists the ordered local pool shares across the resolved path.",
+            "- `leaf_candidates.csv.path_pool_share_product` is a relative path-choice share, not final drop probability.",
             "- `leaf_candidates.csv.leaf_weight` remains terminal-entry-only for backward compatibility; it is not a path weight or probability.",
             "- `leaf_candidates.csv.path_explicit_weights_json` lists only explicitly declared weights encountered along the resolved path.",
             "- `leaf_candidates.csv.path_explicit_weight_product` is the product of explicit path weights only; it is not normalized chance.",
-            "- `leaf_candidates.csv.path_has_implicit_default_weights = true` means at least one chain step omitted `weight`, so the explicit product is incomplete as a chance-like proxy.",
             "- `set_count_min` and `set_count_max` only reflect explicit terminal `minecraft:set_count` functions.",
             "- `leaf_candidates.csv` is a path table. For source counts in Tableau, join it to `table_role_summary.csv` on `root_table_id = table_id` and filter `count_as_direct = true`.",
+            "- For Tableau weighting work, prefer `entries.csv.pool_weight_share`, `leaf_candidates.csv.root_pool_weight_share`, and `leaf_candidates.csv.path_pool_share_product` over raw weight sums.",
             "- `resolved_loot_v*.csv` remains the canonical raw classification export, but its `affinities` field is a serialized list. Prefer `item_classification.csv` plus `item_affinities.csv` for Tableau.",
             "- `classification_coverage.csv` makes missing loot-item classifications explicit instead of silently dropping them.",
             "- `raw_role` keeps the conservative local-data provenance result; `effective_role` converts `unknown_directness` to `assumed_direct_for_tableau`.",

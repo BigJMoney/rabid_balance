@@ -193,8 +193,8 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         self.assertEqual(melee_leaf["leaf_weight"], "")
         self.assertEqual(melee_leaf["path_explicit_weights_json"], "[4]")
         self.assertEqual(melee_leaf["path_explicit_weight_product"], "4")
-        self.assertEqual(melee_leaf["path_missing_weight_count"], "2")
-        self.assertEqual(melee_leaf["path_has_implicit_default_weights"], "true")
+        self.assertNotIn("path_missing_weight_count", melee_leaf)
+        self.assertNotIn("path_has_implicit_default_weights", melee_leaf)
 
     def test_pots_corridor_preserves_weight_and_literal_count(self) -> None:
         emerald_row = next(
@@ -205,10 +205,14 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         )
         self.assertEqual(emerald_row["root_entry_weight"], "125")
         self.assertEqual(emerald_row["leaf_weight"], "125")
+        self.assertNotIn("root_entry_weight_was_defaulted", emerald_row)
+        self.assertTrue(emerald_row["root_pool_weight_share"])
+        self.assertTrue(emerald_row["path_pool_shares_json"])
+        self.assertTrue(emerald_row["path_pool_share_product"])
         self.assertEqual(emerald_row["path_explicit_weights_json"], "[125]")
         self.assertEqual(emerald_row["path_explicit_weight_product"], "125")
-        self.assertEqual(emerald_row["path_missing_weight_count"], "0")
-        self.assertEqual(emerald_row["path_has_implicit_default_weights"], "false")
+        self.assertNotIn("path_missing_weight_count", emerald_row)
+        self.assertNotIn("path_has_implicit_default_weights", emerald_row)
         self.assertEqual(emerald_row["set_count_min"], "1.0")
         self.assertEqual(emerald_row["set_count_max"], "3.0")
 
@@ -218,9 +222,13 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
             if row["root_table_id"] == "minecraft:pots/trial_chambers/corridor"
             and row["item_id"] == "minecraft:diamond_block"
         )
+        self.assertNotIn("root_entry_weight_was_defaulted", diamond_block_row)
+        self.assertTrue(diamond_block_row["root_pool_weight_share"])
+        self.assertTrue(diamond_block_row["path_pool_shares_json"])
+        self.assertTrue(diamond_block_row["path_pool_share_product"])
         self.assertEqual(diamond_block_row["path_explicit_weight_product"], "")
-        self.assertEqual(diamond_block_row["path_missing_weight_count"], "1")
-        self.assertEqual(diamond_block_row["path_has_implicit_default_weights"], "true")
+        self.assertNotIn("path_missing_weight_count", diamond_block_row)
+        self.assertNotIn("path_has_implicit_default_weights", diamond_block_row)
         self.assertEqual(diamond_block_row["set_count_min"], "1.0")
         self.assertEqual(diamond_block_row["set_count_max"], "1.0")
 
@@ -243,7 +251,16 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         self.assertIsInstance(chain, list)
         self.assertTrue(chain)
         self.assertIn("root_entry_weight", sample)
+        self.assertIn("root_pool_weight_share", sample)
+        self.assertIn("path_pool_shares_json", sample)
         self.assertIn("path_explicit_weights_json", sample)
+
+    def test_raw_tables_include_pool_normalized_weight_fields(self) -> None:
+        sample_pool = next(iter(self.pools))
+        sample_entry = next(iter(self.entries))
+        self.assertNotIn("pool_defaulted_weight_entry_count", sample_pool)
+        self.assertNotIn("weight_was_defaulted", sample_entry)
+        self.assertIn("pool_weight_share", sample_entry)
 
     def test_table_role_rows_cover_named_scope(self) -> None:
         self.assertEqual(len(self.table_roles), 65)

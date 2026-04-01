@@ -32,8 +32,8 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - `precheck_report.json`: discovered packs, selected packs, effective order, overlap groups, and fatal precheck errors.
 - `tables.csv`: one row per effective named table plus synthetic inline table.
 - `pools.csv`: one row per pool with roll metadata and pool-level conditions.
-- `entries.csv`: one row per entry with direct metadata, raw JSON, and reference targets.
-- `leaf_candidates.csv`: denormalized root-to-leaf paths for Tableau-style analysis.
+- `entries.csv`: one row per entry with direct metadata, raw JSON, reference targets, and entry-level pool weight shares.
+- `leaf_candidates.csv`: denormalized root-to-leaf paths for Tableau-style analysis, including raw path weights and normalized pool-share metrics.
 - `table_role_summary.csv`: one row per named effective table with raw and Tableau-facing directness roles.
 - `table_role_evidence.csv`: evidence edges behind the table role classification.
 - `item_classification.csv`: one row per classified item_id sourced from the canonical resolved_loot export.
@@ -86,13 +86,20 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Inline tables use synthetic IDs in the form `inline:{entry_id}`.
 - `entries.csv.conditions_json` stores only conditions declared directly on entry objects. In many vanilla and modded tables, real conditions may still live at the pool level instead.
 - `entries.csv.quality` and `leaf_candidates.csv.leaf_quality` remain in the schema because they are valid loot fields even when blank in a given scope.
+- Raw `weight` values are not standardized across unrelated pools or tables, so compare normalized share fields when you need cross-table weighting context.
+- For the current scope, normalization is pool-based because the parsed entries are all top-level pool entries rather than nested composite siblings.
+- Missing entry `weight` values are normalized as Minecraft's implicit default of `1` for the pool-share calculations.
+- `entries.csv.pool_weight_share` is the entry's local share of its pool total and is the authoritative raw normalized-weight field for this scope.
 - `leaf_candidates.csv.root_entry_weight` and `leaf_candidates.csv.root_entry_quality` come from the first chain step only.
+- `leaf_candidates.csv.root_pool_weight_share` describes the normalized root-step context without restating an effective-weight denominator column.
+- `leaf_candidates.csv.path_pool_shares_json` lists the ordered local pool shares across the resolved path.
+- `leaf_candidates.csv.path_pool_share_product` is a relative path-choice share, not final drop probability.
 - `leaf_candidates.csv.leaf_weight` remains terminal-entry-only for backward compatibility; it is not a path weight or probability.
 - `leaf_candidates.csv.path_explicit_weights_json` lists only explicitly declared weights encountered along the resolved path.
 - `leaf_candidates.csv.path_explicit_weight_product` is the product of explicit path weights only; it is not normalized chance.
-- `leaf_candidates.csv.path_has_implicit_default_weights = true` means at least one chain step omitted `weight`, so the explicit product is incomplete as a chance-like proxy.
 - `set_count_min` and `set_count_max` only reflect explicit terminal `minecraft:set_count` functions.
 - `leaf_candidates.csv` is a path table. For source counts in Tableau, join it to `table_role_summary.csv` on `root_table_id = table_id` and filter `count_as_direct = true`.
+- For Tableau weighting work, prefer `entries.csv.pool_weight_share`, `leaf_candidates.csv.root_pool_weight_share`, and `leaf_candidates.csv.path_pool_share_product` over raw weight sums.
 - `resolved_loot_v*.csv` remains the canonical raw classification export, but its `affinities` field is a serialized list. Prefer `item_classification.csv` plus `item_affinities.csv` for Tableau.
 - `classification_coverage.csv` makes missing loot-item classifications explicit instead of silently dropping them.
 - `raw_role` keeps the conservative local-data provenance result; `effective_role` converts `unknown_directness` to `assumed_direct_for_tableau`.
