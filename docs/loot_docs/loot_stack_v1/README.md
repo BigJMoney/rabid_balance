@@ -8,6 +8,8 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Scope config: `D:\keep\mods\Minecraft\my_tweaks\configs\loot_scope.json`
 - Ignore roots: `D:\keep\mods\Minecraft\my_tweaks\libs\ignore`
 - Selected pack count: 2
+- Classification source: `D:\keep\mods\Minecraft\my_tweaks\docs\loot_docs\resolved_loot_v10.csv`
+- Classification version: `10`
 - Named table rows: 72
 - Inline table rows: 3
 - Pool rows: 201
@@ -15,6 +17,11 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Leaf candidate rows: 889
 - Table role rows: 72
 - Table role evidence rows: 195
+- Item classification rows: 1332
+- Item affinity rows: 1174
+- Classification coverage rows: 240
+- Classified loot items: 237
+- Missing loot items: 3
 
 ## Selected Packs
 
@@ -30,6 +37,9 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - `leaf_candidates.csv`: denormalized root-to-leaf paths for Tableau-style analysis.
 - `table_role_summary.csv`: one row per named effective table with raw and Tableau-facing directness roles.
 - `table_role_evidence.csv`: evidence edges behind the table role classification.
+- `item_classification.csv`: one row per classified item_id sourced from the canonical resolved_loot export.
+- `item_affinities.csv`: one row per item_id plus affinity for relational Tableau joins.
+- `classification_coverage.csv`: one row per distinct loot item_id with classified-or-missing coverage status.
 - `scope_report.json`: allowed, excluded, and deferred top-level loot_table folder scope with warnings.
 - `manifest.json`: export counts for tables, pools, entries, references, and leaf rows.
 
@@ -38,7 +48,10 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - `tables.csv.table_id` joins to `pools.csv.table_id` and `entries.csv.table_id`.
 - `pools.csv.pool_id` joins to `entries.csv.pool_id`.
 - `leaf_candidates.csv.root_table_id` joins back to named rows in `tables.csv`.
+- `leaf_candidates.csv.item_id` joins to `item_classification.csv.item_id` for Stage 1.5 item traits.
 - `leaf_candidates.csv.root_table_id` joins to `table_role_summary.csv.table_id` for gameplay-source filtering.
+- `item_classification.csv.item_id` joins to `item_affinities.csv.item_id` for affinity slicing.
+- `classification_coverage.csv.item_id` joins to `item_classification.csv.item_id` for audit and completeness checks.
 - `table_role_summary.csv.table_id` joins to `table_role_evidence.csv.table_id` for provenance drill-down.
 
 ## Allowed Folders
@@ -81,5 +94,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - `leaf_candidates.csv.path_has_implicit_default_weights = true` means at least one chain step omitted `weight`, so the explicit product is incomplete as a chance-like proxy.
 - `set_count_min` and `set_count_max` only reflect explicit terminal `minecraft:set_count` functions.
 - `leaf_candidates.csv` is a path table. For source counts in Tableau, join it to `table_role_summary.csv` on `root_table_id = table_id` and filter `count_as_direct = true`.
+- `resolved_loot_v*.csv` remains the canonical raw classification export, but its `affinities` field is a serialized list. Prefer `item_classification.csv` plus `item_affinities.csv` for Tableau.
+- `classification_coverage.csv` makes missing loot-item classifications explicit instead of silently dropping them.
 - `raw_role` keeps the conservative local-data provenance result; `effective_role` converts `unknown_directness` to `assumed_direct_for_tableau`.
 - `tables.csv.source_pack`, `tables.csv.resource_path`, and `tables.csv.is_override` identify the winning source behind each effective table row.

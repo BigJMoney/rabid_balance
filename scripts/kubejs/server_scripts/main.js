@@ -1,7 +1,9 @@
 // Visit the wiki for more info - https://kubejs.com/
 
-// To write a Json export of all game item ids or not
+// To write a Json export of all loaded game item ids or not
 const DO_EXPORT = false;
+const ITEM_EXPORT_PATH = 'kubejs/export/item_ids.json'
+const LEGACY_ITEM_EXPORT_PATH = 'kubejs/export/minecraft_item_ids.json'
 
 // Export all game items
 ServerEvents.loaded(event => {
@@ -14,8 +16,9 @@ ServerEvents.loaded(event => {
     items.remove('minecraft:air')
     Collections.sort(items)
 
-    JsonIO.write('kubejs/export/minecraft_item_ids.json', items)
-    console.info(`[KubeJS] [ServerLoaded] Exported ${items.size()} item ids to kubejs/export/minecraft_item_ids.json`)
+    JsonIO.write(ITEM_EXPORT_PATH, items)
+    JsonIO.write(LEGACY_ITEM_EXPORT_PATH, items)
+    console.info(`[KubeJS] [ServerLoaded] Exported ${items.size()} loaded item ids to ${ITEM_EXPORT_PATH} (and legacy copy ${LEGACY_ITEM_EXPORT_PATH})`)
 
   }
 })

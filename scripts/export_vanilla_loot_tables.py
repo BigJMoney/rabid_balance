@@ -33,6 +33,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         default=",".join(DEFAULT_INCLUDED_DIRS),
         help="Comma-separated list of top-level loot_table folders to include.",
     )
+    parser.add_argument(
+        "--classification-csv",
+        type=Path,
+        default=None,
+        help="Optional resolved_loot_v*.csv classification source for Stage 1.5 tables.",
+    )
     return parser.parse_args(argv)
 
 
@@ -40,6 +46,7 @@ def export_loot_tables(
     source_root: Path | str = DEFAULT_SOURCE_ROOT,
     included_dirs: tuple[str, ...] = DEFAULT_INCLUDED_DIRS,
     output_dir: Path | str = DEFAULT_OUTPUT_DIR,
+    classification_csv_path: Path | str | None = None,
 ) -> dict[str, object]:
     source_root_path = Path(source_root)
     if source_root_path.name != "loot_table":
@@ -57,6 +64,7 @@ def export_loot_tables(
         mods_root=PROJECT_ROOT / "__no_mods__",
         archive_roots=[],
         explicit_packs=[],
+        classification_csv_path=classification_csv_path,
     )
 
 
@@ -67,6 +75,7 @@ def main(argv: list[str] | None = None) -> int:
         source_root=args.source_root,
         included_dirs=include_dirs,
         output_dir=args.output_dir,
+        classification_csv_path=args.classification_csv,
     )
     scope = result["scope_report"]
     manifest = result["manifest"]

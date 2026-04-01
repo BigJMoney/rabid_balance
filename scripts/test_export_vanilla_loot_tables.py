@@ -34,6 +34,9 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         cls.leaf_rows = read_csv_rows(cls.output_dir / "leaf_candidates.csv")
         cls.table_roles = read_csv_rows(cls.output_dir / "table_role_summary.csv")
         cls.table_role_evidence = read_csv_rows(cls.output_dir / "table_role_evidence.csv")
+        cls.item_classification = read_csv_rows(cls.output_dir / "item_classification.csv")
+        cls.item_affinities = read_csv_rows(cls.output_dir / "item_affinities.csv")
+        cls.classification_coverage = read_csv_rows(cls.output_dir / "classification_coverage.csv")
 
     @classmethod
     def tearDownClass(cls) -> None:
@@ -47,6 +50,9 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
             "leaf_candidates.csv",
             "table_role_summary.csv",
             "table_role_evidence.csv",
+            "item_classification.csv",
+            "item_affinities.csv",
+            "classification_coverage.csv",
             "scope_report.json",
             "manifest.json",
             "README.md",
@@ -81,6 +87,10 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         self.assertEqual(self.manifest["inline_reference_count"], 3)
         self.assertEqual(self.manifest["table_role_summary_count"], 65)
         self.assertGreater(self.manifest["table_role_evidence_count"], 0)
+        self.assertGreater(self.manifest["item_classification_count"], 0)
+        self.assertGreater(self.manifest["item_affinity_count"], 0)
+        self.assertGreater(self.manifest["classification_coverage_count"], 0)
+        self.assertEqual(self.manifest["missing_loot_item_count"], 0)
         self.assertEqual(
             self.manifest["raw_role_counts"],
             {
@@ -304,6 +314,29 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         self.assertTrue(village_rows)
         self.assertTrue(all(Path(row["source_path"]).is_absolute() for row in village_rows))
         self.assertTrue(all(row["source_object"] for row in village_rows))
+
+    def test_item_classification_rows_join_cleanly(self) -> None:
+        arrow = next(row for row in self.item_classification if row["item_id"] == "minecraft:arrow")
+        self.assertEqual(arrow["function"], "weapon")
+        self.assertEqual(arrow["value"], "common")
+        self.assertEqual(arrow["amount_class"], "large")
+        self.assertEqual(arrow["classification_status"], "matched")
+        self.assertEqual(arrow["classification_version"], "10")
+
+    def test_item_affinities_are_normalized(self) -> None:
+        apple_affinities = {
+            row["affinity"]
+            for row in self.item_affinities
+            if row["item_id"] == "minecraft:apple"
+        }
+        self.assertEqual(apple_affinities, {"food", "household"})
+
+    def test_classification_coverage_flags_vanilla_items_as_classified(self) -> None:
+        arrow_row = next(row for row in self.classification_coverage if row["item_id"] == "minecraft:arrow")
+        self.assertEqual(arrow_row["has_classification"], "true")
+        self.assertEqual(arrow_row["classification_status"], "matched")
+        self.assertEqual(arrow_row["function"], "weapon")
+        self.assertTrue(all(row["has_classification"] == "true" for row in self.classification_coverage))
 
 
 if __name__ == "__main__":

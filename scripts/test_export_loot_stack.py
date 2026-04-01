@@ -48,6 +48,9 @@ class ExportLootStackTests(unittest.TestCase):
         cls.tables = read_csv_rows(cls.output_dir / "tables.csv")
         cls.leaf_rows = read_csv_rows(cls.output_dir / "leaf_candidates.csv")
         cls.evidence = read_csv_rows(cls.output_dir / "table_role_evidence.csv")
+        cls.item_classification = read_csv_rows(cls.output_dir / "item_classification.csv")
+        cls.item_affinities = read_csv_rows(cls.output_dir / "item_affinities.csv")
+        cls.classification_coverage = read_csv_rows(cls.output_dir / "classification_coverage.csv")
 
     @classmethod
     def tearDownClass(cls) -> None:
@@ -87,6 +90,28 @@ class ExportLootStackTests(unittest.TestCase):
         self.assertIn("root_entry_weight", row)
         self.assertIn("path_explicit_weights_json", row)
         self.assertIn("path_has_implicit_default_weights", row)
+
+    def test_default_stack_writes_stage15_classification_tables(self) -> None:
+        self.assertTrue(self.item_classification)
+        self.assertTrue(self.classification_coverage)
+        arrow = next(row for row in self.item_classification if row["item_id"] == "minecraft:arrow")
+        self.assertEqual(arrow["function"], "weapon")
+        self.assertEqual(arrow["classification_version"], "10")
+
+    def test_default_stack_marks_missing_mod_item_classification_in_coverage(self) -> None:
+        if not ILLAGER_DIR.exists():
+            self.skipTest("Illager directory fixture is not present in libs")
+        missing_rows = [row for row in self.classification_coverage if row["has_classification"] == "false"]
+        self.assertTrue(missing_rows)
+        self.assertTrue(any(row["item_id"].startswith("illagerinvasion:") for row in missing_rows))
+
+    def test_default_stack_normalizes_item_affinities(self) -> None:
+        apple_affinities = {
+            row["affinity"]
+            for row in self.item_affinities
+            if row["item_id"] == "minecraft:apple"
+        }
+        self.assertEqual(apple_affinities, {"food", "household"})
 
     def test_explicit_archive_replaces_auto_discovered_directory(self) -> None:
         if not ILLAGER_ARCHIVE.exists():
@@ -419,6 +444,108 @@ class ExportLootStackTests(unittest.TestCase):
             self.assertEqual(all_missing_row["path_explicit_weight_product"], "")
             self.assertEqual(all_missing_row["path_missing_weight_count"], "2")
             self.assertEqual(all_missing_row["path_has_implicit_default_weights"], "true")
+
+    def test_custom_classification_csv_handles_mod_items_and_normalized_affinities(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            mods_root = Path(tempdir) / "mods"
+            output_dir = Path(tempdir) / "out"
+            classification_csv = Path(tempdir) / "resolved_loot_v77.csv"
+            with classification_csv.open("w", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(
+                    handle,
+                    fieldnames=[
+                        "item_id",
+                        "function",
+                        "affinities",
+                        "value",
+                        "amount_class",
+                        "matched_rule_id",
+                        "matched_detail",
+                        "amatched_details",
+                        "classification_status",
+                        "is_fallback_match",
+                        "classification_version",
+                    ],
+                )
+                writer.writeheader()
+                writer.writerow(
+                    {
+                        "item_id": "minecraft:stick",
+                        "function": "item_material",
+                        "affinities": "['wooden']",
+                        "value": "junk",
+                        "amount_class": "small",
+                        "matched_rule_id": "test_rule",
+                        "matched_detail": "minecraft:stick",
+                        "amatched_details": "['#c:rods']",
+                        "classification_status": "matched",
+                        "is_fallback_match": "false",
+                        "classification_version": "77",
+                    }
+                )
+                writer.writerow(
+                    {
+                        "item_id": "moda:token",
+                        "function": "misc_tool",
+                        "affinities": "['treasure','underground']",
+                        "value": "rare",
+                        "amount_class": "singleton",
+                        "matched_rule_id": "mod_rule",
+                        "matched_detail": "moda:token",
+                        "amatched_details": "['moda:token']",
+                        "classification_status": "matched",
+                        "is_fallback_match": "false",
+                        "classification_version": "77",
+                    }
+                )
+            write_mod_pack(
+                mods_root / "mod_a",
+                "moda",
+                {
+                    "data/moda/loot_table/chests/example.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [
+                                {
+                                    "rolls": 1,
+                                    "entries": [
+                                        {"type": "minecraft:item", "name": "moda:token"},
+                                        {"type": "minecraft:item", "name": "minecraft:stick"},
+                                    ],
+                                }
+                            ],
+                        }
+                    )
+                },
+            )
+
+            exporter.export_loot_stack(
+                output_dir=output_dir,
+                mods_root=mods_root,
+                archive_roots=[],
+                explicit_packs=[],
+                classification_csv_path=classification_csv,
+            )
+
+            item_classification = read_csv_rows(output_dir / "item_classification.csv")
+            item_affinities = read_csv_rows(output_dir / "item_affinities.csv")
+            coverage = read_csv_rows(output_dir / "classification_coverage.csv")
+
+            mod_row = next(row for row in item_classification if row["item_id"] == "moda:token")
+            self.assertEqual(mod_row["function"], "misc_tool")
+            self.assertEqual(mod_row["classification_version"], "77")
+
+            mod_affinities = {
+                row["affinity"]
+                for row in item_affinities
+                if row["item_id"] == "moda:token"
+            }
+            self.assertEqual(mod_affinities, {"treasure", "underground"})
+
+            coverage_row = next(row for row in coverage if row["item_id"] == "moda:token")
+            self.assertEqual(coverage_row["has_classification"], "true")
+            self.assertEqual(coverage_row["classification_status"], "matched")
+            self.assertEqual(coverage_row["function"], "misc_tool")
 
 
 if __name__ == "__main__":

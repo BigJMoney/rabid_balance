@@ -2,6 +2,8 @@
   "base_pack_root": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\neoforge-21.1.162_ref",
   "scope_config_source": "<in-memory scope override>",
   "pack_order_source": null,
+  "classification_csv_source": "D:\\keep\\mods\\Minecraft\\my_tweaks\\docs\\loot_docs\\resolved_loot_v10.csv",
+  "classification_version": "10",
   "output_dir": "D:\\keep\\mods\\Minecraft\\my_tweaks\\docs\\loot_docs\\vanilla_loot_v1",
   "selected_pack_ids": [
     "base"
@@ -17,6 +19,11 @@
   "inline_reference_count": 3,
   "table_role_summary_count": 65,
   "table_role_evidence_count": 176,
+  "item_classification_count": 1332,
+  "item_affinity_count": 1174,
+  "classification_coverage_count": 235,
+  "classified_loot_item_count": 235,
+  "missing_loot_item_count": 0,
   "raw_role_counts": {
     "direct_from_data": 35,
     "helper_from_data": 7,

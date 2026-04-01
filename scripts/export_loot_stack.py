@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import ast
 import csv
 import gzip
 import json
@@ -18,6 +19,7 @@ DEFAULT_MODS_ROOT = PROJECT_ROOT / "libs"
 DEFAULT_IGNORE_ROOT = DEFAULT_MODS_ROOT / "ignore"
 DEFAULT_SCOPE_CONFIG = PROJECT_ROOT / "configs" / "loot_scope.json"
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "docs" / "loot_docs" / "loot_stack_v1"
+DEFAULT_CLASSIFICATION_SEARCH_ROOT = PROJECT_ROOT / "docs" / "loot_docs"
 DEFAULT_PRECHECK_FILENAME = "precheck_report.json"
 DIRECT_ASSIGNMENT_DIRS = ("worldgen/processor_list",)
 DIRECT_ASSIGNMENT_KEYS = {"loot_table", "LootTable"}
@@ -25,6 +27,7 @@ STRUCTURE_EVIDENCE_TYPE = "structure_nbt"
 LOOT_REF_EVIDENCE_TYPE = "loot_table_ref"
 DATA_ASSIGNMENT_EVIDENCE_TYPE = "data_assignment_json"
 LOOT_ID_SEARCH_PATTERN = re.compile(rb"[a-z_](?:[a-z0-9_.-]*):[a-z0-9_./-]+")
+RESOLVED_LOOT_FILENAME_PATTERN = re.compile(r"resolved_loot_v(?P<version>\d+)\.csv$")
 
 TABLES_FIELDNAMES = [
     "table_id",
@@ -125,6 +128,39 @@ TABLE_ROLE_EVIDENCE_FIELDNAMES = [
     "target_table_id",
 ]
 
+ITEM_CLASSIFICATION_FIELDNAMES = [
+    "item_id",
+    "function",
+    "value",
+    "amount_class",
+    "matched_rule_id",
+    "matched_detail",
+    "classification_status",
+    "is_fallback_match",
+    "classification_version",
+]
+
+ITEM_AFFINITIES_FIELDNAMES = [
+    "item_id",
+    "affinity",
+    "classification_version",
+]
+
+CLASSIFICATION_COVERAGE_FIELDNAMES = [
+    "item_id",
+    "loot_root_table_count",
+    "loot_leaf_row_count",
+    "has_classification",
+    "classification_status",
+    "is_fallback_match",
+    "function",
+    "value",
+    "amount_class",
+    "matched_rule_id",
+    "matched_detail",
+    "classification_version",
+]
+
 
 class PrecheckFailed(RuntimeError):
     pass
@@ -183,6 +219,20 @@ class EffectiveResource:
 
     def display_source_path(self) -> str:
         return display_pack_resource_path(self.pack, self.resource_path)
+
+
+@dataclass(frozen=True)
+class ClassificationRecord:
+    item_id: str
+    function: str
+    affinities: tuple[str, ...]
+    value: str
+    amount_class: str
+    matched_rule_id: str
+    matched_detail: str
+    classification_status: str
+    is_fallback_match: bool
+    classification_version: str
 
 
 @dataclass
@@ -363,6 +413,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         default=DEFAULT_OUTPUT_DIR,
         help="Directory to write reports and CSV outputs to.",
     )
+    parser.add_argument(
+        "--classification-csv",
+        type=Path,
+        default=None,
+        help="Optional resolved_loot_v*.csv classification source. Defaults to the latest file under docs/loot_docs.",
+    )
     return parser.parse_args(argv)
 
 
@@ -380,6 +436,82 @@ def as_csv_value(value: Any) -> Any:
 
 def is_explicit_number(value: Any) -> bool:
     return isinstance(value, (int, float)) and not isinstance(value, bool)
+
+
+def parse_boolish(value: Any) -> bool:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        return value.strip().lower() in {"1", "true", "yes", "y"}
+    return False
+
+
+def parse_affinity_cell(raw_value: str) -> tuple[str, ...]:
+    if not raw_value:
+        return ()
+    try:
+        parsed = ast.literal_eval(raw_value)
+    except (SyntaxError, ValueError):
+        return (raw_value,)
+    if isinstance(parsed, str):
+        return (parsed,)
+    if isinstance(parsed, (list, tuple)):
+        return tuple(str(value) for value in parsed)
+    return (str(parsed),)
+
+
+def infer_classification_version(path: Path) -> str:
+    match = RESOLVED_LOOT_FILENAME_PATTERN.fullmatch(path.name)
+    if match:
+        return match.group("version")
+    return ""
+
+
+def find_latest_classification_csv(search_root: Path) -> Path | None:
+    if not search_root.exists():
+        return None
+    candidates: list[tuple[int, Path]] = []
+    for path in search_root.glob("resolved_loot_v*.csv"):
+        match = RESOLVED_LOOT_FILENAME_PATTERN.fullmatch(path.name)
+        if match:
+            candidates.append((int(match.group("version")), path))
+    if not candidates:
+        return None
+    candidates.sort(key=lambda item: (item[0], item[1].name.lower()))
+    return candidates[-1][1]
+
+
+def load_classification_records(path: Path | None) -> dict[str, ClassificationRecord]:
+    if path is None or not path.exists():
+        return {}
+    version = infer_classification_version(path)
+    with path.open("r", encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        records: dict[str, ClassificationRecord] = {}
+        for row in reader:
+            item_id = (row.get("item_id") or "").strip()
+            if not item_id:
+                continue
+            if item_id in records:
+                raise ValueError(f"duplicate item_id in classification csv: {item_id}")
+            row_version = (row.get("classification_version") or "").strip() or version
+            classification_status = (row.get("classification_status") or "").strip()
+            if not classification_status:
+                classification_status = "fallback" if parse_boolish(row.get("is_fallback_match")) else "matched"
+            is_fallback_match = parse_boolish(row.get("is_fallback_match")) or classification_status == "fallback"
+            records[item_id] = ClassificationRecord(
+                item_id=item_id,
+                function=(row.get("function") or "").strip(),
+                affinities=parse_affinity_cell((row.get("affinities") or "").strip()),
+                value=(row.get("value") or "").strip(),
+                amount_class=(row.get("amount_class") or "").strip(),
+                matched_rule_id=(row.get("matched_rule_id") or "").strip(),
+                matched_detail=(row.get("matched_detail") or "").strip(),
+                classification_status=classification_status or "matched",
+                is_fallback_match=is_fallback_match,
+                classification_version=row_version,
+            )
+    return records
 
 
 def ensure_list(value: Any, where: str) -> list[Any]:
@@ -683,6 +815,7 @@ class LootStackExporter:
         pack_order_ids: list[str],
         pack_order_source: str | None,
         auto_discover_mod_dirs: bool,
+        classification_csv_path: Path | None,
     ) -> None:
         self.base_pack_root = base_pack_root
         self.mods_root = mods_root
@@ -694,6 +827,7 @@ class LootStackExporter:
         self.pack_order_ids = pack_order_ids
         self.pack_order_source = pack_order_source
         self.auto_discover_mod_dirs = auto_discover_mod_dirs
+        self.classification_csv_path = classification_csv_path
 
         self.tables: dict[str, TableRecord] = {}
         self.pools: dict[str, PoolRecord] = {}
@@ -704,8 +838,13 @@ class LootStackExporter:
         self.leaf_rows: list[dict[str, Any]] = []
         self.table_role_summary_rows: list[dict[str, Any]] = []
         self.table_role_evidence_rows: list[dict[str, Any]] = []
+        self.item_classification_rows: list[dict[str, Any]] = []
+        self.item_affinity_rows: list[dict[str, Any]] = []
+        self.classification_coverage_rows: list[dict[str, Any]] = []
         self.raw_role_counts: Counter[str] = Counter()
         self.effective_role_counts: Counter[str] = Counter()
+        self.classification_records: dict[str, ClassificationRecord] = {}
+        self.classification_version: str = ""
 
         self.named_reference_count = 0
         self.inline_reference_count = 0
@@ -752,6 +891,7 @@ class LootStackExporter:
         self._validate_references()
         self._build_leaf_rows()
         self._build_table_roles()
+        self._build_item_classification_outputs()
         manifest = self._build_manifest()
         self._write_output_bundle(scope_report, manifest, precheck_report)
         return {
@@ -1591,6 +1731,80 @@ class LootStackExporter:
         self.raw_role_counts = raw_role_counts
         self.effective_role_counts = effective_role_counts
 
+    def _build_item_classification_outputs(self) -> None:
+        self.classification_records = load_classification_records(self.classification_csv_path)
+        self.classification_version = ""
+        for record in self.classification_records.values():
+            if record.classification_version:
+                self.classification_version = record.classification_version
+                break
+        if not self.classification_version and self.classification_csv_path is not None:
+            self.classification_version = infer_classification_version(self.classification_csv_path)
+
+        self.item_classification_rows = [
+            {
+                "item_id": record.item_id,
+                "function": record.function,
+                "value": record.value,
+                "amount_class": record.amount_class,
+                "matched_rule_id": record.matched_rule_id,
+                "matched_detail": record.matched_detail,
+                "classification_status": record.classification_status,
+                "is_fallback_match": "true" if record.is_fallback_match else "false",
+                "classification_version": record.classification_version,
+            }
+            for record in sorted(self.classification_records.values(), key=lambda row: row.item_id)
+        ]
+
+        affinity_rows: list[dict[str, Any]] = []
+        for record in sorted(self.classification_records.values(), key=lambda row: row.item_id):
+            for affinity in record.affinities:
+                affinity_rows.append(
+                    {
+                        "item_id": record.item_id,
+                        "affinity": affinity,
+                        "classification_version": record.classification_version,
+                    }
+                )
+        self.item_affinity_rows = affinity_rows
+
+        loot_items: dict[str, dict[str, Any]] = {}
+        for row in self.leaf_rows:
+            item_id = row["item_id"]
+            if not item_id:
+                continue
+            state = loot_items.setdefault(
+                item_id,
+                {
+                    "root_table_ids": set(),
+                    "leaf_row_count": 0,
+                },
+            )
+            state["root_table_ids"].add(row["root_table_id"])
+            state["leaf_row_count"] += 1
+
+        coverage_rows: list[dict[str, Any]] = []
+        for item_id in sorted(loot_items):
+            state = loot_items[item_id]
+            record = self.classification_records.get(item_id)
+            coverage_rows.append(
+                {
+                    "item_id": item_id,
+                    "loot_root_table_count": len(state["root_table_ids"]),
+                    "loot_leaf_row_count": state["leaf_row_count"],
+                    "has_classification": "true" if record is not None else "false",
+                    "classification_status": record.classification_status if record is not None else "missing",
+                    "is_fallback_match": "true" if record is not None and record.is_fallback_match else "false",
+                    "function": record.function if record is not None else "",
+                    "value": record.value if record is not None else "",
+                    "amount_class": record.amount_class if record is not None else "",
+                    "matched_rule_id": record.matched_rule_id if record is not None else "",
+                    "matched_detail": record.matched_detail if record is not None else "",
+                    "classification_version": record.classification_version if record is not None else self.classification_version,
+                }
+            )
+        self.classification_coverage_rows = coverage_rows
+
     def _scan_structure_evidence(self) -> list[RoleEvidenceRecord]:
         named_table_set = set(self.named_table_ids)
         if not named_table_set:
@@ -1684,10 +1898,18 @@ class LootStackExporter:
     def _build_manifest(self) -> dict[str, Any]:
         named_tables = [table for table in self.tables.values() if table.table_id_kind == "named"]
         inline_tables = [table for table in self.tables.values() if table.table_id_kind == "inline"]
+        classified_loot_item_count = sum(
+            1 for row in self.classification_coverage_rows if row["has_classification"] == "true"
+        )
+        missing_loot_item_count = sum(
+            1 for row in self.classification_coverage_rows if row["has_classification"] != "true"
+        )
         return {
             "base_pack_root": str(self.base_pack_root),
             "scope_config_source": self.scope_settings.source,
             "pack_order_source": self.pack_order_source,
+            "classification_csv_source": str(self.classification_csv_path) if self.classification_csv_path is not None else "",
+            "classification_version": self.classification_version,
             "output_dir": str(self.output_dir),
             "selected_pack_ids": [pack.pack_id for pack in self.ordered_packs],
             "selected_pack_count": len(self.ordered_packs),
@@ -1701,6 +1923,11 @@ class LootStackExporter:
             "inline_reference_count": self.inline_reference_count,
             "table_role_summary_count": len(self.table_role_summary_rows),
             "table_role_evidence_count": len(self.table_role_evidence_rows),
+            "item_classification_count": len(self.item_classification_rows),
+            "item_affinity_count": len(self.item_affinity_rows),
+            "classification_coverage_count": len(self.classification_coverage_rows),
+            "classified_loot_item_count": classified_loot_item_count,
+            "missing_loot_item_count": missing_loot_item_count,
             "raw_role_counts": dict(sorted(self.raw_role_counts.items())),
             "effective_role_counts": dict(sorted(self.effective_role_counts.items())),
         }
@@ -1751,6 +1978,21 @@ class LootStackExporter:
             self.output_dir / "table_role_evidence.csv",
             TABLE_ROLE_EVIDENCE_FIELDNAMES,
             self.table_role_evidence_rows,
+        )
+        self._write_csv(
+            self.output_dir / "item_classification.csv",
+            ITEM_CLASSIFICATION_FIELDNAMES,
+            self.item_classification_rows,
+        )
+        self._write_csv(
+            self.output_dir / "item_affinities.csv",
+            ITEM_AFFINITIES_FIELDNAMES,
+            self.item_affinity_rows,
+        )
+        self._write_csv(
+            self.output_dir / "classification_coverage.csv",
+            CLASSIFICATION_COVERAGE_FIELDNAMES,
+            self.classification_coverage_rows,
         )
 
         write_json(self.output_dir / "scope_report.json", scope_report)
@@ -1806,6 +2048,8 @@ class LootStackExporter:
             f"- Scope config: `{scope_report['scope_config_source']}`",
             f"- Ignore roots: {', '.join(f'`{path}`' for path in precheck_report['ignore_roots']) or '`None`'}",
             f"- Selected pack count: {manifest['selected_pack_count']}",
+            f"- Classification source: `{manifest['classification_csv_source'] or 'not found'}`",
+            f"- Classification version: `{manifest['classification_version'] or 'unknown'}`",
             f"- Named table rows: {manifest['named_table_count']}",
             f"- Inline table rows: {manifest['inline_table_count']}",
             f"- Pool rows: {manifest['pool_count']}",
@@ -1813,6 +2057,11 @@ class LootStackExporter:
             f"- Leaf candidate rows: {manifest['leaf_candidate_count']}",
             f"- Table role rows: {manifest['table_role_summary_count']}",
             f"- Table role evidence rows: {manifest['table_role_evidence_count']}",
+            f"- Item classification rows: {manifest['item_classification_count']}",
+            f"- Item affinity rows: {manifest['item_affinity_count']}",
+            f"- Classification coverage rows: {manifest['classification_coverage_count']}",
+            f"- Classified loot items: {manifest['classified_loot_item_count']}",
+            f"- Missing loot items: {manifest['missing_loot_item_count']}",
             "",
             "## Selected Packs",
             "",
@@ -1827,6 +2076,9 @@ class LootStackExporter:
             "- `leaf_candidates.csv`: denormalized root-to-leaf paths for Tableau-style analysis.",
             "- `table_role_summary.csv`: one row per named effective table with raw and Tableau-facing directness roles.",
             "- `table_role_evidence.csv`: evidence edges behind the table role classification.",
+            "- `item_classification.csv`: one row per classified item_id sourced from the canonical resolved_loot export.",
+            "- `item_affinities.csv`: one row per item_id plus affinity for relational Tableau joins.",
+            "- `classification_coverage.csv`: one row per distinct loot item_id with classified-or-missing coverage status.",
             "- `scope_report.json`: allowed, excluded, and deferred top-level loot_table folder scope with warnings.",
             "- `manifest.json`: export counts for tables, pools, entries, references, and leaf rows.",
             "",
@@ -1835,7 +2087,10 @@ class LootStackExporter:
             "- `tables.csv.table_id` joins to `pools.csv.table_id` and `entries.csv.table_id`.",
             "- `pools.csv.pool_id` joins to `entries.csv.pool_id`.",
             "- `leaf_candidates.csv.root_table_id` joins back to named rows in `tables.csv`.",
+            "- `leaf_candidates.csv.item_id` joins to `item_classification.csv.item_id` for Stage 1.5 item traits.",
             "- `leaf_candidates.csv.root_table_id` joins to `table_role_summary.csv.table_id` for gameplay-source filtering.",
+            "- `item_classification.csv.item_id` joins to `item_affinities.csv.item_id` for affinity slicing.",
+            "- `classification_coverage.csv.item_id` joins to `item_classification.csv.item_id` for audit and completeness checks.",
             "- `table_role_summary.csv.table_id` joins to `table_role_evidence.csv.table_id` for provenance drill-down.",
             "",
             "## Allowed Folders",
@@ -1870,6 +2125,8 @@ class LootStackExporter:
             "- `leaf_candidates.csv.path_has_implicit_default_weights = true` means at least one chain step omitted `weight`, so the explicit product is incomplete as a chance-like proxy.",
             "- `set_count_min` and `set_count_max` only reflect explicit terminal `minecraft:set_count` functions.",
             "- `leaf_candidates.csv` is a path table. For source counts in Tableau, join it to `table_role_summary.csv` on `root_table_id = table_id` and filter `count_as_direct = true`.",
+            "- `resolved_loot_v*.csv` remains the canonical raw classification export, but its `affinities` field is a serialized list. Prefer `item_classification.csv` plus `item_affinities.csv` for Tableau.",
+            "- `classification_coverage.csv` makes missing loot-item classifications explicit instead of silently dropping them.",
             "- `raw_role` keeps the conservative local-data provenance result; `effective_role` converts `unknown_directness` to `assumed_direct_for_tableau`.",
             "- `tables.csv.source_pack`, `tables.csv.resource_path`, and `tables.csv.is_override` identify the winning source behind each effective table row.",
             "",
@@ -1886,6 +2143,7 @@ def export_loot_stack(
     scope_config_path: Path | str | None = DEFAULT_SCOPE_CONFIG,
     scope_override: dict[str, Any] | None = None,
     pack_order_manifest: Path | str | None = None,
+    classification_csv_path: Path | str | None = None,
     mods_root: Path | str = DEFAULT_MODS_ROOT,
     ignore_roots: list[Path | str] | None = None,
     archive_roots: list[Path | str] | None = None,
@@ -1900,6 +2158,12 @@ def export_loot_stack(
     try:
         scope_settings = load_scope_settings(scope_config_path=scope_config_path, scope_override=scope_override)
         pack_order_ids, pack_order_source = load_pack_order_manifest(pack_order_manifest)
+        if classification_csv_path is not None:
+            resolved_classification_path = Path(classification_csv_path)
+            if not resolved_classification_path.exists():
+                raise FileNotFoundError(f"classification csv does not exist: {resolved_classification_path}")
+        else:
+            resolved_classification_path = find_latest_classification_csv(DEFAULT_CLASSIFICATION_SEARCH_ROOT)
     except Exception as exc:
         report = {
             "scope_config_source": str(scope_config_path) if scope_config_path is not None else None,
@@ -1927,6 +2191,7 @@ def export_loot_stack(
         pack_order_ids=pack_order_ids,
         pack_order_source=pack_order_source,
         auto_discover_mod_dirs=auto_discover_mod_dirs,
+        classification_csv_path=resolved_classification_path,
     )
     return exporter.export()
 
@@ -1942,6 +2207,7 @@ def main(argv: list[str] | None = None) -> int:
             archive_roots=args.archive_root,
             explicit_packs=args.pack,
             output_dir=args.output_dir,
+            classification_csv_path=args.classification_csv,
         )
     except PrecheckFailed as exc:
         print(f"Precheck failed. Wrote {DEFAULT_PRECHECK_FILENAME} to {args.output_dir}")

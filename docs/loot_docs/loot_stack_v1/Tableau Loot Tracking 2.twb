@@ -12,6 +12,7 @@
     <ObjectModelTableType />
     <SchemaViewerObjectModel />
     <SheetIdentifierTracking />
+    <SortTagCleanup />
     <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
     <WindowsPersistSimpleIdentifiers />
   </document-format-change-manifest>
@@ -24,12 +25,12 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='leaf_candidates' name='textscan.1feksi90r7nbsz0zmxqyc07ksagf'>
-            <connection class='textscan' directory='D:/keep/mods/Minecraft/my_tweaks/docs/loot_docs/loot_stack_v1' filename='leaf_candidates.csv' password='' server='' />
+            <connection class='textscan' cleaning='yes' compat='no' csvFile='D:\keep\mods\Minecraft\my_tweaks\docs\loot_docs\loot_stack_v1\leaf_candidates.csv' dataRefreshTime='' directory='D:/keep/mods/Minecraft/my_tweaks/docs/loot_docs/loot_stack_v1' filename='C:/Users/JOHNHO~1/AppData/Local/Temp/TableauTemp/0ozp8qj0fy1u0918t3krn0i7qw8x/leaf_candidates.csv.xlsx' interpretationMode='8' password='' server='' validate='no' />
           </named-connection>
         </named-connections>
         <relation type='collection'>
-          <relation connection='textscan.1feksi90r7nbsz0zmxqyc07ksagf' name='leaf_candidates.csv' table='[leaf_candidates#csv]' type='table'>
-            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+          <relation connection='textscan.1feksi90r7nbsz0zmxqyc07ksagf' name='leaf_candidates.csv' table='[D:\keep\mods\Minecraft\my_tweaks\docs\loot_docs\loot_stack_v1\leaf_candidates#csv]' type='table'>
+            <columns character-set='UTF-8' gridOrigin='A1:X890:no:A1:X890:1' header='yes' locale='en_US' separator=','>
               <column datatype='string' name='root_table_id' ordinal='0' />
               <column datatype='string' name='root_category' ordinal='1' />
               <column datatype='string' name='root_table_type' ordinal='2' />
@@ -56,8 +57,28 @@
               <column datatype='string' name='unresolved_reason' ordinal='23' />
             </columns>
           </relation>
-          <relation connection='textscan.1feksi90r7nbsz0zmxqyc07ksagf' name='table_role_summary.csv' table='[table_role_summary#csv]' type='table'>
+          <relation connection='textscan.1feksi90r7nbsz0zmxqyc07ksagf' name='item_affinities.csv' table='[item_affinities#csv]' type='table'>
             <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='item_id' ordinal='0' />
+              <column datatype='string' name='affinity' ordinal='1' />
+              <column datatype='integer' name='classification_version' ordinal='2' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1feksi90r7nbsz0zmxqyc07ksagf' name='item_classification.csv' table='[item_classification#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='item_id' ordinal='0' />
+              <column datatype='string' name='function' ordinal='1' />
+              <column datatype='string' name='value' ordinal='2' />
+              <column datatype='string' name='amount_class' ordinal='3' />
+              <column datatype='string' name='matched_rule_id' ordinal='4' />
+              <column datatype='string' name='matched_detail' ordinal='5' />
+              <column datatype='string' name='classification_status' ordinal='6' />
+              <column datatype='boolean' name='is_fallback_match' ordinal='7' />
+              <column datatype='integer' name='classification_version' ordinal='8' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1feksi90r7nbsz0zmxqyc07ksagf' name='table_role_summary.csv' table='[D:\keep\mods\Minecraft\my_tweaks\docs\loot_docs\loot_stack_v1\table_role_summary#csv]' type='table'>
+            <columns character-set='UTF-8' gridOrigin='A1:K73:no:A1:K73:1' header='yes' locale='en_US' separator=','>
               <column datatype='string' name='table_id' ordinal='0' />
               <column datatype='string' name='category' ordinal='1' />
               <column datatype='integer' name='inbound_loot_ref_count' ordinal='2' />
@@ -71,8 +92,8 @@
               <column datatype='string' name='notes' ordinal='10' />
             </columns>
           </relation>
-          <relation connection='textscan.1feksi90r7nbsz0zmxqyc07ksagf' name='tables.csv' table='[tables#csv]' type='table'>
-            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+          <relation connection='textscan.1feksi90r7nbsz0zmxqyc07ksagf' name='tables.csv' table='[D:\keep\mods\Minecraft\my_tweaks\docs\loot_docs\loot_stack_v1\tables#csv]' type='table'>
+            <columns character-set='UTF-8' gridOrigin='A1:L76:no:A1:L76:1' header='yes' locale='en_US' separator=','>
               <column datatype='string' name='table_id' ordinal='0' />
               <column datatype='string' name='table_id_kind' ordinal='1' />
               <column datatype='string' name='generated_from_entry_id' ordinal='2' />
@@ -89,22 +110,33 @@
           </relation>
         </relation>
         <cols>
+          <map key='[affinity]' value='[item_affinities.csv].[affinity]' />
+          <map key='[amount_class]' value='[item_classification.csv].[amount_class]' />
           <map key='[category (tables.csv)]' value='[tables.csv].[category]' />
           <map key='[category]' value='[table_role_summary.csv].[category]' />
           <map key='[chain_depth]' value='[leaf_candidates.csv].[chain_depth]' />
+          <map key='[classification_status]' value='[item_classification.csv].[classification_status]' />
+          <map key='[classification_version (item_affinities.csv)]' value='[item_affinities.csv].[classification_version]' />
+          <map key='[classification_version]' value='[item_classification.csv].[classification_version]' />
           <map key='[count_as_direct]' value='[table_role_summary.csv].[count_as_direct]' />
           <map key='[data_assignment_ref_count]' value='[table_role_summary.csv].[data_assignment_ref_count]' />
           <map key='[effective_role]' value='[table_role_summary.csv].[effective_role]' />
           <map key='[evidence_sources]' value='[table_role_summary.csv].[evidence_sources]' />
+          <map key='[function]' value='[item_classification.csv].[function]' />
           <map key='[generated_from_entry_id]' value='[tables.csv].[generated_from_entry_id]' />
           <map key='[inbound_loot_ref_count]' value='[table_role_summary.csv].[inbound_loot_ref_count]' />
+          <map key='[is_fallback_match]' value='[item_classification.csv].[is_fallback_match]' />
           <map key='[is_override]' value='[tables.csv].[is_override]' />
+          <map key='[item_id (item_affinities.csv)]' value='[item_affinities.csv].[item_id]' />
+          <map key='[item_id (item_classification.csv)]' value='[item_classification.csv].[item_id]' />
           <map key='[item_id]' value='[leaf_candidates.csv].[item_id]' />
           <map key='[leaf_entry_id]' value='[leaf_candidates.csv].[leaf_entry_id]' />
           <map key='[leaf_kind]' value='[leaf_candidates.csv].[leaf_kind]' />
           <map key='[leaf_quality]' value='[leaf_candidates.csv].[leaf_quality]' />
           <map key='[leaf_table_id]' value='[leaf_candidates.csv].[leaf_table_id]' />
           <map key='[leaf_weight]' value='[leaf_candidates.csv].[leaf_weight]' />
+          <map key='[matched_detail]' value='[item_classification.csv].[matched_detail]' />
+          <map key='[matched_rule_id]' value='[item_classification.csv].[matched_rule_id]' />
           <map key='[namespace]' value='[tables.csv].[namespace]' />
           <map key='[notes]' value='[table_role_summary.csv].[notes]' />
           <map key='[outbound_loot_ref_count]' value='[table_role_summary.csv].[outbound_loot_ref_count]' />
@@ -136,12 +168,46 @@
           <map key='[table_id_kind]' value='[tables.csv].[table_id_kind]' />
           <map key='[table_type]' value='[tables.csv].[table_type]' />
           <map key='[unresolved_reason]' value='[leaf_candidates.csv].[unresolved_reason]' />
+          <map key='[value]' value='[item_classification.csv].[value]' />
         </cols>
         <metadata-records>
           <metadata-record class='capability'>
             <remote-name />
             <remote-type>0</remote-type>
             <parent-name>[leaf_candidates.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:X890:no:A1:X890:1&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[item_affinities.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[item_classification.csv]</parent-name>
             <remote-alias />
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -165,6 +231,7 @@
               <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
               <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
               <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:K73:no:A1:K73:1&quot;</attribute>
               <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
               <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
               <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
@@ -181,6 +248,7 @@
               <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
               <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
               <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:L76:no:A1:L76:1&quot;</attribute>
               <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
               <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
               <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
@@ -523,12 +591,183 @@
             <object-id>[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]</object-id>
           </metadata-record>
           <metadata-record class='column'>
+            <remote-name>item_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[item_id (item_affinities.csv)]</local-name>
+            <parent-name>[item_affinities.csv]</parent-name>
+            <remote-alias>item_id</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[item_affinities.csv_E2D4285BA59340A981FF517C66C371F4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>affinity</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[affinity]</local-name>
+            <parent-name>[item_affinities.csv]</parent-name>
+            <remote-alias>affinity</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[item_affinities.csv_E2D4285BA59340A981FF517C66C371F4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>classification_version</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[classification_version (item_affinities.csv)]</local-name>
+            <parent-name>[item_affinities.csv]</parent-name>
+            <remote-alias>classification_version</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[item_affinities.csv_E2D4285BA59340A981FF517C66C371F4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>item_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[item_id (item_classification.csv)]</local-name>
+            <parent-name>[item_classification.csv]</parent-name>
+            <remote-alias>item_id</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>function</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[function]</local-name>
+            <parent-name>[item_classification.csv]</parent-name>
+            <remote-alias>function</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>value</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[value]</local-name>
+            <parent-name>[item_classification.csv]</parent-name>
+            <remote-alias>value</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>amount_class</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[amount_class]</local-name>
+            <parent-name>[item_classification.csv]</parent-name>
+            <remote-alias>amount_class</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>matched_rule_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[matched_rule_id]</local-name>
+            <parent-name>[item_classification.csv]</parent-name>
+            <remote-alias>matched_rule_id</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>matched_detail</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[matched_detail]</local-name>
+            <parent-name>[item_classification.csv]</parent-name>
+            <remote-alias>matched_detail</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>classification_status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[classification_status]</local-name>
+            <parent-name>[item_classification.csv]</parent-name>
+            <remote-alias>classification_status</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_fallback_match</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[is_fallback_match]</local-name>
+            <parent-name>[item_classification.csv]</parent-name>
+            <remote-alias>is_fallback_match</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>classification_version</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[classification_version]</local-name>
+            <parent-name>[item_classification.csv]</parent-name>
+            <remote-alias>classification_version</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
             <remote-name>table_id</remote-name>
             <remote-type>129</remote-type>
             <local-name>[table_id]</local-name>
             <parent-name>[table_role_summary.csv]</parent-name>
             <remote-alias>table_id</remote-alias>
-            <ordinal>24</ordinal>
+            <ordinal>36</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -543,7 +782,7 @@
             <local-name>[category]</local-name>
             <parent-name>[table_role_summary.csv]</parent-name>
             <remote-alias>category</remote-alias>
-            <ordinal>25</ordinal>
+            <ordinal>37</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -558,7 +797,7 @@
             <local-name>[inbound_loot_ref_count]</local-name>
             <parent-name>[table_role_summary.csv]</parent-name>
             <remote-alias>inbound_loot_ref_count</remote-alias>
-            <ordinal>26</ordinal>
+            <ordinal>38</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -570,7 +809,7 @@
             <local-name>[outbound_loot_ref_count]</local-name>
             <parent-name>[table_role_summary.csv]</parent-name>
             <remote-alias>outbound_loot_ref_count</remote-alias>
-            <ordinal>27</ordinal>
+            <ordinal>39</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -582,7 +821,7 @@
             <local-name>[structure_ref_count]</local-name>
             <parent-name>[table_role_summary.csv]</parent-name>
             <remote-alias>structure_ref_count</remote-alias>
-            <ordinal>28</ordinal>
+            <ordinal>40</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -594,7 +833,7 @@
             <local-name>[data_assignment_ref_count]</local-name>
             <parent-name>[table_role_summary.csv]</parent-name>
             <remote-alias>data_assignment_ref_count</remote-alias>
-            <ordinal>29</ordinal>
+            <ordinal>41</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -606,7 +845,7 @@
             <local-name>[raw_role]</local-name>
             <parent-name>[table_role_summary.csv]</parent-name>
             <remote-alias>raw_role</remote-alias>
-            <ordinal>30</ordinal>
+            <ordinal>42</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -621,7 +860,7 @@
             <local-name>[effective_role]</local-name>
             <parent-name>[table_role_summary.csv]</parent-name>
             <remote-alias>effective_role</remote-alias>
-            <ordinal>31</ordinal>
+            <ordinal>43</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -636,7 +875,7 @@
             <local-name>[count_as_direct]</local-name>
             <parent-name>[table_role_summary.csv]</parent-name>
             <remote-alias>count_as_direct</remote-alias>
-            <ordinal>32</ordinal>
+            <ordinal>44</ordinal>
             <local-type>boolean</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -648,7 +887,7 @@
             <local-name>[evidence_sources]</local-name>
             <parent-name>[table_role_summary.csv]</parent-name>
             <remote-alias>evidence_sources</remote-alias>
-            <ordinal>33</ordinal>
+            <ordinal>45</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -663,7 +902,7 @@
             <local-name>[notes]</local-name>
             <parent-name>[table_role_summary.csv]</parent-name>
             <remote-alias>notes</remote-alias>
-            <ordinal>34</ordinal>
+            <ordinal>46</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -678,7 +917,7 @@
             <local-name>[table_id (tables.csv)]</local-name>
             <parent-name>[tables.csv]</parent-name>
             <remote-alias>table_id</remote-alias>
-            <ordinal>35</ordinal>
+            <ordinal>47</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -693,7 +932,7 @@
             <local-name>[table_id_kind]</local-name>
             <parent-name>[tables.csv]</parent-name>
             <remote-alias>table_id_kind</remote-alias>
-            <ordinal>36</ordinal>
+            <ordinal>48</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -708,7 +947,7 @@
             <local-name>[generated_from_entry_id]</local-name>
             <parent-name>[tables.csv]</parent-name>
             <remote-alias>generated_from_entry_id</remote-alias>
-            <ordinal>37</ordinal>
+            <ordinal>49</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -723,7 +962,7 @@
             <local-name>[namespace]</local-name>
             <parent-name>[tables.csv]</parent-name>
             <remote-alias>namespace</remote-alias>
-            <ordinal>38</ordinal>
+            <ordinal>50</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -738,7 +977,7 @@
             <local-name>[path]</local-name>
             <parent-name>[tables.csv]</parent-name>
             <remote-alias>path</remote-alias>
-            <ordinal>39</ordinal>
+            <ordinal>51</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -753,7 +992,7 @@
             <local-name>[category (tables.csv)]</local-name>
             <parent-name>[tables.csv]</parent-name>
             <remote-alias>category</remote-alias>
-            <ordinal>40</ordinal>
+            <ordinal>52</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -768,7 +1007,7 @@
             <local-name>[table_type]</local-name>
             <parent-name>[tables.csv]</parent-name>
             <remote-alias>table_type</remote-alias>
-            <ordinal>41</ordinal>
+            <ordinal>53</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -783,7 +1022,7 @@
             <local-name>[random_sequence]</local-name>
             <parent-name>[tables.csv]</parent-name>
             <remote-alias>random_sequence</remote-alias>
-            <ordinal>42</ordinal>
+            <ordinal>54</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -798,7 +1037,7 @@
             <local-name>[source_pack]</local-name>
             <parent-name>[tables.csv]</parent-name>
             <remote-alias>source_pack</remote-alias>
-            <ordinal>43</ordinal>
+            <ordinal>55</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -813,7 +1052,7 @@
             <local-name>[source_file]</local-name>
             <parent-name>[tables.csv]</parent-name>
             <remote-alias>source_file</remote-alias>
-            <ordinal>44</ordinal>
+            <ordinal>56</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -828,7 +1067,7 @@
             <local-name>[resource_path]</local-name>
             <parent-name>[tables.csv]</parent-name>
             <remote-alias>resource_path</remote-alias>
-            <ordinal>45</ordinal>
+            <ordinal>57</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -843,7 +1082,7 @@
             <local-name>[is_override]</local-name>
             <parent-name>[tables.csv]</parent-name>
             <remote-alias>is_override</remote-alias>
-            <ordinal>46</ordinal>
+            <ordinal>58</ordinal>
             <local-type>boolean</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -861,25 +1100,41 @@
       <column caption='path_weight_calculated' datatype='integer' name='[Calculation_2021232073302019]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='IFNULL([path_explicit_weight_product], 1)' />
       </column>
+      <column caption='path_loot_pressure' datatype='real' name='[Calculation_2021232074440708]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_2021232073302019] * [Calculation_2021231990538241]' />
+      </column>
+      <column caption='item_affinities.csv' datatype='table' name='[__tableau_internal_object_id__].[item_affinities.csv_E2D4285BA59340A981FF517C66C371F4]' role='measure' type='quantitative' />
+      <column caption='item_classification.csv' datatype='table' name='[__tableau_internal_object_id__].[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]' role='measure' type='quantitative' />
       <column caption='leaf_candidates.csv' datatype='table' name='[__tableau_internal_object_id__].[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]' role='measure' type='quantitative' />
       <column caption='table_role_summary.csv' datatype='table' name='[__tableau_internal_object_id__].[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E]' role='measure' type='quantitative' />
       <column caption='tables.csv' datatype='table' name='[__tableau_internal_object_id__].[tables.csv_1BBF2CE69D05412BA94E727F58D54D57]' role='measure' type='quantitative' />
+      <column caption='Affinity' datatype='string' name='[affinity]' role='dimension' type='nominal' />
+      <column caption='Amount Class' datatype='string' name='[amount_class]' role='dimension' type='nominal' />
       <column caption='Category (Tables.Csv)' datatype='string' name='[category (tables.csv)]' role='dimension' type='nominal' />
       <column caption='Category' datatype='string' name='[category]' role='dimension' type='nominal' />
       <column caption='Chain Depth' datatype='integer' name='[chain_depth]' role='measure' type='quantitative' />
+      <column caption='Classification Status' datatype='string' name='[classification_status]' role='dimension' type='nominal' />
+      <column caption='Classification Version (Item Affinities.Csv)' datatype='integer' name='[classification_version (item_affinities.csv)]' role='measure' type='quantitative' />
+      <column caption='Classification Version' datatype='integer' name='[classification_version]' role='measure' type='quantitative' />
       <column caption='Count As Direct' datatype='boolean' name='[count_as_direct]' role='dimension' type='nominal' />
       <column caption='Data Assignment Ref Count' datatype='integer' name='[data_assignment_ref_count]' role='measure' type='quantitative' />
       <column caption='Effective Role' datatype='string' name='[effective_role]' role='dimension' type='nominal' />
       <column caption='Evidence Sources' datatype='string' name='[evidence_sources]' role='dimension' type='nominal' />
+      <column caption='Function' datatype='string' name='[function]' role='dimension' type='nominal' />
       <column caption='Generated From Entry Id' datatype='string' name='[generated_from_entry_id]' role='dimension' type='nominal' />
       <column caption='Inbound Loot Ref Count' datatype='integer' name='[inbound_loot_ref_count]' role='measure' type='quantitative' />
+      <column caption='Is Fallback Match' datatype='boolean' name='[is_fallback_match]' role='dimension' type='nominal' />
       <column caption='Is Override' datatype='boolean' name='[is_override]' role='dimension' type='nominal' />
+      <column caption='Item Id (Item Affinities.Csv)' datatype='string' name='[item_id (item_affinities.csv)]' role='dimension' type='nominal' />
+      <column caption='Item Id (Item Classification.Csv)' datatype='string' name='[item_id (item_classification.csv)]' role='dimension' type='nominal' />
       <column caption='Item Id' datatype='string' name='[item_id]' role='dimension' type='nominal' />
       <column caption='Leaf Entry Id' datatype='string' name='[leaf_entry_id]' role='dimension' type='nominal' />
       <column caption='Leaf Kind' datatype='string' name='[leaf_kind]' role='dimension' type='nominal' />
-      <column caption='Leaf Quality' datatype='string' name='[leaf_quality]' role='dimension' type='nominal' />
+      <column caption='Leaf Quality' datatype='string' hidden='true' name='[leaf_quality]' role='dimension' type='nominal' />
       <column caption='Leaf Table Id' datatype='string' name='[leaf_table_id]' role='dimension' type='nominal' />
       <column caption='Leaf Weight' datatype='integer' name='[leaf_weight]' role='measure' type='quantitative' />
+      <column caption='Matched Detail' datatype='string' name='[matched_detail]' role='dimension' type='nominal' />
+      <column caption='Matched Rule Id' datatype='string' name='[matched_rule_id]' role='dimension' type='nominal' />
       <column caption='Namespace' datatype='string' name='[namespace]' role='dimension' type='nominal' />
       <column caption='Notes' datatype='string' name='[notes]' role='dimension' type='nominal' />
       <column caption='Outbound Loot Ref Count' datatype='integer' name='[outbound_loot_ref_count]' role='measure' type='quantitative' />
@@ -891,6 +1146,7 @@
       <column caption='Resource Path' datatype='string' name='[resource_path]' role='dimension' type='nominal' />
       <column caption='Root Category' datatype='string' name='[root_category]' role='dimension' type='nominal' />
       <column caption='Root Entry Id' datatype='string' name='[root_entry_id]' role='dimension' type='nominal' />
+      <column datatype='string' default-role='measure' default-type='ordinal' hidden='true' name='[root_entry_quality]' role='dimension' type='nominal' />
       <column caption='Root Pool Index' datatype='integer' name='[root_pool_index]' role='measure' type='quantitative' />
       <column caption='Root Table Id' datatype='string' name='[root_table_id]' role='dimension' type='nominal' />
       <column caption='Root Table Type' datatype='string' name='[root_table_type]' role='dimension' type='nominal' />
@@ -904,31 +1160,45 @@
       <column caption='Table Id' datatype='string' name='[table_id]' role='dimension' type='nominal' />
       <column caption='Table Id Kind' datatype='string' name='[table_id_kind]' role='dimension' type='nominal' />
       <column caption='Table Type' datatype='string' name='[table_type]' role='dimension' type='nominal' />
-      <column caption='Unresolved Reason' datatype='string' name='[unresolved_reason]' role='dimension' type='nominal' />
+      <column caption='Unresolved Reason' datatype='string' hidden='true' name='[unresolved_reason]' role='dimension' type='nominal' />
+      <column caption='Value' datatype='string' name='[value]' role='dimension' type='nominal' />
+      <column-instance column='[value]' derivation='None' name='[none:value:nk]' pivot='key' type='nominal' />
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='D:/keep/mods/Minecraft/my_tweaks/docs/loot_docs/vanilla_loot_v1/leaf_candidates.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='03/31/2026 09:20:43 PM' username='tableau_internal_user'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='D:/keep/mods/Minecraft/my_tweaks/docs/loot_docs/vanilla_loot_v1/leaf_candidates.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='03/31/2026 10:28:29 PM' username='tableau_internal_user'>
           <relation type='collection'>
             <relation name='leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E' table='[Extract].[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]' type='table' />
+            <relation name='item_affinities.csv_E2D4285BA59340A981FF517C66C371F4' table='[Extract].[item_affinities.csv_E2D4285BA59340A981FF517C66C371F4]' type='table' />
+            <relation name='item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A' table='[Extract].[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]' type='table' />
             <relation name='table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E' table='[Extract].[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E]' type='table' />
             <relation name='tables.csv_1BBF2CE69D05412BA94E727F58D54D57' table='[Extract].[tables.csv_1BBF2CE69D05412BA94E727F58D54D57]' type='table' />
           </relation>
           <cols>
+            <map key='[affinity]' value='[item_affinities.csv_E2D4285BA59340A981FF517C66C371F4].[affinity]' />
+            <map key='[amount_class]' value='[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A].[amount_class]' />
             <map key='[category (tables.csv)]' value='[tables.csv_1BBF2CE69D05412BA94E727F58D54D57].[category]' />
             <map key='[category]' value='[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E].[category]' />
             <map key='[chain_depth]' value='[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E].[chain_depth]' />
+            <map key='[classification_status]' value='[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A].[classification_status]' />
+            <map key='[classification_version (item_affinities.csv)]' value='[item_affinities.csv_E2D4285BA59340A981FF517C66C371F4].[classification_version]' />
+            <map key='[classification_version]' value='[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A].[classification_version]' />
             <map key='[count_as_direct]' value='[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E].[count_as_direct]' />
             <map key='[data_assignment_ref_count]' value='[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E].[data_assignment_ref_count]' />
             <map key='[effective_role]' value='[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E].[effective_role]' />
             <map key='[evidence_sources]' value='[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E].[evidence_sources]' />
+            <map key='[function]' value='[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A].[function]' />
             <map key='[generated_from_entry_id]' value='[tables.csv_1BBF2CE69D05412BA94E727F58D54D57].[generated_from_entry_id]' />
             <map key='[inbound_loot_ref_count]' value='[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E].[inbound_loot_ref_count]' />
+            <map key='[is_fallback_match]' value='[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A].[is_fallback_match]' />
             <map key='[is_override]' value='[tables.csv_1BBF2CE69D05412BA94E727F58D54D57].[is_override]' />
+            <map key='[item_id (item_affinities.csv)]' value='[item_affinities.csv_E2D4285BA59340A981FF517C66C371F4].[item_id]' />
+            <map key='[item_id (item_classification.csv)]' value='[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A].[item_id]' />
             <map key='[item_id]' value='[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E].[item_id]' />
             <map key='[leaf_entry_id]' value='[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E].[leaf_entry_id]' />
             <map key='[leaf_kind]' value='[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E].[leaf_kind]' />
-            <map key='[leaf_quality]' value='[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E].[leaf_quality]' />
             <map key='[leaf_table_id]' value='[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E].[leaf_table_id]' />
             <map key='[leaf_weight]' value='[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E].[leaf_weight]' />
+            <map key='[matched_detail]' value='[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A].[matched_detail]' />
+            <map key='[matched_rule_id]' value='[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A].[matched_rule_id]' />
             <map key='[namespace]' value='[tables.csv_1BBF2CE69D05412BA94E727F58D54D57].[namespace]' />
             <map key='[notes]' value='[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E].[notes]' />
             <map key='[outbound_loot_ref_count]' value='[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E].[outbound_loot_ref_count]' />
@@ -944,7 +1214,6 @@
             <map key='[resource_path]' value='[tables.csv_1BBF2CE69D05412BA94E727F58D54D57].[resource_path]' />
             <map key='[root_category]' value='[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E].[root_category]' />
             <map key='[root_entry_id]' value='[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E].[root_entry_id]' />
-            <map key='[root_entry_quality]' value='[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E].[root_entry_quality]' />
             <map key='[root_entry_weight]' value='[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E].[root_entry_weight]' />
             <map key='[root_pool_index]' value='[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E].[root_pool_index]' />
             <map key='[root_table_id]' value='[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E].[root_table_id]' />
@@ -959,10 +1228,10 @@
             <map key='[table_id]' value='[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E].[table_id]' />
             <map key='[table_id_kind]' value='[tables.csv_1BBF2CE69D05412BA94E727F58D54D57].[table_id_kind]' />
             <map key='[table_type]' value='[tables.csv_1BBF2CE69D05412BA94E727F58D54D57].[table_type]' />
-            <map key='[unresolved_reason]' value='[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E].[unresolved_reason]' />
+            <map key='[value]' value='[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A].[value]' />
           </cols>
           <refresh>
-            <refresh-event add-from-file-path='leaf_candidates' increment-value='%null%' refresh-type='create' rows-inserted='1036' timestamp-start='2026-03-31 21:20:42.784' />
+            <refresh-event add-from-file-path='leaf_candidates' increment-value='%null%' refresh-type='create' rows-inserted='3542' timestamp-start='2026-03-31 22:28:29.449' />
           </refresh>
           <metadata-records>
             <metadata-record class='column'>
@@ -1173,27 +1442,12 @@
               <object-id>[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]</object-id>
             </metadata-record>
             <metadata-record class='column'>
-              <remote-name>root_entry_quality</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[root_entry_quality]</local-name>
-              <parent-name>[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]</parent-name>
-              <remote-alias>root_entry_quality</remote-alias>
-              <ordinal>14</ordinal>
-              <family>leaf_candidates.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>1</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-              <object-id>[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]</object-id>
-            </metadata-record>
-            <metadata-record class='column'>
               <remote-name>leaf_weight</remote-name>
               <remote-type>20</remote-type>
               <local-name>[leaf_weight]</local-name>
               <parent-name>[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]</parent-name>
               <remote-alias>leaf_weight</remote-alias>
-              <ordinal>15</ordinal>
+              <ordinal>14</ordinal>
               <family>leaf_candidates.csv</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
@@ -1202,27 +1456,12 @@
               <object-id>[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]</object-id>
             </metadata-record>
             <metadata-record class='column'>
-              <remote-name>leaf_quality</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[leaf_quality]</local-name>
-              <parent-name>[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]</parent-name>
-              <remote-alias>leaf_quality</remote-alias>
-              <ordinal>16</ordinal>
-              <family>leaf_candidates.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>1</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-              <object-id>[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]</object-id>
-            </metadata-record>
-            <metadata-record class='column'>
               <remote-name>path_explicit_weights_json</remote-name>
               <remote-type>129</remote-type>
               <local-name>[path_explicit_weights_json]</local-name>
               <parent-name>[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]</parent-name>
               <remote-alias>path_explicit_weights_json</remote-alias>
-              <ordinal>17</ordinal>
+              <ordinal>15</ordinal>
               <family>leaf_candidates.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1237,7 +1476,7 @@
               <local-name>[path_explicit_weight_product]</local-name>
               <parent-name>[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]</parent-name>
               <remote-alias>path_explicit_weight_product</remote-alias>
-              <ordinal>18</ordinal>
+              <ordinal>16</ordinal>
               <family>leaf_candidates.csv</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
@@ -1251,7 +1490,7 @@
               <local-name>[path_missing_weight_count]</local-name>
               <parent-name>[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]</parent-name>
               <remote-alias>path_missing_weight_count</remote-alias>
-              <ordinal>19</ordinal>
+              <ordinal>17</ordinal>
               <family>leaf_candidates.csv</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
@@ -1265,7 +1504,7 @@
               <local-name>[path_has_implicit_default_weights]</local-name>
               <parent-name>[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]</parent-name>
               <remote-alias>path_has_implicit_default_weights</remote-alias>
-              <ordinal>20</ordinal>
+              <ordinal>18</ordinal>
               <family>leaf_candidates.csv</family>
               <local-type>boolean</local-type>
               <aggregation>Count</aggregation>
@@ -1279,7 +1518,7 @@
               <local-name>[set_count_min]</local-name>
               <parent-name>[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]</parent-name>
               <remote-alias>set_count_min</remote-alias>
-              <ordinal>21</ordinal>
+              <ordinal>19</ordinal>
               <family>leaf_candidates.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
@@ -1293,7 +1532,7 @@
               <local-name>[set_count_max]</local-name>
               <parent-name>[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]</parent-name>
               <remote-alias>set_count_max</remote-alias>
-              <ordinal>22</ordinal>
+              <ordinal>20</ordinal>
               <family>leaf_candidates.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
@@ -1302,19 +1541,181 @@
               <object-id>[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]</object-id>
             </metadata-record>
             <metadata-record class='column'>
-              <remote-name>unresolved_reason</remote-name>
+              <remote-name>item_id</remote-name>
               <remote-type>129</remote-type>
-              <local-name>[unresolved_reason]</local-name>
-              <parent-name>[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]</parent-name>
-              <remote-alias>unresolved_reason</remote-alias>
+              <local-name>[item_id (item_affinities.csv)]</local-name>
+              <parent-name>[item_affinities.csv_E2D4285BA59340A981FF517C66C371F4]</parent-name>
+              <remote-alias>item_id</remote-alias>
+              <ordinal>21</ordinal>
+              <family>item_affinities.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>847</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[item_affinities.csv_E2D4285BA59340A981FF517C66C371F4]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>affinity</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[affinity]</local-name>
+              <parent-name>[item_affinities.csv_E2D4285BA59340A981FF517C66C371F4]</parent-name>
+              <remote-alias>affinity</remote-alias>
+              <ordinal>22</ordinal>
+              <family>item_affinities.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[item_affinities.csv_E2D4285BA59340A981FF517C66C371F4]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>classification_version</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[classification_version (item_affinities.csv)]</local-name>
+              <parent-name>[item_affinities.csv_E2D4285BA59340A981FF517C66C371F4]</parent-name>
+              <remote-alias>classification_version</remote-alias>
               <ordinal>23</ordinal>
-              <family>leaf_candidates.csv</family>
+              <family>item_affinities.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[item_affinities.csv_E2D4285BA59340A981FF517C66C371F4]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>item_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[item_id (item_classification.csv)]</local-name>
+              <parent-name>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</parent-name>
+              <remote-alias>item_id</remote-alias>
+              <ordinal>24</ordinal>
+              <family>item_classification.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1332</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>function</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[function]</local-name>
+              <parent-name>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</parent-name>
+              <remote-alias>function</remote-alias>
+              <ordinal>25</ordinal>
+              <family>item_classification.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>value</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[value]</local-name>
+              <parent-name>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</parent-name>
+              <remote-alias>value</remote-alias>
+              <ordinal>26</ordinal>
+              <family>item_classification.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>amount_class</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[amount_class]</local-name>
+              <parent-name>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</parent-name>
+              <remote-alias>amount_class</remote-alias>
+              <ordinal>27</ordinal>
+              <family>item_classification.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>matched_rule_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[matched_rule_id]</local-name>
+              <parent-name>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</parent-name>
+              <remote-alias>matched_rule_id</remote-alias>
+              <ordinal>28</ordinal>
+              <family>item_classification.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>matched_detail</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[matched_detail]</local-name>
+              <parent-name>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</parent-name>
+              <remote-alias>matched_detail</remote-alias>
+              <ordinal>29</ordinal>
+              <family>item_classification.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>349</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>classification_status</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[classification_status]</local-name>
+              <parent-name>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</parent-name>
+              <remote-alias>classification_status</remote-alias>
+              <ordinal>30</ordinal>
+              <family>item_classification.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
               <approx-count>1</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E]</object-id>
+              <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_fallback_match</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[is_fallback_match]</local-name>
+              <parent-name>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</parent-name>
+              <remote-alias>is_fallback_match</remote-alias>
+              <ordinal>31</ordinal>
+              <family>item_classification.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>classification_version</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[classification_version]</local-name>
+              <parent-name>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</parent-name>
+              <remote-alias>classification_version</remote-alias>
+              <ordinal>32</ordinal>
+              <family>item_classification.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>table_id</remote-name>
@@ -1322,7 +1723,7 @@
               <local-name>[table_id]</local-name>
               <parent-name>[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E]</parent-name>
               <remote-alias>table_id</remote-alias>
-              <ordinal>24</ordinal>
+              <ordinal>33</ordinal>
               <family>table_role_summary.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1337,7 +1738,7 @@
               <local-name>[category]</local-name>
               <parent-name>[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E]</parent-name>
               <remote-alias>category</remote-alias>
-              <ordinal>25</ordinal>
+              <ordinal>34</ordinal>
               <family>table_role_summary.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1352,7 +1753,7 @@
               <local-name>[inbound_loot_ref_count]</local-name>
               <parent-name>[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E]</parent-name>
               <remote-alias>inbound_loot_ref_count</remote-alias>
-              <ordinal>26</ordinal>
+              <ordinal>35</ordinal>
               <family>table_role_summary.csv</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
@@ -1366,7 +1767,7 @@
               <local-name>[outbound_loot_ref_count]</local-name>
               <parent-name>[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E]</parent-name>
               <remote-alias>outbound_loot_ref_count</remote-alias>
-              <ordinal>27</ordinal>
+              <ordinal>36</ordinal>
               <family>table_role_summary.csv</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
@@ -1380,7 +1781,7 @@
               <local-name>[structure_ref_count]</local-name>
               <parent-name>[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E]</parent-name>
               <remote-alias>structure_ref_count</remote-alias>
-              <ordinal>28</ordinal>
+              <ordinal>37</ordinal>
               <family>table_role_summary.csv</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
@@ -1394,7 +1795,7 @@
               <local-name>[data_assignment_ref_count]</local-name>
               <parent-name>[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E]</parent-name>
               <remote-alias>data_assignment_ref_count</remote-alias>
-              <ordinal>29</ordinal>
+              <ordinal>38</ordinal>
               <family>table_role_summary.csv</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
@@ -1408,7 +1809,7 @@
               <local-name>[raw_role]</local-name>
               <parent-name>[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E]</parent-name>
               <remote-alias>raw_role</remote-alias>
-              <ordinal>30</ordinal>
+              <ordinal>39</ordinal>
               <family>table_role_summary.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1423,7 +1824,7 @@
               <local-name>[effective_role]</local-name>
               <parent-name>[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E]</parent-name>
               <remote-alias>effective_role</remote-alias>
-              <ordinal>31</ordinal>
+              <ordinal>40</ordinal>
               <family>table_role_summary.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1438,7 +1839,7 @@
               <local-name>[count_as_direct]</local-name>
               <parent-name>[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E]</parent-name>
               <remote-alias>count_as_direct</remote-alias>
-              <ordinal>32</ordinal>
+              <ordinal>41</ordinal>
               <family>table_role_summary.csv</family>
               <local-type>boolean</local-type>
               <aggregation>Count</aggregation>
@@ -1452,7 +1853,7 @@
               <local-name>[evidence_sources]</local-name>
               <parent-name>[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E]</parent-name>
               <remote-alias>evidence_sources</remote-alias>
-              <ordinal>33</ordinal>
+              <ordinal>42</ordinal>
               <family>table_role_summary.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1467,7 +1868,7 @@
               <local-name>[notes]</local-name>
               <parent-name>[table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E]</parent-name>
               <remote-alias>notes</remote-alias>
-              <ordinal>34</ordinal>
+              <ordinal>43</ordinal>
               <family>table_role_summary.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1482,7 +1883,7 @@
               <local-name>[table_id (tables.csv)]</local-name>
               <parent-name>[tables.csv_1BBF2CE69D05412BA94E727F58D54D57]</parent-name>
               <remote-alias>table_id</remote-alias>
-              <ordinal>35</ordinal>
+              <ordinal>44</ordinal>
               <family>tables.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1497,7 +1898,7 @@
               <local-name>[table_id_kind]</local-name>
               <parent-name>[tables.csv_1BBF2CE69D05412BA94E727F58D54D57]</parent-name>
               <remote-alias>table_id_kind</remote-alias>
-              <ordinal>36</ordinal>
+              <ordinal>45</ordinal>
               <family>tables.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1512,7 +1913,7 @@
               <local-name>[generated_from_entry_id]</local-name>
               <parent-name>[tables.csv_1BBF2CE69D05412BA94E727F58D54D57]</parent-name>
               <remote-alias>generated_from_entry_id</remote-alias>
-              <ordinal>37</ordinal>
+              <ordinal>46</ordinal>
               <family>tables.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1527,7 +1928,7 @@
               <local-name>[namespace]</local-name>
               <parent-name>[tables.csv_1BBF2CE69D05412BA94E727F58D54D57]</parent-name>
               <remote-alias>namespace</remote-alias>
-              <ordinal>38</ordinal>
+              <ordinal>47</ordinal>
               <family>tables.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1542,7 +1943,7 @@
               <local-name>[path]</local-name>
               <parent-name>[tables.csv_1BBF2CE69D05412BA94E727F58D54D57]</parent-name>
               <remote-alias>path</remote-alias>
-              <ordinal>39</ordinal>
+              <ordinal>48</ordinal>
               <family>tables.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1557,7 +1958,7 @@
               <local-name>[category (tables.csv)]</local-name>
               <parent-name>[tables.csv_1BBF2CE69D05412BA94E727F58D54D57]</parent-name>
               <remote-alias>category</remote-alias>
-              <ordinal>40</ordinal>
+              <ordinal>49</ordinal>
               <family>tables.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1572,7 +1973,7 @@
               <local-name>[table_type]</local-name>
               <parent-name>[tables.csv_1BBF2CE69D05412BA94E727F58D54D57]</parent-name>
               <remote-alias>table_type</remote-alias>
-              <ordinal>41</ordinal>
+              <ordinal>50</ordinal>
               <family>tables.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1587,7 +1988,7 @@
               <local-name>[random_sequence]</local-name>
               <parent-name>[tables.csv_1BBF2CE69D05412BA94E727F58D54D57]</parent-name>
               <remote-alias>random_sequence</remote-alias>
-              <ordinal>42</ordinal>
+              <ordinal>51</ordinal>
               <family>tables.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1602,7 +2003,7 @@
               <local-name>[source_pack]</local-name>
               <parent-name>[tables.csv_1BBF2CE69D05412BA94E727F58D54D57]</parent-name>
               <remote-alias>source_pack</remote-alias>
-              <ordinal>43</ordinal>
+              <ordinal>52</ordinal>
               <family>tables.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1617,7 +2018,7 @@
               <local-name>[source_file]</local-name>
               <parent-name>[tables.csv_1BBF2CE69D05412BA94E727F58D54D57]</parent-name>
               <remote-alias>source_file</remote-alias>
-              <ordinal>44</ordinal>
+              <ordinal>53</ordinal>
               <family>tables.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1632,7 +2033,7 @@
               <local-name>[resource_path]</local-name>
               <parent-name>[tables.csv_1BBF2CE69D05412BA94E727F58D54D57]</parent-name>
               <remote-alias>resource_path</remote-alias>
-              <ordinal>45</ordinal>
+              <ordinal>54</ordinal>
               <family>tables.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1647,7 +2048,7 @@
               <local-name>[is_override]</local-name>
               <parent-name>[tables.csv_1BBF2CE69D05412BA94E727F58D54D57]</parent-name>
               <remote-alias>is_override</remote-alias>
-              <ordinal>46</ordinal>
+              <ordinal>55</ordinal>
               <family>tables.csv</family>
               <local-type>boolean</local-type>
               <aggregation>Count</aggregation>
@@ -1659,6 +2060,42 @@
         </connection>
       </extract>
       <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:value:nk]' type='palette'>
+            <map to='#000000'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#000000'>
+              <bucket>&quot;none&quot;</bucket>
+            </map>
+            <map to='#000099'>
+              <bucket>&quot;rare&quot;</bucket>
+            </map>
+            <map to='#6666ee'>
+              <bucket>&quot;uncommon&quot;</bucket>
+            </map>
+            <map to='#bbbbff'>
+              <bucket>&quot;common&quot;</bucket>
+            </map>
+            <map to='#d4d4d4'>
+              <bucket>&quot;filler&quot;</bucket>
+            </map>
+            <map to='#d4d4d4'>
+              <bucket>&quot;junk&quot;</bucket>
+            </map>
+            <map to='#dd0000'>
+              <bucket>&quot;legendary&quot;</bucket>
+            </map>
+            <map to='#f5f5f5'>
+              <bucket>&quot;unique&quot;</bucket>
+            </map>
+            <map to='#ff4444'>
+              <bucket>&quot;epic&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
       </semantic-values>
@@ -1683,6 +2120,7 @@
         <field-sort-custom-order field='path_explicit_weights_json' />
         <field-sort-custom-order field='path_explicit_weight_product' />
         <field-sort-custom-order field='Calculation_2021232073302019' />
+        <field-sort-custom-order field='Calculation_2021232074440708' />
         <field-sort-custom-order field='path_missing_weight_count' />
         <field-sort-custom-order field='path_has_implicit_default_weights' />
         <field-sort-custom-order field='set_count_min' />
@@ -1692,10 +2130,44 @@
       </field-sort-info>
       <object-graph>
         <objects>
+          <object caption='item_affinities.csv' id='item_affinities.csv_E2D4285BA59340A981FF517C66C371F4'>
+            <properties context=''>
+              <relation connection='textscan.1feksi90r7nbsz0zmxqyc07ksagf' name='item_affinities.csv' table='[item_affinities#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='item_id' ordinal='0' />
+                  <column datatype='string' name='affinity' ordinal='1' />
+                  <column datatype='integer' name='classification_version' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='item_affinities.csv_E2D4285BA59340A981FF517C66C371F4' table='[Extract].[item_affinities.csv_E2D4285BA59340A981FF517C66C371F4]' type='table' />
+            </properties>
+          </object>
+          <object caption='item_classification.csv' id='item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A'>
+            <properties context=''>
+              <relation connection='textscan.1feksi90r7nbsz0zmxqyc07ksagf' name='item_classification.csv' table='[item_classification#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='item_id' ordinal='0' />
+                  <column datatype='string' name='function' ordinal='1' />
+                  <column datatype='string' name='value' ordinal='2' />
+                  <column datatype='string' name='amount_class' ordinal='3' />
+                  <column datatype='string' name='matched_rule_id' ordinal='4' />
+                  <column datatype='string' name='matched_detail' ordinal='5' />
+                  <column datatype='string' name='classification_status' ordinal='6' />
+                  <column datatype='boolean' name='is_fallback_match' ordinal='7' />
+                  <column datatype='integer' name='classification_version' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A' table='[Extract].[item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A]' type='table' />
+            </properties>
+          </object>
           <object caption='leaf_candidates.csv' id='leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E'>
             <properties context=''>
-              <relation connection='textscan.1feksi90r7nbsz0zmxqyc07ksagf' name='leaf_candidates.csv' table='[leaf_candidates#csv]' type='table'>
-                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <relation connection='textscan.1feksi90r7nbsz0zmxqyc07ksagf' name='leaf_candidates.csv' table='[D:\keep\mods\Minecraft\my_tweaks\docs\loot_docs\loot_stack_v1\leaf_candidates#csv]' type='table'>
+                <columns character-set='UTF-8' gridOrigin='A1:X890:no:A1:X890:1' header='yes' locale='en_US' separator=','>
                   <column datatype='string' name='root_table_id' ordinal='0' />
                   <column datatype='string' name='root_category' ordinal='1' />
                   <column datatype='string' name='root_table_type' ordinal='2' />
@@ -1729,8 +2201,8 @@
           </object>
           <object caption='table_role_summary.csv' id='table_role_summary.csv_7B482E3E2C024599BAC74A7A04A7170E'>
             <properties context=''>
-              <relation connection='textscan.1feksi90r7nbsz0zmxqyc07ksagf' name='table_role_summary.csv' table='[table_role_summary#csv]' type='table'>
-                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <relation connection='textscan.1feksi90r7nbsz0zmxqyc07ksagf' name='table_role_summary.csv' table='[D:\keep\mods\Minecraft\my_tweaks\docs\loot_docs\loot_stack_v1\table_role_summary#csv]' type='table'>
+                <columns character-set='UTF-8' gridOrigin='A1:K73:no:A1:K73:1' header='yes' locale='en_US' separator=','>
                   <column datatype='string' name='table_id' ordinal='0' />
                   <column datatype='string' name='category' ordinal='1' />
                   <column datatype='integer' name='inbound_loot_ref_count' ordinal='2' />
@@ -1751,8 +2223,8 @@
           </object>
           <object caption='tables.csv' id='tables.csv_1BBF2CE69D05412BA94E727F58D54D57'>
             <properties context=''>
-              <relation connection='textscan.1feksi90r7nbsz0zmxqyc07ksagf' name='tables.csv' table='[tables#csv]' type='table'>
-                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <relation connection='textscan.1feksi90r7nbsz0zmxqyc07ksagf' name='tables.csv' table='[D:\keep\mods\Minecraft\my_tweaks\docs\loot_docs\loot_stack_v1\tables#csv]' type='table'>
+                <columns character-set='UTF-8' gridOrigin='A1:L76:no:A1:L76:1' header='yes' locale='en_US' separator=','>
                   <column datatype='string' name='table_id' ordinal='0' />
                   <column datatype='string' name='table_id_kind' ordinal='1' />
                   <column datatype='string' name='generated_from_entry_id' ordinal='2' />
@@ -1774,6 +2246,22 @@
           </object>
         </objects>
         <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[item_id]' />
+              <expression op='[item_id (item_affinities.csv)]' />
+            </expression>
+            <first-end-point object-id='leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E' />
+            <second-end-point object-id='item_affinities.csv_E2D4285BA59340A981FF517C66C371F4' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[item_id]' />
+              <expression op='[item_id (item_classification.csv)]' />
+            </expression>
+            <first-end-point object-id='leaf_candidates.csv_81094C24D74F4B7B83586ADB0076DD3E' />
+            <second-end-point object-id='item_classification.csv_C3809C9EA9334AF99A4517BFAF3DEB7A' />
+          </relationship>
           <relationship>
             <expression op='='>
               <expression op='[root_table_id]' />
@@ -1809,13 +2297,20 @@
             <datasource caption='leaf_candidates' name='federated.0yhhxos1d6jtlj1e6o0yv0kaja8o' />
           </datasources>
           <datasource-dependencies datasource='federated.0yhhxos1d6jtlj1e6o0yv0kaja8o'>
+            <column caption='Set Count Average' datatype='real' name='[Calculation_2021231990538241]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IFNULL((([set_count_max] + [set_count_min]) / 2), 1)' />
+            </column>
             <column caption='Table Role' datatype='string' name='[Calculation_2021232011026434]' role='dimension' type='nominal'>
               <calculation class='tableau' formula='if [effective_role]=&apos;assumed_direct_for_tableau&apos; or&#13;&#10;   [effective_role]=&apos;direct_from_data&apos;&#13;&#10;  then &apos;direct&apos; &#13;&#10;  else &apos;helper&apos;&#13;&#10;end' />
             </column>
             <column caption='path_weight_calculated' datatype='integer' name='[Calculation_2021232073302019]' role='measure' type='quantitative'>
               <calculation class='tableau' formula='IFNULL([path_explicit_weight_product], 1)' />
             </column>
+            <column caption='path_loot_pressure' datatype='real' name='[Calculation_2021232074440708]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_2021232073302019] * [Calculation_2021231990538241]' />
+            </column>
             <column-instance column='[Calculation_2021232073302019]' derivation='Attribute' name='[attr:Calculation_2021232073302019:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2021232074440708]' derivation='Attribute' name='[attr:Calculation_2021232074440708:qk]' pivot='key' type='quantitative' />
             <column caption='Effective Role' datatype='string' name='[effective_role]' role='dimension' type='nominal' />
             <column caption='Item Id' datatype='string' name='[item_id]' role='dimension' type='nominal' />
             <column-instance column='[Calculation_2021232011026434]' derivation='None' name='[none:Calculation_2021232011026434:nk]' pivot='key' type='nominal' />
@@ -1823,6 +2318,8 @@
             <column-instance column='[root_table_id]' derivation='None' name='[none:root_table_id:nk]' pivot='key' type='nominal' />
             <column datatype='integer' name='[path_explicit_weight_product]' role='measure' type='quantitative' />
             <column caption='Root Table Id' datatype='string' name='[root_table_id]' role='dimension' type='nominal' />
+            <column caption='Set Count Max' datatype='real' name='[set_count_max]' role='measure' type='quantitative' />
+            <column caption='Set Count Min' datatype='real' name='[set_count_min]' role='measure' type='quantitative' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:Calculation_2021232011026434:nk]'>
             <groupfilter function='member' level='[none:Calculation_2021232011026434:nk]' member='&quot;direct&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
@@ -1861,9 +2358,33 @@
               </style-rule>
             </style>
           </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[attr:Calculation_2021232073302019:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[attr:Calculation_2021232074440708:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
         </panes>
         <rows>([federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:root_table_id:nk] / [federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:item_id:nk])</rows>
-        <cols>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[attr:Calculation_2021232073302019:qk]</cols>
+        <cols>([federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[attr:Calculation_2021232073302019:qk] + [federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[attr:Calculation_2021232074440708:qk])</cols>
       </table>
       <simple-id uuid='{4EF1DB15-CEF1-4984-97D5-FFB4B66D1027}' />
     </worksheet>
@@ -2048,6 +2569,113 @@
       </table>
       <simple-id uuid='{EB17648F-2879-4510-A16E-C5B842063A91}' />
     </worksheet>
+    <worksheet name='Items by Weight'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='leaf_candidates' name='federated.0yhhxos1d6jtlj1e6o0yv0kaja8o' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0yhhxos1d6jtlj1e6o0yv0kaja8o'>
+            <column caption='path_weight_calculated' datatype='integer' name='[Calculation_2021232073302019]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IFNULL([path_explicit_weight_product], 1)' />
+            </column>
+            <column caption='Function' datatype='string' name='[function]' role='dimension' type='nominal' />
+            <column caption='Item Id' datatype='string' name='[item_id]' role='dimension' type='nominal' />
+            <column-instance column='[function]' derivation='None' name='[none:function:nk]' pivot='key' type='nominal' />
+            <column-instance column='[item_id]' derivation='None' name='[none:item_id:nk]' pivot='key' type='nominal' />
+            <column-instance column='[root_category]' derivation='None' name='[none:root_category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[value]' derivation='None' name='[none:value:nk]' pivot='key' type='nominal' />
+            <column datatype='integer' name='[path_explicit_weight_product]' role='measure' type='quantitative' />
+            <column caption='Root Category' datatype='string' name='[root_category]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_2021232073302019]' derivation='Sum' name='[sum:Calculation_2021232073302019:qk]' pivot='key' type='quantitative' />
+            <column caption='Value' datatype='string' name='[value]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:function:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:function:nk]' member='&quot;block_building&quot;' />
+              <groupfilter function='member' level='[none:function:nk]' member='&quot;block_crafting&quot;' />
+              <groupfilter function='member' level='[none:function:nk]' member='&quot;block_material&quot;' />
+              <groupfilter function='member' level='[none:function:nk]' member='&quot;block_misc_use&quot;' />
+              <groupfilter function='member' level='[none:function:nk]' member='&quot;block_storage&quot;' />
+              <groupfilter function='member' level='[none:function:nk]' member='&quot;block_technical&quot;' />
+              <groupfilter function='member' level='[none:function:nk]' member='&quot;consumable&quot;' />
+              <groupfilter function='member' level='[none:function:nk]' member='&quot;garden&quot;' />
+              <groupfilter function='member' level='[none:function:nk]' member='&quot;gather_tool&quot;' />
+              <groupfilter function='member' level='[none:function:nk]' member='&quot;item_material&quot;' />
+              <groupfilter function='member' level='[none:function:nk]' member='&quot;misc_tool&quot;' />
+              <groupfilter function='member' level='[none:function:nk]' member='&quot;nonloot&quot;' />
+              <groupfilter function='member' level='[none:function:nk]' member='&quot;weapon&quot;' />
+              <groupfilter function='member' level='[none:function:nk]' member='&quot;wearable&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:item_id:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:item_id:nk]' />
+              <groupfilter function='member' level='[none:item_id:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:root_category:nk]'>
+            <groupfilter function='member' level='[none:root_category:nk]' member='&quot;chests&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:value:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:value:nk]' member='&quot;common&quot;' />
+              <groupfilter function='member' level='[none:value:nk]' member='&quot;epic&quot;' />
+              <groupfilter function='member' level='[none:value:nk]' member='&quot;filler&quot;' />
+              <groupfilter function='member' level='[none:value:nk]' member='&quot;junk&quot;' />
+              <groupfilter function='member' level='[none:value:nk]' member='&quot;legendary&quot;' />
+              <groupfilter function='member' level='[none:value:nk]' member='&quot;none&quot;' />
+              <groupfilter function='member' level='[none:value:nk]' member='&quot;rare&quot;' />
+              <groupfilter function='member' level='[none:value:nk]' member='&quot;uncommon&quot;' />
+              <groupfilter function='member' level='[none:value:nk]' member='&quot;unique&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:value:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;common&quot;</bucket>
+              <bucket>&quot;uncommon&quot;</bucket>
+              <bucket>&quot;rare&quot;</bucket>
+              <bucket>&quot;epic&quot;</bucket>
+              <bucket>&quot;legendary&quot;</bucket>
+              <bucket>&quot;unique&quot;</bucket>
+              <bucket>&quot;filler&quot;</bucket>
+              <bucket>&quot;junk&quot;</bucket>
+              <bucket>&quot;none&quot;</bucket>
+              <bucket>%null%</bucket>
+            </dictionary>
+          </manual-sort>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:item_id:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[sum:Calculation_2021232073302019:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:item_id:nk]</column>
+            <column>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:root_category:nk]</column>
+            <column>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:value:nk]</column>
+            <column>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:function:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:item_id:nk]' value='264' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:value:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:item_id:nk]</rows>
+        <cols>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[sum:Calculation_2021232073302019:qk]</cols>
+      </table>
+      <simple-id uuid='{CD536FA0-934C-448B-AB94-CF98B8FDB2B5}' />
+    </worksheet>
     <worksheet name='Root to Leaf'>
       <table>
         <view>
@@ -2117,7 +2745,7 @@
       </viewpoint>
       <simple-id uuid='{DB1C26AA-7BC9-4D64-970B-B9480A101BF2}' />
     </window>
-    <window class='worksheet' maximized='true' name='Chests Contents'>
+    <window class='worksheet' name='Chests Contents'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -2139,6 +2767,33 @@
         </edge>
       </cards>
       <viewpoint>
+        <selection-collection>
+          <tuple-selection>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[attr:Calculation_2021232074440708:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:root_table_id:nk]</field>
+                    <field>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:item_id:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:item_id:nk]</field>
+                  <field>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:root_table_id:nk]</field>
+                  <field>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[attr:Calculation_2021232074440708:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;minecraft:iron_nugget&quot;</value>
+                <value>&quot;minecraft:chests/ruined_portal&quot;</value>
+                <value>540.0</value>
+              </tuple>
+            </tuple-reference>
+          </tuple-selection>
+        </selection-collection>
         <highlight>
           <color-one-way>
             <field>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:Calculation_2021232011026434:nk]</field>
@@ -2249,212 +2904,277 @@
       </viewpoint>
       <simple-id uuid='{4B247841-FCB3-4138-B200-D02B2E0286BE}' />
     </window>
+    <window class='worksheet' maximized='true' name='Items by Weight'>
+      <cards>
+        <edge name='left'>
+          <strip size='177'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='171'>
+            <card param='[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:value:nk]' type='filter' />
+            <card param='[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:function:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:value:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:function:nk]</field>
+            <field>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:item_id:nk]</field>
+            <field>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:root_category:nk]</field>
+            <field>[federated.0yhhxos1d6jtlj1e6o0yv0kaja8o].[none:root_table_id:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{7A370333-AE33-4151-A8A2-E94DD66D3800}' />
+    </window>
   </windows>
   <thumbnails>
     <thumbnail height='192' name='Chests Contents' width='192'>
       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
-      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
+      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
+      RK5CYII=
     </thumbnail>
     <thumbnail height='192' name='Items Locations' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
@@ -3428,6 +4148,223 @@
       Bp0lk3emw9d/x++kyJfvhGlaFvt7yxcO61+7QXV8SidedratZndvD3NpX2WyN+jjBN2nf9N6
       gJYrTfsI1HKlaQXQcqVpBdBypWkF0HKlaQXQcqVpBdBypfn/Afu8NGCq1cEJAAAAAElFTkSu
       QmCC
+    </thumbnail>
+    <thumbnail height='192' name='Items by Weight' width='192'>
+      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
+      AAAAAElFTkSuQmCC
     </thumbnail>
     <thumbnail height='192' name='Root to Leaf' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk

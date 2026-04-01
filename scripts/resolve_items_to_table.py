@@ -1,26 +1,31 @@
 """
 Resolve a list of Minecraft items, using a provided loot schema, to create a table that sets item value,
 function and amount class for each item.
-
 """
 
+import argparse
+import csv
+import json
+from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 from fnmatch import fnmatch
-from collections import Counter
 
-import json
 import yaml
-import csv
 
 BASE_DIR = Path(__file__).resolve().parent
-
-DOCS_PATH = "../docs/loot_docs/"
-
-YAML_PATH = DOCS_PATH + "Loot Trait Assignments v10.yaml"
-ITEMS_PATH = DOCS_PATH + "minecraft_item_ids.json"
-TAGS_BY_ITEM_PATH = DOCS_PATH + "item_tags_by_item-no_loot_tags.json"
+PROJECT_ROOT = BASE_DIR.parent
+DOCS_DIR = PROJECT_ROOT / "docs" / "loot_docs"
+DEFAULT_SCHEMA_PATH = DOCS_DIR / "Loot Trait Assignments v10.yaml"
+DEFAULT_ITEM_ID_PATHS = (
+    DOCS_DIR / "item_ids.json",
+    DOCS_DIR / "minecraft_item_ids.json",
+)
+DEFAULT_TAGS_BY_ITEM_PATHS = (
+    DOCS_DIR / "item_tags_by_item-no_loot_tags.json",
+    DOCS_DIR / "item_tags_by_item.json",
+)
 
 schema_version = 0
 
@@ -114,8 +119,24 @@ class ResolvedItem:
 
 # ---- File Loading
 
-def load_yaml(path: str) -> dict[str, Any]:
-    fullpath = BASE_DIR / path
+def resolve_path(path: Path | str) -> Path:
+    raw_path = Path(path)
+    if raw_path.is_absolute():
+        return raw_path
+    return (BASE_DIR / raw_path).resolve()
+
+
+def first_existing_path(candidates: tuple[Path, ...], label: str) -> Path:
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    raise FileNotFoundError(
+        f"Could not find {label}. Checked: " + ", ".join(str(candidate) for candidate in candidates)
+    )
+
+
+def load_yaml(path: Path | str) -> dict[str, Any]:
+    fullpath = resolve_path(path)
     with open(fullpath, "r", encoding="utf-8") as f:
         data = yaml.safe_load(f)
     if not isinstance(data, dict):
@@ -123,8 +144,8 @@ def load_yaml(path: str) -> dict[str, Any]:
     return data
 
 
-def load_item_ids(path: str) -> list[str]:
-    fullpath = BASE_DIR / path
+def load_item_ids(path: Path | str) -> list[str]:
+    fullpath = resolve_path(path)
     with open(fullpath, "r", encoding="utf-8") as f:
         data = json.load(f)
     if not isinstance(data, list):
@@ -132,8 +153,8 @@ def load_item_ids(path: str) -> list[str]:
     return [str(item_id) for item_id in data]
 
 
-def load_tags_by_item(path: str) -> dict[str, set[str]]:
-    fullpath = BASE_DIR / path
+def load_tags_by_item(path: Path | str) -> dict[str, set[str]]:
+    fullpath = resolve_path(path)
     with open(fullpath, "r", encoding="utf-8") as f:
         data = json.load(f)
     if not isinstance(data, dict):
@@ -546,9 +567,14 @@ def validate_results(results: list[ResolvedItem], item_ids: list[str]):
             raise ValueError(f"incomplete assignment for {r.item_id}")
 
 
-def write_csv(results: list[ResolvedItem], path: str):
+def build_classification_status(item: ResolvedItem) -> str:
+    return "fallback" if item.matched_via == "fallback" else "matched"
 
-    full_path = Path(path)
+
+def write_csv(results: list[ResolvedItem], path: Path | str, classification_version: str):
+
+    full_path = resolve_path(path)
+    full_path.parent.mkdir(parents=True, exist_ok=True)
 
     fieldnames = [
         "item_id",
@@ -557,10 +583,11 @@ def write_csv(results: list[ResolvedItem], path: str):
         "value",
         "amount_class",
         "matched_rule_id",
-        #  "amatched_rule_id",
-        # "matched_via",  # redundant
         "matched_detail",
         "amatched_details",
+        "classification_status",
+        "is_fallback_match",
+        "classification_version",
     ]
 
     with open(full_path, "w", newline="", encoding="utf-8") as f:
@@ -575,18 +602,20 @@ def write_csv(results: list[ResolvedItem], path: str):
                 "value": r.value,
                 "amount_class": r.amount_class,
                 "matched_rule_id": r.matched_rule_id,
-                # "amatched_rule_id": r.amatched_rule_id,  # redundant
-                # "matched_via": r.matched_via,  # redundant
                 "matched_detail": r.matched_detail or "",
                 "amatched_details": r.amatched_details or "",
+                "classification_status": build_classification_status(r),
+                "is_fallback_match": "true" if r.matched_via == "fallback" else "false",
+                "classification_version": classification_version,
             })
 
     print(f"Wrote {len(results)} rows to {full_path}")
 
 
-def write_json(results: list[ResolvedItem], path: str):
+def write_json(results: list[ResolvedItem], path: Path | str, classification_version: str):
 
-    full_path = Path(path)
+    full_path = resolve_path(path)
+    full_path.parent.mkdir(parents=True, exist_ok=True)
 
     json_results = {}
     with open(full_path, "w", newline="", encoding="utf-8") as f:
@@ -596,7 +625,12 @@ def write_json(results: list[ResolvedItem], path: str):
                 "function": r.function,
                 "affinities": r.affinities,
                 "value": r.value,
-                "amount_class": r.amount_class
+                "amount_class": r.amount_class,
+                "matched_rule_id": r.matched_rule_id,
+                "matched_detail": r.matched_detail or "",
+                "classification_status": build_classification_status(r),
+                "is_fallback_match": r.matched_via == "fallback",
+                "classification_version": classification_version,
             }
             json_results[r.item_id] = json_item
 
@@ -608,7 +642,8 @@ def write_report(
         results: list[ResolvedItem],
         rules: list[CompiledRule],
         arules: list[AffinityRule],
-        path: str
+        path: Path | str,
+        classification_version: str,
 ) -> None:
     function_counts = Counter(r.function for r in results)
     affinity_counts = Counter(c for r in results for c in r.affinities)
@@ -621,7 +656,11 @@ def write_report(
     dead_rules = [r.rule_id for r in rules if r.rule_id not in rule_counts]
     dead_affinities = [r.rule_id for r in arules if r.rule_id not in arule_counts]
 
-    with open(path, "w", encoding="utf-8") as f:
+    full_path = resolve_path(path)
+    full_path.parent.mkdir(parents=True, exist_ok=True)
+
+    with open(full_path, "w", encoding="utf-8") as f:
+        f.write(f"classification version: {classification_version}\n")
         f.write(f"total items: {len(results)}\n")
         f.write(f"fallback count: {len(fallback_items)}\n\n")
 
@@ -657,16 +696,29 @@ def write_report(
             f.write(f"  {item}\n")
 
 
-def main() -> int:
-    schemafile = load_yaml(YAML_PATH)
+def resolve_items_to_table(
+    *,
+    schema_path: Path | str | None = None,
+    item_ids_path: Path | str | None = None,
+    tags_by_item_path: Path | str | None = None,
+    output_prefix: Path | str | None = None,
+) -> dict[str, Any]:
+    schema_source = resolve_path(schema_path or DEFAULT_SCHEMA_PATH)
+    item_ids_source = resolve_path(item_ids_path or first_existing_path(DEFAULT_ITEM_ID_PATHS, "item id input"))
+    tags_source = resolve_path(tags_by_item_path or first_existing_path(DEFAULT_TAGS_BY_ITEM_PATHS, "tags-by-item input"))
+
+    schemafile = load_yaml(schema_source)
     schema = get_loot_classification(schemafile)
-    item_ids = load_item_ids(ITEMS_PATH)
-    tags_by_item = load_tags_by_item(TAGS_BY_ITEM_PATH)
+    item_ids = load_item_ids(item_ids_source)
+    tags_by_item = load_tags_by_item(tags_source)
 
     print("\n-- START")
     print(f"schema keys: {list(schema.keys())}")
     print(f"item count: {len(item_ids)}")
     print(f"tagged item count: {len(tags_by_item)}")
+    print(f"schema path: {schema_source}")
+    print(f"item id path: {item_ids_source}")
+    print(f"tags path: {tags_source}")
 
     print("\n-- ITEMS")
     for item_id in item_ids[:]:
@@ -721,15 +773,70 @@ def main() -> int:
     print("property rules fallback:", fallback)
     print("items with 1 or more affinities:", amatched)
 
-    write_path = DOCS_PATH + f"resolved_loot_v{schema_version}"
+    write_base = resolve_path(output_prefix or (DOCS_DIR / f"resolved_loot_v{schema_version}"))
     results = sorted(results, key=lambda r: (r.matched_via != "fallback", r.item_id))
 
-    write_csv(results, f"{write_path}.csv")
-    write_json(results, f"{write_path}.json")
-    write_report(results, compiled_rules, compiled_affinity_rules, f"{write_path}_report.txt")
+    write_csv(results, write_base.with_suffix(".csv"), str(schema_version))
+    write_json(results, write_base.with_suffix(".json"), str(schema_version))
+    write_report(results, compiled_rules, compiled_affinity_rules, write_base.with_name(f"{write_base.name}_report.txt"), str(schema_version))
+
+    return {
+        "classification_version": str(schema_version),
+        "result_count": len(results),
+        "schema_path": str(schema_source),
+        "item_ids_path": str(item_ids_source),
+        "tags_by_item_path": str(tags_source),
+        "output_prefix": str(write_base),
+    }
+
+
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Resolve item classification traits from item ids, item tags, and the loot trait schema."
+    )
+    parser.add_argument(
+        "--schema-path",
+        type=Path,
+        default=DEFAULT_SCHEMA_PATH,
+        help="YAML rule source. Defaults to docs/loot_docs/Loot Trait Assignments v10.yaml.",
+    )
+    parser.add_argument(
+        "--item-ids-path",
+        type=Path,
+        default=None,
+        help="JSON list of item ids to classify. Defaults to the first existing generic or legacy docs export.",
+    )
+    parser.add_argument(
+        "--tags-by-item-path",
+        type=Path,
+        default=None,
+        help="JSON map of item_id -> tags. Defaults to the first existing generic or legacy docs export.",
+    )
+    parser.add_argument(
+        "--output-prefix",
+        type=Path,
+        default=None,
+        help="Output path without extension. Defaults to docs/loot_docs/resolved_loot_v<schema_version>.",
+    )
+    return parser.parse_args(argv)
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = parse_args(argv)
+    result = resolve_items_to_table(
+        schema_path=args.schema_path,
+        item_ids_path=args.item_ids_path,
+        tags_by_item_path=args.tags_by_item_path,
+        output_prefix=args.output_prefix,
+    )
+    print(
+        "Resolved "
+        f"{result['result_count']} items into classification version {result['classification_version']} "
+        f"at {result['output_prefix']}"
+    )
 
     return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
