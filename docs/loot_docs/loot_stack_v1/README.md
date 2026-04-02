@@ -24,12 +24,9 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Item classification rows: 1332
 - Item affinity rows: 1174
 - Classification coverage rows: 240
-- Structure-set entry rows: 39
-- Structure-set loot-link rows: 54
-- Structure-set loot-link audit rows: 99
-- Structure-set base item presence rows: 399
-- Structure-set effective item presence rows: 402
-- Structure-set profile summary rows: 39
+- Structure rows: 39
+- Structure loot-link rows: 83
+- Structure loot-link audit rows: 113
 - Classified loot items: 237
 - Missing loot items: 3
 
@@ -57,12 +54,9 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - `item_classification.csv`: one row per classified item_id sourced from the canonical resolved_loot export.
 - `item_affinities.csv`: one row per item_id plus affinity for relational Tableau joins.
 - `classification_coverage.csv`: one row per distinct loot item_id with classified-or-missing coverage status.
-- `structure_set_entries.csv`: one row per effective structure_set entry with structure source metadata and dynamic mapping status.
-- `structure_set_loot_links.csv`: one row per final structure_set entry plus loot_table_id link after exact-match detection, ambiguous autoresolve, and manual no-match mapping.
-- `structure_set_loot_link_audit.csv`: audit trail for exact-match detections, ambiguous-match candidates, manual no-match mappings, and stale skipped rows.
-- `structure_set_base_item_presence.csv`: one row per structure_set entry plus item_id showing worst-case base item presence from linked Stage 1 loot tables.
-- `structure_set_effective_item_presence.csv`: one row per structure_set entry plus item_id including recognized Stage 2 modifier-added item presence.
-- `structure_set_profile_summary.csv`: one row per structure_set entry summarizing linked loot tables and base/effective unique item counts.
+- `structures.csv`: one row per active structure_id with source metadata, active structure-set provenance, and structure detection status.
+- `structure_loot_links.csv`: one row per applied structure_id plus loot_table_id link after exact-match detection, ambiguous autoresolve, and manual no-match mapping.
+- `structure_loot_link_audit.csv`: audit trail for exact-match detections, ambiguous-match candidates, manual no-match mappings, and stale skipped rows.
 - `scope_report.json`: allowed, excluded, and deferred top-level loot_table folder scope with warnings.
 - `manifest.json`: export counts for tables, pools, entries, references, and leaf rows.
 
@@ -76,9 +70,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - `modifier_added_leaf_candidates.csv.item_id` joins to `item_classification.csv.item_id` for Stage 2 item traits.
 - `target_table_added_item_summary.csv.item_id` joins to `item_classification.csv.item_id` for Stage 2 added-item slicing.
 - `leaf_candidates.csv.item_id` joins to `item_classification.csv.item_id` for Stage 1.5 item traits.
-- `structure_set_loot_links.csv.loot_table_id` joins to `tables.csv.table_id` for loot-table metadata when the linked table is in Stage 1 scope.
-- `structure_set_base_item_presence.csv.item_id` joins to `item_classification.csv.item_id` for structure-level base item traits.
-- `structure_set_effective_item_presence.csv.item_id` joins to `item_classification.csv.item_id` for modifier-aware structure item traits.
+- `structure_loot_links.csv.loot_table_id` joins to `tables.csv.table_id` for loot-table metadata when the linked table is in Stage 1 scope.
 - `leaf_candidates.csv.root_table_id` joins to `table_role_summary.csv.table_id` for gameplay-source filtering.
 - `item_classification.csv.item_id` joins to `item_affinities.csv.item_id` for affinity slicing.
 - `classification_coverage.csv.item_id` joins to `item_classification.csv.item_id` for audit and completeness checks.
@@ -134,15 +126,16 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Stage 2 inventories NeoForge Global Loot Modifiers only. LootJS/KubeJS runtime mutations remain out of scope.
 - `glm_modifier_chain.csv` inventories every effective GLM in order, but detailed delta rows only exist for recognized inject/add-table semantics.
 - `modifier_added_leaf_candidates.csv` is a delta table, not a final runtime probability model. It shows what recognized modifiers add, not exact post-modifier odds.
-- Structure-set entry profiles are presence-based, not frequency-based. They are intended for structure-generation balancing rather than final loot EV.
+- Structure-based exports are keyed by active unique `structure_id`. Structure sets are used only internally to discover active structures.
 - Structure pairing is built from the final effective layered resource set after pack stacking, not from per-pack intermediate passes.
 - Exact-match links apply automatically from the conservative structure-side detector.
 - Ambiguous-match candidates live in `D:\keep\mods\Minecraft\my_tweaks\configs\structure_loot_ambiguous_resolution_map.yaml`. Review them there and set `autoresolve: true` only for the specific rows you want applied automatically.
-- No-match manual resolutions live in `D:\keep\mods\Minecraft\my_tweaks\configs\structure_loot_manual_resolution_map.yaml`. Open the file, research unresolved rows, fill in `structure_set_id` and `structure_id`, then set `status: mapped`.
+- No-match manual resolutions live in `D:\keep\mods\Minecraft\my_tweaks\configs\structure_loot_manual_resolution_map.yaml`. Open the file, research unresolved rows, fill in `structure_id`, then set `status: mapped`.
+- Structure root ownership overrides live in `D:\keep\mods\Minecraft\my_tweaks\configs\structure_root_map.yaml`. Structures default to owning a root equal to their own path stem unless overridden there.
 - No suppressions are part of this workflow. If an exact detected link is wrong, the matching logic should be corrected instead of overridden.
-- Automatic structure-to-loot mapping remains conservative: jigsaw start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, explicit structure-family candidate rules, and explicit curated loose table candidates.
+- Automatic structure-to-loot mapping remains conservative: jigsaw start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, and structure-root-backed ambiguous candidates.
 - Non-jigsaw structures may still land in ambiguous-match or no-match until you confirm them through the resolution YAMLs.
-- `structure_set_loot_links.csv` is the raw structure-to-loot-table layer, while `structure_set_effective_item_presence.csv` is the modifier-aware gameplay-facing structure item profile.
+- `structure_loot_links.csv` is the raw structure-to-loot-table layer for this corrected first pass.
 - `resolved_loot_v*.csv` remains the canonical raw classification export, but its `affinities` field is a serialized list. Prefer `item_classification.csv` plus `item_affinities.csv` for Tableau.
 - `classification_coverage.csv` makes missing loot-item classifications explicit instead of silently dropping them.
 - `raw_role` keeps the conservative local-data provenance result; `effective_role` converts `unknown_directness` to `assumed_direct_for_tableau`.

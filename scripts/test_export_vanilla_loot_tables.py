@@ -14,6 +14,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 FIXTURES_DIR = PROJECT_ROOT / "scripts" / "test_fixtures"
 AMBIGUOUS_FIXTURE_PATH = FIXTURES_DIR / "structure_loot_ambiguous_resolution_map.yaml"
 MANUAL_FIXTURE_PATH = FIXTURES_DIR / "structure_loot_manual_resolution_map.yaml"
+ROOT_MAP_FIXTURE_PATH = FIXTURES_DIR / "structure_root_map.yaml"
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
 import export_vanilla_loot_tables as exporter
@@ -24,13 +25,15 @@ def read_csv_rows(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
-def copy_resolution_map_fixtures(destination_root: Path) -> tuple[Path, Path]:
+def copy_resolution_map_fixtures(destination_root: Path) -> tuple[Path, Path, Path]:
     destination_root.mkdir(parents=True, exist_ok=True)
     ambiguous_path = destination_root / "structure_loot_ambiguous_resolution_map.yaml"
     manual_path = destination_root / "structure_loot_manual_resolution_map.yaml"
+    root_map_path = destination_root / "structure_root_map.yaml"
     ambiguous_path.write_text(AMBIGUOUS_FIXTURE_PATH.read_text(encoding="utf-8"), encoding="utf-8")
     manual_path.write_text(MANUAL_FIXTURE_PATH.read_text(encoding="utf-8"), encoding="utf-8")
-    return ambiguous_path, manual_path
+    root_map_path.write_text(ROOT_MAP_FIXTURE_PATH.read_text(encoding="utf-8"), encoding="utf-8")
+    return ambiguous_path, manual_path, root_map_path
 
 
 class ExportVanillaLootTablesTests(unittest.TestCase):
@@ -38,11 +41,16 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.tempdir = tempfile.TemporaryDirectory()
         cls.output_dir = Path(cls.tempdir.name)
-        cls.ambiguous_resolution_path, cls.manual_resolution_path = copy_resolution_map_fixtures(Path(cls.tempdir.name))
+        (
+            cls.ambiguous_resolution_path,
+            cls.manual_resolution_path,
+            cls.structure_root_map_path,
+        ) = copy_resolution_map_fixtures(Path(cls.tempdir.name))
         exporter.export_loot_tables(
             output_dir=cls.output_dir,
             ambiguous_resolution_config_path=cls.ambiguous_resolution_path,
             manual_resolution_config_path=cls.manual_resolution_path,
+            structure_root_map_config_path=cls.structure_root_map_path,
         )
 
         cls.scope_report = json.loads((cls.output_dir / "scope_report.json").read_text(encoding="utf-8"))
@@ -63,12 +71,9 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         cls.item_classification = read_csv_rows(cls.output_dir / "item_classification.csv")
         cls.item_affinities = read_csv_rows(cls.output_dir / "item_affinities.csv")
         cls.classification_coverage = read_csv_rows(cls.output_dir / "classification_coverage.csv")
-        cls.structure_set_entries = read_csv_rows(cls.output_dir / "structure_set_entries.csv")
-        cls.structure_set_loot_links = read_csv_rows(cls.output_dir / "structure_set_loot_links.csv")
-        cls.structure_set_loot_link_audit = read_csv_rows(cls.output_dir / "structure_set_loot_link_audit.csv")
-        cls.structure_set_base_item_presence = read_csv_rows(cls.output_dir / "structure_set_base_item_presence.csv")
-        cls.structure_set_effective_item_presence = read_csv_rows(cls.output_dir / "structure_set_effective_item_presence.csv")
-        cls.structure_set_profile_summary = read_csv_rows(cls.output_dir / "structure_set_profile_summary.csv")
+        cls.structure_rows = read_csv_rows(cls.output_dir / "structures.csv")
+        cls.structure_loot_links = read_csv_rows(cls.output_dir / "structure_loot_links.csv")
+        cls.structure_loot_link_audit = read_csv_rows(cls.output_dir / "structure_loot_link_audit.csv")
 
     @classmethod
     def tearDownClass(cls) -> None:
@@ -91,18 +96,25 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
             "item_classification.csv",
             "item_affinities.csv",
             "classification_coverage.csv",
-            "structure_set_entries.csv",
-            "structure_set_loot_links.csv",
-            "structure_set_loot_link_audit.csv",
-            "structure_set_base_item_presence.csv",
-            "structure_set_effective_item_presence.csv",
-            "structure_set_profile_summary.csv",
+            "structures.csv",
+            "structure_loot_links.csv",
+            "structure_loot_link_audit.csv",
             "scope_report.json",
             "manifest.json",
             "README.md",
         }
         found = {path.name for path in self.output_dir.iterdir()}
         self.assertTrue(expected.issubset(found))
+        self.assertTrue(
+            {
+                "structure_set_entries.csv",
+                "structure_set_loot_links.csv",
+                "structure_set_loot_link_audit.csv",
+                "structure_set_base_item_presence.csv",
+                "structure_set_effective_item_presence.csv",
+                "structure_set_profile_summary.csv",
+            }.isdisjoint(found)
+        )
 
     def test_scope_report_lists_included_and_excluded_folders(self) -> None:
         included = {item["name"]: item["file_count"] for item in self.scope_report["included_dirs"]}
@@ -138,12 +150,9 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         self.assertGreater(self.manifest["item_classification_count"], 0)
         self.assertGreater(self.manifest["item_affinity_count"], 0)
         self.assertGreater(self.manifest["classification_coverage_count"], 0)
-        self.assertEqual(self.manifest["structure_set_entry_count"], 34)
-        self.assertEqual(self.manifest["structure_set_loot_link_count"], 49)
-        self.assertGreater(self.manifest["structure_set_loot_link_audit_count"], 49)
-        self.assertEqual(self.manifest["structure_set_base_item_presence_count"], 361)
-        self.assertEqual(self.manifest["structure_set_effective_item_presence_count"], 361)
-        self.assertEqual(self.manifest["structure_set_profile_summary_count"], 34)
+        self.assertEqual(self.manifest["structure_count"], 34)
+        self.assertEqual(self.manifest["structure_loot_link_count"], 49)
+        self.assertEqual(self.manifest["structure_loot_link_audit_count"], 91)
         self.assertEqual(self.manifest["missing_loot_item_count"], 0)
         self.assertEqual(
             self.manifest["raw_role_counts"],
@@ -171,37 +180,75 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         stage2_report = json.loads((self.output_dir / "stage2_report.json").read_text(encoding="utf-8"))
         self.assertEqual(stage2_report["glm_chain_length"], 0)
 
-    def test_vanilla_structure_set_outputs_are_present_and_stable(self) -> None:
-        self.assertEqual(len(self.structure_set_entries), 34)
-        self.assertEqual(len(self.structure_set_loot_links), 49)
-        self.assertGreater(len(self.structure_set_loot_link_audit), 49)
-        self.assertEqual(len(self.structure_set_base_item_presence), 361)
-        self.assertEqual(len(self.structure_set_effective_item_presence), 361)
-        self.assertEqual(len(self.structure_set_profile_summary), 34)
-        trial_row = next(row for row in self.structure_set_entries if row["structure_set_id"] == "minecraft:trial_chambers")
-        self.assertEqual(trial_row["dynamic_mapping_status"], "detected_links_found")
-        desert_row = next(row for row in self.structure_set_entries if row["structure_set_id"] == "minecraft:desert_pyramids")
-        self.assertTrue(desert_row["dynamic_mapping_status"].startswith("unsupported_structure_type:"))
+    def test_vanilla_structure_outputs_are_present_and_stable(self) -> None:
+        self.assertEqual(len(self.structure_rows), 34)
+        self.assertEqual(len(self.structure_loot_links), 49)
+        self.assertEqual(len(self.structure_loot_link_audit), 91)
+        trial_row = next(row for row in self.structure_rows if row["structure_id"] == "minecraft:trial_chambers")
+        self.assertEqual(trial_row["structure_detection_status"], "exact_supported_links_found_root_match_eligible")
+        desert_row = next(row for row in self.structure_rows if row["structure_id"] == "minecraft:desert_pyramid")
+        self.assertEqual(desert_row["structure_detection_status"], "exact_unsupported_no_root_match:minecraft:desert_pyramid")
 
     def test_vanilla_resolution_outputs_and_yaml_headers_exist(self) -> None:
-        self.assertEqual(self.structure_resolution_report["exact_match_count"], 49)
-        self.assertGreater(self.structure_resolution_report["ambiguous_match_candidate_count"], 0)
-        self.assertEqual(self.structure_resolution_report["no_match_count"], 2)
-        self.assertEqual(self.structure_resolution_report["no_match_unresolved_count"], 2)
+        self.assertEqual(self.structure_resolution_report["exact_match_table_count"], 38)
+        self.assertEqual(self.structure_resolution_report["exact_match_row_count"], 49)
+        self.assertEqual(self.structure_resolution_report["ambiguous_match_candidate_table_count"], 16)
+        self.assertEqual(self.structure_resolution_report["ambiguous_match_candidate_row_count"], 27)
+        self.assertEqual(self.structure_resolution_report["ambiguous_match_pending_row_count"], 27)
+        self.assertEqual(self.structure_resolution_report["ambiguous_match_autoresolved_row_count"], 0)
+        self.assertEqual(self.structure_resolution_report["no_match_table_count"], 15)
+        self.assertEqual(self.structure_resolution_report["no_match_unresolved_table_count"], 15)
+        self.assertEqual(self.structure_resolution_report["no_match_unresolved_row_count"], 15)
         self.assertIn("# One-to-many model:", self.ambiguous_resolution_text)
         self.assertIn("# One-to-many model:", self.manual_resolution_text)
-        self.assertFalse(
+        self.assertTrue(all(entry["match_rule"] == "ambiguous_structure_root_match" for entry in self.ambiguous_resolution_map["entries"]))
+        self.assertTrue(
             any(
                 entry["loot_table_id"] == "minecraft:chests/desert_pyramid"
                 and entry["status"] == "unresolved"
+                and entry["structure_id"] == ""
                 for entry in self.manual_resolution_map["entries"]
             )
         )
         self.assertTrue(
             any(
-                entry["loot_table_id"] == "minecraft:chests/desert_pyramid"
-                and entry["match_rule"] == "loose_table_candidate"
+                entry["loot_table_id"] == "minecraft:chests/igloo_chest"
+                and entry["structure_id"] == "minecraft:igloo"
+                and entry["evidence_data"]["structure_root"] == "igloo"
+                and entry["evidence_data"]["match_mode"] == "underscore_prefix"
                 for entry in self.ambiguous_resolution_map["entries"]
+            )
+        )
+        self.assertTrue(
+            any(
+                entry["loot_table_id"] == "minecraft:chests/shipwreck_supply"
+                and entry["structure_id"] == "minecraft:shipwreck"
+                and entry["evidence_data"]["structure_root"] == "shipwreck"
+                for entry in self.ambiguous_resolution_map["entries"]
+            )
+        )
+        self.assertTrue(
+            any(
+                entry["loot_table_id"] == "minecraft:chests/underwater_ruin_big"
+                and entry["structure_id"] == "minecraft:ocean_ruin_cold"
+                and entry["evidence_data"]["structure_root"] == "underwater_ruin"
+                for entry in self.ambiguous_resolution_map["entries"]
+            )
+        )
+        self.assertTrue(
+            any(
+                entry["loot_table_id"] == "minecraft:chests/trial_chambers/intersection"
+                and entry["structure_id"] == "minecraft:trial_chambers"
+                and entry["evidence_data"]["structure_root"] == "trial_chambers"
+                for entry in self.ambiguous_resolution_map["entries"]
+            )
+        )
+        self.assertTrue(
+            any(
+                entry["loot_table_id"] == "minecraft:equipment/trial_chamber"
+                and entry["status"] == "unresolved"
+                and entry["structure_id"] == ""
+                for entry in self.manual_resolution_map["entries"]
             )
         )
         self.assertTrue(

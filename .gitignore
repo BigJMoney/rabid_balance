@@ -1,6 +1,7 @@
 /libs/
 /docs/loot_docs/_tmp_debug/
 /scripts/__pycache__/
+/%TEMP%/
 
 *~Tableau*
 

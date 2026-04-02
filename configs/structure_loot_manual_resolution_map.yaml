@@ -1,17 +1,78 @@
 # One-to-many model:
-# A single loot_table_id may legitimately map to multiple structure_set_id + structure_id pairs.
+# A single loot_table_id may legitimately map to multiple structure_id values.
 # Each entry in this file represents one unresolved or mapped relationship at that exact grain.
-# An unresolved placeholder row may remain beside mapped rows while research is still in progress.
-# Removing the unresolved placeholder row is the signal that manual research is complete.
+# Once mapped rows exist for a loot_table_id, unresolved placeholder rows for that table are considered replaced.
 version: 1
 entries:
+- loot_table_id: minecraft:chests/abandoned_mineshaft
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:chests/buried_treasure
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:chests/desert_pyramid
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:chests/jungle_temple
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:chests/jungle_temple_dispenser
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:chests/nether_bridge
+  status: unresolved
+  structure_id: ''
+  notes: ''
 - loot_table_id: minecraft:chests/simple_dungeon
   status: unresolved
-  structure_set_id: ''
   structure_id: ''
   notes: ''
 - loot_table_id: minecraft:chests/spawn_bonus_chest
   status: unresolved
-  structure_set_id: ''
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:chests/stronghold_corridor
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:chests/stronghold_crossing
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:chests/stronghold_library
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:chests/underwater_ruin_big
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:chests/underwater_ruin_small
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:chests/woodland_mansion
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:equipment/trial_chamber
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:spawners/trial_chamber/consumables
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:spawners/trial_chamber/items_to_drop_when_ominous
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:spawners/trial_chamber/key
+  status: unresolved
   structure_id: ''
   notes: ''

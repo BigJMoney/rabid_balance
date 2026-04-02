@@ -26,6 +26,7 @@ DEFAULT_AMBIGUOUS_STRUCTURE_RESOLUTION_CONFIG = (
 DEFAULT_MANUAL_STRUCTURE_RESOLUTION_CONFIG = (
     PROJECT_ROOT / "configs" / "structure_loot_manual_resolution_map.yaml"
 )
+DEFAULT_STRUCTURE_ROOT_MAP_CONFIG = PROJECT_ROOT / "configs" / "structure_root_map.yaml"
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "docs" / "loot_docs" / "loot_stack_v1"
 DEFAULT_CLASSIFICATION_SEARCH_ROOT = PROJECT_ROOT / "docs" / "loot_docs"
 DEFAULT_PRECHECK_FILENAME = "precheck_report.json"
@@ -39,80 +40,24 @@ GLM_REGISTRY_RESOURCE_PATH = "neoforge/loot_modifiers/global_loot_modifiers.json
 LOOT_ID_SEARCH_PATTERN = re.compile(rb"[a-z_](?:[a-z0-9_.-]*):[a-z0-9_./-]+")
 RESOLVED_LOOT_FILENAME_PATTERN = re.compile(r"resolved_loot_v(?P<version>\d+)\.csv$")
 
-STRUCTURE_FAMILY_TYPE_REGISTRY = {
-    "end_city": "minecraft:end_city",
-    "igloo": "minecraft:igloo",
-    "labyrinth": "illagerinvasion:labyrinth",
-    "ocean_ruin": "minecraft:ocean_ruin",
-    "ruined_portal": "minecraft:ruined_portal",
-    "shipwreck": "minecraft:shipwreck",
-    "woodland_mansion": "minecraft:woodland_mansion",
-}
-
-LOOSE_TABLE_CANDIDATE_REGISTRY = {
-    "minecraft:chests/abandoned_mineshaft": [
-        ("minecraft:mineshafts", "minecraft:mineshaft"),
-        ("minecraft:mineshafts", "minecraft:mineshaft_mesa"),
-    ],
-    "minecraft:chests/buried_treasure": [("minecraft:buried_treasures", "minecraft:buried_treasure")],
-    "minecraft:chests/desert_pyramid": [("minecraft:desert_pyramids", "minecraft:desert_pyramid")],
-    "minecraft:chests/end_city_treasure": [("minecraft:end_cities", "minecraft:end_city")],
-    "minecraft:chests/igloo_chest": [("minecraft:igloos", "minecraft:igloo")],
-    "minecraft:chests/jungle_temple": [("minecraft:jungle_temples", "minecraft:jungle_pyramid")],
-    "minecraft:chests/jungle_temple_dispenser": [("minecraft:jungle_temples", "minecraft:jungle_pyramid")],
-    "minecraft:chests/nether_bridge": [("minecraft:nether_complexes", "minecraft:fortress")],
-    "minecraft:chests/shipwreck_map": [
-        ("minecraft:shipwrecks", "minecraft:shipwreck"),
-        ("minecraft:shipwrecks", "minecraft:shipwreck_beached"),
-    ],
-    "minecraft:chests/shipwreck_supply": [
-        ("minecraft:shipwrecks", "minecraft:shipwreck"),
-        ("minecraft:shipwrecks", "minecraft:shipwreck_beached"),
-    ],
-    "minecraft:chests/shipwreck_treasure": [
-        ("minecraft:shipwrecks", "minecraft:shipwreck"),
-        ("minecraft:shipwrecks", "minecraft:shipwreck_beached"),
-    ],
-    "minecraft:chests/stronghold_corridor": [("minecraft:strongholds", "minecraft:stronghold")],
-    "minecraft:chests/stronghold_crossing": [("minecraft:strongholds", "minecraft:stronghold")],
-    "minecraft:chests/stronghold_library": [("minecraft:strongholds", "minecraft:stronghold")],
-    "minecraft:chests/trial_chambers/intersection": [("minecraft:trial_chambers", "minecraft:trial_chambers")],
-    "minecraft:chests/trial_chambers/reward_common": [("minecraft:trial_chambers", "minecraft:trial_chambers")],
-    "minecraft:chests/trial_chambers/reward_rare": [("minecraft:trial_chambers", "minecraft:trial_chambers")],
-    "minecraft:chests/trial_chambers/reward_unique": [("minecraft:trial_chambers", "minecraft:trial_chambers")],
-    "minecraft:chests/trial_chambers/reward_ominous_common": [("minecraft:trial_chambers", "minecraft:trial_chambers")],
-    "minecraft:chests/trial_chambers/reward_ominous_rare": [("minecraft:trial_chambers", "minecraft:trial_chambers")],
-    "minecraft:chests/trial_chambers/reward_ominous_unique": [("minecraft:trial_chambers", "minecraft:trial_chambers")],
-    "minecraft:chests/underwater_ruin_big": [
-        ("minecraft:ocean_ruins", "minecraft:ocean_ruin_cold"),
-        ("minecraft:ocean_ruins", "minecraft:ocean_ruin_warm"),
-    ],
-    "minecraft:chests/underwater_ruin_small": [
-        ("minecraft:ocean_ruins", "minecraft:ocean_ruin_cold"),
-        ("minecraft:ocean_ruins", "minecraft:ocean_ruin_warm"),
-    ],
-    "minecraft:chests/woodland_mansion": [("minecraft:woodland_mansions", "minecraft:mansion")],
-    "minecraft:equipment/trial_chamber": [("minecraft:trial_chambers", "minecraft:trial_chambers")],
-    "minecraft:spawners/trial_chamber/consumables": [("minecraft:trial_chambers", "minecraft:trial_chambers")],
-    "minecraft:spawners/trial_chamber/items_to_drop_when_ominous": [
-        ("minecraft:trial_chambers", "minecraft:trial_chambers")
-    ],
-    "minecraft:spawners/trial_chamber/key": [("minecraft:trial_chambers", "minecraft:trial_chambers")],
-}
-
 AMBIGUOUS_RESOLUTION_YAML_HEADER = [
     "# One-to-many model:",
-    "# A single loot_table_id may legitimately map to multiple structure_set_id + structure_id pairs.",
+    "# A single loot_table_id may legitimately map to multiple structure_id values.",
     "# Each entry in this file represents one ambiguous candidate relationship at that exact grain.",
     "# Do not assume loot_table_id is unique within this document.",
 ]
 
 MANUAL_RESOLUTION_YAML_HEADER = [
     "# One-to-many model:",
-    "# A single loot_table_id may legitimately map to multiple structure_set_id + structure_id pairs.",
+    "# A single loot_table_id may legitimately map to multiple structure_id values.",
     "# Each entry in this file represents one unresolved or mapped relationship at that exact grain.",
-    "# An unresolved placeholder row may remain beside mapped rows while research is still in progress.",
-    "# Removing the unresolved placeholder row is the signal that manual research is complete.",
+    "# Once mapped rows exist for a loot_table_id, unresolved placeholder rows for that table are considered replaced.",
+]
+
+STRUCTURE_ROOT_MAP_YAML_HEADER = [
+    "# Structure root overrides:",
+    "# Structures default to owning a template root equal to their own structure_id path stem.",
+    "# Add entries here only for exceptions or extra roots.",
 ]
 
 TABLES_FIELDNAMES = [
@@ -316,20 +261,17 @@ TARGET_TABLE_ADDED_ITEM_SUMMARY_FIELDNAMES = [
     "modifier_ids_json",
 ]
 
-STRUCTURE_SET_ENTRIES_FIELDNAMES = [
-    "structure_set_id",
+STRUCTURES_FIELDNAMES = [
     "structure_id",
-    "structure_weight_in_set",
     "structure_type",
-    "structure_set_pack_id",
     "structure_pack_id",
-    "structure_set_source_path",
     "structure_source_path",
-    "dynamic_mapping_status",
+    "active_structure_set_count",
+    "active_structure_set_ids_json",
+    "structure_detection_status",
 ]
 
-STRUCTURE_SET_LOOT_LINKS_FIELDNAMES = [
-    "structure_set_id",
+STRUCTURE_LOOT_LINKS_FIELDNAMES = [
     "structure_id",
     "loot_table_id",
     "is_in_stage1_loot_scope",
@@ -338,8 +280,7 @@ STRUCTURE_SET_LOOT_LINKS_FIELDNAMES = [
     "notes",
 ]
 
-STRUCTURE_SET_LOOT_LINK_AUDIT_FIELDNAMES = [
-    "structure_set_id",
+STRUCTURE_LOOT_LINK_AUDIT_FIELDNAMES = [
     "structure_id",
     "loot_table_id",
     "candidate_source",
@@ -348,35 +289,13 @@ STRUCTURE_SET_LOOT_LINK_AUDIT_FIELDNAMES = [
     "notes",
 ]
 
-STRUCTURE_SET_BASE_ITEM_PRESENCE_FIELDNAMES = [
-    "structure_set_id",
-    "structure_id",
-    "item_id",
-    "source_loot_table_count",
-    "source_loot_table_ids_json",
-]
-
-STRUCTURE_SET_EFFECTIVE_ITEM_PRESENCE_FIELDNAMES = [
-    "structure_set_id",
-    "structure_id",
-    "item_id",
-    "item_presence_kind",
-    "base_loot_table_count",
-    "base_loot_table_ids_json",
-    "stage2_modifier_count",
-    "stage2_modifier_ids_json",
-]
-
-STRUCTURE_SET_PROFILE_SUMMARY_FIELDNAMES = [
-    "structure_set_id",
-    "structure_id",
-    "base_loot_table_count",
-    "manual_active_link_count",
-    "detected_active_link_count",
-    "out_of_scope_loot_table_count",
-    "base_unique_item_count",
-    "effective_unique_item_count",
-    "stage2_added_unique_item_count",
+RETIRED_STRUCTURE_OUTPUT_FILENAMES = [
+    "structure_set_entries.csv",
+    "structure_set_loot_links.csv",
+    "structure_set_loot_link_audit.csv",
+    "structure_set_base_item_presence.csv",
+    "structure_set_effective_item_presence.csv",
+    "structure_set_profile_summary.csv",
 ]
 
 
@@ -646,13 +565,19 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--ambiguous-structure-resolution-config",
         type=Path,
         default=DEFAULT_AMBIGUOUS_STRUCTURE_RESOLUTION_CONFIG,
-        help="Global YAML file for ambiguous structure_set loot-table candidate rows with autoresolve flags.",
+        help="Global YAML file for ambiguous structure loot-table candidate rows with autoresolve flags.",
     )
     parser.add_argument(
         "--manual-structure-resolution-config",
         type=Path,
         default=DEFAULT_MANUAL_STRUCTURE_RESOLUTION_CONFIG,
-        help="Global YAML file for no-match structure_set loot-table manual resolutions.",
+        help="Global YAML file for no-match structure loot-table manual resolutions.",
+    )
+    parser.add_argument(
+        "--structure-root-map-config",
+        type=Path,
+        default=DEFAULT_STRUCTURE_ROOT_MAP_CONFIG,
+        help="Structure metadata YAML for template-root ownership overrides.",
     )
     return parser.parse_args(argv)
 
@@ -961,10 +886,6 @@ def structure_id_to_resource_path(structure_id: str) -> str:
     return resource_id_to_resource_path(structure_id, "worldgen/structure", ".json")
 
 
-def structure_set_id_to_resource_path(structure_set_id: str) -> str:
-    return resource_id_to_resource_path(structure_set_id, "worldgen/structure_set", ".json")
-
-
 def template_pool_id_to_resource_path(pool_id: str) -> str:
     return resource_id_to_resource_path(pool_id, "worldgen/template_pool", ".json")
 
@@ -1004,6 +925,11 @@ def get_structure_family_from_source_object(source_object: str) -> str:
     if not normalized:
         return ""
     return normalized.split("/", 1)[0]
+
+
+def structure_id_path_stem(structure_id: str) -> str:
+    _namespace, path = split_loot_table_id(structure_id)
+    return PurePosixPath(path).name
 
 
 def write_yaml_with_header(path: Path, *, header_lines: list[str], payload: dict[str, Any]) -> None:
@@ -1132,6 +1058,7 @@ class LootStackExporter:
         classification_csv_path: Path | None,
         ambiguous_resolution_config_path: Path,
         manual_resolution_config_path: Path,
+        structure_root_map_config_path: Path,
     ) -> None:
         self.base_pack_root = base_pack_root
         self.mods_root = mods_root
@@ -1146,6 +1073,7 @@ class LootStackExporter:
         self.classification_csv_path = classification_csv_path
         self.ambiguous_resolution_config_path = ambiguous_resolution_config_path
         self.manual_resolution_config_path = manual_resolution_config_path
+        self.structure_root_map_config_path = structure_root_map_config_path
 
         self.tables: dict[str, TableRecord] = {}
         self.pools: dict[str, PoolRecord] = {}
@@ -1165,12 +1093,9 @@ class LootStackExporter:
         self.item_classification_rows: list[dict[str, Any]] = []
         self.item_affinity_rows: list[dict[str, Any]] = []
         self.classification_coverage_rows: list[dict[str, Any]] = []
-        self.structure_set_entry_rows: list[dict[str, Any]] = []
-        self.structure_set_loot_link_rows: list[dict[str, Any]] = []
-        self.structure_set_loot_link_audit_rows: list[dict[str, Any]] = []
-        self.structure_set_base_item_presence_rows: list[dict[str, Any]] = []
-        self.structure_set_effective_item_presence_rows: list[dict[str, Any]] = []
-        self.structure_set_profile_summary_rows: list[dict[str, Any]] = []
+        self.structure_rows: list[dict[str, Any]] = []
+        self.structure_loot_link_rows: list[dict[str, Any]] = []
+        self.structure_loot_link_audit_rows: list[dict[str, Any]] = []
         self.structure_loot_resolution_report: dict[str, Any] = {}
         self.raw_role_counts: Counter[str] = Counter()
         self.effective_role_counts: Counter[str] = Counter()
@@ -1224,7 +1149,7 @@ class LootStackExporter:
         self._build_leaf_rows()
         self._build_table_roles()
         self._build_stage2_outputs()
-        self._build_structure_set_profiles()
+        self._build_structure_outputs()
         self._build_item_classification_outputs()
         manifest = self._build_manifest()
         self._write_output_bundle(scope_report, manifest, precheck_report)
@@ -2851,27 +2776,8 @@ class LootStackExporter:
         self.stage2_payload_leaf_cache[table_id] = payload_leaf_rows
         return payload_leaf_rows
 
-    def _build_structure_set_profiles(self) -> None:
-        all_loot_table_ids = self._collect_effective_resource_ids("loot_table", ".json")
-        all_template_pool_ids = self._collect_effective_resource_ids("worldgen/template_pool", ".json")
-        stage1_table_ids = set(self.named_table_ids)
-        base_items_by_table: dict[str, set[str]] = defaultdict(set)
-        for row in self.leaf_rows:
-            if row["item_id"]:
-                base_items_by_table[row["root_table_id"]].add(row["item_id"])
-
-        modifier_items_by_target: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
-        for row in self.modifier_added_leaf_rows:
-            if row["item_id"] and row["target_table_id"] and row["modifier_id"]:
-                modifier_items_by_target[row["target_table_id"]][row["item_id"]].add(row["modifier_id"])
-
-        structure_entry_rows: list[dict[str, Any]] = []
-        structure_entry_lookup: dict[tuple[str, str], dict[str, Any]] = {}
-        detected_links_by_pair: dict[tuple[str, str], dict[str, dict[str, str]]] = {}
-        base_presence_state: dict[tuple[str, str, str], dict[str, Any]] = {}
-        effective_presence_state: dict[tuple[str, str, str], dict[str, Any]] = {}
-        profile_state: dict[tuple[str, str], dict[str, Any]] = {}
-
+    def _collect_active_structure_set_ids_by_structure(self) -> dict[str, set[str]]:
+        found: dict[str, set[str]] = defaultdict(set)
         for resource_path in sorted(self.effective_resources):
             if get_resource_family(resource_path) != "worldgen/structure_set" or not resource_path.endswith(".json"):
                 continue
@@ -2891,152 +2797,579 @@ class LootStackExporter:
                 if not isinstance(structure_value, str) or not structure_value.strip():
                     continue
                 structure_id = normalize_namespaced_id(structure_value.strip(), default_namespace)
-                structure_resource_path = structure_id_to_resource_path(structure_id)
-                structure_effective = self.effective_resources.get(structure_resource_path)
-                structure_type = ""
-                structure_source_path = ""
-                if structure_effective is not None:
-                    structure_source_path = structure_effective.display_source_path()
-                    try:
-                        raw_structure = ensure_dict(
-                            json.loads(read_pack_text(structure_effective.pack, structure_resource_path)),
-                            structure_source_path,
-                        )
-                        structure_type = self._string_or_blank(raw_structure.get("type"))
-                    except Exception:
-                        structure_type = ""
+                found[structure_id].add(structure_set_id)
+        return dict(sorted(found.items()))
 
-                dynamic_status, detected_links = self._detect_structure_links_for_entry(
-                    structure_id=structure_id,
-                    all_loot_table_ids=all_loot_table_ids,
-                    all_template_pool_ids=all_template_pool_ids,
-                )
-                pair_key = (structure_set_id, structure_id)
-                detected_links_by_pair[pair_key] = detected_links
+    def _normalize_structure_root_map_entry(self, raw_entry: dict[str, Any]) -> dict[str, Any]:
+        template_roots = [
+            self._string_or_blank(value).strip()
+            for value in ensure_list(raw_entry.get("template_roots"), "structure_root_map.template_roots")
+            if self._string_or_blank(value).strip()
+        ]
+        return {
+            "structure_id": self._string_or_blank(raw_entry.get("structure_id")).strip(),
+            "template_roots": template_roots,
+            "notes": self._string_or_blank(raw_entry.get("notes")).strip(),
+        }
 
-                profile_state[pair_key] = {
-                    "base_loot_table_ids": set(),
-                    "manual_active_link_count": 0,
-                    "detected_active_link_count": 0,
-                    "out_of_scope_loot_table_count": 0,
-                    "base_items": set(),
-                    "effective_items": set(),
-                    "stage2_added_items": set(),
+    def _write_structure_root_map_yaml(self, entries: list[dict[str, Any]]) -> None:
+        write_yaml_with_header(
+            self.structure_root_map_config_path,
+            header_lines=STRUCTURE_ROOT_MAP_YAML_HEADER,
+            payload={"version": 1, "entries": entries},
+        )
+
+    def _load_structure_root_map_entries(self) -> dict[str, list[str]]:
+        normalized_entries = [
+            self._normalize_structure_root_map_entry(raw_entry)
+            for raw_entry in self._load_yaml_entries(self.structure_root_map_config_path)
+        ]
+        final_entries = [
+            entry
+            for entry in normalized_entries
+            if entry["structure_id"] and entry["template_roots"]
+        ]
+        self._write_structure_root_map_yaml(sorted(final_entries, key=lambda row: row["structure_id"]))
+        return {entry["structure_id"]: entry["template_roots"] for entry in final_entries}
+
+    def _owned_structure_roots(
+        self,
+        structure_id: str,
+        structure_root_overrides: dict[str, list[str]],
+    ) -> list[str]:
+        if structure_id in structure_root_overrides:
+            return sorted(dict.fromkeys(structure_root_overrides[structure_id]))
+        return [structure_id_path_stem(structure_id)]
+
+    def _build_structure_detection_status(
+        self,
+        *,
+        exact_status: str,
+        structure_type: str,
+        root_match_eligible: bool,
+    ) -> str:
+        if exact_status == "missing_structure_resource":
+            return exact_status
+        if exact_status == "invalid_structure_json":
+            return exact_status
+        if exact_status.startswith("unsupported_structure_type:"):
+            type_suffix = exact_status.split(":", 1)[1]
+            eligibility = "root_match_eligible" if root_match_eligible else "no_root_match"
+            return f"exact_unsupported_{eligibility}:{type_suffix}"
+
+        status_prefix = {
+            "detected_links_found": "exact_supported_links_found",
+            "no_links_detected": "exact_supported_no_links_found",
+            "missing_start_pool": "exact_supported_missing_start_pool",
+        }.get(exact_status, exact_status)
+        eligibility = "root_match_eligible" if root_match_eligible else "no_root_match"
+        return f"{status_prefix}_{eligibility}"
+
+    def _derive_structure_root_key(self, loot_table_id: str, available_root_keys: set[str]) -> tuple[str, str]:
+        _namespace, path = split_loot_table_id(loot_table_id)
+        parts = PurePosixPath(path).parts
+        if len(parts) < 2:
+            return "", ""
+        relative_parts = parts[1:]
+        first_segment = relative_parts[0]
+        if len(relative_parts) > 1:
+            return first_segment, "first_segment"
+        if first_segment in available_root_keys:
+            return first_segment, "first_segment"
+        tokens = first_segment.split("_")
+        for length in range(len(tokens) - 1, 0, -1):
+            candidate = "_".join(tokens[:length])
+            if candidate in available_root_keys:
+                return candidate, "underscore_prefix"
+        return first_segment, "first_segment"
+
+    def _normalize_structure_ambiguous_resolution_entry(self, raw_entry: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "loot_table_id": self._string_or_blank(raw_entry.get("loot_table_id")).strip(),
+            "structure_id": self._string_or_blank(raw_entry.get("structure_id")).strip(),
+            "match_rule": self._string_or_blank(raw_entry.get("match_rule")).strip(),
+            "evidence_data": raw_entry.get("evidence_data") if isinstance(raw_entry.get("evidence_data"), dict) else {},
+            "autoresolve": parse_boolish(raw_entry.get("autoresolve")),
+            "notes": self._string_or_blank(raw_entry.get("notes")).strip(),
+        }
+
+    def _write_structure_ambiguous_resolution_yaml(self, entries: list[dict[str, Any]]) -> None:
+        write_yaml_with_header(
+            self.ambiguous_resolution_config_path,
+            header_lines=AMBIGUOUS_RESOLUTION_YAML_HEADER,
+            payload={"version": 1, "entries": entries},
+        )
+
+    def _normalize_structure_manual_resolution_entry(self, raw_entry: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "loot_table_id": self._string_or_blank(raw_entry.get("loot_table_id")).strip(),
+            "status": self._string_or_blank(raw_entry.get("status")).strip(),
+            "structure_id": self._string_or_blank(raw_entry.get("structure_id")).strip(),
+            "notes": self._string_or_blank(raw_entry.get("notes")).strip(),
+        }
+
+    def _write_structure_manual_resolution_yaml(self, entries: list[dict[str, Any]]) -> None:
+        write_yaml_with_header(
+            self.manual_resolution_config_path,
+            header_lines=MANUAL_RESOLUTION_YAML_HEADER,
+            payload={"version": 1, "entries": entries},
+        )
+
+    def _collect_structure_root_ambiguous_candidates(
+        self,
+        *,
+        structure_lookup: dict[str, dict[str, Any]],
+        exact_link_keys: set[tuple[str, str]],
+        structure_root_index: dict[str, set[str]],
+        available_structure_roots: dict[str, set[str]],
+    ) -> dict[tuple[str, str], dict[str, Any]]:
+        candidates: dict[tuple[str, str], dict[str, Any]] = {}
+        exact_match_table_ids = {loot_table_id for _structure_id, loot_table_id in exact_link_keys}
+        available_root_keys = set(structure_root_index)
+
+        for loot_table_id in sorted(self.named_table_ids):
+            if loot_table_id in exact_match_table_ids:
+                continue
+            root_key, match_mode = self._derive_structure_root_key(loot_table_id, available_root_keys)
+            if not root_key or root_key not in structure_root_index:
+                continue
+            for structure_id in sorted(structure_root_index[root_key]):
+                if structure_id not in structure_lookup:
+                    continue
+                candidates[(loot_table_id, structure_id)] = {
+                    "loot_table_id": loot_table_id,
+                    "structure_id": structure_id,
+                    "match_rule": "ambiguous_structure_root_match",
+                    "evidence_data": {
+                        "structure_root": root_key,
+                        "match_mode": match_mode,
+                        "template_source_object_count": len(available_structure_roots.get(root_key, set())),
+                        "template_source_objects": sorted(available_structure_roots.get(root_key, set())),
+                    },
+                    "autoresolve": False,
+                    "notes": "",
                 }
 
-                structure_entry_rows.append(
+        return dict(sorted(candidates.items()))
+
+    def _sync_structure_ambiguous_resolution_entries(
+        self,
+        *,
+        current_candidates: dict[tuple[str, str], dict[str, Any]],
+        structure_lookup: dict[str, dict[str, Any]],
+    ) -> dict[str, Any]:
+        existing_entries = [
+            self._normalize_structure_ambiguous_resolution_entry(row)
+            for row in self._load_yaml_entries(self.ambiguous_resolution_config_path)
+        ]
+        seen_keys: set[tuple[str, str]] = set()
+        final_entries: list[dict[str, Any]] = []
+        current_rows: list[dict[str, Any]] = []
+        active_link_rows: list[dict[str, Any]] = []
+        audit_rows: list[dict[str, Any]] = []
+        stale_rows: list[dict[str, Any]] = []
+        skipped_active_stale_rows: list[dict[str, Any]] = []
+        warnings: list[str] = []
+
+        for existing in existing_entries:
+            key = (existing["loot_table_id"], existing["structure_id"])
+            if key in current_candidates:
+                current = current_candidates[key]
+                merged = {**current, "autoresolve": existing["autoresolve"], "notes": existing["notes"]}
+                final_entries.append(merged)
+                current_rows.append(merged)
+                seen_keys.add(key)
+                continue
+
+            final_entries.append(existing)
+            stale_rows.append(existing)
+            if existing["autoresolve"]:
+                warning = (
+                    "stale ambiguous autoresolve skipped for "
+                    f"{existing['loot_table_id']} -> {existing['structure_id']}"
+                )
+                warnings.append(warning)
+                skipped_active_stale_rows.append(
                     {
-                        "structure_set_id": structure_set_id,
-                        "structure_id": structure_id,
-                        "structure_weight_in_set": as_csv_value(raw_entry.get("weight")),
-                        "structure_type": structure_type,
-                        "structure_set_pack_id": effective_set.pack.pack_id,
-                        "structure_pack_id": structure_effective.pack.pack_id if structure_effective is not None else "",
-                        "structure_set_source_path": effective_set.display_source_path(),
-                        "structure_source_path": structure_source_path,
-                        "dynamic_mapping_status": dynamic_status,
+                        "resolution_source": "ambiguous_match",
+                        "loot_table_id": existing["loot_table_id"],
+                        "structure_id": existing["structure_id"],
+                        "warning": warning,
                     }
                 )
-                structure_entry_lookup[pair_key] = structure_entry_rows[-1]
+                audit_rows.append(
+                    {
+                        "structure_id": existing["structure_id"],
+                        "loot_table_id": existing["loot_table_id"],
+                        "candidate_source": "ambiguous_match",
+                        "candidate_method": existing["match_rule"] or "ambiguous_structure_root_match",
+                        "resolution": "skipped_stale_ambiguous_match",
+                        "notes": existing["notes"] or warning,
+                    }
+                )
 
-        exact_link_rows: dict[tuple[str, str, str], dict[str, Any]] = {}
+        for key, current in current_candidates.items():
+            if key in seen_keys:
+                continue
+            final_entries.append(current)
+            current_rows.append(current)
+
+        self._write_structure_ambiguous_resolution_yaml(
+            sorted(final_entries, key=lambda row: (row["loot_table_id"], row["structure_id"], row["match_rule"]))
+        )
+
+        named_table_set = set(self.named_table_ids)
+        for row in current_rows:
+            if parse_boolish(row.get("autoresolve")):
+                if row["structure_id"] not in structure_lookup:
+                    warning = (
+                        "ambiguous autoresolve target missing from current active structures for "
+                        f"{row['loot_table_id']} -> {row['structure_id']}"
+                    )
+                    warnings.append(warning)
+                    skipped_active_stale_rows.append(
+                        {
+                            "resolution_source": "ambiguous_match",
+                            "loot_table_id": row["loot_table_id"],
+                            "structure_id": row["structure_id"],
+                            "warning": warning,
+                        }
+                    )
+                    audit_rows.append(
+                        {
+                            "structure_id": row["structure_id"],
+                            "loot_table_id": row["loot_table_id"],
+                            "candidate_source": "ambiguous_match",
+                            "candidate_method": row["match_rule"] or "ambiguous_structure_root_match",
+                            "resolution": "skipped_stale_ambiguous_match",
+                            "notes": row["notes"] or warning,
+                        }
+                    )
+                    continue
+                active_link_rows.append(
+                    {
+                        "structure_id": row["structure_id"],
+                        "loot_table_id": row["loot_table_id"],
+                        "is_in_stage1_loot_scope": "true" if row["loot_table_id"] in named_table_set else "false",
+                        "link_source": "ambiguous_match",
+                        "link_method": "ambiguous_structure_root_match",
+                        "notes": row["notes"] or f"root={self._string_or_blank(row['evidence_data'].get('structure_root'))}",
+                    }
+                )
+                audit_rows.append(
+                    {
+                        "structure_id": row["structure_id"],
+                        "loot_table_id": row["loot_table_id"],
+                        "candidate_source": "ambiguous_match",
+                        "candidate_method": row["match_rule"] or "ambiguous_structure_root_match",
+                        "resolution": "active_ambiguous_autoresolve",
+                        "notes": row["notes"],
+                    }
+                )
+            else:
+                audit_rows.append(
+                    {
+                        "structure_id": row["structure_id"],
+                        "loot_table_id": row["loot_table_id"],
+                        "candidate_source": "ambiguous_match",
+                        "candidate_method": row["match_rule"] or "ambiguous_structure_root_match",
+                        "resolution": "pending_ambiguous_match",
+                        "notes": row["notes"],
+                    }
+                )
+
+        return {
+            "current_rows": current_rows,
+            "active_link_rows": active_link_rows,
+            "audit_rows": audit_rows,
+            "stale_rows": stale_rows,
+            "skipped_active_stale_rows": skipped_active_stale_rows,
+            "warnings": warnings,
+        }
+
+    def _sync_structure_manual_resolution_entries(
+        self,
+        *,
+        current_no_match_table_ids: list[str],
+        structure_lookup: dict[str, dict[str, Any]],
+    ) -> dict[str, Any]:
+        current_no_match_set = set(current_no_match_table_ids)
+        existing_entries = [
+            self._normalize_structure_manual_resolution_entry(row)
+            for row in self._load_yaml_entries(self.manual_resolution_config_path)
+        ]
+        rows_by_table: dict[str, list[dict[str, Any]]] = defaultdict(list)
+        stale_rows: list[dict[str, Any]] = []
+        skipped_active_stale_rows: list[dict[str, Any]] = []
+        warnings: list[str] = []
+        final_entries: list[dict[str, Any]] = []
+
+        for entry in existing_entries:
+            rows_by_table[entry["loot_table_id"]].append(entry)
+
+        for loot_table_id in sorted(rows_by_table):
+            entries = rows_by_table[loot_table_id]
+            if loot_table_id in current_no_match_set:
+                valid_mapped_rows = [
+                    row
+                    for row in entries
+                    if row["status"] == "mapped" and row["structure_id"] in structure_lookup
+                ]
+                rows_to_keep = [row for row in entries if row["status"] != "unresolved" or not valid_mapped_rows]
+                if not rows_to_keep:
+                    rows_to_keep = [
+                        {
+                            "loot_table_id": loot_table_id,
+                            "status": "unresolved",
+                            "structure_id": "",
+                            "notes": "",
+                        }
+                    ]
+                final_entries.extend(rows_to_keep)
+                rows_by_table[loot_table_id] = rows_to_keep
+                continue
+
+            stale_rows.extend(entries)
+            final_entries.extend(entries)
+            for entry in entries:
+                if entry["status"] == "mapped" and entry["structure_id"]:
+                    warning = (
+                        "stale manual no-match mapping skipped for "
+                        f"{entry['loot_table_id']} -> {entry['structure_id']}"
+                    )
+                    warnings.append(warning)
+                    skipped_active_stale_rows.append(
+                        {
+                            "resolution_source": "manual_no_match",
+                            "loot_table_id": entry["loot_table_id"],
+                            "structure_id": entry["structure_id"],
+                            "warning": warning,
+                        }
+                    )
+
+        for loot_table_id in current_no_match_table_ids:
+            if loot_table_id in rows_by_table:
+                continue
+            unresolved = {
+                "loot_table_id": loot_table_id,
+                "status": "unresolved",
+                "structure_id": "",
+                "notes": "",
+            }
+            final_entries.append(unresolved)
+            rows_by_table[loot_table_id] = [unresolved]
+
+        self._write_structure_manual_resolution_yaml(
+            sorted(final_entries, key=lambda row: (row["loot_table_id"], row["status"], row["structure_id"]))
+        )
+
+        active_link_rows: list[dict[str, Any]] = []
         audit_rows: list[dict[str, Any]] = []
-        for (structure_set_id, structure_id), detected_links in sorted(detected_links_by_pair.items()):
+        mapped_table_ids: set[str] = set()
+        unresolved_table_ids: set[str] = set()
+        unresolved_row_count = 0
+        named_table_set = set(self.named_table_ids)
+
+        for loot_table_id in current_no_match_table_ids:
+            entries = rows_by_table.get(loot_table_id, [])
+            has_valid_mapped = False
+            for row in entries:
+                if row["status"] == "mapped" and row["structure_id"]:
+                    if row["structure_id"] not in structure_lookup:
+                        warning = (
+                            "manual no-match mapping target missing from current active structures for "
+                            f"{row['loot_table_id']} -> {row['structure_id']}"
+                        )
+                        warnings.append(warning)
+                        skipped_active_stale_rows.append(
+                            {
+                                "resolution_source": "manual_no_match",
+                                "loot_table_id": row["loot_table_id"],
+                                "structure_id": row["structure_id"],
+                                "warning": warning,
+                            }
+                        )
+                        audit_rows.append(
+                            {
+                                "structure_id": row["structure_id"],
+                                "loot_table_id": row["loot_table_id"],
+                                "candidate_source": "manual_no_match",
+                                "candidate_method": "manual_resolution_map",
+                                "resolution": "skipped_stale_manual_no_match",
+                                "notes": row["notes"] or warning,
+                            }
+                        )
+                        continue
+                    has_valid_mapped = True
+                    mapped_table_ids.add(loot_table_id)
+                    active_link_rows.append(
+                        {
+                            "structure_id": row["structure_id"],
+                            "loot_table_id": row["loot_table_id"],
+                            "is_in_stage1_loot_scope": "true" if row["loot_table_id"] in named_table_set else "false",
+                            "link_source": "manual_no_match",
+                            "link_method": "manual_resolution_map",
+                            "notes": row["notes"],
+                        }
+                    )
+                    audit_rows.append(
+                        {
+                            "structure_id": row["structure_id"],
+                            "loot_table_id": row["loot_table_id"],
+                            "candidate_source": "manual_no_match",
+                            "candidate_method": "manual_resolution_map",
+                            "resolution": "active_manual_no_match",
+                            "notes": row["notes"],
+                        }
+                    )
+
+            if has_valid_mapped:
+                continue
+
+            unresolved_rows = [row for row in entries if row["status"] == "unresolved" and not row["structure_id"]]
+            if unresolved_rows:
+                unresolved_table_ids.add(loot_table_id)
+                unresolved_row_count += len(unresolved_rows)
+                for row in unresolved_rows:
+                    audit_rows.append(
+                        {
+                            "structure_id": "",
+                            "loot_table_id": row["loot_table_id"],
+                            "candidate_source": "manual_no_match",
+                            "candidate_method": "manual_resolution_map",
+                            "resolution": "pending_manual_no_match",
+                            "notes": row["notes"],
+                        }
+                    )
+
+        return {
+            "active_link_rows": active_link_rows,
+            "audit_rows": audit_rows,
+            "stale_rows": stale_rows,
+            "skipped_active_stale_rows": skipped_active_stale_rows,
+            "warnings": warnings,
+            "mapped_table_count": len(mapped_table_ids),
+            "unresolved_table_count": len(unresolved_table_ids),
+            "unresolved_row_count": unresolved_row_count,
+        }
+
+    def _build_structure_outputs(self) -> None:
+        all_loot_table_ids = self._collect_effective_resource_ids("loot_table", ".json")
+        all_template_pool_ids = self._collect_effective_resource_ids("worldgen/template_pool", ".json")
+        stage1_table_ids = set(self.named_table_ids)
+        active_structure_set_ids_by_structure = self._collect_active_structure_set_ids_by_structure()
+        structure_root_overrides = self._load_structure_root_map_entries()
+        available_structure_roots: dict[str, set[str]] = defaultdict(set)
+        for resource_path in sorted(self.effective_resources):
+            if get_resource_family(resource_path) != "structure" or not resource_path.endswith(".nbt"):
+                continue
+            source_object = get_structure_source_object(resource_path)
+            root_key = get_structure_family_from_source_object(source_object)
+            if root_key:
+                available_structure_roots[root_key].add(source_object)
+
+        structure_lookup: dict[str, dict[str, Any]] = {}
+        structure_root_index: dict[str, set[str]] = defaultdict(set)
+        exact_link_rows: dict[tuple[str, str], dict[str, Any]] = {}
+        audit_rows: list[dict[str, Any]] = []
+
+        for structure_id in sorted(active_structure_set_ids_by_structure):
+            structure_resource_path = structure_id_to_resource_path(structure_id)
+            structure_effective = self.effective_resources.get(structure_resource_path)
+            structure_type = ""
+            structure_pack_id = ""
+            structure_source_path = ""
+            if structure_effective is not None:
+                structure_pack_id = structure_effective.pack.pack_id
+                structure_source_path = structure_effective.display_source_path()
+                try:
+                    raw_structure = ensure_dict(
+                        json.loads(read_pack_text(structure_effective.pack, structure_resource_path)),
+                        structure_source_path,
+                    )
+                    structure_type = self._string_or_blank(raw_structure.get("type"))
+                except Exception:
+                    structure_type = ""
+
+            exact_status, detected_links = self._detect_structure_links_for_entry(
+                structure_id=structure_id,
+                all_loot_table_ids=all_loot_table_ids,
+                all_template_pool_ids=all_template_pool_ids,
+            )
+            owned_roots = self._owned_structure_roots(structure_id, structure_root_overrides)
+            root_match_eligible = (
+                exact_status not in {"missing_structure_resource", "invalid_structure_json"}
+                and any(root_key in available_structure_roots for root_key in owned_roots)
+            )
+            for root_key in owned_roots:
+                if root_key in available_structure_roots:
+                    structure_root_index[root_key].add(structure_id)
+
+            structure_lookup[structure_id] = {
+                "structure_id": structure_id,
+                "structure_type": structure_type,
+                "structure_pack_id": structure_pack_id,
+                "structure_source_path": structure_source_path,
+                "active_structure_set_count": len(active_structure_set_ids_by_structure[structure_id]),
+                "active_structure_set_ids_json": json_cell(sorted(active_structure_set_ids_by_structure[structure_id])),
+                "structure_detection_status": self._build_structure_detection_status(
+                    exact_status=exact_status,
+                    structure_type=structure_type,
+                    root_match_eligible=root_match_eligible,
+                ),
+            }
+
             for loot_table_id, detected in sorted(detected_links.items()):
-                key = (structure_set_id, structure_id, loot_table_id)
-                exact_link_rows[key] = {
-                    "structure_set_id": structure_set_id,
+                exact_link_rows[(structure_id, loot_table_id)] = {
                     "structure_id": structure_id,
                     "loot_table_id": loot_table_id,
                     "is_in_stage1_loot_scope": "true" if loot_table_id in stage1_table_ids else "false",
-                    "link_source": "detected_from_data",
+                    "link_source": "exact_match",
                     "link_method": detected["method"],
                     "notes": detected["notes"],
                 }
                 audit_rows.append(
                     {
-                        "structure_set_id": structure_set_id,
                         "structure_id": structure_id,
                         "loot_table_id": loot_table_id,
-                        "candidate_source": "detected_from_data",
+                        "candidate_source": "exact_match",
                         "candidate_method": detected["method"],
-                        "resolution": "active_detected_exact_match",
+                        "resolution": "active_exact_match",
                         "notes": detected["notes"],
                     }
                 )
 
-        ambiguous_candidates = self._collect_ambiguous_match_candidates(
-            structure_entry_lookup=structure_entry_lookup,
+        ambiguous_candidates = self._collect_structure_root_ambiguous_candidates(
+            structure_lookup=structure_lookup,
             exact_link_keys=set(exact_link_rows),
+            structure_root_index=structure_root_index,
+            available_structure_roots=available_structure_roots,
         )
-        ambiguous_result = self._sync_ambiguous_resolution_entries(
+        ambiguous_result = self._sync_structure_ambiguous_resolution_entries(
             current_candidates=ambiguous_candidates,
-            structure_entry_lookup=structure_entry_lookup,
+            structure_lookup=structure_lookup,
         )
         audit_rows.extend(ambiguous_result["audit_rows"])
 
-        exact_match_table_ids = {key[2] for key in exact_link_rows}
-        ambiguous_match_table_ids = {key[0] for key in ambiguous_candidates}
+        exact_match_table_ids = {loot_table_id for _structure_id, loot_table_id in exact_link_rows}
+        ambiguous_match_table_ids = {loot_table_id for loot_table_id, _structure_id in ambiguous_candidates}
         no_match_table_ids = sorted(stage1_table_ids - exact_match_table_ids - ambiguous_match_table_ids)
 
-        manual_result = self._sync_manual_resolution_entries(
+        manual_result = self._sync_structure_manual_resolution_entries(
             current_no_match_table_ids=no_match_table_ids,
-            structure_entry_lookup=structure_entry_lookup,
+            structure_lookup=structure_lookup,
         )
         audit_rows.extend(manual_result["audit_rows"])
 
-        link_rows: list[dict[str, Any]] = []
-        link_rows.extend(exact_link_rows.values())
-        link_rows.extend(ambiguous_result["active_link_rows"])
-        link_rows.extend(manual_result["active_link_rows"])
-
-        for row in sorted(
+        link_rows = list(exact_link_rows.values()) + ambiguous_result["active_link_rows"] + manual_result["active_link_rows"]
+        self.structure_rows = sorted(structure_lookup.values(), key=lambda row: row["structure_id"])
+        self.structure_loot_link_rows = sorted(
             link_rows,
-            key=lambda value: (value["structure_set_id"], value["structure_id"], value["loot_table_id"]),
-        ):
-            pair_key = (row["structure_set_id"], row["structure_id"])
-            pair_profile = profile_state[pair_key]
-            loot_table_id = row["loot_table_id"]
-            pair_profile["base_loot_table_ids"].add(loot_table_id)
-            if row["link_source"] == "detected_from_data":
-                pair_profile["detected_active_link_count"] += 1
-            else:
-                pair_profile["manual_active_link_count"] += 1
-            if row["is_in_stage1_loot_scope"] != "true":
-                pair_profile["out_of_scope_loot_table_count"] += 1
-
-            for item_id in sorted(base_items_by_table.get(loot_table_id, set())):
-                pair_profile["base_items"].add(item_id)
-                pair_profile["effective_items"].add(item_id)
-                presence_key = (row["structure_set_id"], row["structure_id"], item_id)
-                base_state = base_presence_state.setdefault(presence_key, {"source_loot_table_ids": set()})
-                base_state["source_loot_table_ids"].add(loot_table_id)
-
-                effective_state = effective_presence_state.setdefault(
-                    presence_key,
-                    {"base_loot_table_ids": set(), "stage2_modifier_ids": set()},
-                )
-                effective_state["base_loot_table_ids"].add(loot_table_id)
-
-            for item_id, modifier_ids in modifier_items_by_target.get(loot_table_id, {}).items():
-                pair_profile["effective_items"].add(item_id)
-                pair_profile["stage2_added_items"].add(item_id)
-                presence_key = (row["structure_set_id"], row["structure_id"], item_id)
-                effective_state = effective_presence_state.setdefault(
-                    presence_key,
-                    {"base_loot_table_ids": set(), "stage2_modifier_ids": set()},
-                )
-                effective_state["stage2_modifier_ids"].update(modifier_ids)
-
-        self.structure_set_entry_rows = structure_entry_rows
-        self.structure_set_loot_link_rows = sorted(
-            link_rows,
-            key=lambda row: (row["structure_set_id"], row["structure_id"], row["loot_table_id"]),
+            key=lambda row: (row["structure_id"], row["loot_table_id"]),
         )
-        self.structure_set_loot_link_audit_rows = sorted(
+        self.structure_loot_link_audit_rows = sorted(
             audit_rows,
             key=lambda row: (
-                row["structure_set_id"],
                 row["structure_id"],
                 row["loot_table_id"],
                 row["candidate_source"],
@@ -3044,59 +3377,26 @@ class LootStackExporter:
                 row["resolution"],
             ),
         )
-        self.structure_set_base_item_presence_rows = [
-            {
-                "structure_set_id": structure_set_id,
-                "structure_id": structure_id,
-                "item_id": item_id,
-                "source_loot_table_count": len(state["source_loot_table_ids"]),
-                "source_loot_table_ids_json": json_cell(sorted(state["source_loot_table_ids"])),
-            }
-            for (structure_set_id, structure_id, item_id), state in sorted(base_presence_state.items())
-        ]
-        self.structure_set_effective_item_presence_rows = [
-            {
-                "structure_set_id": structure_set_id,
-                "structure_id": structure_id,
-                "item_id": item_id,
-                "item_presence_kind": (
-                    "base_and_stage2"
-                    if state["base_loot_table_ids"] and state["stage2_modifier_ids"]
-                    else "base_only"
-                    if state["base_loot_table_ids"]
-                    else "stage2_only"
-                ),
-                "base_loot_table_count": len(state["base_loot_table_ids"]),
-                "base_loot_table_ids_json": json_cell(sorted(state["base_loot_table_ids"])),
-                "stage2_modifier_count": len(state["stage2_modifier_ids"]),
-                "stage2_modifier_ids_json": json_cell(sorted(state["stage2_modifier_ids"])),
-            }
-            for (structure_set_id, structure_id, item_id), state in sorted(effective_presence_state.items())
-        ]
-        self.structure_set_profile_summary_rows = [
-            {
-                "structure_set_id": structure_set_id,
-                "structure_id": structure_id,
-                "base_loot_table_count": len(state["base_loot_table_ids"]),
-                "manual_active_link_count": state["manual_active_link_count"],
-                "detected_active_link_count": state["detected_active_link_count"],
-                "out_of_scope_loot_table_count": state["out_of_scope_loot_table_count"],
-                "base_unique_item_count": len(state["base_items"]),
-                "effective_unique_item_count": len(state["effective_items"]),
-                "stage2_added_unique_item_count": len(state["stage2_added_items"]),
-            }
-            for (structure_set_id, structure_id), state in sorted(profile_state.items())
-        ]
         self.structure_loot_resolution_report = {
-            "exact_match_count": len(exact_link_rows),
-            "ambiguous_match_candidate_count": len(ambiguous_candidates),
-            "ambiguous_match_autoresolved_count": len(ambiguous_result["active_link_rows"]),
-            "ambiguous_match_pending_count": sum(
+            "exact_match_table_count": len(exact_match_table_ids),
+            "exact_match_row_count": len(exact_link_rows),
+            "ambiguous_match_candidate_table_count": len(ambiguous_match_table_ids),
+            "ambiguous_match_candidate_row_count": len(ambiguous_candidates),
+            "ambiguous_match_autoresolved_table_count": len(
+                {row["loot_table_id"] for row in ambiguous_result["active_link_rows"]}
+            ),
+            "ambiguous_match_autoresolved_row_count": len(ambiguous_result["active_link_rows"]),
+            "ambiguous_match_pending_table_count": len(
+                {row["loot_table_id"] for row in ambiguous_result["current_rows"] if not parse_boolish(row.get("autoresolve"))}
+            ),
+            "ambiguous_match_pending_row_count": sum(
                 1 for row in ambiguous_result["current_rows"] if not parse_boolish(row.get("autoresolve"))
             ),
-            "no_match_count": len(no_match_table_ids),
-            "no_match_mapped_count": manual_result["mapped_table_count"],
-            "no_match_unresolved_count": manual_result["unresolved_table_count"],
+            "no_match_table_count": len(no_match_table_ids),
+            "no_match_mapped_table_count": manual_result["mapped_table_count"],
+            "no_match_mapped_row_count": len(manual_result["active_link_rows"]),
+            "no_match_unresolved_table_count": manual_result["unresolved_table_count"],
+            "no_match_unresolved_row_count": manual_result["unresolved_row_count"],
             "stale_ambiguous_rows": ambiguous_result["stale_rows"],
             "stale_manual_rows": manual_result["stale_rows"],
             "skipped_active_stale_rows": ambiguous_result["skipped_active_stale_rows"]
@@ -3112,425 +3412,12 @@ class LootStackExporter:
                 found.add(resource_id)
         return found
 
-    @staticmethod
-    def _ambiguous_candidate_priority(match_rule: str) -> int:
-        return {
-            "structure_family_candidate": 2,
-            "loose_table_candidate": 1,
-        }.get(match_rule, 0)
-
-    def _collect_ambiguous_match_candidates(
-        self,
-        *,
-        structure_entry_lookup: dict[tuple[str, str], dict[str, Any]],
-        exact_link_keys: set[tuple[str, str, str]],
-    ) -> dict[tuple[str, str, str], dict[str, Any]]:
-        candidates: dict[tuple[str, str, str], dict[str, Any]] = {}
-        named_table_set = set(self.named_table_ids)
-
-        structure_entries_by_type: dict[str, list[tuple[str, str]]] = defaultdict(list)
-        for (structure_set_id, structure_id), row in sorted(structure_entry_lookup.items()):
-            structure_type = self._string_or_blank(row.get("structure_type")).strip()
-            if structure_type:
-                structure_entries_by_type[structure_type].append((structure_set_id, structure_id))
-
-        evidence_state: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
-        for row in self.table_role_evidence_rows:
-            if row["evidence_type"] != STRUCTURE_EVIDENCE_TYPE:
-                continue
-            loot_table_id = row["table_id"]
-            if loot_table_id not in named_table_set:
-                continue
-            family = get_structure_family_from_source_object(self._string_or_blank(row.get("source_object")))
-            if family in STRUCTURE_FAMILY_TYPE_REGISTRY:
-                evidence_state[loot_table_id][family].add(self._string_or_blank(row.get("source_object")))
-
-        for loot_table_id, family_map in sorted(evidence_state.items()):
-            for family, source_objects in sorted(family_map.items()):
-                structure_type = STRUCTURE_FAMILY_TYPE_REGISTRY[family]
-                for structure_set_id, structure_id in structure_entries_by_type.get(structure_type, []):
-                    key = (loot_table_id, structure_set_id, structure_id)
-                    if (structure_set_id, structure_id, loot_table_id) in exact_link_keys:
-                        continue
-                    candidate = {
-                        "loot_table_id": loot_table_id,
-                        "structure_set_id": structure_set_id,
-                        "structure_id": structure_id,
-                        "match_rule": "structure_family_candidate",
-                        "evidence_kind": "structure_nbt_family",
-                        "evidence_data": {
-                            "family": family,
-                            "source_object_count": len(source_objects),
-                            "source_objects": sorted(source_objects),
-                        },
-                        "autoresolve": False,
-                        "notes": "",
-                    }
-                    existing = candidates.get(key)
-                    if existing is None or self._ambiguous_candidate_priority(candidate["match_rule"]) > self._ambiguous_candidate_priority(existing["match_rule"]):
-                        candidates[key] = candidate
-                    elif existing["match_rule"] == candidate["match_rule"]:
-                        merged_objects = sorted(
-                            set(existing["evidence_data"].get("source_objects", [])) | set(candidate["evidence_data"]["source_objects"])
-                        )
-                        existing["evidence_data"]["source_objects"] = merged_objects
-                        existing["evidence_data"]["source_object_count"] = len(merged_objects)
-
-        for loot_table_id, raw_targets in sorted(LOOSE_TABLE_CANDIDATE_REGISTRY.items()):
-            if loot_table_id not in named_table_set:
-                continue
-            for structure_set_id, structure_id in raw_targets:
-                if (structure_set_id, structure_id) not in structure_entry_lookup:
-                    continue
-                if (structure_set_id, structure_id, loot_table_id) in exact_link_keys:
-                    continue
-                key = (loot_table_id, structure_set_id, structure_id)
-                candidate = {
-                    "loot_table_id": loot_table_id,
-                    "structure_set_id": structure_set_id,
-                    "structure_id": structure_id,
-                    "match_rule": "loose_table_candidate",
-                    "evidence_kind": "curated_table_lookup",
-                    "evidence_data": {
-                        "registry_key": loot_table_id,
-                        "candidate_count": len(raw_targets),
-                    },
-                    "autoresolve": False,
-                    "notes": "",
-                }
-                existing = candidates.get(key)
-                if existing is None or self._ambiguous_candidate_priority(candidate["match_rule"]) > self._ambiguous_candidate_priority(existing["match_rule"]):
-                    candidates[key] = candidate
-
-        return dict(sorted(candidates.items()))
-
     def _load_yaml_entries(self, path: Path) -> list[dict[str, Any]]:
         if not path.exists():
             return []
         raw_data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         raw_entries = ensure_list(raw_data.get("entries"), f"{path}.entries")
         return [entry for entry in raw_entries if isinstance(entry, dict)]
-
-    def _normalize_ambiguous_resolution_entry(self, raw_entry: dict[str, Any]) -> dict[str, Any]:
-        return {
-            "loot_table_id": self._string_or_blank(raw_entry.get("loot_table_id")).strip(),
-            "structure_set_id": self._string_or_blank(raw_entry.get("structure_set_id")).strip(),
-            "structure_id": self._string_or_blank(raw_entry.get("structure_id")).strip(),
-            "match_rule": self._string_or_blank(raw_entry.get("match_rule")).strip(),
-            "evidence_kind": self._string_or_blank(raw_entry.get("evidence_kind")).strip(),
-            "evidence_data": raw_entry.get("evidence_data") if isinstance(raw_entry.get("evidence_data"), dict) else {},
-            "autoresolve": parse_boolish(raw_entry.get("autoresolve")),
-            "notes": self._string_or_blank(raw_entry.get("notes")).strip(),
-        }
-
-    def _write_ambiguous_resolution_yaml(self, entries: list[dict[str, Any]]) -> None:
-        write_yaml_with_header(
-            self.ambiguous_resolution_config_path,
-            header_lines=AMBIGUOUS_RESOLUTION_YAML_HEADER,
-            payload={"version": 1, "entries": entries},
-        )
-
-    def _sync_ambiguous_resolution_entries(
-        self,
-        *,
-        current_candidates: dict[tuple[str, str, str], dict[str, Any]],
-        structure_entry_lookup: dict[tuple[str, str], dict[str, Any]],
-    ) -> dict[str, Any]:
-        existing_entries = [
-            self._normalize_ambiguous_resolution_entry(row)
-            for row in self._load_yaml_entries(self.ambiguous_resolution_config_path)
-        ]
-        seen_keys: set[tuple[str, str, str]] = set()
-        final_entries: list[dict[str, Any]] = []
-        current_rows: list[dict[str, Any]] = []
-        active_link_rows: list[dict[str, Any]] = []
-        audit_rows: list[dict[str, Any]] = []
-        stale_rows: list[dict[str, Any]] = []
-        skipped_active_stale_rows: list[dict[str, Any]] = []
-        warnings: list[str] = []
-
-        for existing in existing_entries:
-            key = (existing["loot_table_id"], existing["structure_set_id"], existing["structure_id"])
-            if key in current_candidates:
-                current = current_candidates[key]
-                merged = {
-                    **current,
-                    "autoresolve": existing["autoresolve"],
-                    "notes": existing["notes"],
-                }
-                final_entries.append(merged)
-                current_rows.append(merged)
-                seen_keys.add(key)
-                continue
-            final_entries.append(existing)
-            stale_rows.append(existing)
-            if existing["autoresolve"]:
-                warning = (
-                    "stale ambiguous autoresolve skipped for "
-                    f"{existing['loot_table_id']} -> {existing['structure_set_id']} / {existing['structure_id']}"
-                )
-                warnings.append(warning)
-                skipped_active_stale_rows.append(
-                    {
-                        "resolution_source": "ambiguous_match",
-                        "loot_table_id": existing["loot_table_id"],
-                        "structure_set_id": existing["structure_set_id"],
-                        "structure_id": existing["structure_id"],
-                        "warning": warning,
-                    }
-                )
-                audit_rows.append(
-                    {
-                        "structure_set_id": existing["structure_set_id"],
-                        "structure_id": existing["structure_id"],
-                        "loot_table_id": existing["loot_table_id"],
-                        "candidate_source": "ambiguous_match",
-                        "candidate_method": existing["match_rule"],
-                        "resolution": "skipped_stale_ambiguous_autoresolve",
-                        "notes": existing["notes"] or warning,
-                    }
-                )
-
-        for key, current in current_candidates.items():
-            if key in seen_keys:
-                continue
-            final_entries.append(current)
-            current_rows.append(current)
-
-        self._write_ambiguous_resolution_yaml(final_entries)
-
-        named_table_set = set(self.named_table_ids)
-        for row in current_rows:
-            if parse_boolish(row.get("autoresolve")):
-                if (row["structure_set_id"], row["structure_id"]) not in structure_entry_lookup:
-                    warning = (
-                        "ambiguous autoresolve target missing from current structure set entries for "
-                        f"{row['loot_table_id']} -> {row['structure_set_id']} / {row['structure_id']}"
-                    )
-                    warnings.append(warning)
-                    skipped_active_stale_rows.append(
-                        {
-                            "resolution_source": "ambiguous_match",
-                            "loot_table_id": row["loot_table_id"],
-                            "structure_set_id": row["structure_set_id"],
-                            "structure_id": row["structure_id"],
-                            "warning": warning,
-                        }
-                    )
-                    audit_rows.append(
-                        {
-                            "structure_set_id": row["structure_set_id"],
-                            "structure_id": row["structure_id"],
-                            "loot_table_id": row["loot_table_id"],
-                            "candidate_source": "ambiguous_match",
-                            "candidate_method": row["match_rule"],
-                            "resolution": "skipped_stale_ambiguous_autoresolve",
-                            "notes": row["notes"] or warning,
-                        }
-                    )
-                    continue
-                active_link_rows.append(
-                    {
-                        "structure_set_id": row["structure_set_id"],
-                        "structure_id": row["structure_id"],
-                        "loot_table_id": row["loot_table_id"],
-                        "is_in_stage1_loot_scope": "true" if row["loot_table_id"] in named_table_set else "false",
-                        "link_source": "ambiguous_match",
-                        "link_method": row["match_rule"],
-                        "notes": row["notes"] or f"{row['evidence_kind']}:{json_cell(row['evidence_data'])}",
-                    }
-                )
-                audit_rows.append(
-                    {
-                        "structure_set_id": row["structure_set_id"],
-                        "structure_id": row["structure_id"],
-                        "loot_table_id": row["loot_table_id"],
-                        "candidate_source": "ambiguous_match",
-                        "candidate_method": row["match_rule"],
-                        "resolution": "active_ambiguous_autoresolve",
-                        "notes": row["notes"],
-                    }
-                )
-            else:
-                audit_rows.append(
-                    {
-                        "structure_set_id": row["structure_set_id"],
-                        "structure_id": row["structure_id"],
-                        "loot_table_id": row["loot_table_id"],
-                        "candidate_source": "ambiguous_match",
-                        "candidate_method": row["match_rule"],
-                        "resolution": "pending_ambiguous_match",
-                        "notes": row["notes"],
-                    }
-                )
-
-        return {
-            "current_rows": current_rows,
-            "active_link_rows": active_link_rows,
-            "audit_rows": audit_rows,
-            "stale_rows": stale_rows,
-            "skipped_active_stale_rows": skipped_active_stale_rows,
-            "warnings": warnings,
-        }
-
-    def _normalize_manual_resolution_entry(self, raw_entry: dict[str, Any]) -> dict[str, Any]:
-        return {
-            "loot_table_id": self._string_or_blank(raw_entry.get("loot_table_id")).strip(),
-            "status": self._string_or_blank(raw_entry.get("status")).strip(),
-            "structure_set_id": self._string_or_blank(raw_entry.get("structure_set_id")).strip(),
-            "structure_id": self._string_or_blank(raw_entry.get("structure_id")).strip(),
-            "notes": self._string_or_blank(raw_entry.get("notes")).strip(),
-        }
-
-    def _write_manual_resolution_yaml(self, entries: list[dict[str, Any]]) -> None:
-        write_yaml_with_header(
-            self.manual_resolution_config_path,
-            header_lines=MANUAL_RESOLUTION_YAML_HEADER,
-            payload={"version": 1, "entries": entries},
-        )
-
-    def _sync_manual_resolution_entries(
-        self,
-        *,
-        current_no_match_table_ids: list[str],
-        structure_entry_lookup: dict[tuple[str, str], dict[str, Any]],
-    ) -> dict[str, Any]:
-        current_no_match_set = set(current_no_match_table_ids)
-        existing_entries = [
-            self._normalize_manual_resolution_entry(row)
-            for row in self._load_yaml_entries(self.manual_resolution_config_path)
-        ]
-        rows_by_table: dict[str, list[dict[str, Any]]] = defaultdict(list)
-        stale_rows: list[dict[str, Any]] = []
-        skipped_active_stale_rows: list[dict[str, Any]] = []
-        warnings: list[str] = []
-
-        for entry in existing_entries:
-            rows_by_table[entry["loot_table_id"]].append(entry)
-            if entry["loot_table_id"] not in current_no_match_set:
-                stale_rows.append(entry)
-                if entry["status"] == "mapped" and entry["structure_set_id"] and entry["structure_id"]:
-                    warning = (
-                        "stale manual no-match mapping skipped for "
-                        f"{entry['loot_table_id']} -> {entry['structure_set_id']} / {entry['structure_id']}"
-                    )
-                    warnings.append(warning)
-                    skipped_active_stale_rows.append(
-                        {
-                            "resolution_source": "manual_no_match",
-                            "loot_table_id": entry["loot_table_id"],
-                            "structure_set_id": entry["structure_set_id"],
-                            "structure_id": entry["structure_id"],
-                            "warning": warning,
-                        }
-                    )
-
-        final_entries = list(existing_entries)
-        for loot_table_id in current_no_match_table_ids:
-            existing = rows_by_table.get(loot_table_id, [])
-            has_unresolved = any(
-                row["status"] == "unresolved" and not row["structure_set_id"] and not row["structure_id"]
-                for row in existing
-            )
-            valid_mapped_rows = [
-                row
-                for row in existing
-                if row["status"] == "mapped"
-                and row["structure_set_id"]
-                and row["structure_id"]
-                and (row["structure_set_id"], row["structure_id"]) in structure_entry_lookup
-            ]
-            if not existing or (not has_unresolved and not valid_mapped_rows):
-                unresolved = {
-                    "loot_table_id": loot_table_id,
-                    "status": "unresolved",
-                    "structure_set_id": "",
-                    "structure_id": "",
-                    "notes": "",
-                }
-                final_entries.append(unresolved)
-                rows_by_table[loot_table_id].append(unresolved)
-
-        self._write_manual_resolution_yaml(final_entries)
-
-        active_link_rows: list[dict[str, Any]] = []
-        audit_rows: list[dict[str, Any]] = []
-        mapped_table_ids: set[str] = set()
-        unresolved_table_ids: set[str] = set()
-        named_table_set = set(self.named_table_ids)
-
-        for loot_table_id in current_no_match_table_ids:
-            entries = rows_by_table.get(loot_table_id, [])
-            if any(
-                row["status"] == "unresolved" and not row["structure_set_id"] and not row["structure_id"]
-                for row in entries
-            ):
-                unresolved_table_ids.add(loot_table_id)
-
-            for row in entries:
-                if row["status"] != "mapped" or not row["structure_set_id"] or not row["structure_id"]:
-                    continue
-                pair_key = (row["structure_set_id"], row["structure_id"])
-                if pair_key not in structure_entry_lookup:
-                    warning = (
-                        "manual no-match mapping target missing from current structure set entries for "
-                        f"{row['loot_table_id']} -> {row['structure_set_id']} / {row['structure_id']}"
-                    )
-                    warnings.append(warning)
-                    skipped_active_stale_rows.append(
-                        {
-                            "resolution_source": "manual_no_match",
-                            "loot_table_id": row["loot_table_id"],
-                            "structure_set_id": row["structure_set_id"],
-                            "structure_id": row["structure_id"],
-                            "warning": warning,
-                        }
-                    )
-                    audit_rows.append(
-                        {
-                            "structure_set_id": row["structure_set_id"],
-                            "structure_id": row["structure_id"],
-                            "loot_table_id": row["loot_table_id"],
-                            "candidate_source": "manual_no_match",
-                            "candidate_method": "manual_resolution_map",
-                            "resolution": "skipped_stale_manual_no_match",
-                            "notes": row["notes"] or warning,
-                        }
-                    )
-                    continue
-                mapped_table_ids.add(loot_table_id)
-                active_link_rows.append(
-                    {
-                        "structure_set_id": row["structure_set_id"],
-                        "structure_id": row["structure_id"],
-                        "loot_table_id": row["loot_table_id"],
-                        "is_in_stage1_loot_scope": "true" if row["loot_table_id"] in named_table_set else "false",
-                        "link_source": "manual_no_match",
-                        "link_method": "manual_resolution_map",
-                        "notes": row["notes"],
-                    }
-                )
-                audit_rows.append(
-                    {
-                        "structure_set_id": row["structure_set_id"],
-                        "structure_id": row["structure_id"],
-                        "loot_table_id": row["loot_table_id"],
-                        "candidate_source": "manual_no_match",
-                        "candidate_method": "manual_resolution_map",
-                        "resolution": "active_manual_no_match",
-                        "notes": row["notes"],
-                    }
-                )
-
-        return {
-            "active_link_rows": active_link_rows,
-            "audit_rows": audit_rows,
-            "stale_rows": stale_rows,
-            "skipped_active_stale_rows": skipped_active_stale_rows,
-            "warnings": warnings,
-            "mapped_table_count": len(mapped_table_ids),
-            "unresolved_table_count": len(unresolved_table_ids),
-        }
 
     def _detect_structure_links_for_entry(
         self,
@@ -3688,7 +3575,7 @@ class LootStackExporter:
         for loot_table_id in sorted(loot_ids):
             detected_links.setdefault(
                 loot_table_id,
-                {"method": "jigsaw_start_pool_traversal", "notes": template_id},
+                {"method": "exact_jigsaw_template_scan", "notes": template_id},
             )
 
         processors_value = raw_element.get("processors")
@@ -3701,7 +3588,7 @@ class LootStackExporter:
             for loot_table_id in sorted(processor_loot_ids):
                 detected_links.setdefault(
                     loot_table_id,
-                    {"method": "jigsaw_processor_assignment", "notes": processor_id},
+                    {"method": "exact_jigsaw_processor_assignment", "notes": processor_id},
                 )
 
         for next_pool_id in sorted(next_pool_ids):
@@ -3937,12 +3824,9 @@ class LootStackExporter:
             "item_classification_count": len(self.item_classification_rows),
             "item_affinity_count": len(self.item_affinity_rows),
             "classification_coverage_count": len(self.classification_coverage_rows),
-            "structure_set_entry_count": len(self.structure_set_entry_rows),
-            "structure_set_loot_link_count": len(self.structure_set_loot_link_rows),
-            "structure_set_loot_link_audit_count": len(self.structure_set_loot_link_audit_rows),
-            "structure_set_base_item_presence_count": len(self.structure_set_base_item_presence_rows),
-            "structure_set_effective_item_presence_count": len(self.structure_set_effective_item_presence_rows),
-            "structure_set_profile_summary_count": len(self.structure_set_profile_summary_rows),
+            "structure_count": len(self.structure_rows),
+            "structure_loot_link_count": len(self.structure_loot_link_rows),
+            "structure_loot_link_audit_count": len(self.structure_loot_link_audit_rows),
             "classified_loot_item_count": classified_loot_item_count,
             "missing_loot_item_count": missing_loot_item_count,
             "raw_role_counts": dict(sorted(self.raw_role_counts.items())),
@@ -3956,6 +3840,10 @@ class LootStackExporter:
         precheck_report: dict[str, Any],
     ) -> None:
         self.output_dir.mkdir(parents=True, exist_ok=True)
+        for retired_filename in RETIRED_STRUCTURE_OUTPUT_FILENAMES:
+            retired_path = self.output_dir / retired_filename
+            if retired_path.exists():
+                retired_path.unlink()
 
         self._write_csv(
             self.output_dir / "tables.csv",
@@ -4032,34 +3920,19 @@ class LootStackExporter:
             self.classification_coverage_rows,
         )
         self._write_csv(
-            self.output_dir / "structure_set_entries.csv",
-            STRUCTURE_SET_ENTRIES_FIELDNAMES,
-            self.structure_set_entry_rows,
+            self.output_dir / "structures.csv",
+            STRUCTURES_FIELDNAMES,
+            self.structure_rows,
         )
         self._write_csv(
-            self.output_dir / "structure_set_loot_links.csv",
-            STRUCTURE_SET_LOOT_LINKS_FIELDNAMES,
-            self.structure_set_loot_link_rows,
+            self.output_dir / "structure_loot_links.csv",
+            STRUCTURE_LOOT_LINKS_FIELDNAMES,
+            self.structure_loot_link_rows,
         )
         self._write_csv(
-            self.output_dir / "structure_set_loot_link_audit.csv",
-            STRUCTURE_SET_LOOT_LINK_AUDIT_FIELDNAMES,
-            self.structure_set_loot_link_audit_rows,
-        )
-        self._write_csv(
-            self.output_dir / "structure_set_base_item_presence.csv",
-            STRUCTURE_SET_BASE_ITEM_PRESENCE_FIELDNAMES,
-            self.structure_set_base_item_presence_rows,
-        )
-        self._write_csv(
-            self.output_dir / "structure_set_effective_item_presence.csv",
-            STRUCTURE_SET_EFFECTIVE_ITEM_PRESENCE_FIELDNAMES,
-            self.structure_set_effective_item_presence_rows,
-        )
-        self._write_csv(
-            self.output_dir / "structure_set_profile_summary.csv",
-            STRUCTURE_SET_PROFILE_SUMMARY_FIELDNAMES,
-            self.structure_set_profile_summary_rows,
+            self.output_dir / "structure_loot_link_audit.csv",
+            STRUCTURE_LOOT_LINK_AUDIT_FIELDNAMES,
+            self.structure_loot_link_audit_rows,
         )
 
         write_json(self.output_dir / "scope_report.json", scope_report)
@@ -4133,12 +4006,9 @@ class LootStackExporter:
             f"- Item classification rows: {manifest['item_classification_count']}",
             f"- Item affinity rows: {manifest['item_affinity_count']}",
             f"- Classification coverage rows: {manifest['classification_coverage_count']}",
-            f"- Structure-set entry rows: {manifest['structure_set_entry_count']}",
-            f"- Structure-set loot-link rows: {manifest['structure_set_loot_link_count']}",
-            f"- Structure-set loot-link audit rows: {manifest['structure_set_loot_link_audit_count']}",
-            f"- Structure-set base item presence rows: {manifest['structure_set_base_item_presence_count']}",
-            f"- Structure-set effective item presence rows: {manifest['structure_set_effective_item_presence_count']}",
-            f"- Structure-set profile summary rows: {manifest['structure_set_profile_summary_count']}",
+            f"- Structure rows: {manifest['structure_count']}",
+            f"- Structure loot-link rows: {manifest['structure_loot_link_count']}",
+            f"- Structure loot-link audit rows: {manifest['structure_loot_link_audit_count']}",
             f"- Classified loot items: {manifest['classified_loot_item_count']}",
             f"- Missing loot items: {manifest['missing_loot_item_count']}",
             "",
@@ -4164,12 +4034,9 @@ class LootStackExporter:
             "- `item_classification.csv`: one row per classified item_id sourced from the canonical resolved_loot export.",
             "- `item_affinities.csv`: one row per item_id plus affinity for relational Tableau joins.",
             "- `classification_coverage.csv`: one row per distinct loot item_id with classified-or-missing coverage status.",
-            "- `structure_set_entries.csv`: one row per effective structure_set entry with structure source metadata and dynamic mapping status.",
-            "- `structure_set_loot_links.csv`: one row per final structure_set entry plus loot_table_id link after exact-match detection, ambiguous autoresolve, and manual no-match mapping.",
-            "- `structure_set_loot_link_audit.csv`: audit trail for exact-match detections, ambiguous-match candidates, manual no-match mappings, and stale skipped rows.",
-            "- `structure_set_base_item_presence.csv`: one row per structure_set entry plus item_id showing worst-case base item presence from linked Stage 1 loot tables.",
-            "- `structure_set_effective_item_presence.csv`: one row per structure_set entry plus item_id including recognized Stage 2 modifier-added item presence.",
-            "- `structure_set_profile_summary.csv`: one row per structure_set entry summarizing linked loot tables and base/effective unique item counts.",
+            "- `structures.csv`: one row per active structure_id with source metadata, active structure-set provenance, and structure detection status.",
+            "- `structure_loot_links.csv`: one row per applied structure_id plus loot_table_id link after exact-match detection, ambiguous autoresolve, and manual no-match mapping.",
+            "- `structure_loot_link_audit.csv`: audit trail for exact-match detections, ambiguous-match candidates, manual no-match mappings, and stale skipped rows.",
             "- `scope_report.json`: allowed, excluded, and deferred top-level loot_table folder scope with warnings.",
             "- `manifest.json`: export counts for tables, pools, entries, references, and leaf rows.",
             "",
@@ -4183,9 +4050,7 @@ class LootStackExporter:
             "- `modifier_added_leaf_candidates.csv.item_id` joins to `item_classification.csv.item_id` for Stage 2 item traits.",
             "- `target_table_added_item_summary.csv.item_id` joins to `item_classification.csv.item_id` for Stage 2 added-item slicing.",
             "- `leaf_candidates.csv.item_id` joins to `item_classification.csv.item_id` for Stage 1.5 item traits.",
-            "- `structure_set_loot_links.csv.loot_table_id` joins to `tables.csv.table_id` for loot-table metadata when the linked table is in Stage 1 scope.",
-            "- `structure_set_base_item_presence.csv.item_id` joins to `item_classification.csv.item_id` for structure-level base item traits.",
-            "- `structure_set_effective_item_presence.csv.item_id` joins to `item_classification.csv.item_id` for modifier-aware structure item traits.",
+            "- `structure_loot_links.csv.loot_table_id` joins to `tables.csv.table_id` for loot-table metadata when the linked table is in Stage 1 scope.",
             "- `leaf_candidates.csv.root_table_id` joins to `table_role_summary.csv.table_id` for gameplay-source filtering.",
             "- `item_classification.csv.item_id` joins to `item_affinities.csv.item_id` for affinity slicing.",
             "- `classification_coverage.csv.item_id` joins to `item_classification.csv.item_id` for audit and completeness checks.",
@@ -4233,15 +4098,16 @@ class LootStackExporter:
             "- Stage 2 inventories NeoForge Global Loot Modifiers only. LootJS/KubeJS runtime mutations remain out of scope.",
             "- `glm_modifier_chain.csv` inventories every effective GLM in order, but detailed delta rows only exist for recognized inject/add-table semantics.",
             "- `modifier_added_leaf_candidates.csv` is a delta table, not a final runtime probability model. It shows what recognized modifiers add, not exact post-modifier odds.",
-            "- Structure-set entry profiles are presence-based, not frequency-based. They are intended for structure-generation balancing rather than final loot EV.",
+            "- Structure-based exports are keyed by active unique `structure_id`. Structure sets are used only internally to discover active structures.",
             "- Structure pairing is built from the final effective layered resource set after pack stacking, not from per-pack intermediate passes.",
             "- Exact-match links apply automatically from the conservative structure-side detector.",
             f"- Ambiguous-match candidates live in `{self.ambiguous_resolution_config_path}`. Review them there and set `autoresolve: true` only for the specific rows you want applied automatically.",
-            f"- No-match manual resolutions live in `{self.manual_resolution_config_path}`. Open the file, research unresolved rows, fill in `structure_set_id` and `structure_id`, then set `status: mapped`.",
+            f"- No-match manual resolutions live in `{self.manual_resolution_config_path}`. Open the file, research unresolved rows, fill in `structure_id`, then set `status: mapped`.",
+            f"- Structure root ownership overrides live in `{self.structure_root_map_config_path}`. Structures default to owning a root equal to their own path stem unless overridden there.",
             "- No suppressions are part of this workflow. If an exact detected link is wrong, the matching logic should be corrected instead of overridden.",
-            "- Automatic structure-to-loot mapping remains conservative: jigsaw start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, explicit structure-family candidate rules, and explicit curated loose table candidates.",
+            "- Automatic structure-to-loot mapping remains conservative: jigsaw start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, and structure-root-backed ambiguous candidates.",
             "- Non-jigsaw structures may still land in ambiguous-match or no-match until you confirm them through the resolution YAMLs.",
-            "- `structure_set_loot_links.csv` is the raw structure-to-loot-table layer, while `structure_set_effective_item_presence.csv` is the modifier-aware gameplay-facing structure item profile.",
+            "- `structure_loot_links.csv` is the raw structure-to-loot-table layer for this corrected first pass.",
             "- `resolved_loot_v*.csv` remains the canonical raw classification export, but its `affinities` field is a serialized list. Prefer `item_classification.csv` plus `item_affinities.csv` for Tableau.",
             "- `classification_coverage.csv` makes missing loot-item classifications explicit instead of silently dropping them.",
             "- `raw_role` keeps the conservative local-data provenance result; `effective_role` converts `unknown_directness` to `assumed_direct_for_tableau`.",
@@ -4263,6 +4129,7 @@ def export_loot_stack(
     classification_csv_path: Path | str | None = None,
     ambiguous_resolution_config_path: Path | str = DEFAULT_AMBIGUOUS_STRUCTURE_RESOLUTION_CONFIG,
     manual_resolution_config_path: Path | str = DEFAULT_MANUAL_STRUCTURE_RESOLUTION_CONFIG,
+    structure_root_map_config_path: Path | str = DEFAULT_STRUCTURE_ROOT_MAP_CONFIG,
     mods_root: Path | str = DEFAULT_MODS_ROOT,
     ignore_roots: list[Path | str] | None = None,
     archive_roots: list[Path | str] | None = None,
@@ -4313,6 +4180,7 @@ def export_loot_stack(
         classification_csv_path=resolved_classification_path,
         ambiguous_resolution_config_path=Path(ambiguous_resolution_config_path),
         manual_resolution_config_path=Path(manual_resolution_config_path),
+        structure_root_map_config_path=Path(structure_root_map_config_path),
     )
     return exporter.export()
 
@@ -4331,6 +4199,7 @@ def main(argv: list[str] | None = None) -> int:
             classification_csv_path=args.classification_csv,
             ambiguous_resolution_config_path=args.ambiguous_structure_resolution_config,
             manual_resolution_config_path=args.manual_structure_resolution_config,
+            structure_root_map_config_path=args.structure_root_map_config,
         )
     except PrecheckFailed as exc:
         print(f"Precheck failed. Wrote {DEFAULT_PRECHECK_FILENAME} to {args.output_dir}")
