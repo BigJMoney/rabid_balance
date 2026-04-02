@@ -7,8 +7,13 @@ import tempfile
 import unittest
 from pathlib import Path
 
+import yaml
+
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+FIXTURES_DIR = PROJECT_ROOT / "scripts" / "test_fixtures"
+AMBIGUOUS_FIXTURE_PATH = FIXTURES_DIR / "structure_loot_ambiguous_resolution_map.yaml"
+MANUAL_FIXTURE_PATH = FIXTURES_DIR / "structure_loot_manual_resolution_map.yaml"
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
 import export_vanilla_loot_tables as exporter
@@ -19,15 +24,36 @@ def read_csv_rows(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
+def copy_resolution_map_fixtures(destination_root: Path) -> tuple[Path, Path]:
+    destination_root.mkdir(parents=True, exist_ok=True)
+    ambiguous_path = destination_root / "structure_loot_ambiguous_resolution_map.yaml"
+    manual_path = destination_root / "structure_loot_manual_resolution_map.yaml"
+    ambiguous_path.write_text(AMBIGUOUS_FIXTURE_PATH.read_text(encoding="utf-8"), encoding="utf-8")
+    manual_path.write_text(MANUAL_FIXTURE_PATH.read_text(encoding="utf-8"), encoding="utf-8")
+    return ambiguous_path, manual_path
+
+
 class ExportVanillaLootTablesTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.tempdir = tempfile.TemporaryDirectory()
         cls.output_dir = Path(cls.tempdir.name)
-        exporter.export_loot_tables(output_dir=cls.output_dir)
+        cls.ambiguous_resolution_path, cls.manual_resolution_path = copy_resolution_map_fixtures(Path(cls.tempdir.name))
+        exporter.export_loot_tables(
+            output_dir=cls.output_dir,
+            ambiguous_resolution_config_path=cls.ambiguous_resolution_path,
+            manual_resolution_config_path=cls.manual_resolution_path,
+        )
 
         cls.scope_report = json.loads((cls.output_dir / "scope_report.json").read_text(encoding="utf-8"))
         cls.manifest = json.loads((cls.output_dir / "manifest.json").read_text(encoding="utf-8"))
+        cls.structure_resolution_report = json.loads(
+            (cls.output_dir / "structure_loot_resolution_report.json").read_text(encoding="utf-8")
+        )
+        cls.ambiguous_resolution_text = cls.ambiguous_resolution_path.read_text(encoding="utf-8")
+        cls.manual_resolution_text = cls.manual_resolution_path.read_text(encoding="utf-8")
+        cls.ambiguous_resolution_map = yaml.safe_load(cls.ambiguous_resolution_text)
+        cls.manual_resolution_map = yaml.safe_load(cls.manual_resolution_text)
         cls.tables = read_csv_rows(cls.output_dir / "tables.csv")
         cls.pools = read_csv_rows(cls.output_dir / "pools.csv")
         cls.entries = read_csv_rows(cls.output_dir / "entries.csv")
@@ -37,6 +63,12 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         cls.item_classification = read_csv_rows(cls.output_dir / "item_classification.csv")
         cls.item_affinities = read_csv_rows(cls.output_dir / "item_affinities.csv")
         cls.classification_coverage = read_csv_rows(cls.output_dir / "classification_coverage.csv")
+        cls.structure_set_entries = read_csv_rows(cls.output_dir / "structure_set_entries.csv")
+        cls.structure_set_loot_links = read_csv_rows(cls.output_dir / "structure_set_loot_links.csv")
+        cls.structure_set_loot_link_audit = read_csv_rows(cls.output_dir / "structure_set_loot_link_audit.csv")
+        cls.structure_set_base_item_presence = read_csv_rows(cls.output_dir / "structure_set_base_item_presence.csv")
+        cls.structure_set_effective_item_presence = read_csv_rows(cls.output_dir / "structure_set_effective_item_presence.csv")
+        cls.structure_set_profile_summary = read_csv_rows(cls.output_dir / "structure_set_profile_summary.csv")
 
     @classmethod
     def tearDownClass(cls) -> None:
@@ -50,9 +82,21 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
             "leaf_candidates.csv",
             "table_role_summary.csv",
             "table_role_evidence.csv",
+            "glm_modifier_chain.csv",
+            "modifier_added_leaf_candidates.csv",
+            "target_table_modifier_summary.csv",
+            "target_table_added_item_summary.csv",
+            "stage2_report.json",
+            "structure_loot_resolution_report.json",
             "item_classification.csv",
             "item_affinities.csv",
             "classification_coverage.csv",
+            "structure_set_entries.csv",
+            "structure_set_loot_links.csv",
+            "structure_set_loot_link_audit.csv",
+            "structure_set_base_item_presence.csv",
+            "structure_set_effective_item_presence.csv",
+            "structure_set_profile_summary.csv",
             "scope_report.json",
             "manifest.json",
             "README.md",
@@ -87,9 +131,19 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         self.assertEqual(self.manifest["inline_reference_count"], 3)
         self.assertEqual(self.manifest["table_role_summary_count"], 65)
         self.assertGreater(self.manifest["table_role_evidence_count"], 0)
+        self.assertEqual(self.manifest["glm_modifier_chain_count"], 0)
+        self.assertEqual(self.manifest["modifier_added_leaf_candidate_count"], 0)
+        self.assertEqual(self.manifest["target_table_modifier_summary_count"], 0)
+        self.assertEqual(self.manifest["target_table_added_item_summary_count"], 0)
         self.assertGreater(self.manifest["item_classification_count"], 0)
         self.assertGreater(self.manifest["item_affinity_count"], 0)
         self.assertGreater(self.manifest["classification_coverage_count"], 0)
+        self.assertEqual(self.manifest["structure_set_entry_count"], 34)
+        self.assertEqual(self.manifest["structure_set_loot_link_count"], 49)
+        self.assertGreater(self.manifest["structure_set_loot_link_audit_count"], 49)
+        self.assertEqual(self.manifest["structure_set_base_item_presence_count"], 361)
+        self.assertEqual(self.manifest["structure_set_effective_item_presence_count"], 361)
+        self.assertEqual(self.manifest["structure_set_profile_summary_count"], 34)
         self.assertEqual(self.manifest["missing_loot_item_count"], 0)
         self.assertEqual(
             self.manifest["raw_role_counts"],
@@ -108,6 +162,55 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
             },
         )
         self.assertGreater(self.manifest["leaf_candidate_count"], 0)
+
+    def test_vanilla_stage2_outputs_are_empty_but_present(self) -> None:
+        self.assertEqual(read_csv_rows(self.output_dir / "glm_modifier_chain.csv"), [])
+        self.assertEqual(read_csv_rows(self.output_dir / "modifier_added_leaf_candidates.csv"), [])
+        self.assertEqual(read_csv_rows(self.output_dir / "target_table_modifier_summary.csv"), [])
+        self.assertEqual(read_csv_rows(self.output_dir / "target_table_added_item_summary.csv"), [])
+        stage2_report = json.loads((self.output_dir / "stage2_report.json").read_text(encoding="utf-8"))
+        self.assertEqual(stage2_report["glm_chain_length"], 0)
+
+    def test_vanilla_structure_set_outputs_are_present_and_stable(self) -> None:
+        self.assertEqual(len(self.structure_set_entries), 34)
+        self.assertEqual(len(self.structure_set_loot_links), 49)
+        self.assertGreater(len(self.structure_set_loot_link_audit), 49)
+        self.assertEqual(len(self.structure_set_base_item_presence), 361)
+        self.assertEqual(len(self.structure_set_effective_item_presence), 361)
+        self.assertEqual(len(self.structure_set_profile_summary), 34)
+        trial_row = next(row for row in self.structure_set_entries if row["structure_set_id"] == "minecraft:trial_chambers")
+        self.assertEqual(trial_row["dynamic_mapping_status"], "detected_links_found")
+        desert_row = next(row for row in self.structure_set_entries if row["structure_set_id"] == "minecraft:desert_pyramids")
+        self.assertTrue(desert_row["dynamic_mapping_status"].startswith("unsupported_structure_type:"))
+
+    def test_vanilla_resolution_outputs_and_yaml_headers_exist(self) -> None:
+        self.assertEqual(self.structure_resolution_report["exact_match_count"], 49)
+        self.assertGreater(self.structure_resolution_report["ambiguous_match_candidate_count"], 0)
+        self.assertEqual(self.structure_resolution_report["no_match_count"], 2)
+        self.assertEqual(self.structure_resolution_report["no_match_unresolved_count"], 2)
+        self.assertIn("# One-to-many model:", self.ambiguous_resolution_text)
+        self.assertIn("# One-to-many model:", self.manual_resolution_text)
+        self.assertFalse(
+            any(
+                entry["loot_table_id"] == "minecraft:chests/desert_pyramid"
+                and entry["status"] == "unresolved"
+                for entry in self.manual_resolution_map["entries"]
+            )
+        )
+        self.assertTrue(
+            any(
+                entry["loot_table_id"] == "minecraft:chests/desert_pyramid"
+                and entry["match_rule"] == "loose_table_candidate"
+                for entry in self.ambiguous_resolution_map["entries"]
+            )
+        )
+        self.assertTrue(
+            any(
+                entry["loot_table_id"] == "minecraft:chests/simple_dungeon"
+                and entry["status"] == "unresolved"
+                for entry in self.manual_resolution_map["entries"]
+            )
+        )
 
     def test_named_table_categories_stay_within_scope(self) -> None:
         named_rows = [row for row in self.tables if row["table_id_kind"] == "named"]

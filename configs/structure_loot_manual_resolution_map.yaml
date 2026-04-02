@@ -1,0 +1,17 @@
+# One-to-many model:
+# A single loot_table_id may legitimately map to multiple structure_set_id + structure_id pairs.
+# Each entry in this file represents one unresolved or mapped relationship at that exact grain.
+# An unresolved placeholder row may remain beside mapped rows while research is still in progress.
+# Removing the unresolved placeholder row is the signal that manual research is complete.
+version: 1
+entries:
+- loot_table_id: minecraft:chests/simple_dungeon
+  status: unresolved
+  structure_set_id: ''
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:chests/spawn_bonus_chest
+  status: unresolved
+  structure_set_id: ''
+  structure_id: ''
+  notes: ''

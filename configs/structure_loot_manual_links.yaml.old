@@ -1,0 +1,18 @@
+version: 1
+entries: []
+
+# Example:
+# entries:
+#   - structure_set_id: minecraft:desert_pyramids
+#     structure_id: minecraft:desert_pyramid
+#     add_loot_tables:
+#       - minecraft:chests/desert_pyramid
+#     suppress_loot_tables: []
+#     notes: "Vanilla non-jigsaw mapping filled manually."
+#
+#   - structure_set_id: minecraft:woodland_mansions
+#     structure_id: minecraft:woodland_mansion
+#     add_loot_tables: []
+#     suppress_loot_tables:
+#       - minecraft:chests/old_bad_link
+#     notes: "Suppress incorrect dynamic link after structure replacement."

@@ -47,6 +47,8 @@ def export_loot_tables(
     included_dirs: tuple[str, ...] = DEFAULT_INCLUDED_DIRS,
     output_dir: Path | str = DEFAULT_OUTPUT_DIR,
     classification_csv_path: Path | str | None = None,
+    ambiguous_resolution_config_path: Path | str = stack_exporter.DEFAULT_AMBIGUOUS_STRUCTURE_RESOLUTION_CONFIG,
+    manual_resolution_config_path: Path | str = stack_exporter.DEFAULT_MANUAL_STRUCTURE_RESOLUTION_CONFIG,
 ) -> dict[str, object]:
     source_root_path = Path(source_root)
     if source_root_path.name != "loot_table":
@@ -65,6 +67,8 @@ def export_loot_tables(
         archive_roots=[],
         explicit_packs=[],
         classification_csv_path=classification_csv_path,
+        ambiguous_resolution_config_path=ambiguous_resolution_config_path,
+        manual_resolution_config_path=manual_resolution_config_path,
     )
 
 

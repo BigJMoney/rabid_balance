@@ -1,0 +1,4 @@
+# Test fixture seed for structure loot manual resolution map.
+# Tests copy this file to a temp location before export so the starting state is deterministic.
+version: 1
+entries: []

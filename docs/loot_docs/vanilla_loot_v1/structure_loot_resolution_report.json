@@ -1,0 +1,13 @@
+{
+  "exact_match_count": 49,
+  "ambiguous_match_candidate_count": 41,
+  "ambiguous_match_autoresolved_count": 0,
+  "ambiguous_match_pending_count": 41,
+  "no_match_count": 2,
+  "no_match_mapped_count": 0,
+  "no_match_unresolved_count": 2,
+  "stale_ambiguous_rows": [],
+  "stale_manual_rows": [],
+  "skipped_active_stale_rows": [],
+  "warnings": []
+}

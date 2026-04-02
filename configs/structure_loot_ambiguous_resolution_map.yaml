@@ -1,0 +1,569 @@
+# One-to-many model:
+# A single loot_table_id may legitimately map to multiple structure_set_id + structure_id pairs.
+# Each entry in this file represents one ambiguous candidate relationship at that exact grain.
+# Do not assume loot_table_id is unique within this document.
+version: 1
+entries:
+- loot_table_id: minecraft:chests/abandoned_mineshaft
+  structure_set_id: minecraft:mineshafts
+  structure_id: minecraft:mineshaft
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/abandoned_mineshaft
+    candidate_count: 2
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/abandoned_mineshaft
+  structure_set_id: minecraft:mineshafts
+  structure_id: minecraft:mineshaft_mesa
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/abandoned_mineshaft
+    candidate_count: 2
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/buried_treasure
+  structure_set_id: minecraft:buried_treasures
+  structure_id: minecraft:buried_treasure
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/buried_treasure
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/desert_pyramid
+  structure_set_id: minecraft:desert_pyramids
+  structure_id: minecraft:desert_pyramid
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/desert_pyramid
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/end_city_treasure
+  structure_set_id: minecraft:end_cities
+  structure_id: minecraft:end_city
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/end_city_treasure
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/igloo_chest
+  structure_set_id: minecraft:igloos
+  structure_id: minecraft:igloo
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/igloo_chest
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/jungle_temple
+  structure_set_id: minecraft:jungle_temples
+  structure_id: minecraft:jungle_pyramid
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/jungle_temple
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/jungle_temple_dispenser
+  structure_set_id: minecraft:jungle_temples
+  structure_id: minecraft:jungle_pyramid
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/jungle_temple_dispenser
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/nether_bridge
+  structure_set_id: minecraft:nether_complexes
+  structure_id: minecraft:fortress
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/nether_bridge
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/ruined_portal
+  structure_set_id: minecraft:ruined_portals
+  structure_id: minecraft:ruined_portal
+  match_rule: structure_family_candidate
+  evidence_kind: structure_nbt_family
+  evidence_data:
+    family: ruined_portal
+    source_object_count: 13
+    source_objects:
+    - ruined_portal/giant_portal_1
+    - ruined_portal/giant_portal_2
+    - ruined_portal/giant_portal_3
+    - ruined_portal/portal_1
+    - ruined_portal/portal_10
+    - ruined_portal/portal_2
+    - ruined_portal/portal_3
+    - ruined_portal/portal_4
+    - ruined_portal/portal_5
+    - ruined_portal/portal_6
+    - ruined_portal/portal_7
+    - ruined_portal/portal_8
+    - ruined_portal/portal_9
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/ruined_portal
+  structure_set_id: minecraft:ruined_portals
+  structure_id: minecraft:ruined_portal_desert
+  match_rule: structure_family_candidate
+  evidence_kind: structure_nbt_family
+  evidence_data:
+    family: ruined_portal
+    source_object_count: 13
+    source_objects:
+    - ruined_portal/giant_portal_1
+    - ruined_portal/giant_portal_2
+    - ruined_portal/giant_portal_3
+    - ruined_portal/portal_1
+    - ruined_portal/portal_10
+    - ruined_portal/portal_2
+    - ruined_portal/portal_3
+    - ruined_portal/portal_4
+    - ruined_portal/portal_5
+    - ruined_portal/portal_6
+    - ruined_portal/portal_7
+    - ruined_portal/portal_8
+    - ruined_portal/portal_9
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/ruined_portal
+  structure_set_id: minecraft:ruined_portals
+  structure_id: minecraft:ruined_portal_jungle
+  match_rule: structure_family_candidate
+  evidence_kind: structure_nbt_family
+  evidence_data:
+    family: ruined_portal
+    source_object_count: 13
+    source_objects:
+    - ruined_portal/giant_portal_1
+    - ruined_portal/giant_portal_2
+    - ruined_portal/giant_portal_3
+    - ruined_portal/portal_1
+    - ruined_portal/portal_10
+    - ruined_portal/portal_2
+    - ruined_portal/portal_3
+    - ruined_portal/portal_4
+    - ruined_portal/portal_5
+    - ruined_portal/portal_6
+    - ruined_portal/portal_7
+    - ruined_portal/portal_8
+    - ruined_portal/portal_9
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/ruined_portal
+  structure_set_id: minecraft:ruined_portals
+  structure_id: minecraft:ruined_portal_mountain
+  match_rule: structure_family_candidate
+  evidence_kind: structure_nbt_family
+  evidence_data:
+    family: ruined_portal
+    source_object_count: 13
+    source_objects:
+    - ruined_portal/giant_portal_1
+    - ruined_portal/giant_portal_2
+    - ruined_portal/giant_portal_3
+    - ruined_portal/portal_1
+    - ruined_portal/portal_10
+    - ruined_portal/portal_2
+    - ruined_portal/portal_3
+    - ruined_portal/portal_4
+    - ruined_portal/portal_5
+    - ruined_portal/portal_6
+    - ruined_portal/portal_7
+    - ruined_portal/portal_8
+    - ruined_portal/portal_9
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/ruined_portal
+  structure_set_id: minecraft:ruined_portals
+  structure_id: minecraft:ruined_portal_nether
+  match_rule: structure_family_candidate
+  evidence_kind: structure_nbt_family
+  evidence_data:
+    family: ruined_portal
+    source_object_count: 13
+    source_objects:
+    - ruined_portal/giant_portal_1
+    - ruined_portal/giant_portal_2
+    - ruined_portal/giant_portal_3
+    - ruined_portal/portal_1
+    - ruined_portal/portal_10
+    - ruined_portal/portal_2
+    - ruined_portal/portal_3
+    - ruined_portal/portal_4
+    - ruined_portal/portal_5
+    - ruined_portal/portal_6
+    - ruined_portal/portal_7
+    - ruined_portal/portal_8
+    - ruined_portal/portal_9
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/ruined_portal
+  structure_set_id: minecraft:ruined_portals
+  structure_id: minecraft:ruined_portal_ocean
+  match_rule: structure_family_candidate
+  evidence_kind: structure_nbt_family
+  evidence_data:
+    family: ruined_portal
+    source_object_count: 13
+    source_objects:
+    - ruined_portal/giant_portal_1
+    - ruined_portal/giant_portal_2
+    - ruined_portal/giant_portal_3
+    - ruined_portal/portal_1
+    - ruined_portal/portal_10
+    - ruined_portal/portal_2
+    - ruined_portal/portal_3
+    - ruined_portal/portal_4
+    - ruined_portal/portal_5
+    - ruined_portal/portal_6
+    - ruined_portal/portal_7
+    - ruined_portal/portal_8
+    - ruined_portal/portal_9
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/ruined_portal
+  structure_set_id: minecraft:ruined_portals
+  structure_id: minecraft:ruined_portal_swamp
+  match_rule: structure_family_candidate
+  evidence_kind: structure_nbt_family
+  evidence_data:
+    family: ruined_portal
+    source_object_count: 13
+    source_objects:
+    - ruined_portal/giant_portal_1
+    - ruined_portal/giant_portal_2
+    - ruined_portal/giant_portal_3
+    - ruined_portal/portal_1
+    - ruined_portal/portal_10
+    - ruined_portal/portal_2
+    - ruined_portal/portal_3
+    - ruined_portal/portal_4
+    - ruined_portal/portal_5
+    - ruined_portal/portal_6
+    - ruined_portal/portal_7
+    - ruined_portal/portal_8
+    - ruined_portal/portal_9
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/shipwreck_map
+  structure_set_id: minecraft:shipwrecks
+  structure_id: minecraft:shipwreck
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/shipwreck_map
+    candidate_count: 2
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/shipwreck_map
+  structure_set_id: minecraft:shipwrecks
+  structure_id: minecraft:shipwreck_beached
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/shipwreck_map
+    candidate_count: 2
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/shipwreck_supply
+  structure_set_id: minecraft:shipwrecks
+  structure_id: minecraft:shipwreck
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/shipwreck_supply
+    candidate_count: 2
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/shipwreck_supply
+  structure_set_id: minecraft:shipwrecks
+  structure_id: minecraft:shipwreck_beached
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/shipwreck_supply
+    candidate_count: 2
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/shipwreck_treasure
+  structure_set_id: minecraft:shipwrecks
+  structure_id: minecraft:shipwreck
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/shipwreck_treasure
+    candidate_count: 2
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/shipwreck_treasure
+  structure_set_id: minecraft:shipwrecks
+  structure_id: minecraft:shipwreck_beached
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/shipwreck_treasure
+    candidate_count: 2
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/stronghold_corridor
+  structure_set_id: minecraft:strongholds
+  structure_id: minecraft:stronghold
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/stronghold_corridor
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/stronghold_crossing
+  structure_set_id: minecraft:strongholds
+  structure_id: minecraft:stronghold
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/stronghold_crossing
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/stronghold_library
+  structure_set_id: minecraft:strongholds
+  structure_id: minecraft:stronghold
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/stronghold_library
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/trial_chambers/intersection
+  structure_set_id: minecraft:trial_chambers
+  structure_id: minecraft:trial_chambers
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/trial_chambers/intersection
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/trial_chambers/reward_common
+  structure_set_id: minecraft:trial_chambers
+  structure_id: minecraft:trial_chambers
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/trial_chambers/reward_common
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/trial_chambers/reward_ominous_common
+  structure_set_id: minecraft:trial_chambers
+  structure_id: minecraft:trial_chambers
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/trial_chambers/reward_ominous_common
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/trial_chambers/reward_ominous_rare
+  structure_set_id: minecraft:trial_chambers
+  structure_id: minecraft:trial_chambers
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/trial_chambers/reward_ominous_rare
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/trial_chambers/reward_ominous_unique
+  structure_set_id: minecraft:trial_chambers
+  structure_id: minecraft:trial_chambers
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/trial_chambers/reward_ominous_unique
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/trial_chambers/reward_rare
+  structure_set_id: minecraft:trial_chambers
+  structure_id: minecraft:trial_chambers
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/trial_chambers/reward_rare
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/trial_chambers/reward_unique
+  structure_set_id: minecraft:trial_chambers
+  structure_id: minecraft:trial_chambers
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/trial_chambers/reward_unique
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/underwater_ruin_big
+  structure_set_id: minecraft:ocean_ruins
+  structure_id: minecraft:ocean_ruin_cold
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/underwater_ruin_big
+    candidate_count: 2
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/underwater_ruin_big
+  structure_set_id: minecraft:ocean_ruins
+  structure_id: minecraft:ocean_ruin_warm
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/underwater_ruin_big
+    candidate_count: 2
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/underwater_ruin_small
+  structure_set_id: minecraft:ocean_ruins
+  structure_id: minecraft:ocean_ruin_cold
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/underwater_ruin_small
+    candidate_count: 2
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/underwater_ruin_small
+  structure_set_id: minecraft:ocean_ruins
+  structure_id: minecraft:ocean_ruin_warm
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:chests/underwater_ruin_small
+    candidate_count: 2
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/woodland_mansion
+  structure_set_id: minecraft:woodland_mansions
+  structure_id: minecraft:mansion
+  match_rule: structure_family_candidate
+  evidence_kind: structure_nbt_family
+  evidence_data:
+    family: woodland_mansion
+    source_object_count: 1
+    source_objects:
+    - woodland_mansion/2x2_b1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:equipment/trial_chamber
+  structure_set_id: minecraft:trial_chambers
+  structure_id: minecraft:trial_chambers
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:equipment/trial_chamber
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:spawners/trial_chamber/consumables
+  structure_set_id: minecraft:trial_chambers
+  structure_id: minecraft:trial_chambers
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:spawners/trial_chamber/consumables
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:spawners/trial_chamber/items_to_drop_when_ominous
+  structure_set_id: minecraft:trial_chambers
+  structure_id: minecraft:trial_chambers
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:spawners/trial_chamber/items_to_drop_when_ominous
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:spawners/trial_chamber/key
+  structure_set_id: minecraft:trial_chambers
+  structure_id: minecraft:trial_chambers
+  match_rule: loose_table_candidate
+  evidence_kind: curated_table_lookup
+  evidence_data:
+    registry_key: minecraft:spawners/trial_chamber/key
+    candidate_count: 1
+  autoresolve: false
+  notes: ''
+- loot_table_id: illagerinvasion:chests/labyrinth
+  structure_set_id: illagerinvasion:labyrinth
+  structure_id: illagerinvasion:labyrinth
+  match_rule: structure_family_candidate
+  evidence_kind: structure_nbt_family
+  evidence_data:
+    family: labyrinth
+    source_object_count: 3
+    source_objects:
+    - labyrinth/rooms/room_2
+    - labyrinth/rooms/room_4
+    - labyrinth/rooms/room_8
+  autoresolve: false
+  notes: ''
+- loot_table_id: illagerinvasion:chests/labyrinth_map
+  structure_set_id: illagerinvasion:labyrinth
+  structure_id: illagerinvasion:labyrinth
+  match_rule: structure_family_candidate
+  evidence_kind: structure_nbt_family
+  evidence_data:
+    family: labyrinth
+    source_object_count: 3
+    source_objects:
+    - labyrinth/rooms/room_7
+    - labyrinth/rooms/room_8
+    - labyrinth/rooms/room_9
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/stronghold_library
+  structure_set_id: minecraft:woodland_mansions
+  structure_id: minecraft:mansion
+  match_rule: structure_family_candidate
+  evidence_kind: structure_nbt_family
+  evidence_data:
+    family: woodland_mansion
+    source_object_count: 2
+    source_objects:
+    - woodland_mansion/1x2_c4
+    - woodland_mansion/2x2_b3
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/woodland_mansion
+  structure_set_id: illagerinvasion:labyrinth
+  structure_id: illagerinvasion:labyrinth
+  match_rule: structure_family_candidate
+  evidence_kind: structure_nbt_family
+  evidence_data:
+    family: labyrinth
+    source_object_count: 1
+    source_objects:
+    - labyrinth/tower
+  autoresolve: false
+  notes: ''
