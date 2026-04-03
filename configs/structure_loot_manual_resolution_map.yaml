@@ -28,3 +28,15 @@ entries:
   status: unresolved
   structure_id: ''
   notes: ''
+- loot_table_id: minecraft:chests/underwater_ruin_big
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:chests/underwater_ruin_small
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:chests/woodland_mansion
+  status: unresolved
+  structure_id: ''
+  notes: ''

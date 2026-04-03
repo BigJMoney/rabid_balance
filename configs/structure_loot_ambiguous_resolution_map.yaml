@@ -35,7 +35,7 @@ entries:
     - labyrinth/rooms/room_8
     - labyrinth/rooms/room_9
     - labyrinth/tower
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: illagerinvasion:chests/labyrinth_map
   structure_id: illagerinvasion:labyrinth
@@ -68,23 +68,7 @@ entries:
     - labyrinth/rooms/room_8
     - labyrinth/rooms/room_9
     - labyrinth/tower
-  autoresolve: true
-  notes: ''
-- loot_table_id: minecraft:chests/abandoned_mineshaft
-  structure_id: minecraft:mineshaft
-  match_rule: curated_table_candidate
-  evidence_data:
-    registry_key: minecraft:chests/abandoned_mineshaft
-    candidate_count: 2
-  autoresolve: true
-  notes: ''
-- loot_table_id: minecraft:chests/abandoned_mineshaft
-  structure_id: minecraft:mineshaft_mesa
-  match_rule: curated_table_candidate
-  evidence_data:
-    registry_key: minecraft:chests/abandoned_mineshaft
-    candidate_count: 2
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/buried_treasure
   structure_id: minecraft:buried_treasure
@@ -93,7 +77,7 @@ entries:
     structure_id_stem: buried_treasure
     matched_value: buried_treasure
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/desert_pyramid
   structure_id: minecraft:desert_pyramid
@@ -102,7 +86,7 @@ entries:
     structure_id_stem: desert_pyramid
     matched_value: desert_pyramid
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/end_city_treasure
   structure_id: minecraft:end_city
@@ -133,7 +117,7 @@ entries:
     - end_city/tower_floor
     - end_city/tower_piece
     - end_city/tower_top
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/igloo_chest
   structure_id: minecraft:igloo
@@ -147,30 +131,6 @@ entries:
     - igloo/bottom
     - igloo/middle
     - igloo/top
-  autoresolve: true
-  notes: ''
-- loot_table_id: minecraft:chests/jungle_temple
-  structure_id: minecraft:jungle_pyramid
-  match_rule: curated_table_candidate
-  evidence_data:
-    registry_key: minecraft:chests/jungle_temple
-    candidate_count: 1
-  autoresolve: true
-  notes: ''
-- loot_table_id: minecraft:chests/jungle_temple_dispenser
-  structure_id: minecraft:jungle_pyramid
-  match_rule: curated_table_candidate
-  evidence_data:
-    registry_key: minecraft:chests/jungle_temple_dispenser
-    candidate_count: 1
-  autoresolve: true
-  notes: ''
-- loot_table_id: minecraft:chests/nether_bridge
-  structure_id: minecraft:fortress
-  match_rule: curated_table_candidate
-  evidence_data:
-    registry_key: minecraft:chests/nether_bridge
-    candidate_count: 1
   autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/ruined_portal
@@ -195,151 +155,61 @@ entries:
     - ruined_portal/portal_7
     - ruined_portal/portal_8
     - ruined_portal/portal_9
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/ruined_portal
   structure_id: minecraft:ruined_portal_desert
-  match_rule: ambiguous_structure_root_match
+  match_rule: ambiguous_structure_id_submatch
   evidence_data:
-    structure_root: ruined_portal
+    structure_id_submatch: ruined_portal
     matched_value: ruined_portal
     match_mode: first_segment
-    template_source_object_count: 13
-    template_source_objects:
-    - ruined_portal/giant_portal_1
-    - ruined_portal/giant_portal_2
-    - ruined_portal/giant_portal_3
-    - ruined_portal/portal_1
-    - ruined_portal/portal_10
-    - ruined_portal/portal_2
-    - ruined_portal/portal_3
-    - ruined_portal/portal_4
-    - ruined_portal/portal_5
-    - ruined_portal/portal_6
-    - ruined_portal/portal_7
-    - ruined_portal/portal_8
-    - ruined_portal/portal_9
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/ruined_portal
   structure_id: minecraft:ruined_portal_jungle
-  match_rule: ambiguous_structure_root_match
+  match_rule: ambiguous_structure_id_submatch
   evidence_data:
-    structure_root: ruined_portal
+    structure_id_submatch: ruined_portal
     matched_value: ruined_portal
     match_mode: first_segment
-    template_source_object_count: 13
-    template_source_objects:
-    - ruined_portal/giant_portal_1
-    - ruined_portal/giant_portal_2
-    - ruined_portal/giant_portal_3
-    - ruined_portal/portal_1
-    - ruined_portal/portal_10
-    - ruined_portal/portal_2
-    - ruined_portal/portal_3
-    - ruined_portal/portal_4
-    - ruined_portal/portal_5
-    - ruined_portal/portal_6
-    - ruined_portal/portal_7
-    - ruined_portal/portal_8
-    - ruined_portal/portal_9
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/ruined_portal
   structure_id: minecraft:ruined_portal_mountain
-  match_rule: ambiguous_structure_root_match
+  match_rule: ambiguous_structure_id_submatch
   evidence_data:
-    structure_root: ruined_portal
+    structure_id_submatch: ruined_portal
     matched_value: ruined_portal
     match_mode: first_segment
-    template_source_object_count: 13
-    template_source_objects:
-    - ruined_portal/giant_portal_1
-    - ruined_portal/giant_portal_2
-    - ruined_portal/giant_portal_3
-    - ruined_portal/portal_1
-    - ruined_portal/portal_10
-    - ruined_portal/portal_2
-    - ruined_portal/portal_3
-    - ruined_portal/portal_4
-    - ruined_portal/portal_5
-    - ruined_portal/portal_6
-    - ruined_portal/portal_7
-    - ruined_portal/portal_8
-    - ruined_portal/portal_9
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/ruined_portal
   structure_id: minecraft:ruined_portal_nether
-  match_rule: ambiguous_structure_root_match
+  match_rule: ambiguous_structure_id_submatch
   evidence_data:
-    structure_root: ruined_portal
+    structure_id_submatch: ruined_portal
     matched_value: ruined_portal
     match_mode: first_segment
-    template_source_object_count: 13
-    template_source_objects:
-    - ruined_portal/giant_portal_1
-    - ruined_portal/giant_portal_2
-    - ruined_portal/giant_portal_3
-    - ruined_portal/portal_1
-    - ruined_portal/portal_10
-    - ruined_portal/portal_2
-    - ruined_portal/portal_3
-    - ruined_portal/portal_4
-    - ruined_portal/portal_5
-    - ruined_portal/portal_6
-    - ruined_portal/portal_7
-    - ruined_portal/portal_8
-    - ruined_portal/portal_9
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/ruined_portal
   structure_id: minecraft:ruined_portal_ocean
-  match_rule: ambiguous_structure_root_match
+  match_rule: ambiguous_structure_id_submatch
   evidence_data:
-    structure_root: ruined_portal
+    structure_id_submatch: ruined_portal
     matched_value: ruined_portal
     match_mode: first_segment
-    template_source_object_count: 13
-    template_source_objects:
-    - ruined_portal/giant_portal_1
-    - ruined_portal/giant_portal_2
-    - ruined_portal/giant_portal_3
-    - ruined_portal/portal_1
-    - ruined_portal/portal_10
-    - ruined_portal/portal_2
-    - ruined_portal/portal_3
-    - ruined_portal/portal_4
-    - ruined_portal/portal_5
-    - ruined_portal/portal_6
-    - ruined_portal/portal_7
-    - ruined_portal/portal_8
-    - ruined_portal/portal_9
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/ruined_portal
   structure_id: minecraft:ruined_portal_swamp
-  match_rule: ambiguous_structure_root_match
+  match_rule: ambiguous_structure_id_submatch
   evidence_data:
-    structure_root: ruined_portal
+    structure_id_submatch: ruined_portal
     matched_value: ruined_portal
     match_mode: first_segment
-    template_source_object_count: 13
-    template_source_objects:
-    - ruined_portal/giant_portal_1
-    - ruined_portal/giant_portal_2
-    - ruined_portal/giant_portal_3
-    - ruined_portal/portal_1
-    - ruined_portal/portal_10
-    - ruined_portal/portal_2
-    - ruined_portal/portal_3
-    - ruined_portal/portal_4
-    - ruined_portal/portal_5
-    - ruined_portal/portal_6
-    - ruined_portal/portal_7
-    - ruined_portal/portal_8
-    - ruined_portal/portal_9
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/shipwreck_map
   structure_id: minecraft:shipwreck
@@ -370,38 +240,16 @@ entries:
     - shipwreck/upsidedown_full_degraded
     - shipwreck/with_mast
     - shipwreck/with_mast_degraded
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/shipwreck_map
   structure_id: minecraft:shipwreck_beached
-  match_rule: ambiguous_structure_root_match
+  match_rule: ambiguous_structure_id_submatch
   evidence_data:
-    structure_root: shipwreck
+    structure_id_submatch: shipwreck
     matched_value: shipwreck
     match_mode: underscore_prefix
-    template_source_object_count: 20
-    template_source_objects:
-    - shipwreck/rightsideup_backhalf
-    - shipwreck/rightsideup_backhalf_degraded
-    - shipwreck/rightsideup_fronthalf
-    - shipwreck/rightsideup_fronthalf_degraded
-    - shipwreck/rightsideup_full
-    - shipwreck/rightsideup_full_degraded
-    - shipwreck/sideways_backhalf
-    - shipwreck/sideways_backhalf_degraded
-    - shipwreck/sideways_fronthalf
-    - shipwreck/sideways_fronthalf_degraded
-    - shipwreck/sideways_full
-    - shipwreck/sideways_full_degraded
-    - shipwreck/upsidedown_backhalf
-    - shipwreck/upsidedown_backhalf_degraded
-    - shipwreck/upsidedown_fronthalf
-    - shipwreck/upsidedown_fronthalf_degraded
-    - shipwreck/upsidedown_full
-    - shipwreck/upsidedown_full_degraded
-    - shipwreck/with_mast
-    - shipwreck/with_mast_degraded
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/shipwreck_supply
   structure_id: minecraft:shipwreck
@@ -432,38 +280,16 @@ entries:
     - shipwreck/upsidedown_full_degraded
     - shipwreck/with_mast
     - shipwreck/with_mast_degraded
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/shipwreck_supply
   structure_id: minecraft:shipwreck_beached
-  match_rule: ambiguous_structure_root_match
+  match_rule: ambiguous_structure_id_submatch
   evidence_data:
-    structure_root: shipwreck
+    structure_id_submatch: shipwreck
     matched_value: shipwreck
     match_mode: underscore_prefix
-    template_source_object_count: 20
-    template_source_objects:
-    - shipwreck/rightsideup_backhalf
-    - shipwreck/rightsideup_backhalf_degraded
-    - shipwreck/rightsideup_fronthalf
-    - shipwreck/rightsideup_fronthalf_degraded
-    - shipwreck/rightsideup_full
-    - shipwreck/rightsideup_full_degraded
-    - shipwreck/sideways_backhalf
-    - shipwreck/sideways_backhalf_degraded
-    - shipwreck/sideways_fronthalf
-    - shipwreck/sideways_fronthalf_degraded
-    - shipwreck/sideways_full
-    - shipwreck/sideways_full_degraded
-    - shipwreck/upsidedown_backhalf
-    - shipwreck/upsidedown_backhalf_degraded
-    - shipwreck/upsidedown_fronthalf
-    - shipwreck/upsidedown_fronthalf_degraded
-    - shipwreck/upsidedown_full
-    - shipwreck/upsidedown_full_degraded
-    - shipwreck/with_mast
-    - shipwreck/with_mast_degraded
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/shipwreck_treasure
   structure_id: minecraft:shipwreck
@@ -494,38 +320,16 @@ entries:
     - shipwreck/upsidedown_full_degraded
     - shipwreck/with_mast
     - shipwreck/with_mast_degraded
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/shipwreck_treasure
   structure_id: minecraft:shipwreck_beached
-  match_rule: ambiguous_structure_root_match
+  match_rule: ambiguous_structure_id_submatch
   evidence_data:
-    structure_root: shipwreck
+    structure_id_submatch: shipwreck
     matched_value: shipwreck
     match_mode: underscore_prefix
-    template_source_object_count: 20
-    template_source_objects:
-    - shipwreck/rightsideup_backhalf
-    - shipwreck/rightsideup_backhalf_degraded
-    - shipwreck/rightsideup_fronthalf
-    - shipwreck/rightsideup_fronthalf_degraded
-    - shipwreck/rightsideup_full
-    - shipwreck/rightsideup_full_degraded
-    - shipwreck/sideways_backhalf
-    - shipwreck/sideways_backhalf_degraded
-    - shipwreck/sideways_fronthalf
-    - shipwreck/sideways_fronthalf_degraded
-    - shipwreck/sideways_full
-    - shipwreck/sideways_full_degraded
-    - shipwreck/upsidedown_backhalf
-    - shipwreck/upsidedown_backhalf_degraded
-    - shipwreck/upsidedown_fronthalf
-    - shipwreck/upsidedown_fronthalf_degraded
-    - shipwreck/upsidedown_full
-    - shipwreck/upsidedown_full_degraded
-    - shipwreck/with_mast
-    - shipwreck/with_mast_degraded
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/stronghold_corridor
   structure_id: minecraft:stronghold
@@ -534,7 +338,7 @@ entries:
     structure_id_stem: stronghold
     matched_value: stronghold
     match_mode: underscore_prefix
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/stronghold_crossing
   structure_id: minecraft:stronghold
@@ -543,19 +347,7 @@ entries:
     structure_id_stem: stronghold
     matched_value: stronghold
     match_mode: underscore_prefix
-  autoresolve: true
-  notes: ''
-- loot_table_id: minecraft:chests/stronghold_library
-  structure_id: minecraft:mansion
-  match_rule: structure_family_candidate
-  evidence_data:
-    family: woodland_mansion
-    source_objects:
-    - woodland_mansion/1x2_c4
-    - woodland_mansion/2x2_b3
-    source_object_count: 2
-    support_basis: matched_structure_nbt
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/stronghold_library
   structure_id: minecraft:stronghold
@@ -564,7 +356,7 @@ entries:
     structure_id_stem: stronghold
     matched_value: stronghold
     match_mode: underscore_prefix
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/trial_chambers/intersection
   structure_id: minecraft:trial_chambers
@@ -745,7 +537,7 @@ entries:
     - trial_chambers/spawner/small_melee/cave_spider
     - trial_chambers/spawner/small_melee/silverfish
     - trial_chambers/spawner/small_melee/slime
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/trial_chambers/reward_common
   structure_id: minecraft:trial_chambers
@@ -926,7 +718,7 @@ entries:
     - trial_chambers/spawner/small_melee/cave_spider
     - trial_chambers/spawner/small_melee/silverfish
     - trial_chambers/spawner/small_melee/slime
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/trial_chambers/reward_ominous_common
   structure_id: minecraft:trial_chambers
@@ -1107,7 +899,7 @@ entries:
     - trial_chambers/spawner/small_melee/cave_spider
     - trial_chambers/spawner/small_melee/silverfish
     - trial_chambers/spawner/small_melee/slime
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/trial_chambers/reward_ominous_rare
   structure_id: minecraft:trial_chambers
@@ -1288,7 +1080,7 @@ entries:
     - trial_chambers/spawner/small_melee/cave_spider
     - trial_chambers/spawner/small_melee/silverfish
     - trial_chambers/spawner/small_melee/slime
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/trial_chambers/reward_ominous_unique
   structure_id: minecraft:trial_chambers
@@ -1469,7 +1261,7 @@ entries:
     - trial_chambers/spawner/small_melee/cave_spider
     - trial_chambers/spawner/small_melee/silverfish
     - trial_chambers/spawner/small_melee/slime
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/trial_chambers/reward_rare
   structure_id: minecraft:trial_chambers
@@ -1650,7 +1442,7 @@ entries:
     - trial_chambers/spawner/small_melee/cave_spider
     - trial_chambers/spawner/small_melee/silverfish
     - trial_chambers/spawner/small_melee/slime
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/trial_chambers/reward_unique
   structure_id: minecraft:trial_chambers
@@ -1831,338 +1623,484 @@ entries:
     - trial_chambers/spawner/small_melee/cave_spider
     - trial_chambers/spawner/small_melee/silverfish
     - trial_chambers/spawner/small_melee/slime
-  autoresolve: true
+  autoresolve: false
   notes: ''
-- loot_table_id: minecraft:chests/underwater_ruin_big
-  structure_id: minecraft:ocean_ruin_cold
-  match_rule: ambiguous_structure_root_match
+- loot_table_id: minecraft:chests/village/village_armorer
+  structure_id: minecraft:village_desert
+  match_rule: ambiguous_structure_id_submatch
   evidence_data:
-    structure_root: underwater_ruin
-    matched_value: underwater_ruin
-    match_mode: underscore_prefix
-    template_source_object_count: 48
-    template_source_objects:
-    - underwater_ruin/big_brick_1
-    - underwater_ruin/big_brick_2
-    - underwater_ruin/big_brick_3
-    - underwater_ruin/big_brick_8
-    - underwater_ruin/big_cracked_1
-    - underwater_ruin/big_cracked_2
-    - underwater_ruin/big_cracked_3
-    - underwater_ruin/big_cracked_8
-    - underwater_ruin/big_mossy_1
-    - underwater_ruin/big_mossy_2
-    - underwater_ruin/big_mossy_3
-    - underwater_ruin/big_mossy_8
-    - underwater_ruin/big_warm_4
-    - underwater_ruin/big_warm_5
-    - underwater_ruin/big_warm_6
-    - underwater_ruin/big_warm_7
-    - underwater_ruin/brick_1
-    - underwater_ruin/brick_2
-    - underwater_ruin/brick_3
-    - underwater_ruin/brick_4
-    - underwater_ruin/brick_5
-    - underwater_ruin/brick_6
-    - underwater_ruin/brick_7
-    - underwater_ruin/brick_8
-    - underwater_ruin/cracked_1
-    - underwater_ruin/cracked_2
-    - underwater_ruin/cracked_3
-    - underwater_ruin/cracked_4
-    - underwater_ruin/cracked_5
-    - underwater_ruin/cracked_6
-    - underwater_ruin/cracked_7
-    - underwater_ruin/cracked_8
-    - underwater_ruin/mossy_1
-    - underwater_ruin/mossy_2
-    - underwater_ruin/mossy_3
-    - underwater_ruin/mossy_4
-    - underwater_ruin/mossy_5
-    - underwater_ruin/mossy_6
-    - underwater_ruin/mossy_7
-    - underwater_ruin/mossy_8
-    - underwater_ruin/warm_1
-    - underwater_ruin/warm_2
-    - underwater_ruin/warm_3
-    - underwater_ruin/warm_4
-    - underwater_ruin/warm_5
-    - underwater_ruin/warm_6
-    - underwater_ruin/warm_7
-    - underwater_ruin/warm_8
-  autoresolve: true
-  notes: ''
-- loot_table_id: minecraft:chests/underwater_ruin_big
-  structure_id: minecraft:ocean_ruin_warm
-  match_rule: ambiguous_structure_root_match
-  evidence_data:
-    structure_root: underwater_ruin
-    matched_value: underwater_ruin
-    match_mode: underscore_prefix
-    template_source_object_count: 48
-    template_source_objects:
-    - underwater_ruin/big_brick_1
-    - underwater_ruin/big_brick_2
-    - underwater_ruin/big_brick_3
-    - underwater_ruin/big_brick_8
-    - underwater_ruin/big_cracked_1
-    - underwater_ruin/big_cracked_2
-    - underwater_ruin/big_cracked_3
-    - underwater_ruin/big_cracked_8
-    - underwater_ruin/big_mossy_1
-    - underwater_ruin/big_mossy_2
-    - underwater_ruin/big_mossy_3
-    - underwater_ruin/big_mossy_8
-    - underwater_ruin/big_warm_4
-    - underwater_ruin/big_warm_5
-    - underwater_ruin/big_warm_6
-    - underwater_ruin/big_warm_7
-    - underwater_ruin/brick_1
-    - underwater_ruin/brick_2
-    - underwater_ruin/brick_3
-    - underwater_ruin/brick_4
-    - underwater_ruin/brick_5
-    - underwater_ruin/brick_6
-    - underwater_ruin/brick_7
-    - underwater_ruin/brick_8
-    - underwater_ruin/cracked_1
-    - underwater_ruin/cracked_2
-    - underwater_ruin/cracked_3
-    - underwater_ruin/cracked_4
-    - underwater_ruin/cracked_5
-    - underwater_ruin/cracked_6
-    - underwater_ruin/cracked_7
-    - underwater_ruin/cracked_8
-    - underwater_ruin/mossy_1
-    - underwater_ruin/mossy_2
-    - underwater_ruin/mossy_3
-    - underwater_ruin/mossy_4
-    - underwater_ruin/mossy_5
-    - underwater_ruin/mossy_6
-    - underwater_ruin/mossy_7
-    - underwater_ruin/mossy_8
-    - underwater_ruin/warm_1
-    - underwater_ruin/warm_2
-    - underwater_ruin/warm_3
-    - underwater_ruin/warm_4
-    - underwater_ruin/warm_5
-    - underwater_ruin/warm_6
-    - underwater_ruin/warm_7
-    - underwater_ruin/warm_8
-  autoresolve: true
-  notes: ''
-- loot_table_id: minecraft:chests/underwater_ruin_small
-  structure_id: minecraft:ocean_ruin_cold
-  match_rule: ambiguous_structure_root_match
-  evidence_data:
-    structure_root: underwater_ruin
-    matched_value: underwater_ruin
-    match_mode: underscore_prefix
-    template_source_object_count: 48
-    template_source_objects:
-    - underwater_ruin/big_brick_1
-    - underwater_ruin/big_brick_2
-    - underwater_ruin/big_brick_3
-    - underwater_ruin/big_brick_8
-    - underwater_ruin/big_cracked_1
-    - underwater_ruin/big_cracked_2
-    - underwater_ruin/big_cracked_3
-    - underwater_ruin/big_cracked_8
-    - underwater_ruin/big_mossy_1
-    - underwater_ruin/big_mossy_2
-    - underwater_ruin/big_mossy_3
-    - underwater_ruin/big_mossy_8
-    - underwater_ruin/big_warm_4
-    - underwater_ruin/big_warm_5
-    - underwater_ruin/big_warm_6
-    - underwater_ruin/big_warm_7
-    - underwater_ruin/brick_1
-    - underwater_ruin/brick_2
-    - underwater_ruin/brick_3
-    - underwater_ruin/brick_4
-    - underwater_ruin/brick_5
-    - underwater_ruin/brick_6
-    - underwater_ruin/brick_7
-    - underwater_ruin/brick_8
-    - underwater_ruin/cracked_1
-    - underwater_ruin/cracked_2
-    - underwater_ruin/cracked_3
-    - underwater_ruin/cracked_4
-    - underwater_ruin/cracked_5
-    - underwater_ruin/cracked_6
-    - underwater_ruin/cracked_7
-    - underwater_ruin/cracked_8
-    - underwater_ruin/mossy_1
-    - underwater_ruin/mossy_2
-    - underwater_ruin/mossy_3
-    - underwater_ruin/mossy_4
-    - underwater_ruin/mossy_5
-    - underwater_ruin/mossy_6
-    - underwater_ruin/mossy_7
-    - underwater_ruin/mossy_8
-    - underwater_ruin/warm_1
-    - underwater_ruin/warm_2
-    - underwater_ruin/warm_3
-    - underwater_ruin/warm_4
-    - underwater_ruin/warm_5
-    - underwater_ruin/warm_6
-    - underwater_ruin/warm_7
-    - underwater_ruin/warm_8
-  autoresolve: true
-  notes: ''
-- loot_table_id: minecraft:chests/underwater_ruin_small
-  structure_id: minecraft:ocean_ruin_warm
-  match_rule: ambiguous_structure_root_match
-  evidence_data:
-    structure_root: underwater_ruin
-    matched_value: underwater_ruin
-    match_mode: underscore_prefix
-    template_source_object_count: 48
-    template_source_objects:
-    - underwater_ruin/big_brick_1
-    - underwater_ruin/big_brick_2
-    - underwater_ruin/big_brick_3
-    - underwater_ruin/big_brick_8
-    - underwater_ruin/big_cracked_1
-    - underwater_ruin/big_cracked_2
-    - underwater_ruin/big_cracked_3
-    - underwater_ruin/big_cracked_8
-    - underwater_ruin/big_mossy_1
-    - underwater_ruin/big_mossy_2
-    - underwater_ruin/big_mossy_3
-    - underwater_ruin/big_mossy_8
-    - underwater_ruin/big_warm_4
-    - underwater_ruin/big_warm_5
-    - underwater_ruin/big_warm_6
-    - underwater_ruin/big_warm_7
-    - underwater_ruin/brick_1
-    - underwater_ruin/brick_2
-    - underwater_ruin/brick_3
-    - underwater_ruin/brick_4
-    - underwater_ruin/brick_5
-    - underwater_ruin/brick_6
-    - underwater_ruin/brick_7
-    - underwater_ruin/brick_8
-    - underwater_ruin/cracked_1
-    - underwater_ruin/cracked_2
-    - underwater_ruin/cracked_3
-    - underwater_ruin/cracked_4
-    - underwater_ruin/cracked_5
-    - underwater_ruin/cracked_6
-    - underwater_ruin/cracked_7
-    - underwater_ruin/cracked_8
-    - underwater_ruin/mossy_1
-    - underwater_ruin/mossy_2
-    - underwater_ruin/mossy_3
-    - underwater_ruin/mossy_4
-    - underwater_ruin/mossy_5
-    - underwater_ruin/mossy_6
-    - underwater_ruin/mossy_7
-    - underwater_ruin/mossy_8
-    - underwater_ruin/warm_1
-    - underwater_ruin/warm_2
-    - underwater_ruin/warm_3
-    - underwater_ruin/warm_4
-    - underwater_ruin/warm_5
-    - underwater_ruin/warm_6
-    - underwater_ruin/warm_7
-    - underwater_ruin/warm_8
-  autoresolve: true
-  notes: ''
-- loot_table_id: minecraft:chests/woodland_mansion
-  structure_id: illagerinvasion:labyrinth
-  match_rule: structure_family_candidate
-  evidence_data:
-    family: labyrinth
-    source_objects:
-    - labyrinth/tower
-    source_object_count: 1
-    support_basis: matched_structure_nbt
-  autoresolve: true
-  notes: ''
-- loot_table_id: minecraft:chests/woodland_mansion
-  structure_id: minecraft:mansion
-  match_rule: ambiguous_structure_root_match
-  evidence_data:
-    structure_root: woodland_mansion
-    matched_value: woodland_mansion
+    structure_id_submatch: village
+    matched_value: village
     match_mode: first_segment
-    template_source_object_count: 73
-    template_source_objects:
-    - woodland_mansion/1x1_a1
-    - woodland_mansion/1x1_a2
-    - woodland_mansion/1x1_a3
-    - woodland_mansion/1x1_a4
-    - woodland_mansion/1x1_a5
-    - woodland_mansion/1x1_as1
-    - woodland_mansion/1x1_as2
-    - woodland_mansion/1x1_as3
-    - woodland_mansion/1x1_as4
-    - woodland_mansion/1x1_b1
-    - woodland_mansion/1x1_b2
-    - woodland_mansion/1x1_b3
-    - woodland_mansion/1x1_b4
-    - woodland_mansion/1x1_b5
-    - woodland_mansion/1x2_a1
-    - woodland_mansion/1x2_a2
-    - woodland_mansion/1x2_a3
-    - woodland_mansion/1x2_a4
-    - woodland_mansion/1x2_a5
-    - woodland_mansion/1x2_a6
-    - woodland_mansion/1x2_a7
-    - woodland_mansion/1x2_a8
-    - woodland_mansion/1x2_a9
-    - woodland_mansion/1x2_b1
-    - woodland_mansion/1x2_b2
-    - woodland_mansion/1x2_b3
-    - woodland_mansion/1x2_b4
-    - woodland_mansion/1x2_b5
-    - woodland_mansion/1x2_c1
-    - woodland_mansion/1x2_c2
-    - woodland_mansion/1x2_c3
-    - woodland_mansion/1x2_c4
-    - woodland_mansion/1x2_c_stairs
-    - woodland_mansion/1x2_d1
-    - woodland_mansion/1x2_d2
-    - woodland_mansion/1x2_d3
-    - woodland_mansion/1x2_d4
-    - woodland_mansion/1x2_d5
-    - woodland_mansion/1x2_d_stairs
-    - woodland_mansion/1x2_s1
-    - woodland_mansion/1x2_s2
-    - woodland_mansion/1x2_se1
-    - woodland_mansion/2x2_a1
-    - woodland_mansion/2x2_a2
-    - woodland_mansion/2x2_a3
-    - woodland_mansion/2x2_a4
-    - woodland_mansion/2x2_b1
-    - woodland_mansion/2x2_b2
-    - woodland_mansion/2x2_b3
-    - woodland_mansion/2x2_b4
-    - woodland_mansion/2x2_b5
-    - woodland_mansion/2x2_s1
-    - woodland_mansion/carpet_east
-    - woodland_mansion/carpet_north
-    - woodland_mansion/carpet_south_1
-    - woodland_mansion/carpet_south_2
-    - woodland_mansion/carpet_west_1
-    - woodland_mansion/carpet_west_2
-    - woodland_mansion/corridor_floor
-    - woodland_mansion/entrance
-    - woodland_mansion/indoors_door_1
-    - woodland_mansion/indoors_door_2
-    - woodland_mansion/indoors_wall_1
-    - woodland_mansion/indoors_wall_2
-    - woodland_mansion/roof
-    - woodland_mansion/roof_corner
-    - woodland_mansion/roof_front
-    - woodland_mansion/roof_inner_corner
-    - woodland_mansion/small_wall
-    - woodland_mansion/small_wall_corner
-    - woodland_mansion/wall_corner
-    - woodland_mansion/wall_flat
-    - woodland_mansion/wall_window
-  autoresolve: true
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_armorer
+  structure_id: minecraft:village_plains
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_armorer
+  structure_id: minecraft:village_savanna
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_armorer
+  structure_id: minecraft:village_taiga
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_butcher
+  structure_id: minecraft:village_desert
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_butcher
+  structure_id: minecraft:village_plains
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_butcher
+  structure_id: minecraft:village_snowy
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_butcher
+  structure_id: minecraft:village_taiga
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_cartographer
+  structure_id: minecraft:village_desert
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_desert_house
+  structure_id: minecraft:village_plains
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_desert_house
+  structure_id: minecraft:village_savanna
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_desert_house
+  structure_id: minecraft:village_snowy
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_desert_house
+  structure_id: minecraft:village_taiga
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_fisher
+  structure_id: minecraft:village_desert
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_fisher
+  structure_id: minecraft:village_savanna
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_fisher
+  structure_id: minecraft:village_snowy
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_fisher
+  structure_id: minecraft:village_taiga
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_fletcher
+  structure_id: minecraft:village_desert
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_fletcher
+  structure_id: minecraft:village_plains
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_fletcher
+  structure_id: minecraft:village_savanna
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_fletcher
+  structure_id: minecraft:village_snowy
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_mason
+  structure_id: minecraft:village_desert
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_mason
+  structure_id: minecraft:village_plains
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_mason
+  structure_id: minecraft:village_snowy
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_mason
+  structure_id: minecraft:village_taiga
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_plains_house
+  structure_id: minecraft:village_desert
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_plains_house
+  structure_id: minecraft:village_savanna
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_plains_house
+  structure_id: minecraft:village_snowy
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_plains_house
+  structure_id: minecraft:village_taiga
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_savanna_house
+  structure_id: minecraft:village_desert
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_savanna_house
+  structure_id: minecraft:village_plains
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_savanna_house
+  structure_id: minecraft:village_snowy
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_savanna_house
+  structure_id: minecraft:village_taiga
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_shepherd
+  structure_id: minecraft:village_desert
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_shepherd
+  structure_id: minecraft:village_plains
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_shepherd
+  structure_id: minecraft:village_savanna
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_shepherd
+  structure_id: minecraft:village_taiga
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_snowy_house
+  structure_id: minecraft:village_desert
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_snowy_house
+  structure_id: minecraft:village_plains
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_snowy_house
+  structure_id: minecraft:village_savanna
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_snowy_house
+  structure_id: minecraft:village_taiga
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_taiga_house
+  structure_id: minecraft:village_desert
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_taiga_house
+  structure_id: minecraft:village_plains
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_taiga_house
+  structure_id: minecraft:village_savanna
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_taiga_house
+  structure_id: minecraft:village_snowy
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_tannery
+  structure_id: minecraft:village_desert
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_temple
+  structure_id: minecraft:village_plains
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_temple
+  structure_id: minecraft:village_savanna
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_temple
+  structure_id: minecraft:village_snowy
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_temple
+  structure_id: minecraft:village_taiga
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_toolsmith
+  structure_id: minecraft:village_plains
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_toolsmith
+  structure_id: minecraft:village_savanna
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/village/village_toolsmith
+  structure_id: minecraft:village_snowy
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: village
+    matched_value: village
+    match_mode: first_segment
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:equipment/trial_chamber
   structure_id: minecraft:trial_chambers
@@ -2343,7 +2281,7 @@ entries:
     - trial_chambers/spawner/small_melee/cave_spider
     - trial_chambers/spawner/small_melee/silverfish
     - trial_chambers/spawner/small_melee/slime
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:spawners/trial_chamber/consumables
   structure_id: minecraft:trial_chambers
@@ -2524,7 +2462,7 @@ entries:
     - trial_chambers/spawner/small_melee/cave_spider
     - trial_chambers/spawner/small_melee/silverfish
     - trial_chambers/spawner/small_melee/slime
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:spawners/trial_chamber/items_to_drop_when_ominous
   structure_id: minecraft:trial_chambers
@@ -2705,7 +2643,7 @@ entries:
     - trial_chambers/spawner/small_melee/cave_spider
     - trial_chambers/spawner/small_melee/silverfish
     - trial_chambers/spawner/small_melee/slime
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:spawners/trial_chamber/key
   structure_id: minecraft:trial_chambers
@@ -2886,5 +2824,5 @@ entries:
     - trial_chambers/spawner/small_melee/cave_spider
     - trial_chambers/spawner/small_melee/silverfish
     - trial_chambers/spawner/small_melee/slime
-  autoresolve: true
+  autoresolve: false
   notes: ''

@@ -26,7 +26,6 @@ DEFAULT_AMBIGUOUS_STRUCTURE_RESOLUTION_CONFIG = (
 DEFAULT_MANUAL_STRUCTURE_RESOLUTION_CONFIG = (
     PROJECT_ROOT / "configs" / "structure_loot_manual_resolution_map.yaml"
 )
-DEFAULT_STRUCTURE_ROOT_MAP_CONFIG = PROJECT_ROOT / "configs" / "structure_root_map.yaml"
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "docs" / "loot_docs" / "loot_stack_v1"
 DEFAULT_CLASSIFICATION_SEARCH_ROOT = PROJECT_ROOT / "docs" / "loot_docs"
 DEFAULT_PRECHECK_FILENAME = "precheck_report.json"
@@ -574,12 +573,6 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="Global YAML file for no-match structure loot-table manual resolutions.",
     )
     parser.add_argument(
-        "--structure-root-map-config",
-        type=Path,
-        default=DEFAULT_STRUCTURE_ROOT_MAP_CONFIG,
-        help="Structure metadata YAML for template-root ownership overrides.",
-    )
-    parser.add_argument(
         "--refresh-all-structure-resolution-maps",
         action="store_true",
         help=(
@@ -1066,7 +1059,6 @@ class LootStackExporter:
         classification_csv_path: Path | None,
         ambiguous_resolution_config_path: Path,
         manual_resolution_config_path: Path,
-        structure_root_map_config_path: Path,
         refresh_all_structure_resolution_maps: bool,
     ) -> None:
         self.base_pack_root = base_pack_root
@@ -1082,7 +1074,6 @@ class LootStackExporter:
         self.classification_csv_path = classification_csv_path
         self.ambiguous_resolution_config_path = ambiguous_resolution_config_path
         self.manual_resolution_config_path = manual_resolution_config_path
-        self.structure_root_map_config_path = structure_root_map_config_path
         self.refresh_all_structure_resolution_maps = refresh_all_structure_resolution_maps
 
         self.tables: dict[str, TableRecord] = {}
@@ -2810,47 +2801,6 @@ class LootStackExporter:
                 found[structure_id].add(structure_set_id)
         return dict(sorted(found.items()))
 
-    def _normalize_structure_root_map_entry(self, raw_entry: dict[str, Any]) -> dict[str, Any]:
-        template_roots = [
-            self._string_or_blank(value).strip()
-            for value in ensure_list(raw_entry.get("template_roots"), "structure_root_map.template_roots")
-            if self._string_or_blank(value).strip()
-        ]
-        return {
-            "structure_id": self._string_or_blank(raw_entry.get("structure_id")).strip(),
-            "template_roots": template_roots,
-            "notes": self._string_or_blank(raw_entry.get("notes")).strip(),
-        }
-
-    def _write_structure_root_map_yaml(self, entries: list[dict[str, Any]]) -> None:
-        write_yaml_with_header(
-            self.structure_root_map_config_path,
-            header_lines=STRUCTURE_ROOT_MAP_YAML_HEADER,
-            payload={"version": 1, "entries": entries},
-        )
-
-    def _load_structure_root_map_entries(self) -> dict[str, list[str]]:
-        normalized_entries = [
-            self._normalize_structure_root_map_entry(raw_entry)
-            for raw_entry in self._load_yaml_entries(self.structure_root_map_config_path)
-        ]
-        final_entries = [
-            entry
-            for entry in normalized_entries
-            if entry["structure_id"] and entry["template_roots"]
-        ]
-        self._write_structure_root_map_yaml(sorted(final_entries, key=lambda row: row["structure_id"]))
-        return {entry["structure_id"]: entry["template_roots"] for entry in final_entries}
-
-    def _owned_structure_roots(
-        self,
-        structure_id: str,
-        structure_root_overrides: dict[str, list[str]],
-    ) -> list[str]:
-        if structure_id in structure_root_overrides:
-            return sorted(dict.fromkeys(structure_root_overrides[structure_id]))
-        return [structure_id_path_stem(structure_id)]
-
     def _build_structure_detection_status(
         self,
         *,
@@ -2938,6 +2888,20 @@ class LootStackExporter:
                 seen.add(candidate)
         return candidates
 
+    def _derive_structure_stem_candidates(self, structure_id: str) -> list[tuple[str, str]]:
+        stem = structure_id_path_stem(structure_id)
+        if not stem:
+            return []
+        candidates: list[tuple[str, str]] = [(stem, "structure_id_stem")]
+        tokens = stem.split("_")
+        seen = {stem}
+        for length in range(len(tokens) - 1, 0, -1):
+            candidate = "_".join(tokens[:length])
+            if candidate and candidate not in seen:
+                candidates.append((candidate, "structure_id_submatch"))
+                seen.add(candidate)
+        return candidates
+
     def _resolve_structure_name_match_mode(
         self,
         *,
@@ -2995,8 +2959,14 @@ class LootStackExporter:
     ) -> dict[tuple[str, str], dict[str, Any]]:
         candidates: dict[tuple[str, str], tuple[int, dict[str, Any]]] = {}
         structure_id_stem_index: dict[str, set[str]] = defaultdict(set)
+        structure_id_submatch_index: dict[str, set[str]] = defaultdict(set)
+        exact_match_table_ids = {loot_table_id for _structure_id, loot_table_id in exact_link_keys}
         for structure_id in structure_lookup:
-            structure_id_stem_index[structure_id_path_stem(structure_id)].add(structure_id)
+            for structure_candidate, structure_mode in self._derive_structure_stem_candidates(structure_id):
+                if structure_mode == "structure_id_stem":
+                    structure_id_stem_index[structure_candidate].add(structure_id)
+                else:
+                    structure_id_submatch_index[structure_candidate].add(structure_id)
 
         def record_candidate(priority: int, row: dict[str, Any]) -> None:
             key = (row["loot_table_id"], row["structure_id"])
@@ -3005,7 +2975,8 @@ class LootStackExporter:
                 candidates[key] = (priority, row)
 
         for loot_table_id in sorted(self.named_table_ids):
-            for candidate_name, candidate_mode in self._derive_structure_name_candidates(loot_table_id):
+            loot_name_candidates = self._derive_structure_name_candidates(loot_table_id)
+            for candidate_name, candidate_mode in loot_name_candidates:
                 for root_key, structure_ids in structure_root_index.items():
                     match_mode = self._resolve_structure_name_match_mode(
                         candidate_name=candidate_name,
@@ -3056,6 +3027,39 @@ class LootStackExporter:
                                 "evidence_data": {
                                     "structure_id_stem": structure_stem,
                                     "matched_value": structure_stem,
+                                    "match_mode": match_mode,
+                                },
+                                "autoresolve": False,
+                                "notes": "",
+                            },
+                        )
+            has_stronger_context = loot_table_id in exact_match_table_ids or any(
+                row["loot_table_id"] == loot_table_id and priority < 2
+                for (_key, (priority, row)) in candidates.items()
+            )
+            if not has_stronger_context:
+                continue
+            for candidate_name, candidate_mode in loot_name_candidates:
+                for structure_submatch, structure_ids in structure_id_submatch_index.items():
+                    match_mode = self._resolve_structure_name_match_mode(
+                        candidate_name=candidate_name,
+                        candidate_mode=candidate_mode,
+                        target_name=structure_submatch,
+                    )
+                    if match_mode is None:
+                        continue
+                    for structure_id in sorted(structure_ids):
+                        if (structure_id, loot_table_id) in exact_link_keys:
+                            continue
+                        record_candidate(
+                            2,
+                            {
+                                "loot_table_id": loot_table_id,
+                                "structure_id": structure_id,
+                                "match_rule": "ambiguous_structure_id_submatch",
+                                "evidence_data": {
+                                    "structure_id_submatch": structure_submatch,
+                                    "matched_value": structure_submatch,
                                     "match_mode": match_mode,
                                 },
                                 "autoresolve": False,
@@ -3167,8 +3171,9 @@ class LootStackExporter:
                         "loot_table_id": row["loot_table_id"],
                         "is_in_stage1_loot_scope": "true" if row["loot_table_id"] in named_table_set else "false",
                         "link_source": "ambiguous_match",
-                        "link_method": "ambiguous_structure_root_match",
-                        "notes": row["notes"] or f"root={self._string_or_blank(row['evidence_data'].get('structure_root'))}",
+                        "link_method": row["match_rule"] or "ambiguous_structure_root_match",
+                        "notes": row["notes"]
+                        or f"matched={self._string_or_blank(row['evidence_data'].get('matched_value'))}",
                     }
                 )
                 audit_rows.append(
@@ -3377,7 +3382,6 @@ class LootStackExporter:
         all_template_pool_ids = self._collect_effective_resource_ids("worldgen/template_pool", ".json")
         stage1_table_ids = set(self.named_table_ids)
         active_structure_set_ids_by_structure = self._collect_active_structure_set_ids_by_structure()
-        structure_root_overrides = self._load_structure_root_map_entries()
         available_structure_roots: dict[str, set[str]] = defaultdict(set)
         for resource_path in sorted(self.effective_resources):
             if get_resource_family(resource_path) != "structure" or not resource_path.endswith(".nbt"):
@@ -3415,7 +3419,7 @@ class LootStackExporter:
                 all_loot_table_ids=all_loot_table_ids,
                 all_template_pool_ids=all_template_pool_ids,
             )
-            owned_roots = self._owned_structure_roots(structure_id, structure_root_overrides)
+            owned_roots = [structure_id_path_stem(structure_id)]
             root_match_eligible = (
                 exact_status not in {"missing_structure_resource", "invalid_structure_json"}
                 and any(root_key in available_structure_roots for root_key in owned_roots)
@@ -4222,9 +4226,8 @@ class LootStackExporter:
             "- Exact-match links apply automatically from the conservative structure-side detector.",
             f"- Ambiguous-match candidates live in `{self.ambiguous_resolution_config_path}`. Review them there and set `autoresolve: true` only for the specific rows you want applied automatically.",
             f"- No-match manual resolutions live in `{self.manual_resolution_config_path}`. Open the file, research unresolved rows, fill in `structure_id`, then set `status: mapped`.",
-            f"- Structure root ownership overrides live in `{self.structure_root_map_config_path}`. Structures default to owning a root equal to their own path stem unless overridden there.",
             "- No suppressions are part of this workflow. If an exact detected link is wrong, the matching logic should be corrected instead of overridden.",
-            "- Automatic structure-to-loot mapping remains conservative: jigsaw start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, and ambiguous candidates from structure roots or active structure-id stems.",
+            "- Automatic structure-to-loot mapping remains conservative: jigsaw start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, and ambiguous candidates from real structure roots, active structure-id stems, or reduced structure-id submatches.",
             "- Non-jigsaw structures may still land in ambiguous-match or no-match until you confirm them through the resolution YAMLs.",
             "- `structure_loot_links.csv` is the raw structure-to-loot-table layer for this corrected first pass.",
             "- `resolved_loot_v*.csv` remains the canonical raw classification export, but its `affinities` field is a serialized list. Prefer `item_classification.csv` plus `item_affinities.csv` for Tableau.",
@@ -4248,7 +4251,6 @@ def export_loot_stack(
     classification_csv_path: Path | str | None = None,
     ambiguous_resolution_config_path: Path | str = DEFAULT_AMBIGUOUS_STRUCTURE_RESOLUTION_CONFIG,
     manual_resolution_config_path: Path | str = DEFAULT_MANUAL_STRUCTURE_RESOLUTION_CONFIG,
-    structure_root_map_config_path: Path | str = DEFAULT_STRUCTURE_ROOT_MAP_CONFIG,
     mods_root: Path | str = DEFAULT_MODS_ROOT,
     ignore_roots: list[Path | str] | None = None,
     archive_roots: list[Path | str] | None = None,
@@ -4300,7 +4302,6 @@ def export_loot_stack(
         classification_csv_path=resolved_classification_path,
         ambiguous_resolution_config_path=Path(ambiguous_resolution_config_path),
         manual_resolution_config_path=Path(manual_resolution_config_path),
-        structure_root_map_config_path=Path(structure_root_map_config_path),
         refresh_all_structure_resolution_maps=refresh_all_structure_resolution_maps,
     )
     return exporter.export()
@@ -4320,7 +4321,6 @@ def main(argv: list[str] | None = None) -> int:
             classification_csv_path=args.classification_csv,
             ambiguous_resolution_config_path=args.ambiguous_structure_resolution_config,
             manual_resolution_config_path=args.manual_structure_resolution_config,
-            structure_root_map_config_path=args.structure_root_map_config,
             refresh_all_structure_resolution_maps=args.refresh_all_structure_resolution_maps,
         )
     except PrecheckFailed as exc:

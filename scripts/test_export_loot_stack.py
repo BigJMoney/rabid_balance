@@ -18,7 +18,6 @@ SOPHISTICATED_DIR = LIBS_ROOT / "sophisticatedbackpacks-3.25.34.1581"
 FIXTURES_DIR = PROJECT_ROOT / "scripts" / "test_fixtures"
 AMBIGUOUS_FIXTURE_PATH = FIXTURES_DIR / "structure_loot_ambiguous_resolution_map.yaml"
 MANUAL_FIXTURE_PATH = FIXTURES_DIR / "structure_loot_manual_resolution_map.yaml"
-ROOT_MAP_FIXTURE_PATH = FIXTURES_DIR / "structure_root_map.yaml"
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
 import export_loot_stack as exporter
@@ -41,31 +40,26 @@ def write_mod_pack(root: Path, pack_id: str, resources: dict[str, str]) -> None:
         file_path.write_text(content, encoding="utf-8")
 
 
-def copy_resolution_map_fixtures(destination_root: Path) -> tuple[Path, Path, Path]:
+def copy_resolution_map_fixtures(destination_root: Path) -> tuple[Path, Path]:
     destination_root.mkdir(parents=True, exist_ok=True)
     ambiguous_path = destination_root / "structure_loot_ambiguous_resolution_map.yaml"
     manual_path = destination_root / "structure_loot_manual_resolution_map.yaml"
-    root_map_path = destination_root / "structure_root_map.yaml"
     ambiguous_path.write_text(AMBIGUOUS_FIXTURE_PATH.read_text(encoding="utf-8"), encoding="utf-8")
     manual_path.write_text(MANUAL_FIXTURE_PATH.read_text(encoding="utf-8"), encoding="utf-8")
-    root_map_path.write_text(ROOT_MAP_FIXTURE_PATH.read_text(encoding="utf-8"), encoding="utf-8")
-    return ambiguous_path, manual_path, root_map_path
+    return ambiguous_path, manual_path
 
 
 def export_with_temp_resolution_maps(output_dir: Path, **kwargs) -> dict[str, object]:
     ambiguous_path = kwargs.pop("ambiguous_resolution_config_path", None)
     manual_path = kwargs.pop("manual_resolution_config_path", None)
-    root_map_path = kwargs.pop("structure_root_map_config_path", None)
-    if ambiguous_path is None or manual_path is None or root_map_path is None:
-        default_ambiguous_path, default_manual_path, default_root_map_path = copy_resolution_map_fixtures(output_dir.parent)
+    if ambiguous_path is None or manual_path is None:
+        default_ambiguous_path, default_manual_path = copy_resolution_map_fixtures(output_dir.parent)
         ambiguous_path = ambiguous_path or default_ambiguous_path
         manual_path = manual_path or default_manual_path
-        root_map_path = root_map_path or default_root_map_path
     return exporter.export_loot_stack(
         output_dir=output_dir,
         ambiguous_resolution_config_path=Path(ambiguous_path),
         manual_resolution_config_path=Path(manual_path),
-        structure_root_map_config_path=Path(root_map_path),
         **kwargs,
     )
 
@@ -75,16 +69,11 @@ class ExportLootStackTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.tempdir = tempfile.TemporaryDirectory()
         cls.output_dir = Path(cls.tempdir.name) / "default_stack"
-        (
-            cls.ambiguous_resolution_path,
-            cls.manual_resolution_path,
-            cls.structure_root_map_path,
-        ) = copy_resolution_map_fixtures(Path(cls.tempdir.name))
+        cls.ambiguous_resolution_path, cls.manual_resolution_path = copy_resolution_map_fixtures(Path(cls.tempdir.name))
         exporter.export_loot_stack(
             output_dir=cls.output_dir,
             ambiguous_resolution_config_path=cls.ambiguous_resolution_path,
             manual_resolution_config_path=cls.manual_resolution_path,
-            structure_root_map_config_path=cls.structure_root_map_path,
         )
 
         cls.precheck = json.loads((cls.output_dir / "precheck_report.json").read_text(encoding="utf-8"))
@@ -293,7 +282,11 @@ class ExportLootStackTests(unittest.TestCase):
         self.assertTrue(ambiguous_entries)
         self.assertTrue(
             {entry["match_rule"] for entry in ambiguous_entries}.issubset(
-                {"ambiguous_structure_root_match", "ambiguous_structure_id_match"}
+                {
+                    "ambiguous_structure_root_match",
+                    "ambiguous_structure_id_match",
+                    "ambiguous_structure_id_submatch",
+                }
             )
         )
         self.assertTrue(
@@ -323,9 +316,10 @@ class ExportLootStackTests(unittest.TestCase):
         )
         self.assertTrue(
             any(
-                entry["loot_table_id"] == "minecraft:chests/underwater_ruin_big"
-                and entry["structure_id"] == "minecraft:ocean_ruin_cold"
-                and entry["evidence_data"]["structure_root"] == "underwater_ruin"
+                entry["loot_table_id"] == "minecraft:chests/shipwreck_supply"
+                and entry["structure_id"] == "minecraft:shipwreck_beached"
+                and entry["match_rule"] == "ambiguous_structure_id_submatch"
+                and entry["evidence_data"]["structure_id_submatch"] == "shipwreck"
                 for entry in ambiguous_entries
             )
         )
@@ -334,6 +328,15 @@ class ExportLootStackTests(unittest.TestCase):
                 entry["loot_table_id"] == "minecraft:chests/trial_chambers/intersection"
                 and entry["structure_id"] == "minecraft:trial_chambers"
                 and entry["evidence_data"]["structure_root"] == "trial_chambers"
+                for entry in ambiguous_entries
+            )
+        )
+        self.assertTrue(
+            any(
+                entry["loot_table_id"] == "minecraft:chests/ruined_portal"
+                and entry["structure_id"] == "minecraft:ruined_portal_desert"
+                and entry["match_rule"] == "ambiguous_structure_id_submatch"
+                and entry["evidence_data"]["structure_id_submatch"] == "ruined_portal"
                 for entry in ambiguous_entries
             )
         )
@@ -391,6 +394,20 @@ class ExportLootStackTests(unittest.TestCase):
         self.assertTrue(all(entry["loot_table_id"] != "minecraft:equipment/trial_chamber" for entry in manual_entries))
         self.assertTrue(
             any(
+                entry["loot_table_id"] == "minecraft:chests/underwater_ruin_big"
+                and entry["status"] == "unresolved"
+                for entry in manual_entries
+            )
+        )
+        self.assertTrue(
+            any(
+                entry["loot_table_id"] == "minecraft:chests/woodland_mansion"
+                and entry["status"] == "unresolved"
+                for entry in manual_entries
+            )
+        )
+        self.assertTrue(
+            any(
                 entry["loot_table_id"] == "minecraft:chests/nether_bridge"
                 and entry["status"] == "unresolved"
                 and entry["structure_id"] == ""
@@ -432,12 +449,16 @@ class ExportLootStackTests(unittest.TestCase):
                         "version": 1,
                         "entries": [
                             {
-                                "loot_table_id": "minecraft:chests/woodland_mansion",
-                                "structure_id": "minecraft:mansion",
-                                "match_rule": "ambiguous_structure_root_match",
-                                "evidence_data": {"structure_root": "woodland_mansion", "match_mode": "first_segment"},
+                                "loot_table_id": "minecraft:chests/shipwreck_supply",
+                                "structure_id": "minecraft:shipwreck_beached",
+                                "match_rule": "ambiguous_structure_id_submatch",
+                                "evidence_data": {
+                                    "structure_id_submatch": "shipwreck",
+                                    "matched_value": "shipwreck",
+                                    "match_mode": "underscore_prefix",
+                                },
                                 "autoresolve": True,
-                                "notes": "Autoresolve mansion candidate for structure-link test.",
+                                "notes": "Autoresolve submatch candidate for structure-link test.",
                             }
                         ],
                     },
@@ -458,17 +479,17 @@ class ExportLootStackTests(unittest.TestCase):
             )
             self.assertTrue(
                 any(
-                    row["structure_id"] == "minecraft:mansion"
-                    and row["loot_table_id"] == "minecraft:chests/woodland_mansion"
+                    row["structure_id"] == "minecraft:shipwreck_beached"
+                    and row["loot_table_id"] == "minecraft:chests/shipwreck_supply"
                     and row["link_source"] == "ambiguous_match"
-                    and row["link_method"] == "ambiguous_structure_root_match"
+                    and row["link_method"] == "ambiguous_structure_id_submatch"
                     for row in links
                 )
             )
             self.assertTrue(
                 any(
-                    row["structure_id"] == "minecraft:mansion"
-                    and row["loot_table_id"] == "minecraft:chests/woodland_mansion"
+                    row["structure_id"] == "minecraft:shipwreck_beached"
+                    and row["loot_table_id"] == "minecraft:chests/shipwreck_supply"
                     and row["resolution"] == "active_ambiguous_autoresolve"
                     for row in audit
                 )
@@ -544,8 +565,6 @@ class ExportLootStackTests(unittest.TestCase):
             output_dir = Path(tempdir) / "refresh_maps"
             ambiguous_path = Path(tempdir) / "ambiguous.yaml"
             manual_path = Path(tempdir) / "manual.yaml"
-            root_map_path = Path(tempdir) / "structure_root_map.yaml"
-            root_map_path.write_text(ROOT_MAP_FIXTURE_PATH.read_text(encoding="utf-8"), encoding="utf-8")
             ambiguous_path.write_text(
                 yaml.safe_dump(
                     {
@@ -588,7 +607,6 @@ class ExportLootStackTests(unittest.TestCase):
                 output_dir=output_dir,
                 ambiguous_resolution_config_path=ambiguous_path,
                 manual_resolution_config_path=manual_path,
-                structure_root_map_config_path=root_map_path,
                 refresh_all_structure_resolution_maps=True,
             )
             refreshed_ambiguous = yaml.safe_load(ambiguous_path.read_text(encoding="utf-8"))
