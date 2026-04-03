@@ -1,5 +1,0 @@
-# Structure root overrides:
-# Structures default to owning a template root equal to their own structure_id path stem.
-# Add entries here only for exceptions or extra roots.
-version: 1
-entries: []

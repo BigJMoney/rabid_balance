@@ -2955,7 +2955,6 @@ class LootStackExporter:
         structure_lookup: dict[str, dict[str, Any]],
         exact_link_keys: set[tuple[str, str]],
         structure_root_index: dict[str, set[str]],
-        available_structure_roots: dict[str, set[str]],
     ) -> dict[tuple[str, str], dict[str, Any]]:
         candidates: dict[tuple[str, str], tuple[int, dict[str, Any]]] = {}
         structure_id_stem_index: dict[str, set[str]] = defaultdict(set)
@@ -3000,8 +2999,6 @@ class LootStackExporter:
                                     "structure_root": root_key,
                                     "matched_value": root_key,
                                     "match_mode": match_mode,
-                                    "template_source_object_count": len(available_structure_roots.get(root_key, set())),
-                                    "template_source_objects": sorted(available_structure_roots.get(root_key, set())),
                                 },
                                 "autoresolve": False,
                                 "notes": "",
@@ -3466,7 +3463,6 @@ class LootStackExporter:
             structure_lookup=structure_lookup,
             exact_link_keys=set(exact_link_rows),
             structure_root_index=structure_root_index,
-            available_structure_roots=available_structure_roots,
         )
         ambiguous_result = self._sync_structure_ambiguous_resolution_entries(
             current_candidates=ambiguous_candidates,
