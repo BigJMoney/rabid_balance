@@ -3379,6 +3379,9 @@ class LootStackExporter:
         all_template_pool_ids = self._collect_effective_resource_ids("worldgen/template_pool", ".json")
         stage1_table_ids = set(self.named_table_ids)
         active_structure_set_ids_by_structure = self._collect_active_structure_set_ids_by_structure()
+        active_structure_id_stems = {
+            structure_id_path_stem(structure_id) for structure_id in active_structure_set_ids_by_structure
+        }
         available_structure_roots: dict[str, set[str]] = defaultdict(set)
         for resource_path in sorted(self.effective_resources):
             if get_resource_family(resource_path) != "structure" or not resource_path.endswith(".nbt"):
@@ -3417,6 +3420,16 @@ class LootStackExporter:
                 all_template_pool_ids=all_template_pool_ids,
             )
             owned_roots = [structure_id_path_stem(structure_id)]
+            type_root = structure_id_path_stem(structure_type) if structure_type else ""
+            if (
+                type_root
+                and type_root not in owned_roots
+                and type_root in available_structure_roots
+                and type_root not in active_structure_id_stems
+            ):
+                # Keep real top-level NBT roots matchable without overriding roots that
+                # are already represented directly by another active structure ID.
+                owned_roots.append(type_root)
             root_match_eligible = (
                 exact_status not in {"missing_structure_resource", "invalid_structure_json"}
                 and any(root_key in available_structure_roots for root_key in owned_roots)

@@ -742,6 +742,15 @@ entries:
     match_mode: first_segment
   autoresolve: false
   notes: ''
+- loot_table_id: minecraft:chests/woodland_mansion
+  structure_id: minecraft:mansion
+  match_rule: ambiguous_structure_root_match
+  evidence_data:
+    structure_root: woodland_mansion
+    matched_value: woodland_mansion
+    match_mode: first_segment
+  autoresolve: false
+  notes: ''
 - loot_table_id: minecraft:equipment/trial_chamber
   structure_id: minecraft:trial_chambers
   match_rule: ambiguous_structure_root_match

@@ -199,6 +199,23 @@ class ExportLootStackTests(unittest.TestCase):
                 )
             )
 
+    def test_default_stack_non_jigsaw_root_alias_supports_woodland_mansion(self) -> None:
+        mansion_row = next(row for row in self.structure_rows if row["structure_id"] == "minecraft:mansion")
+        self.assertEqual(
+            mansion_row["structure_detection_status"],
+            "exact_unsupported_root_match_eligible:minecraft:woodland_mansion",
+        )
+        self.assertTrue(
+            any(
+                entry["loot_table_id"] == "minecraft:chests/woodland_mansion"
+                and entry["structure_id"] == "minecraft:mansion"
+                and entry["match_rule"] == "ambiguous_structure_root_match"
+                and entry["evidence_data"]["structure_root"] == "woodland_mansion"
+                and entry["evidence_data"]["match_mode"] == "first_segment"
+                for entry in self.ambiguous_resolution_map["entries"]
+            )
+        )
+
     def test_default_stack_stage2_discovers_sophisticated_backpacks_glms(self) -> None:
         if not SOPHISTICATED_DIR.exists():
             self.assertEqual(self.glm_chain, [])
@@ -400,11 +417,7 @@ class ExportLootStackTests(unittest.TestCase):
             )
         )
         self.assertTrue(
-            any(
-                entry["loot_table_id"] == "minecraft:chests/woodland_mansion"
-                and entry["status"] == "unresolved"
-                for entry in manual_entries
-            )
+            all(entry["loot_table_id"] != "minecraft:chests/woodland_mansion" for entry in manual_entries)
         )
         self.assertTrue(
             any(
