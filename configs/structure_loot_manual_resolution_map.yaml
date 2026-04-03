@@ -5,16 +5,20 @@
 version: 1
 entries:
 - loot_table_id: minecraft:chests/abandoned_mineshaft
-  status: unresolved
-  structure_id: ''
+  status: mapped
+  structure_id: minecraft:mineshaft
+  notes: ''
+- loot_table_id: minecraft:chests/abandoned_mineshaft
+  status: mapped
+  structure_id: minecraft:mineshaft_mesa
   notes: ''
 - loot_table_id: minecraft:chests/jungle_temple
-  status: unresolved
-  structure_id: ''
+  status: mapped
+  structure_id: minecraft:jungle_pyramid
   notes: ''
 - loot_table_id: minecraft:chests/jungle_temple_dispenser
-  status: unresolved
-  structure_id: ''
+  status: mapped
+  structure_id: minecraft:jungle_pyramid
   notes: ''
 - loot_table_id: minecraft:chests/nether_bridge
   status: unresolved
@@ -29,10 +33,18 @@ entries:
   structure_id: ''
   notes: ''
 - loot_table_id: minecraft:chests/underwater_ruin_big
-  status: unresolved
-  structure_id: ''
+  status: mapped
+  structure_id: minecraft:ocean_ruin_cold
+  notes: ''
+- loot_table_id: minecraft:chests/underwater_ruin_big
+  status: mapped
+  structure_id: minecraft:ocean_ruin_warm
   notes: ''
 - loot_table_id: minecraft:chests/underwater_ruin_small
-  status: unresolved
-  structure_id: ''
+  status: mapped
+  structure_id: minecraft:ocean_ruin_cold
+  notes: ''
+- loot_table_id: minecraft:chests/underwater_ruin_small
+  status: mapped
+  structure_id: minecraft:ocean_ruin_warm
   notes: ''

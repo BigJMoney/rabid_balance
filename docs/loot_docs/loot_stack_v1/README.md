@@ -25,8 +25,8 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Item affinity rows: 1174
 - Classification coverage rows: 240
 - Structure rows: 39
-- Structure loot-link rows: 54
-- Structure loot-link audit rows: 149
+- Structure loot-link rows: 128
+- Structure loot-link audit rows: 152
 - Classified loot items: 237
 - Missing loot items: 3
 
