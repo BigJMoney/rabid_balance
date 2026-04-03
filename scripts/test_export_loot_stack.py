@@ -573,7 +573,7 @@ class ExportLootStackTests(unittest.TestCase):
                 ],
             )
 
-    def test_refresh_all_structure_resolution_maps_rebuilds_both_yaml_files(self) -> None:
+    def test_rebuild_all_structure_resolution_maps_rebuilds_both_yaml_files(self) -> None:
         with tempfile.TemporaryDirectory() as tempdir:
             output_dir = Path(tempdir) / "refresh_maps"
             ambiguous_path = Path(tempdir) / "ambiguous.yaml"
@@ -620,7 +620,7 @@ class ExportLootStackTests(unittest.TestCase):
                 output_dir=output_dir,
                 ambiguous_resolution_config_path=ambiguous_path,
                 manual_resolution_config_path=manual_path,
-                refresh_all_structure_resolution_maps=True,
+                rebuild_all_structure_resolution_maps=True,
             )
             refreshed_ambiguous = yaml.safe_load(ambiguous_path.read_text(encoding="utf-8"))
             refreshed_manual = yaml.safe_load(manual_path.read_text(encoding="utf-8"))

@@ -552,7 +552,7 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         self.assertEqual(arrow_row["function"], "weapon")
         self.assertTrue(all(row["has_classification"] == "true" for row in self.classification_coverage))
 
-    def test_refresh_all_structure_resolution_maps_passes_through_wrapper(self) -> None:
+    def test_rebuild_all_structure_resolution_maps_passes_through_wrapper(self) -> None:
         with tempfile.TemporaryDirectory() as tempdir:
             root = Path(tempdir)
             ambiguous_path = root / "ambiguous.yaml"
@@ -599,7 +599,7 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
                 output_dir=root / "out",
                 ambiguous_resolution_config_path=ambiguous_path,
                 manual_resolution_config_path=manual_path,
-                refresh_all_structure_resolution_maps=True,
+                rebuild_all_structure_resolution_maps=True,
             )
             refreshed_ambiguous = yaml.safe_load(ambiguous_path.read_text(encoding="utf-8"))
             refreshed_manual = yaml.safe_load(manual_path.read_text(encoding="utf-8"))

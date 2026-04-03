@@ -573,7 +573,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="Global YAML file for no-match structure loot-table manual resolutions.",
     )
     parser.add_argument(
-        "--refresh-all-structure-resolution-maps",
+        "--rebuild-all-structure-resolution-maps",
         action="store_true",
         help=(
             "Destructively rebuild both structure resolution YAMLs from current export results only. "
@@ -1067,7 +1067,7 @@ class LootStackExporter:
         classification_csv_path: Path | None,
         ambiguous_resolution_config_path: Path,
         manual_resolution_config_path: Path,
-        refresh_all_structure_resolution_maps: bool,
+        rebuild_all_structure_resolution_maps: bool,
         clean_structure_resolution_maps: bool,
     ) -> None:
         self.base_pack_root = base_pack_root
@@ -1083,7 +1083,7 @@ class LootStackExporter:
         self.classification_csv_path = classification_csv_path
         self.ambiguous_resolution_config_path = ambiguous_resolution_config_path
         self.manual_resolution_config_path = manual_resolution_config_path
-        self.refresh_all_structure_resolution_maps = refresh_all_structure_resolution_maps
+        self.rebuild_all_structure_resolution_maps = rebuild_all_structure_resolution_maps
         self.clean_structure_resolution_maps = clean_structure_resolution_maps
 
         self.tables: dict[str, TableRecord] = {}
@@ -3083,7 +3083,7 @@ class LootStackExporter:
         structure_lookup: dict[str, dict[str, Any]],
     ) -> dict[str, Any]:
         existing_entries = []
-        if not self.refresh_all_structure_resolution_maps:
+        if not self.rebuild_all_structure_resolution_maps:
             existing_entries = [
                 self._normalize_structure_ambiguous_resolution_entry(row)
                 for row in self._load_yaml_entries(self.ambiguous_resolution_config_path)
@@ -3223,7 +3223,7 @@ class LootStackExporter:
     ) -> dict[str, Any]:
         current_no_match_set = set(current_no_match_table_ids)
         existing_entries = []
-        if not self.refresh_all_structure_resolution_maps:
+        if not self.rebuild_all_structure_resolution_maps:
             existing_entries = [
                 self._normalize_structure_manual_resolution_entry(row)
                 for row in self._load_yaml_entries(self.manual_resolution_config_path)
@@ -4254,7 +4254,7 @@ class LootStackExporter:
             f"- Ambiguous-match candidates live in `{self.ambiguous_resolution_config_path}`. Review them there and set `autoresolve: true` only for the specific rows you want applied automatically.",
             f"- No-match manual resolutions live in `{self.manual_resolution_config_path}`. Open the file, research unresolved rows, fill in `structure_id`, then set `status: mapped`.",
             "- Use `--clean-structure-resolution-maps` to prune stale ambiguous/manual mapped rows after mod-list changes while preserving current approvals and current manual mappings.",
-            "- Use `--refresh-all-structure-resolution-maps` only when you intentionally want a destructive rebuild of both structure resolution YAMLs from current export results.",
+            "- Use `--rebuild-all-structure-resolution-maps` only when you intentionally want a destructive rebuild of both structure resolution YAMLs from current export results.",
             "- No suppressions are part of this workflow. If an exact detected link is wrong, the matching logic should be corrected instead of overridden.",
             "- Automatic structure-to-loot mapping remains conservative: jigsaw start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, and ambiguous candidates from real structure roots, active structure-id stems, or reduced structure-id submatches.",
             "- Non-jigsaw structures may still land in ambiguous-match or no-match until you confirm them through the resolution YAMLs.",
@@ -4287,7 +4287,7 @@ def export_loot_stack(
     output_dir: Path | str = DEFAULT_OUTPUT_DIR,
     base_pack_root: Path | str = DEFAULT_BASE_PACK_ROOT,
     auto_discover_mod_dirs: bool = True,
-    refresh_all_structure_resolution_maps: bool = False,
+    rebuild_all_structure_resolution_maps: bool = False,
     clean_structure_resolution_maps: bool = False,
 ) -> dict[str, Any]:
     output_path = Path(output_dir)
@@ -4332,7 +4332,7 @@ def export_loot_stack(
         classification_csv_path=resolved_classification_path,
         ambiguous_resolution_config_path=Path(ambiguous_resolution_config_path),
         manual_resolution_config_path=Path(manual_resolution_config_path),
-        refresh_all_structure_resolution_maps=refresh_all_structure_resolution_maps,
+        rebuild_all_structure_resolution_maps=rebuild_all_structure_resolution_maps,
         clean_structure_resolution_maps=clean_structure_resolution_maps,
     )
     return exporter.export()
@@ -4352,7 +4352,7 @@ def main(argv: list[str] | None = None) -> int:
             classification_csv_path=args.classification_csv,
             ambiguous_resolution_config_path=args.ambiguous_structure_resolution_config,
             manual_resolution_config_path=args.manual_structure_resolution_config,
-            refresh_all_structure_resolution_maps=args.refresh_all_structure_resolution_maps,
+            rebuild_all_structure_resolution_maps=args.rebuild_all_structure_resolution_maps,
             clean_structure_resolution_maps=args.clean_structure_resolution_maps,
         )
     except PrecheckFailed as exc:
