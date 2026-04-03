@@ -192,22 +192,27 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
     def test_vanilla_resolution_outputs_and_yaml_headers_exist(self) -> None:
         self.assertEqual(self.structure_resolution_report["exact_match_table_count"], 38)
         self.assertEqual(self.structure_resolution_report["exact_match_row_count"], 49)
-        self.assertEqual(self.structure_resolution_report["ambiguous_match_candidate_table_count"], 16)
-        self.assertEqual(self.structure_resolution_report["ambiguous_match_candidate_row_count"], 27)
-        self.assertEqual(self.structure_resolution_report["ambiguous_match_pending_row_count"], 27)
+        self.assertEqual(self.structure_resolution_report["ambiguous_match_candidate_table_count"], 25)
+        self.assertEqual(self.structure_resolution_report["ambiguous_match_candidate_row_count"], 36)
+        self.assertEqual(self.structure_resolution_report["ambiguous_match_pending_row_count"], 36)
         self.assertEqual(self.structure_resolution_report["ambiguous_match_autoresolved_row_count"], 0)
-        self.assertEqual(self.structure_resolution_report["no_match_table_count"], 15)
-        self.assertEqual(self.structure_resolution_report["no_match_unresolved_table_count"], 15)
-        self.assertEqual(self.structure_resolution_report["no_match_unresolved_row_count"], 15)
+        self.assertEqual(self.structure_resolution_report["no_match_table_count"], 6)
+        self.assertEqual(self.structure_resolution_report["no_match_unresolved_table_count"], 6)
+        self.assertEqual(self.structure_resolution_report["no_match_unresolved_row_count"], 6)
         self.assertIn("# One-to-many model:", self.ambiguous_resolution_text)
         self.assertIn("# One-to-many model:", self.manual_resolution_text)
-        self.assertTrue(all(entry["match_rule"] == "ambiguous_structure_root_match" for entry in self.ambiguous_resolution_map["entries"]))
+        self.assertTrue(
+            {entry["match_rule"] for entry in self.ambiguous_resolution_map["entries"]}.issubset(
+                {"ambiguous_structure_root_match", "ambiguous_structure_id_match"}
+            )
+        )
         self.assertTrue(
             any(
                 entry["loot_table_id"] == "minecraft:chests/desert_pyramid"
-                and entry["status"] == "unresolved"
-                and entry["structure_id"] == ""
-                for entry in self.manual_resolution_map["entries"]
+                and entry["structure_id"] == "minecraft:desert_pyramid"
+                and entry["match_rule"] == "ambiguous_structure_id_match"
+                and entry["evidence_data"]["structure_id_stem"] == "desert_pyramid"
+                for entry in self.ambiguous_resolution_map["entries"]
             )
         )
         self.assertTrue(
@@ -237,6 +242,15 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         )
         self.assertTrue(
             any(
+                entry["loot_table_id"] == "minecraft:chests/buried_treasure"
+                and entry["structure_id"] == "minecraft:buried_treasure"
+                and entry["match_rule"] == "ambiguous_structure_id_match"
+                and entry["evidence_data"]["structure_id_stem"] == "buried_treasure"
+                for entry in self.ambiguous_resolution_map["entries"]
+            )
+        )
+        self.assertTrue(
+            any(
                 entry["loot_table_id"] == "minecraft:chests/trial_chambers/intersection"
                 and entry["structure_id"] == "minecraft:trial_chambers"
                 and entry["evidence_data"]["structure_root"] == "trial_chambers"
@@ -246,14 +260,25 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         self.assertTrue(
             any(
                 entry["loot_table_id"] == "minecraft:equipment/trial_chamber"
+                and entry["structure_id"] == "minecraft:trial_chambers"
+                and entry["match_rule"] == "ambiguous_structure_root_match"
+                and entry["evidence_data"]["match_mode"] == "first_segment_plural"
+                for entry in self.ambiguous_resolution_map["entries"]
+            )
+        )
+        self.assertTrue(
+            all(entry["loot_table_id"] != "minecraft:chests/buried_treasure" for entry in self.manual_resolution_map["entries"])
+        )
+        self.assertTrue(
+            any(
+                entry["loot_table_id"] == "minecraft:chests/simple_dungeon"
                 and entry["status"] == "unresolved"
-                and entry["structure_id"] == ""
                 for entry in self.manual_resolution_map["entries"]
             )
         )
         self.assertTrue(
             any(
-                entry["loot_table_id"] == "minecraft:chests/simple_dungeon"
+                entry["loot_table_id"] == "minecraft:chests/nether_bridge"
                 and entry["status"] == "unresolved"
                 for entry in self.manual_resolution_map["entries"]
             )
@@ -504,6 +529,71 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         self.assertEqual(arrow_row["classification_status"], "matched")
         self.assertEqual(arrow_row["function"], "weapon")
         self.assertTrue(all(row["has_classification"] == "true" for row in self.classification_coverage))
+
+    def test_refresh_all_structure_resolution_maps_passes_through_wrapper(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            root = Path(tempdir)
+            ambiguous_path = root / "ambiguous.yaml"
+            manual_path = root / "manual.yaml"
+            root_map_path = root / "structure_root_map.yaml"
+            ambiguous_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "version": 1,
+                        "entries": [
+                            {
+                                "loot_table_id": "minecraft:chests/nether_bridge",
+                                "structure_id": "minecraft:fortress",
+                                "match_rule": "bogus_rule",
+                                "evidence_data": {"matched_value": "bogus"},
+                                "autoresolve": True,
+                                "notes": "Should be removed by refresh.",
+                            }
+                        ],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+            manual_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "version": 1,
+                        "entries": [
+                            {
+                                "loot_table_id": "minecraft:chests/buried_treasure",
+                                "status": "mapped",
+                                "structure_id": "minecraft:fortress",
+                                "notes": "Should be removed by refresh.",
+                            }
+                        ],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+            root_map_path.write_text(ROOT_MAP_FIXTURE_PATH.read_text(encoding="utf-8"), encoding="utf-8")
+            exporter.export_loot_tables(
+                output_dir=root / "out",
+                ambiguous_resolution_config_path=ambiguous_path,
+                manual_resolution_config_path=manual_path,
+                structure_root_map_config_path=root_map_path,
+                refresh_all_structure_resolution_maps=True,
+            )
+            refreshed_ambiguous = yaml.safe_load(ambiguous_path.read_text(encoding="utf-8"))
+            refreshed_manual = yaml.safe_load(manual_path.read_text(encoding="utf-8"))
+            self.assertTrue(
+                any(
+                    entry["loot_table_id"] == "minecraft:chests/buried_treasure"
+                    and entry["structure_id"] == "minecraft:buried_treasure"
+                    for entry in refreshed_ambiguous["entries"]
+                )
+            )
+            self.assertTrue(
+                all(entry["loot_table_id"] != "minecraft:chests/buried_treasure" for entry in refreshed_manual["entries"])
+            )
 
 
 if __name__ == "__main__":

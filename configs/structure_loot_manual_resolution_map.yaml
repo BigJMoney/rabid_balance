@@ -8,14 +8,6 @@ entries:
   status: unresolved
   structure_id: ''
   notes: ''
-- loot_table_id: minecraft:chests/buried_treasure
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: minecraft:chests/desert_pyramid
-  status: unresolved
-  structure_id: ''
-  notes: ''
 - loot_table_id: minecraft:chests/jungle_temple
   status: unresolved
   structure_id: ''
@@ -33,46 +25,6 @@ entries:
   structure_id: ''
   notes: ''
 - loot_table_id: minecraft:chests/spawn_bonus_chest
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: minecraft:chests/stronghold_corridor
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: minecraft:chests/stronghold_crossing
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: minecraft:chests/stronghold_library
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: minecraft:chests/underwater_ruin_big
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: minecraft:chests/underwater_ruin_small
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: minecraft:chests/woodland_mansion
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: minecraft:equipment/trial_chamber
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: minecraft:spawners/trial_chamber/consumables
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: minecraft:spawners/trial_chamber/items_to_drop_when_ominous
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: minecraft:spawners/trial_chamber/key
   status: unresolved
   structure_id: ''
   notes: ''

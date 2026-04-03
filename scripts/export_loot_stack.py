@@ -579,6 +579,14 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         default=DEFAULT_STRUCTURE_ROOT_MAP_CONFIG,
         help="Structure metadata YAML for template-root ownership overrides.",
     )
+    parser.add_argument(
+        "--refresh-all-structure-resolution-maps",
+        action="store_true",
+        help=(
+            "Destructively rebuild both structure resolution YAMLs from current export results only. "
+            "This drops existing ambiguous/manual entries before writing fresh rows."
+        ),
+    )
     return parser.parse_args(argv)
 
 
@@ -1059,6 +1067,7 @@ class LootStackExporter:
         ambiguous_resolution_config_path: Path,
         manual_resolution_config_path: Path,
         structure_root_map_config_path: Path,
+        refresh_all_structure_resolution_maps: bool,
     ) -> None:
         self.base_pack_root = base_pack_root
         self.mods_root = mods_root
@@ -1074,6 +1083,7 @@ class LootStackExporter:
         self.ambiguous_resolution_config_path = ambiguous_resolution_config_path
         self.manual_resolution_config_path = manual_resolution_config_path
         self.structure_root_map_config_path = structure_root_map_config_path
+        self.refresh_all_structure_resolution_maps = refresh_all_structure_resolution_maps
 
         self.tables: dict[str, TableRecord] = {}
         self.pools: dict[str, PoolRecord] = {}
@@ -2865,23 +2875,83 @@ class LootStackExporter:
         eligibility = "root_match_eligible" if root_match_eligible else "no_root_match"
         return f"{status_prefix}_{eligibility}"
 
-    def _derive_structure_root_key(self, loot_table_id: str, available_root_keys: set[str]) -> tuple[str, str]:
+    @staticmethod
+    def _singularize_name_token(token: str) -> str:
+        lowered = token.lower()
+        if lowered.endswith("ies") and len(token) > 3:
+            return token[:-3] + "y"
+        if lowered.endswith("ches") or lowered.endswith("shes"):
+            return token[:-2]
+        if lowered.endswith("ses") or lowered.endswith("xes") or lowered.endswith("zes"):
+            return token[:-2]
+        if lowered.endswith("s") and len(token) > 1:
+            return token[:-1]
+        return token
+
+    @staticmethod
+    def _pluralize_name_token(token: str) -> str:
+        lowered = token.lower()
+        if lowered.endswith("ies"):
+            return token
+        if lowered.endswith("s"):
+            return token
+        if lowered.endswith("y") and len(token) > 1 and lowered[-2] not in "aeiou":
+            return token[:-1] + "ies"
+        if lowered.endswith("ch") or lowered.endswith("sh"):
+            return token + "es"
+        if lowered.endswith("x") or lowered.endswith("z"):
+            return token + "es"
+        return token + "s"
+
+    def _plurality_variants(self, value: str) -> set[str]:
+        normalized = value.strip()
+        if not normalized:
+            return set()
+        prefix, separator, tail = normalized.rpartition("_")
+        token = tail if separator else normalized
+        singular = self._singularize_name_token(token)
+        plural = self._pluralize_name_token(token)
+
+        def build(token_value: str) -> str:
+            if separator:
+                return f"{prefix}{separator}{token_value}"
+            return token_value
+
+        return {normalized, build(singular), build(plural)}
+
+    def _derive_structure_name_candidates(self, loot_table_id: str) -> list[tuple[str, str]]:
         _namespace, path = split_loot_table_id(loot_table_id)
         parts = PurePosixPath(path).parts
         if len(parts) < 2:
-            return "", ""
+            return []
         relative_parts = parts[1:]
         first_segment = relative_parts[0]
+        candidates: list[tuple[str, str]] = [(first_segment, "first_segment")]
         if len(relative_parts) > 1:
-            return first_segment, "first_segment"
-        if first_segment in available_root_keys:
-            return first_segment, "first_segment"
+            return candidates
         tokens = first_segment.split("_")
+        seen = {first_segment}
         for length in range(len(tokens) - 1, 0, -1):
             candidate = "_".join(tokens[:length])
-            if candidate in available_root_keys:
-                return candidate, "underscore_prefix"
-        return first_segment, "first_segment"
+            if candidate and candidate not in seen:
+                candidates.append((candidate, "underscore_prefix"))
+                seen.add(candidate)
+        return candidates
+
+    def _resolve_structure_name_match_mode(
+        self,
+        *,
+        candidate_name: str,
+        candidate_mode: str,
+        target_name: str,
+    ) -> str | None:
+        if not candidate_name or not target_name:
+            return None
+        if candidate_name == target_name:
+            return candidate_mode
+        if self._plurality_variants(candidate_name) & self._plurality_variants(target_name):
+            return f"{candidate_mode}_plural"
+        return None
 
     def _normalize_structure_ambiguous_resolution_entry(self, raw_entry: dict[str, Any]) -> dict[str, Any]:
         return {
@@ -2915,7 +2985,7 @@ class LootStackExporter:
             payload={"version": 1, "entries": entries},
         )
 
-    def _collect_structure_root_ambiguous_candidates(
+    def _collect_structure_name_match_candidates(
         self,
         *,
         structure_lookup: dict[str, dict[str, Any]],
@@ -2923,34 +2993,77 @@ class LootStackExporter:
         structure_root_index: dict[str, set[str]],
         available_structure_roots: dict[str, set[str]],
     ) -> dict[tuple[str, str], dict[str, Any]]:
-        candidates: dict[tuple[str, str], dict[str, Any]] = {}
-        exact_match_table_ids = {loot_table_id for _structure_id, loot_table_id in exact_link_keys}
-        available_root_keys = set(structure_root_index)
+        candidates: dict[tuple[str, str], tuple[int, dict[str, Any]]] = {}
+        structure_id_stem_index: dict[str, set[str]] = defaultdict(set)
+        for structure_id in structure_lookup:
+            structure_id_stem_index[structure_id_path_stem(structure_id)].add(structure_id)
+
+        def record_candidate(priority: int, row: dict[str, Any]) -> None:
+            key = (row["loot_table_id"], row["structure_id"])
+            existing = candidates.get(key)
+            if existing is None or priority < existing[0]:
+                candidates[key] = (priority, row)
 
         for loot_table_id in sorted(self.named_table_ids):
-            if loot_table_id in exact_match_table_ids:
-                continue
-            root_key, match_mode = self._derive_structure_root_key(loot_table_id, available_root_keys)
-            if not root_key or root_key not in structure_root_index:
-                continue
-            for structure_id in sorted(structure_root_index[root_key]):
-                if structure_id not in structure_lookup:
-                    continue
-                candidates[(loot_table_id, structure_id)] = {
-                    "loot_table_id": loot_table_id,
-                    "structure_id": structure_id,
-                    "match_rule": "ambiguous_structure_root_match",
-                    "evidence_data": {
-                        "structure_root": root_key,
-                        "match_mode": match_mode,
-                        "template_source_object_count": len(available_structure_roots.get(root_key, set())),
-                        "template_source_objects": sorted(available_structure_roots.get(root_key, set())),
-                    },
-                    "autoresolve": False,
-                    "notes": "",
-                }
+            for candidate_name, candidate_mode in self._derive_structure_name_candidates(loot_table_id):
+                for root_key, structure_ids in structure_root_index.items():
+                    match_mode = self._resolve_structure_name_match_mode(
+                        candidate_name=candidate_name,
+                        candidate_mode=candidate_mode,
+                        target_name=root_key,
+                    )
+                    if match_mode is None:
+                        continue
+                    for structure_id in sorted(structure_ids):
+                        if structure_id not in structure_lookup:
+                            continue
+                        if (structure_id, loot_table_id) in exact_link_keys:
+                            continue
+                        record_candidate(
+                            0,
+                            {
+                                "loot_table_id": loot_table_id,
+                                "structure_id": structure_id,
+                                "match_rule": "ambiguous_structure_root_match",
+                                "evidence_data": {
+                                    "structure_root": root_key,
+                                    "matched_value": root_key,
+                                    "match_mode": match_mode,
+                                    "template_source_object_count": len(available_structure_roots.get(root_key, set())),
+                                    "template_source_objects": sorted(available_structure_roots.get(root_key, set())),
+                                },
+                                "autoresolve": False,
+                                "notes": "",
+                            },
+                        )
+                for structure_stem, structure_ids in structure_id_stem_index.items():
+                    match_mode = self._resolve_structure_name_match_mode(
+                        candidate_name=candidate_name,
+                        candidate_mode=candidate_mode,
+                        target_name=structure_stem,
+                    )
+                    if match_mode is None:
+                        continue
+                    for structure_id in sorted(structure_ids):
+                        if (structure_id, loot_table_id) in exact_link_keys:
+                            continue
+                        record_candidate(
+                            1,
+                            {
+                                "loot_table_id": loot_table_id,
+                                "structure_id": structure_id,
+                                "match_rule": "ambiguous_structure_id_match",
+                                "evidence_data": {
+                                    "structure_id_stem": structure_stem,
+                                    "matched_value": structure_stem,
+                                    "match_mode": match_mode,
+                                },
+                                "autoresolve": False,
+                                "notes": "",
+                            },
+                        )
 
-        return dict(sorted(candidates.items()))
+        return dict(sorted((key, row) for key, (_priority, row) in candidates.items()))
 
     def _sync_structure_ambiguous_resolution_entries(
         self,
@@ -2958,10 +3071,12 @@ class LootStackExporter:
         current_candidates: dict[tuple[str, str], dict[str, Any]],
         structure_lookup: dict[str, dict[str, Any]],
     ) -> dict[str, Any]:
-        existing_entries = [
-            self._normalize_structure_ambiguous_resolution_entry(row)
-            for row in self._load_yaml_entries(self.ambiguous_resolution_config_path)
-        ]
+        existing_entries = []
+        if not self.refresh_all_structure_resolution_maps:
+            existing_entries = [
+                self._normalize_structure_ambiguous_resolution_entry(row)
+                for row in self._load_yaml_entries(self.ambiguous_resolution_config_path)
+            ]
         seen_keys: set[tuple[str, str]] = set()
         final_entries: list[dict[str, Any]] = []
         current_rows: list[dict[str, Any]] = []
@@ -3094,10 +3209,12 @@ class LootStackExporter:
         structure_lookup: dict[str, dict[str, Any]],
     ) -> dict[str, Any]:
         current_no_match_set = set(current_no_match_table_ids)
-        existing_entries = [
-            self._normalize_structure_manual_resolution_entry(row)
-            for row in self._load_yaml_entries(self.manual_resolution_config_path)
-        ]
+        existing_entries = []
+        if not self.refresh_all_structure_resolution_maps:
+            existing_entries = [
+                self._normalize_structure_manual_resolution_entry(row)
+                for row in self._load_yaml_entries(self.manual_resolution_config_path)
+            ]
         rows_by_table: dict[str, list[dict[str, Any]]] = defaultdict(list)
         stale_rows: list[dict[str, Any]] = []
         skipped_active_stale_rows: list[dict[str, Any]] = []
@@ -3129,9 +3246,11 @@ class LootStackExporter:
                 rows_by_table[loot_table_id] = rows_to_keep
                 continue
 
-            stale_rows.extend(entries)
-            final_entries.extend(entries)
             for entry in entries:
+                if entry["status"] == "unresolved" and not entry["structure_id"]:
+                    continue
+                stale_rows.append(entry)
+                final_entries.append(entry)
                 if entry["status"] == "mapped" and entry["structure_id"]:
                     warning = (
                         "stale manual no-match mapping skipped for "
@@ -3339,7 +3458,7 @@ class LootStackExporter:
                     }
                 )
 
-        ambiguous_candidates = self._collect_structure_root_ambiguous_candidates(
+        ambiguous_candidates = self._collect_structure_name_match_candidates(
             structure_lookup=structure_lookup,
             exact_link_keys=set(exact_link_rows),
             structure_root_index=structure_root_index,
@@ -4105,7 +4224,7 @@ class LootStackExporter:
             f"- No-match manual resolutions live in `{self.manual_resolution_config_path}`. Open the file, research unresolved rows, fill in `structure_id`, then set `status: mapped`.",
             f"- Structure root ownership overrides live in `{self.structure_root_map_config_path}`. Structures default to owning a root equal to their own path stem unless overridden there.",
             "- No suppressions are part of this workflow. If an exact detected link is wrong, the matching logic should be corrected instead of overridden.",
-            "- Automatic structure-to-loot mapping remains conservative: jigsaw start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, and structure-root-backed ambiguous candidates.",
+            "- Automatic structure-to-loot mapping remains conservative: jigsaw start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, and ambiguous candidates from structure roots or active structure-id stems.",
             "- Non-jigsaw structures may still land in ambiguous-match or no-match until you confirm them through the resolution YAMLs.",
             "- `structure_loot_links.csv` is the raw structure-to-loot-table layer for this corrected first pass.",
             "- `resolved_loot_v*.csv` remains the canonical raw classification export, but its `affinities` field is a serialized list. Prefer `item_classification.csv` plus `item_affinities.csv` for Tableau.",
@@ -4137,6 +4256,7 @@ def export_loot_stack(
     output_dir: Path | str = DEFAULT_OUTPUT_DIR,
     base_pack_root: Path | str = DEFAULT_BASE_PACK_ROOT,
     auto_discover_mod_dirs: bool = True,
+    refresh_all_structure_resolution_maps: bool = False,
 ) -> dict[str, Any]:
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
@@ -4181,6 +4301,7 @@ def export_loot_stack(
         ambiguous_resolution_config_path=Path(ambiguous_resolution_config_path),
         manual_resolution_config_path=Path(manual_resolution_config_path),
         structure_root_map_config_path=Path(structure_root_map_config_path),
+        refresh_all_structure_resolution_maps=refresh_all_structure_resolution_maps,
     )
     return exporter.export()
 
@@ -4200,6 +4321,7 @@ def main(argv: list[str] | None = None) -> int:
             ambiguous_resolution_config_path=args.ambiguous_structure_resolution_config,
             manual_resolution_config_path=args.manual_structure_resolution_config,
             structure_root_map_config_path=args.structure_root_map_config,
+            refresh_all_structure_resolution_maps=args.refresh_all_structure_resolution_maps,
         )
     except PrecheckFailed as exc:
         print(f"Precheck failed. Wrote {DEFAULT_PRECHECK_FILENAME} to {args.output_dir}")

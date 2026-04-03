@@ -39,6 +39,14 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         default=None,
         help="Optional resolved_loot_v*.csv classification source for Stage 1.5 tables.",
     )
+    parser.add_argument(
+        "--refresh-all-structure-resolution-maps",
+        action="store_true",
+        help=(
+            "Destructively rebuild both structure resolution YAMLs from current export results only. "
+            "This drops existing ambiguous/manual entries before writing fresh rows."
+        ),
+    )
     return parser.parse_args(argv)
 
 
@@ -50,6 +58,7 @@ def export_loot_tables(
     ambiguous_resolution_config_path: Path | str = stack_exporter.DEFAULT_AMBIGUOUS_STRUCTURE_RESOLUTION_CONFIG,
     manual_resolution_config_path: Path | str = stack_exporter.DEFAULT_MANUAL_STRUCTURE_RESOLUTION_CONFIG,
     structure_root_map_config_path: Path | str = stack_exporter.DEFAULT_STRUCTURE_ROOT_MAP_CONFIG,
+    refresh_all_structure_resolution_maps: bool = False,
 ) -> dict[str, object]:
     source_root_path = Path(source_root)
     if source_root_path.name != "loot_table":
@@ -71,6 +80,7 @@ def export_loot_tables(
         ambiguous_resolution_config_path=ambiguous_resolution_config_path,
         manual_resolution_config_path=manual_resolution_config_path,
         structure_root_map_config_path=structure_root_map_config_path,
+        refresh_all_structure_resolution_maps=refresh_all_structure_resolution_maps,
     )
 
 
@@ -82,6 +92,7 @@ def main(argv: list[str] | None = None) -> int:
         included_dirs=include_dirs,
         output_dir=args.output_dir,
         classification_csv_path=args.classification_csv,
+        refresh_all_structure_resolution_maps=args.refresh_all_structure_resolution_maps,
     )
     scope = result["scope_report"]
     manifest = result["manifest"]

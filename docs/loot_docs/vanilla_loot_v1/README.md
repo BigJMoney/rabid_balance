@@ -25,8 +25,8 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Item affinity rows: 1174
 - Classification coverage rows: 235
 - Structure rows: 34
-- Structure loot-link rows: 76
-- Structure loot-link audit rows: 108
+- Structure loot-link rows: 85
+- Structure loot-link audit rows: 99
 - Classified loot items: 235
 - Missing loot items: 0
 
@@ -131,7 +131,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - No-match manual resolutions live in `D:\keep\mods\Minecraft\my_tweaks\configs\structure_loot_manual_resolution_map.yaml`. Open the file, research unresolved rows, fill in `structure_id`, then set `status: mapped`.
 - Structure root ownership overrides live in `D:\keep\mods\Minecraft\my_tweaks\configs\structure_root_map.yaml`. Structures default to owning a root equal to their own path stem unless overridden there.
 - No suppressions are part of this workflow. If an exact detected link is wrong, the matching logic should be corrected instead of overridden.
-- Automatic structure-to-loot mapping remains conservative: jigsaw start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, and structure-root-backed ambiguous candidates.
+- Automatic structure-to-loot mapping remains conservative: jigsaw start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, and ambiguous candidates from structure roots or active structure-id stems.
 - Non-jigsaw structures may still land in ambiguous-match or no-match until you confirm them through the resolution YAMLs.
 - `structure_loot_links.csv` is the raw structure-to-loot-table layer for this corrected first pass.
 - `resolved_loot_v*.csv` remains the canonical raw classification export, but its `affinities` field is a serialized list. Prefer `item_classification.csv` plus `item_affinities.csv` for Tableau.
