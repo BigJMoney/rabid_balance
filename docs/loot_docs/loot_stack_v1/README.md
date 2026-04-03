@@ -131,6 +131,8 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Exact-match links apply automatically from the conservative structure-side detector.
 - Ambiguous-match candidates live in `D:\keep\mods\Minecraft\my_tweaks\configs\structure_loot_ambiguous_resolution_map.yaml`. Review them there and set `autoresolve: true` only for the specific rows you want applied automatically.
 - No-match manual resolutions live in `D:\keep\mods\Minecraft\my_tweaks\configs\structure_loot_manual_resolution_map.yaml`. Open the file, research unresolved rows, fill in `structure_id`, then set `status: mapped`.
+- Use `--clean-structure-resolution-maps` to prune stale ambiguous/manual mapped rows after mod-list changes while preserving current approvals and current manual mappings.
+- Use `--refresh-all-structure-resolution-maps` only when you intentionally want a destructive rebuild of both structure resolution YAMLs from current export results.
 - No suppressions are part of this workflow. If an exact detected link is wrong, the matching logic should be corrected instead of overridden.
 - Automatic structure-to-loot mapping remains conservative: jigsaw start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, and ambiguous candidates from real structure roots, active structure-id stems, or reduced structure-id submatches.
 - Non-jigsaw structures may still land in ambiguous-match or no-match until you confirm them through the resolution YAMLs.

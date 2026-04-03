@@ -580,6 +580,14 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
             "This drops existing ambiguous/manual entries before writing fresh rows."
         ),
     )
+    parser.add_argument(
+        "--clean-structure-resolution-maps",
+        action="store_true",
+        help=(
+            "Remove stale structure resolution rows while preserving current approvals and current manual mappings. "
+            "This prunes stale ambiguous rows and stale manual mapped rows when rewriting the YAMLs."
+        ),
+    )
     return parser.parse_args(argv)
 
 
@@ -1060,6 +1068,7 @@ class LootStackExporter:
         ambiguous_resolution_config_path: Path,
         manual_resolution_config_path: Path,
         refresh_all_structure_resolution_maps: bool,
+        clean_structure_resolution_maps: bool,
     ) -> None:
         self.base_pack_root = base_pack_root
         self.mods_root = mods_root
@@ -1075,6 +1084,7 @@ class LootStackExporter:
         self.ambiguous_resolution_config_path = ambiguous_resolution_config_path
         self.manual_resolution_config_path = manual_resolution_config_path
         self.refresh_all_structure_resolution_maps = refresh_all_structure_resolution_maps
+        self.clean_structure_resolution_maps = clean_structure_resolution_maps
 
         self.tables: dict[str, TableRecord] = {}
         self.pools: dict[str, PoolRecord] = {}
@@ -3097,8 +3107,9 @@ class LootStackExporter:
                 seen_keys.add(key)
                 continue
 
-            final_entries.append(existing)
             stale_rows.append(existing)
+            if not self.clean_structure_resolution_maps:
+                final_entries.append(existing)
             if existing["autoresolve"]:
                 warning = (
                     "stale ambiguous autoresolve skipped for "
@@ -3234,7 +3245,13 @@ class LootStackExporter:
                     for row in entries
                     if row["status"] == "mapped" and row["structure_id"] in structure_lookup
                 ]
-                rows_to_keep = [row for row in entries if row["status"] != "unresolved" or not valid_mapped_rows]
+                unresolved_rows = [row for row in entries if row["status"] == "unresolved" and not row["structure_id"]]
+                if self.clean_structure_resolution_maps:
+                    rows_to_keep = list(valid_mapped_rows)
+                    if not rows_to_keep:
+                        rows_to_keep = unresolved_rows
+                else:
+                    rows_to_keep = [row for row in entries if row["status"] != "unresolved" or not valid_mapped_rows]
                 if not rows_to_keep:
                     rows_to_keep = [
                         {
@@ -3252,7 +3269,8 @@ class LootStackExporter:
                 if entry["status"] == "unresolved" and not entry["structure_id"]:
                     continue
                 stale_rows.append(entry)
-                final_entries.append(entry)
+                if not self.clean_structure_resolution_maps:
+                    final_entries.append(entry)
                 if entry["status"] == "mapped" and entry["structure_id"]:
                     warning = (
                         "stale manual no-match mapping skipped for "
@@ -4235,6 +4253,8 @@ class LootStackExporter:
             "- Exact-match links apply automatically from the conservative structure-side detector.",
             f"- Ambiguous-match candidates live in `{self.ambiguous_resolution_config_path}`. Review them there and set `autoresolve: true` only for the specific rows you want applied automatically.",
             f"- No-match manual resolutions live in `{self.manual_resolution_config_path}`. Open the file, research unresolved rows, fill in `structure_id`, then set `status: mapped`.",
+            "- Use `--clean-structure-resolution-maps` to prune stale ambiguous/manual mapped rows after mod-list changes while preserving current approvals and current manual mappings.",
+            "- Use `--refresh-all-structure-resolution-maps` only when you intentionally want a destructive rebuild of both structure resolution YAMLs from current export results.",
             "- No suppressions are part of this workflow. If an exact detected link is wrong, the matching logic should be corrected instead of overridden.",
             "- Automatic structure-to-loot mapping remains conservative: jigsaw start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, and ambiguous candidates from real structure roots, active structure-id stems, or reduced structure-id submatches.",
             "- Non-jigsaw structures may still land in ambiguous-match or no-match until you confirm them through the resolution YAMLs.",
@@ -4268,6 +4288,7 @@ def export_loot_stack(
     base_pack_root: Path | str = DEFAULT_BASE_PACK_ROOT,
     auto_discover_mod_dirs: bool = True,
     refresh_all_structure_resolution_maps: bool = False,
+    clean_structure_resolution_maps: bool = False,
 ) -> dict[str, Any]:
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
@@ -4312,6 +4333,7 @@ def export_loot_stack(
         ambiguous_resolution_config_path=Path(ambiguous_resolution_config_path),
         manual_resolution_config_path=Path(manual_resolution_config_path),
         refresh_all_structure_resolution_maps=refresh_all_structure_resolution_maps,
+        clean_structure_resolution_maps=clean_structure_resolution_maps,
     )
     return exporter.export()
 
@@ -4331,6 +4353,7 @@ def main(argv: list[str] | None = None) -> int:
             ambiguous_resolution_config_path=args.ambiguous_structure_resolution_config,
             manual_resolution_config_path=args.manual_structure_resolution_config,
             refresh_all_structure_resolution_maps=args.refresh_all_structure_resolution_maps,
+            clean_structure_resolution_maps=args.clean_structure_resolution_maps,
         )
     except PrecheckFailed as exc:
         print(f"Precheck failed. Wrote {DEFAULT_PRECHECK_FILENAME} to {args.output_dir}")

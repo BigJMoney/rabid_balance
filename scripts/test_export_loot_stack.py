@@ -644,6 +644,132 @@ class ExportLootStackTests(unittest.TestCase):
                 all(entry["loot_table_id"] != "minecraft:chests/buried_treasure" for entry in refreshed_manual["entries"])
             )
 
+    def test_clean_structure_resolution_maps_prunes_stale_rows_but_preserves_current_decisions(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            output_dir = Path(tempdir) / "clean_maps"
+            ambiguous_path = Path(tempdir) / "ambiguous.yaml"
+            manual_path = Path(tempdir) / "manual.yaml"
+            ambiguous_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "version": 1,
+                        "entries": [
+                            {
+                                "loot_table_id": "minecraft:chests/buried_treasure",
+                                "structure_id": "minecraft:buried_treasure",
+                                "match_rule": "ambiguous_structure_id_match",
+                                "evidence_data": {"structure_id_stem": "buried_treasure", "matched_value": "buried_treasure", "match_mode": "exact"},
+                                "autoresolve": True,
+                                "notes": "Keep this current ambiguous approval.",
+                            },
+                            {
+                                "loot_table_id": "minecraft:chests/nether_bridge",
+                                "structure_id": "minecraft:fortress",
+                                "match_rule": "bogus_rule",
+                                "evidence_data": {"matched_value": "bogus"},
+                                "autoresolve": True,
+                                "notes": "Prune this stale ambiguous row.",
+                            },
+                        ],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+            manual_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "version": 1,
+                        "entries": [
+                            {
+                                "loot_table_id": "minecraft:chests/simple_dungeon",
+                                "status": "mapped",
+                                "structure_id": "minecraft:mineshaft",
+                                "notes": "Keep this current manual mapping.",
+                            },
+                            {
+                                "loot_table_id": "minecraft:chests/buried_treasure",
+                                "status": "mapped",
+                                "structure_id": "minecraft:fortress",
+                                "notes": "Prune this stale manual mapping.",
+                            },
+                        ],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+            export_with_temp_resolution_maps(
+                output_dir=output_dir,
+                ambiguous_resolution_config_path=ambiguous_path,
+                manual_resolution_config_path=manual_path,
+                clean_structure_resolution_maps=True,
+            )
+            cleaned_ambiguous = yaml.safe_load(ambiguous_path.read_text(encoding="utf-8"))
+            cleaned_manual = yaml.safe_load(manual_path.read_text(encoding="utf-8"))
+            links = read_csv_rows(output_dir / "structure_loot_links.csv")
+
+            self.assertTrue(
+                any(
+                    entry["loot_table_id"] == "minecraft:chests/buried_treasure"
+                    and entry["structure_id"] == "minecraft:buried_treasure"
+                    and entry["autoresolve"] is True
+                    for entry in cleaned_ambiguous["entries"]
+                )
+            )
+            self.assertTrue(
+                all(
+                    not (
+                        entry["loot_table_id"] == "minecraft:chests/nether_bridge"
+                        and entry["structure_id"] == "minecraft:fortress"
+                    )
+                    for entry in cleaned_ambiguous["entries"]
+                )
+            )
+            self.assertTrue(
+                any(
+                    entry["loot_table_id"] == "minecraft:chests/simple_dungeon"
+                    and entry["status"] == "mapped"
+                    and entry["structure_id"] == "minecraft:mineshaft"
+                    for entry in cleaned_manual["entries"]
+                )
+            )
+            self.assertTrue(
+                all(
+                    not (
+                        entry["loot_table_id"] == "minecraft:chests/buried_treasure"
+                        and entry.get("structure_id") == "minecraft:fortress"
+                    )
+                    for entry in cleaned_manual["entries"]
+                )
+            )
+            self.assertTrue(
+                any(
+                    entry["loot_table_id"] == "minecraft:chests/nether_bridge"
+                    and entry["status"] == "unresolved"
+                    and entry["structure_id"] == ""
+                    for entry in cleaned_manual["entries"]
+                )
+            )
+            self.assertTrue(
+                any(
+                    row["structure_id"] == "minecraft:buried_treasure"
+                    and row["loot_table_id"] == "minecraft:chests/buried_treasure"
+                    and row["link_source"] == "ambiguous_match"
+                    for row in links
+                )
+            )
+            self.assertTrue(
+                any(
+                    row["structure_id"] == "minecraft:mineshaft"
+                    and row["loot_table_id"] == "minecraft:chests/simple_dungeon"
+                    and row["link_source"] == "manual_no_match"
+                    for row in links
+                )
+            )
+
     def test_explicit_archive_replaces_auto_discovered_directory(self) -> None:
         if not ILLAGER_ARCHIVE.exists():
             self.skipTest("Illager archive fixture is not present in libs")

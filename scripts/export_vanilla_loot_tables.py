@@ -47,6 +47,14 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
             "This drops existing ambiguous/manual entries before writing fresh rows."
         ),
     )
+    parser.add_argument(
+        "--clean-structure-resolution-maps",
+        action="store_true",
+        help=(
+            "Remove stale structure resolution rows while preserving current approvals and current manual mappings. "
+            "This prunes stale ambiguous rows and stale manual mapped rows when rewriting the YAMLs."
+        ),
+    )
     return parser.parse_args(argv)
 
 
@@ -58,6 +66,7 @@ def export_loot_tables(
     ambiguous_resolution_config_path: Path | str = stack_exporter.DEFAULT_AMBIGUOUS_STRUCTURE_RESOLUTION_CONFIG,
     manual_resolution_config_path: Path | str = stack_exporter.DEFAULT_MANUAL_STRUCTURE_RESOLUTION_CONFIG,
     refresh_all_structure_resolution_maps: bool = False,
+    clean_structure_resolution_maps: bool = False,
 ) -> dict[str, object]:
     source_root_path = Path(source_root)
     if source_root_path.name != "loot_table":
@@ -79,6 +88,7 @@ def export_loot_tables(
         ambiguous_resolution_config_path=ambiguous_resolution_config_path,
         manual_resolution_config_path=manual_resolution_config_path,
         refresh_all_structure_resolution_maps=refresh_all_structure_resolution_maps,
+        clean_structure_resolution_maps=clean_structure_resolution_maps,
     )
 
 
@@ -91,6 +101,7 @@ def main(argv: list[str] | None = None) -> int:
         output_dir=args.output_dir,
         classification_csv_path=args.classification_csv,
         refresh_all_structure_resolution_maps=args.refresh_all_structure_resolution_maps,
+        clean_structure_resolution_maps=args.clean_structure_resolution_maps,
     )
     scope = result["scope_report"]
     manifest = result["manifest"]
