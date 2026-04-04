@@ -23,4 +23,4 @@ LootJS.modifiers(lootModEvent => {
 
 // ---- Supplementaries
 
-// Add flax to desert house
+// Add flax to desert house (actually, this should be done in a datapack)

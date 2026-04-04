@@ -3,7 +3,7 @@
  *
  */
 
-const DO_LOOT_TAG_IMPORT = true
+const DO_LOOT_TAG_IMPORT = false
 const IMPORT_PATH = 'kubejs/export/resolved_loot_v10.json'
 
 /**
@@ -64,5 +64,6 @@ function importLootTagsFromTable(tagEvent) {
 
 // Register tag importing function
 ServerEvents.tags('item', importLootTagsFromTable)
+
 
 
