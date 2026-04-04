@@ -43,12 +43,12 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - `tables.csv`: one row per effective named table plus synthetic inline table.
 - `pools.csv`: one row per pool with roll metadata and pool-level conditions.
 - `entries.csv`: one row per entry with direct metadata, raw JSON, reference targets, and entry-level pool weight shares.
-- `leaf_candidates.csv`: denormalized root-to-leaf paths for Tableau-style analysis, including raw path weights and normalized pool-share metrics.
+- `leaf_candidates.csv`: denormalized root-to-leaf paths for Tableau-style analysis, including raw path weights, normalized pool-share metrics, and embedded item-classification columns.
 - `root_table_item_summary.csv`: one row per `root_table_id` plus `item_id` with pre-aggregated item-drop expectations and at-least-one chance.
 - `table_role_summary.csv`: one row per named effective table with raw and Tableau-facing directness roles.
 - `table_role_evidence.csv`: evidence edges behind the table role classification.
 - `glm_modifier_chain.csv`: one row per effective NeoForge GLM chain entry with target-table and payload-table analysis status.
-- `modifier_added_leaf_candidates.csv`: one row per resolved added payload leaf for recognized Stage 2 modifiers.
+- `modifier_added_leaf_candidates.csv`: one row per resolved added payload leaf for recognized Stage 2 modifiers, including embedded item-classification columns.
 - `target_table_modifier_summary.csv`: one row per target table summarizing modifier counts and added-item novelty/overlap.
 - `target_table_added_item_summary.csv`: one row per target table plus item_id summarizing modifier-added item paths.
 - `stage2_report.json`: Stage 2 chain counts, recognized/unsupported totals, and warnings.
@@ -70,12 +70,12 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - `root_table_item_summary.csv.root_table_id` joins to `tables.csv.table_id` for root-table metadata and to `item_classification.csv.item_id` on `item_id` for item traits.
 - `glm_modifier_chain.csv.target_table_id` joins to `tables.csv.table_id` for target-table metadata.
 - `modifier_added_leaf_candidates.csv.target_table_id` joins to `tables.csv.table_id` for base target-table context.
-- `modifier_added_leaf_candidates.csv.item_id` joins to `item_classification.csv.item_id` for Stage 2 item traits.
+- `modifier_added_leaf_candidates.csv` already embeds the core item-classification fields for Stage 2 item slicing.
 - `target_table_added_item_summary.csv.item_id` joins to `item_classification.csv.item_id` for Stage 2 added-item slicing.
-- `leaf_candidates.csv.item_id` joins to `item_classification.csv.item_id` for Stage 1.5 item traits.
+- `leaf_candidates.csv` already embeds the core item-classification fields for Stage 1.5 item slicing.
 - `structure_loot_links.csv.loot_table_id` joins to `tables.csv.table_id` for loot-table metadata when the linked table is in Stage 1 scope.
 - `leaf_candidates.csv.root_table_id` joins to `table_role_summary.csv.table_id` for gameplay-source filtering.
-- `item_classification.csv.item_id` joins to `item_affinities.csv.item_id` for affinity slicing.
+- `item_classification.csv.item_id` still joins to `item_affinities.csv.item_id` for affinity slicing when you need the separate one-to-many affinity table.
 - `classification_coverage.csv.item_id` joins to `item_classification.csv.item_id` for audit and completeness checks.
 - `table_role_summary.csv.table_id` joins to `table_role_evidence.csv.table_id` for provenance drill-down.
 
@@ -145,7 +145,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Automatic structure-to-loot mapping remains conservative: jigsaw start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, and ambiguous candidates from real structure roots, active structure-id stems, or reduced structure-id submatches.
 - Non-jigsaw structures may still land in ambiguous-match or no-match until you confirm them through the resolution YAMLs.
 - `structure_loot_links.csv` is the raw structure-to-loot-table layer for this corrected first pass.
-- `resolved_loot_v*.csv` remains the canonical raw classification export, but its `affinities` field is a serialized list. Prefer `item_classification.csv` plus `item_affinities.csv` for Tableau.
+- `resolved_loot_v*.csv` remains the canonical raw classification export. `leaf_candidates.csv` and `modifier_added_leaf_candidates.csv` now embed the core classification fields directly, while `item_affinities.csv` remains the recommended Tableau source for one-to-many affinities.
 - `classification_coverage.csv` makes missing loot-item classifications explicit instead of silently dropping them.
 - `raw_role` keeps the conservative local-data provenance result; `effective_role` converts `unknown_directness` to `assumed_direct_for_tableau`.
 - `tables.csv.source_pack`, `tables.csv.resource_path`, and `tables.csv.is_override` identify the winning source behind each effective table row.

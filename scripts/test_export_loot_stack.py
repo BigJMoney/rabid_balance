@@ -200,6 +200,15 @@ class ExportLootStackTests(unittest.TestCase):
         self.assertEqual(arrow["function"], "weapon")
         self.assertEqual(arrow["classification_version"], "10")
 
+    def test_default_stack_leaf_rows_embed_item_classification(self) -> None:
+        arrow_leaf = next(row for row in self.leaf_rows if row["item_id"] == "minecraft:arrow")
+        self.assertEqual(arrow_leaf["item_has_classification"], "true")
+        self.assertEqual(arrow_leaf["item_classification_status"], "matched")
+        self.assertEqual(arrow_leaf["item_function"], "weapon")
+        self.assertEqual(arrow_leaf["item_value"], "common")
+        self.assertEqual(arrow_leaf["item_amount_class"], "large")
+        self.assertEqual(arrow_leaf["item_classification_version"], "10")
+
     def test_default_stack_writes_structure_tables(self) -> None:
         expected_structure_count = 34 + (5 if ILLAGER_DIR.exists() else 0)
         self.assertEqual(len(self.structure_rows), expected_structure_count)
@@ -285,6 +294,21 @@ class ExportLootStackTests(unittest.TestCase):
         self.assertIn("sophisticatedbackpacks:gold_backpack", item_ids)
         self.assertIn("sophisticatedbackpacks:advanced_magnet_upgrade", item_ids)
 
+    def test_default_stack_stage2_payload_rows_embed_item_classification(self) -> None:
+        if not SOPHISTICATED_DIR.exists():
+            self.skipTest("Sophisticated Backpacks directory fixture is not present in libs")
+        backpack_row = next(
+            row
+            for row in self.modifier_added_leaf_rows
+            if row["item_id"] == "sophisticatedbackpacks:diamond_backpack"
+        )
+        self.assertEqual(backpack_row["item_has_classification"], "true")
+        self.assertEqual(backpack_row["item_classification_status"], "matched")
+        self.assertEqual(backpack_row["item_function"], "wearable")
+        self.assertEqual(backpack_row["item_value"], "epic")
+        self.assertEqual(backpack_row["item_amount_class"], "singleton")
+        self.assertEqual(backpack_row["item_classification_version"], "10")
+
     def test_default_stack_stage2_target_summary_tracks_novel_items(self) -> None:
         if not SOPHISTICATED_DIR.exists():
             self.skipTest("Sophisticated Backpacks directory fixture is not present in libs")
@@ -296,12 +320,9 @@ class ExportLootStackTests(unittest.TestCase):
         self.assertEqual(summary_row["unsupported_modifier_count"], "0")
         self.assertGreaterEqual(int(summary_row["novel_item_count"]), 3)
 
-    def test_default_stack_marks_missing_mod_item_classification_in_coverage(self) -> None:
-        if not ILLAGER_DIR.exists():
-            self.skipTest("Illager directory fixture is not present in libs")
+    def test_default_stack_classification_coverage_is_complete_for_current_fixture_set(self) -> None:
         missing_rows = [row for row in self.classification_coverage if row["has_classification"] == "false"]
-        self.assertTrue(missing_rows)
-        self.assertTrue(any(row["item_id"].startswith("illagerinvasion:") for row in missing_rows))
+        self.assertEqual(missing_rows, [])
 
     def test_default_stack_normalizes_item_affinities(self) -> None:
         apple_affinities = {

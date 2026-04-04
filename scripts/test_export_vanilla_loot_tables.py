@@ -549,6 +549,15 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         self.assertEqual(arrow["classification_status"], "matched")
         self.assertEqual(arrow["classification_version"], "10")
 
+    def test_leaf_rows_embed_item_classification(self) -> None:
+        arrow_leaf = next(row for row in self.leaf_rows if row["item_id"] == "minecraft:arrow")
+        self.assertEqual(arrow_leaf["item_has_classification"], "true")
+        self.assertEqual(arrow_leaf["item_classification_status"], "matched")
+        self.assertEqual(arrow_leaf["item_function"], "weapon")
+        self.assertEqual(arrow_leaf["item_value"], "common")
+        self.assertEqual(arrow_leaf["item_amount_class"], "large")
+        self.assertEqual(arrow_leaf["item_classification_version"], "10")
+
     def test_item_affinities_are_normalized(self) -> None:
         apple_affinities = {
             row["affinity"]

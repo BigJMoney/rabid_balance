@@ -3,15 +3,15 @@
   "exact_match_row_count": 49,
   "ambiguous_match_candidate_table_count": 38,
   "ambiguous_match_candidate_row_count": 85,
-  "ambiguous_match_autoresolved_table_count": 0,
-  "ambiguous_match_autoresolved_row_count": 0,
-  "ambiguous_match_pending_table_count": 38,
-  "ambiguous_match_pending_row_count": 85,
+  "ambiguous_match_autoresolved_table_count": 17,
+  "ambiguous_match_autoresolved_row_count": 26,
+  "ambiguous_match_pending_table_count": 21,
+  "ambiguous_match_pending_row_count": 59,
   "no_match_table_count": 8,
-  "no_match_mapped_table_count": 0,
-  "no_match_mapped_row_count": 0,
-  "no_match_unresolved_table_count": 8,
-  "no_match_unresolved_row_count": 8,
+  "no_match_mapped_table_count": 5,
+  "no_match_mapped_row_count": 8,
+  "no_match_unresolved_table_count": 3,
+  "no_match_unresolved_row_count": 3,
   "stale_ambiguous_rows": [
     {
       "loot_table_id": "illagerinvasion:chests/labyrinth",
@@ -34,11 +34,20 @@
         "matched_value": "labyrinth",
         "match_mode": "underscore_prefix"
       },
-      "autoresolve": false,
+      "autoresolve": true,
       "notes": ""
     }
   ],
   "stale_manual_rows": [],
-  "skipped_active_stale_rows": [],
-  "warnings": []
+  "skipped_active_stale_rows": [
+    {
+      "resolution_source": "ambiguous_match",
+      "loot_table_id": "illagerinvasion:chests/labyrinth_map",
+      "structure_id": "illagerinvasion:labyrinth",
+      "warning": "stale ambiguous autoresolve skipped for illagerinvasion:chests/labyrinth_map -> illagerinvasion:labyrinth"
+    }
+  ],
+  "warnings": [
+    "stale ambiguous autoresolve skipped for illagerinvasion:chests/labyrinth_map -> illagerinvasion:labyrinth"
+  ]
 }

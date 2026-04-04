@@ -1173,3 +1173,6 @@ minecraft:yellow_shulker_box,end,10
 minecraft:yellow_stained_glass_pane,clerical,10
 minecraft:yellow_terracotta,desert,10
 minecraft:yellow_wool,woolworking,10
+sophisticatedbackpacks:gold_backpack,treasure,10
+sophisticatedbackpacks:iron_backpack,fortification,10
+sophisticatedbackpacks:netherite_backpack,nether,10
