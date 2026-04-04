@@ -58,6 +58,7 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         cls.pools = read_csv_rows(cls.output_dir / "pools.csv")
         cls.entries = read_csv_rows(cls.output_dir / "entries.csv")
         cls.leaf_rows = read_csv_rows(cls.output_dir / "leaf_candidates.csv")
+        cls.root_table_item_summary = read_csv_rows(cls.output_dir / "root_table_item_summary.csv")
         cls.table_roles = read_csv_rows(cls.output_dir / "table_role_summary.csv")
         cls.table_role_evidence = read_csv_rows(cls.output_dir / "table_role_evidence.csv")
         cls.item_classification = read_csv_rows(cls.output_dir / "item_classification.csv")
@@ -77,6 +78,7 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
             "pools.csv",
             "entries.csv",
             "leaf_candidates.csv",
+            "root_table_item_summary.csv",
             "table_role_summary.csv",
             "table_role_evidence.csv",
             "glm_modifier_chain.csv",
@@ -163,6 +165,7 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
             },
         )
         self.assertGreater(self.manifest["leaf_candidate_count"], 0)
+        self.assertGreater(self.manifest["root_table_item_summary_count"], 0)
 
     def test_vanilla_stage2_outputs_are_empty_but_present(self) -> None:
         self.assertEqual(read_csv_rows(self.output_dir / "glm_modifier_chain.csv"), [])
@@ -171,6 +174,15 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         self.assertEqual(read_csv_rows(self.output_dir / "target_table_added_item_summary.csv"), [])
         stage2_report = json.loads((self.output_dir / "stage2_report.json").read_text(encoding="utf-8"))
         self.assertEqual(stage2_report["glm_chain_length"], 0)
+
+    def test_vanilla_root_table_item_summary_contains_exact_rows(self) -> None:
+        row = next(
+            row
+            for row in self.root_table_item_summary
+            if row["root_table_id"] == "minecraft:chests/trial_chambers/reward"
+            and row["item_id"] == "minecraft:arrow"
+        )
+        self.assertEqual(row["chance_status"], "exact")
 
     def test_vanilla_structure_outputs_are_present_and_stable(self) -> None:
         self.assertEqual(len(self.structure_rows), 34)

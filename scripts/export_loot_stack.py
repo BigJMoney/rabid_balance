@@ -5,6 +5,7 @@ import ast
 import csv
 import gzip
 import json
+import math
 import re
 import zipfile
 from collections import Counter, defaultdict
@@ -87,6 +88,8 @@ POOLS_FIELDNAMES = [
     "bonus_rolls_max",
     "bonus_rolls_raw",
     "condition_types",
+    "has_random_chance",
+    "random_chance_value",
     "conditions_json",
 ]
 
@@ -104,6 +107,8 @@ ENTRIES_FIELDNAMES = [
     "quality",
     "pool_weight_share",
     "condition_types",
+    "has_random_chance",
+    "random_chance_value",
     "function_types",
     "conditions_json",
     "functions_json",
@@ -131,6 +136,7 @@ LEAF_FIELDNAMES = [
     "root_pool_weight_share",
     "path_pool_shares_json",
     "path_pool_share_product",
+    "path_random_chance_product",
     "path_explicit_weights_json",
     "path_explicit_weight_product",
     "set_count_min",
@@ -258,6 +264,16 @@ TARGET_TABLE_ADDED_ITEM_SUMMARY_FIELDNAMES = [
     "added_explicit_weight_sum",
     "is_novel_to_target",
     "modifier_ids_json",
+]
+
+ROOT_TABLE_ITEM_SUMMARY_FIELDNAMES = [
+    "root_table_id",
+    "item_id",
+    "path_count",
+    "drop_events_expected",
+    "drop_yield_expected",
+    "at_least_one_chance",
+    "chance_status",
 ]
 
 STRUCTURES_FIELDNAMES = [
@@ -422,6 +438,8 @@ class PoolRecord:
     bonus_rolls_raw: str
     condition_types: list[str]
     conditions: list[Any]
+    has_random_chance: bool
+    random_chance_value: float | None
     raw_pool: dict[str, Any]
     pool_total_effective_weight: int | float | None = None
 
@@ -439,6 +457,8 @@ class PoolRecord:
             "bonus_rolls_max": as_csv_value(self.bonus_rolls_max),
             "bonus_rolls_raw": self.bonus_rolls_raw,
             "condition_types": join_types(self.condition_types),
+            "has_random_chance": "true" if self.has_random_chance else "false",
+            "random_chance_value": as_csv_value(self.random_chance_value),
             "conditions_json": json_cell(self.conditions),
         }
 
@@ -460,6 +480,8 @@ class EntryRecord:
     pool_total_effective_weight: int | float | None
     pool_weight_share: float | None
     condition_types: list[str]
+    has_random_chance: bool
+    random_chance_value: float | None
     function_types: list[str]
     conditions: list[Any]
     functions: list[Any]
@@ -480,6 +502,8 @@ class EntryRecord:
             "quality": as_csv_value(self.quality),
             "pool_weight_share": as_csv_value(self.pool_weight_share),
             "condition_types": join_types(self.condition_types),
+            "has_random_chance": "true" if self.has_random_chance else "false",
+            "random_chance_value": as_csv_value(self.random_chance_value),
             "function_types": join_types(self.function_types),
             "conditions_json": json_cell(self.conditions),
             "functions_json": json_cell(self.functions),
@@ -503,6 +527,14 @@ class RoleEvidenceRecord:
             "source_object": self.source_object,
             "target_table_id": self.target_table_id,
         }
+
+
+@dataclass(frozen=True)
+class ItemChanceMetrics:
+    drop_events_expected: float | None
+    expected_item_yield: float | None
+    at_least_one_chance: float | None
+    chance_status_codes: tuple[str, ...]
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -605,6 +637,10 @@ def as_csv_value(value: Any) -> Any:
 
 def is_explicit_number(value: Any) -> bool:
     return isinstance(value, (int, float)) and not isinstance(value, bool)
+
+
+def is_integer_like_number(value: Any) -> bool:
+    return is_explicit_number(value) and math.isclose(float(value), round(float(value)))
 
 
 def get_effective_weight(value: Any) -> int | float:
@@ -721,6 +757,29 @@ def collect_condition_types(node: Any) -> list[str]:
     return sorted(found)
 
 
+def extract_top_level_random_chance(conditions: list[Any]) -> dict[str, Any]:
+    matched_count = 0
+    invalid_count = 0
+    values: list[float] = []
+    for condition in conditions:
+        if not isinstance(condition, dict):
+            continue
+        if condition.get("condition") != "minecraft:random_chance":
+            continue
+        matched_count += 1
+        chance = condition.get("chance")
+        if is_explicit_number(chance):
+            values.append(float(chance))
+        else:
+            invalid_count += 1
+    return {
+        "has_random_chance": matched_count > 0,
+        "random_chance_value": values[0] if matched_count == 1 and invalid_count == 0 else None,
+        "matched_count": matched_count,
+        "invalid_count": invalid_count,
+    }
+
+
 def collect_function_types(functions: list[Any]) -> list[str]:
     found: set[str] = set()
     for function in functions:
@@ -777,6 +836,33 @@ def extract_set_count_range(functions: list[Any]) -> tuple[float | None, float |
         if isinstance(min_value, (int, float)) and isinstance(max_value, (int, float)):
             last_range = (float(min_value), float(max_value))
     return last_range
+
+
+def compute_path_random_chance_product(chain: list[dict[str, Any]]) -> float | None:
+    found_any = False
+    product: float = 1.0
+    for step in chain:
+        for prefix in ("pool", "entry"):
+            if not step.get(f"{prefix}_has_random_chance"):
+                continue
+            value = step.get(f"{prefix}_random_chance_value")
+            if not is_explicit_number(value):
+                return None
+            found_any = True
+            product *= float(value)
+    return product if found_any else None
+
+
+def metric_status(*codes: str) -> tuple[str, ...]:
+    filtered = {code for code in codes if code}
+    return tuple(sorted(filtered))
+
+
+def merge_metric_statuses(*status_groups: tuple[str, ...]) -> tuple[str, ...]:
+    merged: set[str] = set()
+    for group in status_groups:
+        merged.update(code for code in group if code)
+    return tuple(sorted(merged))
 
 
 def normalize_pack_id(value: str) -> str:
@@ -1099,6 +1185,7 @@ class LootStackExporter:
         self.modifier_added_leaf_rows: list[dict[str, Any]] = []
         self.target_table_modifier_summary_rows: list[dict[str, Any]] = []
         self.target_table_added_item_summary_rows: list[dict[str, Any]] = []
+        self.root_table_item_summary_rows: list[dict[str, Any]] = []
         self.stage2_report: dict[str, Any] = {}
         self.stage2_payload_leaf_cache: dict[str, list[dict[str, Any]]] = {}
         self.item_classification_rows: list[dict[str, Any]] = []
@@ -1112,6 +1199,7 @@ class LootStackExporter:
         self.effective_role_counts: Counter[str] = Counter()
         self.classification_records: dict[str, ClassificationRecord] = {}
         self.classification_version: str = ""
+        self.export_warnings: list[dict[str, Any]] = []
 
         self.named_reference_count = 0
         self.inline_reference_count = 0
@@ -1122,6 +1210,10 @@ class LootStackExporter:
         self.resource_contributions: dict[str, list[ResourceContribution]] = {}
         self.effective_resources: dict[str, EffectiveResource] = {}
         self.precheck_report: dict[str, Any] = {}
+        self._table_item_metrics_cache: dict[tuple[str, str], ItemChanceMetrics] = {}
+        self._pool_item_metrics_cache: dict[tuple[str, str], ItemChanceMetrics] = {}
+        self._entry_item_metrics_cache: dict[tuple[str, str], ItemChanceMetrics] = {}
+        self._table_item_metrics_in_progress: set[tuple[str, str]] = set()
 
     def _normalized_ignore_roots(self) -> list[Path]:
         roots: list[Path] = []
@@ -1158,10 +1250,13 @@ class LootStackExporter:
         self._validate_references()
         self._compute_pool_weight_metrics()
         self._build_leaf_rows()
+        self._build_root_table_item_summary()
         self._build_table_roles()
         self._build_stage2_outputs()
         self._build_structure_outputs()
         self._build_item_classification_outputs()
+        if self.export_warnings:
+            scope_report["warnings"] = [*scope_report["warnings"], *self.export_warnings]
         manifest = self._build_manifest()
         self._write_output_bundle(scope_report, manifest, precheck_report)
         return {
@@ -1170,6 +1265,34 @@ class LootStackExporter:
             "manifest": manifest,
             "output_dir": str(self.output_dir),
         }
+
+    def _extract_random_chance_fields(
+        self,
+        *,
+        conditions: list[Any],
+        scope_kind: str,
+        source_id: str,
+        table_id: str,
+    ) -> tuple[bool, float | None]:
+        details = extract_top_level_random_chance(conditions)
+        has_random_chance = details["has_random_chance"]
+        random_chance_value = details["random_chance_value"]
+        if has_random_chance and random_chance_value is None:
+            self.export_warnings.append(
+                {
+                    "type": "ambiguous_top_level_random_chance",
+                    "scope": scope_kind,
+                    "source_id": source_id,
+                    "table_id": table_id,
+                    "condition_count": details["matched_count"],
+                    "invalid_condition_count": details["invalid_count"],
+                    "message": (
+                        f"{scope_kind.title()} `{source_id}` in `{table_id}` does not have exactly one numeric "
+                        f"top-level `minecraft:random_chance` condition, so `random_chance_value` was left blank."
+                    ),
+                }
+            )
+        return has_random_chance, random_chance_value
 
     def _run_precheck(self) -> dict[str, Any]:
         discovered_packs: list[PackSource] = []
@@ -1556,6 +1679,12 @@ class LootStackExporter:
             rolls = parse_roll_spec(pool.get("rolls"))
             bonus_rolls = parse_roll_spec(pool.get("bonus_rolls"))
             pool_conditions = ensure_list(pool.get("conditions"), f"{pool_id}.conditions")
+            pool_has_random_chance, pool_random_chance_value = self._extract_random_chance_fields(
+                conditions=pool_conditions,
+                scope_kind="pool",
+                source_id=pool_id,
+                table_id=table.table_id,
+            )
             pool_record = PoolRecord(
                 pool_id=pool_id,
                 table_id=table.table_id,
@@ -1570,6 +1699,8 @@ class LootStackExporter:
                 bonus_rolls_raw=bonus_rolls["raw"],
                 condition_types=collect_condition_types(pool_conditions),
                 conditions=pool_conditions,
+                has_random_chance=pool_has_random_chance,
+                random_chance_value=pool_random_chance_value,
                 raw_pool=pool,
             )
             self.pools[pool_id] = pool_record
@@ -1599,6 +1730,12 @@ class LootStackExporter:
 
         conditions = ensure_list(entry.get("conditions"), f"{entry_id}.conditions")
         functions = ensure_list(entry.get("functions"), f"{entry_id}.functions")
+        entry_has_random_chance, entry_random_chance_value = self._extract_random_chance_fields(
+            conditions=conditions,
+            scope_kind="entry",
+            source_id=entry_id,
+            table_id=table.table_id,
+        )
         entry_type = self._string_or_blank(entry.get("type"))
         name = self._string_or_blank(entry.get("name"))
 
@@ -1638,6 +1775,8 @@ class LootStackExporter:
             pool_total_effective_weight=None,
             pool_weight_share=None,
             condition_types=collect_condition_types(conditions),
+            has_random_chance=entry_has_random_chance,
+            random_chance_value=entry_random_chance_value,
             function_types=collect_function_types(functions),
             conditions=conditions,
             functions=functions,
@@ -1731,6 +1870,315 @@ class LootStackExporter:
                         active_table_ids={root_table.table_id},
                     )
         self.leaf_rows = leaf_rows
+
+    def _build_root_table_item_summary(self) -> None:
+        path_counts: Counter[tuple[str, str]] = Counter()
+        for row in self.leaf_rows:
+            item_id = row["item_id"]
+            if not item_id or row["unresolved_reason"]:
+                continue
+            path_counts[(row["root_table_id"], item_id)] += 1
+
+        summary_rows: list[dict[str, Any]] = []
+        for (root_table_id, item_id), path_count in sorted(path_counts.items()):
+            metrics = self._compute_table_item_metrics(root_table_id, item_id)
+            summary_rows.append(
+                {
+                    "root_table_id": root_table_id,
+                    "item_id": item_id,
+                    "path_count": path_count,
+                    "drop_events_expected": as_csv_value(metrics.drop_events_expected),
+                    "drop_yield_expected": as_csv_value(metrics.expected_item_yield),
+                    "at_least_one_chance": as_csv_value(metrics.at_least_one_chance),
+                    "chance_status": join_types(metrics.chance_status_codes) if metrics.chance_status_codes else "exact",
+                }
+            )
+        self.root_table_item_summary_rows = summary_rows
+
+    def _random_chance_gate(
+        self,
+        *,
+        has_random_chance: bool,
+        random_chance_value: float | None,
+    ) -> tuple[float | None, tuple[str, ...]]:
+        if not has_random_chance:
+            return 1.0, ()
+        if random_chance_value is None:
+            return None, metric_status("ambiguous_random_chance")
+        chance = float(random_chance_value)
+        if chance < 0 or chance > 1:
+            return None, metric_status("invalid_random_chance_value")
+        return chance, ()
+
+    def _number_provider_distribution(
+        self,
+        *,
+        kind: str,
+        min_value: float | None,
+        max_value: float | None,
+        allow_blank_zero: bool,
+        status_code: str,
+    ) -> tuple[dict[int, float] | None, tuple[str, ...]]:
+        if allow_blank_zero and not kind and min_value is None and max_value is None:
+            return {0: 1.0}, ()
+        if kind == "literal" and is_integer_like_number(min_value) and is_integer_like_number(max_value):
+            min_int = int(round(float(min_value)))
+            max_int = int(round(float(max_value)))
+            if min_int == max_int and min_int >= 0:
+                return {min_int: 1.0}, ()
+        if kind == "minecraft:uniform" and is_integer_like_number(min_value) and is_integer_like_number(max_value):
+            min_int = int(round(float(min_value)))
+            max_int = int(round(float(max_value)))
+            if min_int <= max_int:
+                total = max_int - min_int + 1
+                return {value: 1.0 / total for value in range(min_int, max_int + 1)}, ()
+        return None, metric_status(status_code)
+
+    @staticmethod
+    def _convolve_distributions(
+        left: dict[int, float],
+        right: dict[int, float],
+    ) -> dict[int, float]:
+        combined: dict[int, float] = defaultdict(float)
+        for left_value, left_probability in left.items():
+            for right_value, right_probability in right.items():
+                combined[left_value + right_value] += left_probability * right_probability
+        return dict(sorted(combined.items()))
+
+    def _pool_roll_distribution(self, pool: PoolRecord) -> tuple[dict[int, float] | None, tuple[str, ...]]:
+        base_distribution, base_status = self._number_provider_distribution(
+            kind=pool.rolls_kind,
+            min_value=pool.rolls_min,
+            max_value=pool.rolls_max,
+            allow_blank_zero=False,
+            status_code="unsupported_rolls",
+        )
+        bonus_distribution, bonus_status = self._number_provider_distribution(
+            kind=pool.bonus_rolls_kind,
+            min_value=pool.bonus_rolls_min,
+            max_value=pool.bonus_rolls_max,
+            allow_blank_zero=True,
+            status_code="unsupported_bonus_rolls",
+        )
+        statuses = merge_metric_statuses(base_status, bonus_status)
+        if base_distribution is None or bonus_distribution is None:
+            return None, statuses
+        return self._convolve_distributions(base_distribution, bonus_distribution), statuses
+
+    @staticmethod
+    def _entry_count_metrics(functions: list[Any]) -> tuple[float | None, float | None, tuple[str, ...]]:
+        found_set_count = False
+        positive_probability = 1.0
+        expected_count = 1.0
+        for function in functions:
+            if not isinstance(function, dict):
+                continue
+            if function.get("function") != "minecraft:set_count":
+                continue
+            found_set_count = True
+            count_value = function.get("count")
+            if is_integer_like_number(count_value):
+                literal = int(round(float(count_value)))
+                positive_probability = 1.0 if literal > 0 else 0.0
+                expected_count = float(literal)
+                continue
+            if not isinstance(count_value, dict):
+                return None, None, metric_status("unsupported_set_count")
+            if count_value.get("type") != "minecraft:uniform":
+                return None, None, metric_status("unsupported_set_count")
+            min_value = count_value.get("min")
+            max_value = count_value.get("max")
+            if not (is_integer_like_number(min_value) and is_integer_like_number(max_value)):
+                return None, None, metric_status("unsupported_set_count")
+            min_int = int(round(float(min_value)))
+            max_int = int(round(float(max_value)))
+            if min_int > max_int:
+                return None, None, metric_status("unsupported_set_count")
+            total = max_int - min_int + 1
+            positive_outcomes = sum(1 for value in range(min_int, max_int + 1) if value > 0)
+            positive_probability = positive_outcomes / total
+            expected_count = (min_int + max_int) / 2.0
+        if not found_set_count:
+            return positive_probability, expected_count, ()
+        return positive_probability, expected_count, ()
+
+    def _compute_entry_item_metrics(self, entry_id: str, item_id: str) -> ItemChanceMetrics:
+        cache_key = (entry_id, item_id)
+        cached = self._entry_item_metrics_cache.get(cache_key)
+        if cached is not None:
+            return cached
+
+        entry = self.entries[entry_id]
+        gate_probability, gate_status = self._random_chance_gate(
+            has_random_chance=entry.has_random_chance,
+            random_chance_value=entry.random_chance_value,
+        )
+
+        if entry.entry_type == "minecraft:empty":
+            metrics = ItemChanceMetrics(0.0, 0.0, 0.0, gate_status)
+            self._entry_item_metrics_cache[cache_key] = metrics
+            return metrics
+
+        if entry.entry_type == "minecraft:item":
+            if entry.name != item_id:
+                metrics = ItemChanceMetrics(0.0, 0.0, 0.0, ())
+                self._entry_item_metrics_cache[cache_key] = metrics
+                return metrics
+            positive_probability, expected_count, count_status = self._entry_count_metrics(entry.functions)
+            statuses = merge_metric_statuses(gate_status, count_status)
+            if gate_probability is None or positive_probability is None or expected_count is None:
+                metrics = ItemChanceMetrics(None, None, None, statuses)
+            else:
+                metrics = ItemChanceMetrics(
+                    drop_events_expected=float(gate_probability) * float(positive_probability),
+                    expected_item_yield=float(gate_probability) * float(expected_count),
+                    at_least_one_chance=float(gate_probability) * float(positive_probability),
+                    chance_status_codes=statuses,
+                )
+            self._entry_item_metrics_cache[cache_key] = metrics
+            return metrics
+
+        if entry.entry_type == "minecraft:loot_table":
+            target_table_id = entry.inline_table_id or entry.ref_table_id
+            if not target_table_id:
+                metrics = ItemChanceMetrics(None, None, None, merge_metric_statuses(gate_status, metric_status("missing_loot_table_target")))
+                self._entry_item_metrics_cache[cache_key] = metrics
+                return metrics
+            if target_table_id not in self.tables:
+                metrics = ItemChanceMetrics(None, None, None, merge_metric_statuses(gate_status, metric_status("missing_ref_table")))
+                self._entry_item_metrics_cache[cache_key] = metrics
+                return metrics
+            child_metrics = self._compute_table_item_metrics(target_table_id, item_id)
+            statuses = merge_metric_statuses(gate_status, child_metrics.chance_status_codes)
+            if (
+                gate_probability is None
+                or child_metrics.drop_events_expected is None
+                or child_metrics.expected_item_yield is None
+                or child_metrics.at_least_one_chance is None
+            ):
+                metrics = ItemChanceMetrics(None, None, None, statuses)
+            else:
+                metrics = ItemChanceMetrics(
+                    drop_events_expected=float(gate_probability) * child_metrics.drop_events_expected,
+                    expected_item_yield=float(gate_probability) * child_metrics.expected_item_yield,
+                    at_least_one_chance=float(gate_probability) * child_metrics.at_least_one_chance,
+                    chance_status_codes=statuses,
+                )
+            self._entry_item_metrics_cache[cache_key] = metrics
+            return metrics
+
+        metrics = ItemChanceMetrics(None, None, None, metric_status("unsupported_entry_type"))
+        self._entry_item_metrics_cache[cache_key] = metrics
+        return metrics
+
+    def _compute_pool_item_metrics(self, pool_id: str, item_id: str) -> ItemChanceMetrics:
+        cache_key = (pool_id, item_id)
+        cached = self._pool_item_metrics_cache.get(cache_key)
+        if cached is not None:
+            return cached
+
+        pool = self.pools[pool_id]
+        gate_probability, gate_status = self._random_chance_gate(
+            has_random_chance=pool.has_random_chance,
+            random_chance_value=pool.random_chance_value,
+        )
+        roll_distribution, roll_status = self._pool_roll_distribution(pool)
+        statuses = merge_metric_statuses(gate_status, roll_status)
+
+        per_roll_item_probability = 0.0
+        per_roll_drop_events = 0.0
+        per_roll_item_yield = 0.0
+        metrics_unknown = gate_probability is None or roll_distribution is None
+
+        for entry_id in self.entry_ids_by_pool.get(pool_id, []):
+            entry = self.entries[entry_id]
+            entry_metrics = self._compute_entry_item_metrics(entry_id, item_id)
+            statuses = merge_metric_statuses(statuses, entry_metrics.chance_status_codes)
+            if (
+                entry.pool_weight_share is None
+                or entry_metrics.drop_events_expected is None
+                or entry_metrics.expected_item_yield is None
+                or entry_metrics.at_least_one_chance is None
+            ):
+                metrics_unknown = True
+                continue
+            share = float(entry.pool_weight_share)
+            per_roll_item_probability += share * entry_metrics.at_least_one_chance
+            per_roll_drop_events += share * entry_metrics.drop_events_expected
+            per_roll_item_yield += share * entry_metrics.expected_item_yield
+
+        if metrics_unknown:
+            metrics = ItemChanceMetrics(None, None, None, statuses)
+            self._pool_item_metrics_cache[cache_key] = metrics
+            return metrics
+
+        per_roll_item_probability = min(max(per_roll_item_probability, 0.0), 1.0)
+        expected_rolls = sum(roll_count * probability for roll_count, probability in roll_distribution.items())
+        at_least_one_chance = float(gate_probability) * sum(
+            probability * (1.0 - ((1.0 - per_roll_item_probability) ** roll_count))
+            for roll_count, probability in roll_distribution.items()
+        )
+        metrics = ItemChanceMetrics(
+            drop_events_expected=float(gate_probability) * expected_rolls * per_roll_drop_events,
+            expected_item_yield=float(gate_probability) * expected_rolls * per_roll_item_yield,
+            at_least_one_chance=min(max(at_least_one_chance, 0.0), 1.0),
+            chance_status_codes=statuses,
+        )
+        self._pool_item_metrics_cache[cache_key] = metrics
+        return metrics
+
+    def _compute_table_item_metrics(self, table_id: str, item_id: str) -> ItemChanceMetrics:
+        cache_key = (table_id, item_id)
+        cached = self._table_item_metrics_cache.get(cache_key)
+        if cached is not None:
+            return cached
+        if cache_key in self._table_item_metrics_in_progress:
+            return ItemChanceMetrics(None, None, None, metric_status("cycle_detected"))
+
+        self._table_item_metrics_in_progress.add(cache_key)
+        try:
+            table = self.tables.get(table_id)
+            if table is None:
+                metrics = ItemChanceMetrics(None, None, None, metric_status("missing_ref_table"))
+                self._table_item_metrics_cache[cache_key] = metrics
+                return metrics
+
+            statuses: tuple[str, ...] = ()
+            expected_drop_events = 0.0
+            expected_item_yield = 0.0
+            pool_success_probabilities: list[float] = []
+            metrics_unknown = False
+
+            for pool_id in table.pool_ids:
+                pool_metrics = self._compute_pool_item_metrics(pool_id, item_id)
+                statuses = merge_metric_statuses(statuses, pool_metrics.chance_status_codes)
+                if (
+                    pool_metrics.drop_events_expected is None
+                    or pool_metrics.expected_item_yield is None
+                    or pool_metrics.at_least_one_chance is None
+                ):
+                    metrics_unknown = True
+                    continue
+                expected_drop_events += pool_metrics.drop_events_expected
+                expected_item_yield += pool_metrics.expected_item_yield
+                pool_success_probabilities.append(min(max(pool_metrics.at_least_one_chance, 0.0), 1.0))
+
+            if metrics_unknown:
+                metrics = ItemChanceMetrics(None, None, None, statuses)
+            else:
+                at_least_one_chance = 1.0
+                for pool_probability in pool_success_probabilities:
+                    at_least_one_chance *= 1.0 - pool_probability
+                metrics = ItemChanceMetrics(
+                    drop_events_expected=expected_drop_events,
+                    expected_item_yield=expected_item_yield,
+                    at_least_one_chance=1.0 - at_least_one_chance,
+                    chance_status_codes=statuses,
+                )
+            self._table_item_metrics_cache[cache_key] = metrics
+            return metrics
+        finally:
+            self._table_item_metrics_in_progress.discard(cache_key)
 
     def _resolve_entry(
         self,
@@ -1879,6 +2327,7 @@ class LootStackExporter:
         root_chain_step = chain[0]
         explicit_weights = [step["weight"] for step in chain if is_explicit_number(step.get("weight"))]
         path_pool_shares = [step["pool_weight_share"] for step in chain if is_explicit_number(step.get("pool_weight_share"))]
+        path_random_chance_product = compute_path_random_chance_product(chain)
         path_weight_product: int | float | None = None
         if explicit_weights:
             product: int | float = 1
@@ -1913,6 +2362,7 @@ class LootStackExporter:
                 "root_pool_weight_share": as_csv_value(root_chain_step.get("pool_weight_share")),
                 "path_pool_shares_json": json_cell(path_pool_shares),
                 "path_pool_share_product": as_csv_value(path_pool_share_product),
+                "path_random_chance_product": as_csv_value(path_random_chance_product),
                 "path_explicit_weights_json": json_cell(explicit_weights),
                 "path_explicit_weight_product": as_csv_value(path_weight_product),
                 "set_count_min": as_csv_value(set_count_min),
@@ -1927,6 +2377,8 @@ class LootStackExporter:
             "pool_id": pool.pool_id,
             "pool_index": pool.pool_index,
             "pool_condition_types": pool.condition_types,
+            "pool_has_random_chance": pool.has_random_chance,
+            "pool_random_chance_value": pool.random_chance_value,
             "entry_id": entry.entry_id,
             "entry_path": entry.entry_path,
             "entry_type": entry.entry_type,
@@ -1938,6 +2390,8 @@ class LootStackExporter:
             "quality": entry.quality,
             "pool_weight_share": entry.pool_weight_share,
             "condition_types": entry.condition_types,
+            "entry_has_random_chance": entry.has_random_chance,
+            "entry_random_chance_value": entry.random_chance_value,
             "function_types": entry.function_types,
         }
 
@@ -2404,6 +2858,12 @@ class LootStackExporter:
             entry_id = f"{pool.pool_id}#entry:{entry_path}"
             conditions = ensure_list(entry.get("conditions"), f"{entry_id}.conditions")
             functions = ensure_list(entry.get("functions"), f"{entry_id}.functions")
+            entry_has_random_chance, entry_random_chance_value = self._extract_random_chance_fields(
+                conditions=conditions,
+                scope_kind="entry",
+                source_id=entry_id,
+                table_id=table.table_id,
+            )
             entry_type = self._string_or_blank(entry.get("type"))
             name = self._string_or_blank(entry.get("name"))
 
@@ -2441,6 +2901,8 @@ class LootStackExporter:
                 pool_total_effective_weight=None,
                 pool_weight_share=None,
                 condition_types=collect_condition_types(conditions),
+                has_random_chance=entry_has_random_chance,
+                random_chance_value=entry_random_chance_value,
                 function_types=collect_function_types(functions),
                 conditions=conditions,
                 functions=functions,
@@ -2486,6 +2948,12 @@ class LootStackExporter:
                 rolls = parse_roll_spec(pool.get("rolls"))
                 bonus_rolls = parse_roll_spec(pool.get("bonus_rolls"))
                 pool_conditions = ensure_list(pool.get("conditions"), f"{pool_id}.conditions")
+                pool_has_random_chance, pool_random_chance_value = self._extract_random_chance_fields(
+                    conditions=pool_conditions,
+                    scope_kind="pool",
+                    source_id=pool_id,
+                    table_id=table.table_id,
+                )
                 pool_record = PoolRecord(
                     pool_id=pool_id,
                     table_id=table.table_id,
@@ -2500,6 +2968,8 @@ class LootStackExporter:
                     bonus_rolls_raw=bonus_rolls["raw"],
                     condition_types=collect_condition_types(pool_conditions),
                     conditions=pool_conditions,
+                    has_random_chance=pool_has_random_chance,
+                    random_chance_value=pool_random_chance_value,
                     raw_pool=pool,
                 )
                 aux_pools[pool_id] = pool_record
@@ -2577,6 +3047,8 @@ class LootStackExporter:
                 "pool_id": pool.pool_id,
                 "pool_index": pool.pool_index,
                 "pool_condition_types": pool.condition_types,
+                "pool_has_random_chance": pool.has_random_chance,
+                "pool_random_chance_value": pool.random_chance_value,
                 "entry_id": entry.entry_id,
                 "entry_path": entry.entry_path,
                 "entry_type": entry.entry_type,
@@ -2588,6 +3060,8 @@ class LootStackExporter:
                 "quality": entry.quality,
                 "pool_weight_share": entry.pool_weight_share,
                 "condition_types": entry.condition_types,
+                "entry_has_random_chance": entry.has_random_chance,
+                "entry_random_chance_value": entry.random_chance_value,
                 "function_types": entry.function_types,
             }
 
@@ -3963,6 +4437,7 @@ class LootStackExporter:
             "pool_count": len(self.pools),
             "entry_count": len(self.entries),
             "leaf_candidate_count": len(self.leaf_rows),
+            "root_table_item_summary_count": len(self.root_table_item_summary_rows),
             "named_reference_count": self.named_reference_count,
             "inline_reference_count": self.inline_reference_count,
             "table_role_summary_count": len(self.table_role_summary_rows),
@@ -4023,6 +4498,11 @@ class LootStackExporter:
                     row["leaf_entry_id"],
                 ),
             ),
+        )
+        self._write_csv(
+            self.output_dir / "root_table_item_summary.csv",
+            ROOT_TABLE_ITEM_SUMMARY_FIELDNAMES,
+            self.root_table_item_summary_rows,
         )
         self._write_csv(
             self.output_dir / "table_role_summary.csv",
@@ -4120,10 +4600,12 @@ class LootStackExporter:
             f"- `{item['name']}`: {item['file_count']} effective loot-table resources"
             for item in scope_report["deferred_dirs"]
         ]
-        warning_lines = [
-            f"- `{warning['name']}` introduced by {', '.join(warning['pack_ids'])}"
-            for warning in scope_report["warnings"]
-        ]
+        warning_lines: list[str] = []
+        for warning in scope_report["warnings"]:
+            if warning.get("type") == "new_excluded_loot_dir_from_mod":
+                warning_lines.append(f"- `{warning['name']}` introduced by {', '.join(warning['pack_ids'])}")
+            else:
+                warning_lines.append(f"- {warning['message']}")
         selected_pack_lines = [
             f"- `{row['pack_id']}` ({row['kind']}) from `{row['path']}`"
             for row in precheck_report["selected_packs"]
@@ -4147,6 +4629,7 @@ class LootStackExporter:
             f"- Pool rows: {manifest['pool_count']}",
             f"- Entry rows: {manifest['entry_count']}",
             f"- Leaf candidate rows: {manifest['leaf_candidate_count']}",
+            f"- Root table item summary rows: {manifest['root_table_item_summary_count']}",
             f"- Table role rows: {manifest['table_role_summary_count']}",
             f"- Table role evidence rows: {manifest['table_role_evidence_count']}",
             f"- GLM chain rows: {manifest['glm_modifier_chain_count']}",
@@ -4173,6 +4656,7 @@ class LootStackExporter:
             "- `pools.csv`: one row per pool with roll metadata and pool-level conditions.",
             "- `entries.csv`: one row per entry with direct metadata, raw JSON, reference targets, and entry-level pool weight shares.",
             "- `leaf_candidates.csv`: denormalized root-to-leaf paths for Tableau-style analysis, including raw path weights and normalized pool-share metrics.",
+            "- `root_table_item_summary.csv`: one row per `root_table_id` plus `item_id` with pre-aggregated item-drop expectations and at-least-one chance.",
             "- `table_role_summary.csv`: one row per named effective table with raw and Tableau-facing directness roles.",
             "- `table_role_evidence.csv`: evidence edges behind the table role classification.",
             "- `glm_modifier_chain.csv`: one row per effective NeoForge GLM chain entry with target-table and payload-table analysis status.",
@@ -4195,6 +4679,7 @@ class LootStackExporter:
             "- `tables.csv.table_id` joins to `pools.csv.table_id` and `entries.csv.table_id`.",
             "- `pools.csv.pool_id` joins to `entries.csv.pool_id`.",
             "- `leaf_candidates.csv.root_table_id` joins back to named rows in `tables.csv`.",
+            "- `root_table_item_summary.csv.root_table_id` joins to `tables.csv.table_id` for root-table metadata and to `item_classification.csv.item_id` on `item_id` for item traits.",
             "- `glm_modifier_chain.csv.target_table_id` joins to `tables.csv.table_id` for target-table metadata.",
             "- `modifier_added_leaf_candidates.csv.target_table_id` joins to `tables.csv.table_id` for base target-table context.",
             "- `modifier_added_leaf_candidates.csv.item_id` joins to `item_classification.csv.item_id` for Stage 2 item traits.",
@@ -4230,6 +4715,7 @@ class LootStackExporter:
             "- Nested paths like `loot_table/entities/inject/...` are still ordinary Stage 1 loot tables because the top-level directory is `entities`.",
             "- Inline tables use synthetic IDs in the form `inline:{entry_id}`.",
             "- `entries.csv.conditions_json` stores only conditions declared directly on entry objects. In many vanilla and modded tables, real conditions may still live at the pool level instead.",
+            "- `pools.csv.has_random_chance` / `random_chance_value` and `entries.csv.has_random_chance` / `random_chance_value` only inspect top-level objects in that row's own `conditions` list.",
             "- `entries.csv.quality` and `leaf_candidates.csv.leaf_quality` remain in the schema because they are valid loot fields even when blank in a given scope.",
             "- Raw `weight` values are not standardized across unrelated pools or tables, so compare normalized share fields when you need cross-table weighting context.",
             "- For the current scope, normalization is pool-based because the parsed entries are all top-level pool entries rather than nested composite siblings.",
@@ -4239,6 +4725,10 @@ class LootStackExporter:
             "- `leaf_candidates.csv.root_pool_weight_share` describes the normalized root-step context without restating an effective-weight denominator column.",
             "- `leaf_candidates.csv.path_pool_shares_json` lists the ordered local pool shares across the resolved path.",
             "- `leaf_candidates.csv.path_pool_share_product` is a relative path-choice share, not final drop probability.",
+            "- `leaf_candidates.csv.path_random_chance_product` multiplies the scalar pool/entry `random_chance_value` fields encountered across a resolved path and stays blank when no unambiguous scalar path exists.",
+            "- `root_table_item_summary.csv.drop_events_expected` is the expected number of non-empty drop events for that item from one full execution of the root table.",
+            "- `root_table_item_summary.csv.drop_yield_expected` is the expected item count from one full execution of the root table.",
+            "- `root_table_item_summary.csv.at_least_one_chance` is the exporter-owned table-level chance of getting at least one of the item, and `chance_status` tells you whether that value is exact or blank because a required input was unsupported or ambiguous.",
             "- `leaf_candidates.csv.leaf_weight` remains terminal-entry-only for backward compatibility; it is not a path weight or probability.",
             "- `leaf_candidates.csv.path_explicit_weights_json` lists only explicitly declared weights encountered along the resolved path.",
             "- `leaf_candidates.csv.path_explicit_weight_product` is the product of explicit path weights only; it is not normalized chance.",

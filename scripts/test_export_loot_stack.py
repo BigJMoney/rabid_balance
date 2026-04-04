@@ -90,6 +90,7 @@ class ExportLootStackTests(unittest.TestCase):
         cls.pools = read_csv_rows(cls.output_dir / "pools.csv")
         cls.entries = read_csv_rows(cls.output_dir / "entries.csv")
         cls.leaf_rows = read_csv_rows(cls.output_dir / "leaf_candidates.csv")
+        cls.root_table_item_summary = read_csv_rows(cls.output_dir / "root_table_item_summary.csv")
         cls.evidence = read_csv_rows(cls.output_dir / "table_role_evidence.csv")
         cls.glm_chain = read_csv_rows(cls.output_dir / "glm_modifier_chain.csv")
         cls.modifier_added_leaf_rows = read_csv_rows(cls.output_dir / "modifier_added_leaf_candidates.csv")
@@ -149,6 +150,48 @@ class ExportLootStackTests(unittest.TestCase):
         self.assertNotIn("pool_defaulted_weight_entry_count", pool_row)
         self.assertNotIn("weight_was_defaulted", entry_row)
         self.assertIn("pool_weight_share", entry_row)
+        self.assertIn("has_random_chance", pool_row)
+        self.assertIn("random_chance_value", pool_row)
+        self.assertIn("has_random_chance", entry_row)
+        self.assertIn("random_chance_value", entry_row)
+        summary_row = next(iter(self.root_table_item_summary))
+        self.assertIn("drop_events_expected", summary_row)
+        self.assertIn("drop_yield_expected", summary_row)
+        self.assertIn("at_least_one_chance", summary_row)
+        self.assertIn("chance_status", summary_row)
+
+    def test_illager_entry_random_chance_exports_as_entry_level_scalar(self) -> None:
+        entry_row = next(
+            row
+            for row in self.entries
+            if row["table_id"] == "illagerinvasion:chests/illager_fort_ground" and row["name"] == "minecraft:crossbow"
+        )
+        self.assertEqual(entry_row["has_random_chance"], "true")
+        self.assertEqual(entry_row["random_chance_value"], "0.25")
+
+        pool_row = next(row for row in self.pools if row["pool_id"] == entry_row["pool_id"])
+        self.assertEqual(pool_row["has_random_chance"], "false")
+        self.assertEqual(pool_row["random_chance_value"], "")
+
+        leaf_row = next(
+            row
+            for row in self.leaf_rows
+            if row["root_table_id"] == "illagerinvasion:chests/illager_fort_ground"
+            and row["item_id"] == "minecraft:crossbow"
+        )
+        self.assertEqual(leaf_row["path_random_chance_product"], "0.25")
+
+        summary_row = next(
+            row
+            for row in self.root_table_item_summary
+            if row["root_table_id"] == "illagerinvasion:chests/illager_fort_ground"
+            and row["item_id"] == "minecraft:crossbow"
+        )
+        self.assertEqual(summary_row["path_count"], "1")
+        self.assertEqual(summary_row["drop_events_expected"], "0.25")
+        self.assertEqual(summary_row["drop_yield_expected"], "0.25")
+        self.assertEqual(summary_row["at_least_one_chance"], "0.25")
+        self.assertEqual(summary_row["chance_status"], "exact")
 
     def test_default_stack_writes_stage15_classification_tables(self) -> None:
         self.assertTrue(self.item_classification)
@@ -1350,6 +1393,250 @@ class ExportLootStackTests(unittest.TestCase):
             self.assertEqual(all_missing_row["path_explicit_weight_product"], "")
             self.assertNotIn("path_missing_weight_count", all_missing_row)
             self.assertNotIn("path_has_implicit_default_weights", all_missing_row)
+
+    def test_random_chance_fields_cover_pool_entry_and_ambiguous_cases(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            mods_root = Path(tempdir) / "mods"
+            output_dir = Path(tempdir) / "out"
+            write_mod_pack(
+                mods_root / "chance_mod",
+                "chancecheck",
+                {
+                    "data/chancecheck/loot_table/chests/pool_only.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [
+                                {
+                                    "rolls": 1,
+                                    "conditions": [
+                                        {
+                                            "condition": "minecraft:random_chance",
+                                            "chance": 0.5,
+                                        }
+                                    ],
+                                    "entries": [
+                                        {
+                                            "type": "minecraft:item",
+                                            "name": "minecraft:apple",
+                                        }
+                                    ],
+                                }
+                            ],
+                        }
+                    ),
+                    "data/chancecheck/loot_table/chests/pool_and_entry.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [
+                                {
+                                    "rolls": 1,
+                                    "conditions": [
+                                        {
+                                            "condition": "minecraft:random_chance",
+                                            "chance": 0.5,
+                                        }
+                                    ],
+                                    "entries": [
+                                        {
+                                            "type": "minecraft:item",
+                                            "name": "minecraft:bread",
+                                            "conditions": [
+                                                {
+                                                    "condition": "minecraft:random_chance",
+                                                    "chance": 0.25,
+                                                }
+                                            ],
+                                        }
+                                    ],
+                                }
+                            ],
+                        }
+                    ),
+                    "data/chancecheck/loot_table/chests/ambiguous_entry.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [
+                                {
+                                    "rolls": 1,
+                                    "entries": [
+                                        {
+                                            "type": "minecraft:item",
+                                            "name": "minecraft:iron_ingot",
+                                            "conditions": [
+                                                {
+                                                    "condition": "minecraft:random_chance",
+                                                    "chance": 0.2,
+                                                },
+                                                {
+                                                    "condition": "minecraft:random_chance",
+                                                    "chance": 0.3,
+                                                },
+                                            ],
+                                        }
+                                    ],
+                                }
+                            ],
+                        }
+                    ),
+                },
+            )
+
+            export_with_temp_resolution_maps(
+                output_dir=output_dir,
+                mods_root=mods_root,
+                archive_roots=[],
+                explicit_packs=[],
+            )
+
+            pool_rows = read_csv_rows(output_dir / "pools.csv")
+            entry_rows = read_csv_rows(output_dir / "entries.csv")
+            leaf_rows = read_csv_rows(output_dir / "leaf_candidates.csv")
+            scope_report = json.loads((output_dir / "scope_report.json").read_text(encoding="utf-8"))
+
+            pool_only_pool = next(row for row in pool_rows if row["table_id"] == "chancecheck:chests/pool_only")
+            self.assertEqual(pool_only_pool["has_random_chance"], "true")
+            self.assertEqual(pool_only_pool["random_chance_value"], "0.5")
+
+            pool_only_entry = next(row for row in entry_rows if row["table_id"] == "chancecheck:chests/pool_only")
+            self.assertEqual(pool_only_entry["has_random_chance"], "false")
+            self.assertEqual(pool_only_entry["random_chance_value"], "")
+
+            pool_only_leaf = next(row for row in leaf_rows if row["root_table_id"] == "chancecheck:chests/pool_only")
+            self.assertEqual(pool_only_leaf["path_random_chance_product"], "0.5")
+
+            pool_and_entry_entry = next(
+                row for row in entry_rows if row["table_id"] == "chancecheck:chests/pool_and_entry"
+            )
+            self.assertEqual(pool_and_entry_entry["has_random_chance"], "true")
+            self.assertEqual(pool_and_entry_entry["random_chance_value"], "0.25")
+
+            pool_and_entry_leaf = next(
+                row for row in leaf_rows if row["root_table_id"] == "chancecheck:chests/pool_and_entry"
+            )
+            self.assertEqual(pool_and_entry_leaf["path_random_chance_product"], "0.125")
+
+            ambiguous_entry = next(
+                row for row in entry_rows if row["table_id"] == "chancecheck:chests/ambiguous_entry"
+            )
+            self.assertEqual(ambiguous_entry["has_random_chance"], "true")
+            self.assertEqual(ambiguous_entry["random_chance_value"], "")
+
+            ambiguous_leaf = next(
+                row for row in leaf_rows if row["root_table_id"] == "chancecheck:chests/ambiguous_entry"
+            )
+            self.assertEqual(ambiguous_leaf["path_random_chance_product"], "")
+            self.assertTrue(
+                any(
+                    warning["type"] == "ambiguous_top_level_random_chance"
+                    and warning["scope"] == "entry"
+                    and warning["table_id"] == "chancecheck:chests/ambiguous_entry"
+                    for warning in scope_report["warnings"]
+                )
+            )
+
+    def test_root_table_item_summary_models_rolls_references_and_pool_independence(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            mods_root = Path(tempdir) / "mods"
+            output_dir = Path(tempdir) / "out"
+            write_mod_pack(
+                mods_root / "summary_mod",
+                "summarymod",
+                {
+                    "data/summarymod/loot_table/chests/root.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [
+                                {
+                                    "rolls": {
+                                        "type": "minecraft:uniform",
+                                        "min": 1,
+                                        "max": 2,
+                                    },
+                                    "entries": [
+                                        {
+                                            "type": "minecraft:item",
+                                            "name": "minecraft:apple",
+                                            "weight": 1,
+                                        },
+                                        {
+                                            "type": "minecraft:loot_table",
+                                            "value": "summarymod:chests/branch",
+                                            "weight": 1,
+                                        },
+                                    ],
+                                },
+                                {
+                                    "rolls": 1,
+                                    "conditions": [
+                                        {
+                                            "condition": "minecraft:random_chance",
+                                            "chance": 0.5,
+                                        }
+                                    ],
+                                    "entries": [
+                                        {
+                                            "type": "minecraft:item",
+                                            "name": "minecraft:apple",
+                                        }
+                                    ],
+                                },
+                            ],
+                        }
+                    ),
+                    "data/summarymod/loot_table/chests/branch.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [
+                                {
+                                    "rolls": 1,
+                                    "entries": [
+                                        {
+                                            "type": "minecraft:item",
+                                            "name": "minecraft:apple",
+                                            "conditions": [
+                                                {
+                                                    "condition": "minecraft:random_chance",
+                                                    "chance": 0.5,
+                                                }
+                                            ],
+                                            "functions": [
+                                                {
+                                                    "function": "minecraft:set_count",
+                                                    "count": {
+                                                        "type": "minecraft:uniform",
+                                                        "min": 0,
+                                                        "max": 3,
+                                                    },
+                                                }
+                                            ],
+                                        }
+                                    ],
+                                }
+                            ],
+                        }
+                    ),
+                },
+            )
+
+            export_with_temp_resolution_maps(
+                output_dir=output_dir,
+                mods_root=mods_root,
+                archive_roots=[],
+                explicit_packs=[],
+            )
+
+            summary_rows = read_csv_rows(output_dir / "root_table_item_summary.csv")
+            summary_row = next(
+                row
+                for row in summary_rows
+                if row["root_table_id"] == "summarymod:chests/root" and row["item_id"] == "minecraft:apple"
+            )
+
+            self.assertEqual(summary_row["path_count"], "3")
+            self.assertEqual(summary_row["drop_events_expected"], "1.53125")
+            self.assertEqual(summary_row["drop_yield_expected"], "1.8125")
+            self.assertEqual(summary_row["at_least_one_chance"], "0.8974609375")
+            self.assertEqual(summary_row["chance_status"], "exact")
 
     def test_custom_classification_csv_handles_mod_items_and_normalized_affinities(self) -> None:
         with tempfile.TemporaryDirectory() as tempdir:

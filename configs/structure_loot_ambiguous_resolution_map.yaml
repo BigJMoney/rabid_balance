@@ -218,7 +218,7 @@ entries:
     structure_root: trial_chambers
     matched_value: trial_chambers
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/trial_chambers/reward_ominous_common
   structure_id: minecraft:trial_chambers
@@ -227,7 +227,7 @@ entries:
     structure_root: trial_chambers
     matched_value: trial_chambers
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/trial_chambers/reward_ominous_rare
   structure_id: minecraft:trial_chambers
@@ -236,7 +236,7 @@ entries:
     structure_root: trial_chambers
     matched_value: trial_chambers
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/trial_chambers/reward_ominous_unique
   structure_id: minecraft:trial_chambers
@@ -245,7 +245,7 @@ entries:
     structure_root: trial_chambers
     matched_value: trial_chambers
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/trial_chambers/reward_rare
   structure_id: minecraft:trial_chambers
@@ -254,7 +254,7 @@ entries:
     structure_root: trial_chambers
     matched_value: trial_chambers
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/trial_chambers/reward_unique
   structure_id: minecraft:trial_chambers
@@ -263,7 +263,7 @@ entries:
     structure_root: trial_chambers
     matched_value: trial_chambers
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_armorer
   structure_id: minecraft:village_desert
@@ -272,7 +272,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_armorer
   structure_id: minecraft:village_plains
@@ -281,7 +281,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_armorer
   structure_id: minecraft:village_savanna
@@ -290,7 +290,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_armorer
   structure_id: minecraft:village_taiga
@@ -299,7 +299,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_butcher
   structure_id: minecraft:village_desert
@@ -308,7 +308,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_butcher
   structure_id: minecraft:village_plains
@@ -317,7 +317,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_butcher
   structure_id: minecraft:village_snowy
@@ -326,7 +326,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_butcher
   structure_id: minecraft:village_taiga
@@ -335,7 +335,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_cartographer
   structure_id: minecraft:village_desert
@@ -344,7 +344,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_desert_house
   structure_id: minecraft:village_plains
@@ -389,7 +389,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_fisher
   structure_id: minecraft:village_savanna
@@ -398,7 +398,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_fisher
   structure_id: minecraft:village_snowy
@@ -407,7 +407,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_fisher
   structure_id: minecraft:village_taiga
@@ -416,7 +416,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_fletcher
   structure_id: minecraft:village_desert
@@ -425,7 +425,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_fletcher
   structure_id: minecraft:village_plains
@@ -434,7 +434,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_fletcher
   structure_id: minecraft:village_savanna
@@ -443,7 +443,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_fletcher
   structure_id: minecraft:village_snowy
@@ -452,7 +452,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_mason
   structure_id: minecraft:village_desert
@@ -461,7 +461,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_mason
   structure_id: minecraft:village_plains
@@ -470,7 +470,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_mason
   structure_id: minecraft:village_snowy
@@ -479,7 +479,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_mason
   structure_id: minecraft:village_taiga
@@ -488,7 +488,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_plains_house
   structure_id: minecraft:village_desert
@@ -569,7 +569,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_shepherd
   structure_id: minecraft:village_plains
@@ -578,7 +578,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_shepherd
   structure_id: minecraft:village_savanna
@@ -587,7 +587,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_shepherd
   structure_id: minecraft:village_taiga
@@ -596,7 +596,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_snowy_house
   structure_id: minecraft:village_desert
@@ -677,7 +677,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_temple
   structure_id: minecraft:village_plains
@@ -686,7 +686,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_temple
   structure_id: minecraft:village_savanna
@@ -695,7 +695,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_temple
   structure_id: minecraft:village_snowy
@@ -704,7 +704,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_temple
   structure_id: minecraft:village_taiga
@@ -713,7 +713,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_toolsmith
   structure_id: minecraft:village_plains
@@ -722,7 +722,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_toolsmith
   structure_id: minecraft:village_savanna
@@ -731,7 +731,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/village/village_toolsmith
   structure_id: minecraft:village_snowy
@@ -740,7 +740,7 @@ entries:
     structure_id_submatch: village
     matched_value: village
     match_mode: first_segment
-  autoresolve: true
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/woodland_mansion
   structure_id: minecraft:mansion

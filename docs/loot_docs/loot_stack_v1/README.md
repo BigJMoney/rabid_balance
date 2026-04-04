@@ -15,6 +15,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Pool rows: 201
 - Entry rows: 831
 - Leaf candidate rows: 889
+- Root table item summary rows: 813
 - Table role rows: 72
 - Table role evidence rows: 195
 - GLM chain rows: 9
@@ -25,7 +26,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Item affinity rows: 1174
 - Classification coverage rows: 240
 - Structure rows: 39
-- Structure loot-link rows: 128
+- Structure loot-link rows: 89
 - Structure loot-link audit rows: 152
 - Classified loot items: 237
 - Missing loot items: 3
@@ -43,6 +44,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - `pools.csv`: one row per pool with roll metadata and pool-level conditions.
 - `entries.csv`: one row per entry with direct metadata, raw JSON, reference targets, and entry-level pool weight shares.
 - `leaf_candidates.csv`: denormalized root-to-leaf paths for Tableau-style analysis, including raw path weights and normalized pool-share metrics.
+- `root_table_item_summary.csv`: one row per `root_table_id` plus `item_id` with pre-aggregated item-drop expectations and at-least-one chance.
 - `table_role_summary.csv`: one row per named effective table with raw and Tableau-facing directness roles.
 - `table_role_evidence.csv`: evidence edges behind the table role classification.
 - `glm_modifier_chain.csv`: one row per effective NeoForge GLM chain entry with target-table and payload-table analysis status.
@@ -65,6 +67,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - `tables.csv.table_id` joins to `pools.csv.table_id` and `entries.csv.table_id`.
 - `pools.csv.pool_id` joins to `entries.csv.pool_id`.
 - `leaf_candidates.csv.root_table_id` joins back to named rows in `tables.csv`.
+- `root_table_item_summary.csv.root_table_id` joins to `tables.csv.table_id` for root-table metadata and to `item_classification.csv.item_id` on `item_id` for item traits.
 - `glm_modifier_chain.csv.target_table_id` joins to `tables.csv.table_id` for target-table metadata.
 - `modifier_added_leaf_candidates.csv.target_table_id` joins to `tables.csv.table_id` for base target-table context.
 - `modifier_added_leaf_candidates.csv.item_id` joins to `item_classification.csv.item_id` for Stage 2 item traits.
@@ -108,6 +111,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Nested paths like `loot_table/entities/inject/...` are still ordinary Stage 1 loot tables because the top-level directory is `entities`.
 - Inline tables use synthetic IDs in the form `inline:{entry_id}`.
 - `entries.csv.conditions_json` stores only conditions declared directly on entry objects. In many vanilla and modded tables, real conditions may still live at the pool level instead.
+- `pools.csv.has_random_chance` / `random_chance_value` and `entries.csv.has_random_chance` / `random_chance_value` only inspect top-level objects in that row's own `conditions` list.
 - `entries.csv.quality` and `leaf_candidates.csv.leaf_quality` remain in the schema because they are valid loot fields even when blank in a given scope.
 - Raw `weight` values are not standardized across unrelated pools or tables, so compare normalized share fields when you need cross-table weighting context.
 - For the current scope, normalization is pool-based because the parsed entries are all top-level pool entries rather than nested composite siblings.
@@ -117,6 +121,10 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - `leaf_candidates.csv.root_pool_weight_share` describes the normalized root-step context without restating an effective-weight denominator column.
 - `leaf_candidates.csv.path_pool_shares_json` lists the ordered local pool shares across the resolved path.
 - `leaf_candidates.csv.path_pool_share_product` is a relative path-choice share, not final drop probability.
+- `leaf_candidates.csv.path_random_chance_product` multiplies the scalar pool/entry `random_chance_value` fields encountered across a resolved path and stays blank when no unambiguous scalar path exists.
+- `root_table_item_summary.csv.drop_events_expected` is the expected number of non-empty drop events for that item from one full execution of the root table.
+- `root_table_item_summary.csv.drop_yield_expected` is the expected item count from one full execution of the root table.
+- `root_table_item_summary.csv.at_least_one_chance` is the exporter-owned table-level chance of getting at least one of the item, and `chance_status` tells you whether that value is exact or blank because a required input was unsupported or ambiguous.
 - `leaf_candidates.csv.leaf_weight` remains terminal-entry-only for backward compatibility; it is not a path weight or probability.
 - `leaf_candidates.csv.path_explicit_weights_json` lists only explicitly declared weights encountered along the resolved path.
 - `leaf_candidates.csv.path_explicit_weight_product` is the product of explicit path weights only; it is not normalized chance.
