@@ -67,6 +67,7 @@
     ],
     "illagerinvasion:lost_candle":
     [
+        "rabbal:affinity/underground",
         "rabbal:function/misc_tool",
         "rabbal:loot/amount/singleton",
         "rabbal:loot/value/epic"
@@ -12232,6 +12233,7 @@
     [
         "accessories:back",
         "curios:back",
+        "rabbal:affinity/leatherworking",
         "rabbal:function/wearable",
         "rabbal:loot/amount/singleton",
         "rabbal:loot/value/uncommon"
@@ -12285,7 +12287,7 @@
         "curios:back",
         "rabbal:function/wearable",
         "rabbal:loot/amount/singleton",
-        "rabbal:loot/value/epic"
+        "rabbal:loot/value/legendary"
     ],
     "sophisticatedbackpacks:everlasting_upgrade":
     [
@@ -12315,7 +12317,7 @@
         "rabbal:affinity/treasure",
         "rabbal:function/wearable",
         "rabbal:loot/amount/singleton",
-        "rabbal:loot/value/uncommon"
+        "rabbal:loot/value/epic"
     ],
     "sophisticatedbackpacks:inception_upgrade":
     [
@@ -12361,7 +12363,7 @@
         "rabbal:affinity/nether",
         "rabbal:function/wearable",
         "rabbal:loot/amount/singleton",
-        "rabbal:loot/value/legendary"
+        "rabbal:loot/value/unique"
     ],
     "sophisticatedbackpacks:pickup_upgrade":
     [

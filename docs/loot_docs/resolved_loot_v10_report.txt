@@ -27,15 +27,15 @@ affinities:
   sea: 75
   woolworking: 73
   treasure: 67
-  underground: 55
+  underground: 56
   wooden: 50
   desert: 44
   food: 42
   deep_under: 40
   jungle: 37
   end: 36
+  leatherworking: 30
   smithing: 29
-  leatherworking: 29
   archaeology: 24
   swamp: 23
   clerical: 22
@@ -49,10 +49,10 @@ affinities:
   arctic: 5
   cartography: 1
   ruins: 1
- Total Affinities: 1177
+ Total Affinities: 1179
 
 values:
-  uncommon: 375
+  uncommon: 374
   filler: 303
   rare: 268
   none: 128
@@ -60,7 +60,7 @@ values:
   common: 110
   junk: 59
   legendary: 43
-  unique: 12
+  unique: 13
 
 amount_classes:
   small: 489

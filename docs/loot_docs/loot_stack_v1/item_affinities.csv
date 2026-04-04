@@ -1,4 +1,5 @@
 item_id,affinity,classification_version
+illagerinvasion:lost_candle,underground,10
 minecraft:acacia_boat,sea,10
 minecraft:acacia_chest_boat,sea,10
 minecraft:acacia_fence,village,10
@@ -1173,6 +1174,7 @@ minecraft:yellow_shulker_box,end,10
 minecraft:yellow_stained_glass_pane,clerical,10
 minecraft:yellow_terracotta,desert,10
 minecraft:yellow_wool,woolworking,10
+sophisticatedbackpacks:backpack,leatherworking,10
 sophisticatedbackpacks:gold_backpack,treasure,10
 sophisticatedbackpacks:iron_backpack,fortification,10
 sophisticatedbackpacks:netherite_backpack,nether,10

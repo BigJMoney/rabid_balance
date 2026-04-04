@@ -197,12 +197,15 @@ loot_classification_by_trait:
         value:
           default: uncommon
           unique:
+            - sophisticatedbackpacks:netherite_backpack
             - minecraft:elytra
           legendary:
+            - sophisticatedbackpacks:diamond_backpack
             - "netherite_*"
             # - "#netherite"                    # These material-style tags don't exist yet (ex. #c:equipment/wooden)
           epic:
             - minecraft:diamond_horse_armor
+            - sophisticatedbackpacks:gold_backpack
             - "diamond_*"
             # - "#diamond"
             - "*_head"
@@ -216,6 +219,7 @@ loot_classification_by_trait:
           uncommon:
             - minecraft:leather_horse_armor
             - "golden_*"                        # This could cause issues, keep an eye out
+            - "gold_*"
             - "chainmail_*"
             - "copper_*"                        # Vanilla Backport
             # - "#golden"
@@ -500,6 +504,7 @@ loot_classification_by_trait:
         - "#minecraft:trim_templates"
         - "#minecraft:decorated_pot_sherds"
         - "#sophisticatedbackpacks:upgrade"
+        - "#sophisticatedbackpacks:advanced_pickup_upgrade"
       assign:
         function: item_material
         value:
@@ -521,6 +526,7 @@ loot_classification_by_trait:
             - minecraft:ancient_debris
             - minecraft:netherite_scrap
             - "raw_*_block"
+            - "sophisticatedbackpacks:advanced_*_upgrade"
           epic:
             - minecraft:rabbit_foot
             - minecraft:silence_armor_trim_smithing_template
@@ -579,6 +585,7 @@ loot_classification_by_trait:
             - minecraft:flint
             - minecraft:kelp
             - minecraft:nether_brick
+            - sophisticatedbackpacks:backpack
             - "#minecraft:wool"
             - "*_mushroom"
             - "*_fungus"
