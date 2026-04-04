@@ -1,6 +1,6 @@
 param(
   [string]$BaseUrl = 'http://localhost:61423',
-  [string]$OutFile = 'D:\keep\mods\Minecraft\my_tweaks\docs\loot_docs\item_tags_by_item-no_loot_tags.json',
+  [string]$OutFile = 'D:\keep\mods\Minecraft\my_tweaks\docs\loot_docs\item_tags_by_item.json',
   [string]$ItemIdsPath = ''
 )
 
