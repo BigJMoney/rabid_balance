@@ -2730,7 +2730,10 @@ class LootStackExporter:
                         f"ignored non-string GLM registry entry at {display_pack_resource_path(contribution.pack, GLM_REGISTRY_RESOURCE_PATH)}[{entry_index}]"
                     )
                     continue
-                merged_entries.append(normalize_namespaced_id(raw_entry.strip(), contribution.pack.pack_id))
+                normalized_entry = normalize_namespaced_id(raw_entry.strip(), contribution.pack.pack_id)
+                if normalized_entry in merged_entries:
+                    merged_entries.remove(normalized_entry)
+                merged_entries.append(normalized_entry)
         return merged_entries
 
     def _find_loot_table_id_conditions(self, node: Any) -> list[str]:

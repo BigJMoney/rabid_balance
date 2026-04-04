@@ -21,10 +21,10 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Root table item summary rows: 817
 - Table role rows: 74
 - Table role evidence rows: 195
-- GLM chain rows: 10
-- Modifier-added leaf rows: 40
+- GLM chain rows: 11
+- Modifier-added leaf rows: 38
 - Target table modifier summary rows: 10
-- Target table added item summary rows: 30
+- Target table added item summary rows: 29
 - Item classification rows: 1415
 - Item affinity rows: 1179
 - Classification coverage rows: 243
@@ -101,7 +101,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 
 ## Deferred Stage 2 Folders
 
-- `inject`: 10 effective loot-table resources
+- `inject`: 11 effective loot-table resources
 
 ## Warnings
 

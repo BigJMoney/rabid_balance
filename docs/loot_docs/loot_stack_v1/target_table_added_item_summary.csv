@@ -23,7 +23,6 @@ minecraft:chests/shipwreck_treasure,sophisticatedbackpacks:iron_backpack,1,1,4.0
 minecraft:chests/simple_dungeon,sophisticatedbackpacks:backpack,1,1,5.0,true,"[""sophisticatedbackpacks:chests/simple_dungeon""]"
 minecraft:chests/simple_dungeon,sophisticatedbackpacks:copper_backpack,1,1,3.0,true,"[""sophisticatedbackpacks:chests/simple_dungeon""]"
 minecraft:chests/simple_dungeon,sophisticatedbackpacks:pickup_upgrade,1,1,2.0,true,"[""sophisticatedbackpacks:chests/simple_dungeon""]"
-minecraft:chests/spawn_bonus_chest,sophisticatedbackpacks:backpack,1,1,100.0,true,"[""sophisticatedbackpacks:chests/spawn_bonus_chest""]"
 minecraft:chests/village/village_desert_house,supplementaries:flax,1,1,10.0,true,"[""rabidbalance:supplementaries_desert_house_bonus""]"
 minecraft:chests/village/village_desert_house,supplementaries:rope,1,1,2.0,true,"[""rabidbalance:supplementaries_desert_house_bonus""]"
 minecraft:chests/woodland_mansion,sophisticatedbackpacks:advanced_magnet_upgrade,1,1,2.0,true,"[""sophisticatedbackpacks:chests/woodland_mansion""]"

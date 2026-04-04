@@ -1,6 +1,7 @@
 {
   "replace": false,
   "entries": [
+    "sophisticatedbackpacks:chests/spawn_bonus_chest",
     "rabidbalance:supplementaries_desert_house_bonus"
   ]
 }

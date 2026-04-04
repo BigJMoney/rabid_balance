@@ -1251,6 +1251,75 @@ class ExportLootStackTests(unittest.TestCase):
             chain_rows = read_csv_rows(output_dir / "glm_modifier_chain.csv")
             self.assertEqual([row["modifier_id"] for row in chain_rows], ["modb:test_add"])
 
+    def test_glm_registry_relisted_entry_moves_to_latest_position_without_duplication(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            mods_root = Path(tempdir) / "mods"
+            output_dir = Path(tempdir) / "out"
+            write_mod_pack(
+                mods_root / "mod_a",
+                "moda",
+                {
+                    "data/neoforge/loot_modifiers/global_loot_modifiers.json": json.dumps(
+                        {"entries": ["moda:first", "moda:second"], "replace": False}
+                    ),
+                    "data/moda/loot_modifiers/first.json": json.dumps(
+                        {
+                            "type": "neoforge:add_table",
+                            "conditions": [
+                                {
+                                    "condition": "neoforge:loot_table_id",
+                                    "loot_table_id": "minecraft:chests/simple_dungeon",
+                                }
+                            ],
+                            "table": "moda:inject/chests/first",
+                        }
+                    ),
+                    "data/moda/loot_modifiers/second.json": json.dumps(
+                        {
+                            "type": "neoforge:add_table",
+                            "conditions": [
+                                {
+                                    "condition": "neoforge:loot_table_id",
+                                    "loot_table_id": "minecraft:chests/woodland_mansion",
+                                }
+                            ],
+                            "table": "moda:inject/chests/second",
+                        }
+                    ),
+                    "data/moda/loot_table/inject/chests/first.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:apple"}]}],
+                        }
+                    ),
+                    "data/moda/loot_table/inject/chests/second.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:bread"}]}],
+                        }
+                    ),
+                },
+            )
+            write_mod_pack(
+                mods_root / "mod_b",
+                "modb",
+                {
+                    "data/neoforge/loot_modifiers/global_loot_modifiers.json": json.dumps(
+                        {"entries": ["moda:first"], "replace": False}
+                    ),
+                },
+            )
+
+            export_with_temp_resolution_maps(
+                output_dir=output_dir,
+                mods_root=mods_root,
+                archive_roots=[],
+                explicit_packs=[],
+            )
+
+            chain_rows = read_csv_rows(output_dir / "glm_modifier_chain.csv")
+            self.assertEqual([row["modifier_id"] for row in chain_rows], ["moda:second", "moda:first"])
+
     def test_stage2_marks_unsupported_and_out_of_scope_modifiers(self) -> None:
         with tempfile.TemporaryDirectory() as tempdir:
             mods_root = Path(tempdir) / "mods"

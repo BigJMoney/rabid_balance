@@ -57,7 +57,7 @@
   "deferred_dirs": [
     {
       "name": "inject",
-      "file_count": 10
+      "file_count": 11
     }
   ],
   "base_encountered_loot_dirs": [
@@ -133,7 +133,7 @@
     },
     {
       "name": "inject",
-      "file_count": 10
+      "file_count": 11
     },
     {
       "name": "pots",
@@ -150,7 +150,7 @@
   ],
   "included_table_total": 74,
   "excluded_table_total": 1135,
-  "deferred_table_total": 10,
+  "deferred_table_total": 11,
   "new_excluded_loot_dirs_from_mods": [],
   "warnings": []
 }
