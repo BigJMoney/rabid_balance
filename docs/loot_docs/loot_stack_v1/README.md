@@ -22,14 +22,14 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Modifier-added leaf rows: 37
 - Target table modifier summary rows: 9
 - Target table added item summary rows: 28
-- Item classification rows: 1332
-- Item affinity rows: 1174
+- Item classification rows: 1415
+- Item affinity rows: 1177
 - Classification coverage rows: 240
 - Structure rows: 39
 - Structure loot-link rows: 89
 - Structure loot-link audit rows: 152
-- Classified loot items: 237
-- Missing loot items: 3
+- Classified loot items: 240
+- Missing loot items: 0
 
 ## Selected Packs
 

@@ -187,10 +187,11 @@ loot_classification_by_trait:
         - minecraft:wolf_armor
         - minecraft:elytra
         - minecraft:saddle
-        - "#c:armors"
-        - "#c:tools/shield"
         - "*_horse_armor"
         - "*_head"
+        - "*backpack"                           # Sophisticated Backpacks
+        - "#c:armors"
+        - "#c:tools/shield"
       assign:
         function: wearable
         value:
@@ -198,22 +199,31 @@ loot_classification_by_trait:
           unique:
             - minecraft:elytra
           legendary:
-            - "#netherite"
+            - "netherite_*"
+            # - "#netherite"                    # These material-style tags don't exist yet (ex. #c:equipment/wooden)
           epic:
             - minecraft:diamond_horse_armor
-            - "#diamond"
+            - "diamond_*"
+            # - "#diamond"
             - "*_head"
           rare:
             - minecraft:wolf_armor
             - minecraft:iron_horse_armor
             - minecraft:golden_horse_armor
             - minecraft:turtle_helmet
-            - "#iron"
+            - "iron_*"
+            # - "#iron"
           uncommon:
-            - "#golden"
-            - "#chainmail"
+            - minecraft:leather_horse_armor
+            - "golden_*"                        # This could cause issues, keep an eye out
+            - "chainmail_*"
+            - "copper_*"                        # Vanilla Backport
+            # - "#golden"
+            # - "#chainmail"
           common:
-            - "#leather"                      # todo: These style tags don't exist yet (probably want to add aa #c:equipment/wooden style tag)
+            - "leather_*"
+            - "wooden_*"                        # Immersive Armors
+            # - "#leather"
         amount_class:
           default: singleton
       reason: >
@@ -227,6 +237,7 @@ loot_classification_by_trait:
         - minecraft:spectral_arrow
         - minecraft:tipped_arrow
         - minecraft:snowball
+        - illagerinvasion:platinum_infused_hatchet
         - "#minecraft:swords"
         - "#c:tools/ranged_weapon"
       assign:
@@ -235,23 +246,30 @@ loot_classification_by_trait:
           default: uncommon
           junk:
             - minecraft:snowball
-            - "#wooden"                     # Known issue: These style tags don't exist yet (probably want to add aa #c:equipment/wooden style tag)
+            - "wooden_*"
+            # - "#wooden"                     # These material-style tags don't exist yet (ex. #c:equipment/wooden)
           legendary:
             - "#netherite"
           epic:
             - minecraft:trident
             - minecraft:mace
-            - "#diamond"
+            - "diamond_*"
+            # - "#diamond"
           rare:
             - minecraft:spectral_arrow
             - minecraft:tipped_arrow
             - minecraft:crossbow
-            - "#iron"
+            - illagerinvasion:platinum_infused_hatchet
+            - "iron_*"
+            # - "#iron"
           uncommon:
-            - "#golden"
+            - "golden_*"
+            - "copper_*"
+            # - "#golden"
           common:
             - minecraft:arrow
-            - "#stone"
+            - "stone_*"
+            # - "#stone"
         amount_class:
           default: singleton
           large:
@@ -279,20 +297,27 @@ loot_classification_by_trait:
           default: uncommon
           none:
             - minecraft:stone_pickaxe   # Because of primity mod
-            - "#wooden"                 # Because of primity mod            
+            - "wooden_*"
+            # - "#wooden"                 # Because of primity mod            
           legendary:
-            - "#netherite"
+            - "netherite_*"
+            # - "#netherite"
           epic:
-            - "#diamond"
+            - "diamond_*"
+            # - "#diamond"
           rare:
-            - "#iron"
+            - "iron_*"
+            # - "#iron"
             - "#c:buckets"
           uncommon:
             - minecraft:bucket
-            - "#copper"
-            - "#golden"
-          common:                       #   Also, known issue: These style tags don't exist yet (probably want to add aa #c:equipment/wooden style tag)
-            - "#stone"
+            - "copper_*"
+            - "golden_*"
+            # - "#copper"
+            # - "#golden"
+          common:
+            - "stone_*"
+            # - "#stone"
         amount_class:
           default: singleton
       reason: >
@@ -317,6 +342,8 @@ loot_classification_by_trait:
         - minecraft:written_book
         - minecraft:lead
         - minecraft:recovery_compass
+        - illagerinvasion:lost_candle
+        - illagerinvasion:horn_of_sight
         - "music_disc_*"
         - "#minecraft:boats"
       assign:
@@ -329,6 +356,8 @@ loot_classification_by_trait:
           unique:
             - minecraft:recovery_compass
           epic:
+            - illagerinvasion:lost_candle
+            - illagerinvasion:horn_of_sight
             - "music_disc_*"
           rare:
             - minecraft:compass
@@ -425,6 +454,12 @@ loot_classification_by_trait:
         - minecraft:lapis_block               
         - minecraft:quartz_block
         - minecraft:redstone_block
+        - illagerinvasion:unusual_dust
+        - illagerinvasion:magical_fire_charge
+        - illagerinvasion:illusionary_dust
+        - illagerinvasion:platinum_chunk
+        - illagerinvasion:platinum_sheet
+        - sophisticatedcore:xp_bucket
         # Epi
         - minecraft:nether_wart
         - minecraft:rabbit_foot
@@ -435,6 +470,9 @@ loot_classification_by_trait:
         - minecraft:iron_block
         - minecraft:gold_block
         - minecraft:amethyst_block
+        - illagerinvasion:hallowed_gem
+        - illagerinvasion:primal_essence
+        - sophisticatedbackpacks:upgrade_base
         # Leg
         - minecraft:heart_of_the_sea
         - minecraft:netherite_scrap
@@ -461,6 +499,7 @@ loot_classification_by_trait:
         - "#c:dyes"
         - "#minecraft:trim_templates"
         - "#minecraft:decorated_pot_sherds"
+        - "#sophisticatedbackpacks:upgrade"
       assign:
         function: item_material
         value:
@@ -492,6 +531,10 @@ loot_classification_by_trait:
             - minecraft:iron_block
             - minecraft:gold_block
             - minecraft:amethyst_block
+            - illagerinvasion:hallowed_gem
+            - illagerinvasion:primal_essence
+            - sophisticatedbackpacks:upgrade_base
+            - "#sophisticatedbackpacks:upgrade"
           uncommon:
             - dried_kelp_block
             - minecraft:raw_iron
@@ -627,6 +670,7 @@ loot_classification_by_trait:
         - minecraft:composter
         - minecraft:bee_nest
         - minecraft:beehive
+        - illagerinvasion:imbuing_table
       assign:
         function: block_crafting
         value:
@@ -635,6 +679,7 @@ loot_classification_by_trait:
             - minecraft:bee_nest
           legendary:
             - minecraft:enchanting_table
+            - illagerinvasion:imbuing_table
           epic:
             - minecraft:beehive
             - minecraft:soul_campfire
@@ -1100,6 +1145,7 @@ loot_classification_by_trait:
         - minecraft:pointed_dripstone
         - minecraft:axolotl_bucket
         - minecraft:glow_berries
+        - illagerinvasion:lost_candle
         - "*_pickaxe"
         - "*minecart*"
         - "*dripleaf*"
@@ -1297,6 +1343,7 @@ loot_classification_by_trait:
         - minecraft:rabbit_hide
         - minecraft:rabbit_foot
         - minecraft:bundle
+        - sophisticatedbackpacks:backpack
         - "#c:dyes"
         - "#c:leathers"
         - "#minecraft:dyeable"

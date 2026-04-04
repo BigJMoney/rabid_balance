@@ -1,32 +1,32 @@
 classification version: 10
-total items: 1332
+total items: 1415
 fallback count: 0
 
 functions:
   block_building: 382
-  item_material: 218
+  item_material: 279
   block_misc_use: 170
   block_material: 125
-  nonloot: 108
+  nonloot: 120
   block_technical: 64
   consumable: 58
-  misc_tool: 53
+  misc_tool: 55
+  wearable: 44
   gather_tool: 38
-  wearable: 38
   garden: 22
   block_storage: 22
-  block_crafting: 20
-  weapon: 14
+  block_crafting: 21
+  weapon: 15
 
 affinities:
   village: 108
   masonry: 92
-  nether: 87
+  nether: 88
   household: 79
-  fortification: 78
+  fortification: 79
   sea: 75
   woolworking: 73
-  treasure: 66
+  treasure: 67
   underground: 55
   wooden: 50
   desert: 44
@@ -49,23 +49,23 @@ affinities:
   arctic: 5
   cartography: 1
   ruins: 1
- Total Affinities: 1174
+ Total Affinities: 1177
 
 values:
-  uncommon: 411
+  uncommon: 375
   filler: 303
-  rare: 251
-  none: 112
-  common: 102
-  junk: 58
-  epic: 50
-  legendary: 33
+  rare: 268
+  none: 128
+  epic: 117
+  common: 110
+  junk: 59
+  legendary: 43
   unique: 12
 
 amount_classes:
+  small: 489
   large: 457
-  small: 428
-  singleton: 398
+  singleton: 420
   tiny: 24
   medium: 14
   bulk: 11

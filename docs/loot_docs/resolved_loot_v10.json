@@ -1,4 +1,257 @@
 {
+    "illagerinvasion:alchemist_spawn_egg": {
+        "function": "nonloot",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "excluded_items",
+        "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:archivist_spawn_egg": {
+        "function": "nonloot",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "excluded_items",
+        "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:basher_spawn_egg": {
+        "function": "nonloot",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "excluded_items",
+        "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:firecaller_spawn_egg": {
+        "function": "nonloot",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "excluded_items",
+        "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:hallowed_gem": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "illagerinvasion:hallowed_gem",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:horn_of_sight": {
+        "function": "misc_tool",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "singleton",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "illagerinvasion:horn_of_sight",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:illusionary_dust": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "rare",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "illagerinvasion:illusionary_dust",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:illusioner_spawn_egg": {
+        "function": "nonloot",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "excluded_items",
+        "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:imbuing_table": {
+        "function": "block_crafting",
+        "affinities": [],
+        "value": "legendary",
+        "amount_class": "singleton",
+        "matched_rule_id": "crafting_blocks",
+        "matched_detail": "illagerinvasion:imbuing_table",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:inquisitor_spawn_egg": {
+        "function": "nonloot",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "excluded_items",
+        "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:invoker_spawn_egg": {
+        "function": "nonloot",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "excluded_items",
+        "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:lost_candle": {
+        "function": "misc_tool",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "singleton",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "illagerinvasion:lost_candle",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:magical_fire_charge": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "rare",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "illagerinvasion:magical_fire_charge",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:marauder_spawn_egg": {
+        "function": "nonloot",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "excluded_items",
+        "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:necromancer_spawn_egg": {
+        "function": "nonloot",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "excluded_items",
+        "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:platinum_chunk": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "rare",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "illagerinvasion:platinum_chunk",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:platinum_infused_hatchet": {
+        "function": "weapon",
+        "affinities": [],
+        "value": "rare",
+        "amount_class": "singleton",
+        "matched_rule_id": "weapons",
+        "matched_detail": "illagerinvasion:platinum_infused_hatchet",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:platinum_sheet": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "rare",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "illagerinvasion:platinum_sheet",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:primal_essence": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "illagerinvasion:primal_essence",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:provoker_spawn_egg": {
+        "function": "nonloot",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "excluded_items",
+        "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:sorcerer_spawn_egg": {
+        "function": "nonloot",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "excluded_items",
+        "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:surrendered_spawn_egg": {
+        "function": "nonloot",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "excluded_items",
+        "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "illagerinvasion:unusual_dust": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "rare",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "illagerinvasion:unusual_dust",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:acacia_boat": {
         "function": "misc_tool",
         "affinities": [
@@ -4872,7 +5125,7 @@
     "minecraft:diamond_axe": {
         "function": "gather_tool",
         "affinities": [],
-        "value": "uncommon",
+        "value": "epic",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:axes",
@@ -4894,7 +5147,7 @@
     "minecraft:diamond_boots": {
         "function": "wearable",
         "affinities": [],
-        "value": "uncommon",
+        "value": "epic",
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "#c:armors",
@@ -4905,7 +5158,7 @@
     "minecraft:diamond_chestplate": {
         "function": "wearable",
         "affinities": [],
-        "value": "uncommon",
+        "value": "epic",
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "#c:armors",
@@ -4916,7 +5169,7 @@
     "minecraft:diamond_helmet": {
         "function": "wearable",
         "affinities": [],
-        "value": "uncommon",
+        "value": "epic",
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "#c:armors",
@@ -4929,7 +5182,7 @@
         "affinities": [
             "village"
         ],
-        "value": "uncommon",
+        "value": "epic",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:hoes",
@@ -4951,7 +5204,7 @@
     "minecraft:diamond_leggings": {
         "function": "wearable",
         "affinities": [],
-        "value": "uncommon",
+        "value": "epic",
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "#c:armors",
@@ -4978,7 +5231,7 @@
         "affinities": [
             "underground"
         ],
-        "value": "uncommon",
+        "value": "epic",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:pickaxes",
@@ -4991,7 +5244,7 @@
         "affinities": [
             "village"
         ],
-        "value": "uncommon",
+        "value": "epic",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:shovels",
@@ -5002,7 +5255,7 @@
     "minecraft:diamond_sword": {
         "function": "weapon",
         "affinities": [],
-        "value": "uncommon",
+        "value": "epic",
         "amount_class": "singleton",
         "matched_rule_id": "weapons",
         "matched_detail": "#minecraft:swords",
@@ -7277,7 +7530,7 @@
         "affinities": [
             "fortification"
         ],
-        "value": "uncommon",
+        "value": "rare",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:axes",
@@ -7316,7 +7569,7 @@
         "affinities": [
             "fortification"
         ],
-        "value": "uncommon",
+        "value": "rare",
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "#c:armors",
@@ -7329,7 +7582,7 @@
         "affinities": [
             "fortification"
         ],
-        "value": "uncommon",
+        "value": "rare",
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "#c:armors",
@@ -7368,7 +7621,7 @@
         "affinities": [
             "fortification"
         ],
-        "value": "uncommon",
+        "value": "rare",
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "#c:armors",
@@ -7382,7 +7635,7 @@
             "fortification",
             "village"
         ],
-        "value": "uncommon",
+        "value": "rare",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:hoes",
@@ -7422,7 +7675,7 @@
         "affinities": [
             "fortification"
         ],
-        "value": "uncommon",
+        "value": "rare",
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "#c:armors",
@@ -7465,7 +7718,7 @@
             "underground",
             "fortification"
         ],
-        "value": "uncommon",
+        "value": "rare",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:pickaxes",
@@ -7479,7 +7732,7 @@
             "fortification",
             "village"
         ],
-        "value": "uncommon",
+        "value": "rare",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:shovels",
@@ -7492,7 +7745,7 @@
         "affinities": [
             "fortification"
         ],
-        "value": "uncommon",
+        "value": "rare",
         "amount_class": "singleton",
         "matched_rule_id": "weapons",
         "matched_detail": "#minecraft:swords",
@@ -7941,7 +8194,7 @@
         "affinities": [
             "leatherworking"
         ],
-        "value": "uncommon",
+        "value": "common",
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "#c:armors",
@@ -7954,7 +8207,7 @@
         "affinities": [
             "leatherworking"
         ],
-        "value": "uncommon",
+        "value": "common",
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "#c:armors",
@@ -7967,7 +8220,7 @@
         "affinities": [
             "leatherworking"
         ],
-        "value": "uncommon",
+        "value": "common",
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "#c:armors",
@@ -7993,7 +8246,7 @@
         "affinities": [
             "leatherworking"
         ],
-        "value": "uncommon",
+        "value": "common",
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "#c:armors",
@@ -9941,7 +10194,7 @@
         "affinities": [
             "nether"
         ],
-        "value": "uncommon",
+        "value": "legendary",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:axes",
@@ -9967,7 +10220,7 @@
         "affinities": [
             "nether"
         ],
-        "value": "uncommon",
+        "value": "legendary",
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "#c:armors",
@@ -9980,7 +10233,7 @@
         "affinities": [
             "nether"
         ],
-        "value": "uncommon",
+        "value": "legendary",
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "#c:armors",
@@ -9993,7 +10246,7 @@
         "affinities": [
             "nether"
         ],
-        "value": "uncommon",
+        "value": "legendary",
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "#c:armors",
@@ -10007,7 +10260,7 @@
             "nether",
             "village"
         ],
-        "value": "uncommon",
+        "value": "legendary",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:hoes",
@@ -10034,7 +10287,7 @@
         "affinities": [
             "nether"
         ],
-        "value": "uncommon",
+        "value": "legendary",
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "#c:armors",
@@ -10048,7 +10301,7 @@
             "nether",
             "underground"
         ],
-        "value": "uncommon",
+        "value": "legendary",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:pickaxes",
@@ -10075,7 +10328,7 @@
             "nether",
             "village"
         ],
-        "value": "uncommon",
+        "value": "legendary",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:shovels",
@@ -14127,7 +14380,7 @@
     "minecraft:stone_axe": {
         "function": "gather_tool",
         "affinities": [],
-        "value": "uncommon",
+        "value": "common",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:axes",
@@ -14201,7 +14454,7 @@
         "affinities": [
             "village"
         ],
-        "value": "uncommon",
+        "value": "common",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:hoes",
@@ -14238,7 +14491,7 @@
         "affinities": [
             "village"
         ],
-        "value": "uncommon",
+        "value": "common",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:shovels",
@@ -14271,7 +14524,7 @@
     "minecraft:stone_sword": {
         "function": "weapon",
         "affinities": [],
-        "value": "uncommon",
+        "value": "common",
         "amount_class": "singleton",
         "matched_rule_id": "weapons",
         "matched_detail": "#minecraft:swords",
@@ -16392,7 +16645,7 @@
         "affinities": [
             "wooden"
         ],
-        "value": "uncommon",
+        "value": "none",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:axes",
@@ -16406,7 +16659,7 @@
             "village",
             "wooden"
         ],
-        "value": "uncommon",
+        "value": "none",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:hoes",
@@ -16420,7 +16673,7 @@
             "underground",
             "wooden"
         ],
-        "value": "uncommon",
+        "value": "none",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:pickaxes",
@@ -16434,7 +16687,7 @@
             "village",
             "wooden"
         ],
-        "value": "uncommon",
+        "value": "none",
         "amount_class": "singleton",
         "matched_rule_id": "gathering_tools",
         "matched_detail": "#minecraft:shovels",
@@ -16447,7 +16700,7 @@
         "affinities": [
             "wooden"
         ],
-        "value": "uncommon",
+        "value": "junk",
         "amount_class": "singleton",
         "matched_rule_id": "weapons",
         "matched_detail": "#minecraft:swords",
@@ -16711,6 +16964,672 @@
         "amount_class": "singleton",
         "matched_rule_id": "excluded_items",
         "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:advanced_alchemy_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:advanced_compacting_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:advanced_deposit_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:advanced_feeding_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:advanced_filter_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:advanced_jukebox_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:advanced_magnet_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:advanced_pickup_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:advanced_pump_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:advanced_refill_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:advanced_restock_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:advanced_tool_swapper_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:advanced_void_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:alchemy_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:anvil_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:auto_blasting_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:auto_smelting_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:auto_smoking_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:backpack": {
+        "function": "wearable",
+        "affinities": [],
+        "value": "uncommon",
+        "amount_class": "singleton",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "*backpack",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:battery_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:blasting_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:compacting_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:copper_backpack": {
+        "function": "wearable",
+        "affinities": [],
+        "value": "uncommon",
+        "amount_class": "singleton",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "*backpack",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:crafting_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:deposit_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:diamond_backpack": {
+        "function": "wearable",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "singleton",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "*backpack",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:everlasting_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:feeding_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:filter_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:gold_backpack": {
+        "function": "wearable",
+        "affinities": [
+            "treasure"
+        ],
+        "value": "uncommon",
+        "amount_class": "singleton",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "*backpack",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:inception_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:infinity_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:iron_backpack": {
+        "function": "wearable",
+        "affinities": [
+            "fortification"
+        ],
+        "value": "rare",
+        "amount_class": "singleton",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "*backpack",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:jukebox_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:magnet_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:netherite_backpack": {
+        "function": "wearable",
+        "affinities": [
+            "nether"
+        ],
+        "value": "legendary",
+        "amount_class": "singleton",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "*backpack",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:pickup_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:pump_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:refill_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:restock_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:smelting_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:smithing_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:smoking_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:stack_downgrade_tier_1": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:stack_downgrade_tier_2": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:stack_downgrade_tier_3": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:stack_upgrade_omega_tier": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:stack_upgrade_starter_tier": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:stack_upgrade_tier_1": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:stack_upgrade_tier_2": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:stack_upgrade_tier_3": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:stack_upgrade_tier_4": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:stonecutter_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:survival_infinity_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:tank_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:tool_swapper_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:upgrade_base": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "sophisticatedbackpacks:upgrade_base",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:void_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedbackpacks:xp_pump_upgrade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#sophisticatedbackpacks:upgrade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "sophisticatedcore:xp_bucket": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "rare",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "sophisticatedcore:xp_bucket",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
