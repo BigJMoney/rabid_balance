@@ -1160,6 +1160,75 @@ class ExportLootStackTests(unittest.TestCase):
             added_rows = read_csv_rows(output_dir / "modifier_added_leaf_candidates.csv")
             self.assertEqual(added_rows, [])
 
+    def test_stage2_added_leaf_rows_surface_path_random_chance_product(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            mods_root = Path(tempdir) / "mods"
+            output_dir = Path(tempdir) / "out"
+            write_mod_pack(
+                mods_root / "mod_stage2",
+                "modstage2",
+                {
+                    "data/neoforge/loot_modifiers/global_loot_modifiers.json": json.dumps(
+                        {"entries": ["modstage2:test_add"], "replace": False}
+                    ),
+                    "data/modstage2/loot_modifiers/test_add.json": json.dumps(
+                        {
+                            "type": "neoforge:add_table",
+                            "conditions": [
+                                {
+                                    "condition": "neoforge:loot_table_id",
+                                    "loot_table_id": "minecraft:chests/simple_dungeon",
+                                }
+                            ],
+                            "table": "modstage2:inject/chests/simple_dungeon",
+                        }
+                    ),
+                    "data/modstage2/loot_table/inject/chests/simple_dungeon.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [
+                                {
+                                    "rolls": 1,
+                                    "conditions": [
+                                        {
+                                            "condition": "minecraft:random_chance",
+                                            "chance": 0.5,
+                                        }
+                                    ],
+                                    "entries": [
+                                        {
+                                            "type": "minecraft:item",
+                                            "name": "minecraft:apple",
+                                            "conditions": [
+                                                {
+                                                    "condition": "minecraft:random_chance",
+                                                    "chance": 0.25,
+                                                }
+                                            ],
+                                        }
+                                    ],
+                                }
+                            ],
+                        }
+                    ),
+                },
+            )
+
+            export_with_temp_resolution_maps(
+                output_dir=output_dir,
+                mods_root=mods_root,
+                archive_roots=[],
+                explicit_packs=[],
+            )
+
+            added_rows = read_csv_rows(output_dir / "modifier_added_leaf_candidates.csv")
+            added_row = next(
+                row
+                for row in added_rows
+                if row["target_table_id"] == "minecraft:chests/simple_dungeon" and row["item_id"] == "minecraft:apple"
+            )
+            self.assertEqual(added_row["path_random_chance_product"], "0.125")
+
     def test_unknown_manifest_pack_id_is_fatal(self) -> None:
         with tempfile.TemporaryDirectory() as tempdir:
             mods_root = Path(tempdir) / "mods"

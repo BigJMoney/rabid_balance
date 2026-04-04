@@ -132,6 +132,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Stage 2 inventories NeoForge Global Loot Modifiers only. LootJS/KubeJS runtime mutations remain out of scope.
 - `glm_modifier_chain.csv` inventories every effective GLM in order, but detailed delta rows only exist for recognized inject/add-table semantics.
 - `modifier_added_leaf_candidates.csv` is a delta table, not a final runtime probability model. It shows what recognized modifiers add, not exact post-modifier odds.
+- `modifier_added_leaf_candidates.csv` uses the same path-share semantics as `leaf_candidates.csv`: `root_pool_weight_share` is the first weighted step only, `path_pool_share_product` multiplies all weighted path steps, and `path_random_chance_product` multiplies scalar random-chance gates along the resolved payload path.
 - Structure-based exports are keyed by active unique `structure_id`. Structure sets are used only internally to discover active structures.
 - Structure pairing is built from the final effective layered resource set after pack stacking, not from per-pack intermediate passes.
 - Exact-match links apply automatically from the conservative structure-side detector.
