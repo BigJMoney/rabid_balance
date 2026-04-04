@@ -1,7 +1,10 @@
 {
   "base_pack_root": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\neoforge-21.1.162_ref",
+  "mod_discovery_roots": [],
   "scope_config_source": "<in-memory scope override>",
   "pack_order_source": null,
+  "last_mod_pack_id": "",
+  "last_mod_pack_id_source": "",
   "classification_csv_source": "D:\\keep\\mods\\Minecraft\\my_tweaks\\docs\\loot_docs\\resolved_loot_v10.csv",
   "classification_version": "10",
   "output_dir": "D:\\keep\\mods\\Minecraft\\my_tweaks\\docs\\loot_docs\\vanilla_loot_v1",

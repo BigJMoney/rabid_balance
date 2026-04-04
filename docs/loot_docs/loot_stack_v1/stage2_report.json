@@ -1,8 +1,8 @@
 {
-  "glm_chain_length": 9,
-  "recognized_modifier_count": 9,
+  "glm_chain_length": 10,
+  "recognized_modifier_count": 10,
   "unsupported_modifier_count": 0,
-  "analyzed_target_count": 9,
+  "analyzed_target_count": 10,
   "out_of_scope_target_count": 0,
   "warnings": []
 }

@@ -7,4 +7,5 @@ minecraft:chests/nether_bridge,1,1,0,4,3,3,0,sophisticatedbackpacks,"[""sophisti
 minecraft:chests/shipwreck_treasure,1,1,0,4,3,3,0,sophisticatedbackpacks,"[""sophisticatedbackpacks:chests/shipwreck_treasure""]"
 minecraft:chests/simple_dungeon,1,1,0,4,3,3,0,sophisticatedbackpacks,"[""sophisticatedbackpacks:chests/simple_dungeon""]"
 minecraft:chests/spawn_bonus_chest,1,1,0,2,1,1,0,sophisticatedbackpacks,"[""sophisticatedbackpacks:chests/spawn_bonus_chest""]"
+minecraft:chests/village/village_desert_house,1,1,0,3,2,2,0,rabid_balance,"[""rabidbalance:supplementaries_desert_house_bonus""]"
 minecraft:chests/woodland_mansion,1,1,0,4,3,3,0,sophisticatedbackpacks,"[""sophisticatedbackpacks:chests/woodland_mansion""]"

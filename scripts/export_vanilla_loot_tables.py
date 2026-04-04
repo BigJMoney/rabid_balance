@@ -81,7 +81,7 @@ def export_loot_tables(
         output_dir=output_dir,
         scope_override=scope_override,
         auto_discover_mod_dirs=False,
-        mods_root=PROJECT_ROOT / "__no_mods__",
+        mod_discovery_roots=[],
         archive_roots=[],
         explicit_packs=[],
         classification_csv_path=classification_csv_path,

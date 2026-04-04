@@ -12,9 +12,11 @@ import yaml
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 LIBS_ROOT = PROJECT_ROOT / "libs"
+SOURCE_LIBS_ROOT = PROJECT_ROOT / "sourcelibs"
 ILLAGER_DIR = LIBS_ROOT / "IllagerInvasion-v21.1.6-NeoForge"
 ILLAGER_ARCHIVE = LIBS_ROOT / "IllagerInvasion-v21.1.6-NeoForge.zip"
 SOPHISTICATED_DIR = LIBS_ROOT / "sophisticatedbackpacks-3.25.34.1581"
+RABID_BALANCE_DIRS = [path for path in (LIBS_ROOT / "rabid_balance", SOURCE_LIBS_ROOT / "rabid_balance") if path.exists()]
 FIXTURES_DIR = PROJECT_ROOT / "scripts" / "test_fixtures"
 AMBIGUOUS_FIXTURE_PATH = FIXTURES_DIR / "structure_loot_ambiguous_resolution_map.yaml"
 MANUAL_FIXTURE_PATH = FIXTURES_DIR / "structure_loot_manual_resolution_map.yaml"
@@ -52,14 +54,19 @@ def copy_resolution_map_fixtures(destination_root: Path) -> tuple[Path, Path]:
 def export_with_temp_resolution_maps(output_dir: Path, **kwargs) -> dict[str, object]:
     ambiguous_path = kwargs.pop("ambiguous_resolution_config_path", None)
     manual_path = kwargs.pop("manual_resolution_config_path", None)
+    ignore_roots = kwargs.pop("ignore_roots", None)
     if ambiguous_path is None or manual_path is None:
         default_ambiguous_path, default_manual_path = copy_resolution_map_fixtures(output_dir.parent)
         ambiguous_path = ambiguous_path or default_ambiguous_path
         manual_path = manual_path or default_manual_path
+    if ignore_roots is None:
+        ignore_roots = list(exporter.DEFAULT_IGNORE_ROOTS)
+        ignore_roots.extend(RABID_BALANCE_DIRS)
     return exporter.export_loot_stack(
         output_dir=output_dir,
         ambiguous_resolution_config_path=Path(ambiguous_path),
         manual_resolution_config_path=Path(manual_path),
+        ignore_roots=ignore_roots,
         **kwargs,
     )
 
@@ -70,10 +77,13 @@ class ExportLootStackTests(unittest.TestCase):
         cls.tempdir = tempfile.TemporaryDirectory()
         cls.output_dir = Path(cls.tempdir.name) / "default_stack"
         cls.ambiguous_resolution_path, cls.manual_resolution_path = copy_resolution_map_fixtures(Path(cls.tempdir.name))
+        ignore_roots = list(exporter.DEFAULT_IGNORE_ROOTS)
+        ignore_roots.extend(RABID_BALANCE_DIRS)
         exporter.export_loot_stack(
             output_dir=cls.output_dir,
             ambiguous_resolution_config_path=cls.ambiguous_resolution_path,
             manual_resolution_config_path=cls.manual_resolution_path,
+            ignore_roots=ignore_roots,
         )
 
         cls.precheck = json.loads((cls.output_dir / "precheck_report.json").read_text(encoding="utf-8"))
@@ -910,6 +920,41 @@ class ExportLootStackTests(unittest.TestCase):
             self.assertEqual(len(precheck["fatal_errors"]), 2)
             self.assertTrue(all("mod-vs-mod same-file overlap" in message for message in precheck["fatal_errors"]))
 
+    def test_auto_discovery_scans_multiple_mod_roots(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            libs_root = Path(tempdir) / "libs"
+            sourcelibs_root = Path(tempdir) / "sourcelibs"
+            output_dir = Path(tempdir) / "out"
+            write_mod_pack(
+                sourcelibs_root / "source_mod",
+                "sourcemod",
+                {
+                    "data/source/loot_table/chests/example.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:apple"}]}],
+                        }
+                    )
+                },
+            )
+
+            result = export_with_temp_resolution_maps(
+                output_dir=output_dir,
+                mod_discovery_roots=[libs_root, sourcelibs_root],
+                archive_roots=[],
+                explicit_packs=[],
+            )
+
+            self.assertIn("sourcemod", result["manifest"]["selected_pack_ids"])
+            precheck = json.loads((output_dir / "precheck_report.json").read_text(encoding="utf-8"))
+            self.assertEqual(
+                precheck["mod_discovery_roots"],
+                [str(libs_root.resolve()), str(sourcelibs_root.resolve())],
+            )
+            source_row = next(row for row in precheck["selected_packs"] if row["pack_id"] == "sourcemod")
+            self.assertEqual(Path(source_row["path"]).resolve(), (sourcelibs_root / "source_mod").resolve())
+            self.assertEqual(source_row["discovery_source"], f"auto_dir:{sourcelibs_root.resolve()}")
+
     def test_precheck_with_manifest_resolves_overlaps(self) -> None:
         with tempfile.TemporaryDirectory() as tempdir:
             mods_root = Path(tempdir) / "mods"
@@ -962,6 +1007,111 @@ class ExportLootStackTests(unittest.TestCase):
             tables = read_csv_rows(output_dir / "tables.csv")
             common_row = next(row for row in tables if row["table_id"] == "shared:chests/common")
             self.assertEqual(common_row["source_pack"], "modb")
+
+    def test_precheck_with_last_mod_pack_id_resolves_only_its_own_overlaps(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            mods_root = Path(tempdir) / "mods"
+            output_dir = Path(tempdir) / "out"
+            shared_a = json.dumps(
+                {
+                    "type": "minecraft:chest",
+                    "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:stick"}]}],
+                }
+            )
+            shared_b = json.dumps(
+                {
+                    "type": "minecraft:chest",
+                    "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:diamond"}]}],
+                }
+            )
+            write_mod_pack(
+                mods_root / "mod_a",
+                "moda",
+                {
+                    "data/shared/loot_table/chests/common.json": shared_a,
+                    "data/shared/loot_table/chests/second.json": shared_a,
+                },
+            )
+            write_mod_pack(
+                mods_root / "mod_b",
+                "modb",
+                {
+                    "data/shared/loot_table/chests/common.json": shared_b,
+                    "data/shared/loot_table/chests/second.json": shared_b,
+                },
+            )
+
+            export_with_temp_resolution_maps(
+                output_dir=output_dir,
+                mods_root=mods_root,
+                archive_roots=[],
+                explicit_packs=[],
+                last_mod_pack_id="modb",
+            )
+
+            precheck = json.loads((output_dir / "precheck_report.json").read_text(encoding="utf-8"))
+            self.assertEqual(precheck["effective_order"], ["base", "moda", "modb"])
+            self.assertEqual(precheck["last_mod_pack_id"], "modb")
+            self.assertEqual(len(precheck["resolved_overlaps"]), 2)
+            self.assertTrue(all(row["winner_pack_id"] == "modb" for row in precheck["resolved_overlaps"]))
+            self.assertTrue(all(row.get("resolution_mode") == "last_mod" for row in precheck["resolved_overlaps"]))
+
+            tables = read_csv_rows(output_dir / "tables.csv")
+            common_row = next(row for row in tables if row["table_id"] == "shared:chests/common")
+            self.assertEqual(common_row["source_pack"], "modb")
+
+    def test_last_mod_pack_id_does_not_resolve_other_mod_overlaps(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            mods_root = Path(tempdir) / "mods"
+            output_dir = Path(tempdir) / "out"
+            shared_a = json.dumps(
+                {
+                    "type": "minecraft:chest",
+                    "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:stick"}]}],
+                }
+            )
+            shared_b = json.dumps(
+                {
+                    "type": "minecraft:chest",
+                    "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:diamond"}]}],
+                }
+            )
+            write_mod_pack(
+                mods_root / "mod_a",
+                "moda",
+                {
+                    "data/shared/loot_table/chests/common.json": shared_a,
+                },
+            )
+            write_mod_pack(
+                mods_root / "mod_b",
+                "modb",
+                {
+                    "data/shared/loot_table/chests/common.json": shared_b,
+                },
+            )
+            write_mod_pack(
+                mods_root / "mod_c",
+                "modc",
+                {
+                    "data/modc/loot_table/chests/extra.json": shared_a,
+                },
+            )
+
+            with self.assertRaises(exporter.PrecheckFailed):
+                export_with_temp_resolution_maps(
+                    output_dir=output_dir,
+                    mods_root=mods_root,
+                    archive_roots=[],
+                    explicit_packs=[],
+                    last_mod_pack_id="modc",
+                )
+
+            precheck = json.loads((output_dir / "precheck_report.json").read_text(encoding="utf-8"))
+            self.assertEqual(precheck["effective_order"], ["base", "moda", "modb", "modc"])
+            self.assertEqual(precheck["last_mod_pack_id"], "modc")
+            self.assertEqual(precheck["resolved_overlaps"], [])
+            self.assertTrue(any("mod-vs-mod same-file overlap" in message for message in precheck["fatal_errors"]))
 
     def test_glm_registry_overlap_merges_without_manifest(self) -> None:
         with tempfile.TemporaryDirectory() as tempdir:
@@ -1292,7 +1442,7 @@ class ExportLootStackTests(unittest.TestCase):
 
             self.assertEqual(result["manifest"]["selected_pack_ids"], ["base", "visiblemod"])
             precheck = json.loads((output_dir / "precheck_report.json").read_text(encoding="utf-8"))
-            self.assertIn(str(ignore_root), precheck["ignored_sources"])
+            self.assertIn(str(ignore_root.resolve()), precheck["ignored_sources"])
 
     def test_synthetic_path_weight_fields_cover_multi_hop_cases(self) -> None:
         with tempfile.TemporaryDirectory() as tempdir:

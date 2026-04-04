@@ -5,8 +5,11 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 ## Summary
 
 - Base pack root: `D:\keep\mods\Minecraft\my_tweaks\libs\neoforge-21.1.162_ref`
+- Mod discovery roots: `None`
 - Scope config: `<in-memory scope override>`
-- Ignore roots: `D:\keep\mods\Minecraft\my_tweaks\libs\ignore`
+- Pack order source: `none`
+- Last mod pin: `none` from `none`
+- Ignore roots: `D:\keep\mods\Minecraft\my_tweaks\libs\ignore`, `D:\keep\mods\Minecraft\my_tweaks\sourcelibs\ignore`
 - Selected pack count: 1
 - Classification source: `D:\keep\mods\Minecraft\my_tweaks\docs\loot_docs\resolved_loot_v10.csv`
 - Classification version: `10`
@@ -105,6 +108,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 
 - The scope config is always authoritative for Stage 1 allowed and deferred top-level loot_table directories.
 - Descendants of the configured ignore roots are skipped during auto-discovery and archive-root scans unless you include them explicitly with `--pack`.
+- `--last-mod-pack-id` pins one selected mod to the end of the mod order so it wins overlaps it participates in without requiring a full pack-order manifest. Overlaps among the remaining mods still require a manifest.
 - Top-level `loot_table/inject/...` is treated as deferred Stage 2 and is intentionally omitted from Stage 1 outputs.
 - Nested paths like `loot_table/entities/inject/...` are still ordinary Stage 1 loot tables because the top-level directory is `entities`.
 - Inline tables use synthetic IDs in the form `inline:{entry_id}`.

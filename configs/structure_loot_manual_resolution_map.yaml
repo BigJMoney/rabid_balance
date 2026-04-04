@@ -4,6 +4,42 @@
 # Once mapped rows exist for a loot_table_id, unresolved placeholder rows for that table are considered replaced.
 version: 1
 entries:
+- loot_table_id: illagerinvasion:chests/illager_fort_ground
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: illagerinvasion:chests/illager_fort_tower
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: illagerinvasion:chests/illusioner_tower_entrance
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: illagerinvasion:chests/illusioner_tower_stairs
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: illagerinvasion:chests/labyrinth
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: illagerinvasion:chests/labyrinth_map
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: illagerinvasion:chests/sorcerer_hut
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecolonies:chests/supplycamp
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecolonies:chests/supplyship
+  status: unresolved
+  structure_id: ''
+  notes: ''
 - loot_table_id: minecraft:chests/abandoned_mineshaft
   status: mapped
   structure_id: minecraft:mineshaft
@@ -21,6 +57,18 @@ entries:
   structure_id: minecraft:jungle_pyramid
   notes: ''
 - loot_table_id: minecraft:chests/nether_bridge
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:chests/shipwreck_map
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:chests/shipwreck_supply
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: minecraft:chests/shipwreck_treasure
   status: unresolved
   structure_id: ''
   notes: ''

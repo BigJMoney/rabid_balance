@@ -78,6 +78,8 @@ inline:minecraft:equipment/trial_chamber#pool:0#entry:1#pool:0,inline:minecraft:
 inline:minecraft:equipment/trial_chamber#pool:0#entry:1#pool:1,inline:minecraft:equipment/trial_chamber#pool:0#entry:1,1,literal,1.0,1.0,1.0,literal,0.0,0.0,0.0,minecraft:random_chance,true,0.5,"[{""chance"":0.5,""condition"":""minecraft:random_chance""}]"
 inline:minecraft:equipment/trial_chamber#pool:0#entry:2#pool:0,inline:minecraft:equipment/trial_chamber#pool:0#entry:2,0,literal,1.0,1.0,1.0,literal,0.0,0.0,0.0,minecraft:random_chance,true,0.5,"[{""chance"":0.5,""condition"":""minecraft:random_chance""}]"
 inline:minecraft:equipment/trial_chamber#pool:0#entry:2#pool:1,inline:minecraft:equipment/trial_chamber#pool:0#entry:2,1,literal,1.0,1.0,1.0,literal,0.0,0.0,0.0,minecraft:random_chance,true,0.5,"[{""chance"":0.5,""condition"":""minecraft:random_chance""}]"
+minecolonies:chests/supplycamp#pool:0,minecolonies:chests/supplycamp,0,literal,1.0,1.0,1.0,literal,0.0,0.0,0.0,,false,,[]
+minecolonies:chests/supplyship#pool:0,minecolonies:chests/supplyship,0,literal,1.0,1.0,1.0,literal,0.0,0.0,0.0,,false,,[]
 minecraft:chests/abandoned_mineshaft#pool:0,minecraft:chests/abandoned_mineshaft,0,literal,1.0,1.0,1.0,literal,0.0,0.0,0.0,,false,,[]
 minecraft:chests/abandoned_mineshaft#pool:1,minecraft:chests/abandoned_mineshaft,1,minecraft:uniform,2.0,4.0,"{""max"":4.0,""min"":2.0,""type"":""minecraft:uniform""}",literal,0.0,0.0,0.0,,false,,[]
 minecraft:chests/abandoned_mineshaft#pool:2,minecraft:chests/abandoned_mineshaft,2,literal,3.0,3.0,3.0,literal,0.0,0.0,0.0,,false,,[]

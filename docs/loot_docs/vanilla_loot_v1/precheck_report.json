@@ -1,8 +1,12 @@
 {
   "scope_config_source": "<in-memory scope override>",
   "pack_order_source": null,
+  "last_mod_pack_id": null,
+  "last_mod_pack_id_source": null,
+  "mod_discovery_roots": [],
   "ignore_roots": [
-    "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\ignore"
+    "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\ignore",
+    "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\ignore"
   ],
   "ignored_sources": [],
   "discovered_packs": [

@@ -19,8 +19,13 @@ import yaml
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_BASE_PACK_ROOT = PROJECT_ROOT / "libs" / "neoforge-21.1.162_ref"
 DEFAULT_MODS_ROOT = PROJECT_ROOT / "libs"
+DEFAULT_SOURCE_LIBS_ROOT = PROJECT_ROOT / "sourcelibs"
+DEFAULT_MOD_DISCOVERY_ROOTS = [DEFAULT_MODS_ROOT, DEFAULT_SOURCE_LIBS_ROOT]
 DEFAULT_IGNORE_ROOT = DEFAULT_MODS_ROOT / "ignore"
+DEFAULT_SOURCE_IGNORE_ROOT = DEFAULT_SOURCE_LIBS_ROOT / "ignore"
+DEFAULT_IGNORE_ROOTS = [DEFAULT_IGNORE_ROOT, DEFAULT_SOURCE_IGNORE_ROOT]
 DEFAULT_SCOPE_CONFIG = PROJECT_ROOT / "configs" / "loot_scope.json"
+DEFAULT_PACK_ORDER_MANIFEST = PROJECT_ROOT / "configs" / "loot_pack_order.json"
 DEFAULT_AMBIGUOUS_STRUCTURE_RESOLUTION_CONFIG = (
     PROJECT_ROOT / "configs" / "structure_loot_ambiguous_resolution_map.yaml"
 )
@@ -569,21 +574,33 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--pack-order-manifest",
         type=Path,
+        default=DEFAULT_PACK_ORDER_MANIFEST,
+        help="JSON pack-order manifest used to resolve mod-vs-mod overlaps. Defaults to configs/loot_pack_order.json.",
+    )
+    parser.add_argument(
+        "--last-mod-pack-id",
         default=None,
-        help="Optional JSON pack-order manifest used to resolve mod-vs-mod overlaps.",
+        help="Optional single pack_id pinned to the end of the mod order so it wins overlaps it participates in.",
     )
     parser.add_argument(
         "--mods-root",
         type=Path,
-        default=DEFAULT_MODS_ROOT,
-        help="Directory scanned non-recursively for extracted mod packs that contain data/.",
+        action="append",
+        default=None,
+        help=(
+            "Directory scanned non-recursively for extracted mod packs that contain data/. "
+            "Repeat to add more roots. Defaults to libs and sourcelibs."
+        ),
     )
     parser.add_argument(
         "--ignore-root",
         type=Path,
         action="append",
-        default=[DEFAULT_IGNORE_ROOT],
-        help="Directory whose descendants are ignored during auto-discovery and archive-root scans.",
+        default=None,
+        help=(
+            "Directory whose descendants are ignored during auto-discovery and archive-root scans. "
+            "Repeat to add more roots. Defaults to libs/ignore and sourcelibs/ignore."
+        ),
     )
     parser.add_argument(
         "--archive-root",
@@ -1096,12 +1113,13 @@ def load_scope_settings(
     )
 
 
-def load_pack_order_manifest(path: Path | str | None) -> tuple[list[str], str | None]:
+def load_pack_order_manifest(path: Path | str | None) -> tuple[list[str], str | None, str | None]:
     if path is None:
-        return [], None
+        return [], None, None
 
     manifest_path = Path(path)
     raw_data = json.loads(manifest_path.read_text(encoding="utf-8"))
+    last_mod_pack_id: str | None = None
     if isinstance(raw_data, list):
         pack_ids = raw_data
     elif isinstance(raw_data, dict):
@@ -1109,8 +1127,15 @@ def load_pack_order_manifest(path: Path | str | None) -> tuple[list[str], str | 
             pack_ids = raw_data["ordered_pack_ids"]
         elif "pack_ids" in raw_data:
             pack_ids = raw_data["pack_ids"]
+        elif "last_mod_pack_id" in raw_data:
+            pack_ids = []
         else:
             raise ValueError(f"pack order manifest {manifest_path} must be a list or contain ordered_pack_ids")
+        if "last_mod_pack_id" in raw_data:
+            raw_last_mod_pack_id = raw_data["last_mod_pack_id"]
+            if not isinstance(raw_last_mod_pack_id, str) or not raw_last_mod_pack_id.strip():
+                raise ValueError(f"pack order manifest {manifest_path} contains a non-string last_mod_pack_id")
+            last_mod_pack_id = raw_last_mod_pack_id.strip()
     else:
         raise ValueError(f"pack order manifest {manifest_path} must be a list or object")
 
@@ -1124,7 +1149,7 @@ def load_pack_order_manifest(path: Path | str | None) -> tuple[list[str], str | 
             raise ValueError(f"pack order manifest {manifest_path} lists {pack_id} more than once")
         seen.add(pack_id)
         ordered.append(pack_id)
-    return ordered, str(manifest_path)
+    return ordered, last_mod_pack_id, str(manifest_path)
 
 
 def build_pack_source(path: Path, role: str, explicit: bool, discovery_source: str, pack_id_override: str | None = None) -> PackSource:
@@ -1160,7 +1185,7 @@ class LootStackExporter:
         self,
         *,
         base_pack_root: Path,
-        mods_root: Path,
+        mod_discovery_roots: list[Path],
         ignore_roots: list[Path],
         archive_roots: list[Path],
         explicit_packs: list[Path],
@@ -1168,6 +1193,8 @@ class LootStackExporter:
         scope_settings: ScopeSettings,
         pack_order_ids: list[str],
         pack_order_source: str | None,
+        last_mod_pack_id: str | None,
+        last_mod_pack_id_source: str | None,
         auto_discover_mod_dirs: bool,
         classification_csv_path: Path | None,
         ambiguous_resolution_config_path: Path,
@@ -1176,7 +1203,7 @@ class LootStackExporter:
         clean_structure_resolution_maps: bool,
     ) -> None:
         self.base_pack_root = base_pack_root
-        self.mods_root = mods_root
+        self.mod_discovery_roots = mod_discovery_roots
         self.ignore_roots = ignore_roots
         self.archive_roots = archive_roots
         self.explicit_packs = explicit_packs
@@ -1184,6 +1211,8 @@ class LootStackExporter:
         self.scope_settings = scope_settings
         self.pack_order_ids = pack_order_ids
         self.pack_order_source = pack_order_source
+        self.last_mod_pack_id = last_mod_pack_id
+        self.last_mod_pack_id_source = last_mod_pack_id_source
         self.auto_discover_mod_dirs = auto_discover_mod_dirs
         self.classification_csv_path = classification_csv_path
         self.ambiguous_resolution_config_path = ambiguous_resolution_config_path
@@ -1238,6 +1267,17 @@ class LootStackExporter:
         roots: list[Path] = []
         seen: set[Path] = set()
         for root in self.ignore_roots:
+            resolved = root.resolve()
+            if resolved in seen:
+                continue
+            seen.add(resolved)
+            roots.append(resolved)
+        return roots
+
+    def _normalized_mod_discovery_roots(self) -> list[Path]:
+        roots: list[Path] = []
+        seen: set[Path] = set()
+        for root in self.mod_discovery_roots:
             resolved = root.resolve()
             if resolved in seen:
                 continue
@@ -1321,6 +1361,7 @@ class LootStackExporter:
         replacements: list[dict[str, Any]] = []
         ignored_sources: list[str] = []
         ignore_roots = self._normalized_ignore_roots()
+        mod_discovery_roots = self._normalized_mod_discovery_roots()
 
         try:
             base_pack = build_pack_source(
@@ -1334,6 +1375,9 @@ class LootStackExporter:
             report = {
                 "scope_config_source": self.scope_settings.source,
                 "pack_order_source": self.pack_order_source,
+                "last_mod_pack_id": self.last_mod_pack_id,
+                "last_mod_pack_id_source": self.last_mod_pack_id_source,
+                "mod_discovery_roots": [str(path) for path in mod_discovery_roots],
                 "ignore_roots": [str(path) for path in ignore_roots],
                 "ignored_sources": ignored_sources,
                 "discovered_packs": [],
@@ -1364,19 +1408,22 @@ class LootStackExporter:
             except Exception as exc:
                 fatal_errors.append(f"failed to load pack {path}: {exc}")
 
-        if self.auto_discover_mod_dirs and self.mods_root.exists():
+        if self.auto_discover_mod_dirs:
             base_resolved = self.base_pack_root.resolve()
-            for child in sorted(self.mods_root.iterdir(), key=lambda item: item.name.lower()):
-                if not child.is_dir():
+            for mods_root in mod_discovery_roots:
+                if not mods_root.exists():
                     continue
-                if child.resolve() == base_resolved:
-                    continue
-                if self._is_ignored_path(child, ignore_roots):
-                    ignored_sources.append(str(child))
-                    continue
-                if not (child / "data").exists():
-                    continue
-                add_pack_candidate(child, explicit=False, discovery_source=f"auto_dir:{self.mods_root}")
+                for child in sorted(mods_root.iterdir(), key=lambda item: item.name.lower()):
+                    if not child.is_dir():
+                        continue
+                    if child.resolve() == base_resolved:
+                        continue
+                    if self._is_ignored_path(child, ignore_roots):
+                        ignored_sources.append(str(child))
+                        continue
+                    if not (child / "data").exists():
+                        continue
+                    add_pack_candidate(child, explicit=False, discovery_source=f"auto_dir:{mods_root}")
 
         for archive_root in self.archive_roots:
             if not archive_root.exists():
@@ -1441,12 +1488,17 @@ class LootStackExporter:
             fatal_errors.append(
                 "pack order manifest references unknown pack ids: " + ", ".join(unknown_manifest_ids)
             )
+        if self.last_mod_pack_id is not None and self.last_mod_pack_id not in selected_mod_ids:
+            fatal_errors.append(f"last mod config references unknown pack id: {self.last_mod_pack_id}")
 
-        if self.pack_order_ids:
-            ordered_mod_ids = [pack_id for pack_id in self.pack_order_ids if pack_id in selected_mod_ids]
-            ordered_mod_ids.extend(sorted(pack_id for pack_id in selected_mod_ids if pack_id not in self.pack_order_ids))
-        else:
-            ordered_mod_ids = sorted(selected_mod_ids)
+        ordered_mod_ids = [pack_id for pack_id in self.pack_order_ids if pack_id in selected_mod_ids]
+        ordered_mod_ids.extend(
+            sorted(pack_id for pack_id in selected_mod_ids if pack_id not in self.pack_order_ids)
+        )
+        if self.last_mod_pack_id is not None:
+            ordered_mod_ids = [pack_id for pack_id in ordered_mod_ids if pack_id != self.last_mod_pack_id]
+            if self.last_mod_pack_id in selected_mod_ids:
+                ordered_mod_ids.append(self.last_mod_pack_id)
 
         effective_order = ["base", *ordered_mod_ids]
 
@@ -1477,6 +1529,10 @@ class LootStackExporter:
                 continue
             if self.pack_order_ids:
                 resolved_overlaps.append({**group, "winner_pack_id": unique_pack_ids[-1]})
+            elif self.last_mod_pack_id is not None and self.last_mod_pack_id in unique_pack_ids:
+                resolved_overlaps.append(
+                    {**group, "winner_pack_id": self.last_mod_pack_id, "resolution_mode": "last_mod"}
+                )
             else:
                 fatal_errors.append(
                     "mod-vs-mod same-file overlap without pack-order manifest: "
@@ -1489,6 +1545,9 @@ class LootStackExporter:
         report = {
             "scope_config_source": self.scope_settings.source,
             "pack_order_source": self.pack_order_source,
+            "last_mod_pack_id": self.last_mod_pack_id,
+            "last_mod_pack_id_source": self.last_mod_pack_id_source,
+            "mod_discovery_roots": [str(path) for path in mod_discovery_roots],
             "ignore_roots": [str(path) for path in ignore_roots],
             "ignored_sources": ignored_sources,
             "discovered_packs": [pack.to_report_row() for pack in discovered_packs],
@@ -4493,8 +4552,11 @@ class LootStackExporter:
         )
         return {
             "base_pack_root": str(self.base_pack_root),
+            "mod_discovery_roots": [str(path) for path in self._normalized_mod_discovery_roots()],
             "scope_config_source": self.scope_settings.source,
             "pack_order_source": self.pack_order_source,
+            "last_mod_pack_id": self.last_mod_pack_id or "",
+            "last_mod_pack_id_source": self.last_mod_pack_id_source or "",
             "classification_csv_source": str(self.classification_csv_path) if self.classification_csv_path is not None else "",
             "classification_version": self.classification_version,
             "output_dir": str(self.output_dir),
@@ -4688,7 +4750,10 @@ class LootStackExporter:
             "## Summary",
             "",
             f"- Base pack root: `{manifest['base_pack_root']}`",
+            f"- Mod discovery roots: {', '.join(f'`{path}`' for path in manifest['mod_discovery_roots']) or '`None`'}",
             f"- Scope config: `{scope_report['scope_config_source']}`",
+            f"- Pack order source: `{manifest['pack_order_source'] or 'none'}`",
+            f"- Last mod pin: `{manifest['last_mod_pack_id'] or 'none'}` from `{manifest['last_mod_pack_id_source'] or 'none'}`",
             f"- Ignore roots: {', '.join(f'`{path}`' for path in precheck_report['ignore_roots']) or '`None`'}",
             f"- Selected pack count: {manifest['selected_pack_count']}",
             f"- Classification source: `{manifest['classification_csv_source'] or 'not found'}`",
@@ -4780,6 +4845,7 @@ class LootStackExporter:
             "",
             "- The scope config is always authoritative for Stage 1 allowed and deferred top-level loot_table directories.",
             "- Descendants of the configured ignore roots are skipped during auto-discovery and archive-root scans unless you include them explicitly with `--pack`.",
+            "- `--last-mod-pack-id` pins one selected mod to the end of the mod order so it wins overlaps it participates in without requiring a full pack-order manifest. Overlaps among the remaining mods still require a manifest.",
             "- Top-level `loot_table/inject/...` is treated as deferred Stage 2 and is intentionally omitted from Stage 1 outputs.",
             "- Nested paths like `loot_table/entities/inject/...` are still ordinary Stage 1 loot tables because the top-level directory is `entities`.",
             "- Inline tables use synthetic IDs in the form `inline:{entry_id}`.",
@@ -4837,10 +4903,12 @@ def export_loot_stack(
     scope_config_path: Path | str | None = DEFAULT_SCOPE_CONFIG,
     scope_override: dict[str, Any] | None = None,
     pack_order_manifest: Path | str | None = None,
+    last_mod_pack_id: str | None = None,
     classification_csv_path: Path | str | None = None,
     ambiguous_resolution_config_path: Path | str = DEFAULT_AMBIGUOUS_STRUCTURE_RESOLUTION_CONFIG,
     manual_resolution_config_path: Path | str = DEFAULT_MANUAL_STRUCTURE_RESOLUTION_CONFIG,
     mods_root: Path | str = DEFAULT_MODS_ROOT,
+    mod_discovery_roots: list[Path | str] | None = None,
     ignore_roots: list[Path | str] | None = None,
     archive_roots: list[Path | str] | None = None,
     explicit_packs: list[Path | str] | None = None,
@@ -4852,10 +4920,28 @@ def export_loot_stack(
 ) -> dict[str, Any]:
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
+    resolved_mod_discovery_roots = (
+        [Path(path) for path in mod_discovery_roots]
+        if mod_discovery_roots is not None
+        else [Path(mods_root)]
+        if mods_root != DEFAULT_MODS_ROOT
+        else list(DEFAULT_MOD_DISCOVERY_ROOTS)
+    )
+    resolved_ignore_roots = (
+        [Path(path) for path in ignore_roots] if ignore_roots is not None else list(DEFAULT_IGNORE_ROOTS)
+    )
 
     try:
         scope_settings = load_scope_settings(scope_config_path=scope_config_path, scope_override=scope_override)
-        pack_order_ids, pack_order_source = load_pack_order_manifest(pack_order_manifest)
+        pack_order_ids, manifest_last_mod_pack_id, pack_order_source = load_pack_order_manifest(pack_order_manifest)
+        resolved_last_mod_pack_id = last_mod_pack_id or manifest_last_mod_pack_id
+        resolved_last_mod_pack_id_source = (
+            "cli"
+            if last_mod_pack_id is not None
+            else pack_order_source
+            if manifest_last_mod_pack_id is not None
+            else None
+        )
         if classification_csv_path is not None:
             resolved_classification_path = Path(classification_csv_path)
             if not resolved_classification_path.exists():
@@ -4866,6 +4952,9 @@ def export_loot_stack(
         report = {
             "scope_config_source": str(scope_config_path) if scope_config_path is not None else None,
             "pack_order_source": str(pack_order_manifest) if pack_order_manifest is not None else None,
+            "last_mod_pack_id": last_mod_pack_id,
+            "last_mod_pack_id_source": "cli" if last_mod_pack_id is not None else None,
+            "mod_discovery_roots": [str(path) for path in resolved_mod_discovery_roots],
             "discovered_packs": [],
             "selected_packs": [],
             "effective_order": [],
@@ -4880,14 +4969,16 @@ def export_loot_stack(
 
     exporter = LootStackExporter(
         base_pack_root=Path(base_pack_root),
-        mods_root=Path(mods_root),
-        ignore_roots=[Path(path) for path in (ignore_roots or [DEFAULT_IGNORE_ROOT])],
+        mod_discovery_roots=resolved_mod_discovery_roots,
+        ignore_roots=resolved_ignore_roots,
         archive_roots=[Path(path) for path in (archive_roots or [])],
         explicit_packs=[Path(path) for path in (explicit_packs or [])],
         output_dir=output_path,
         scope_settings=scope_settings,
         pack_order_ids=pack_order_ids,
         pack_order_source=pack_order_source,
+        last_mod_pack_id=resolved_last_mod_pack_id,
+        last_mod_pack_id_source=resolved_last_mod_pack_id_source,
         auto_discover_mod_dirs=auto_discover_mod_dirs,
         classification_csv_path=resolved_classification_path,
         ambiguous_resolution_config_path=Path(ambiguous_resolution_config_path),
@@ -4904,7 +4995,8 @@ def main(argv: list[str] | None = None) -> int:
         result = export_loot_stack(
             scope_config_path=args.scope_config,
             pack_order_manifest=args.pack_order_manifest,
-            mods_root=args.mods_root,
+            last_mod_pack_id=args.last_mod_pack_id,
+            mod_discovery_roots=args.mods_root,
             ignore_roots=args.ignore_root,
             archive_roots=args.archive_root,
             explicit_packs=args.pack,

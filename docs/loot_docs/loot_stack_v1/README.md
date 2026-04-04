@@ -5,37 +5,41 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 ## Summary
 
 - Base pack root: `D:\keep\mods\Minecraft\my_tweaks\libs\neoforge-21.1.162_ref`
+- Mod discovery roots: `D:\keep\mods\Minecraft\my_tweaks\libs`, `D:\keep\mods\Minecraft\my_tweaks\sourcelibs`
 - Scope config: `D:\keep\mods\Minecraft\my_tweaks\configs\loot_scope.json`
-- Ignore roots: `D:\keep\mods\Minecraft\my_tweaks\libs\ignore`
-- Selected pack count: 3
+- Pack order source: `D:\keep\mods\Minecraft\my_tweaks\configs\loot_pack_order.json`
+- Last mod pin: `rabid_balance` from `D:\keep\mods\Minecraft\my_tweaks\configs\loot_pack_order.json`
+- Ignore roots: `D:\keep\mods\Minecraft\my_tweaks\libs\ignore`, `D:\keep\mods\Minecraft\my_tweaks\sourcelibs\ignore`
+- Selected pack count: 4
 - Classification source: `D:\keep\mods\Minecraft\my_tweaks\docs\loot_docs\resolved_loot_v10.csv`
 - Classification version: `10`
-- Named table rows: 72
+- Named table rows: 74
 - Inline table rows: 3
-- Pool rows: 201
-- Entry rows: 831
-- Leaf candidate rows: 889
-- Root table item summary rows: 813
-- Table role rows: 72
+- Pool rows: 203
+- Entry rows: 835
+- Leaf candidate rows: 893
+- Root table item summary rows: 817
+- Table role rows: 74
 - Table role evidence rows: 195
-- GLM chain rows: 9
-- Modifier-added leaf rows: 37
-- Target table modifier summary rows: 9
-- Target table added item summary rows: 28
+- GLM chain rows: 10
+- Modifier-added leaf rows: 40
+- Target table modifier summary rows: 10
+- Target table added item summary rows: 30
 - Item classification rows: 1415
 - Item affinity rows: 1177
-- Classification coverage rows: 240
-- Structure rows: 39
-- Structure loot-link rows: 89
-- Structure loot-link audit rows: 152
+- Classification coverage rows: 243
+- Structure rows: 30
+- Structure loot-link rows: 76
+- Structure loot-link audit rows: 158
 - Classified loot items: 240
-- Missing loot items: 0
+- Missing loot items: 3
 
 ## Selected Packs
 
 - `base` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\neoforge-21.1.162_ref`
 - `illagerinvasion` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\IllagerInvasion-v21.1.6-NeoForge`
 - `sophisticatedbackpacks` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\sophisticatedbackpacks-3.25.34.1581`
+- `rabid_balance` (directory) from `D:\keep\mods\Minecraft\my_tweaks\sourcelibs\rabid_balance`
 
 ## Files
 
@@ -81,7 +85,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 
 ## Allowed Folders
 
-- `chests`: 63 effective loot-table resources
+- `chests`: 65 effective loot-table resources
 - `equipment`: 3 effective loot-table resources
 - `pots`: 1 effective loot-table resources
 - `spawners`: 5 effective loot-table resources
@@ -97,7 +101,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 
 ## Deferred Stage 2 Folders
 
-- `inject`: 9 effective loot-table resources
+- `inject`: 10 effective loot-table resources
 
 ## Warnings
 
@@ -107,6 +111,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 
 - The scope config is always authoritative for Stage 1 allowed and deferred top-level loot_table directories.
 - Descendants of the configured ignore roots are skipped during auto-discovery and archive-root scans unless you include them explicitly with `--pack`.
+- `--last-mod-pack-id` pins one selected mod to the end of the mod order so it wins overlaps it participates in without requiring a full pack-order manifest. Overlaps among the remaining mods still require a manifest.
 - Top-level `loot_table/inject/...` is treated as deferred Stage 2 and is intentionally omitted from Stage 1 outputs.
 - Nested paths like `loot_table/entities/inject/...` are still ordinary Stage 1 loot tables because the top-level directory is `entities`.
 - Inline tables use synthetic IDs in the form `inline:{entry_id}`.

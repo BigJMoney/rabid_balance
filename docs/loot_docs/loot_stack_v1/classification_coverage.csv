@@ -2,6 +2,9 @@ item_id,loot_root_table_count,loot_leaf_row_count,has_classification,classificat
 illagerinvasion:illusionary_dust,1,1,true,matched,false,item_material,rare,small,material_items,illagerinvasion:illusionary_dust,10
 illagerinvasion:lost_candle,1,1,true,matched,false,misc_tool,epic,singleton,misc_tools,illagerinvasion:lost_candle,10
 illagerinvasion:unusual_dust,1,1,true,matched,false,item_material,rare,small,material_items,illagerinvasion:unusual_dust,10
+minecolonies:scroll_buff,2,2,false,missing,false,,,,,,10
+minecolonies:supplycampdeployer,1,1,false,missing,false,,,,,,10
+minecolonies:supplychestdeployer,1,1,false,missing,false,,,,,,10
 minecraft:acacia_log,1,1,true,matched,false,block_material,filler,small,material_blocks,#minecraft:logs,10
 minecraft:acacia_planks,1,1,true,matched,false,block_material,filler,bulk,material_blocks,#minecraft:planks,10
 minecraft:acacia_sapling,1,1,true,matched,false,garden,uncommon,small,garden_items,#minecraft:saplings,10

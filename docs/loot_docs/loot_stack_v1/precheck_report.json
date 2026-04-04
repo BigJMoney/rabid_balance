@@ -1,8 +1,15 @@
 {
   "scope_config_source": "D:\\keep\\mods\\Minecraft\\my_tweaks\\configs\\loot_scope.json",
-  "pack_order_source": null,
+  "pack_order_source": "D:\\keep\\mods\\Minecraft\\my_tweaks\\configs\\loot_pack_order.json",
+  "last_mod_pack_id": "rabid_balance",
+  "last_mod_pack_id_source": "D:\\keep\\mods\\Minecraft\\my_tweaks\\configs\\loot_pack_order.json",
+  "mod_discovery_roots": [
+    "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
+    "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs"
+  ],
   "ignore_roots": [
-    "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\ignore"
+    "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\ignore",
+    "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\ignore"
   ],
   "ignored_sources": [
     "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\ignore"
@@ -25,6 +32,15 @@
       "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
       "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\IllagerInvasion-v21.1.6-NeoForge",
       "resource_count": 145
+    },
+    {
+      "pack_id": "rabid_balance",
+      "role": "mod",
+      "kind": "directory",
+      "explicit": false,
+      "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs",
+      "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance",
+      "resource_count": 567
     },
     {
       "pack_id": "sophisticatedbackpacks",
@@ -66,16 +82,173 @@
       "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\sophisticatedbackpacks-3.25.34.1581",
       "resource_count": 220,
       "order_index": 2
+    },
+    {
+      "pack_id": "rabid_balance",
+      "role": "mod",
+      "kind": "directory",
+      "explicit": false,
+      "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs",
+      "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance",
+      "resource_count": 567,
+      "order_index": 3
     }
   ],
   "effective_order": [
     "base",
     "illagerinvasion",
-    "sophisticatedbackpacks"
+    "sophisticatedbackpacks",
+    "rabid_balance"
   ],
   "duplicate_source_issues": [],
   "replacements": [],
-  "overlap_groups": [],
-  "resolved_overlaps": [],
+  "overlap_groups": [
+    {
+      "resource_path": "illagerinvasion/worldgen/structure_set/firecaller_hut.json",
+      "pack_ids": [
+        "illagerinvasion",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "illagerinvasion": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\IllagerInvasion-v21.1.6-NeoForge\\data\\illagerinvasion\\worldgen\\structure_set\\firecaller_hut.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\illagerinvasion\\worldgen\\structure_set\\firecaller_hut.json"
+      }
+    },
+    {
+      "resource_path": "illagerinvasion/worldgen/structure_set/illager_fort.json",
+      "pack_ids": [
+        "illagerinvasion",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "illagerinvasion": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\IllagerInvasion-v21.1.6-NeoForge\\data\\illagerinvasion\\worldgen\\structure_set\\illager_fort.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\illagerinvasion\\worldgen\\structure_set\\illager_fort.json"
+      }
+    },
+    {
+      "resource_path": "illagerinvasion/worldgen/structure_set/illusioner_tower.json",
+      "pack_ids": [
+        "illagerinvasion",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "illagerinvasion": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\IllagerInvasion-v21.1.6-NeoForge\\data\\illagerinvasion\\worldgen\\structure_set\\illusioner_tower.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\illagerinvasion\\worldgen\\structure_set\\illusioner_tower.json"
+      }
+    },
+    {
+      "resource_path": "illagerinvasion/worldgen/structure_set/labyrinth.json",
+      "pack_ids": [
+        "illagerinvasion",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "illagerinvasion": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\IllagerInvasion-v21.1.6-NeoForge\\data\\illagerinvasion\\worldgen\\structure_set\\labyrinth.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\illagerinvasion\\worldgen\\structure_set\\labyrinth.json"
+      }
+    },
+    {
+      "resource_path": "illagerinvasion/worldgen/structure_set/sorcerer_hut.json",
+      "pack_ids": [
+        "illagerinvasion",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "illagerinvasion": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\IllagerInvasion-v21.1.6-NeoForge\\data\\illagerinvasion\\worldgen\\structure_set\\sorcerer_hut.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\illagerinvasion\\worldgen\\structure_set\\sorcerer_hut.json"
+      }
+    },
+    {
+      "resource_path": "neoforge/loot_modifiers/global_loot_modifiers.json",
+      "pack_ids": [
+        "sophisticatedbackpacks",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "sophisticatedbackpacks": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\sophisticatedbackpacks-3.25.34.1581\\data\\neoforge\\loot_modifiers\\global_loot_modifiers.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\neoforge\\loot_modifiers\\global_loot_modifiers.json"
+      }
+    }
+  ],
+  "resolved_overlaps": [
+    {
+      "resource_path": "illagerinvasion/worldgen/structure_set/firecaller_hut.json",
+      "pack_ids": [
+        "illagerinvasion",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "illagerinvasion": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\IllagerInvasion-v21.1.6-NeoForge\\data\\illagerinvasion\\worldgen\\structure_set\\firecaller_hut.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\illagerinvasion\\worldgen\\structure_set\\firecaller_hut.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "illagerinvasion/worldgen/structure_set/illager_fort.json",
+      "pack_ids": [
+        "illagerinvasion",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "illagerinvasion": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\IllagerInvasion-v21.1.6-NeoForge\\data\\illagerinvasion\\worldgen\\structure_set\\illager_fort.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\illagerinvasion\\worldgen\\structure_set\\illager_fort.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "illagerinvasion/worldgen/structure_set/illusioner_tower.json",
+      "pack_ids": [
+        "illagerinvasion",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "illagerinvasion": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\IllagerInvasion-v21.1.6-NeoForge\\data\\illagerinvasion\\worldgen\\structure_set\\illusioner_tower.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\illagerinvasion\\worldgen\\structure_set\\illusioner_tower.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "illagerinvasion/worldgen/structure_set/labyrinth.json",
+      "pack_ids": [
+        "illagerinvasion",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "illagerinvasion": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\IllagerInvasion-v21.1.6-NeoForge\\data\\illagerinvasion\\worldgen\\structure_set\\labyrinth.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\illagerinvasion\\worldgen\\structure_set\\labyrinth.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "illagerinvasion/worldgen/structure_set/sorcerer_hut.json",
+      "pack_ids": [
+        "illagerinvasion",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "illagerinvasion": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\IllagerInvasion-v21.1.6-NeoForge\\data\\illagerinvasion\\worldgen\\structure_set\\sorcerer_hut.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\illagerinvasion\\worldgen\\structure_set\\sorcerer_hut.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "neoforge/loot_modifiers/global_loot_modifiers.json",
+      "pack_ids": [
+        "sophisticatedbackpacks",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "sophisticatedbackpacks": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\sophisticatedbackpacks-3.25.34.1581\\data\\neoforge\\loot_modifiers\\global_loot_modifiers.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\neoforge\\loot_modifiers\\global_loot_modifiers.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "merge_mode": "glm_registry"
+    }
+  ],
   "fatal_errors": []
 }

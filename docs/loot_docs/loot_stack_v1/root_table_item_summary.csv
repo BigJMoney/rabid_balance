@@ -76,6 +76,10 @@ illagerinvasion:chests/sorcerer_hut,minecraft:enchanted_golden_apple,1,0.05,0.05
 illagerinvasion:chests/sorcerer_hut,minecraft:golden_apple,1,0.25,0.25,0.25,exact
 illagerinvasion:chests/sorcerer_hut,minecraft:name_tag,1,0.5,0.5,0.5,exact
 illagerinvasion:chests/sorcerer_hut,minecraft:paper,1,1.0,7.5,1.0,exact
+minecolonies:chests/supplycamp,minecolonies:scroll_buff,1,0.025,0.2,0.025000000000000022,exact
+minecolonies:chests/supplycamp,minecolonies:supplycampdeployer,1,0.01,0.01,0.010000000000000009,exact
+minecolonies:chests/supplyship,minecolonies:scroll_buff,1,0.025,0.2,0.025000000000000022,exact
+minecolonies:chests/supplyship,minecolonies:supplychestdeployer,1,0.02,0.02,0.020000000000000018,exact
 minecraft:chests/abandoned_mineshaft,minecraft:activator_rail,1,0.30000000000000004,0.75,0.2709999999999999,exact
 minecraft:chests/abandoned_mineshaft,minecraft:beetroot_seeds,1,0.30612244897959184,0.9183673469387755,0.27314935357988357,exact
 minecraft:chests/abandoned_mineshaft,minecraft:book,1,0.14084507042253522,0.14084507042253522,0.14084507042253525,exact
