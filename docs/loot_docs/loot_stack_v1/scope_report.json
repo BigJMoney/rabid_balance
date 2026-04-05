@@ -13,7 +13,7 @@
   "included_dirs": [
     {
       "name": "chests",
-      "file_count": 65
+      "file_count": 67
     },
     {
       "name": "equipment",
@@ -31,11 +31,11 @@
   "excluded_dirs": [
     {
       "name": "archaeology",
-      "file_count": 6
+      "file_count": 7
     },
     {
       "name": "blocks",
-      "file_count": 990
+      "file_count": 1063
     },
     {
       "name": "dispensers",
@@ -43,11 +43,11 @@
     },
     {
       "name": "entities",
-      "file_count": 114
+      "file_count": 158
     },
     {
       "name": "gameplay",
-      "file_count": 21
+      "file_count": 25
     },
     {
       "name": "shearing",
@@ -105,15 +105,15 @@
   "stack_encountered_loot_dirs": [
     {
       "name": "archaeology",
-      "file_count": 6
+      "file_count": 7
     },
     {
       "name": "blocks",
-      "file_count": 990
+      "file_count": 1063
     },
     {
       "name": "chests",
-      "file_count": 65
+      "file_count": 67
     },
     {
       "name": "dispensers",
@@ -121,7 +121,7 @@
     },
     {
       "name": "entities",
-      "file_count": 114
+      "file_count": 158
     },
     {
       "name": "equipment",
@@ -129,7 +129,7 @@
     },
     {
       "name": "gameplay",
-      "file_count": 21
+      "file_count": 25
     },
     {
       "name": "inject",
@@ -148,8 +148,8 @@
       "file_count": 5
     }
   ],
-  "included_table_total": 74,
-  "excluded_table_total": 1135,
+  "included_table_total": 76,
+  "excluded_table_total": 1257,
   "deferred_table_total": 11,
   "new_excluded_loot_dirs_from_mods": [],
   "warnings": []

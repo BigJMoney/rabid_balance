@@ -986,6 +986,10 @@ def get_resource_family(resource_path: str) -> str:
     return parts[1] if len(parts) >= 2 else ""
 
 
+def overlap_requires_pack_order_manifest(resource_path: str) -> bool:
+    return get_resource_family(resource_path) != "tags"
+
+
 def get_loot_resource_metadata(resource_path: str) -> dict[str, str] | None:
     parts = split_resource_path(resource_path)
     if len(parts) < 4 or parts[1] != "loot_table" or not resource_path.endswith(".json"):
@@ -1532,6 +1536,15 @@ class LootStackExporter:
             elif self.last_mod_pack_id is not None and self.last_mod_pack_id in unique_pack_ids:
                 resolved_overlaps.append(
                     {**group, "winner_pack_id": self.last_mod_pack_id, "resolution_mode": "last_mod"}
+                )
+            elif not overlap_requires_pack_order_manifest(resource_path):
+                resolved_overlaps.append(
+                    {
+                        **group,
+                        "winner_pack_id": unique_pack_ids[-1],
+                        "resolution_mode": "nonfatal_exempt_family",
+                        "resource_family": get_resource_family(resource_path),
+                    }
                 )
             else:
                 fatal_errors.append(

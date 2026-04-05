@@ -7,11 +7,11 @@
   "ambiguous_match_autoresolved_row_count": 20,
   "ambiguous_match_pending_table_count": 21,
   "ambiguous_match_pending_row_count": 59,
-  "no_match_table_count": 20,
+  "no_match_table_count": 22,
   "no_match_mapped_table_count": 5,
   "no_match_mapped_row_count": 7,
-  "no_match_unresolved_table_count": 15,
-  "no_match_unresolved_row_count": 15,
+  "no_match_unresolved_table_count": 17,
+  "no_match_unresolved_row_count": 17,
   "stale_ambiguous_rows": [
     {
       "loot_table_id": "illagerinvasion:chests/labyrinth",

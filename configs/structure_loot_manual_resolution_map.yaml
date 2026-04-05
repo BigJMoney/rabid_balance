@@ -32,6 +32,14 @@ entries:
   status: unresolved
   structure_id: ''
   notes: ''
+- loot_table_id: kobolds:chests/iron_loot
+  status: unresolved
+  structure_id: ''
+  notes: ''
+- loot_table_id: kobolds:chests/kobold_loot
+  status: unresolved
+  structure_id: ''
+  notes: ''
 - loot_table_id: minecolonies:chests/supplycamp
   status: unresolved
   structure_id: ''

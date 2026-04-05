@@ -6,6 +6,8 @@ structure_id,loot_table_id,candidate_source,candidate_method,resolution,notes
 ,illagerinvasion:chests/labyrinth,manual_no_match,manual_resolution_map,pending_manual_no_match,
 ,illagerinvasion:chests/labyrinth_map,manual_no_match,manual_resolution_map,pending_manual_no_match,
 ,illagerinvasion:chests/sorcerer_hut,manual_no_match,manual_resolution_map,pending_manual_no_match,
+,kobolds:chests/iron_loot,manual_no_match,manual_resolution_map,pending_manual_no_match,
+,kobolds:chests/kobold_loot,manual_no_match,manual_resolution_map,pending_manual_no_match,
 ,minecolonies:chests/supplycamp,manual_no_match,manual_resolution_map,pending_manual_no_match,
 ,minecolonies:chests/supplyship,manual_no_match,manual_resolution_map,pending_manual_no_match,
 ,minecraft:chests/nether_bridge,manual_no_match,manual_resolution_map,pending_manual_no_match,

@@ -10,34 +10,39 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Pack order source: `D:\keep\mods\Minecraft\my_tweaks\configs\loot_pack_order.json`
 - Last mod pin: `rabid_balance` from `D:\keep\mods\Minecraft\my_tweaks\configs\loot_pack_order.json`
 - Ignore roots: `D:\keep\mods\Minecraft\my_tweaks\libs\ignore`, `D:\keep\mods\Minecraft\my_tweaks\sourcelibs\ignore`
-- Selected pack count: 4
+- Selected pack count: 9
 - Classification source: `D:\keep\mods\Minecraft\my_tweaks\docs\loot_docs\resolved_loot_v10.csv`
 - Classification version: `10`
-- Named table rows: 74
+- Named table rows: 76
 - Inline table rows: 3
-- Pool rows: 203
-- Entry rows: 835
-- Leaf candidate rows: 893
-- Root table item summary rows: 817
-- Table role rows: 74
-- Table role evidence rows: 195
-- GLM chain rows: 11
+- Pool rows: 205
+- Entry rows: 851
+- Leaf candidate rows: 914
+- Root table item summary rows: 837
+- Table role rows: 76
+- Table role evidence rows: 212
+- GLM chain rows: 10
 - Modifier-added leaf rows: 38
 - Target table modifier summary rows: 10
 - Target table added item summary rows: 29
-- Item classification rows: 1415
-- Item affinity rows: 1179
-- Classification coverage rows: 243
-- Structure rows: 30
+- Item classification rows: 1989
+- Item affinity rows: 1483
+- Classification coverage rows: 250
+- Structure rows: 32
 - Structure loot-link rows: 76
-- Structure loot-link audit rows: 158
-- Classified loot items: 240
+- Structure loot-link audit rows: 160
+- Classified loot items: 247
 - Missing loot items: 3
 
 ## Selected Packs
 
 - `base` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\neoforge-21.1.162_ref`
+- `copperagebackport` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\copperagebackport-neoforge-0.1.4`
+- `endermanoverhaul` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\endermanoverhaul-neoforge-2.0.3`
 - `illagerinvasion` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\IllagerInvasion-v21.1.6-NeoForge`
+- `kobolds` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\Kobolds-3.0.41`
+- `primity` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\primity-neoforge-0.1.4`
+- `reanimal` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\reanimal-0.5.0`
 - `sophisticatedbackpacks` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\sophisticatedbackpacks-3.25.34.1581`
 - `rabid_balance` (directory) from `D:\keep\mods\Minecraft\my_tweaks\sourcelibs\rabid_balance`
 
@@ -85,18 +90,18 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 
 ## Allowed Folders
 
-- `chests`: 65 effective loot-table resources
+- `chests`: 67 effective loot-table resources
 - `equipment`: 3 effective loot-table resources
 - `pots`: 1 effective loot-table resources
 - `spawners`: 5 effective loot-table resources
 
 ## Excluded Folders
 
-- `archaeology`: 6 effective loot-table resources
-- `blocks`: 990 effective loot-table resources
+- `archaeology`: 7 effective loot-table resources
+- `blocks`: 1063 effective loot-table resources
 - `dispensers`: 3 effective loot-table resources
-- `entities`: 114 effective loot-table resources
-- `gameplay`: 21 effective loot-table resources
+- `entities`: 158 effective loot-table resources
+- `gameplay`: 25 effective loot-table resources
 - `shearing`: 1 effective loot-table resources
 
 ## Deferred Stage 2 Folders

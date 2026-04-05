@@ -920,6 +920,44 @@ class ExportLootStackTests(unittest.TestCase):
             self.assertEqual(len(precheck["fatal_errors"]), 2)
             self.assertTrue(all("mod-vs-mod same-file overlap" in message for message in precheck["fatal_errors"]))
 
+    def test_precheck_without_manifest_allows_tag_overlaps(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            mods_root = Path(tempdir) / "mods"
+            output_dir = Path(tempdir) / "out"
+            shared_a = json.dumps({"replace": False, "values": ["moda:axe"]})
+            shared_b = json.dumps({"replace": False, "values": ["modb:axe"]})
+            write_mod_pack(
+                mods_root / "mod_a",
+                "moda",
+                {
+                    "data/minecraft/tags/item/axes.json": shared_a,
+                },
+            )
+            write_mod_pack(
+                mods_root / "mod_b",
+                "modb",
+                {
+                    "data/minecraft/tags/item/axes.json": shared_b,
+                },
+            )
+
+            export_with_temp_resolution_maps(
+                output_dir=output_dir,
+                mods_root=mods_root,
+                archive_roots=[],
+                explicit_packs=[],
+            )
+
+            precheck = json.loads((output_dir / "precheck_report.json").read_text(encoding="utf-8"))
+            self.assertEqual(precheck["effective_order"], ["base", "moda", "modb"])
+            self.assertEqual(len(precheck["overlap_groups"]), 1)
+            self.assertEqual(precheck["fatal_errors"], [])
+            self.assertEqual(len(precheck["resolved_overlaps"]), 1)
+            self.assertEqual(precheck["resolved_overlaps"][0]["resource_path"], "minecraft/tags/item/axes.json")
+            self.assertEqual(precheck["resolved_overlaps"][0]["winner_pack_id"], "modb")
+            self.assertEqual(precheck["resolved_overlaps"][0]["resolution_mode"], "nonfatal_exempt_family")
+            self.assertEqual(precheck["resolved_overlaps"][0]["resource_family"], "tags")
+
     def test_auto_discovery_scans_multiple_mod_roots(self) -> None:
         with tempfile.TemporaryDirectory() as tempdir:
             libs_root = Path(tempdir) / "libs"
