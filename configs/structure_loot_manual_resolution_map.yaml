@@ -5,18 +5,14 @@
 version: 1
 entries:
 - loot_table_id: bosses_of_mass_destruction:chests/gauntlet
-  status: unresolved
-  structure_id: ''
-  notes: ''
+  status: mapped
+  structure_id: bosses_of_mass_destruction:gauntlet
+  notes: boss chest on death
 - loot_table_id: bosses_of_mass_destruction:chests/obsidilith
-  status: unresolved
-  structure_id: ''
-  notes: ''
+  status: mapped
+  structure_id: bosses_of_mass_destruction:obsidilith
+  notes: boss chest on death
 - loot_table_id: kobolds:chests/iron_loot
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: kobolds:chests/kobold_loot
   status: unresolved
   structure_id: ''
   notes: ''
@@ -41,18 +37,6 @@ entries:
   structure_id: minecraft:jungle_pyramid
   notes: ''
 - loot_table_id: minecraft:chests/nether_bridge
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: minecraft:chests/shipwreck_map
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: minecraft:chests/shipwreck_supply
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: minecraft:chests/shipwreck_treasure
   status: unresolved
   structure_id: ''
   notes: ''

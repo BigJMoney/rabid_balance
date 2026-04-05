@@ -103,6 +103,60 @@ entries:
     match_mode: first_segment
   autoresolve: true
   notes: ''
+- loot_table_id: minecraft:chests/shipwreck_map
+  structure_id: minecraft:shipwreck
+  match_rule: ambiguous_structure_root_match
+  evidence_data:
+    structure_root: shipwreck
+    matched_value: shipwreck
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/shipwreck_map
+  structure_id: minecraft:shipwreck_beached
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: shipwreck
+    matched_value: shipwreck
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/shipwreck_supply
+  structure_id: minecraft:shipwreck
+  match_rule: ambiguous_structure_root_match
+  evidence_data:
+    structure_root: shipwreck
+    matched_value: shipwreck
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/shipwreck_supply
+  structure_id: minecraft:shipwreck_beached
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: shipwreck
+    matched_value: shipwreck
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/shipwreck_treasure
+  structure_id: minecraft:shipwreck
+  match_rule: ambiguous_structure_root_match
+  evidence_data:
+    structure_root: shipwreck
+    matched_value: shipwreck
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/shipwreck_treasure
+  structure_id: minecraft:shipwreck_beached
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: shipwreck
+    matched_value: shipwreck
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
 - loot_table_id: minecraft:chests/stronghold_corridor
   structure_id: minecraft:stronghold
   match_rule: ambiguous_structure_id_match
