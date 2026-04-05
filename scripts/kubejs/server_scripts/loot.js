@@ -20,11 +20,11 @@ LootJS.modifiers(lootModEvent => {
   // ---- Primity
 
   if (Platform.isLoaded('primity')) {
-    // - Replace all instances of stone pickaxe with flint pickaxe
+    // - Replace all instances of stone pickaxe with flint pickaxe head
     // - Remove all instances of invalid wooden tools
     lootModEvent
       .addTableModifier(/.*/)
-      .replaceLoot('minecraft:stone_pickaxe', 'primity:flint_pickaxe')
+      .replaceLoot('minecraft:stone_pickaxe', 'primity:flint_pickaxe_head')
       .removeLoot('minecraft:wooden_pickaxe')
       .removeLoot('minecraft:wooden_axe')
       .removeLoot('minecraft:wooden_hoe')
