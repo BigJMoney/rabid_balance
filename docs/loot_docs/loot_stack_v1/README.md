@@ -28,9 +28,9 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Item classification rows: 2075
 - Item affinity rows: 1488
 - Classification coverage rows: 252
-- Structure rows: 36
-- Structure loot-link rows: 77
-- Structure loot-link audit rows: 148
+- Structure rows: 38
+- Structure loot-link rows: 81
+- Structure loot-link audit rows: 154
 - Classified loot items: 249
 - Missing loot items: 3
 
@@ -150,8 +150,8 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Use `--clean-structure-resolution-maps` to prune stale ambiguous/manual mapped rows after mod-list changes while preserving current approvals and current manual mappings.
 - Use `--rebuild-all-structure-resolution-maps` only when you intentionally want a destructive rebuild of both structure resolution YAMLs from current export results.
 - No suppressions are part of this workflow. If an exact detected link is wrong, the matching logic should be corrected instead of overridden.
-- Automatic structure-to-loot mapping remains conservative: jigsaw start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, and ambiguous candidates from real structure roots, active structure-id stems, or reduced structure-id submatches.
-- Non-jigsaw structures may still land in ambiguous-match or no-match until you confirm them through the resolution YAMLs.
+- Automatic structure-to-loot mapping remains conservative: start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, and ambiguous candidates from real structure roots, active structure-id stems, or reduced structure-id submatches.
+- Structures without a usable start_pool may still land in ambiguous-match or no-match until you confirm them through the resolution YAMLs.
 - `structure_loot_links.csv` is the raw structure-to-loot-table layer for this corrected first pass.
 - `resolved_loot_v*.csv` remains the canonical raw classification export. `leaf_candidates.csv` and `modifier_added_leaf_candidates.csv` now embed the core classification fields directly, while `item_affinities.csv` remains the recommended Tableau source for one-to-many affinities.
 - `classification_coverage.csv` makes missing loot-item classifications explicit instead of silently dropping them.

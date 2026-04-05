@@ -1,19 +1,35 @@
 {
-  "exact_match_table_count": 39,
-  "exact_match_row_count": 50,
-  "ambiguous_match_candidate_table_count": 35,
-  "ambiguous_match_candidate_row_count": 79,
+  "exact_match_table_count": 42,
+  "exact_match_row_count": 54,
+  "ambiguous_match_candidate_table_count": 38,
+  "ambiguous_match_candidate_row_count": 85,
   "ambiguous_match_autoresolved_table_count": 14,
   "ambiguous_match_autoresolved_row_count": 20,
-  "ambiguous_match_pending_table_count": 21,
-  "ambiguous_match_pending_row_count": 59,
-  "no_match_table_count": 17,
+  "ambiguous_match_pending_table_count": 24,
+  "ambiguous_match_pending_row_count": 65,
+  "no_match_table_count": 13,
   "no_match_mapped_table_count": 5,
   "no_match_mapped_row_count": 7,
-  "no_match_unresolved_table_count": 12,
-  "no_match_unresolved_row_count": 12,
+  "no_match_unresolved_table_count": 6,
+  "no_match_unresolved_row_count": 6,
   "stale_ambiguous_rows": [],
   "stale_manual_rows": [],
-  "skipped_active_stale_rows": [],
-  "warnings": []
+  "skipped_active_stale_rows": [
+    {
+      "resolution_source": "manual_no_match",
+      "loot_table_id": "bosses_of_mass_destruction:chests/gauntlet",
+      "structure_id": "bosses_of_mass_destruction:gauntlet",
+      "warning": "manual no-match mapping target missing from current active structures for bosses_of_mass_destruction:chests/gauntlet -> bosses_of_mass_destruction:gauntlet"
+    },
+    {
+      "resolution_source": "manual_no_match",
+      "loot_table_id": "bosses_of_mass_destruction:chests/obsidilith",
+      "structure_id": "bosses_of_mass_destruction:obsidilith",
+      "warning": "manual no-match mapping target missing from current active structures for bosses_of_mass_destruction:chests/obsidilith -> bosses_of_mass_destruction:obsidilith"
+    }
+  ],
+  "warnings": [
+    "manual no-match mapping target missing from current active structures for bosses_of_mass_destruction:chests/gauntlet -> bosses_of_mass_destruction:gauntlet",
+    "manual no-match mapping target missing from current active structures for bosses_of_mass_destruction:chests/obsidilith -> bosses_of_mass_destruction:obsidilith"
+  ]
 }

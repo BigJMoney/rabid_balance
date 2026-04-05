@@ -836,10 +836,10 @@ def parse_roll_spec(raw_value: Any) -> dict[str, Any]:
         }
     if isinstance(raw_value, dict):
         kind = raw_value.get("type")
-        if not isinstance(kind, str) or not kind:
-            kind = "object"
         min_value = raw_value.get("min")
         max_value = raw_value.get("max")
+        if not isinstance(kind, str) or not kind:
+            kind = "" if isinstance(min_value, (int, float)) and isinstance(max_value, (int, float)) else "object"
         return {
             "kind": kind,
             "min": float(min_value) if isinstance(min_value, (int, float)) else None,
@@ -865,7 +865,8 @@ def extract_set_count_range(functions: list[Any]) -> tuple[float | None, float |
             continue
         if not isinstance(count_value, dict):
             continue
-        if count_value.get("type") != "minecraft:uniform":
+        count_type = count_value.get("type")
+        if count_type not in {None, "", "minecraft:uniform"}:
             continue
         min_value = count_value.get("min")
         max_value = count_value.get("max")
@@ -2018,7 +2019,7 @@ class LootStackExporter:
             max_int = int(round(float(max_value)))
             if min_int == max_int and min_int >= 0:
                 return {min_int: 1.0}, ()
-        if kind == "minecraft:uniform" and is_integer_like_number(min_value) and is_integer_like_number(max_value):
+        if kind in {"", "minecraft:uniform"} and is_integer_like_number(min_value) and is_integer_like_number(max_value):
             min_int = int(round(float(min_value)))
             max_int = int(round(float(max_value)))
             if min_int <= max_int:
@@ -2076,7 +2077,8 @@ class LootStackExporter:
                 continue
             if not isinstance(count_value, dict):
                 return None, None, metric_status("unsupported_set_count")
-            if count_value.get("type") != "minecraft:uniform":
+            count_type = count_value.get("type")
+            if count_type not in {None, "", "minecraft:uniform"}:
                 return None, None, metric_status("unsupported_set_count")
             min_value = count_value.get("min")
             max_value = count_value.get("max")
@@ -4160,9 +4162,6 @@ class LootStackExporter:
         except Exception:
             return "invalid_structure_json", {}
 
-        structure_type = self._string_or_blank(raw_structure.get("type"))
-        if structure_type != "minecraft:jigsaw":
-            return f"unsupported_structure_type:{structure_type or 'missing'}", {}
         start_pool_value = raw_structure.get("start_pool")
         if not isinstance(start_pool_value, str) or not start_pool_value.strip():
             return "missing_start_pool", {}
@@ -4297,7 +4296,7 @@ class LootStackExporter:
         for loot_table_id in sorted(loot_ids):
             detected_links.setdefault(
                 loot_table_id,
-                {"method": "exact_jigsaw_template_scan", "notes": template_id},
+                {"method": "exact_start_pool_template_scan", "notes": template_id},
             )
 
         processors_value = raw_element.get("processors")
@@ -4310,7 +4309,7 @@ class LootStackExporter:
             for loot_table_id in sorted(processor_loot_ids):
                 detected_links.setdefault(
                     loot_table_id,
-                    {"method": "exact_jigsaw_processor_assignment", "notes": processor_id},
+                    {"method": "exact_start_pool_processor_assignment", "notes": processor_id},
                 )
 
         for next_pool_id in sorted(next_pool_ids):
@@ -4898,8 +4897,8 @@ class LootStackExporter:
             "- Use `--clean-structure-resolution-maps` to prune stale ambiguous/manual mapped rows after mod-list changes while preserving current approvals and current manual mappings.",
             "- Use `--rebuild-all-structure-resolution-maps` only when you intentionally want a destructive rebuild of both structure resolution YAMLs from current export results.",
             "- No suppressions are part of this workflow. If an exact detected link is wrong, the matching logic should be corrected instead of overridden.",
-            "- Automatic structure-to-loot mapping remains conservative: jigsaw start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, and ambiguous candidates from real structure roots, active structure-id stems, or reduced structure-id submatches.",
-            "- Non-jigsaw structures may still land in ambiguous-match or no-match until you confirm them through the resolution YAMLs.",
+            "- Automatic structure-to-loot mapping remains conservative: start-pool traversal, pool aliases, reachable template pools, template NBT loot-table scans, explicit processor-list loot assignments, and ambiguous candidates from real structure roots, active structure-id stems, or reduced structure-id submatches.",
+            "- Structures without a usable start_pool may still land in ambiguous-match or no-match until you confirm them through the resolution YAMLs.",
             "- `structure_loot_links.csv` is the raw structure-to-loot-table layer for this corrected first pass.",
             "- `resolved_loot_v*.csv` remains the canonical raw classification export. `leaf_candidates.csv` and `modifier_added_leaf_candidates.csv` now embed the core classification fields directly, while `item_affinities.csv` remains the recommended Tableau source for one-to-many affinities.",
             "- `classification_coverage.csv` makes missing loot-item classifications explicit instead of silently dropping them.",

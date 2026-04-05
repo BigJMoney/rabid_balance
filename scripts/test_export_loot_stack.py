@@ -265,7 +265,7 @@ class ExportLootStackTests(unittest.TestCase):
         mansion_row = next(row for row in self.structure_rows if row["structure_id"] == "minecraft:mansion")
         self.assertEqual(
             mansion_row["structure_detection_status"],
-            "exact_unsupported_root_match_eligible:minecraft:woodland_mansion",
+            "exact_supported_missing_start_pool_root_match_eligible",
         )
         self.assertTrue(
             any(
@@ -873,6 +873,76 @@ class ExportLootStackTests(unittest.TestCase):
             precheck = json.loads((output_dir / "precheck_report.json").read_text(encoding="utf-8"))
             illager_row = next(row for row in precheck["selected_packs"] if row["pack_id"] == "illagerinvasion")
             self.assertEqual(illager_row["kind"], "archive")
+
+    def test_custom_structure_type_with_start_pool_gets_exact_structure_links(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            mods_root = Path(tempdir) / "mods"
+            output_dir = Path(tempdir) / "out"
+            write_mod_pack(
+                mods_root / "custom_structures",
+                "customstructures",
+                {
+                    "data/customstructures/loot_table/chests/sarcophagus.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:bone"}]}],
+                        }
+                    ),
+                    "data/customstructures/worldgen/structure/desert_tomb.json": json.dumps(
+                        {
+                            "type": "customstructures:desert_tomb",
+                            "start_pool": "customstructures:desert_tomb/start_pool",
+                        }
+                    ),
+                    "data/customstructures/worldgen/structure_set/desert_tomb.json": json.dumps(
+                        {
+                            "structures": [{"structure": "customstructures:desert_tomb", "weight": 1}],
+                            "placement": {},
+                        }
+                    ),
+                    "data/customstructures/worldgen/template_pool/desert_tomb/start_pool.json": json.dumps(
+                        {
+                            "elements": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "element_type": "minecraft:single_pool_element",
+                                        "location": "customstructures:desert_tomb/main_room",
+                                    },
+                                }
+                            ]
+                        }
+                    ),
+                    "data/customstructures/structure/desert_tomb/main_room.nbt": "customstructures:chests/sarcophagus",
+                },
+            )
+
+            export_with_temp_resolution_maps(
+                output_dir=output_dir,
+                mods_root=mods_root,
+                archive_roots=[],
+                explicit_packs=[],
+            )
+
+            structure_rows = read_csv_rows(output_dir / "structures.csv")
+            structure_loot_links = read_csv_rows(output_dir / "structure_loot_links.csv")
+            structure_row = next(
+                row for row in structure_rows if row["structure_id"] == "customstructures:desert_tomb"
+            )
+
+            self.assertEqual(
+                structure_row["structure_detection_status"],
+                "exact_supported_links_found_root_match_eligible",
+            )
+            self.assertTrue(
+                any(
+                    row["structure_id"] == "customstructures:desert_tomb"
+                    and row["loot_table_id"] == "customstructures:chests/sarcophagus"
+                    and row["link_source"] == "exact_match"
+                    and row["link_method"] == "exact_start_pool_template_scan"
+                    for row in structure_loot_links
+                )
+            )
 
     def test_precheck_without_manifest_reports_all_overlaps(self) -> None:
         with tempfile.TemporaryDirectory() as tempdir:
@@ -1983,6 +2053,65 @@ class ExportLootStackTests(unittest.TestCase):
             self.assertEqual(summary_row["drop_events_expected"], "1.53125")
             self.assertEqual(summary_row["drop_yield_expected"], "1.8125")
             self.assertEqual(summary_row["at_least_one_chance"], "0.8974609375")
+            self.assertEqual(summary_row["chance_status"], "exact")
+
+    def test_root_table_item_summary_treats_bare_min_max_as_uniform(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            mods_root = Path(tempdir) / "mods"
+            output_dir = Path(tempdir) / "out"
+            write_mod_pack(
+                mods_root / "bare_uniform_mod",
+                "bareuniform",
+                {
+                    "data/bareuniform/loot_table/chests/root.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [
+                                {
+                                    "rolls": {
+                                        "min": 1,
+                                        "max": 2,
+                                    },
+                                    "entries": [
+                                        {
+                                            "type": "minecraft:item",
+                                            "name": "minecraft:apple",
+                                            "functions": [
+                                                {
+                                                    "function": "minecraft:set_count",
+                                                    "count": {
+                                                        "min": 0,
+                                                        "max": 2,
+                                                    },
+                                                }
+                                            ],
+                                        }
+                                    ],
+                                }
+                            ],
+                        }
+                    ),
+                },
+            )
+
+            export_with_temp_resolution_maps(
+                output_dir=output_dir,
+                mods_root=mods_root,
+                archive_roots=[],
+                explicit_packs=[],
+            )
+
+            summary_rows = read_csv_rows(output_dir / "root_table_item_summary.csv")
+            summary_row = next(
+                row
+                for row in summary_rows
+                if row["root_table_id"] == "bareuniform:chests/root" and row["item_id"] == "minecraft:apple"
+            )
+
+            self.assertEqual(summary_row["path_count"], "1")
+            self.assertEqual(summary_row["drop_events_expected"], "1.0")
+            self.assertEqual(summary_row["drop_yield_expected"], "1.5")
+            self.assertEqual(summary_row["at_least_one_chance"], "0.7777777777777777")
             self.assertEqual(summary_row["chance_status"], "exact")
 
     def test_custom_classification_csv_handles_mod_items_and_normalized_affinities(self) -> None:

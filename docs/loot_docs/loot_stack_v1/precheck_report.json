@@ -12,7 +12,8 @@
     "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\ignore"
   ],
   "ignored_sources": [
-    "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\ignore"
+    "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\ignore",
+    "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\ignore"
   ],
   "discovered_packs": [
     {
@@ -58,7 +59,7 @@
       "explicit": false,
       "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs",
       "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance",
-      "resource_count": 576
+      "resource_count": 577
     },
     {
       "pack_id": "sophisticatedbackpacks",
@@ -128,7 +129,7 @@
       "explicit": false,
       "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs",
       "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance",
-      "resource_count": 576,
+      "resource_count": 577,
       "order_index": 5
     }
   ],
@@ -185,6 +186,17 @@
       "source_paths": {
         "bosses_of_mass_destruction": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\BOMD-NeoForge-1.3.2\\data\\bosses_of_mass_destruction\\worldgen\\structure_set\\void_blossom.json",
         "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\bosses_of_mass_destruction\\worldgen\\structure_set\\void_blossom.json"
+      }
+    },
+    {
+      "resource_path": "kobolds/loot_table/chests/kobold_loot.json",
+      "pack_ids": [
+        "kobolds",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "kobolds": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\Kobolds-3.0.41\\data\\kobolds\\loot_table\\chests\\kobold_loot.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\kobolds\\loot_table\\chests\\kobold_loot.json"
       }
     },
     {
@@ -347,6 +359,19 @@
       "source_paths": {
         "bosses_of_mass_destruction": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\BOMD-NeoForge-1.3.2\\data\\bosses_of_mass_destruction\\worldgen\\structure_set\\void_blossom.json",
         "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\bosses_of_mass_destruction\\worldgen\\structure_set\\void_blossom.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "kobolds/loot_table/chests/kobold_loot.json",
+      "pack_ids": [
+        "kobolds",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "kobolds": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\Kobolds-3.0.41\\data\\kobolds\\loot_table\\chests\\kobold_loot.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\kobolds\\loot_table\\chests\\kobold_loot.json"
       },
       "winner_pack_id": "rabid_balance",
       "resolution_mode": "last_mod"

@@ -191,7 +191,7 @@ class ExportVanillaLootTablesTests(unittest.TestCase):
         trial_row = next(row for row in self.structure_rows if row["structure_id"] == "minecraft:trial_chambers")
         self.assertEqual(trial_row["structure_detection_status"], "exact_supported_links_found_root_match_eligible")
         desert_row = next(row for row in self.structure_rows if row["structure_id"] == "minecraft:desert_pyramid")
-        self.assertEqual(desert_row["structure_detection_status"], "exact_unsupported_no_root_match:minecraft:desert_pyramid")
+        self.assertEqual(desert_row["structure_detection_status"], "exact_supported_missing_start_pool_no_root_match")
 
     def test_vanilla_resolution_outputs_and_yaml_headers_exist(self) -> None:
         self.assertEqual(self.structure_resolution_report["exact_match_table_count"], 38)

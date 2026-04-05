@@ -38,9 +38,9 @@
   "item_classification_count": 2075,
   "item_affinity_count": 1488,
   "classification_coverage_count": 252,
-  "structure_count": 36,
-  "structure_loot_link_count": 77,
-  "structure_loot_link_audit_count": 148,
+  "structure_count": 38,
+  "structure_loot_link_count": 81,
+  "structure_loot_link_audit_count": 154,
   "classified_loot_item_count": 249,
   "missing_loot_item_count": 3,
   "raw_role_counts": {
