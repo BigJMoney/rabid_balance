@@ -3,8 +3,8 @@
  *
  */
 
-const DO_LOOT_TAG_IMPORT = false
-const IMPORT_PATH = 'kubejs/export/resolved_loot_v10.json'
+const DO_LOOT_TAG_IMPORT = false;
+const IMPORT_PATH = 'kubejs/export/resolved_loot_v10.json';
 
 /**
  * Import loot properties from a JSON file table, and assign loot tags to all affected MC items.

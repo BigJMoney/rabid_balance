@@ -1225,6 +1225,10 @@ primity:cast_iron_ingot,smithing,10
 primity:flint_hoe,village,10
 primity:flint_pickaxe,underground,10
 primity:flint_shovel,village,10
+sophisticatedbackpacks:backpack,leatherworking,10
+sophisticatedbackpacks:gold_backpack,treasure,10
+sophisticatedbackpacks:iron_backpack,fortification,10
+sophisticatedbackpacks:netherite_backpack,nether,10
 upgrade_aquatic:acan_coral,sea,10
 upgrade_aquatic:acan_coral_block,sea,10
 upgrade_aquatic:acan_coral_fan,sea,10
