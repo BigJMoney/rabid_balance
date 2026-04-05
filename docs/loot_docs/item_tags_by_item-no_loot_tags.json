@@ -1,4 +1,46 @@
 {
+    "bosses_of_mass_destruction:ancient_anima":
+    [],
+    "bosses_of_mass_destruction:blazing_eye":
+    [],
+    "bosses_of_mass_destruction:brimstone_nectar":
+    [],
+    "bosses_of_mass_destruction:charged_ender_pearl":
+    [],
+    "bosses_of_mass_destruction:chiseled_stone_altar":
+    [],
+    "bosses_of_mass_destruction:crystal_fruit":
+    [],
+    "bosses_of_mass_destruction:earthdive_spear":
+    [],
+    "bosses_of_mass_destruction:gauntlet_blackstone":
+    [],
+    "bosses_of_mass_destruction:levitation_block":
+    [],
+    "bosses_of_mass_destruction:mob_ward":
+    [],
+    "bosses_of_mass_destruction:monolith_block":
+    [],
+    "bosses_of_mass_destruction:obsidian_heart":
+    [],
+    "bosses_of_mass_destruction:obsidilith_end_frame":
+    [],
+    "bosses_of_mass_destruction:obsidilith_rune":
+    [],
+    "bosses_of_mass_destruction:sealed_blackstone":
+    [],
+    "bosses_of_mass_destruction:soul_star":
+    [],
+    "bosses_of_mass_destruction:vine_wall":
+    [],
+    "bosses_of_mass_destruction:void_blossom":
+    [],
+    "bosses_of_mass_destruction:void_blossom_block":
+    [],
+    "bosses_of_mass_destruction:void_lily":
+    [],
+    "bosses_of_mass_destruction:void_thorn":
+    [],
     "copperagebackport:copper_button":
     [],
     "copperagebackport:exposed_copper_button":
@@ -150,58 +192,6 @@
     "guardvillagers:guard_spawn_egg":
     [],
     "guardvillagers:illusioner_spawn_egg":
-    [],
-    "illagerinvasion:alchemist_spawn_egg":
-    [],
-    "illagerinvasion:archivist_spawn_egg":
-    [],
-    "illagerinvasion:basher_spawn_egg":
-    [],
-    "illagerinvasion:firecaller_spawn_egg":
-    [],
-    "illagerinvasion:hallowed_gem":
-    [],
-    "illagerinvasion:horn_of_sight":
-    [],
-    "illagerinvasion:illusionary_dust":
-    [],
-    "illagerinvasion:illusioner_spawn_egg":
-    [],
-    "illagerinvasion:imbuing_table":
-    [],
-    "illagerinvasion:inquisitor_spawn_egg":
-    [],
-    "illagerinvasion:invoker_spawn_egg":
-    [],
-    "illagerinvasion:lost_candle":
-    [],
-    "illagerinvasion:magical_fire_charge":
-    [],
-    "illagerinvasion:marauder_spawn_egg":
-    [],
-    "illagerinvasion:necromancer_spawn_egg":
-    [],
-    "illagerinvasion:platinum_chunk":
-    [],
-    "illagerinvasion:platinum_infused_hatchet":
-    [
-        "c:enchantables",
-        "minecraft:enchantable/durability",
-        "minecraft:enchantable/vanishing"
-    ],
-    "illagerinvasion:platinum_sheet":
-    [
-        "minecraft:trim_materials"
-    ],
-    "illagerinvasion:primal_essence":
-    [],
-    "illagerinvasion:provoker_spawn_egg":
-    [],
-    "illagerinvasion:sorcerer_spawn_egg":
-    [],
-    "illagerinvasion:surrendered_spawn_egg":
-    [],
-    "illagerinvasion:unusual_dust":
     [],
     "kobolds:banner_pattern_kobold":
     [],
@@ -8045,6 +8035,62 @@
     "reanimal:vulture_egg":
     [],
     "reanimal:vulture_spawn_egg":
+    [],
+    "rottencreatures:burned_head":
+    [],
+    "rottencreatures:burned_spawn_egg":
+    [],
+    "rottencreatures:corrupted_wart":
+    [],
+    "rottencreatures:dead_beard_head":
+    [],
+    "rottencreatures:dead_beard_spawn_egg":
+    [],
+    "rottencreatures:frostbitten_head":
+    [],
+    "rottencreatures:frostbitten_spawn_egg":
+    [],
+    "rottencreatures:frozen_rotten_flesh":
+    [],
+    "rottencreatures:glacial_hunter_head":
+    [],
+    "rottencreatures:glacial_hunter_spawn_egg":
+    [],
+    "rottencreatures:hunter_wolf_spawn_egg":
+    [],
+    "rottencreatures:immortal_head":
+    [],
+    "rottencreatures:immortal_spawn_egg":
+    [],
+    "rottencreatures:magma_rotten_flesh":
+    [],
+    "rottencreatures:mummy_head":
+    [],
+    "rottencreatures:mummy_spawn_egg":
+    [],
+    "rottencreatures:scarab_spawn_egg":
+    [],
+    "rottencreatures:skeleton_lackey_spawn_egg":
+    [],
+    "rottencreatures:spear":
+    [],
+    "rottencreatures:swampy_head":
+    [],
+    "rottencreatures:swampy_spawn_egg":
+    [],
+    "rottencreatures:tnt_barrel":
+    [],
+    "rottencreatures:treasure_chest":
+    [],
+    "rottencreatures:undead_miner_head":
+    [],
+    "rottencreatures:undead_miner_spawn_egg":
+    [],
+    "rottencreatures:zap_head":
+    [],
+    "rottencreatures:zap_spawn_egg":
+    [],
+    "rottencreatures:zombie_lackey_spawn_egg":
     [],
     "sophisticatedbackpacks:advanced_alchemy_upgrade":
     [

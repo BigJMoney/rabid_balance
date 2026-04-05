@@ -4,24 +4,6 @@
 # Do not assume loot_table_id is unique within this document.
 version: 1
 entries:
-- loot_table_id: illagerinvasion:chests/labyrinth
-  structure_id: illagerinvasion:labyrinth
-  match_rule: ambiguous_structure_root_match
-  evidence_data:
-    structure_root: labyrinth
-    matched_value: labyrinth
-    match_mode: first_segment
-  autoresolve: false
-  notes: ''
-- loot_table_id: illagerinvasion:chests/labyrinth_map
-  structure_id: illagerinvasion:labyrinth
-  match_rule: ambiguous_structure_root_match
-  evidence_data:
-    structure_root: labyrinth
-    matched_value: labyrinth
-    match_mode: underscore_prefix
-  autoresolve: true
-  notes: ''
 - loot_table_id: minecraft:chests/buried_treasure
   structure_id: minecraft:buried_treasure
   match_rule: ambiguous_structure_id_match
@@ -119,60 +101,6 @@ entries:
     structure_id_submatch: ruined_portal
     matched_value: ruined_portal
     match_mode: first_segment
-  autoresolve: true
-  notes: ''
-- loot_table_id: minecraft:chests/shipwreck_map
-  structure_id: minecraft:shipwreck
-  match_rule: ambiguous_structure_root_match
-  evidence_data:
-    structure_root: shipwreck
-    matched_value: shipwreck
-    match_mode: underscore_prefix
-  autoresolve: true
-  notes: ''
-- loot_table_id: minecraft:chests/shipwreck_map
-  structure_id: minecraft:shipwreck_beached
-  match_rule: ambiguous_structure_id_submatch
-  evidence_data:
-    structure_id_submatch: shipwreck
-    matched_value: shipwreck
-    match_mode: underscore_prefix
-  autoresolve: true
-  notes: ''
-- loot_table_id: minecraft:chests/shipwreck_supply
-  structure_id: minecraft:shipwreck
-  match_rule: ambiguous_structure_root_match
-  evidence_data:
-    structure_root: shipwreck
-    matched_value: shipwreck
-    match_mode: underscore_prefix
-  autoresolve: true
-  notes: ''
-- loot_table_id: minecraft:chests/shipwreck_supply
-  structure_id: minecraft:shipwreck_beached
-  match_rule: ambiguous_structure_id_submatch
-  evidence_data:
-    structure_id_submatch: shipwreck
-    matched_value: shipwreck
-    match_mode: underscore_prefix
-  autoresolve: true
-  notes: ''
-- loot_table_id: minecraft:chests/shipwreck_treasure
-  structure_id: minecraft:shipwreck
-  match_rule: ambiguous_structure_root_match
-  evidence_data:
-    structure_root: shipwreck
-    matched_value: shipwreck
-    match_mode: underscore_prefix
-  autoresolve: true
-  notes: ''
-- loot_table_id: minecraft:chests/shipwreck_treasure
-  structure_id: minecraft:shipwreck_beached
-  match_rule: ambiguous_structure_id_submatch
-  evidence_data:
-    structure_id_submatch: shipwreck
-    matched_value: shipwreck
-    match_mode: underscore_prefix
   autoresolve: true
   notes: ''
 - loot_table_id: minecraft:chests/stronghold_corridor

@@ -12,6 +12,10 @@
   },
   "structures": [
     {
+      "structure": "bosses_of_mass_destruction:lich_tower",
+      "weight": 10
+    },
+    {
       "structure": "minecraft:mansion",
       "weight": 10
     }

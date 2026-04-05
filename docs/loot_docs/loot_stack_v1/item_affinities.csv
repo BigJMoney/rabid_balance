@@ -1,4 +1,6 @@
 item_id,affinity,classification_version
+bosses_of_mass_destruction:chiseled_stone_altar,masonry,10
+bosses_of_mass_destruction:soul_star,nether,10
 creeperoverhaul:bamboo_creeper_spawn_egg,jungle,10
 creeperoverhaul:birch_creeper_spawn_egg,village,10
 creeperoverhaul:jungle_creeper_spawn_egg,jungle,10
@@ -16,7 +18,6 @@ endermanoverhaul:soul_pearl,nether,10
 endermanoverhaul:summoner_pearl,nether,10
 endermanoverhaul:warped_forest_enderman_spawn_egg,nether,10
 endermanoverhaul:warped_pearl,nether,10
-illagerinvasion:lost_candle,underground,10
 kobolds:kobold_iron_hoe,village,10
 kobolds:kobold_iron_pickaxe,underground,10
 kobolds:kobold_iron_shovel,village,10

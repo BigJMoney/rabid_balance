@@ -13,7 +13,7 @@
   "included_dirs": [
     {
       "name": "chests",
-      "file_count": 67
+      "file_count": 63
     },
     {
       "name": "equipment",
@@ -35,7 +35,7 @@
     },
     {
       "name": "blocks",
-      "file_count": 1063
+      "file_count": 1064
     },
     {
       "name": "dispensers",
@@ -43,7 +43,7 @@
     },
     {
       "name": "entities",
-      "file_count": 158
+      "file_count": 114
     },
     {
       "name": "gameplay",
@@ -109,11 +109,11 @@
     },
     {
       "name": "blocks",
-      "file_count": 1063
+      "file_count": 1064
     },
     {
       "name": "chests",
-      "file_count": 67
+      "file_count": 63
     },
     {
       "name": "dispensers",
@@ -121,7 +121,7 @@
     },
     {
       "name": "entities",
-      "file_count": 158
+      "file_count": 114
     },
     {
       "name": "equipment",
@@ -148,8 +148,8 @@
       "file_count": 5
     }
   ],
-  "included_table_total": 76,
-  "excluded_table_total": 1257,
+  "included_table_total": 72,
+  "excluded_table_total": 1214,
   "deferred_table_total": 11,
   "new_excluded_loot_dirs_from_mods": [],
   "warnings": []

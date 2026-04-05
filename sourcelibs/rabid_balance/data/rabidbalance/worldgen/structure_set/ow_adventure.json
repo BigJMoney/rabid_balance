@@ -12,6 +12,10 @@
   },
   "structures": [
     {
+      "structure": "bosses_of_mass_destruction:void_blossom",
+      "weight": 10
+    },
+    {
       "structure": "minecraft:desert_pyramid",
       "weight": 10
     },

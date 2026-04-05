@@ -1,174 +1,19 @@
 {
-  "exact_match_table_count": 38,
-  "exact_match_row_count": 49,
+  "exact_match_table_count": 39,
+  "exact_match_row_count": 50,
   "ambiguous_match_candidate_table_count": 35,
   "ambiguous_match_candidate_row_count": 79,
   "ambiguous_match_autoresolved_table_count": 14,
   "ambiguous_match_autoresolved_row_count": 20,
   "ambiguous_match_pending_table_count": 21,
   "ambiguous_match_pending_row_count": 59,
-  "no_match_table_count": 22,
+  "no_match_table_count": 17,
   "no_match_mapped_table_count": 5,
   "no_match_mapped_row_count": 7,
-  "no_match_unresolved_table_count": 17,
-  "no_match_unresolved_row_count": 17,
-  "stale_ambiguous_rows": [
-    {
-      "loot_table_id": "illagerinvasion:chests/labyrinth",
-      "structure_id": "illagerinvasion:labyrinth",
-      "match_rule": "ambiguous_structure_root_match",
-      "evidence_data": {
-        "structure_root": "labyrinth",
-        "matched_value": "labyrinth",
-        "match_mode": "first_segment"
-      },
-      "autoresolve": false,
-      "notes": ""
-    },
-    {
-      "loot_table_id": "illagerinvasion:chests/labyrinth_map",
-      "structure_id": "illagerinvasion:labyrinth",
-      "match_rule": "ambiguous_structure_root_match",
-      "evidence_data": {
-        "structure_root": "labyrinth",
-        "matched_value": "labyrinth",
-        "match_mode": "underscore_prefix"
-      },
-      "autoresolve": true,
-      "notes": ""
-    },
-    {
-      "loot_table_id": "minecraft:chests/shipwreck_map",
-      "structure_id": "minecraft:shipwreck",
-      "match_rule": "ambiguous_structure_root_match",
-      "evidence_data": {
-        "structure_root": "shipwreck",
-        "matched_value": "shipwreck",
-        "match_mode": "underscore_prefix"
-      },
-      "autoresolve": true,
-      "notes": ""
-    },
-    {
-      "loot_table_id": "minecraft:chests/shipwreck_map",
-      "structure_id": "minecraft:shipwreck_beached",
-      "match_rule": "ambiguous_structure_id_submatch",
-      "evidence_data": {
-        "structure_id_submatch": "shipwreck",
-        "matched_value": "shipwreck",
-        "match_mode": "underscore_prefix"
-      },
-      "autoresolve": true,
-      "notes": ""
-    },
-    {
-      "loot_table_id": "minecraft:chests/shipwreck_supply",
-      "structure_id": "minecraft:shipwreck",
-      "match_rule": "ambiguous_structure_root_match",
-      "evidence_data": {
-        "structure_root": "shipwreck",
-        "matched_value": "shipwreck",
-        "match_mode": "underscore_prefix"
-      },
-      "autoresolve": true,
-      "notes": ""
-    },
-    {
-      "loot_table_id": "minecraft:chests/shipwreck_supply",
-      "structure_id": "minecraft:shipwreck_beached",
-      "match_rule": "ambiguous_structure_id_submatch",
-      "evidence_data": {
-        "structure_id_submatch": "shipwreck",
-        "matched_value": "shipwreck",
-        "match_mode": "underscore_prefix"
-      },
-      "autoresolve": true,
-      "notes": ""
-    },
-    {
-      "loot_table_id": "minecraft:chests/shipwreck_treasure",
-      "structure_id": "minecraft:shipwreck",
-      "match_rule": "ambiguous_structure_root_match",
-      "evidence_data": {
-        "structure_root": "shipwreck",
-        "matched_value": "shipwreck",
-        "match_mode": "underscore_prefix"
-      },
-      "autoresolve": true,
-      "notes": ""
-    },
-    {
-      "loot_table_id": "minecraft:chests/shipwreck_treasure",
-      "structure_id": "minecraft:shipwreck_beached",
-      "match_rule": "ambiguous_structure_id_submatch",
-      "evidence_data": {
-        "structure_id_submatch": "shipwreck",
-        "matched_value": "shipwreck",
-        "match_mode": "underscore_prefix"
-      },
-      "autoresolve": true,
-      "notes": ""
-    }
-  ],
+  "no_match_unresolved_table_count": 12,
+  "no_match_unresolved_row_count": 12,
+  "stale_ambiguous_rows": [],
   "stale_manual_rows": [],
-  "skipped_active_stale_rows": [
-    {
-      "resolution_source": "ambiguous_match",
-      "loot_table_id": "illagerinvasion:chests/labyrinth_map",
-      "structure_id": "illagerinvasion:labyrinth",
-      "warning": "stale ambiguous autoresolve skipped for illagerinvasion:chests/labyrinth_map -> illagerinvasion:labyrinth"
-    },
-    {
-      "resolution_source": "ambiguous_match",
-      "loot_table_id": "minecraft:chests/shipwreck_map",
-      "structure_id": "minecraft:shipwreck",
-      "warning": "stale ambiguous autoresolve skipped for minecraft:chests/shipwreck_map -> minecraft:shipwreck"
-    },
-    {
-      "resolution_source": "ambiguous_match",
-      "loot_table_id": "minecraft:chests/shipwreck_map",
-      "structure_id": "minecraft:shipwreck_beached",
-      "warning": "stale ambiguous autoresolve skipped for minecraft:chests/shipwreck_map -> minecraft:shipwreck_beached"
-    },
-    {
-      "resolution_source": "ambiguous_match",
-      "loot_table_id": "minecraft:chests/shipwreck_supply",
-      "structure_id": "minecraft:shipwreck",
-      "warning": "stale ambiguous autoresolve skipped for minecraft:chests/shipwreck_supply -> minecraft:shipwreck"
-    },
-    {
-      "resolution_source": "ambiguous_match",
-      "loot_table_id": "minecraft:chests/shipwreck_supply",
-      "structure_id": "minecraft:shipwreck_beached",
-      "warning": "stale ambiguous autoresolve skipped for minecraft:chests/shipwreck_supply -> minecraft:shipwreck_beached"
-    },
-    {
-      "resolution_source": "ambiguous_match",
-      "loot_table_id": "minecraft:chests/shipwreck_treasure",
-      "structure_id": "minecraft:shipwreck",
-      "warning": "stale ambiguous autoresolve skipped for minecraft:chests/shipwreck_treasure -> minecraft:shipwreck"
-    },
-    {
-      "resolution_source": "ambiguous_match",
-      "loot_table_id": "minecraft:chests/shipwreck_treasure",
-      "structure_id": "minecraft:shipwreck_beached",
-      "warning": "stale ambiguous autoresolve skipped for minecraft:chests/shipwreck_treasure -> minecraft:shipwreck_beached"
-    },
-    {
-      "resolution_source": "manual_no_match",
-      "loot_table_id": "minecraft:chests/abandoned_mineshaft",
-      "structure_id": "minecraft:mineshaft",
-      "warning": "manual no-match mapping target missing from current active structures for minecraft:chests/abandoned_mineshaft -> minecraft:mineshaft"
-    }
-  ],
-  "warnings": [
-    "stale ambiguous autoresolve skipped for illagerinvasion:chests/labyrinth_map -> illagerinvasion:labyrinth",
-    "stale ambiguous autoresolve skipped for minecraft:chests/shipwreck_map -> minecraft:shipwreck",
-    "stale ambiguous autoresolve skipped for minecraft:chests/shipwreck_map -> minecraft:shipwreck_beached",
-    "stale ambiguous autoresolve skipped for minecraft:chests/shipwreck_supply -> minecraft:shipwreck",
-    "stale ambiguous autoresolve skipped for minecraft:chests/shipwreck_supply -> minecraft:shipwreck_beached",
-    "stale ambiguous autoresolve skipped for minecraft:chests/shipwreck_treasure -> minecraft:shipwreck",
-    "stale ambiguous autoresolve skipped for minecraft:chests/shipwreck_treasure -> minecraft:shipwreck_beached",
-    "manual no-match mapping target missing from current active structures for minecraft:chests/abandoned_mineshaft -> minecraft:mineshaft"
-  ]
+  "skipped_active_stale_rows": [],
+  "warnings": []
 }

@@ -1,4 +1,25 @@
 item_id,function,affinities,value,amount_class,matched_rule_id,matched_detail,amatched_details,classification_status,is_fallback_match,classification_version
+bosses_of_mass_destruction:ancient_anima,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:blazing_eye,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:brimstone_nectar,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:charged_ender_pearl,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:crystal_fruit,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:earthdive_spear,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:gauntlet_blackstone,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:levitation_block,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:mob_ward,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:monolith_block,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:obsidian_heart,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:obsidilith_end_frame,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:obsidilith_rune,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:sealed_blackstone,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:soul_star,unmatched,['nether'],none,singleton,fallback,no match,['soul_*'],fallback,true,10
+bosses_of_mass_destruction:vine_wall,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:void_blossom,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:void_blossom_block,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:void_lily,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:void_thorn,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+bosses_of_mass_destruction:chiseled_stone_altar,block_building,['masonry'],filler,large,building_blocks,chiseled_*,['chiseled_*'],matched,false,10
 copperagebackport:copper_button,ignore,[],none,singleton,ignored_items,copperagebackport:copper_button,,matched,false,10
 copperagebackport:exposed_copper_button,block_building,[],filler,large,building_blocks,exposed_*,,matched,false,10
 copperagebackport:oxidized_copper_button,block_building,[],filler,large,building_blocks,oxidized_*,,matched,false,10
@@ -63,29 +84,6 @@ gravestone:gravestone,nonloot,[],none,singleton,excluded_items,gravestone:graves
 gravestone:obituary,nonloot,[],none,singleton,excluded_items,gravestone:obituary,,matched,false,10
 guardvillagers:guard_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
 guardvillagers:illusioner_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
-illagerinvasion:alchemist_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
-illagerinvasion:archivist_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
-illagerinvasion:basher_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
-illagerinvasion:firecaller_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
-illagerinvasion:hallowed_gem,item_material,[],epic,small,material_items,illagerinvasion:hallowed_gem,,matched,false,10
-illagerinvasion:horn_of_sight,misc_tool,[],epic,singleton,misc_tools,illagerinvasion:horn_of_sight,,matched,false,10
-illagerinvasion:illusionary_dust,item_material,[],rare,small,material_items,illagerinvasion:illusionary_dust,,matched,false,10
-illagerinvasion:illusioner_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
-illagerinvasion:imbuing_table,block_crafting,[],legendary,singleton,crafting_blocks,illagerinvasion:imbuing_table,,matched,false,10
-illagerinvasion:inquisitor_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
-illagerinvasion:invoker_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
-illagerinvasion:lost_candle,misc_tool,['underground'],epic,singleton,misc_tools,illagerinvasion:lost_candle,['illagerinvasion:lost_candle'],matched,false,10
-illagerinvasion:magical_fire_charge,item_material,[],rare,small,material_items,illagerinvasion:magical_fire_charge,,matched,false,10
-illagerinvasion:marauder_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
-illagerinvasion:necromancer_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
-illagerinvasion:platinum_chunk,item_material,[],rare,small,material_items,illagerinvasion:platinum_chunk,,matched,false,10
-illagerinvasion:platinum_infused_hatchet,weapon,[],rare,singleton,weapons,illagerinvasion:platinum_infused_hatchet,,matched,false,10
-illagerinvasion:platinum_sheet,item_material,[],rare,small,material_items,illagerinvasion:platinum_sheet,,matched,false,10
-illagerinvasion:primal_essence,item_material,[],epic,small,material_items,illagerinvasion:primal_essence,,matched,false,10
-illagerinvasion:provoker_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
-illagerinvasion:sorcerer_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
-illagerinvasion:surrendered_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
-illagerinvasion:unusual_dust,item_material,[],rare,small,material_items,illagerinvasion:unusual_dust,,matched,false,10
 kobolds:banner_pattern_kobold,item_material,[],rare,singleton,material_items,*banner_pattern*,,matched,false,10
 kobolds:kobold_captain_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
 kobolds:kobold_enchanter_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
@@ -1668,6 +1666,34 @@ reanimal:seal_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,ma
 reanimal:starfish_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
 reanimal:vulture_egg,ignore,[],none,singleton,ignored_items,reanimal:vulture_egg,,matched,false,10
 reanimal:vulture_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
+rottencreatures:burned_head,wearable,[],epic,singleton,wearable_equipment,*_head,,matched,false,10
+rottencreatures:burned_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
+rottencreatures:corrupted_wart,ignore,[],none,singleton,ignored_items,rottencreatures:corrupted_wart,,matched,false,10
+rottencreatures:dead_beard_head,wearable,[],epic,singleton,wearable_equipment,*_head,,matched,false,10
+rottencreatures:dead_beard_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
+rottencreatures:frostbitten_head,wearable,[],epic,singleton,wearable_equipment,*_head,,matched,false,10
+rottencreatures:frostbitten_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
+rottencreatures:frozen_rotten_flesh,ignore,[],none,singleton,ignored_items,rottencreatures:frozen_rotten_flesh,,matched,false,10
+rottencreatures:glacial_hunter_head,wearable,[],epic,singleton,wearable_equipment,*_head,,matched,false,10
+rottencreatures:glacial_hunter_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
+rottencreatures:hunter_wolf_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
+rottencreatures:immortal_head,wearable,[],epic,singleton,wearable_equipment,*_head,,matched,false,10
+rottencreatures:immortal_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
+rottencreatures:magma_rotten_flesh,ignore,[],none,singleton,ignored_items,rottencreatures:magma_rotten_flesh,,matched,false,10
+rottencreatures:mummy_head,wearable,[],epic,singleton,wearable_equipment,*_head,,matched,false,10
+rottencreatures:mummy_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
+rottencreatures:scarab_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
+rottencreatures:skeleton_lackey_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
+rottencreatures:spear,ignore,[],none,singleton,ignored_items,rottencreatures:spear,,matched,false,10
+rottencreatures:swampy_head,wearable,[],epic,singleton,wearable_equipment,*_head,,matched,false,10
+rottencreatures:swampy_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
+rottencreatures:tnt_barrel,ignore,[],none,singleton,ignored_items,rottencreatures:tnt_barrel,,matched,false,10
+rottencreatures:treasure_chest,ignore,[],none,singleton,ignored_items,rottencreatures:treasure_chest,,matched,false,10
+rottencreatures:undead_miner_head,wearable,[],epic,singleton,wearable_equipment,*_head,,matched,false,10
+rottencreatures:undead_miner_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
+rottencreatures:zap_head,wearable,[],epic,singleton,wearable_equipment,*_head,,matched,false,10
+rottencreatures:zap_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
+rottencreatures:zombie_lackey_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
 sophisticatedbackpacks:advanced_alchemy_upgrade,item_material,[],epic,small,material_items,#sophisticatedbackpacks:upgrade,,matched,false,10
 sophisticatedbackpacks:advanced_compacting_upgrade,item_material,[],epic,small,material_items,#sophisticatedbackpacks:upgrade,,matched,false,10
 sophisticatedbackpacks:advanced_deposit_upgrade,item_material,[],epic,small,material_items,#sophisticatedbackpacks:upgrade,,matched,false,10

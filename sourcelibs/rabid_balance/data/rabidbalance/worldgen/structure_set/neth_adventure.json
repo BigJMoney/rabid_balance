@@ -12,6 +12,10 @@
   },
   "structures": [
     {
+      "structure": "bosses_of_mass_destruction:gauntlet_arena",
+      "weight": 10
+    },
+    {
       "structure": "minecraft:bastion_remnant",
       "weight": 10
     },
