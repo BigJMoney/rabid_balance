@@ -7,20 +7,20 @@
 
 // Remove the enchanted book from Novice
 function nerfNoviceLibrarian(offerEvent) {
-  console.info("[MoreJS]: **VILLAGER OFFER EVENT**");
+  // console.info("[MoreJS]: **VILLAGER OFFER EVENT**");
 
   if (!offerEvent.isProfession("minecraft:librarian")) return
 
   const offer = offerEvent.offer
-  console.info(
-    `[librarian L${offerEvent.getVillagerLevel()}] ` +
-    `${offer.firstCost} + ${offer.secondCost} -> ${offer.output}`
-  )
+  // console.info(
+  //   `[librarian L${offerEvent.getVillagerLevel()}] ` +
+  //   `${offer.firstCost} + ${offer.secondCost} -> ${offer.output}`
+  // )
 
   if (offerEvent.getVillagerLevel() !== 1) return
 
   if (offerEvent.offer.output.id === "minecraft:enchanted_book") {
-    console.info("[MoreJS] Blocking novice librarian book offer")
+    // console.info("[MoreJS] Blocking novice librarian book offer")
     offerEvent.cancel()
   }
 }
@@ -35,14 +35,16 @@ function buffMasterLibrarian(offerEvent) {
   if (!offerEvent.isProfession("minecraft:librarian")) return
   if (offerEvent.getVillagerLevel() !== 5) return
 
-  let bookOffers = 0
-  for (const offer of offerEvent.getAllOffers()) {
-    if (offer.output.id === "minecraft:enchanted_book") {
-      bookOffers++
-    }
-  }
+  // todo: Dead Code?
+  // let bookOffers = 0
+  // for (const offer of offerEvent.getAllOffers()) {
+  //   if (offer.output.id === "minecraft:enchanted_book") {
+  //     bookOffers++
+  //   }
+  // }
+
   offerEvent.addTrade(new EnchantBookForEmeralds(20, EnchantmentTags.TRADEABLE))
-  console.info("Gave Master librarian extra enchanted book")
+  // console.info("Gave Master librarian extra enchanted book")
 }
 
 
