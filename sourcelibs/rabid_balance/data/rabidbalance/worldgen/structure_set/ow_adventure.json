@@ -22,6 +22,10 @@
     {
       "structure": "minecraft:jungle_pyramid",
       "weight": 10
+    },
+    {
+      "structure": "minecraft:shipwreck_beached",
+      "weight": 10
     }
   ]
 }
