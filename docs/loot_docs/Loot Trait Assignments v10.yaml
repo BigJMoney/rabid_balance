@@ -85,6 +85,8 @@ loot_classification_by_trait:
         - minecraft:farmland
         - minecraft:frogspawn
         - minecraft:chorus_plant
+        - gravestone:gravestone
+        - gravestone:obituary
         - "*_spawn_egg"
         - "sculk*"                                # Change when Apotheosis is added if it doesn't add them globally (actually I think it does)
       assign:
@@ -140,6 +142,7 @@ loot_classification_by_trait:
         - minecraft:ominous_trial_key
         - "#c:potions"                  # specific rules needed for generated instances? (lots of other places like this)
         - "#c:foods"
+        - "#endermanoverhaul:ender_pearls"
       assign:
         function: consumable
         value:
@@ -156,6 +159,7 @@ loot_classification_by_trait:
             - minecraft:enchanted_golden_apple
             - minecraft:firework_star
             - minecraft:trial_key
+            - "#endermanoverhaul:ender_pearls"
           rare:
             - minecraft:golden_carrot
             - minecraft:golden_apple
@@ -187,6 +191,7 @@ loot_classification_by_trait:
         - minecraft:wolf_armor
         - minecraft:elytra
         - minecraft:saddle
+        - toolbelt:belt
         - "*_horse_armor"
         - "*_head"
         - "*backpack"                           # Sophisticated Backpacks
@@ -225,6 +230,7 @@ loot_classification_by_trait:
             # - "#golden"
             # - "#chainmail"
           common:
+            - toolbelt:belt
             - "leather_*"
             - "wooden_*"                        # Immersive Armors
             # - "#leather"
@@ -269,6 +275,7 @@ loot_classification_by_trait:
           uncommon:
             - "golden_*"
             - "copper_*"
+            - "kobold_iron_*"
             # - "#golden"
           common:
             - minecraft:arrow
@@ -422,6 +429,7 @@ loot_classification_by_trait:
         - minecraft:honeycomb
         - minecraft:copper_block
         - minecraft:pumpkin
+        - toolbelt:pouch
         # Rar
         - minecraft:coal_block
         - minecraft:diamond
@@ -493,7 +501,7 @@ loot_classification_by_trait:
         - "disc_fragment_*"
         - "*_mushroom"
         - "*_fungus"
-        - "*_banner_pattern"
+        - "*_banner_pattern*"
         - "raw_*"                   # includes both raw_* and raw_*_block
         - "#c:ores"
         - "#c:nuggets"
@@ -562,6 +570,7 @@ loot_classification_by_trait:
             - minecraft:cobweb
             - minecraft:honeycomb
             - minecraft:pumpkin
+            - toolbelt:pouch
             - "#c:dyes"
             - "#c:ores/iron"
             - "#c:ores/gold"
@@ -607,6 +616,8 @@ loot_classification_by_trait:
             - minecraft:sniffer_egg
             - minecraft:echo_shard
             - minecraft:pumpkin
+            - toolbelt:pouch
+            - "*_banner_pattern*"
             - "#c:storage_blocks"
             # put all blocks here
           tiny:
@@ -1018,6 +1029,7 @@ loot_classification_by_trait:
 
         - "bamboo_mosaic*"
         - "waxed_*"
+        - "kobold*skull"
         - "*_bars"
         - "*_grate"
         - "*_pillar"
@@ -1074,6 +1086,7 @@ loot_classification_by_trait:
             - "*_grate"
             - "*_pillar"
             - "#minecraft:skulls"
+            - "kobold*skull"
             - "#c:concretes"
         function: block_building
         amount_class: 
@@ -1144,6 +1157,7 @@ loot_classification_by_trait:
         - "wither_*"
         - "#c:obsidians"
         - "#c:netherracks"
+        - "#endermanoverhaul:ender_pearls"
 
 
     - id: underground        # Y-based
