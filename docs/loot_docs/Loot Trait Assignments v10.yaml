@@ -29,6 +29,7 @@ loot_classification_by_trait:
     - block_misc_use
     - block_material
     - block_building
+    - ignore
     - unmatched
 
   amount_ranges:
@@ -49,6 +50,178 @@ loot_classification_by_trait:
       - base amount_class from item rule
       - optional context modifier by location / structure / danger / budget
       - hard caps for singleton or progression-sensitive items
+
+  ignored_items:
+    # todo: remove when tag bug is fixed
+    - copperagebackport:copper_button
+
+    - creeperoverhaul:tiny_cactus
+    
+    - endermanoverhaul:badlands_hood
+    - endermanoverhaul:corrupted_blade
+    - endermanoverhaul:corrupted_shield
+    - endermanoverhaul:enderman_tooth
+    - endermanoverhaul:savanna_hood
+    - endermanoverhaul:snowy_hood
+    - endermanoverhaul:tiny_skull
+
+    # todo: remove when tag bug is fixed (vanilla backport)
+    - minecraft:acacia_shelf
+    - minecraft:bamboo_shelf
+    - minecraft:birch_shelf
+    - minecraft:black_bundle
+    - minecraft:black_harness
+    - minecraft:blue_bundle
+    - minecraft:blue_egg
+    - minecraft:blue_harness
+    - minecraft:brown_bundle
+    - minecraft:brown_egg
+    - minecraft:brown_harness
+    - minecraft:bush
+    - minecraft:cherry_shelf
+    - minecraft:copper_chain
+    - minecraft:copper_chest
+    - minecraft:copper_golem_statue
+    - minecraft:copper_lantern
+    - minecraft:copper_nugget
+    - minecraft:copper_torch
+    - minecraft:creaking_heart
+    - minecraft:crimson_shelf
+    - minecraft:cyan_bundle
+    - minecraft:cyan_harness
+    - minecraft:dark_oak_shelf
+    - minecraft:dried_ghast
+    - minecraft:firefly_bush
+    - minecraft:gray_bundle
+    - minecraft:gray_harness
+    - minecraft:green_bundle
+    - minecraft:green_harness
+    - minecraft:jungle_shelf
+    - minecraft:leaf_litter
+    - minecraft:light_blue_bundle
+    - minecraft:light_blue_harness
+    - minecraft:light_gray_bundle
+    - minecraft:light_gray_harness
+    - minecraft:lime_bundle
+    - minecraft:lime_harness
+    - minecraft:magenta_bundle
+    - minecraft:magenta_harness
+    - minecraft:mangrove_shelf
+    - minecraft:oak_shelf
+    - minecraft:orange_bundle
+    - minecraft:orange_harness
+    - minecraft:pale_hanging_moss
+    - minecraft:pale_moss_carpet
+    - minecraft:pale_oak_fence_gate
+    - minecraft:pale_oak_shelf
+    - minecraft:pink_bundle
+    - minecraft:pink_harness
+    - minecraft:purple_bundle
+    - minecraft:purple_harness
+    - minecraft:red_bundle
+    - minecraft:red_harness
+    - minecraft:resin_block
+    - minecraft:resin_brick
+    - minecraft:resin_clump
+    - minecraft:short_dry_grass
+    - minecraft:spruce_shelf
+    - minecraft:tall_dry_grass
+    - minecraft:warped_shelf
+    - minecraft:white_bundle
+    - minecraft:white_harness
+    - minecraft:yellow_bundle
+    - minecraft:yellow_harness
+
+    # todo: remove when tag bug is fixed
+    - reanimal:butterfly_pollen
+    - reanimal:cooked_capybara_meat
+    - reanimal:cooked_crocodile_meat
+    - reanimal:cooked_giraffe_meat
+    - reanimal:cooked_hedgehog_meat
+    - reanimal:cooked_hippopotamus_meat
+    - reanimal:cooked_kiwi_meat
+    - reanimal:cooked_ostrich_meat
+    - reanimal:cooked_pigeon_meat
+    - reanimal:cooked_seal_meat
+    - reanimal:cooked_starfish_caviar
+    - reanimal:crocodile_egg
+    - reanimal:glow_stick_black
+    - reanimal:glow_stick_blue
+    - reanimal:glow_stick_brown
+    - reanimal:glow_stick_cyan
+    - reanimal:glow_stick_gray
+    - reanimal:glow_stick_green
+    - reanimal:glow_stick_light_blue
+    - reanimal:glow_stick_light_gray
+    - reanimal:glow_stick_lime
+    - reanimal:glow_stick_magenta
+    - reanimal:glow_stick_orange
+    - reanimal:glow_stick_pink
+    - reanimal:glow_stick_purple
+    - reanimal:glow_stick_red
+    - reanimal:glow_stick_white
+    - reanimal:glow_stick_yellow
+    - reanimal:jellyfish_jelly
+    - reanimal:kiwi_egg
+    - reanimal:ostrich_egg
+    - reanimal:penguin_egg
+    - reanimal:pigeon_egg
+    - reanimal:quill
+    - reanimal:quill_arrow
+    - reanimal:quill_platform
+    - reanimal:sea_urchin_caviar
+    - reanimal:vulture_egg
+
+    - upgrade_aquatic:beachgrass
+    - upgrade_aquatic:beachgrass_thatch
+    - upgrade_aquatic:bedroll
+    - upgrade_aquatic:blue_jelly_torch
+    - upgrade_aquatic:boiled_pickerelweed_block
+    - upgrade_aquatic:coralstone
+    - upgrade_aquatic:driftwood_beehive
+    - upgrade_aquatic:driftwood_boards
+    - upgrade_aquatic:driftwood_bookshelf
+    - upgrade_aquatic:driftwood_chest
+    - upgrade_aquatic:driftwood_fence_gate
+    - upgrade_aquatic:driftwood_furnace_boat
+    - upgrade_aquatic:driftwood_ladder
+    - upgrade_aquatic:elder_eye
+    - upgrade_aquatic:embedded_ammonite
+    - upgrade_aquatic:green_jelly_torch
+    - upgrade_aquatic:kelp_block
+    - upgrade_aquatic:kelpy_cobblestone
+    - upgrade_aquatic:large_driftwood_boat
+    - upgrade_aquatic:large_river_boat
+    - upgrade_aquatic:luminous_prismarine
+    - upgrade_aquatic:mulberry_jam_block
+    - upgrade_aquatic:mulberry_punnet
+    - upgrade_aquatic:orange_jelly_torch
+    - upgrade_aquatic:pickerelweed
+    - upgrade_aquatic:pickerelweed_block
+    - upgrade_aquatic:pink_jelly_torch
+    - upgrade_aquatic:prismarine_rod
+    - upgrade_aquatic:prismarine_rod_bundle
+    - upgrade_aquatic:purple_jelly_torch
+    - upgrade_aquatic:red_jelly_torch
+    - upgrade_aquatic:river_beehive
+    - upgrade_aquatic:river_boards
+    - upgrade_aquatic:river_bookshelf
+    - upgrade_aquatic:river_chest
+    - upgrade_aquatic:river_fence_gate
+    - upgrade_aquatic:river_furnace_boat
+    - upgrade_aquatic:river_ladder
+    - upgrade_aquatic:river_leaf_pile
+    - upgrade_aquatic:scute_block
+    - upgrade_aquatic:scute_pavement
+    - upgrade_aquatic:scute_shingles
+    - upgrade_aquatic:tall_beachgrass
+    - upgrade_aquatic:thrasher_tooth
+    - upgrade_aquatic:tooth_block
+    - upgrade_aquatic:tooth_lantern
+    - upgrade_aquatic:trapped_driftwood_chest
+    - upgrade_aquatic:trapped_river_chest
+    - upgrade_aquatic:white_jelly_torch
+    - upgrade_aquatic:yellow_jelly_torch
 
   
 #-----------------------------
@@ -248,6 +421,7 @@ loot_classification_by_trait:
         - minecraft:tipped_arrow
         - minecraft:snowball
         - illagerinvasion:platinum_infused_hatchet
+        - "kobold_iron_*"
         - "#minecraft:swords"
         - "#c:tools/ranged_weapon"
       assign:
@@ -412,6 +586,7 @@ loot_classification_by_trait:
         - minecraft:flint
         - minecraft:kelp
         - minecraft:nether_brick
+        - primity:flint_blade
         # Unc
         - minecraft:dried_kelp_block
         - minecraft:glowstone_dust
@@ -429,6 +604,7 @@ loot_classification_by_trait:
         - minecraft:honeycomb
         - minecraft:copper_block
         - minecraft:pumpkin
+        - primity:cast_iron_sheet
         - toolbelt:pouch
         # Rar
         - minecraft:coal_block
@@ -471,6 +647,7 @@ loot_classification_by_trait:
         - illagerinvasion:illusionary_dust
         - illagerinvasion:platinum_chunk
         - illagerinvasion:platinum_sheet
+        - primity:cast_iron_block
         - sophisticatedcore:xp_bucket
         # Epi
         - minecraft:nether_wart
@@ -501,7 +678,7 @@ loot_classification_by_trait:
         - "disc_fragment_*"
         - "*_mushroom"
         - "*_fungus"
-        - "*_banner_pattern*"
+        - "*banner_pattern*"
         - "raw_*"                   # includes both raw_* and raw_*_block
         - "#c:ores"
         - "#c:nuggets"
@@ -570,6 +747,7 @@ loot_classification_by_trait:
             - minecraft:cobweb
             - minecraft:honeycomb
             - minecraft:pumpkin
+            - primity:cast_iron_sheet
             - toolbelt:pouch
             - "#c:dyes"
             - "#c:ores/iron"
@@ -594,6 +772,7 @@ loot_classification_by_trait:
             - minecraft:flint
             - minecraft:kelp
             - minecraft:nether_brick
+            - primity:flint_blade
             - sophisticatedbackpacks:backpack
             - "#minecraft:wool"
             - "*_mushroom"
@@ -616,8 +795,9 @@ loot_classification_by_trait:
             - minecraft:sniffer_egg
             - minecraft:echo_shard
             - minecraft:pumpkin
+            - primity:flint_blade
             - toolbelt:pouch
-            - "*_banner_pattern*"
+            - "*banner_pattern*"
             - "#c:storage_blocks"
             # put all blocks here
           tiny:
@@ -625,6 +805,7 @@ loot_classification_by_trait:
             - minecraft:emerald_block
             - minecraft:netherite_scrap
             - minecraft:brick
+            - primity:cast_iron_block
             - "#minecraft:trim_templates"
           medium:
             - minecraft:glass

@@ -1,30 +1,31 @@
 classification version: 10
 total items: 1989
-fallback count: 167
+ignored count: 162
+fallback count: 0
 
 functions:
   block_building: 644
-  item_material: 248
+  item_material: 252
   nonloot: 198
   block_misc_use: 184
-  unmatched: 167
+  ignore: 162
   block_material: 146
   consumable: 77
   block_technical: 70
   misc_tool: 65
-  gather_tool: 57
+  gather_tool: 53
   wearable: 48
   garden: 24
+  weapon: 23
   block_storage: 22
   block_crafting: 21
-  weapon: 18
 
 affinities:
-  sea: 268
-  village: 125
+  sea: 263
+  village: 122
   masonry: 121
-  nether: 100
   household: 99
+  nether: 98
   fortification: 78
   woolworking: 73
   treasure: 70
@@ -32,32 +33,32 @@ affinities:
   underground: 59
   food: 53
   desert: 44
-  jungle: 41
   deep_under: 40
-  smithing: 38
+  jungle: 39
+  smithing: 37
   end: 36
-  leatherworking: 31
-  swamp: 26
+  leatherworking: 29
+  swamp: 25
   archaeology: 25
   clerical: 22
-  plains: 20
+  plains: 19
   farming: 17
   butchery: 11
-  fletching: 10
   fishing: 10
+  fletching: 9
   forest: 9
-  library: 8
+  library: 6
   arctic: 5
   cartography: 1
   ruins: 1
- Total Affinities: 1503
+ Total Affinities: 1483
 
 values:
-  uncommon: 583
+  uncommon: 585
   filler: 393
-  none: 373
-  rare: 316
-  common: 129
+  none: 368
+  rare: 318
+  common: 130
   epic: 79
   junk: 62
   legendary: 42
@@ -65,181 +66,15 @@ values:
 
 amount_classes:
   large: 725
-  singleton: 716
-  small: 494
+  singleton: 715
+  small: 495
   tiny: 25
   medium: 15
   bulk: 14
 
 dead rules:
+  fallback
 
 dead affinities:
 
 fallback items:
-  copperagebackport:copper_button
-  creeperoverhaul:tiny_cactus
-  endermanoverhaul:badlands_hood
-  endermanoverhaul:corrupted_blade
-  endermanoverhaul:corrupted_shield
-  endermanoverhaul:enderman_tooth
-  endermanoverhaul:savanna_hood
-  endermanoverhaul:snowy_hood
-  endermanoverhaul:tiny_skull
-  kobolds:banner_pattern_kobold
-  kobolds:kobold_iron_spear_sword
-  minecraft:acacia_shelf
-  minecraft:bamboo_shelf
-  minecraft:birch_shelf
-  minecraft:black_bundle
-  minecraft:black_harness
-  minecraft:blue_bundle
-  minecraft:blue_egg
-  minecraft:blue_harness
-  minecraft:brown_bundle
-  minecraft:brown_egg
-  minecraft:brown_harness
-  minecraft:bush
-  minecraft:cherry_shelf
-  minecraft:copper_chain
-  minecraft:copper_chest
-  minecraft:copper_golem_statue
-  minecraft:copper_lantern
-  minecraft:copper_nugget
-  minecraft:copper_torch
-  minecraft:creaking_heart
-  minecraft:crimson_shelf
-  minecraft:cyan_bundle
-  minecraft:cyan_harness
-  minecraft:dark_oak_shelf
-  minecraft:dried_ghast
-  minecraft:firefly_bush
-  minecraft:gray_bundle
-  minecraft:gray_harness
-  minecraft:green_bundle
-  minecraft:green_harness
-  minecraft:jungle_shelf
-  minecraft:leaf_litter
-  minecraft:light_blue_bundle
-  minecraft:light_blue_harness
-  minecraft:light_gray_bundle
-  minecraft:light_gray_harness
-  minecraft:lime_bundle
-  minecraft:lime_harness
-  minecraft:magenta_bundle
-  minecraft:magenta_harness
-  minecraft:mangrove_shelf
-  minecraft:oak_shelf
-  minecraft:orange_bundle
-  minecraft:orange_harness
-  minecraft:pale_hanging_moss
-  minecraft:pale_moss_carpet
-  minecraft:pale_oak_fence_gate
-  minecraft:pale_oak_shelf
-  minecraft:pink_bundle
-  minecraft:pink_harness
-  minecraft:purple_bundle
-  minecraft:purple_harness
-  minecraft:red_bundle
-  minecraft:red_harness
-  minecraft:resin_block
-  minecraft:resin_brick
-  minecraft:resin_clump
-  minecraft:short_dry_grass
-  minecraft:spruce_shelf
-  minecraft:tall_dry_grass
-  minecraft:warped_shelf
-  minecraft:white_bundle
-  minecraft:white_harness
-  minecraft:yellow_bundle
-  minecraft:yellow_harness
-  primity:cast_iron_block
-  primity:cast_iron_sheet
-  primity:flint_blade
-  reanimal:butterfly_pollen
-  reanimal:cooked_capybara_meat
-  reanimal:cooked_crocodile_meat
-  reanimal:cooked_giraffe_meat
-  reanimal:cooked_hedgehog_meat
-  reanimal:cooked_hippopotamus_meat
-  reanimal:cooked_kiwi_meat
-  reanimal:cooked_ostrich_meat
-  reanimal:cooked_pigeon_meat
-  reanimal:cooked_seal_meat
-  reanimal:cooked_starfish_caviar
-  reanimal:crocodile_egg
-  reanimal:glow_stick_black
-  reanimal:glow_stick_blue
-  reanimal:glow_stick_brown
-  reanimal:glow_stick_cyan
-  reanimal:glow_stick_gray
-  reanimal:glow_stick_green
-  reanimal:glow_stick_light_blue
-  reanimal:glow_stick_light_gray
-  reanimal:glow_stick_lime
-  reanimal:glow_stick_magenta
-  reanimal:glow_stick_orange
-  reanimal:glow_stick_pink
-  reanimal:glow_stick_purple
-  reanimal:glow_stick_red
-  reanimal:glow_stick_white
-  reanimal:glow_stick_yellow
-  reanimal:jellyfish_jelly
-  reanimal:kiwi_egg
-  reanimal:ostrich_egg
-  reanimal:penguin_egg
-  reanimal:pigeon_egg
-  reanimal:quill
-  reanimal:quill_arrow
-  reanimal:quill_platform
-  reanimal:sea_urchin_caviar
-  reanimal:vulture_egg
-  upgrade_aquatic:beachgrass
-  upgrade_aquatic:beachgrass_thatch
-  upgrade_aquatic:bedroll
-  upgrade_aquatic:blue_jelly_torch
-  upgrade_aquatic:boiled_pickerelweed_block
-  upgrade_aquatic:coralstone
-  upgrade_aquatic:driftwood_beehive
-  upgrade_aquatic:driftwood_boards
-  upgrade_aquatic:driftwood_bookshelf
-  upgrade_aquatic:driftwood_chest
-  upgrade_aquatic:driftwood_fence_gate
-  upgrade_aquatic:driftwood_furnace_boat
-  upgrade_aquatic:driftwood_ladder
-  upgrade_aquatic:elder_eye
-  upgrade_aquatic:embedded_ammonite
-  upgrade_aquatic:green_jelly_torch
-  upgrade_aquatic:kelp_block
-  upgrade_aquatic:kelpy_cobblestone
-  upgrade_aquatic:large_driftwood_boat
-  upgrade_aquatic:large_river_boat
-  upgrade_aquatic:luminous_prismarine
-  upgrade_aquatic:mulberry_jam_block
-  upgrade_aquatic:mulberry_punnet
-  upgrade_aquatic:orange_jelly_torch
-  upgrade_aquatic:pickerelweed
-  upgrade_aquatic:pickerelweed_block
-  upgrade_aquatic:pink_jelly_torch
-  upgrade_aquatic:prismarine_rod
-  upgrade_aquatic:prismarine_rod_bundle
-  upgrade_aquatic:purple_jelly_torch
-  upgrade_aquatic:red_jelly_torch
-  upgrade_aquatic:river_beehive
-  upgrade_aquatic:river_boards
-  upgrade_aquatic:river_bookshelf
-  upgrade_aquatic:river_chest
-  upgrade_aquatic:river_fence_gate
-  upgrade_aquatic:river_furnace_boat
-  upgrade_aquatic:river_ladder
-  upgrade_aquatic:river_leaf_pile
-  upgrade_aquatic:scute_block
-  upgrade_aquatic:scute_pavement
-  upgrade_aquatic:scute_shingles
-  upgrade_aquatic:tall_beachgrass
-  upgrade_aquatic:thrasher_tooth
-  upgrade_aquatic:tooth_block
-  upgrade_aquatic:tooth_lantern
-  upgrade_aquatic:trapped_driftwood_chest
-  upgrade_aquatic:trapped_river_chest
-  upgrade_aquatic:white_jelly_torch
-  upgrade_aquatic:yellow_jelly_torch

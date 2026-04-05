@@ -1,1878 +1,13 @@
 {
     "copperagebackport:copper_button": {
-        "function": "unmatched",
+        "function": "ignore",
         "affinities": [],
         "value": "none",
         "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "creeperoverhaul:tiny_cactus": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "endermanoverhaul:badlands_hood": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "endermanoverhaul:corrupted_blade": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "endermanoverhaul:corrupted_shield": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "endermanoverhaul:enderman_tooth": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "endermanoverhaul:savanna_hood": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "endermanoverhaul:snowy_hood": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "endermanoverhaul:tiny_skull": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "kobolds:banner_pattern_kobold": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "kobolds:kobold_iron_spear_sword": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:acacia_shelf": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:bamboo_shelf": {
-        "function": "unmatched",
-        "affinities": [
-            "jungle"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:birch_shelf": {
-        "function": "unmatched",
-        "affinities": [
-            "village"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:black_bundle": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:black_harness": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:blue_bundle": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:blue_egg": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:blue_harness": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:brown_bundle": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:brown_egg": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:brown_harness": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:bush": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:cherry_shelf": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:copper_chain": {
-        "function": "unmatched",
-        "affinities": [
-            "smithing"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:copper_chest": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:copper_golem_statue": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:copper_lantern": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:copper_nugget": {
-        "function": "unmatched",
-        "affinities": [
-            "leatherworking"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:copper_torch": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:creaking_heart": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:crimson_shelf": {
-        "function": "unmatched",
-        "affinities": [
-            "nether"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:cyan_bundle": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:cyan_harness": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:dark_oak_shelf": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:dried_ghast": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:firefly_bush": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:gray_bundle": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:gray_harness": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:green_bundle": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:green_harness": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:jungle_shelf": {
-        "function": "unmatched",
-        "affinities": [
-            "jungle"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:leaf_litter": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:light_blue_bundle": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:light_blue_harness": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:light_gray_bundle": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:light_gray_harness": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:lime_bundle": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:lime_harness": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:magenta_bundle": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:magenta_harness": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:mangrove_shelf": {
-        "function": "unmatched",
-        "affinities": [
-            "swamp"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:oak_shelf": {
-        "function": "unmatched",
-        "affinities": [
-            "plains",
-            "village"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:orange_bundle": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:orange_harness": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:pale_hanging_moss": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:pale_moss_carpet": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:pale_oak_fence_gate": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:pale_oak_shelf": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:pink_bundle": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:pink_harness": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:purple_bundle": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:purple_harness": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:red_bundle": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:red_harness": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:resin_block": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:resin_brick": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:resin_clump": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:short_dry_grass": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:spruce_shelf": {
-        "function": "unmatched",
-        "affinities": [
-            "village"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:tall_dry_grass": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:warped_shelf": {
-        "function": "unmatched",
-        "affinities": [
-            "nether"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:white_bundle": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:white_harness": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:yellow_bundle": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "minecraft:yellow_harness": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "primity:cast_iron_block": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "primity:cast_iron_sheet": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "primity:flint_blade": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:butterfly_pollen": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:cooked_capybara_meat": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:cooked_crocodile_meat": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:cooked_giraffe_meat": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:cooked_hedgehog_meat": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:cooked_hippopotamus_meat": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:cooked_kiwi_meat": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:cooked_ostrich_meat": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:cooked_pigeon_meat": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:cooked_seal_meat": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:cooked_starfish_caviar": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:crocodile_egg": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:glow_stick_black": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:glow_stick_blue": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:glow_stick_brown": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:glow_stick_cyan": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:glow_stick_gray": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:glow_stick_green": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:glow_stick_light_blue": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:glow_stick_light_gray": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:glow_stick_lime": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:glow_stick_magenta": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:glow_stick_orange": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:glow_stick_pink": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:glow_stick_purple": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:glow_stick_red": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:glow_stick_white": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:glow_stick_yellow": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:jellyfish_jelly": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:kiwi_egg": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:ostrich_egg": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:penguin_egg": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:pigeon_egg": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:quill": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:quill_arrow": {
-        "function": "unmatched",
-        "affinities": [
-            "fletching"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:quill_platform": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:sea_urchin_caviar": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "reanimal:vulture_egg": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:beachgrass": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:beachgrass_thatch": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:bedroll": {
-        "function": "unmatched",
-        "affinities": [
-            "leatherworking"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:blue_jelly_torch": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:boiled_pickerelweed_block": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:coralstone": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:driftwood_beehive": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:driftwood_boards": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:driftwood_bookshelf": {
-        "function": "unmatched",
-        "affinities": [
-            "library"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:driftwood_chest": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:driftwood_fence_gate": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:driftwood_furnace_boat": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:driftwood_ladder": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:elder_eye": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:embedded_ammonite": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:green_jelly_torch": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:kelp_block": {
-        "function": "unmatched",
-        "affinities": [
-            "sea"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:kelpy_cobblestone": {
-        "function": "unmatched",
-        "affinities": [
-            "sea"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:large_driftwood_boat": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:large_river_boat": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:luminous_prismarine": {
-        "function": "unmatched",
-        "affinities": [
-            "sea"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:mulberry_jam_block": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:mulberry_punnet": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:orange_jelly_torch": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:pickerelweed": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:pickerelweed_block": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:pink_jelly_torch": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:prismarine_rod": {
-        "function": "unmatched",
-        "affinities": [
-            "sea"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:prismarine_rod_bundle": {
-        "function": "unmatched",
-        "affinities": [
-            "sea"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:purple_jelly_torch": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:red_jelly_torch": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:river_beehive": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:river_boards": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:river_bookshelf": {
-        "function": "unmatched",
-        "affinities": [
-            "library"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:river_chest": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:river_fence_gate": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:river_furnace_boat": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:river_ladder": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:river_leaf_pile": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:scute_block": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:scute_pavement": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:scute_shingles": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:tall_beachgrass": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:thrasher_tooth": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:tooth_block": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:tooth_lantern": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:trapped_driftwood_chest": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:trapped_river_chest": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:white_jelly_torch": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
-    "upgrade_aquatic:yellow_jelly_torch": {
-        "function": "unmatched",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "copperagebackport:copper_button",
+        "classification_status": "matched",
+        "is_fallback_match": false,
         "classification_version": "10"
     },
     "copperagebackport:exposed_copper_button": {
@@ -2138,6 +273,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "creeperoverhaul:tiny_cactus": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "creeperoverhaul:tiny_cactus",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "endermanoverhaul:ancient_pearl": {
         "function": "consumable",
         "affinities": [
@@ -2158,6 +304,17 @@
         "amount_class": "singleton",
         "matched_rule_id": "excluded_items",
         "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "endermanoverhaul:badlands_hood": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "endermanoverhaul:badlands_hood",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -2197,6 +354,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "endermanoverhaul:corrupted_blade": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "endermanoverhaul:corrupted_blade",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "endermanoverhaul:corrupted_pearl": {
         "function": "consumable",
         "affinities": [
@@ -2206,6 +374,17 @@
         "amount_class": "small",
         "matched_rule_id": "consumable_items",
         "matched_detail": "#endermanoverhaul:ender_pearls",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "endermanoverhaul:corrupted_shield": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "endermanoverhaul:corrupted_shield",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -2276,6 +455,17 @@
         "amount_class": "singleton",
         "matched_rule_id": "excluded_items",
         "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "endermanoverhaul:enderman_tooth": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "endermanoverhaul:enderman_tooth",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -2352,6 +542,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "endermanoverhaul:savanna_hood": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "endermanoverhaul:savanna_hood",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "endermanoverhaul:scarab_spawn_egg": {
         "function": "nonloot",
         "affinities": [],
@@ -2370,6 +571,17 @@
         "amount_class": "singleton",
         "matched_rule_id": "excluded_items",
         "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "endermanoverhaul:snowy_hood": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "endermanoverhaul:snowy_hood",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -2429,6 +641,17 @@
         "amount_class": "singleton",
         "matched_rule_id": "excluded_items",
         "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "endermanoverhaul:tiny_skull": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "endermanoverhaul:tiny_skull",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -2769,6 +992,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "kobolds:banner_pattern_kobold": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "rare",
+        "amount_class": "singleton",
+        "matched_rule_id": "material_items",
+        "matched_detail": "*banner_pattern*",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "kobolds:kobold_captain_spawn_egg": {
         "function": "nonloot",
         "affinities": [],
@@ -2803,51 +1037,62 @@
         "classification_version": "10"
     },
     "kobolds:kobold_iron_axe": {
-        "function": "gather_tool",
+        "function": "weapon",
         "affinities": [],
         "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "gathering_tools",
-        "matched_detail": "#minecraft:axes",
+        "matched_rule_id": "weapons",
+        "matched_detail": "kobold_iron_*",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
     },
     "kobolds:kobold_iron_hoe": {
-        "function": "gather_tool",
+        "function": "weapon",
         "affinities": [
             "village"
         ],
         "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "gathering_tools",
-        "matched_detail": "#minecraft:hoes",
+        "matched_rule_id": "weapons",
+        "matched_detail": "kobold_iron_*",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
     },
     "kobolds:kobold_iron_pickaxe": {
-        "function": "gather_tool",
+        "function": "weapon",
         "affinities": [
             "underground"
         ],
         "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "gathering_tools",
-        "matched_detail": "#minecraft:pickaxes",
+        "matched_rule_id": "weapons",
+        "matched_detail": "kobold_iron_*",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
     },
     "kobolds:kobold_iron_shovel": {
-        "function": "gather_tool",
+        "function": "weapon",
         "affinities": [
             "village"
         ],
         "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "gathering_tools",
-        "matched_detail": "#minecraft:shovels",
+        "matched_rule_id": "weapons",
+        "matched_detail": "kobold_iron_*",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "kobolds:kobold_iron_spear_sword": {
+        "function": "weapon",
+        "affinities": [],
+        "value": "uncommon",
+        "amount_class": "singleton",
+        "matched_rule_id": "weapons",
+        "matched_detail": "kobold_iron_*",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -2858,7 +1103,7 @@
         "value": "uncommon",
         "amount_class": "singleton",
         "matched_rule_id": "weapons",
-        "matched_detail": "#minecraft:swords",
+        "matched_detail": "kobold_iron_*",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -3128,6 +1373,17 @@
         "amount_class": "small",
         "matched_rule_id": "garden_items",
         "matched_detail": "#minecraft:saplings",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:acacia_shelf": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:acacia_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -3696,6 +1952,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:bamboo_shelf": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:bamboo_shelf",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:bamboo_sign": {
         "function": "block_misc_use",
         "affinities": [
@@ -4092,6 +2359,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:birch_shelf": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:birch_shelf",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:birch_sign": {
         "function": "block_misc_use",
         "affinities": [
@@ -4183,6 +2461,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:black_bundle": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:black_bundle",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:black_candle": {
         "function": "block_misc_use",
         "affinities": [
@@ -4259,6 +2548,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#c:glazed_terracottas",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:black_harness": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:black_harness",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -4454,6 +2754,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:blue_bundle": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:blue_bundle",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:blue_candle": {
         "function": "block_misc_use",
         "affinities": [
@@ -4520,6 +2831,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:blue_egg": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:blue_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:blue_glazed_terracotta": {
         "function": "block_building",
         "affinities": [
@@ -4530,6 +2852,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#c:glazed_terracottas",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:blue_harness": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:blue_harness",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -4924,6 +3257,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:brown_bundle": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:brown_bundle",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:brown_candle": {
         "function": "block_misc_use",
         "affinities": [
@@ -4990,6 +3334,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:brown_egg": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:brown_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:brown_glazed_terracotta": {
         "function": "block_building",
         "affinities": [
@@ -5000,6 +3355,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#c:glazed_terracottas",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:brown_harness": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:brown_harness",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -5185,6 +3551,17 @@
         "amount_class": "small",
         "matched_rule_id": "material_items",
         "matched_detail": "#minecraft:decorated_pot_sherds",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:bush": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:bush",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -5597,6 +3974,17 @@
         "amount_class": "small",
         "matched_rule_id": "garden_items",
         "matched_detail": "#minecraft:saplings",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:cherry_shelf": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:cherry_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -6442,6 +4830,28 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:copper_chain": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:copper_chain",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:copper_chest": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:copper_chest",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:copper_chestplate": {
         "function": "wearable",
         "affinities": [],
@@ -6471,6 +4881,17 @@
         "amount_class": "singleton",
         "matched_rule_id": "excluded_items",
         "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:copper_golem_statue": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:copper_golem_statue",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -6534,6 +4955,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:copper_lantern": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:copper_lantern",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:copper_leggings": {
         "function": "wearable",
         "affinities": [],
@@ -6541,6 +4973,17 @@
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "#c:armors",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:copper_nugget": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:copper_nugget",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -6592,6 +5035,17 @@
         "amount_class": "singleton",
         "matched_rule_id": "weapons",
         "matched_detail": "#minecraft:swords",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:copper_torch": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:copper_torch",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -6713,6 +5167,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:creaking_heart": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:creaking_heart",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:creaking_spawn_egg": {
         "function": "nonloot",
         "affinities": [],
@@ -6733,7 +5198,7 @@
         "value": "rare",
         "amount_class": "singleton",
         "matched_rule_id": "material_items",
-        "matched_detail": "*_banner_pattern*",
+        "matched_detail": "*banner_pattern*",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -6902,6 +5367,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "*_roots",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:crimson_shelf": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:crimson_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -7111,6 +5587,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:cyan_bundle": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:cyan_bundle",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:cyan_candle": {
         "function": "block_misc_use",
         "affinities": [
@@ -7187,6 +5674,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#c:glazed_terracottas",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:cyan_harness": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:cyan_harness",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -7436,6 +5934,17 @@
         "amount_class": "small",
         "matched_rule_id": "garden_items",
         "matched_detail": "#minecraft:saplings",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:dark_oak_shelf": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:dark_oak_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -8336,6 +6845,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:dried_ghast": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:dried_ghast",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:dried_kelp": {
         "function": "consumable",
         "affinities": [
@@ -9025,6 +7545,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:firefly_bush": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:firefly_bush",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:firework_rocket": {
         "function": "consumable",
         "affinities": [
@@ -9123,7 +7654,7 @@
         "value": "rare",
         "amount_class": "singleton",
         "matched_rule_id": "material_items",
-        "matched_detail": "*_banner_pattern*",
+        "matched_detail": "*banner_pattern*",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -9150,7 +7681,7 @@
         "value": "rare",
         "amount_class": "singleton",
         "matched_rule_id": "material_items",
-        "matched_detail": "*_banner_pattern*",
+        "matched_detail": "*banner_pattern*",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -9362,7 +7893,7 @@
         "value": "rare",
         "amount_class": "singleton",
         "matched_rule_id": "material_items",
-        "matched_detail": "*_banner_pattern*",
+        "matched_detail": "*banner_pattern*",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -9787,6 +8318,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:gray_bundle": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:gray_bundle",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:gray_candle": {
         "function": "block_misc_use",
         "affinities": [
@@ -9863,6 +8405,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#c:glazed_terracottas",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:gray_harness": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:gray_harness",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -9955,6 +8508,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:green_bundle": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:green_bundle",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:green_candle": {
         "function": "block_misc_use",
         "affinities": [
@@ -10031,6 +8595,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#c:glazed_terracottas",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:green_harness": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:green_harness",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -10142,7 +8717,7 @@
         "value": "rare",
         "amount_class": "singleton",
         "matched_rule_id": "material_items",
-        "matched_detail": "*_banner_pattern*",
+        "matched_detail": "*banner_pattern*",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -10976,6 +9551,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:jungle_shelf": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:jungle_shelf",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:jungle_sign": {
         "function": "block_misc_use",
         "affinities": [
@@ -11177,6 +9763,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:leaf_litter": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:leaf_litter",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:leather": {
         "function": "item_material",
         "affinities": [
@@ -11313,6 +9910,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:light_blue_bundle": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:light_blue_bundle",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:light_blue_candle": {
         "function": "block_misc_use",
         "affinities": [
@@ -11389,6 +9997,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#c:glazed_terracottas",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:light_blue_harness": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:light_blue_harness",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -11481,6 +10100,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:light_gray_bundle": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:light_gray_bundle",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:light_gray_candle": {
         "function": "block_misc_use",
         "affinities": [
@@ -11557,6 +10187,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#c:glazed_terracottas",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:light_gray_harness": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:light_gray_harness",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -11708,6 +10349,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:lime_bundle": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:lime_bundle",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:lime_candle": {
         "function": "block_misc_use",
         "affinities": [
@@ -11784,6 +10436,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#c:glazed_terracottas",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:lime_harness": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:lime_harness",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -11933,6 +10596,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:magenta_bundle": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:magenta_bundle",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:magenta_candle": {
         "function": "block_misc_use",
         "affinities": [
@@ -12009,6 +10683,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#c:glazed_terracottas",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:magenta_harness": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:magenta_harness",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -12292,6 +10977,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:mangrove_shelf": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:mangrove_shelf",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:mangrove_sign": {
         "function": "block_misc_use",
         "affinities": [
@@ -12470,7 +11166,7 @@
         "value": "rare",
         "amount_class": "singleton",
         "matched_rule_id": "material_items",
-        "matched_detail": "*_banner_pattern*",
+        "matched_detail": "*banner_pattern*",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -13586,6 +12282,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:oak_shelf": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:oak_shelf",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:oak_sign": {
         "function": "block_misc_use",
         "affinities": [
@@ -13767,6 +12474,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:orange_bundle": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:orange_bundle",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:orange_candle": {
         "function": "block_misc_use",
         "affinities": [
@@ -13843,6 +12561,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#c:glazed_terracottas",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:orange_harness": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:orange_harness",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -14140,6 +12869,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:pale_hanging_moss": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:pale_hanging_moss",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:pale_moss_block": {
         "function": "block_building",
         "affinities": [],
@@ -14147,6 +12887,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#minecraft:dirt",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:pale_moss_carpet": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:pale_moss_carpet",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -14208,6 +12959,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#c:fences",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:pale_oak_fence_gate": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:pale_oak_fence_gate",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -14280,6 +13042,17 @@
         "amount_class": "small",
         "matched_rule_id": "garden_items",
         "matched_detail": "#minecraft:saplings",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:pale_oak_shelf": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:pale_oak_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -14451,7 +13224,7 @@
         "value": "rare",
         "amount_class": "singleton",
         "matched_rule_id": "material_items",
-        "matched_detail": "*_banner_pattern*",
+        "matched_detail": "*banner_pattern*",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -14521,6 +13294,17 @@
         "amount_class": "singleton",
         "matched_rule_id": "misc_use_blocks",
         "matched_detail": "#minecraft:beds",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:pink_bundle": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:pink_bundle",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -14601,6 +13385,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#c:glazed_terracottas",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:pink_harness": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:pink_harness",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -15503,6 +14298,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:purple_bundle": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:purple_bundle",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:purple_candle": {
         "function": "block_misc_use",
         "affinities": [
@@ -15579,6 +14385,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#c:glazed_terracottas",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:purple_harness": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:purple_harness",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -15981,6 +14798,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:red_bundle": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:red_bundle",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:red_candle": {
         "function": "block_misc_use",
         "affinities": [
@@ -16057,6 +14885,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#c:glazed_terracottas",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:red_harness": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:red_harness",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -16373,6 +15212,28 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:resin_block": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:resin_block",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:resin_brick": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:resin_brick",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:resin_brick_slab": {
         "function": "block_building",
         "affinities": [],
@@ -16413,6 +15274,17 @@
         "amount_class": "large",
         "matched_rule_id": "material_blocks",
         "matched_detail": "*_bricks",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:resin_clump": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:resin_clump",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -16797,6 +15669,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:short_dry_grass": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:short_dry_grass",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:short_grass": {
         "function": "block_building",
         "affinities": [],
@@ -16924,7 +15807,7 @@
         "value": "rare",
         "amount_class": "singleton",
         "matched_rule_id": "material_items",
-        "matched_detail": "*_banner_pattern*",
+        "matched_detail": "*banner_pattern*",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -17600,6 +16483,17 @@
         "amount_class": "small",
         "matched_rule_id": "garden_items",
         "matched_detail": "#minecraft:saplings",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:spruce_shelf": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:spruce_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -18356,6 +17250,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:tall_dry_grass": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:tall_dry_grass",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:tall_grass": {
         "function": "block_building",
         "affinities": [],
@@ -19070,6 +17975,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "*_roots",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:warped_shelf": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:warped_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -20091,6 +19007,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:white_bundle": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:white_bundle",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:white_candle": {
         "function": "block_misc_use",
         "affinities": [
@@ -20167,6 +19094,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#c:glazed_terracottas",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:white_harness": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:white_harness",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -20491,6 +19429,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "minecraft:yellow_bundle": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:yellow_bundle",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "minecraft:yellow_candle": {
         "function": "block_misc_use",
         "affinities": [
@@ -20567,6 +19516,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#c:glazed_terracottas",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "minecraft:yellow_harness": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "minecraft:yellow_harness",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -20700,6 +19660,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "primity:cast_iron_block": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "rare",
+        "amount_class": "singleton",
+        "matched_rule_id": "material_items",
+        "matched_detail": "primity:cast_iron_block",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "primity:cast_iron_ingot": {
         "function": "item_material",
         "affinities": [
@@ -20724,6 +19695,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "primity:cast_iron_sheet": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "uncommon",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "primity:cast_iron_sheet",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "primity:flint_axe": {
         "function": "gather_tool",
         "affinities": [],
@@ -20742,6 +19724,17 @@
         "amount_class": "singleton",
         "matched_rule_id": "wearable_equipment",
         "matched_detail": "*_head",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "primity:flint_blade": {
+        "function": "item_material",
+        "affinities": [],
+        "value": "common",
+        "amount_class": "singleton",
+        "matched_rule_id": "material_items",
+        "matched_detail": "primity:flint_blade",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -20829,6 +19822,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "reanimal:butterfly_pollen": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:butterfly_pollen",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "reanimal:butterfly_spawn_egg": {
         "function": "nonloot",
         "affinities": [],
@@ -20847,6 +19851,127 @@
         "amount_class": "singleton",
         "matched_rule_id": "excluded_items",
         "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:cooked_capybara_meat": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:cooked_capybara_meat",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:cooked_crocodile_meat": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:cooked_crocodile_meat",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:cooked_giraffe_meat": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:cooked_giraffe_meat",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:cooked_hedgehog_meat": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:cooked_hedgehog_meat",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:cooked_hippopotamus_meat": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:cooked_hippopotamus_meat",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:cooked_kiwi_meat": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:cooked_kiwi_meat",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:cooked_ostrich_meat": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:cooked_ostrich_meat",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:cooked_pigeon_meat": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:cooked_pigeon_meat",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:cooked_seal_meat": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:cooked_seal_meat",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:cooked_starfish_caviar": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:cooked_starfish_caviar",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:crocodile_egg": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:crocodile_egg",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -20884,6 +20009,182 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "reanimal:glow_stick_black": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:glow_stick_black",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:glow_stick_blue": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:glow_stick_blue",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:glow_stick_brown": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:glow_stick_brown",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:glow_stick_cyan": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:glow_stick_cyan",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:glow_stick_gray": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:glow_stick_gray",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:glow_stick_green": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:glow_stick_green",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:glow_stick_light_blue": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:glow_stick_light_blue",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:glow_stick_light_gray": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:glow_stick_light_gray",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:glow_stick_lime": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:glow_stick_lime",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:glow_stick_magenta": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:glow_stick_magenta",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:glow_stick_orange": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:glow_stick_orange",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:glow_stick_pink": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:glow_stick_pink",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:glow_stick_purple": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:glow_stick_purple",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:glow_stick_red": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:glow_stick_red",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:glow_stick_white": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:glow_stick_white",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:glow_stick_yellow": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:glow_stick_yellow",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "reanimal:hedgehog_spawn_egg": {
         "function": "nonloot",
         "affinities": [],
@@ -20906,6 +20207,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "reanimal:jellyfish_jelly": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:jellyfish_jelly",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "reanimal:jellyfish_spawn_egg": {
         "function": "nonloot",
         "affinities": [],
@@ -20913,6 +20225,17 @@
         "amount_class": "singleton",
         "matched_rule_id": "excluded_items",
         "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:kiwi_egg": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:kiwi_egg",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -20928,6 +20251,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "reanimal:ostrich_egg": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:ostrich_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "reanimal:ostrich_spawn_egg": {
         "function": "nonloot",
         "affinities": [],
@@ -20935,6 +20269,17 @@
         "amount_class": "singleton",
         "matched_rule_id": "excluded_items",
         "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:penguin_egg": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:penguin_egg",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -20950,6 +20295,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "reanimal:pigeon_egg": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:pigeon_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "reanimal:pigeon_spawn_egg": {
         "function": "nonloot",
         "affinities": [],
@@ -20957,6 +20313,39 @@
         "amount_class": "singleton",
         "matched_rule_id": "excluded_items",
         "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:quill": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:quill",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:quill_arrow": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:quill_arrow",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:quill_platform": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:quill_platform",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -21071,6 +20460,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "reanimal:sea_urchin_caviar": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:sea_urchin_caviar",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "reanimal:sea_urchin_spawn_egg": {
         "function": "nonloot",
         "affinities": [],
@@ -21100,6 +20500,17 @@
         "amount_class": "singleton",
         "matched_rule_id": "excluded_items",
         "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "reanimal:vulture_egg": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "reanimal:vulture_egg",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -21228,6 +20639,28 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "upgrade_aquatic:beachgrass": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:beachgrass",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:beachgrass_thatch": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:beachgrass_thatch",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "upgrade_aquatic:beachgrass_thatch_slab": {
         "function": "block_building",
         "affinities": [],
@@ -21250,6 +20683,28 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "upgrade_aquatic:bedroll": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:bedroll",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:blue_jelly_torch": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:blue_jelly_torch",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "upgrade_aquatic:boiled_pickerelweed": {
         "function": "consumable",
         "affinities": [
@@ -21260,6 +20715,17 @@
         "amount_class": "small",
         "matched_rule_id": "consumable_items",
         "matched_detail": "#c:foods",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:boiled_pickerelweed_block": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:boiled_pickerelweed_block",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -21913,6 +21379,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "upgrade_aquatic:coralstone": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:coralstone",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "upgrade_aquatic:coralstone_slab": {
         "function": "block_building",
         "affinities": [],
@@ -22412,6 +21889,28 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "upgrade_aquatic:driftwood_beehive": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:driftwood_beehive",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:driftwood_boards": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:driftwood_boards",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "upgrade_aquatic:driftwood_boat": {
         "function": "misc_tool",
         "affinities": [
@@ -22425,6 +21924,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "upgrade_aquatic:driftwood_bookshelf": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:driftwood_bookshelf",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "upgrade_aquatic:driftwood_button": {
         "function": "block_technical",
         "affinities": [],
@@ -22432,6 +21942,17 @@
         "amount_class": "singleton",
         "matched_rule_id": "technical_blocks",
         "matched_detail": "#minecraft:buttons",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:driftwood_chest": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:driftwood_chest",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -22473,6 +21994,28 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "upgrade_aquatic:driftwood_fence_gate": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:driftwood_fence_gate",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:driftwood_furnace_boat": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:driftwood_furnace_boat",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "upgrade_aquatic:driftwood_hanging_sign": {
         "function": "block_misc_use",
         "affinities": [
@@ -22482,6 +22025,17 @@
         "amount_class": "small",
         "matched_rule_id": "misc_use_blocks",
         "matched_detail": "#minecraft:hanging_signs",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:driftwood_ladder": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:driftwood_ladder",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -22561,6 +22115,17 @@
         "amount_class": "small",
         "matched_rule_id": "misc_use_blocks",
         "matched_detail": "#minecraft:trapdoors",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:elder_eye": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:elder_eye",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -22665,6 +22230,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "*_coral*",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:embedded_ammonite": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:embedded_ammonite",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -22869,6 +22445,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "upgrade_aquatic:green_jelly_torch": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:green_jelly_torch",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "upgrade_aquatic:horn_coralstone": {
         "function": "block_building",
         "affinities": [
@@ -22939,6 +22526,28 @@
         "amount_class": "singleton",
         "matched_rule_id": "excluded_items",
         "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:kelp_block": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:kelp_block",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:kelpy_cobblestone": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:kelpy_cobblestone",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -23142,6 +22751,28 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "upgrade_aquatic:large_driftwood_boat": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:large_driftwood_boat",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:large_river_boat": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:large_river_boat",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "upgrade_aquatic:lionfish": {
         "function": "consumable",
         "affinities": [
@@ -23176,6 +22807,17 @@
         "amount_class": "singleton",
         "matched_rule_id": "excluded_items",
         "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:luminous_prismarine": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:luminous_prismarine",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -23325,6 +22967,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "upgrade_aquatic:mulberry_jam_block": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:mulberry_jam_block",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "upgrade_aquatic:mulberry_jam_bottle": {
         "function": "consumable",
         "affinities": [
@@ -23349,6 +23002,17 @@
         "amount_class": "small",
         "matched_rule_id": "consumable_items",
         "matched_detail": "#c:foods",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:mulberry_punnet": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:mulberry_punnet",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -23384,6 +23048,17 @@
         "amount_class": "singleton",
         "matched_rule_id": "excluded_items",
         "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:orange_jelly_torch": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:orange_jelly_torch",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -23517,6 +23192,28 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "upgrade_aquatic:pickerelweed": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:pickerelweed",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:pickerelweed_block": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:pickerelweed_block",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "upgrade_aquatic:pike": {
         "function": "consumable",
         "affinities": [
@@ -23642,6 +23339,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "*_coral*",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:pink_jelly_torch": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:pink_jelly_torch",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -23776,6 +23484,72 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "upgrade_aquatic:prismarine_rod": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:prismarine_rod",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:prismarine_rod_bundle": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:prismarine_rod_bundle",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:purple_jelly_torch": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:purple_jelly_torch",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:red_jelly_torch": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:red_jelly_torch",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:river_beehive": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:river_beehive",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:river_boards": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:river_boards",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "upgrade_aquatic:river_boat": {
         "function": "misc_tool",
         "affinities": [
@@ -23789,6 +23563,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "upgrade_aquatic:river_bookshelf": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:river_bookshelf",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "upgrade_aquatic:river_button": {
         "function": "block_technical",
         "affinities": [],
@@ -23796,6 +23581,17 @@
         "amount_class": "singleton",
         "matched_rule_id": "technical_blocks",
         "matched_detail": "#minecraft:buttons",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:river_chest": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:river_chest",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -23837,6 +23633,28 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "upgrade_aquatic:river_fence_gate": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:river_fence_gate",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:river_furnace_boat": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:river_furnace_boat",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "upgrade_aquatic:river_hanging_sign": {
         "function": "block_misc_use",
         "affinities": [
@@ -23846,6 +23664,28 @@
         "amount_class": "small",
         "matched_rule_id": "misc_use_blocks",
         "matched_detail": "#minecraft:hanging_signs",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:river_ladder": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:river_ladder",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:river_leaf_pile": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:river_leaf_pile",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -24057,6 +23897,28 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "upgrade_aquatic:scute_block": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:scute_block",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:scute_pavement": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:scute_pavement",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "upgrade_aquatic:scute_pavement_slab": {
         "function": "block_building",
         "affinities": [],
@@ -24119,6 +23981,17 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#minecraft:walls",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:scute_shingles": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:scute_shingles",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -24368,6 +24241,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "upgrade_aquatic:tall_beachgrass": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:tall_beachgrass",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "upgrade_aquatic:thrasher_spawn_egg": {
         "function": "nonloot",
         "affinities": [],
@@ -24375,6 +24259,28 @@
         "amount_class": "singleton",
         "matched_rule_id": "excluded_items",
         "matched_detail": "*_spawn_egg",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:thrasher_tooth": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:thrasher_tooth",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:tooth_block": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:tooth_block",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -24430,6 +24336,17 @@
         "amount_class": "small",
         "matched_rule_id": "misc_use_blocks",
         "matched_detail": "#minecraft:doors",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:tooth_lantern": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:tooth_lantern",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -24491,6 +24408,28 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "upgrade_aquatic:trapped_driftwood_chest": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:trapped_driftwood_chest",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:trapped_river_chest": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:trapped_river_chest",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "upgrade_aquatic:tube_coralstone": {
         "function": "block_building",
         "affinities": [
@@ -24543,6 +24482,17 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
+    "upgrade_aquatic:white_jelly_torch": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:white_jelly_torch",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
     "upgrade_aquatic:white_searocket": {
         "function": "item_material",
         "affinities": [
@@ -24552,6 +24502,17 @@
         "amount_class": "small",
         "matched_rule_id": "material_items",
         "matched_detail": "#minecraft:flowers",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "upgrade_aquatic:yellow_jelly_torch": {
+        "function": "ignore",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "ignored_items",
+        "matched_detail": "upgrade_aquatic:yellow_jelly_torch",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"

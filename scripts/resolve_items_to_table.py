@@ -28,6 +28,10 @@ DEFAULT_TAGS_BY_ITEM_PATHS = (
 )
 
 schema_version = 0
+IGNORED_RULE_ID = "ignored_items"
+IGNORED_FUNCTION = "ignore"
+IGNORED_VALUE = "none"
+IGNORED_AMOUNT_CLASS = "singleton"
 
 
 @dataclass(frozen=True)
@@ -61,6 +65,7 @@ class AffinitySchema:
 class LootSchema:
     rules: list[RuleSchema]
     affinity_rules: list[AffinitySchema]
+    ignored_items: frozenset[str]
 
 
 @dataclass(frozen=True)
@@ -184,6 +189,7 @@ def validate_schema(raw_schema: dict[str, Any]) -> LootSchema:
     version = raw_schema.get("version")
     global schema_version
     schema_version = str(version)
+    ignored_items = parse_ignored_items(raw_schema.get("ignored_items"), "schema.ignored_items")
 
     # -- Property Rules
     raw_rules = raw_schema.get("function_trait_assignment")
@@ -229,7 +235,7 @@ def validate_schema(raw_schema: dict[str, Any]) -> LootSchema:
 
         affinity_rules.append(arule)
 
-    return LootSchema(rules=rules, affinity_rules=affinity_rules)
+    return LootSchema(rules=rules, affinity_rules=affinity_rules, ignored_items=ignored_items)
 
 
 def parse_rule_schema(raw_rule: Any, index: int) -> RuleSchema:
@@ -335,6 +341,31 @@ def parse_selector_list(raw_value: Any, where: str) -> list[str]:
     return selectors
 
 
+def parse_ignored_items(raw_value: Any, where: str) -> frozenset[str]:
+    if raw_value is None:
+        return frozenset()
+    if not isinstance(raw_value, list):
+        raise ValueError(f"{where} must be a list")
+
+    ignored_items: list[str] = []
+    seen: set[str] = set()
+
+    for i, raw_item_id in enumerate(raw_value):
+        if not isinstance(raw_item_id, str):
+            raise ValueError(f"{where}[{i}] must be an explicit item id string")
+
+        item_id = raw_item_id.strip()
+        if not item_id or not looks_like_explicit_item_id(item_id):
+            raise ValueError(f"{where}[{i}] must be an explicit item id string")
+        if item_id in seen:
+            raise ValueError(f"duplicate ignored item id: {item_id}")
+
+        seen.add(item_id)
+        ignored_items.append(item_id)
+
+    return frozenset(ignored_items)
+
+
 def parse_assign_block(raw_value: Any, where: str) -> AssignBlock:
     if not isinstance(raw_value, dict):
         raise ValueError(f"{where} must be a dict")
@@ -411,8 +442,25 @@ def build_item_record(item_id: str, tags_by_item: dict[str, set[str]]) -> ItemRe
 def resolve_item(
         item: ItemRecord,
         rules: list[CompiledRule],
-        arules: list[AffinityRule]
+        arules: list[AffinityRule],
+        ignored_items: frozenset[str],
 ) -> ResolvedItem:
+    if item.item_id in ignored_items:
+        return ResolvedItem(
+            item_id=item.item_id,
+            value=IGNORED_VALUE,
+            value_detail="default",
+            function=IGNORED_FUNCTION,
+            amount_class=IGNORED_AMOUNT_CLASS,
+            amount_detail="default",
+            affinities=[],
+            matched_rule_id=IGNORED_RULE_ID,
+            amatched_rule_ids=[],
+            matched_via="ignored",
+            matched_detail=item.item_id,
+            amatched_details=[],
+        )
+
     rule, match = find_first_matching_rule(item, rules)
 
     function = resolve_assign_function(rule.assign_function)
@@ -652,6 +700,7 @@ def write_report(
     rule_counts = Counter(r.matched_rule_id for r in results)
     arule_counts = Counter(c for r in results for c in r.amatched_rule_ids)
 
+    ignored_items = [r.item_id for r in results if r.matched_rule_id == IGNORED_RULE_ID]
     fallback_items = [r.item_id for r in results if r.matched_via == "fallback"]
     dead_rules = [r.rule_id for r in rules if r.rule_id not in rule_counts]
     dead_affinities = [r.rule_id for r in arules if r.rule_id not in arule_counts]
@@ -662,6 +711,7 @@ def write_report(
     with open(full_path, "w", encoding="utf-8") as f:
         f.write(f"classification version: {classification_version}\n")
         f.write(f"total items: {len(results)}\n")
+        f.write(f"ignored count: {len(ignored_items)}\n")
         f.write(f"fallback count: {len(fallback_items)}\n\n")
 
         f.write("functions:\n")
@@ -744,15 +794,18 @@ def resolve_items_to_table(
     print("\n-- ITEM MATCHES")
     matched = 0
     amatched = 0
+    ignored = 0
     fallback = 0
 
     for item_id in item_ids:
         item = build_item_record(item_id, tags_by_item)
         try:
-            resolved = resolve_item(item, compiled_rules, compiled_affinity_rules)
+            resolved = resolve_item(item, compiled_rules, compiled_affinity_rules, schema.ignored_items)
             results.append(resolved)
             print(resolved)
 
+            if resolved.matched_via == "ignored":
+                ignored += 1
             if resolved.matched_via == "fallback":
                 fallback += 1
             else:
@@ -770,6 +823,7 @@ def resolve_items_to_table(
 
     print("\n-- COVERAGE REPORT")
     print("property rules matched:", matched)
+    print("property rules ignored:", ignored)
     print("property rules fallback:", fallback)
     print("items with 1 or more affinities:", amatched)
 

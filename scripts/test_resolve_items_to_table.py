@@ -118,6 +118,103 @@ class ResolveItemsToTableTests(unittest.TestCase):
             self.assertFalse(json_rows["moda:rune"]["is_fallback_match"])
             self.assertIn("classification version: 10", report_text)
 
+    def test_ignored_items_are_reported_separately_from_fallback(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            root = Path(tempdir)
+            schema_path = root / "Loot Trait Assignments v10.yaml"
+            item_ids_path = root / "item_ids.json"
+            tags_by_item_path = root / "item_tags_by_item-no_loot_tags.json"
+            output_prefix = root / "resolved_loot_v10"
+
+            schema_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "loot_classification_by_trait": {
+                            "version": 10,
+                            "ignored_items": ["moda:driftwood_scrap"],
+                            "function_trait_assignment": [
+                                {
+                                    "id": "foods",
+                                    "priority": 10,
+                                    "match": ["#c:foods"],
+                                    "assign": {
+                                        "function": "consumable",
+                                        "value": {"default": "common"},
+                                        "amount_class": {"default": "small"},
+                                    },
+                                },
+                                {
+                                    "id": "fallback",
+                                    "priority": 0,
+                                    "match": {"summary": "fallback"},
+                                    "assign": {
+                                        "function": "unmatched",
+                                        "value": {"default": "none"},
+                                        "amount_class": {"default": "singleton"},
+                                    },
+                                },
+                            ],
+                            "affinity_trait_assignment": [
+                                {"id": "food", "priority": 5, "match": ["#c:foods"]},
+                            ],
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+            item_ids_path.write_text(
+                json.dumps(
+                    [
+                        "minecraft:apple",
+                        "moda:driftwood_scrap",
+                        "moda:unknown",
+                    ],
+                    indent=2,
+                ),
+                encoding="utf-8",
+            )
+            tags_by_item_path.write_text(
+                json.dumps(
+                    {
+                        "minecraft:apple": ["c:foods"],
+                        "moda:driftwood_scrap": ["c:foods"],
+                        "moda:unknown": [],
+                    },
+                    indent=2,
+                ),
+                encoding="utf-8",
+            )
+
+            resolver.resolve_items_to_table(
+                schema_path=schema_path,
+                item_ids_path=item_ids_path,
+                tags_by_item_path=tags_by_item_path,
+                output_prefix=output_prefix,
+            )
+
+            csv_rows = read_csv_rows(output_prefix.with_suffix(".csv"))
+            json_rows = json.loads(output_prefix.with_suffix(".json").read_text(encoding="utf-8"))
+            report_text = output_prefix.with_name("resolved_loot_v10_report.txt").read_text(encoding="utf-8")
+
+            ignored_row = next(row for row in csv_rows if row["item_id"] == "moda:driftwood_scrap")
+            self.assertEqual(ignored_row["function"], "ignore")
+            self.assertEqual(ignored_row["matched_rule_id"], "ignored_items")
+            self.assertEqual(ignored_row["classification_status"], "matched")
+            self.assertEqual(ignored_row["is_fallback_match"], "false")
+
+            fallback_row = next(row for row in csv_rows if row["item_id"] == "moda:unknown")
+            self.assertEqual(fallback_row["classification_status"], "fallback")
+            self.assertEqual(fallback_row["is_fallback_match"], "true")
+
+            self.assertEqual(json_rows["moda:driftwood_scrap"]["function"], "ignore")
+            self.assertFalse(json_rows["moda:driftwood_scrap"]["is_fallback_match"])
+
+            self.assertIn("ignored count: 1", report_text)
+            self.assertIn("fallback count: 1", report_text)
+            self.assertIn("fallback items:\n  moda:unknown", report_text)
+            self.assertNotIn("ignored items:", report_text)
+            self.assertNotIn("  moda:driftwood_scrap", report_text)
+
 
 if __name__ == "__main__":
     unittest.main()
