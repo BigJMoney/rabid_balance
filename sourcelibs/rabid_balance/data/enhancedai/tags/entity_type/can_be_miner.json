@@ -1,0 +1,9 @@
+{
+	"replace": false,
+	"values": [
+		{ "id": "rottencreatures:undead_diamond_miner", "required": false },
+		{ "id": "rottencreatures:undead_gold_miner", "required": false },
+		{ "id": "rottencreatures:undead_iron_miner", "required": false },
+		{ "id": "rottencreatures:undead_stone_miner", "required": false }
+	]
+}

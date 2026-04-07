@@ -6,14 +6,10 @@ Rabid Balance v.0.1.1
 Leather joinery items are used in place of some leather pieces when making leather armor (also requires my Crafttweaker script):
 - Bone, iron nugget or string
 
+Todo: add copper nugget
+
 
 ~ MOD ADJUSTMENTS ~
-
-Combined Apotheosis towers and Tax's Ocean Villagers structure_sets into one per mod, and tweaked spacing values
-
-Fixed structure separation values on a few mods that were causing their structures to be guaranteed to appear near 0,0
-
-Added exclusions to a few structure sets
 
 Aptheosis loot affix entries added for:
 - Simply Weapons (standard weapons)
@@ -31,8 +27,7 @@ Supplementaries waysign and adventure map changes:
 - Added more village types to waysign destinations
 - Removed villages from adventure maps
 
-WWOO changes to Towns and Towers structure tags were reverted back to T_and_t defaults
-- towns_and_towers\tags\worldgen\biome\has_structure\*
+Rotten Creatures miner zombies now have the can_be_miner tag used by Enhanced AI
 
 
 ~ STRUCTURE REBALANCING ~
