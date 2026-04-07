@@ -13,13 +13,17 @@ bosses_of_mass_destruction:obsidian_heart,unmatched,[],none,singleton,fallback,n
 bosses_of_mass_destruction:obsidilith_end_frame,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
 bosses_of_mass_destruction:obsidilith_rune,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
 bosses_of_mass_destruction:sealed_blackstone,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
-bosses_of_mass_destruction:soul_star,unmatched,['nether'],none,singleton,fallback,no match,['soul_*'],fallback,true,10
 bosses_of_mass_destruction:vine_wall,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
 bosses_of_mass_destruction:void_blossom,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
 bosses_of_mass_destruction:void_blossom_block,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
 bosses_of_mass_destruction:void_lily,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
 bosses_of_mass_destruction:void_thorn,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+minecraft:firefly_bush,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+minecraft:pale_hanging_moss,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+minecraft:pale_moss_carpet,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
+minecraft:resin_brick,unmatched,[],none,singleton,fallback,no match,,fallback,true,10
 bosses_of_mass_destruction:chiseled_stone_altar,block_building,['masonry'],filler,large,building_blocks,chiseled_*,['chiseled_*'],matched,false,10
+bosses_of_mass_destruction:soul_star,consumable,['nether'],rare,small,consumable_items,bosses_of_mass_destruction:soul_star,['soul_*'],matched,false,10
 copperagebackport:copper_button,ignore,[],none,singleton,ignored_items,copperagebackport:copper_button,,matched,false,10
 copperagebackport:exposed_copper_button,block_building,[],filler,large,building_blocks,exposed_*,,matched,false,10
 copperagebackport:oxidized_copper_button,block_building,[],filler,large,building_blocks,oxidized_*,,matched,false,10
@@ -110,14 +114,14 @@ minecraft:acacia_button,block_technical,[],uncommon,singleton,technical_blocks,#
 minecraft:acacia_chest_boat,misc_tool,['sea'],uncommon,singleton,misc_tools,#minecraft:boats,['#minecraft:boats'],matched,false,10
 minecraft:acacia_door,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:doors,,matched,false,10
 minecraft:acacia_fence,block_building,['village'],filler,large,building_blocks,#c:fences,['#c:fences/wooden'],matched,false,10
-minecraft:acacia_fence_gate,block_misc_use,['wooden'],uncommon,small,misc_use_blocks,#c:fence_gates,['#c:fence_gates/wooden'],matched,false,10
+minecraft:acacia_fence_gate,block_misc_use,['wooden'],uncommon,small,misc_use_blocks,#minecraft:fence_gates,['#c:fence_gates/wooden'],matched,false,10
 minecraft:acacia_hanging_sign,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:hanging_signs,['#minecraft:hanging_signs'],matched,false,10
 minecraft:acacia_leaves,block_building,[],junk,large,building_blocks,#minecraft:leaves,,matched,false,10
 minecraft:acacia_log,block_material,['wooden'],filler,small,material_blocks,#minecraft:logs,['#minecraft:logs_that_burn'],matched,false,10
 minecraft:acacia_planks,block_material,[],filler,bulk,material_blocks,#minecraft:planks,,matched,false,10
 minecraft:acacia_pressure_plate,block_technical,[],uncommon,singleton,technical_blocks,*_pressure_plate,,matched,false,10
 minecraft:acacia_sapling,garden,['household'],uncommon,small,garden_items,#minecraft:saplings,['#minecraft:saplings'],matched,false,10
-minecraft:acacia_shelf,ignore,[],none,singleton,ignored_items,minecraft:acacia_shelf,,matched,false,10
+minecraft:acacia_shelf,block_storage,[],uncommon,singleton,storage_blocks,*_shelf,,matched,false,10
 minecraft:acacia_sign,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:signs,,matched,false,10
 minecraft:acacia_slab,block_building,[],filler,large,building_blocks,#minecraft:slabs,,matched,false,10
 minecraft:acacia_stairs,block_building,[],filler,large,building_blocks,#minecraft:stairs,,matched,false,10
@@ -155,7 +159,7 @@ minecraft:bamboo_button,block_technical,['jungle'],uncommon,singleton,technical_
 minecraft:bamboo_chest_raft,misc_tool,"['sea', 'jungle']",uncommon,singleton,misc_tools,#minecraft:boats,"['#minecraft:boats', 'bamboo_*']",matched,false,10
 minecraft:bamboo_door,block_misc_use,['jungle'],uncommon,small,misc_use_blocks,#minecraft:doors,['bamboo_*'],matched,false,10
 minecraft:bamboo_fence,block_building,"['jungle', 'village']",filler,large,building_blocks,#c:fences,"['bamboo_*', '#c:fences/wooden']",matched,false,10
-minecraft:bamboo_fence_gate,block_misc_use,"['jungle', 'wooden']",uncommon,small,misc_use_blocks,#c:fence_gates,"['bamboo_*', '#c:fence_gates/wooden']",matched,false,10
+minecraft:bamboo_fence_gate,block_misc_use,"['jungle', 'wooden']",uncommon,small,misc_use_blocks,#minecraft:fence_gates,"['bamboo_*', '#c:fence_gates/wooden']",matched,false,10
 minecraft:bamboo_hanging_sign,block_misc_use,"['jungle', 'village']",uncommon,small,misc_use_blocks,#minecraft:hanging_signs,"['bamboo_*', '#minecraft:hanging_signs']",matched,false,10
 minecraft:bamboo_mosaic,block_building,['jungle'],uncommon,large,building_blocks,bamboo_mosaic*,['bamboo_*'],matched,false,10
 minecraft:bamboo_mosaic_slab,block_building,['jungle'],uncommon,large,building_blocks,#minecraft:slabs,['bamboo_*'],matched,false,10
@@ -163,7 +167,7 @@ minecraft:bamboo_mosaic_stairs,block_building,['jungle'],uncommon,large,building
 minecraft:bamboo_planks,block_material,['jungle'],filler,bulk,material_blocks,#minecraft:planks,['bamboo_*'],matched,false,10
 minecraft:bamboo_pressure_plate,block_technical,['jungle'],uncommon,singleton,technical_blocks,*_pressure_plate,['bamboo_*'],matched,false,10
 minecraft:bamboo_raft,misc_tool,"['sea', 'jungle']",uncommon,singleton,misc_tools,#minecraft:boats,"['#minecraft:boats', 'bamboo_*']",matched,false,10
-minecraft:bamboo_shelf,ignore,[],none,singleton,ignored_items,minecraft:bamboo_shelf,,matched,false,10
+minecraft:bamboo_shelf,block_storage,['jungle'],uncommon,singleton,storage_blocks,*_shelf,['bamboo_*'],matched,false,10
 minecraft:bamboo_sign,block_misc_use,['jungle'],uncommon,small,misc_use_blocks,#minecraft:signs,['bamboo_*'],matched,false,10
 minecraft:bamboo_slab,block_building,['jungle'],filler,large,building_blocks,#minecraft:slabs,['bamboo_*'],matched,false,10
 minecraft:bamboo_stairs,block_building,['jungle'],filler,large,building_blocks,#minecraft:stairs,['bamboo_*'],matched,false,10
@@ -188,14 +192,14 @@ minecraft:birch_button,block_technical,['village'],uncommon,singleton,technical_
 minecraft:birch_chest_boat,misc_tool,"['sea', 'village']",uncommon,singleton,misc_tools,#minecraft:boats,"['#minecraft:boats', 'birch_*']",matched,false,10
 minecraft:birch_door,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:doors,['birch_*'],matched,false,10
 minecraft:birch_fence,block_building,['village'],filler,large,building_blocks,#c:fences,['birch_*'],matched,false,10
-minecraft:birch_fence_gate,block_misc_use,"['village', 'wooden']",uncommon,small,misc_use_blocks,#c:fence_gates,"['birch_*', '#c:fence_gates/wooden']",matched,false,10
+minecraft:birch_fence_gate,block_misc_use,"['village', 'wooden']",uncommon,small,misc_use_blocks,#minecraft:fence_gates,"['birch_*', '#c:fence_gates/wooden']",matched,false,10
 minecraft:birch_hanging_sign,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:hanging_signs,['birch_*'],matched,false,10
 minecraft:birch_leaves,block_building,['village'],junk,large,building_blocks,#minecraft:leaves,['birch_*'],matched,false,10
 minecraft:birch_log,block_material,"['village', 'wooden']",filler,small,material_blocks,#minecraft:logs,"['birch_*', '#minecraft:logs_that_burn']",matched,false,10
 minecraft:birch_planks,block_material,['village'],filler,bulk,material_blocks,#minecraft:planks,['birch_*'],matched,false,10
 minecraft:birch_pressure_plate,block_technical,['village'],uncommon,singleton,technical_blocks,*_pressure_plate,['birch_*'],matched,false,10
 minecraft:birch_sapling,garden,"['village', 'household']",uncommon,small,garden_items,#minecraft:saplings,"['birch_*', '#minecraft:saplings']",matched,false,10
-minecraft:birch_shelf,ignore,[],none,singleton,ignored_items,minecraft:birch_shelf,,matched,false,10
+minecraft:birch_shelf,block_storage,['village'],uncommon,singleton,storage_blocks,*_shelf,['birch_*'],matched,false,10
 minecraft:birch_sign,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:signs,['birch_*'],matched,false,10
 minecraft:birch_slab,block_building,['village'],filler,large,building_blocks,#minecraft:slabs,['birch_*'],matched,false,10
 minecraft:birch_stairs,block_building,['village'],filler,large,building_blocks,#minecraft:stairs,['birch_*'],matched,false,10
@@ -203,14 +207,14 @@ minecraft:birch_trapdoor,block_misc_use,['village'],uncommon,small,misc_use_bloc
 minecraft:birch_wood,block_material,"['village', 'wooden']",filler,small,material_blocks,#minecraft:logs,"['birch_*', '#minecraft:logs_that_burn']",matched,false,10
 minecraft:black_banner,block_misc_use,"['fortification', 'woolworking']",rare,small,misc_use_blocks,#minecraft:banners,"['#minecraft:banners', '#minecraft:banners']",matched,false,10
 minecraft:black_bed,block_misc_use,[],uncommon,singleton,misc_use_blocks,#minecraft:beds,,matched,false,10
-minecraft:black_bundle,ignore,[],none,singleton,ignored_items,minecraft:black_bundle,,matched,false,10
+minecraft:black_bundle,misc_tool,[],uncommon,singleton,misc_tools,#minecraft:bundles,,matched,false,10
 minecraft:black_candle,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:candles,['#minecraft:candles'],matched,false,10
 minecraft:black_carpet,block_building,['woolworking'],filler,large,building_blocks,#minecraft:wool_carpets,['#minecraft:wool_carpets'],matched,false,10
 minecraft:black_concrete,block_building,['fortification'],uncommon,large,building_blocks,#c:concretes,['#c:concretes'],matched,false,10
 minecraft:black_concrete_powder,block_material,['fortification'],uncommon,large,material_blocks,#c:concrete_powders,['#c:concrete_powders'],matched,false,10
 minecraft:black_dye,item_material,"['leatherworking', 'woolworking']",uncommon,small,material_items,#c:dyes,"['#c:dyes', '#c:dyes']",matched,false,10
 minecraft:black_glazed_terracotta,block_building,"['desert', 'masonry']",rare,large,building_blocks,#c:glazed_terracottas,"['#c:glazed_terracottas', '#c:glazed_terracottas']",matched,false,10
-minecraft:black_harness,ignore,[],none,singleton,ignored_items,minecraft:black_harness,,matched,false,10
+minecraft:black_harness,wearable,[],rare,singleton,wearable_equipment,#minecraft:harnesses,,matched,false,10
 minecraft:black_shulker_box,block_storage,['end'],legendary,singleton,storage_blocks,*_shulker_box,['#c:shulker_boxes'],matched,false,10
 minecraft:black_stained_glass,block_building,[],filler,large,building_blocks,#c:glass_blocks,,matched,false,10
 minecraft:black_stained_glass_pane,block_building,['clerical'],rare,large,building_blocks,#c:glass_panes,['#c:glass_panes'],matched,false,10
@@ -227,15 +231,15 @@ minecraft:blaze_rod,item_material,['nether'],rare,small,material_items,minecraft
 minecraft:blaze_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
 minecraft:blue_banner,block_misc_use,"['fortification', 'woolworking']",rare,small,misc_use_blocks,#minecraft:banners,"['#minecraft:banners', '#minecraft:banners']",matched,false,10
 minecraft:blue_bed,block_misc_use,[],uncommon,singleton,misc_use_blocks,#minecraft:beds,,matched,false,10
-minecraft:blue_bundle,ignore,[],none,singleton,ignored_items,minecraft:blue_bundle,,matched,false,10
+minecraft:blue_bundle,misc_tool,[],uncommon,singleton,misc_tools,#minecraft:bundles,,matched,false,10
 minecraft:blue_candle,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:candles,['#minecraft:candles'],matched,false,10
 minecraft:blue_carpet,block_building,['woolworking'],filler,large,building_blocks,#minecraft:wool_carpets,['#minecraft:wool_carpets'],matched,false,10
 minecraft:blue_concrete,block_building,['fortification'],uncommon,large,building_blocks,#c:concretes,['#c:concretes'],matched,false,10
 minecraft:blue_concrete_powder,block_material,['fortification'],uncommon,large,material_blocks,#c:concrete_powders,['#c:concrete_powders'],matched,false,10
 minecraft:blue_dye,item_material,"['leatherworking', 'woolworking']",uncommon,small,material_items,#c:dyes,"['#c:dyes', '#c:dyes']",matched,false,10
-minecraft:blue_egg,ignore,[],none,singleton,ignored_items,minecraft:blue_egg,,matched,false,10
+minecraft:blue_egg,item_material,[],common,small,material_items,#c:eggs,,matched,false,10
 minecraft:blue_glazed_terracotta,block_building,"['desert', 'masonry']",rare,large,building_blocks,#c:glazed_terracottas,"['#c:glazed_terracottas', '#c:glazed_terracottas']",matched,false,10
-minecraft:blue_harness,ignore,[],none,singleton,ignored_items,minecraft:blue_harness,,matched,false,10
+minecraft:blue_harness,wearable,[],rare,singleton,wearable_equipment,#minecraft:harnesses,,matched,false,10
 minecraft:blue_ice,block_misc_use,['arctic'],rare,small,misc_use_blocks,minecraft:blue_ice,['*_ice'],matched,false,10
 minecraft:blue_orchid,item_material,['household'],common,small,material_items,#minecraft:flowers,['#minecraft:flowers'],matched,false,10
 minecraft:blue_shulker_box,block_storage,['end'],legendary,singleton,storage_blocks,*_shulker_box,['#c:shulker_boxes'],matched,false,10
@@ -267,15 +271,15 @@ minecraft:brick_wall,block_building,['masonry'],filler,large,building_blocks,#mi
 minecraft:bricks,block_material,[],filler,large,material_blocks,minecraft:bricks,,matched,false,10
 minecraft:brown_banner,block_misc_use,"['fortification', 'woolworking']",rare,small,misc_use_blocks,#minecraft:banners,"['#minecraft:banners', '#minecraft:banners']",matched,false,10
 minecraft:brown_bed,block_misc_use,[],uncommon,singleton,misc_use_blocks,#minecraft:beds,,matched,false,10
-minecraft:brown_bundle,ignore,[],none,singleton,ignored_items,minecraft:brown_bundle,,matched,false,10
+minecraft:brown_bundle,misc_tool,[],uncommon,singleton,misc_tools,#minecraft:bundles,,matched,false,10
 minecraft:brown_candle,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:candles,['#minecraft:candles'],matched,false,10
 minecraft:brown_carpet,block_building,['woolworking'],filler,large,building_blocks,#minecraft:wool_carpets,['#minecraft:wool_carpets'],matched,false,10
 minecraft:brown_concrete,block_building,['fortification'],uncommon,large,building_blocks,#c:concretes,['#c:concretes'],matched,false,10
 minecraft:brown_concrete_powder,block_material,['fortification'],uncommon,large,material_blocks,#c:concrete_powders,['#c:concrete_powders'],matched,false,10
 minecraft:brown_dye,item_material,"['leatherworking', 'woolworking']",uncommon,small,material_items,#c:dyes,"['#c:dyes', '#c:dyes']",matched,false,10
-minecraft:brown_egg,ignore,[],none,singleton,ignored_items,minecraft:brown_egg,,matched,false,10
+minecraft:brown_egg,item_material,[],common,small,material_items,#c:eggs,,matched,false,10
 minecraft:brown_glazed_terracotta,block_building,"['desert', 'masonry']",rare,large,building_blocks,#c:glazed_terracottas,"['#c:glazed_terracottas', '#c:glazed_terracottas']",matched,false,10
-minecraft:brown_harness,ignore,[],none,singleton,ignored_items,minecraft:brown_harness,,matched,false,10
+minecraft:brown_harness,wearable,[],rare,singleton,wearable_equipment,#minecraft:harnesses,,matched,false,10
 minecraft:brown_mushroom,item_material,[],common,small,material_items,*_mushroom,,matched,false,10
 minecraft:brown_mushroom_block,item_material,[],rare,small,material_items,minecraft:brown_mushroom_block,,matched,false,10
 minecraft:brown_shulker_box,block_storage,['end'],legendary,singleton,storage_blocks,*_shulker_box,['#c:shulker_boxes'],matched,false,10
@@ -307,7 +311,7 @@ minecraft:carved_pumpkin,block_building,[],rare,large,building_blocks,#c:pumpkin
 minecraft:cat_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
 minecraft:cauldron,block_crafting,['smithing'],rare,singleton,crafting_blocks,minecraft:cauldron,['minecraft:cauldron'],matched,false,10
 minecraft:cave_spider_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
-minecraft:chain,block_building,['smithing'],uncommon,large,building_blocks,minecraft:chain,['#c:chains'],matched,false,10
+minecraft:chain,block_building,['smithing'],uncommon,large,building_blocks,#c:chains,['#c:chains'],matched,false,10
 minecraft:chain_command_block,nonloot,[],none,singleton,excluded_items,minecraft:chain_command_block,,matched,false,10
 minecraft:chainmail_boots,wearable,[],uncommon,singleton,wearable_equipment,#c:armors,,matched,false,10
 minecraft:chainmail_chestplate,wearable,[],uncommon,singleton,wearable_equipment,#c:armors,,matched,false,10
@@ -319,14 +323,14 @@ minecraft:cherry_button,block_technical,[],uncommon,singleton,technical_blocks,#
 minecraft:cherry_chest_boat,misc_tool,['sea'],uncommon,singleton,misc_tools,#minecraft:boats,['#minecraft:boats'],matched,false,10
 minecraft:cherry_door,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:doors,,matched,false,10
 minecraft:cherry_fence,block_building,['village'],filler,large,building_blocks,#c:fences,['#c:fences/wooden'],matched,false,10
-minecraft:cherry_fence_gate,block_misc_use,['wooden'],uncommon,small,misc_use_blocks,#c:fence_gates,['#c:fence_gates/wooden'],matched,false,10
+minecraft:cherry_fence_gate,block_misc_use,['wooden'],uncommon,small,misc_use_blocks,#minecraft:fence_gates,['#c:fence_gates/wooden'],matched,false,10
 minecraft:cherry_hanging_sign,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:hanging_signs,['#minecraft:hanging_signs'],matched,false,10
 minecraft:cherry_leaves,item_material,['household'],common,small,material_items,#minecraft:flowers,['#minecraft:flowers'],matched,false,10
 minecraft:cherry_log,block_material,['wooden'],filler,small,material_blocks,#minecraft:logs,['#minecraft:logs_that_burn'],matched,false,10
 minecraft:cherry_planks,block_material,[],filler,bulk,material_blocks,#minecraft:planks,,matched,false,10
 minecraft:cherry_pressure_plate,block_technical,[],uncommon,singleton,technical_blocks,*_pressure_plate,,matched,false,10
 minecraft:cherry_sapling,garden,['household'],uncommon,small,garden_items,#minecraft:saplings,['#minecraft:saplings'],matched,false,10
-minecraft:cherry_shelf,ignore,[],none,singleton,ignored_items,minecraft:cherry_shelf,,matched,false,10
+minecraft:cherry_shelf,block_storage,[],uncommon,singleton,storage_blocks,*_shelf,,matched,false,10
 minecraft:cherry_sign,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:signs,,matched,false,10
 minecraft:cherry_slab,block_building,[],filler,large,building_blocks,#minecraft:slabs,,matched,false,10
 minecraft:cherry_stairs,block_building,[],filler,large,building_blocks,#minecraft:stairs,,matched,false,10
@@ -393,7 +397,7 @@ minecraft:copper_bars,block_building,[],filler,large,building_blocks,*_bars,,mat
 minecraft:copper_block,item_material,[],rare,singleton,material_items,minecraft:copper_block,,matched,false,10
 minecraft:copper_boots,wearable,[],uncommon,singleton,wearable_equipment,#c:armors,,matched,false,10
 minecraft:copper_bulb,block_technical,[],rare,small,technical_blocks,*copper_bulb,,matched,false,10
-minecraft:copper_chain,ignore,[],none,singleton,ignored_items,minecraft:copper_chain,,matched,false,10
+minecraft:copper_chain,block_building,['smithing'],uncommon,large,building_blocks,#c:chains,['#c:chains'],matched,false,10
 minecraft:copper_chest,ignore,[],none,singleton,ignored_items,minecraft:copper_chest,,matched,false,10
 minecraft:copper_chestplate,wearable,[],uncommon,singleton,wearable_equipment,#c:armors,,matched,false,10
 minecraft:copper_door,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:doors,,matched,false,10
@@ -422,7 +426,7 @@ minecraft:cracked_polished_blackstone_bricks,block_material,[],filler,large,mate
 minecraft:cracked_stone_bricks,block_material,[],filler,large,material_blocks,*_bricks,,matched,false,10
 minecraft:crafter,block_technical,[],epic,singleton,technical_blocks,minecraft:crafter,,matched,false,10
 minecraft:crafting_table,block_crafting,[],uncommon,singleton,crafting_blocks,minecraft:crafting_table,,matched,false,10
-minecraft:creaking_heart,ignore,[],none,singleton,ignored_items,minecraft:creaking_heart,,matched,false,10
+minecraft:creaking_heart,item_material,[],epic,small,material_items,minecraft:creaking_heart,,matched,false,10
 minecraft:creaking_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
 minecraft:creeper_banner_pattern,item_material,"['fortification', 'woolworking']",rare,singleton,material_items,*banner_pattern*,"['*_banner_pattern', '*_banner_pattern']",matched,false,10
 minecraft:creeper_head,wearable,[],epic,singleton,wearable_equipment,*_head,,matched,false,10
@@ -430,7 +434,7 @@ minecraft:creeper_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg
 minecraft:crimson_button,block_technical,['nether'],uncommon,singleton,technical_blocks,#minecraft:buttons,['crimson_*'],matched,false,10
 minecraft:crimson_door,block_misc_use,['nether'],uncommon,small,misc_use_blocks,#minecraft:doors,['crimson_*'],matched,false,10
 minecraft:crimson_fence,block_building,"['nether', 'village']",filler,large,building_blocks,#c:fences,"['crimson_*', '#c:fences/wooden']",matched,false,10
-minecraft:crimson_fence_gate,block_misc_use,"['nether', 'wooden']",uncommon,small,misc_use_blocks,#c:fence_gates,"['crimson_*', '#c:fence_gates/wooden']",matched,false,10
+minecraft:crimson_fence_gate,block_misc_use,"['nether', 'wooden']",uncommon,small,misc_use_blocks,#minecraft:fence_gates,"['crimson_*', '#c:fence_gates/wooden']",matched,false,10
 minecraft:crimson_fungus,item_material,['nether'],common,small,material_items,*_fungus,['crimson_*'],matched,false,10
 minecraft:crimson_hanging_sign,block_misc_use,"['nether', 'village']",uncommon,small,misc_use_blocks,#minecraft:hanging_signs,"['crimson_*', '#minecraft:hanging_signs']",matched,false,10
 minecraft:crimson_hyphae,block_material,['nether'],filler,small,material_blocks,#minecraft:logs,['crimson_*'],matched,false,10
@@ -438,7 +442,7 @@ minecraft:crimson_nylium,block_building,['nether'],junk,large,building_blocks,mi
 minecraft:crimson_planks,block_material,['nether'],filler,bulk,material_blocks,#minecraft:planks,['crimson_*'],matched,false,10
 minecraft:crimson_pressure_plate,block_technical,['nether'],uncommon,singleton,technical_blocks,*_pressure_plate,['crimson_*'],matched,false,10
 minecraft:crimson_roots,block_building,['nether'],junk,large,building_blocks,*_roots,['crimson_*'],matched,false,10
-minecraft:crimson_shelf,ignore,[],none,singleton,ignored_items,minecraft:crimson_shelf,,matched,false,10
+minecraft:crimson_shelf,block_storage,['nether'],uncommon,singleton,storage_blocks,*_shelf,['crimson_*'],matched,false,10
 minecraft:crimson_sign,block_misc_use,['nether'],uncommon,small,misc_use_blocks,#minecraft:signs,['crimson_*'],matched,false,10
 minecraft:crimson_slab,block_building,['nether'],filler,large,building_blocks,#minecraft:slabs,['crimson_*'],matched,false,10
 minecraft:crimson_stairs,block_building,['nether'],filler,large,building_blocks,#minecraft:stairs,['crimson_*'],matched,false,10
@@ -455,14 +459,14 @@ minecraft:cut_sandstone,block_building,['masonry'],filler,large,building_blocks,
 minecraft:cut_sandstone_slab,block_building,['masonry'],filler,large,building_blocks,cut_*,['cut_*'],matched,false,10
 minecraft:cyan_banner,block_misc_use,"['fortification', 'woolworking']",rare,small,misc_use_blocks,#minecraft:banners,"['#minecraft:banners', '#minecraft:banners']",matched,false,10
 minecraft:cyan_bed,block_misc_use,[],uncommon,singleton,misc_use_blocks,#minecraft:beds,,matched,false,10
-minecraft:cyan_bundle,ignore,[],none,singleton,ignored_items,minecraft:cyan_bundle,,matched,false,10
+minecraft:cyan_bundle,misc_tool,[],uncommon,singleton,misc_tools,#minecraft:bundles,,matched,false,10
 minecraft:cyan_candle,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:candles,['#minecraft:candles'],matched,false,10
 minecraft:cyan_carpet,block_building,['woolworking'],filler,large,building_blocks,#minecraft:wool_carpets,['#minecraft:wool_carpets'],matched,false,10
 minecraft:cyan_concrete,block_building,['fortification'],uncommon,large,building_blocks,#c:concretes,['#c:concretes'],matched,false,10
 minecraft:cyan_concrete_powder,block_material,['fortification'],uncommon,large,material_blocks,#c:concrete_powders,['#c:concrete_powders'],matched,false,10
 minecraft:cyan_dye,item_material,"['leatherworking', 'woolworking']",uncommon,small,material_items,#c:dyes,"['#c:dyes', '#c:dyes']",matched,false,10
 minecraft:cyan_glazed_terracotta,block_building,"['desert', 'masonry']",rare,large,building_blocks,#c:glazed_terracottas,"['#c:glazed_terracottas', '#c:glazed_terracottas']",matched,false,10
-minecraft:cyan_harness,ignore,[],none,singleton,ignored_items,minecraft:cyan_harness,,matched,false,10
+minecraft:cyan_harness,wearable,[],rare,singleton,wearable_equipment,#minecraft:harnesses,,matched,false,10
 minecraft:cyan_shulker_box,block_storage,['end'],legendary,singleton,storage_blocks,*_shulker_box,['#c:shulker_boxes'],matched,false,10
 minecraft:cyan_stained_glass,block_building,[],filler,large,building_blocks,#c:glass_blocks,,matched,false,10
 minecraft:cyan_stained_glass_pane,block_building,['clerical'],rare,large,building_blocks,#c:glass_panes,['#c:glass_panes'],matched,false,10
@@ -476,14 +480,14 @@ minecraft:dark_oak_button,block_technical,[],uncommon,singleton,technical_blocks
 minecraft:dark_oak_chest_boat,misc_tool,['sea'],uncommon,singleton,misc_tools,#minecraft:boats,['#minecraft:boats'],matched,false,10
 minecraft:dark_oak_door,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:doors,,matched,false,10
 minecraft:dark_oak_fence,block_building,['village'],filler,large,building_blocks,#c:fences,['#c:fences/wooden'],matched,false,10
-minecraft:dark_oak_fence_gate,block_misc_use,['wooden'],uncommon,small,misc_use_blocks,#c:fence_gates,['#c:fence_gates/wooden'],matched,false,10
+minecraft:dark_oak_fence_gate,block_misc_use,['wooden'],uncommon,small,misc_use_blocks,#minecraft:fence_gates,['#c:fence_gates/wooden'],matched,false,10
 minecraft:dark_oak_hanging_sign,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:hanging_signs,['#minecraft:hanging_signs'],matched,false,10
 minecraft:dark_oak_leaves,block_building,[],junk,large,building_blocks,#minecraft:leaves,,matched,false,10
 minecraft:dark_oak_log,block_material,['wooden'],filler,small,material_blocks,#minecraft:logs,['#minecraft:logs_that_burn'],matched,false,10
 minecraft:dark_oak_planks,block_material,[],filler,bulk,material_blocks,#minecraft:planks,,matched,false,10
 minecraft:dark_oak_pressure_plate,block_technical,[],uncommon,singleton,technical_blocks,*_pressure_plate,,matched,false,10
 minecraft:dark_oak_sapling,garden,['household'],uncommon,small,garden_items,#minecraft:saplings,['#minecraft:saplings'],matched,false,10
-minecraft:dark_oak_shelf,ignore,[],none,singleton,ignored_items,minecraft:dark_oak_shelf,,matched,false,10
+minecraft:dark_oak_shelf,block_storage,[],uncommon,singleton,storage_blocks,*_shelf,,matched,false,10
 minecraft:dark_oak_sign,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:signs,,matched,false,10
 minecraft:dark_oak_slab,block_building,[],filler,large,building_blocks,#minecraft:slabs,,matched,false,10
 minecraft:dark_oak_stairs,block_building,[],filler,large,building_blocks,#minecraft:stairs,,matched,false,10
@@ -555,7 +559,7 @@ minecraft:donkey_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,
 minecraft:dragon_breath,item_material,['end'],rare,small,material_items,minecraft:dragon_breath,['dragon_*'],matched,false,10
 minecraft:dragon_egg,nonloot,['end'],none,singleton,excluded_items,minecraft:dragon_egg,['dragon_*'],matched,false,10
 minecraft:dragon_head,wearable,['end'],epic,singleton,wearable_equipment,*_head,['dragon_*'],matched,false,10
-minecraft:dried_ghast,ignore,[],none,singleton,ignored_items,minecraft:dried_ghast,,matched,false,10
+minecraft:dried_ghast,item_material,[],epic,small,material_items,minecraft:dried_ghast,,matched,false,10
 minecraft:dried_kelp,consumable,"['sea', 'household', 'food']",common,small,consumable_items,#c:foods,"['*kelp*', '#c:foods', '#c:foods']",matched,false,10
 minecraft:dried_kelp_block,item_material,['sea'],uncommon,singleton,material_items,minecraft:dried_kelp_block,['*kelp*'],matched,false,10
 minecraft:dripstone_block,block_misc_use,[],uncommon,small,misc_use_blocks,minecraft:dripstone_block,,matched,false,10
@@ -593,7 +597,7 @@ minecraft:exposed_chiseled_copper,block_building,[],filler,large,building_blocks
 minecraft:exposed_copper,block_building,[],filler,large,building_blocks,exposed_*,,matched,false,10
 minecraft:exposed_copper_bars,block_building,[],filler,large,building_blocks,exposed_*,,matched,false,10
 minecraft:exposed_copper_bulb,block_technical,[],rare,singleton,technical_blocks,*copper_bulb,,matched,false,10
-minecraft:exposed_copper_chain,block_building,['smithing'],filler,large,building_blocks,exposed_*,['#c:chains'],matched,false,10
+minecraft:exposed_copper_chain,block_building,['smithing'],uncommon,large,building_blocks,exposed_*,['#c:chains'],matched,false,10
 minecraft:exposed_copper_chest,block_building,[],filler,large,building_blocks,exposed_*,,matched,false,10
 minecraft:exposed_copper_door,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:doors,,matched,false,10
 minecraft:exposed_copper_golem_statue,block_building,[],filler,large,building_blocks,exposed_*,,matched,false,10
@@ -614,7 +618,6 @@ minecraft:fire_charge,consumable,[],rare,small,consumable_items,minecraft:fire_c
 minecraft:fire_coral,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
 minecraft:fire_coral_block,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
 minecraft:fire_coral_fan,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
-minecraft:firefly_bush,ignore,[],none,singleton,ignored_items,minecraft:firefly_bush,,matched,false,10
 minecraft:firework_rocket,consumable,['treasure'],rare,small,consumable_items,minecraft:firework_rocket,['firework_*'],matched,false,10
 minecraft:firework_star,consumable,['treasure'],epic,small,consumable_items,minecraft:firework_star,['firework_*'],matched,false,10
 minecraft:fishing_rod,gather_tool,['fishing'],uncommon,singleton,gathering_tools,minecraft:fishing_rod,['#c:tools/fishing_rod'],matched,false,10
@@ -675,14 +678,14 @@ minecraft:grass_block,block_building,[],junk,large,building_blocks,minecraft:gra
 minecraft:gravel,block_material,[],filler,large,material_blocks,minecraft:gravel,,matched,false,10
 minecraft:gray_banner,block_misc_use,"['fortification', 'woolworking']",rare,small,misc_use_blocks,#minecraft:banners,"['#minecraft:banners', '#minecraft:banners']",matched,false,10
 minecraft:gray_bed,block_misc_use,[],uncommon,singleton,misc_use_blocks,#minecraft:beds,,matched,false,10
-minecraft:gray_bundle,ignore,[],none,singleton,ignored_items,minecraft:gray_bundle,,matched,false,10
+minecraft:gray_bundle,misc_tool,[],uncommon,singleton,misc_tools,#minecraft:bundles,,matched,false,10
 minecraft:gray_candle,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:candles,['#minecraft:candles'],matched,false,10
 minecraft:gray_carpet,block_building,['woolworking'],filler,large,building_blocks,#minecraft:wool_carpets,['#minecraft:wool_carpets'],matched,false,10
 minecraft:gray_concrete,block_building,['fortification'],uncommon,large,building_blocks,#c:concretes,['#c:concretes'],matched,false,10
 minecraft:gray_concrete_powder,block_material,['fortification'],uncommon,large,material_blocks,#c:concrete_powders,['#c:concrete_powders'],matched,false,10
 minecraft:gray_dye,item_material,"['leatherworking', 'woolworking']",uncommon,small,material_items,#c:dyes,"['#c:dyes', '#c:dyes']",matched,false,10
 minecraft:gray_glazed_terracotta,block_building,"['desert', 'masonry']",rare,large,building_blocks,#c:glazed_terracottas,"['#c:glazed_terracottas', '#c:glazed_terracottas']",matched,false,10
-minecraft:gray_harness,ignore,[],none,singleton,ignored_items,minecraft:gray_harness,,matched,false,10
+minecraft:gray_harness,wearable,[],rare,singleton,wearable_equipment,#minecraft:harnesses,,matched,false,10
 minecraft:gray_shulker_box,block_storage,['end'],legendary,singleton,storage_blocks,*_shulker_box,['#c:shulker_boxes'],matched,false,10
 minecraft:gray_stained_glass,block_building,[],filler,large,building_blocks,#c:glass_blocks,,matched,false,10
 minecraft:gray_stained_glass_pane,block_building,['clerical'],rare,large,building_blocks,#c:glass_panes,['#c:glass_panes'],matched,false,10
@@ -690,14 +693,14 @@ minecraft:gray_terracotta,block_building,['desert'],filler,large,building_blocks
 minecraft:gray_wool,item_material,['woolworking'],common,small,material_items,#minecraft:wool,['#minecraft:wool'],matched,false,10
 minecraft:green_banner,block_misc_use,"['fortification', 'woolworking']",rare,small,misc_use_blocks,#minecraft:banners,"['#minecraft:banners', '#minecraft:banners']",matched,false,10
 minecraft:green_bed,block_misc_use,[],uncommon,singleton,misc_use_blocks,#minecraft:beds,,matched,false,10
-minecraft:green_bundle,ignore,[],none,singleton,ignored_items,minecraft:green_bundle,,matched,false,10
+minecraft:green_bundle,misc_tool,[],uncommon,singleton,misc_tools,#minecraft:bundles,,matched,false,10
 minecraft:green_candle,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:candles,['#minecraft:candles'],matched,false,10
 minecraft:green_carpet,block_building,['woolworking'],filler,large,building_blocks,#minecraft:wool_carpets,['#minecraft:wool_carpets'],matched,false,10
 minecraft:green_concrete,block_building,['fortification'],uncommon,large,building_blocks,#c:concretes,['#c:concretes'],matched,false,10
 minecraft:green_concrete_powder,block_material,['fortification'],uncommon,large,material_blocks,#c:concrete_powders,['#c:concrete_powders'],matched,false,10
 minecraft:green_dye,item_material,"['leatherworking', 'woolworking']",uncommon,small,material_items,#c:dyes,"['#c:dyes', '#c:dyes']",matched,false,10
 minecraft:green_glazed_terracotta,block_building,"['desert', 'masonry']",rare,large,building_blocks,#c:glazed_terracottas,"['#c:glazed_terracottas', '#c:glazed_terracottas']",matched,false,10
-minecraft:green_harness,ignore,[],none,singleton,ignored_items,minecraft:green_harness,,matched,false,10
+minecraft:green_harness,wearable,[],rare,singleton,wearable_equipment,#minecraft:harnesses,,matched,false,10
 minecraft:green_shulker_box,block_storage,['end'],legendary,singleton,storage_blocks,*_shulker_box,['#c:shulker_boxes'],matched,false,10
 minecraft:green_stained_glass,block_building,[],filler,large,building_blocks,#c:glass_blocks,,matched,false,10
 minecraft:green_stained_glass_pane,block_building,['clerical'],rare,large,building_blocks,#c:glass_panes,['#c:glass_panes'],matched,false,10
@@ -766,14 +769,14 @@ minecraft:jungle_button,block_technical,['jungle'],uncommon,singleton,technical_
 minecraft:jungle_chest_boat,misc_tool,"['sea', 'jungle']",uncommon,singleton,misc_tools,#minecraft:boats,"['#minecraft:boats', 'jungle_*']",matched,false,10
 minecraft:jungle_door,block_misc_use,['jungle'],uncommon,small,misc_use_blocks,#minecraft:doors,['jungle_*'],matched,false,10
 minecraft:jungle_fence,block_building,"['jungle', 'village']",filler,large,building_blocks,#c:fences,"['jungle_*', '#c:fences/wooden']",matched,false,10
-minecraft:jungle_fence_gate,block_misc_use,"['jungle', 'wooden']",uncommon,small,misc_use_blocks,#c:fence_gates,"['jungle_*', '#c:fence_gates/wooden']",matched,false,10
+minecraft:jungle_fence_gate,block_misc_use,"['jungle', 'wooden']",uncommon,small,misc_use_blocks,#minecraft:fence_gates,"['jungle_*', '#c:fence_gates/wooden']",matched,false,10
 minecraft:jungle_hanging_sign,block_misc_use,"['jungle', 'village']",uncommon,small,misc_use_blocks,#minecraft:hanging_signs,"['jungle_*', '#minecraft:hanging_signs']",matched,false,10
 minecraft:jungle_leaves,block_building,['jungle'],junk,large,building_blocks,#minecraft:leaves,['jungle_*'],matched,false,10
 minecraft:jungle_log,block_material,"['jungle', 'wooden']",filler,small,material_blocks,#minecraft:logs,"['jungle_*', '#minecraft:logs_that_burn']",matched,false,10
 minecraft:jungle_planks,block_material,['jungle'],filler,bulk,material_blocks,#minecraft:planks,['jungle_*'],matched,false,10
 minecraft:jungle_pressure_plate,block_technical,['jungle'],uncommon,singleton,technical_blocks,*_pressure_plate,['jungle_*'],matched,false,10
 minecraft:jungle_sapling,garden,"['jungle', 'household']",uncommon,small,garden_items,#minecraft:saplings,"['jungle_*', '#minecraft:saplings']",matched,false,10
-minecraft:jungle_shelf,ignore,[],none,singleton,ignored_items,minecraft:jungle_shelf,,matched,false,10
+minecraft:jungle_shelf,block_storage,['jungle'],uncommon,singleton,storage_blocks,*_shelf,['jungle_*'],matched,false,10
 minecraft:jungle_sign,block_misc_use,['jungle'],uncommon,small,misc_use_blocks,#minecraft:signs,['jungle_*'],matched,false,10
 minecraft:jungle_slab,block_building,['jungle'],filler,large,building_blocks,#minecraft:slabs,['jungle_*'],matched,false,10
 minecraft:jungle_stairs,block_building,['jungle'],filler,large,building_blocks,#minecraft:stairs,['jungle_*'],matched,false,10
@@ -790,7 +793,7 @@ minecraft:large_amethyst_bud,block_material,['deep_under'],rare,large,material_b
 minecraft:large_fern,block_building,[],junk,large,building_blocks,minecraft:large_fern,,matched,false,10
 minecraft:lava_bucket,gather_tool,['deep_under'],rare,singleton,gathering_tools,#c:buckets,['minecraft:lava_bucket'],matched,false,10
 minecraft:lead,misc_tool,[],uncommon,singleton,misc_tools,minecraft:lead,,matched,false,10
-minecraft:leaf_litter,ignore,[],none,singleton,ignored_items,minecraft:leaf_litter,,matched,false,10
+minecraft:leaf_litter,item_material,[],filler,small,material_items,minecraft:leaf_litter,,matched,false,10
 minecraft:leather,item_material,['leatherworking'],common,small,material_items,minecraft:leather,['#c:leathers'],matched,false,10
 minecraft:leather_boots,wearable,['leatherworking'],common,singleton,wearable_equipment,#c:armors,['#minecraft:dyeable'],matched,false,10
 minecraft:leather_chestplate,wearable,['leatherworking'],common,singleton,wearable_equipment,#c:armors,['#minecraft:dyeable'],matched,false,10
@@ -802,14 +805,14 @@ minecraft:lever,block_technical,[],uncommon,singleton,technical_blocks,minecraft
 minecraft:light,nonloot,[],none,singleton,excluded_items,minecraft:light,,matched,false,10
 minecraft:light_blue_banner,block_misc_use,"['fortification', 'woolworking']",rare,small,misc_use_blocks,#minecraft:banners,"['#minecraft:banners', '#minecraft:banners']",matched,false,10
 minecraft:light_blue_bed,block_misc_use,[],uncommon,singleton,misc_use_blocks,#minecraft:beds,,matched,false,10
-minecraft:light_blue_bundle,ignore,[],none,singleton,ignored_items,minecraft:light_blue_bundle,,matched,false,10
+minecraft:light_blue_bundle,misc_tool,[],uncommon,singleton,misc_tools,#minecraft:bundles,,matched,false,10
 minecraft:light_blue_candle,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:candles,['#minecraft:candles'],matched,false,10
 minecraft:light_blue_carpet,block_building,['woolworking'],filler,large,building_blocks,#minecraft:wool_carpets,['#minecraft:wool_carpets'],matched,false,10
 minecraft:light_blue_concrete,block_building,['fortification'],uncommon,large,building_blocks,#c:concretes,['#c:concretes'],matched,false,10
 minecraft:light_blue_concrete_powder,block_material,['fortification'],uncommon,large,material_blocks,#c:concrete_powders,['#c:concrete_powders'],matched,false,10
 minecraft:light_blue_dye,item_material,"['leatherworking', 'woolworking']",uncommon,small,material_items,#c:dyes,"['#c:dyes', '#c:dyes']",matched,false,10
 minecraft:light_blue_glazed_terracotta,block_building,"['desert', 'masonry']",rare,large,building_blocks,#c:glazed_terracottas,"['#c:glazed_terracottas', '#c:glazed_terracottas']",matched,false,10
-minecraft:light_blue_harness,ignore,[],none,singleton,ignored_items,minecraft:light_blue_harness,,matched,false,10
+minecraft:light_blue_harness,wearable,[],rare,singleton,wearable_equipment,#minecraft:harnesses,,matched,false,10
 minecraft:light_blue_shulker_box,block_storage,['end'],legendary,singleton,storage_blocks,*_shulker_box,['#c:shulker_boxes'],matched,false,10
 minecraft:light_blue_stained_glass,block_building,[],filler,large,building_blocks,#c:glass_blocks,,matched,false,10
 minecraft:light_blue_stained_glass_pane,block_building,['clerical'],rare,large,building_blocks,#c:glass_panes,['#c:glass_panes'],matched,false,10
@@ -817,14 +820,14 @@ minecraft:light_blue_terracotta,block_building,['desert'],filler,large,building_
 minecraft:light_blue_wool,item_material,['woolworking'],common,small,material_items,#minecraft:wool,['#minecraft:wool'],matched,false,10
 minecraft:light_gray_banner,block_misc_use,"['fortification', 'woolworking']",rare,small,misc_use_blocks,#minecraft:banners,"['#minecraft:banners', '#minecraft:banners']",matched,false,10
 minecraft:light_gray_bed,block_misc_use,[],uncommon,singleton,misc_use_blocks,#minecraft:beds,,matched,false,10
-minecraft:light_gray_bundle,ignore,[],none,singleton,ignored_items,minecraft:light_gray_bundle,,matched,false,10
+minecraft:light_gray_bundle,misc_tool,[],uncommon,singleton,misc_tools,#minecraft:bundles,,matched,false,10
 minecraft:light_gray_candle,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:candles,['#minecraft:candles'],matched,false,10
 minecraft:light_gray_carpet,block_building,['woolworking'],filler,large,building_blocks,#minecraft:wool_carpets,['#minecraft:wool_carpets'],matched,false,10
 minecraft:light_gray_concrete,block_building,['fortification'],uncommon,large,building_blocks,#c:concretes,['#c:concretes'],matched,false,10
 minecraft:light_gray_concrete_powder,block_material,['fortification'],uncommon,large,material_blocks,#c:concrete_powders,['#c:concrete_powders'],matched,false,10
 minecraft:light_gray_dye,item_material,"['leatherworking', 'woolworking']",uncommon,small,material_items,#c:dyes,"['#c:dyes', '#c:dyes']",matched,false,10
 minecraft:light_gray_glazed_terracotta,block_building,"['desert', 'masonry']",rare,large,building_blocks,#c:glazed_terracottas,"['#c:glazed_terracottas', '#c:glazed_terracottas']",matched,false,10
-minecraft:light_gray_harness,ignore,[],none,singleton,ignored_items,minecraft:light_gray_harness,,matched,false,10
+minecraft:light_gray_harness,wearable,[],rare,singleton,wearable_equipment,#minecraft:harnesses,,matched,false,10
 minecraft:light_gray_shulker_box,block_storage,['end'],legendary,singleton,storage_blocks,*_shulker_box,['#c:shulker_boxes'],matched,false,10
 minecraft:light_gray_stained_glass,block_building,[],filler,large,building_blocks,#c:glass_blocks,,matched,false,10
 minecraft:light_gray_stained_glass_pane,block_building,['clerical'],rare,large,building_blocks,#c:glass_panes,['#c:glass_panes'],matched,false,10
@@ -837,14 +840,14 @@ minecraft:lily_of_the_valley,item_material,['household'],common,small,material_i
 minecraft:lily_pad,block_building,[],junk,large,building_blocks,minecraft:lily_pad,,matched,false,10
 minecraft:lime_banner,block_misc_use,"['fortification', 'woolworking']",rare,small,misc_use_blocks,#minecraft:banners,"['#minecraft:banners', '#minecraft:banners']",matched,false,10
 minecraft:lime_bed,block_misc_use,[],uncommon,singleton,misc_use_blocks,#minecraft:beds,,matched,false,10
-minecraft:lime_bundle,ignore,[],none,singleton,ignored_items,minecraft:lime_bundle,,matched,false,10
+minecraft:lime_bundle,misc_tool,[],uncommon,singleton,misc_tools,#minecraft:bundles,,matched,false,10
 minecraft:lime_candle,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:candles,['#minecraft:candles'],matched,false,10
 minecraft:lime_carpet,block_building,['woolworking'],filler,large,building_blocks,#minecraft:wool_carpets,['#minecraft:wool_carpets'],matched,false,10
 minecraft:lime_concrete,block_building,['fortification'],uncommon,large,building_blocks,#c:concretes,['#c:concretes'],matched,false,10
 minecraft:lime_concrete_powder,block_material,['fortification'],uncommon,large,material_blocks,#c:concrete_powders,['#c:concrete_powders'],matched,false,10
 minecraft:lime_dye,item_material,"['leatherworking', 'woolworking']",uncommon,small,material_items,#c:dyes,"['#c:dyes', '#c:dyes']",matched,false,10
 minecraft:lime_glazed_terracotta,block_building,"['desert', 'masonry']",rare,large,building_blocks,#c:glazed_terracottas,"['#c:glazed_terracottas', '#c:glazed_terracottas']",matched,false,10
-minecraft:lime_harness,ignore,[],none,singleton,ignored_items,minecraft:lime_harness,,matched,false,10
+minecraft:lime_harness,wearable,[],rare,singleton,wearable_equipment,#minecraft:harnesses,,matched,false,10
 minecraft:lime_shulker_box,block_storage,['end'],legendary,singleton,storage_blocks,*_shulker_box,['#c:shulker_boxes'],matched,false,10
 minecraft:lime_stained_glass,block_building,[],filler,large,building_blocks,#c:glass_blocks,,matched,false,10
 minecraft:lime_stained_glass_pane,block_building,['clerical'],rare,large,building_blocks,#c:glass_panes,['#c:glass_panes'],matched,false,10
@@ -857,14 +860,14 @@ minecraft:loom,block_crafting,[],rare,singleton,crafting_blocks,minecraft:loom,,
 minecraft:mace,weapon,[],epic,singleton,weapons,minecraft:mace,,matched,false,10
 minecraft:magenta_banner,block_misc_use,"['fortification', 'woolworking']",rare,small,misc_use_blocks,#minecraft:banners,"['#minecraft:banners', '#minecraft:banners']",matched,false,10
 minecraft:magenta_bed,block_misc_use,[],uncommon,singleton,misc_use_blocks,#minecraft:beds,,matched,false,10
-minecraft:magenta_bundle,ignore,[],none,singleton,ignored_items,minecraft:magenta_bundle,,matched,false,10
+minecraft:magenta_bundle,misc_tool,[],uncommon,singleton,misc_tools,#minecraft:bundles,,matched,false,10
 minecraft:magenta_candle,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:candles,['#minecraft:candles'],matched,false,10
 minecraft:magenta_carpet,block_building,['woolworking'],filler,large,building_blocks,#minecraft:wool_carpets,['#minecraft:wool_carpets'],matched,false,10
 minecraft:magenta_concrete,block_building,['fortification'],uncommon,large,building_blocks,#c:concretes,['#c:concretes'],matched,false,10
 minecraft:magenta_concrete_powder,block_material,['fortification'],uncommon,large,material_blocks,#c:concrete_powders,['#c:concrete_powders'],matched,false,10
 minecraft:magenta_dye,item_material,"['leatherworking', 'woolworking']",uncommon,small,material_items,#c:dyes,"['#c:dyes', '#c:dyes']",matched,false,10
 minecraft:magenta_glazed_terracotta,block_building,"['desert', 'masonry']",rare,large,building_blocks,#c:glazed_terracottas,"['#c:glazed_terracottas', '#c:glazed_terracottas']",matched,false,10
-minecraft:magenta_harness,ignore,[],none,singleton,ignored_items,minecraft:magenta_harness,,matched,false,10
+minecraft:magenta_harness,wearable,[],rare,singleton,wearable_equipment,#minecraft:harnesses,,matched,false,10
 minecraft:magenta_shulker_box,block_storage,['end'],legendary,singleton,storage_blocks,*_shulker_box,['#c:shulker_boxes'],matched,false,10
 minecraft:magenta_stained_glass,block_building,[],filler,large,building_blocks,#c:glass_blocks,,matched,false,10
 minecraft:magenta_stained_glass_pane,block_building,['clerical'],rare,large,building_blocks,#c:glass_panes,['#c:glass_panes'],matched,false,10
@@ -878,7 +881,7 @@ minecraft:mangrove_button,block_technical,['swamp'],uncommon,singleton,technical
 minecraft:mangrove_chest_boat,misc_tool,"['sea', 'swamp']",uncommon,singleton,misc_tools,#minecraft:boats,"['#minecraft:boats', 'mangrove_*']",matched,false,10
 minecraft:mangrove_door,block_misc_use,['swamp'],uncommon,small,misc_use_blocks,#minecraft:doors,['mangrove_*'],matched,false,10
 minecraft:mangrove_fence,block_building,"['swamp', 'village']",filler,large,building_blocks,#c:fences,"['mangrove_*', '#c:fences/wooden']",matched,false,10
-minecraft:mangrove_fence_gate,block_misc_use,"['swamp', 'wooden']",uncommon,small,misc_use_blocks,#c:fence_gates,"['mangrove_*', '#c:fence_gates/wooden']",matched,false,10
+minecraft:mangrove_fence_gate,block_misc_use,"['swamp', 'wooden']",uncommon,small,misc_use_blocks,#minecraft:fence_gates,"['mangrove_*', '#c:fence_gates/wooden']",matched,false,10
 minecraft:mangrove_hanging_sign,block_misc_use,"['swamp', 'village']",uncommon,small,misc_use_blocks,#minecraft:hanging_signs,"['mangrove_*', '#minecraft:hanging_signs']",matched,false,10
 minecraft:mangrove_leaves,block_building,['swamp'],junk,large,building_blocks,#minecraft:leaves,['mangrove_*'],matched,false,10
 minecraft:mangrove_log,block_material,"['swamp', 'wooden']",filler,small,material_blocks,#minecraft:logs,"['mangrove_*', '#minecraft:logs_that_burn']",matched,false,10
@@ -886,7 +889,7 @@ minecraft:mangrove_planks,block_material,['swamp'],filler,bulk,material_blocks,#
 minecraft:mangrove_pressure_plate,block_technical,['swamp'],uncommon,singleton,technical_blocks,*_pressure_plate,['mangrove_*'],matched,false,10
 minecraft:mangrove_propagule,garden,"['swamp', 'household']",uncommon,small,garden_items,#minecraft:saplings,"['mangrove_*', '#minecraft:flowers']",matched,false,10
 minecraft:mangrove_roots,block_material,['swamp'],junk,large,material_blocks,minecraft:mangrove_roots,['mangrove_*'],matched,false,10
-minecraft:mangrove_shelf,ignore,[],none,singleton,ignored_items,minecraft:mangrove_shelf,,matched,false,10
+minecraft:mangrove_shelf,block_storage,['swamp'],uncommon,singleton,storage_blocks,*_shelf,['mangrove_*'],matched,false,10
 minecraft:mangrove_sign,block_misc_use,['swamp'],uncommon,small,misc_use_blocks,#minecraft:signs,['mangrove_*'],matched,false,10
 minecraft:mangrove_slab,block_building,['swamp'],filler,large,building_blocks,#minecraft:slabs,['mangrove_*'],matched,false,10
 minecraft:mangrove_stairs,block_building,['swamp'],filler,large,building_blocks,#minecraft:stairs,['mangrove_*'],matched,false,10
@@ -979,14 +982,14 @@ minecraft:oak_button,block_technical,"['plains', 'village']",uncommon,singleton,
 minecraft:oak_chest_boat,misc_tool,"['sea', 'plains', 'village']",uncommon,singleton,misc_tools,#minecraft:boats,"['#minecraft:boats', 'oak_*', 'oak_*']",matched,false,10
 minecraft:oak_door,block_misc_use,"['plains', 'village']",uncommon,small,misc_use_blocks,#minecraft:doors,"['oak_*', 'oak_*']",matched,false,10
 minecraft:oak_fence,block_building,"['plains', 'village']",filler,large,building_blocks,#c:fences,"['oak_*', 'oak_*']",matched,false,10
-minecraft:oak_fence_gate,block_misc_use,"['plains', 'village', 'wooden']",uncommon,small,misc_use_blocks,#c:fence_gates,"['oak_*', 'oak_*', '#c:fence_gates/wooden']",matched,false,10
+minecraft:oak_fence_gate,block_misc_use,"['plains', 'village', 'wooden']",uncommon,small,misc_use_blocks,#minecraft:fence_gates,"['oak_*', 'oak_*', '#c:fence_gates/wooden']",matched,false,10
 minecraft:oak_hanging_sign,block_misc_use,"['plains', 'village']",uncommon,small,misc_use_blocks,#minecraft:hanging_signs,"['oak_*', 'oak_*']",matched,false,10
 minecraft:oak_leaves,block_building,"['plains', 'village']",junk,large,building_blocks,#minecraft:leaves,"['oak_*', 'oak_*']",matched,false,10
 minecraft:oak_log,block_material,"['plains', 'village', 'wooden']",filler,small,material_blocks,#minecraft:logs,"['oak_*', 'oak_*', '#minecraft:logs_that_burn']",matched,false,10
 minecraft:oak_planks,block_material,"['plains', 'village']",filler,bulk,material_blocks,#minecraft:planks,"['oak_*', 'oak_*']",matched,false,10
 minecraft:oak_pressure_plate,block_technical,"['plains', 'village']",uncommon,singleton,technical_blocks,*_pressure_plate,"['oak_*', 'oak_*']",matched,false,10
 minecraft:oak_sapling,garden,"['plains', 'village', 'household']",uncommon,small,garden_items,#minecraft:saplings,"['oak_*', 'oak_*', '#minecraft:saplings']",matched,false,10
-minecraft:oak_shelf,ignore,[],none,singleton,ignored_items,minecraft:oak_shelf,,matched,false,10
+minecraft:oak_shelf,block_storage,"['plains', 'village']",uncommon,singleton,storage_blocks,*_shelf,"['oak_*', 'oak_*']",matched,false,10
 minecraft:oak_sign,block_misc_use,"['plains', 'village']",uncommon,small,misc_use_blocks,#minecraft:signs,"['oak_*', 'oak_*']",matched,false,10
 minecraft:oak_slab,block_building,"['plains', 'village']",filler,large,building_blocks,#minecraft:slabs,"['oak_*', 'oak_*']",matched,false,10
 minecraft:oak_stairs,block_building,"['plains', 'village']",filler,large,building_blocks,#minecraft:stairs,"['oak_*', 'oak_*']",matched,false,10
@@ -1001,14 +1004,14 @@ minecraft:ominous_trial_key,consumable,[],unique,small,consumable_items,minecraf
 minecraft:open_eyeblossom,item_material,['household'],common,small,material_items,#minecraft:flowers,['#minecraft:flowers'],matched,false,10
 minecraft:orange_banner,block_misc_use,"['fortification', 'woolworking']",rare,small,misc_use_blocks,#minecraft:banners,"['#minecraft:banners', '#minecraft:banners']",matched,false,10
 minecraft:orange_bed,block_misc_use,[],uncommon,singleton,misc_use_blocks,#minecraft:beds,,matched,false,10
-minecraft:orange_bundle,ignore,[],none,singleton,ignored_items,minecraft:orange_bundle,,matched,false,10
+minecraft:orange_bundle,misc_tool,[],uncommon,singleton,misc_tools,#minecraft:bundles,,matched,false,10
 minecraft:orange_candle,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:candles,['#minecraft:candles'],matched,false,10
 minecraft:orange_carpet,block_building,['woolworking'],filler,large,building_blocks,#minecraft:wool_carpets,['#minecraft:wool_carpets'],matched,false,10
 minecraft:orange_concrete,block_building,['fortification'],uncommon,large,building_blocks,#c:concretes,['#c:concretes'],matched,false,10
 minecraft:orange_concrete_powder,block_material,['fortification'],uncommon,large,material_blocks,#c:concrete_powders,['#c:concrete_powders'],matched,false,10
 minecraft:orange_dye,item_material,"['leatherworking', 'woolworking']",uncommon,small,material_items,#c:dyes,"['#c:dyes', '#c:dyes']",matched,false,10
 minecraft:orange_glazed_terracotta,block_building,"['desert', 'masonry']",rare,large,building_blocks,#c:glazed_terracottas,"['#c:glazed_terracottas', '#c:glazed_terracottas']",matched,false,10
-minecraft:orange_harness,ignore,[],none,singleton,ignored_items,minecraft:orange_harness,,matched,false,10
+minecraft:orange_harness,wearable,[],rare,singleton,wearable_equipment,#minecraft:harnesses,,matched,false,10
 minecraft:orange_shulker_box,block_storage,['end'],legendary,singleton,storage_blocks,*_shulker_box,['#c:shulker_boxes'],matched,false,10
 minecraft:orange_stained_glass,block_building,[],filler,large,building_blocks,#c:glass_blocks,,matched,false,10
 minecraft:orange_stained_glass_pane,block_building,['clerical'],rare,large,building_blocks,#c:glass_panes,['#c:glass_panes'],matched,false,10
@@ -1020,7 +1023,7 @@ minecraft:oxidized_chiseled_copper,block_building,[],filler,large,building_block
 minecraft:oxidized_copper,block_building,[],filler,large,building_blocks,oxidized_*,,matched,false,10
 minecraft:oxidized_copper_bars,block_building,[],filler,large,building_blocks,oxidized_*,,matched,false,10
 minecraft:oxidized_copper_bulb,block_technical,[],rare,singleton,technical_blocks,*copper_bulb,,matched,false,10
-minecraft:oxidized_copper_chain,block_building,['smithing'],filler,large,building_blocks,oxidized_*,['#c:chains'],matched,false,10
+minecraft:oxidized_copper_chain,block_building,['smithing'],uncommon,large,building_blocks,oxidized_*,['#c:chains'],matched,false,10
 minecraft:oxidized_copper_chest,block_building,[],filler,large,building_blocks,oxidized_*,,matched,false,10
 minecraft:oxidized_copper_door,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:doors,,matched,false,10
 minecraft:oxidized_copper_golem_statue,block_building,[],filler,large,building_blocks,oxidized_*,,matched,false,10
@@ -1034,22 +1037,20 @@ minecraft:oxidized_lightning_rod,block_building,[],filler,large,building_blocks,
 minecraft:packed_ice,block_misc_use,['arctic'],uncommon,small,misc_use_blocks,minecraft:packed_ice,['*_ice'],matched,false,10
 minecraft:packed_mud,block_material,['swamp'],filler,large,material_blocks,minecraft:packed_mud,['minecraft:packed_mud'],matched,false,10
 minecraft:painting,block_building,[],uncommon,large,building_blocks,minecraft:painting,,matched,false,10
-minecraft:pale_hanging_moss,ignore,[],none,singleton,ignored_items,minecraft:pale_hanging_moss,,matched,false,10
 minecraft:pale_moss_block,block_building,[],junk,large,building_blocks,#minecraft:dirt,,matched,false,10
-minecraft:pale_moss_carpet,ignore,[],none,singleton,ignored_items,minecraft:pale_moss_carpet,,matched,false,10
 minecraft:pale_oak_boat,misc_tool,['sea'],uncommon,singleton,misc_tools,#minecraft:boats,['#minecraft:boats'],matched,false,10
 minecraft:pale_oak_button,block_technical,[],uncommon,singleton,technical_blocks,#minecraft:buttons,,matched,false,10
 minecraft:pale_oak_chest_boat,misc_tool,['sea'],uncommon,singleton,misc_tools,#minecraft:boats,['#minecraft:boats'],matched,false,10
 minecraft:pale_oak_door,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:doors,,matched,false,10
 minecraft:pale_oak_fence,block_building,['village'],filler,large,building_blocks,#c:fences,['#c:fences/wooden'],matched,false,10
-minecraft:pale_oak_fence_gate,ignore,[],none,singleton,ignored_items,minecraft:pale_oak_fence_gate,,matched,false,10
+minecraft:pale_oak_fence_gate,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:fence_gates,,matched,false,10
 minecraft:pale_oak_hanging_sign,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:hanging_signs,['#minecraft:hanging_signs'],matched,false,10
 minecraft:pale_oak_leaves,block_building,[],junk,large,building_blocks,#minecraft:leaves,,matched,false,10
 minecraft:pale_oak_log,block_material,['wooden'],filler,small,material_blocks,#minecraft:logs,['#minecraft:logs_that_burn'],matched,false,10
 minecraft:pale_oak_planks,block_material,[],filler,bulk,material_blocks,#minecraft:planks,,matched,false,10
 minecraft:pale_oak_pressure_plate,block_technical,[],uncommon,singleton,technical_blocks,*_pressure_plate,,matched,false,10
 minecraft:pale_oak_sapling,garden,['household'],uncommon,small,garden_items,#minecraft:saplings,['#minecraft:saplings'],matched,false,10
-minecraft:pale_oak_shelf,ignore,[],none,singleton,ignored_items,minecraft:pale_oak_shelf,,matched,false,10
+minecraft:pale_oak_shelf,block_storage,[],uncommon,singleton,storage_blocks,*_shelf,,matched,false,10
 minecraft:pale_oak_sign,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:signs,,matched,false,10
 minecraft:pale_oak_slab,block_building,[],filler,large,building_blocks,#minecraft:slabs,,matched,false,10
 minecraft:pale_oak_stairs,block_building,[],filler,large,building_blocks,#minecraft:stairs,,matched,false,10
@@ -1071,14 +1072,14 @@ minecraft:piglin_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,
 minecraft:pillager_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
 minecraft:pink_banner,block_misc_use,"['fortification', 'woolworking']",rare,small,misc_use_blocks,#minecraft:banners,"['#minecraft:banners', '#minecraft:banners']",matched,false,10
 minecraft:pink_bed,block_misc_use,[],uncommon,singleton,misc_use_blocks,#minecraft:beds,,matched,false,10
-minecraft:pink_bundle,ignore,[],none,singleton,ignored_items,minecraft:pink_bundle,,matched,false,10
+minecraft:pink_bundle,misc_tool,[],uncommon,singleton,misc_tools,#minecraft:bundles,,matched,false,10
 minecraft:pink_candle,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:candles,['#minecraft:candles'],matched,false,10
 minecraft:pink_carpet,block_building,['woolworking'],filler,large,building_blocks,#minecraft:wool_carpets,['#minecraft:wool_carpets'],matched,false,10
 minecraft:pink_concrete,block_building,['fortification'],uncommon,large,building_blocks,#c:concretes,['#c:concretes'],matched,false,10
 minecraft:pink_concrete_powder,block_material,['fortification'],uncommon,large,material_blocks,#c:concrete_powders,['#c:concrete_powders'],matched,false,10
 minecraft:pink_dye,item_material,"['leatherworking', 'woolworking']",uncommon,small,material_items,#c:dyes,"['#c:dyes', '#c:dyes']",matched,false,10
 minecraft:pink_glazed_terracotta,block_building,"['desert', 'masonry']",rare,large,building_blocks,#c:glazed_terracottas,"['#c:glazed_terracottas', '#c:glazed_terracottas']",matched,false,10
-minecraft:pink_harness,ignore,[],none,singleton,ignored_items,minecraft:pink_harness,,matched,false,10
+minecraft:pink_harness,wearable,[],rare,singleton,wearable_equipment,#minecraft:harnesses,,matched,false,10
 minecraft:pink_petals,item_material,['household'],common,small,material_items,#minecraft:flowers,['#minecraft:flowers'],matched,false,10
 minecraft:pink_shulker_box,block_storage,['end'],legendary,singleton,storage_blocks,*_shulker_box,['#c:shulker_boxes'],matched,false,10
 minecraft:pink_stained_glass,block_building,[],filler,large,building_blocks,#c:glass_blocks,,matched,false,10
@@ -1148,14 +1149,14 @@ minecraft:pumpkin_pie,consumable,"['household', 'food']",common,small,consumable
 minecraft:pumpkin_seeds,garden,['farming'],uncommon,small,garden_items,*_seeds,['#c:seeds'],matched,false,10
 minecraft:purple_banner,block_misc_use,"['fortification', 'woolworking']",rare,small,misc_use_blocks,#minecraft:banners,"['#minecraft:banners', '#minecraft:banners']",matched,false,10
 minecraft:purple_bed,block_misc_use,[],uncommon,singleton,misc_use_blocks,#minecraft:beds,,matched,false,10
-minecraft:purple_bundle,ignore,[],none,singleton,ignored_items,minecraft:purple_bundle,,matched,false,10
+minecraft:purple_bundle,misc_tool,[],uncommon,singleton,misc_tools,#minecraft:bundles,,matched,false,10
 minecraft:purple_candle,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:candles,['#minecraft:candles'],matched,false,10
 minecraft:purple_carpet,block_building,['woolworking'],filler,large,building_blocks,#minecraft:wool_carpets,['#minecraft:wool_carpets'],matched,false,10
 minecraft:purple_concrete,block_building,['fortification'],uncommon,large,building_blocks,#c:concretes,['#c:concretes'],matched,false,10
 minecraft:purple_concrete_powder,block_material,['fortification'],uncommon,large,material_blocks,#c:concrete_powders,['#c:concrete_powders'],matched,false,10
 minecraft:purple_dye,item_material,"['leatherworking', 'woolworking']",uncommon,small,material_items,#c:dyes,"['#c:dyes', '#c:dyes']",matched,false,10
 minecraft:purple_glazed_terracotta,block_building,"['desert', 'masonry']",rare,large,building_blocks,#c:glazed_terracottas,"['#c:glazed_terracottas', '#c:glazed_terracottas']",matched,false,10
-minecraft:purple_harness,ignore,[],none,singleton,ignored_items,minecraft:purple_harness,,matched,false,10
+minecraft:purple_harness,wearable,[],rare,singleton,wearable_equipment,#minecraft:harnesses,,matched,false,10
 minecraft:purple_shulker_box,block_storage,['end'],legendary,singleton,storage_blocks,*_shulker_box,['#c:shulker_boxes'],matched,false,10
 minecraft:purple_stained_glass,block_building,[],filler,large,building_blocks,#c:glass_blocks,,matched,false,10
 minecraft:purple_stained_glass_pane,block_building,['clerical'],rare,large,building_blocks,#c:glass_panes,['#c:glass_panes'],matched,false,10
@@ -1188,14 +1189,14 @@ minecraft:raw_iron_block,item_material,[],legendary,singleton,material_items,raw
 minecraft:recovery_compass,misc_tool,['end'],unique,singleton,misc_tools,minecraft:recovery_compass,['minecraft:recovery_compass'],matched,false,10
 minecraft:red_banner,block_misc_use,"['fortification', 'woolworking']",rare,small,misc_use_blocks,#minecraft:banners,"['#minecraft:banners', '#minecraft:banners']",matched,false,10
 minecraft:red_bed,block_misc_use,[],uncommon,singleton,misc_use_blocks,#minecraft:beds,,matched,false,10
-minecraft:red_bundle,ignore,[],none,singleton,ignored_items,minecraft:red_bundle,,matched,false,10
+minecraft:red_bundle,misc_tool,[],uncommon,singleton,misc_tools,#minecraft:bundles,,matched,false,10
 minecraft:red_candle,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:candles,['#minecraft:candles'],matched,false,10
 minecraft:red_carpet,block_building,['woolworking'],filler,large,building_blocks,#minecraft:wool_carpets,['#minecraft:wool_carpets'],matched,false,10
 minecraft:red_concrete,block_building,['fortification'],uncommon,large,building_blocks,#c:concretes,['#c:concretes'],matched,false,10
 minecraft:red_concrete_powder,block_material,['fortification'],uncommon,large,material_blocks,#c:concrete_powders,['#c:concrete_powders'],matched,false,10
 minecraft:red_dye,item_material,"['leatherworking', 'woolworking']",uncommon,small,material_items,#c:dyes,"['#c:dyes', '#c:dyes']",matched,false,10
 minecraft:red_glazed_terracotta,block_building,"['desert', 'masonry']",rare,large,building_blocks,#c:glazed_terracottas,"['#c:glazed_terracottas', '#c:glazed_terracottas']",matched,false,10
-minecraft:red_harness,ignore,[],none,singleton,ignored_items,minecraft:red_harness,,matched,false,10
+minecraft:red_harness,wearable,[],rare,singleton,wearable_equipment,#minecraft:harnesses,,matched,false,10
 minecraft:red_mushroom,item_material,[],common,small,material_items,*_mushroom,,matched,false,10
 minecraft:red_mushroom_block,block_building,[],junk,large,building_blocks,minecraft:red_mushroom_block,,matched,false,10
 minecraft:red_nether_brick_slab,block_building,['nether'],filler,large,building_blocks,#minecraft:slabs,['red_nether_*'],matched,false,10
@@ -1221,13 +1222,12 @@ minecraft:redstone_torch,block_technical,[],uncommon,small,technical_blocks,mine
 minecraft:reinforced_deepslate,block_building,['deep_under'],none,large,building_blocks,minecraft:reinforced_deepslate,['*deepslate*'],matched,false,10
 minecraft:repeater,block_technical,[],rare,singleton,technical_blocks,minecraft:repeater,,matched,false,10
 minecraft:repeating_command_block,nonloot,[],none,singleton,excluded_items,minecraft:repeating_command_block,,matched,false,10
-minecraft:resin_block,ignore,[],none,singleton,ignored_items,minecraft:resin_block,,matched,false,10
-minecraft:resin_brick,ignore,[],none,singleton,ignored_items,minecraft:resin_brick,,matched,false,10
+minecraft:resin_block,item_material,[],epic,small,material_items,minecraft:resin_block,,matched,false,10
 minecraft:resin_brick_slab,block_building,[],filler,large,building_blocks,#minecraft:slabs,,matched,false,10
 minecraft:resin_brick_stairs,block_building,[],filler,large,building_blocks,#minecraft:stairs,,matched,false,10
 minecraft:resin_brick_wall,block_building,[],filler,large,building_blocks,#minecraft:walls,,matched,false,10
 minecraft:resin_bricks,block_material,[],filler,large,material_blocks,*_bricks,,matched,false,10
-minecraft:resin_clump,ignore,[],none,singleton,ignored_items,minecraft:resin_clump,,matched,false,10
+minecraft:resin_clump,item_material,[],epic,small,material_items,minecraft:resin_clump,,matched,false,10
 minecraft:respawn_anchor,block_misc_use,[],legendary,singleton,misc_use_blocks,minecraft:respawn_anchor,,matched,false,10
 minecraft:rib_armor_trim_smithing_template,item_material,['treasure'],rare,tiny,material_items,#minecraft:trim_templates,['#minecraft:trim_templates'],matched,false,10
 minecraft:rooted_dirt,block_misc_use,[],junk,small,misc_use_blocks,minecraft:rooted_dirt,,matched,false,10
@@ -1259,7 +1259,7 @@ minecraft:shears,gather_tool,['woolworking'],uncommon,singleton,gathering_tools,
 minecraft:sheep_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
 minecraft:shelter_pottery_sherd,item_material,['archaeology'],uncommon,small,material_items,#minecraft:decorated_pot_sherds,['#minecraft:decorated_pot_sherds'],matched,false,10
 minecraft:shield,wearable,[],uncommon,singleton,wearable_equipment,#c:tools/shield,,matched,false,10
-minecraft:short_dry_grass,ignore,[],none,singleton,ignored_items,minecraft:short_dry_grass,,matched,false,10
+minecraft:short_dry_grass,block_building,[],junk,large,building_blocks,minecraft:short_dry_grass,,matched,false,10
 minecraft:short_grass,block_building,[],junk,large,building_blocks,minecraft:short_grass,,matched,false,10
 minecraft:shroomlight,block_misc_use,[],uncommon,small,misc_use_blocks,minecraft:shroomlight,,matched,false,10
 minecraft:shulker_box,block_storage,['end'],legendary,singleton,storage_blocks,minecraft:shulker_box,['shulker_*'],matched,false,10
@@ -1317,14 +1317,14 @@ minecraft:spruce_button,block_technical,['village'],uncommon,singleton,technical
 minecraft:spruce_chest_boat,misc_tool,"['sea', 'village']",uncommon,singleton,misc_tools,#minecraft:boats,"['#minecraft:boats', 'spruce_*']",matched,false,10
 minecraft:spruce_door,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:doors,['spruce_*'],matched,false,10
 minecraft:spruce_fence,block_building,['village'],filler,large,building_blocks,#c:fences,['spruce_*'],matched,false,10
-minecraft:spruce_fence_gate,block_misc_use,"['village', 'wooden']",uncommon,small,misc_use_blocks,#c:fence_gates,"['spruce_*', '#c:fence_gates/wooden']",matched,false,10
+minecraft:spruce_fence_gate,block_misc_use,"['village', 'wooden']",uncommon,small,misc_use_blocks,#minecraft:fence_gates,"['spruce_*', '#c:fence_gates/wooden']",matched,false,10
 minecraft:spruce_hanging_sign,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:hanging_signs,['spruce_*'],matched,false,10
 minecraft:spruce_leaves,block_building,['village'],junk,large,building_blocks,#minecraft:leaves,['spruce_*'],matched,false,10
 minecraft:spruce_log,block_material,"['village', 'wooden']",filler,small,material_blocks,#minecraft:logs,"['spruce_*', '#minecraft:logs_that_burn']",matched,false,10
 minecraft:spruce_planks,block_material,['village'],filler,bulk,material_blocks,#minecraft:planks,['spruce_*'],matched,false,10
 minecraft:spruce_pressure_plate,block_technical,['village'],uncommon,singleton,technical_blocks,*_pressure_plate,['spruce_*'],matched,false,10
 minecraft:spruce_sapling,garden,"['village', 'household']",uncommon,small,garden_items,#minecraft:saplings,"['spruce_*', '#minecraft:saplings']",matched,false,10
-minecraft:spruce_shelf,ignore,[],none,singleton,ignored_items,minecraft:spruce_shelf,,matched,false,10
+minecraft:spruce_shelf,block_storage,['village'],uncommon,singleton,storage_blocks,*_shelf,['spruce_*'],matched,false,10
 minecraft:spruce_sign,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:signs,['spruce_*'],matched,false,10
 minecraft:spruce_slab,block_building,['village'],filler,large,building_blocks,#minecraft:slabs,['spruce_*'],matched,false,10
 minecraft:spruce_stairs,block_building,['village'],filler,large,building_blocks,#minecraft:stairs,['spruce_*'],matched,false,10
@@ -1386,7 +1386,7 @@ minecraft:suspicious_stew,consumable,"['household', 'food']",common,small,consum
 minecraft:sweet_berries,consumable,"['household', 'food']",common,small,consumable_items,#c:foods,"['#c:foods', '#c:foods']",matched,false,10
 minecraft:tadpole_bucket,gather_tool,['swamp'],rare,singleton,gathering_tools,#c:buckets,['minecraft:tadpole_bucket'],matched,false,10
 minecraft:tadpole_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
-minecraft:tall_dry_grass,ignore,[],none,singleton,ignored_items,minecraft:tall_dry_grass,,matched,false,10
+minecraft:tall_dry_grass,block_building,[],junk,large,building_blocks,minecraft:tall_dry_grass,,matched,false,10
 minecraft:tall_grass,block_building,[],junk,large,building_blocks,minecraft:tall_grass,,matched,false,10
 minecraft:target,block_technical,['fletching'],rare,singleton,technical_blocks,minecraft:target,['minecraft:target'],matched,false,10
 minecraft:terracotta,block_building,['desert'],filler,large,building_blocks,#minecraft:terracotta,['#minecraft:terracotta'],matched,false,10
@@ -1437,7 +1437,7 @@ minecraft:warden_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,
 minecraft:warped_button,block_technical,['nether'],uncommon,singleton,technical_blocks,#minecraft:buttons,['warped_*'],matched,false,10
 minecraft:warped_door,block_misc_use,['nether'],uncommon,small,misc_use_blocks,#minecraft:doors,['warped_*'],matched,false,10
 minecraft:warped_fence,block_building,"['nether', 'village']",filler,large,building_blocks,#c:fences,"['warped_*', '#c:fences/wooden']",matched,false,10
-minecraft:warped_fence_gate,block_misc_use,"['nether', 'wooden']",uncommon,small,misc_use_blocks,#c:fence_gates,"['warped_*', '#c:fence_gates/wooden']",matched,false,10
+minecraft:warped_fence_gate,block_misc_use,"['nether', 'wooden']",uncommon,small,misc_use_blocks,#minecraft:fence_gates,"['warped_*', '#c:fence_gates/wooden']",matched,false,10
 minecraft:warped_fungus,item_material,['nether'],common,small,material_items,*_fungus,['warped_*'],matched,false,10
 minecraft:warped_fungus_on_a_stick,misc_tool,['nether'],rare,singleton,misc_tools,minecraft:warped_fungus_on_a_stick,['warped_*'],matched,false,10
 minecraft:warped_hanging_sign,block_misc_use,"['nether', 'village']",uncommon,small,misc_use_blocks,#minecraft:hanging_signs,"['warped_*', '#minecraft:hanging_signs']",matched,false,10
@@ -1446,7 +1446,7 @@ minecraft:warped_nylium,block_building,['nether'],junk,large,building_blocks,min
 minecraft:warped_planks,block_material,['nether'],filler,bulk,material_blocks,#minecraft:planks,['warped_*'],matched,false,10
 minecraft:warped_pressure_plate,block_technical,['nether'],uncommon,singleton,technical_blocks,*_pressure_plate,['warped_*'],matched,false,10
 minecraft:warped_roots,block_building,['nether'],junk,large,building_blocks,*_roots,['warped_*'],matched,false,10
-minecraft:warped_shelf,ignore,[],none,singleton,ignored_items,minecraft:warped_shelf,,matched,false,10
+minecraft:warped_shelf,block_storage,['nether'],uncommon,singleton,storage_blocks,*_shelf,['warped_*'],matched,false,10
 minecraft:warped_sign,block_misc_use,['nether'],uncommon,small,misc_use_blocks,#minecraft:signs,['warped_*'],matched,false,10
 minecraft:warped_slab,block_building,['nether'],filler,large,building_blocks,#minecraft:slabs,['warped_*'],matched,false,10
 minecraft:warped_stairs,block_building,['nether'],filler,large,building_blocks,#minecraft:stairs,['warped_*'],matched,false,10
@@ -1519,7 +1519,7 @@ minecraft:weathered_chiseled_copper,block_building,[],filler,large,building_bloc
 minecraft:weathered_copper,block_building,[],filler,large,building_blocks,weathered_*,,matched,false,10
 minecraft:weathered_copper_bars,block_building,[],filler,large,building_blocks,weathered_*,,matched,false,10
 minecraft:weathered_copper_bulb,block_technical,[],rare,singleton,technical_blocks,*copper_bulb,,matched,false,10
-minecraft:weathered_copper_chain,block_building,['smithing'],filler,large,building_blocks,weathered_*,['#c:chains'],matched,false,10
+minecraft:weathered_copper_chain,block_building,['smithing'],uncommon,large,building_blocks,weathered_*,['#c:chains'],matched,false,10
 minecraft:weathered_copper_chest,block_building,[],filler,large,building_blocks,weathered_*,,matched,false,10
 minecraft:weathered_copper_door,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:doors,,matched,false,10
 minecraft:weathered_copper_golem_statue,block_building,[],filler,large,building_blocks,weathered_*,,matched,false,10
@@ -1536,14 +1536,14 @@ minecraft:wheat,item_material,"['village', 'farming']",common,medium,material_it
 minecraft:wheat_seeds,garden,['farming'],uncommon,small,garden_items,*_seeds,['#c:seeds'],matched,false,10
 minecraft:white_banner,block_misc_use,"['fortification', 'woolworking']",rare,small,misc_use_blocks,#minecraft:banners,"['#minecraft:banners', '#minecraft:banners']",matched,false,10
 minecraft:white_bed,block_misc_use,[],uncommon,singleton,misc_use_blocks,#minecraft:beds,,matched,false,10
-minecraft:white_bundle,ignore,[],none,singleton,ignored_items,minecraft:white_bundle,,matched,false,10
+minecraft:white_bundle,misc_tool,[],uncommon,singleton,misc_tools,#minecraft:bundles,,matched,false,10
 minecraft:white_candle,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:candles,['#minecraft:candles'],matched,false,10
 minecraft:white_carpet,block_building,['woolworking'],filler,large,building_blocks,#minecraft:wool_carpets,['#minecraft:wool_carpets'],matched,false,10
 minecraft:white_concrete,block_building,['fortification'],uncommon,large,building_blocks,#c:concretes,['#c:concretes'],matched,false,10
 minecraft:white_concrete_powder,block_material,['fortification'],uncommon,large,material_blocks,#c:concrete_powders,['#c:concrete_powders'],matched,false,10
 minecraft:white_dye,item_material,"['leatherworking', 'woolworking']",uncommon,small,material_items,#c:dyes,"['#c:dyes', '#c:dyes']",matched,false,10
 minecraft:white_glazed_terracotta,block_building,"['desert', 'masonry']",rare,large,building_blocks,#c:glazed_terracottas,"['#c:glazed_terracottas', '#c:glazed_terracottas']",matched,false,10
-minecraft:white_harness,ignore,[],none,singleton,ignored_items,minecraft:white_harness,,matched,false,10
+minecraft:white_harness,wearable,[],rare,singleton,wearable_equipment,#minecraft:harnesses,,matched,false,10
 minecraft:white_shulker_box,block_storage,['end'],legendary,singleton,storage_blocks,*_shulker_box,['#c:shulker_boxes'],matched,false,10
 minecraft:white_stained_glass,block_building,[],filler,large,building_blocks,#c:glass_blocks,,matched,false,10
 minecraft:white_stained_glass_pane,block_building,['clerical'],rare,large,building_blocks,#c:glass_panes,['#c:glass_panes'],matched,false,10
@@ -1569,14 +1569,14 @@ minecraft:writable_book,misc_tool,['library'],rare,singleton,misc_tools,minecraf
 minecraft:written_book,misc_tool,['library'],none,singleton,misc_tools,minecraft:written_book,['#minecraft:bookshelf_books'],matched,false,10
 minecraft:yellow_banner,block_misc_use,"['fortification', 'woolworking']",rare,small,misc_use_blocks,#minecraft:banners,"['#minecraft:banners', '#minecraft:banners']",matched,false,10
 minecraft:yellow_bed,block_misc_use,[],uncommon,singleton,misc_use_blocks,#minecraft:beds,,matched,false,10
-minecraft:yellow_bundle,ignore,[],none,singleton,ignored_items,minecraft:yellow_bundle,,matched,false,10
+minecraft:yellow_bundle,misc_tool,[],uncommon,singleton,misc_tools,#minecraft:bundles,,matched,false,10
 minecraft:yellow_candle,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:candles,['#minecraft:candles'],matched,false,10
 minecraft:yellow_carpet,block_building,['woolworking'],filler,large,building_blocks,#minecraft:wool_carpets,['#minecraft:wool_carpets'],matched,false,10
 minecraft:yellow_concrete,block_building,['fortification'],uncommon,large,building_blocks,#c:concretes,['#c:concretes'],matched,false,10
 minecraft:yellow_concrete_powder,block_material,['fortification'],uncommon,large,material_blocks,#c:concrete_powders,['#c:concrete_powders'],matched,false,10
 minecraft:yellow_dye,item_material,"['leatherworking', 'woolworking']",uncommon,small,material_items,#c:dyes,"['#c:dyes', '#c:dyes']",matched,false,10
 minecraft:yellow_glazed_terracotta,block_building,"['desert', 'masonry']",rare,large,building_blocks,#c:glazed_terracottas,"['#c:glazed_terracottas', '#c:glazed_terracottas']",matched,false,10
-minecraft:yellow_harness,ignore,[],none,singleton,ignored_items,minecraft:yellow_harness,,matched,false,10
+minecraft:yellow_harness,wearable,[],rare,singleton,wearable_equipment,#minecraft:harnesses,,matched,false,10
 minecraft:yellow_shulker_box,block_storage,['end'],legendary,singleton,storage_blocks,*_shulker_box,['#c:shulker_boxes'],matched,false,10
 minecraft:yellow_stained_glass,block_building,[],filler,large,building_blocks,#c:glass_blocks,,matched,false,10
 minecraft:yellow_stained_glass_pane,block_building,['clerical'],rare,large,building_blocks,#c:glass_panes,['#c:glass_panes'],matched,false,10
@@ -1763,12 +1763,12 @@ upgrade_aquatic:acan_coralstone,block_building,['sea'],uncommon,large,building_b
 upgrade_aquatic:acan_coralstone_slab,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
 upgrade_aquatic:acan_coralstone_stairs,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
 upgrade_aquatic:acan_coralstone_wall,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
-upgrade_aquatic:beachgrass,ignore,[],none,singleton,ignored_items,upgrade_aquatic:beachgrass,,matched,false,10
+upgrade_aquatic:beachgrass,block_building,[],junk,large,building_blocks,upgrade_aquatic:beachgrass,,matched,false,10
 upgrade_aquatic:beachgrass_thatch,ignore,[],none,singleton,ignored_items,upgrade_aquatic:beachgrass_thatch,,matched,false,10
 upgrade_aquatic:beachgrass_thatch_slab,block_building,[],filler,large,building_blocks,#minecraft:slabs,,matched,false,10
 upgrade_aquatic:beachgrass_thatch_stairs,block_building,[],filler,large,building_blocks,#minecraft:stairs,,matched,false,10
-upgrade_aquatic:bedroll,ignore,[],none,singleton,ignored_items,upgrade_aquatic:bedroll,,matched,false,10
-upgrade_aquatic:blue_jelly_torch,ignore,[],none,singleton,ignored_items,upgrade_aquatic:blue_jelly_torch,,matched,false,10
+upgrade_aquatic:bedroll,block_misc_use,['leatherworking'],uncommon,singleton,misc_use_blocks,upgrade_aquatic:bedroll,['#minecraft:dyeable'],matched,false,10
+upgrade_aquatic:blue_jelly_torch,misc_tool,[],uncommon,small,misc_tools,*_jelly_torch,,matched,false,10
 upgrade_aquatic:boiled_pickerelweed,consumable,"['household', 'food']",common,small,consumable_items,#c:foods,"['#c:foods', '#c:foods']",matched,false,10
 upgrade_aquatic:boiled_pickerelweed_block,ignore,[],none,singleton,ignored_items,upgrade_aquatic:boiled_pickerelweed_block,,matched,false,10
 upgrade_aquatic:brain_coralstone,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
@@ -1864,11 +1864,11 @@ upgrade_aquatic:driftwood_boards,ignore,[],none,singleton,ignored_items,upgrade_
 upgrade_aquatic:driftwood_boat,misc_tool,['sea'],uncommon,singleton,misc_tools,#minecraft:boats,['#minecraft:boats'],matched,false,10
 upgrade_aquatic:driftwood_bookshelf,ignore,[],none,singleton,ignored_items,upgrade_aquatic:driftwood_bookshelf,,matched,false,10
 upgrade_aquatic:driftwood_button,block_technical,[],uncommon,singleton,technical_blocks,#minecraft:buttons,,matched,false,10
-upgrade_aquatic:driftwood_chest,ignore,[],none,singleton,ignored_items,upgrade_aquatic:driftwood_chest,,matched,false,10
+upgrade_aquatic:driftwood_chest,block_storage,[],uncommon,singleton,storage_blocks,upgrade_aquatic:driftwood_chest,,matched,false,10
 upgrade_aquatic:driftwood_chest_boat,misc_tool,['sea'],uncommon,singleton,misc_tools,#minecraft:boats,['#minecraft:boats'],matched,false,10
 upgrade_aquatic:driftwood_door,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:doors,,matched,false,10
 upgrade_aquatic:driftwood_fence,block_building,['village'],filler,large,building_blocks,#c:fences,['#c:fences/wooden'],matched,false,10
-upgrade_aquatic:driftwood_fence_gate,ignore,[],none,singleton,ignored_items,upgrade_aquatic:driftwood_fence_gate,,matched,false,10
+upgrade_aquatic:driftwood_fence_gate,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:fence_gates,,matched,false,10
 upgrade_aquatic:driftwood_furnace_boat,ignore,[],none,singleton,ignored_items,upgrade_aquatic:driftwood_furnace_boat,,matched,false,10
 upgrade_aquatic:driftwood_hanging_sign,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:hanging_signs,['#minecraft:hanging_signs'],matched,false,10
 upgrade_aquatic:driftwood_ladder,ignore,[],none,singleton,ignored_items,upgrade_aquatic:driftwood_ladder,,matched,false,10
@@ -1905,7 +1905,7 @@ upgrade_aquatic:flowering_rush,item_material,['household'],common,small,material
 upgrade_aquatic:glow_squid_bucket,gather_tool,[],rare,singleton,gathering_tools,#c:buckets,,matched,false,10
 upgrade_aquatic:goose_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
 upgrade_aquatic:great_thrasher_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
-upgrade_aquatic:green_jelly_torch,ignore,[],none,singleton,ignored_items,upgrade_aquatic:green_jelly_torch,,matched,false,10
+upgrade_aquatic:green_jelly_torch,misc_tool,[],uncommon,small,misc_tools,*_jelly_torch,,matched,false,10
 upgrade_aquatic:horn_coralstone,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
 upgrade_aquatic:horn_coralstone_slab,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
 upgrade_aquatic:horn_coralstone_stairs,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
@@ -1953,7 +1953,7 @@ upgrade_aquatic:mulberry_punnet,ignore,[],none,singleton,ignored_items,upgrade_a
 upgrade_aquatic:music_disc_atlantis,misc_tool,['treasure'],epic,singleton,misc_tools,music_disc_*,['#c:music_discs'],matched,false,10
 upgrade_aquatic:nautilus_bucket,gather_tool,[],rare,singleton,gathering_tools,#c:buckets,,matched,false,10
 upgrade_aquatic:nautilus_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
-upgrade_aquatic:orange_jelly_torch,ignore,[],none,singleton,ignored_items,upgrade_aquatic:orange_jelly_torch,,matched,false,10
+upgrade_aquatic:orange_jelly_torch,misc_tool,[],uncommon,small,misc_tools,*_jelly_torch,,matched,false,10
 upgrade_aquatic:perch,consumable,"['sea', 'household', 'fishing', 'food']",common,small,consumable_items,#c:foods,"['#minecraft:fishes', '#c:foods', '#c:foods/raw_fish', '#c:foods']",matched,false,10
 upgrade_aquatic:perch_bucket,gather_tool,[],rare,singleton,gathering_tools,#c:buckets,,matched,false,10
 upgrade_aquatic:perch_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
@@ -1964,7 +1964,7 @@ upgrade_aquatic:petal_coralstone,block_building,['sea'],uncommon,large,building_
 upgrade_aquatic:petal_coralstone_slab,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
 upgrade_aquatic:petal_coralstone_stairs,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
 upgrade_aquatic:petal_coralstone_wall,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
-upgrade_aquatic:pickerelweed,ignore,[],none,singleton,ignored_items,upgrade_aquatic:pickerelweed,,matched,false,10
+upgrade_aquatic:pickerelweed,garden,[],uncommon,small,garden_items,upgrade_aquatic:pickerelweed,,matched,false,10
 upgrade_aquatic:pickerelweed_block,ignore,[],none,singleton,ignored_items,upgrade_aquatic:pickerelweed_block,,matched,false,10
 upgrade_aquatic:pike,consumable,"['sea', 'household', 'fishing', 'food']",common,small,consumable_items,#c:foods,"['#minecraft:fishes', '#c:foods', '#c:foods/raw_fish', '#c:foods']",matched,false,10
 upgrade_aquatic:pike_bucket,gather_tool,[],rare,singleton,gathering_tools,#c:buckets,,matched,false,10
@@ -1976,7 +1976,7 @@ upgrade_aquatic:pillow_coralstone,block_building,['sea'],uncommon,large,building
 upgrade_aquatic:pillow_coralstone_slab,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
 upgrade_aquatic:pillow_coralstone_stairs,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
 upgrade_aquatic:pillow_coralstone_wall,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
-upgrade_aquatic:pink_jelly_torch,ignore,[],none,singleton,ignored_items,upgrade_aquatic:pink_jelly_torch,,matched,false,10
+upgrade_aquatic:pink_jelly_torch,misc_tool,[],uncommon,small,misc_tools,*_jelly_torch,,matched,false,10
 upgrade_aquatic:pink_searocket,item_material,['household'],common,small,material_items,#minecraft:flowers,['#minecraft:flowers'],matched,false,10
 upgrade_aquatic:predator_pottery_sherd,item_material,['archaeology'],uncommon,small,material_items,#minecraft:decorated_pot_sherds,['#minecraft:decorated_pot_sherds'],matched,false,10
 upgrade_aquatic:prismarine_coral,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*prismarine*'],matched,false,10
@@ -1989,18 +1989,18 @@ upgrade_aquatic:prismarine_coralstone_stairs,block_building,['sea'],uncommon,lar
 upgrade_aquatic:prismarine_coralstone_wall,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*prismarine*'],matched,false,10
 upgrade_aquatic:prismarine_rod,ignore,[],none,singleton,ignored_items,upgrade_aquatic:prismarine_rod,,matched,false,10
 upgrade_aquatic:prismarine_rod_bundle,ignore,[],none,singleton,ignored_items,upgrade_aquatic:prismarine_rod_bundle,,matched,false,10
-upgrade_aquatic:purple_jelly_torch,ignore,[],none,singleton,ignored_items,upgrade_aquatic:purple_jelly_torch,,matched,false,10
-upgrade_aquatic:red_jelly_torch,ignore,[],none,singleton,ignored_items,upgrade_aquatic:red_jelly_torch,,matched,false,10
+upgrade_aquatic:purple_jelly_torch,misc_tool,[],uncommon,small,misc_tools,*_jelly_torch,,matched,false,10
+upgrade_aquatic:red_jelly_torch,misc_tool,[],uncommon,small,misc_tools,*_jelly_torch,,matched,false,10
 upgrade_aquatic:river_beehive,ignore,[],none,singleton,ignored_items,upgrade_aquatic:river_beehive,,matched,false,10
 upgrade_aquatic:river_boards,ignore,[],none,singleton,ignored_items,upgrade_aquatic:river_boards,,matched,false,10
 upgrade_aquatic:river_boat,misc_tool,['sea'],uncommon,singleton,misc_tools,#minecraft:boats,['#minecraft:boats'],matched,false,10
 upgrade_aquatic:river_bookshelf,ignore,[],none,singleton,ignored_items,upgrade_aquatic:river_bookshelf,,matched,false,10
 upgrade_aquatic:river_button,block_technical,[],uncommon,singleton,technical_blocks,#minecraft:buttons,,matched,false,10
-upgrade_aquatic:river_chest,ignore,[],none,singleton,ignored_items,upgrade_aquatic:river_chest,,matched,false,10
+upgrade_aquatic:river_chest,block_storage,[],uncommon,singleton,storage_blocks,upgrade_aquatic:river_chest,,matched,false,10
 upgrade_aquatic:river_chest_boat,misc_tool,['sea'],uncommon,singleton,misc_tools,#minecraft:boats,['#minecraft:boats'],matched,false,10
 upgrade_aquatic:river_door,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:doors,,matched,false,10
 upgrade_aquatic:river_fence,block_building,['village'],filler,large,building_blocks,#c:fences,['#c:fences/wooden'],matched,false,10
-upgrade_aquatic:river_fence_gate,ignore,[],none,singleton,ignored_items,upgrade_aquatic:river_fence_gate,,matched,false,10
+upgrade_aquatic:river_fence_gate,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:fence_gates,,matched,false,10
 upgrade_aquatic:river_furnace_boat,ignore,[],none,singleton,ignored_items,upgrade_aquatic:river_furnace_boat,,matched,false,10
 upgrade_aquatic:river_hanging_sign,block_misc_use,['village'],uncommon,small,misc_use_blocks,#minecraft:hanging_signs,['#minecraft:hanging_signs'],matched,false,10
 upgrade_aquatic:river_ladder,ignore,[],none,singleton,ignored_items,upgrade_aquatic:river_ladder,,matched,false,10
@@ -2050,7 +2050,7 @@ upgrade_aquatic:stripped_driftwood,block_material,['wooden'],filler,small,materi
 upgrade_aquatic:stripped_driftwood_log,block_material,['wooden'],filler,small,material_blocks,#minecraft:logs,['#minecraft:logs_that_burn'],matched,false,10
 upgrade_aquatic:stripped_river_log,block_material,['wooden'],filler,small,material_blocks,#minecraft:logs,['#minecraft:logs_that_burn'],matched,false,10
 upgrade_aquatic:stripped_river_wood,block_material,['wooden'],filler,small,material_blocks,#minecraft:logs,['#minecraft:logs_that_burn'],matched,false,10
-upgrade_aquatic:tall_beachgrass,ignore,[],none,singleton,ignored_items,upgrade_aquatic:tall_beachgrass,,matched,false,10
+upgrade_aquatic:tall_beachgrass,block_building,[],junk,large,building_blocks,upgrade_aquatic:tall_beachgrass,,matched,false,10
 upgrade_aquatic:thrasher_spawn_egg,nonloot,[],none,singleton,excluded_items,*_spawn_egg,,matched,false,10
 upgrade_aquatic:thrasher_tooth,ignore,[],none,singleton,ignored_items,upgrade_aquatic:thrasher_tooth,,matched,false,10
 upgrade_aquatic:tooth_block,ignore,[],none,singleton,ignored_items,upgrade_aquatic:tooth_block,,matched,false,10
@@ -2065,12 +2065,12 @@ upgrade_aquatic:tooth_stairs,block_building,[],filler,large,building_blocks,#min
 upgrade_aquatic:tooth_tiles,block_building,['masonry'],filler,large,building_blocks,*_tiles,['*_tile*'],matched,false,10
 upgrade_aquatic:tooth_trapdoor,block_misc_use,[],uncommon,small,misc_use_blocks,#minecraft:trapdoors,,matched,false,10
 upgrade_aquatic:tooth_wall,block_building,[],filler,large,building_blocks,#minecraft:walls,,matched,false,10
-upgrade_aquatic:trapped_driftwood_chest,ignore,[],none,singleton,ignored_items,upgrade_aquatic:trapped_driftwood_chest,,matched,false,10
-upgrade_aquatic:trapped_river_chest,ignore,[],none,singleton,ignored_items,upgrade_aquatic:trapped_river_chest,,matched,false,10
+upgrade_aquatic:trapped_driftwood_chest,block_storage,[],common,singleton,storage_blocks,upgrade_aquatic:trapped_driftwood_chest,,matched,false,10
+upgrade_aquatic:trapped_river_chest,block_storage,[],common,singleton,storage_blocks,upgrade_aquatic:trapped_river_chest,,matched,false,10
 upgrade_aquatic:tube_coralstone,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
 upgrade_aquatic:tube_coralstone_slab,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
 upgrade_aquatic:tube_coralstone_stairs,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
 upgrade_aquatic:tube_coralstone_wall,block_building,['sea'],uncommon,large,building_blocks,*_coral*,['*_coral*'],matched,false,10
-upgrade_aquatic:white_jelly_torch,ignore,[],none,singleton,ignored_items,upgrade_aquatic:white_jelly_torch,,matched,false,10
+upgrade_aquatic:white_jelly_torch,misc_tool,[],uncommon,small,misc_tools,*_jelly_torch,,matched,false,10
 upgrade_aquatic:white_searocket,item_material,['household'],common,small,material_items,#minecraft:flowers,['#minecraft:flowers'],matched,false,10
-upgrade_aquatic:yellow_jelly_torch,ignore,[],none,singleton,ignored_items,upgrade_aquatic:yellow_jelly_torch,,matched,false,10
+upgrade_aquatic:yellow_jelly_torch,misc_tool,[],uncommon,small,misc_tools,*_jelly_torch,,matched,false,10

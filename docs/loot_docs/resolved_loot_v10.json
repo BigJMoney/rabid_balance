@@ -153,19 +153,6 @@
         "is_fallback_match": true,
         "classification_version": "10"
     },
-    "bosses_of_mass_destruction:soul_star": {
-        "function": "unmatched",
-        "affinities": [
-            "nether"
-        ],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "fallback",
-        "matched_detail": "no match",
-        "classification_status": "fallback",
-        "is_fallback_match": true,
-        "classification_version": "10"
-    },
     "bosses_of_mass_destruction:vine_wall": {
         "function": "unmatched",
         "affinities": [],
@@ -221,6 +208,50 @@
         "is_fallback_match": true,
         "classification_version": "10"
     },
+    "minecraft:firefly_bush": {
+        "function": "unmatched",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "fallback",
+        "matched_detail": "no match",
+        "classification_status": "fallback",
+        "is_fallback_match": true,
+        "classification_version": "10"
+    },
+    "minecraft:pale_hanging_moss": {
+        "function": "unmatched",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "fallback",
+        "matched_detail": "no match",
+        "classification_status": "fallback",
+        "is_fallback_match": true,
+        "classification_version": "10"
+    },
+    "minecraft:pale_moss_carpet": {
+        "function": "unmatched",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "fallback",
+        "matched_detail": "no match",
+        "classification_status": "fallback",
+        "is_fallback_match": true,
+        "classification_version": "10"
+    },
+    "minecraft:resin_brick": {
+        "function": "unmatched",
+        "affinities": [],
+        "value": "none",
+        "amount_class": "singleton",
+        "matched_rule_id": "fallback",
+        "matched_detail": "no match",
+        "classification_status": "fallback",
+        "is_fallback_match": true,
+        "classification_version": "10"
+    },
     "bosses_of_mass_destruction:chiseled_stone_altar": {
         "function": "block_building",
         "affinities": [
@@ -230,6 +261,19 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "chiseled_*",
+        "classification_status": "matched",
+        "is_fallback_match": false,
+        "classification_version": "10"
+    },
+    "bosses_of_mass_destruction:soul_star": {
+        "function": "consumable",
+        "affinities": [
+            "nether"
+        ],
+        "value": "rare",
+        "amount_class": "small",
+        "matched_rule_id": "consumable_items",
+        "matched_detail": "bosses_of_mass_destruction:soul_star",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -1280,7 +1324,7 @@
         "value": "uncommon",
         "amount_class": "small",
         "matched_rule_id": "misc_use_blocks",
-        "matched_detail": "#c:fence_gates",
+        "matched_detail": "#minecraft:fence_gates",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -1358,12 +1402,12 @@
         "classification_version": "10"
     },
     "minecraft:acacia_shelf": {
-        "function": "ignore",
+        "function": "block_storage",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:acacia_shelf",
+        "matched_rule_id": "storage_blocks",
+        "matched_detail": "*_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -1834,7 +1878,7 @@
         "value": "uncommon",
         "amount_class": "small",
         "matched_rule_id": "misc_use_blocks",
-        "matched_detail": "#c:fence_gates",
+        "matched_detail": "#minecraft:fence_gates",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -1933,12 +1977,14 @@
         "classification_version": "10"
     },
     "minecraft:bamboo_shelf": {
-        "function": "ignore",
-        "affinities": [],
-        "value": "none",
+        "function": "block_storage",
+        "affinities": [
+            "jungle"
+        ],
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:bamboo_shelf",
+        "matched_rule_id": "storage_blocks",
+        "matched_detail": "*_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -2254,7 +2300,7 @@
         "value": "uncommon",
         "amount_class": "small",
         "matched_rule_id": "misc_use_blocks",
-        "matched_detail": "#c:fence_gates",
+        "matched_detail": "#minecraft:fence_gates",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -2340,12 +2386,14 @@
         "classification_version": "10"
     },
     "minecraft:birch_shelf": {
-        "function": "ignore",
-        "affinities": [],
-        "value": "none",
+        "function": "block_storage",
+        "affinities": [
+            "village"
+        ],
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:birch_shelf",
+        "matched_rule_id": "storage_blocks",
+        "matched_detail": "*_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -2442,12 +2490,12 @@
         "classification_version": "10"
     },
     "minecraft:black_bundle": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:black_bundle",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "#minecraft:bundles",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -2533,12 +2581,12 @@
         "classification_version": "10"
     },
     "minecraft:black_harness": {
-        "function": "ignore",
+        "function": "wearable",
         "affinities": [],
-        "value": "none",
+        "value": "rare",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:black_harness",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "#minecraft:harnesses",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -2735,12 +2783,12 @@
         "classification_version": "10"
     },
     "minecraft:blue_bundle": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:blue_bundle",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "#minecraft:bundles",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -2812,12 +2860,12 @@
         "classification_version": "10"
     },
     "minecraft:blue_egg": {
-        "function": "ignore",
+        "function": "item_material",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:blue_egg",
+        "value": "common",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#c:eggs",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -2837,12 +2885,12 @@
         "classification_version": "10"
     },
     "minecraft:blue_harness": {
-        "function": "ignore",
+        "function": "wearable",
         "affinities": [],
-        "value": "none",
+        "value": "rare",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:blue_harness",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "#minecraft:harnesses",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -3238,12 +3286,12 @@
         "classification_version": "10"
     },
     "minecraft:brown_bundle": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:brown_bundle",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "#minecraft:bundles",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -3315,12 +3363,12 @@
         "classification_version": "10"
     },
     "minecraft:brown_egg": {
-        "function": "ignore",
+        "function": "item_material",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:brown_egg",
+        "value": "common",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
+        "matched_detail": "#c:eggs",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -3340,12 +3388,12 @@
         "classification_version": "10"
     },
     "minecraft:brown_harness": {
-        "function": "ignore",
+        "function": "wearable",
         "affinities": [],
-        "value": "none",
+        "value": "rare",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:brown_harness",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "#minecraft:harnesses",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -3737,7 +3785,7 @@
         "value": "uncommon",
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
-        "matched_detail": "minecraft:chain",
+        "matched_detail": "#c:chains",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -3879,7 +3927,7 @@
         "value": "uncommon",
         "amount_class": "small",
         "matched_rule_id": "misc_use_blocks",
-        "matched_detail": "#c:fence_gates",
+        "matched_detail": "#minecraft:fence_gates",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -3959,12 +4007,12 @@
         "classification_version": "10"
     },
     "minecraft:cherry_shelf": {
-        "function": "ignore",
+        "function": "block_storage",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:cherry_shelf",
+        "matched_rule_id": "storage_blocks",
+        "matched_detail": "*_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -4811,12 +4859,14 @@
         "classification_version": "10"
     },
     "minecraft:copper_chain": {
-        "function": "ignore",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:copper_chain",
+        "function": "block_building",
+        "affinities": [
+            "smithing"
+        ],
+        "value": "uncommon",
+        "amount_class": "large",
+        "matched_rule_id": "building_blocks",
+        "matched_detail": "#c:chains",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -5148,11 +5198,11 @@
         "classification_version": "10"
     },
     "minecraft:creaking_heart": {
-        "function": "ignore",
+        "function": "item_material",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
         "matched_detail": "minecraft:creaking_heart",
         "classification_status": "matched",
         "is_fallback_match": false,
@@ -5254,7 +5304,7 @@
         "value": "uncommon",
         "amount_class": "small",
         "matched_rule_id": "misc_use_blocks",
-        "matched_detail": "#c:fence_gates",
+        "matched_detail": "#minecraft:fence_gates",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -5352,12 +5402,14 @@
         "classification_version": "10"
     },
     "minecraft:crimson_shelf": {
-        "function": "ignore",
-        "affinities": [],
-        "value": "none",
+        "function": "block_storage",
+        "affinities": [
+            "nether"
+        ],
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:crimson_shelf",
+        "matched_rule_id": "storage_blocks",
+        "matched_detail": "*_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -5568,12 +5620,12 @@
         "classification_version": "10"
     },
     "minecraft:cyan_bundle": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:cyan_bundle",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "#minecraft:bundles",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -5659,12 +5711,12 @@
         "classification_version": "10"
     },
     "minecraft:cyan_harness": {
-        "function": "ignore",
+        "function": "wearable",
         "affinities": [],
-        "value": "none",
+        "value": "rare",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:cyan_harness",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "#minecraft:harnesses",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -5841,7 +5893,7 @@
         "value": "uncommon",
         "amount_class": "small",
         "matched_rule_id": "misc_use_blocks",
-        "matched_detail": "#c:fence_gates",
+        "matched_detail": "#minecraft:fence_gates",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -5919,12 +5971,12 @@
         "classification_version": "10"
     },
     "minecraft:dark_oak_shelf": {
-        "function": "ignore",
+        "function": "block_storage",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:dark_oak_shelf",
+        "matched_rule_id": "storage_blocks",
+        "matched_detail": "*_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -6826,11 +6878,11 @@
         "classification_version": "10"
     },
     "minecraft:dried_ghast": {
-        "function": "ignore",
+        "function": "item_material",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
         "matched_detail": "minecraft:dried_ghast",
         "classification_status": "matched",
         "is_fallback_match": false,
@@ -7287,7 +7339,7 @@
         "affinities": [
             "smithing"
         ],
-        "value": "filler",
+        "value": "uncommon",
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "exposed_*",
@@ -7521,17 +7573,6 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "*_coral*",
-        "classification_status": "matched",
-        "is_fallback_match": false,
-        "classification_version": "10"
-    },
-    "minecraft:firefly_bush": {
-        "function": "ignore",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:firefly_bush",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -8299,12 +8340,12 @@
         "classification_version": "10"
     },
     "minecraft:gray_bundle": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:gray_bundle",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "#minecraft:bundles",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -8390,12 +8431,12 @@
         "classification_version": "10"
     },
     "minecraft:gray_harness": {
-        "function": "ignore",
+        "function": "wearable",
         "affinities": [],
-        "value": "none",
+        "value": "rare",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:gray_harness",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "#minecraft:harnesses",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -8489,12 +8530,12 @@
         "classification_version": "10"
     },
     "minecraft:green_bundle": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:green_bundle",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "#minecraft:bundles",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -8580,12 +8621,12 @@
         "classification_version": "10"
     },
     "minecraft:green_harness": {
-        "function": "ignore",
+        "function": "wearable",
         "affinities": [],
-        "value": "none",
+        "value": "rare",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:green_harness",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "#minecraft:harnesses",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -9445,7 +9486,7 @@
         "value": "uncommon",
         "amount_class": "small",
         "matched_rule_id": "misc_use_blocks",
-        "matched_detail": "#c:fence_gates",
+        "matched_detail": "#minecraft:fence_gates",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -9532,12 +9573,14 @@
         "classification_version": "10"
     },
     "minecraft:jungle_shelf": {
-        "function": "ignore",
-        "affinities": [],
-        "value": "none",
+        "function": "block_storage",
+        "affinities": [
+            "jungle"
+        ],
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:jungle_shelf",
+        "matched_rule_id": "storage_blocks",
+        "matched_detail": "*_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -9744,11 +9787,11 @@
         "classification_version": "10"
     },
     "minecraft:leaf_litter": {
-        "function": "ignore",
+        "function": "item_material",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
+        "value": "filler",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
         "matched_detail": "minecraft:leaf_litter",
         "classification_status": "matched",
         "is_fallback_match": false,
@@ -9891,12 +9934,12 @@
         "classification_version": "10"
     },
     "minecraft:light_blue_bundle": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:light_blue_bundle",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "#minecraft:bundles",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -9982,12 +10025,12 @@
         "classification_version": "10"
     },
     "minecraft:light_blue_harness": {
-        "function": "ignore",
+        "function": "wearable",
         "affinities": [],
-        "value": "none",
+        "value": "rare",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:light_blue_harness",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "#minecraft:harnesses",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -10081,12 +10124,12 @@
         "classification_version": "10"
     },
     "minecraft:light_gray_bundle": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:light_gray_bundle",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "#minecraft:bundles",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -10172,12 +10215,12 @@
         "classification_version": "10"
     },
     "minecraft:light_gray_harness": {
-        "function": "ignore",
+        "function": "wearable",
         "affinities": [],
-        "value": "none",
+        "value": "rare",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:light_gray_harness",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "#minecraft:harnesses",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -10330,12 +10373,12 @@
         "classification_version": "10"
     },
     "minecraft:lime_bundle": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:lime_bundle",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "#minecraft:bundles",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -10421,12 +10464,12 @@
         "classification_version": "10"
     },
     "minecraft:lime_harness": {
-        "function": "ignore",
+        "function": "wearable",
         "affinities": [],
-        "value": "none",
+        "value": "rare",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:lime_harness",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "#minecraft:harnesses",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -10577,12 +10620,12 @@
         "classification_version": "10"
     },
     "minecraft:magenta_bundle": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:magenta_bundle",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "#minecraft:bundles",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -10668,12 +10711,12 @@
         "classification_version": "10"
     },
     "minecraft:magenta_harness": {
-        "function": "ignore",
+        "function": "wearable",
         "affinities": [],
-        "value": "none",
+        "value": "rare",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:magenta_harness",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "#minecraft:harnesses",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -10858,7 +10901,7 @@
         "value": "uncommon",
         "amount_class": "small",
         "matched_rule_id": "misc_use_blocks",
-        "matched_detail": "#c:fence_gates",
+        "matched_detail": "#minecraft:fence_gates",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -10958,12 +11001,14 @@
         "classification_version": "10"
     },
     "minecraft:mangrove_shelf": {
-        "function": "ignore",
-        "affinities": [],
-        "value": "none",
+        "function": "block_storage",
+        "affinities": [
+            "swamp"
+        ],
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:mangrove_shelf",
+        "matched_rule_id": "storage_blocks",
+        "matched_detail": "*_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -12171,7 +12216,7 @@
         "value": "uncommon",
         "amount_class": "small",
         "matched_rule_id": "misc_use_blocks",
-        "matched_detail": "#c:fence_gates",
+        "matched_detail": "#minecraft:fence_gates",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -12263,12 +12308,15 @@
         "classification_version": "10"
     },
     "minecraft:oak_shelf": {
-        "function": "ignore",
-        "affinities": [],
-        "value": "none",
+        "function": "block_storage",
+        "affinities": [
+            "plains",
+            "village"
+        ],
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:oak_shelf",
+        "matched_rule_id": "storage_blocks",
+        "matched_detail": "*_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -12455,12 +12503,12 @@
         "classification_version": "10"
     },
     "minecraft:orange_bundle": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:orange_bundle",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "#minecraft:bundles",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -12546,12 +12594,12 @@
         "classification_version": "10"
     },
     "minecraft:orange_harness": {
-        "function": "ignore",
+        "function": "wearable",
         "affinities": [],
-        "value": "none",
+        "value": "rare",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:orange_harness",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "#minecraft:harnesses",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -12694,7 +12742,7 @@
         "affinities": [
             "smithing"
         ],
-        "value": "filler",
+        "value": "uncommon",
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "oxidized_*",
@@ -12849,17 +12897,6 @@
         "is_fallback_match": false,
         "classification_version": "10"
     },
-    "minecraft:pale_hanging_moss": {
-        "function": "ignore",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:pale_hanging_moss",
-        "classification_status": "matched",
-        "is_fallback_match": false,
-        "classification_version": "10"
-    },
     "minecraft:pale_moss_block": {
         "function": "block_building",
         "affinities": [],
@@ -12867,17 +12904,6 @@
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "#minecraft:dirt",
-        "classification_status": "matched",
-        "is_fallback_match": false,
-        "classification_version": "10"
-    },
-    "minecraft:pale_moss_carpet": {
-        "function": "ignore",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:pale_moss_carpet",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -12944,12 +12970,12 @@
         "classification_version": "10"
     },
     "minecraft:pale_oak_fence_gate": {
-        "function": "ignore",
+        "function": "block_misc_use",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:pale_oak_fence_gate",
+        "value": "uncommon",
+        "amount_class": "small",
+        "matched_rule_id": "misc_use_blocks",
+        "matched_detail": "#minecraft:fence_gates",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -13027,12 +13053,12 @@
         "classification_version": "10"
     },
     "minecraft:pale_oak_shelf": {
-        "function": "ignore",
+        "function": "block_storage",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:pale_oak_shelf",
+        "matched_rule_id": "storage_blocks",
+        "matched_detail": "*_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -13279,12 +13305,12 @@
         "classification_version": "10"
     },
     "minecraft:pink_bundle": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:pink_bundle",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "#minecraft:bundles",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -13370,12 +13396,12 @@
         "classification_version": "10"
     },
     "minecraft:pink_harness": {
-        "function": "ignore",
+        "function": "wearable",
         "affinities": [],
-        "value": "none",
+        "value": "rare",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:pink_harness",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "#minecraft:harnesses",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -14279,12 +14305,12 @@
         "classification_version": "10"
     },
     "minecraft:purple_bundle": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:purple_bundle",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "#minecraft:bundles",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -14370,12 +14396,12 @@
         "classification_version": "10"
     },
     "minecraft:purple_harness": {
-        "function": "ignore",
+        "function": "wearable",
         "affinities": [],
-        "value": "none",
+        "value": "rare",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:purple_harness",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "#minecraft:harnesses",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -14779,12 +14805,12 @@
         "classification_version": "10"
     },
     "minecraft:red_bundle": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:red_bundle",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "#minecraft:bundles",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -14870,12 +14896,12 @@
         "classification_version": "10"
     },
     "minecraft:red_harness": {
-        "function": "ignore",
+        "function": "wearable",
         "affinities": [],
-        "value": "none",
+        "value": "rare",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:red_harness",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "#minecraft:harnesses",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -15193,23 +15219,12 @@
         "classification_version": "10"
     },
     "minecraft:resin_block": {
-        "function": "ignore",
+        "function": "item_material",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
         "matched_detail": "minecraft:resin_block",
-        "classification_status": "matched",
-        "is_fallback_match": false,
-        "classification_version": "10"
-    },
-    "minecraft:resin_brick": {
-        "function": "ignore",
-        "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:resin_brick",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -15259,11 +15274,11 @@
         "classification_version": "10"
     },
     "minecraft:resin_clump": {
-        "function": "ignore",
+        "function": "item_material",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
+        "value": "epic",
+        "amount_class": "small",
+        "matched_rule_id": "material_items",
         "matched_detail": "minecraft:resin_clump",
         "classification_status": "matched",
         "is_fallback_match": false,
@@ -15650,11 +15665,11 @@
         "classification_version": "10"
     },
     "minecraft:short_dry_grass": {
-        "function": "ignore",
+        "function": "block_building",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
+        "value": "junk",
+        "amount_class": "large",
+        "matched_rule_id": "building_blocks",
         "matched_detail": "minecraft:short_dry_grass",
         "classification_status": "matched",
         "is_fallback_match": false,
@@ -16382,7 +16397,7 @@
         "value": "uncommon",
         "amount_class": "small",
         "matched_rule_id": "misc_use_blocks",
-        "matched_detail": "#c:fence_gates",
+        "matched_detail": "#minecraft:fence_gates",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -16468,12 +16483,14 @@
         "classification_version": "10"
     },
     "minecraft:spruce_shelf": {
-        "function": "ignore",
-        "affinities": [],
-        "value": "none",
+        "function": "block_storage",
+        "affinities": [
+            "village"
+        ],
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:spruce_shelf",
+        "matched_rule_id": "storage_blocks",
+        "matched_detail": "*_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -17231,11 +17248,11 @@
         "classification_version": "10"
     },
     "minecraft:tall_dry_grass": {
-        "function": "ignore",
+        "function": "block_building",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
+        "value": "junk",
+        "amount_class": "large",
+        "matched_rule_id": "building_blocks",
         "matched_detail": "minecraft:tall_dry_grass",
         "classification_status": "matched",
         "is_fallback_match": false,
@@ -17849,7 +17866,7 @@
         "value": "uncommon",
         "amount_class": "small",
         "matched_rule_id": "misc_use_blocks",
-        "matched_detail": "#c:fence_gates",
+        "matched_detail": "#minecraft:fence_gates",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -17960,12 +17977,14 @@
         "classification_version": "10"
     },
     "minecraft:warped_shelf": {
-        "function": "ignore",
-        "affinities": [],
-        "value": "none",
+        "function": "block_storage",
+        "affinities": [
+            "nether"
+        ],
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:warped_shelf",
+        "matched_rule_id": "storage_blocks",
+        "matched_detail": "*_shelf",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -18791,7 +18810,7 @@
         "affinities": [
             "smithing"
         ],
-        "value": "filler",
+        "value": "uncommon",
         "amount_class": "large",
         "matched_rule_id": "building_blocks",
         "matched_detail": "weathered_*",
@@ -18988,12 +19007,12 @@
         "classification_version": "10"
     },
     "minecraft:white_bundle": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:white_bundle",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "#minecraft:bundles",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -19079,12 +19098,12 @@
         "classification_version": "10"
     },
     "minecraft:white_harness": {
-        "function": "ignore",
+        "function": "wearable",
         "affinities": [],
-        "value": "none",
+        "value": "rare",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:white_harness",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "#minecraft:harnesses",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -19410,12 +19429,12 @@
         "classification_version": "10"
     },
     "minecraft:yellow_bundle": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:yellow_bundle",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "#minecraft:bundles",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -19501,12 +19520,12 @@
         "classification_version": "10"
     },
     "minecraft:yellow_harness": {
-        "function": "ignore",
+        "function": "wearable",
         "affinities": [],
-        "value": "none",
+        "value": "rare",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "minecraft:yellow_harness",
+        "matched_rule_id": "wearable_equipment",
+        "matched_detail": "#minecraft:harnesses",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -21596,11 +21615,11 @@
         "classification_version": "10"
     },
     "upgrade_aquatic:beachgrass": {
-        "function": "ignore",
+        "function": "block_building",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
+        "value": "junk",
+        "amount_class": "large",
+        "matched_rule_id": "building_blocks",
         "matched_detail": "upgrade_aquatic:beachgrass",
         "classification_status": "matched",
         "is_fallback_match": false,
@@ -21640,23 +21659,25 @@
         "classification_version": "10"
     },
     "upgrade_aquatic:bedroll": {
-        "function": "ignore",
-        "affinities": [],
-        "value": "none",
+        "function": "block_misc_use",
+        "affinities": [
+            "leatherworking"
+        ],
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
+        "matched_rule_id": "misc_use_blocks",
         "matched_detail": "upgrade_aquatic:bedroll",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
     },
     "upgrade_aquatic:blue_jelly_torch": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "upgrade_aquatic:blue_jelly_torch",
+        "value": "uncommon",
+        "amount_class": "small",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "*_jelly_torch",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -22903,11 +22924,11 @@
         "classification_version": "10"
     },
     "upgrade_aquatic:driftwood_chest": {
-        "function": "ignore",
+        "function": "block_storage",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
+        "matched_rule_id": "storage_blocks",
         "matched_detail": "upgrade_aquatic:driftwood_chest",
         "classification_status": "matched",
         "is_fallback_match": false,
@@ -22951,12 +22972,12 @@
         "classification_version": "10"
     },
     "upgrade_aquatic:driftwood_fence_gate": {
-        "function": "ignore",
+        "function": "block_misc_use",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "upgrade_aquatic:driftwood_fence_gate",
+        "value": "uncommon",
+        "amount_class": "small",
+        "matched_rule_id": "misc_use_blocks",
+        "matched_detail": "#minecraft:fence_gates",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -23402,12 +23423,12 @@
         "classification_version": "10"
     },
     "upgrade_aquatic:green_jelly_torch": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "upgrade_aquatic:green_jelly_torch",
+        "value": "uncommon",
+        "amount_class": "small",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "*_jelly_torch",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -24009,12 +24030,12 @@
         "classification_version": "10"
     },
     "upgrade_aquatic:orange_jelly_torch": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "upgrade_aquatic:orange_jelly_torch",
+        "value": "uncommon",
+        "amount_class": "small",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "*_jelly_torch",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -24149,11 +24170,11 @@
         "classification_version": "10"
     },
     "upgrade_aquatic:pickerelweed": {
-        "function": "ignore",
+        "function": "garden",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
+        "value": "uncommon",
+        "amount_class": "small",
+        "matched_rule_id": "garden_items",
         "matched_detail": "upgrade_aquatic:pickerelweed",
         "classification_status": "matched",
         "is_fallback_match": false,
@@ -24300,12 +24321,12 @@
         "classification_version": "10"
     },
     "upgrade_aquatic:pink_jelly_torch": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "upgrade_aquatic:pink_jelly_torch",
+        "value": "uncommon",
+        "amount_class": "small",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "*_jelly_torch",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -24463,23 +24484,23 @@
         "classification_version": "10"
     },
     "upgrade_aquatic:purple_jelly_torch": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "upgrade_aquatic:purple_jelly_torch",
+        "value": "uncommon",
+        "amount_class": "small",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "*_jelly_torch",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
     },
     "upgrade_aquatic:red_jelly_torch": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "upgrade_aquatic:red_jelly_torch",
+        "value": "uncommon",
+        "amount_class": "small",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "*_jelly_torch",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -24542,11 +24563,11 @@
         "classification_version": "10"
     },
     "upgrade_aquatic:river_chest": {
-        "function": "ignore",
+        "function": "block_storage",
         "affinities": [],
-        "value": "none",
+        "value": "uncommon",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
+        "matched_rule_id": "storage_blocks",
         "matched_detail": "upgrade_aquatic:river_chest",
         "classification_status": "matched",
         "is_fallback_match": false,
@@ -24590,12 +24611,12 @@
         "classification_version": "10"
     },
     "upgrade_aquatic:river_fence_gate": {
-        "function": "ignore",
+        "function": "block_misc_use",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "upgrade_aquatic:river_fence_gate",
+        "value": "uncommon",
+        "amount_class": "small",
+        "matched_rule_id": "misc_use_blocks",
+        "matched_detail": "#minecraft:fence_gates",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -25198,11 +25219,11 @@
         "classification_version": "10"
     },
     "upgrade_aquatic:tall_beachgrass": {
-        "function": "ignore",
+        "function": "block_building",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
+        "value": "junk",
+        "amount_class": "large",
+        "matched_rule_id": "building_blocks",
         "matched_detail": "upgrade_aquatic:tall_beachgrass",
         "classification_status": "matched",
         "is_fallback_match": false,
@@ -25365,22 +25386,22 @@
         "classification_version": "10"
     },
     "upgrade_aquatic:trapped_driftwood_chest": {
-        "function": "ignore",
+        "function": "block_storage",
         "affinities": [],
-        "value": "none",
+        "value": "common",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
+        "matched_rule_id": "storage_blocks",
         "matched_detail": "upgrade_aquatic:trapped_driftwood_chest",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
     },
     "upgrade_aquatic:trapped_river_chest": {
-        "function": "ignore",
+        "function": "block_storage",
         "affinities": [],
-        "value": "none",
+        "value": "common",
         "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
+        "matched_rule_id": "storage_blocks",
         "matched_detail": "upgrade_aquatic:trapped_river_chest",
         "classification_status": "matched",
         "is_fallback_match": false,
@@ -25439,12 +25460,12 @@
         "classification_version": "10"
     },
     "upgrade_aquatic:white_jelly_torch": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "upgrade_aquatic:white_jelly_torch",
+        "value": "uncommon",
+        "amount_class": "small",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "*_jelly_torch",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"
@@ -25463,12 +25484,12 @@
         "classification_version": "10"
     },
     "upgrade_aquatic:yellow_jelly_torch": {
-        "function": "ignore",
+        "function": "misc_tool",
         "affinities": [],
-        "value": "none",
-        "amount_class": "singleton",
-        "matched_rule_id": "ignored_items",
-        "matched_detail": "upgrade_aquatic:yellow_jelly_torch",
+        "value": "uncommon",
+        "amount_class": "small",
+        "matched_rule_id": "misc_tools",
+        "matched_detail": "*_jelly_torch",
         "classification_status": "matched",
         "is_fallback_match": false,
         "classification_version": "10"

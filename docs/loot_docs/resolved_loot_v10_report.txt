@@ -1,31 +1,31 @@
 classification version: 10
 total items: 2075
-ignored count: 168
-fallback count: 20
+ignored count: 91
+fallback count: 23
 
 functions:
-  block_building: 645
-  item_material: 299
+  block_building: 650
+  item_material: 306
   nonloot: 199
-  block_misc_use: 184
-  ignore: 168
+  block_misc_use: 188
   block_material: 146
-  consumable: 77
+  ignore: 91
+  misc_tool: 87
+  wearable: 79
+  consumable: 78
   block_technical: 70
-  misc_tool: 63
-  wearable: 63
   gather_tool: 53
-  garden: 24
+  block_storage: 38
+  garden: 25
+  unmatched: 23
   weapon: 22
-  block_storage: 22
-  unmatched: 20
   block_crafting: 20
 
 affinities:
   sea: 263
+  village: 125
   masonry: 122
-  village: 122
-  nether: 100
+  nether: 102
   household: 99
   fortification: 79
   woolworking: 73
@@ -34,15 +34,15 @@ affinities:
   underground: 58
   food: 53
   desert: 44
+  jungle: 41
   deep_under: 40
-  jungle: 39
-  smithing: 37
+  smithing: 38
   end: 36
-  leatherworking: 30
-  swamp: 25
+  leatherworking: 31
+  swamp: 26
   archaeology: 25
   clerical: 22
-  plains: 19
+  plains: 20
   farming: 17
   butchery: 11
   fishing: 10
@@ -52,23 +52,23 @@ affinities:
   arctic: 5
   cartography: 1
   ruins: 1
- Total Affinities: 1488
+ Total Affinities: 1499
 
 values:
-  uncommon: 587
-  none: 395
-  filler: 394
-  rare: 314
-  epic: 138
-  common: 130
-  junk: 62
+  uncommon: 634
+  filler: 392
+  rare: 331
+  none: 321
+  epic: 142
+  common: 134
+  junk: 66
   legendary: 42
   unique: 13
 
 amount_classes:
-  singleton: 753
-  large: 726
-  small: 542
+  large: 731
+  singleton: 728
+  small: 562
   tiny: 25
   medium: 15
   bulk: 14
@@ -92,9 +92,12 @@ fallback items:
   bosses_of_mass_destruction:obsidilith_end_frame
   bosses_of_mass_destruction:obsidilith_rune
   bosses_of_mass_destruction:sealed_blackstone
-  bosses_of_mass_destruction:soul_star
   bosses_of_mass_destruction:vine_wall
   bosses_of_mass_destruction:void_blossom
   bosses_of_mass_destruction:void_blossom_block
   bosses_of_mass_destruction:void_lily
   bosses_of_mass_destruction:void_thorn
+  minecraft:firefly_bush
+  minecraft:pale_hanging_moss
+  minecraft:pale_moss_carpet
+  minecraft:resin_brick

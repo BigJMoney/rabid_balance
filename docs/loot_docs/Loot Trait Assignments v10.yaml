@@ -66,71 +66,12 @@ loot_classification_by_trait:
     - endermanoverhaul:tiny_skull
 
     # todo: remove when tag bug is fixed (vanilla backport)
-    - minecraft:acacia_shelf
-    - minecraft:bamboo_shelf
-    - minecraft:birch_shelf
-    - minecraft:black_bundle
-    - minecraft:black_harness
-    - minecraft:blue_bundle
-    - minecraft:blue_egg
-    - minecraft:blue_harness
-    - minecraft:brown_bundle
-    - minecraft:brown_egg
-    - minecraft:brown_harness
     - minecraft:bush
-    - minecraft:cherry_shelf
-    - minecraft:copper_chain
     - minecraft:copper_chest
     - minecraft:copper_golem_statue
     - minecraft:copper_lantern
     - minecraft:copper_nugget
     - minecraft:copper_torch
-    - minecraft:creaking_heart
-    - minecraft:crimson_shelf
-    - minecraft:cyan_bundle
-    - minecraft:cyan_harness
-    - minecraft:dark_oak_shelf
-    - minecraft:dried_ghast
-    - minecraft:firefly_bush
-    - minecraft:gray_bundle
-    - minecraft:gray_harness
-    - minecraft:green_bundle
-    - minecraft:green_harness
-    - minecraft:jungle_shelf
-    - minecraft:leaf_litter
-    - minecraft:light_blue_bundle
-    - minecraft:light_blue_harness
-    - minecraft:light_gray_bundle
-    - minecraft:light_gray_harness
-    - minecraft:lime_bundle
-    - minecraft:lime_harness
-    - minecraft:magenta_bundle
-    - minecraft:magenta_harness
-    - minecraft:mangrove_shelf
-    - minecraft:oak_shelf
-    - minecraft:orange_bundle
-    - minecraft:orange_harness
-    - minecraft:pale_hanging_moss
-    - minecraft:pale_moss_carpet
-    - minecraft:pale_oak_fence_gate
-    - minecraft:pale_oak_shelf
-    - minecraft:pink_bundle
-    - minecraft:pink_harness
-    - minecraft:purple_bundle
-    - minecraft:purple_harness
-    - minecraft:red_bundle
-    - minecraft:red_harness
-    - minecraft:resin_block
-    - minecraft:resin_brick
-    - minecraft:resin_clump
-    - minecraft:short_dry_grass
-    - minecraft:spruce_shelf
-    - minecraft:tall_dry_grass
-    - minecraft:warped_shelf
-    - minecraft:white_bundle
-    - minecraft:white_harness
-    - minecraft:yellow_bundle
-    - minecraft:yellow_harness
 
     # todo: remove when tag bug is fixed
     - reanimal:butterfly_pollen
@@ -179,56 +120,38 @@ loot_classification_by_trait:
     - rottencreatures:tnt_barrel
     - rottencreatures:treasure_chest
 
-    - upgrade_aquatic:beachgrass
     - upgrade_aquatic:beachgrass_thatch
-    - upgrade_aquatic:bedroll
-    - upgrade_aquatic:blue_jelly_torch
     - upgrade_aquatic:boiled_pickerelweed_block
     - upgrade_aquatic:coralstone
     - upgrade_aquatic:driftwood_beehive
     - upgrade_aquatic:driftwood_boards
     - upgrade_aquatic:driftwood_bookshelf
-    - upgrade_aquatic:driftwood_chest
-    - upgrade_aquatic:driftwood_fence_gate
     - upgrade_aquatic:driftwood_furnace_boat
     - upgrade_aquatic:driftwood_ladder
     - upgrade_aquatic:elder_eye
     - upgrade_aquatic:embedded_ammonite
-    - upgrade_aquatic:green_jelly_torch
     - upgrade_aquatic:kelp_block
     - upgrade_aquatic:kelpy_cobblestone
     - upgrade_aquatic:large_driftwood_boat
     - upgrade_aquatic:large_river_boat
     - upgrade_aquatic:luminous_prismarine
-    - upgrade_aquatic:mulberry_jam_block
     - upgrade_aquatic:mulberry_punnet
-    - upgrade_aquatic:orange_jelly_torch
-    - upgrade_aquatic:pickerelweed
     - upgrade_aquatic:pickerelweed_block
-    - upgrade_aquatic:pink_jelly_torch
     - upgrade_aquatic:prismarine_rod
     - upgrade_aquatic:prismarine_rod_bundle
-    - upgrade_aquatic:purple_jelly_torch
-    - upgrade_aquatic:red_jelly_torch
     - upgrade_aquatic:river_beehive
     - upgrade_aquatic:river_boards
     - upgrade_aquatic:river_bookshelf
-    - upgrade_aquatic:river_chest
-    - upgrade_aquatic:river_fence_gate
     - upgrade_aquatic:river_furnace_boat
     - upgrade_aquatic:river_ladder
     - upgrade_aquatic:river_leaf_pile
     - upgrade_aquatic:scute_block
     - upgrade_aquatic:scute_pavement
     - upgrade_aquatic:scute_shingles
-    - upgrade_aquatic:tall_beachgrass
     - upgrade_aquatic:thrasher_tooth
     - upgrade_aquatic:tooth_block
     - upgrade_aquatic:tooth_lantern
-    - upgrade_aquatic:trapped_driftwood_chest
-    - upgrade_aquatic:trapped_river_chest
-    - upgrade_aquatic:white_jelly_torch
-    - upgrade_aquatic:yellow_jelly_torch
+    - upgrade_aquatic:mulberry_jam_block
 
   
 #-----------------------------
@@ -288,6 +211,7 @@ loot_classification_by_trait:
         - minecraft:nether_sprouts
         - minecraft:glow_berries
         - minecraft:chorus_flower
+        - upgrade_aquatic:pickerelweed
         - "*_seeds"
         - "#minecraft:saplings"
       assign:
@@ -320,6 +244,7 @@ loot_classification_by_trait:
         - minecraft:bone_meal
         - minecraft:trial_key
         - minecraft:ominous_trial_key
+        - bosses_of_mass_destruction:soul_star
         - "#c:potions"                  # specific rules needed for generated instances? (lots of other places like this)
         - "#c:foods"
         - "#endermanoverhaul:ender_pearls"
@@ -352,6 +277,7 @@ loot_classification_by_trait:
             - minecraft:sponge
             - minecraft:wet_sponge
             - minecraft:chorus_fruit
+            - bosses_of_mass_destruction:soul_star
             - "#c:potions"
           uncommon:
             - minecraft:experience_bottle
@@ -377,6 +303,7 @@ loot_classification_by_trait:
         - "*backpack"                           # Sophisticated Backpacks
         - "#c:armors"
         - "#c:tools/shield"
+        - "#minecraft:harnesses"
       assign:
         function: wearable
         value:
@@ -401,6 +328,7 @@ loot_classification_by_trait:
             - minecraft:turtle_helmet
             - "iron_*"
             # - "#iron"
+            - "#minecraft:harnesses"
           uncommon:
             - minecraft:leather_horse_armor
             - "golden_*"                        # This could cause issues, keep an eye out
@@ -537,7 +465,9 @@ loot_classification_by_trait:
         - illagerinvasion:lost_candle
         - illagerinvasion:horn_of_sight
         - "music_disc_*"
+        - "*_jelly_torch"
         - "#minecraft:boats"
+        - "#minecraft:bundles"
       assign:
         function: misc_tool
         value:
@@ -568,6 +498,7 @@ loot_classification_by_trait:
             - minecraft:bowl
           small:
             - minecraft:map
+            - "*_jelly_torch"
       reason: >
         Usable tools with many functions, except gathering.
 
@@ -576,6 +507,7 @@ loot_classification_by_trait:
       match:
         # Filler
         - minecraft:stick
+        - minecraft:leaf_litter
         # Com
         - minecraft:coal
         - minecraft:charcoal
@@ -669,6 +601,10 @@ loot_classification_by_trait:
         - illagerinvasion:hallowed_gem
         - illagerinvasion:primal_essence
         - sophisticatedbackpacks:upgrade_base
+        - minecraft:creaking_heart
+        - minecraft:dried_ghast
+        - minecraft:resin_block
+        - minecraft:resin_clump
         # Leg
         - minecraft:heart_of_the_sea
         - minecraft:netherite_scrap
@@ -687,6 +623,7 @@ loot_classification_by_trait:
         - "*_fungus"
         - "*banner_pattern*"
         - "raw_*"                   # includes both raw_* and raw_*_block
+        - "#c:eggs"
         - "#c:ores"
         - "#c:nuggets"
         - "#c:ingots"
@@ -710,6 +647,7 @@ loot_classification_by_trait:
             - minecraft:netherite_block
           filler:
             - minecraft:stick
+            - minecraft:leaf_litter
           legendary:
             - minecraft:diamond_block
             - minecraft:emerald_block
@@ -732,6 +670,10 @@ loot_classification_by_trait:
             - illagerinvasion:hallowed_gem
             - illagerinvasion:primal_essence
             - sophisticatedbackpacks:upgrade_base
+            - minecraft:creaking_heart
+            - minecraft:dried_ghast
+            - minecraft:resin_block
+            - minecraft:resin_clump
             - "#sophisticatedbackpacks:upgrade"
           uncommon:
             - dried_kelp_block
@@ -781,11 +723,12 @@ loot_classification_by_trait:
             - minecraft:nether_brick
             - primity:flint_blade
             - sophisticatedbackpacks:backpack
-            - "#minecraft:wool"
             - "*_mushroom"
             - "*_fungus"
             - "#c:ores/copper"
             - "#minecraft:flowers"
+            - "#c:eggs"
+            - "#minecraft:wool"
         amount_class:
           default: small
           singleton:
@@ -831,10 +774,15 @@ loot_classification_by_trait:
       match:
         - minecraft:chest
         - minecraft:trapped_chest
+        - upgrade_aquatic:trapped_driftwood_chest
+        - upgrade_aquatic:trapped_river_chest
         - minecraft:barrel
         - minecraft:ender_chest
         - minecraft:shulker_box
         - minecraft:decorated_pot
+        - upgrade_aquatic:driftwood_chest
+        - upgrade_aquatic:river_chest
+        - "*_shelf"
         - "*_shulker_box"
       assign:
         function: block_storage
@@ -848,6 +796,9 @@ loot_classification_by_trait:
             - minecraft:trapped_chest
           uncommon:
             - minecraft:decorated_pot
+            - upgrade_aquatic:driftwood_chest
+            - upgrade_aquatic:river_chest
+            - "*_shelf"
         amount_class: 
           default: singleton
       reason: >
@@ -1012,9 +963,10 @@ loot_classification_by_trait:
         - minecraft:mycelium
         - minecraft:rooted_dirt
         - minecraft:hay_block
+        - upgrade_aquatic:bedroll
         - "infested_*"
         - "*_froglight"
-        - "#c:fence_gates"
+        - "#minecraft:fence_gates"
         - "#minecraft:beds"
         - "#minecraft:doors"
         - "#minecraft:trapdoors"
@@ -1069,6 +1021,7 @@ loot_classification_by_trait:
             - minecraft:armor_stand
             - minecraft:jukebox
             - minecraft:hay_block
+            - upgrade_aquatic:bedroll
             - "#minecraft:beds"
       reason: >
         These blocks are meaningfully useful, but have too specialized purposes to categorize (or to want to categorize, like doorways).
@@ -1185,10 +1138,13 @@ loot_classification_by_trait:
         - minecraft:warped_wart_block
         - minecraft:lily_pad
         - minecraft:moss_carpet
+        - minecraft:short_dry_grass
+        - minecraft:tall_dry_grass
+        - upgrade_aquatic:tall_beachgrass
+        - upgrade_aquatic:beachgrass
         # Nicer
         - minecraft:painting
         - minecraft:sea_pickle
-        - minecraft:chain
         - minecraft:reinforced_deepslate
         - minecraft:gilded_blackstone
         - minecraft:quartz_bricks
@@ -1221,6 +1177,7 @@ loot_classification_by_trait:
         - "*_bars"
         - "*_grate"
         - "*_pillar"
+        - "#c:chains"
         - "#c:glass_panes"
         - "#minecraft:skulls"
         - "#c:pumpkins"
@@ -1253,6 +1210,10 @@ loot_classification_by_trait:
             - minecraft:warped_wart_block
             - minecraft:lily_pad
             - minecraft:moss_carpet
+            - minecraft:short_dry_grass
+            - minecraft:tall_dry_grass
+            - upgrade_aquatic:tall_beachgrass
+            - upgrade_aquatic:beachgrass
             - "*_roots"
             - "#minecraft:dirt"
             - "#minecraft:leaves"
@@ -1267,7 +1228,6 @@ loot_classification_by_trait:
           uncommon:
             - minecraft:painting
             - minecraft:sea_pickle
-            - minecraft:chain
             - minecraft:gilded_blackstone
             - "bamboo_mosaic*"
             - "*_coral*"
@@ -1276,6 +1236,7 @@ loot_classification_by_trait:
             - "#minecraft:skulls"
             - "kobold*skull"
             - "#c:concretes"
+            - "#c:chains"
         function: block_building
         amount_class: 
           default: large
