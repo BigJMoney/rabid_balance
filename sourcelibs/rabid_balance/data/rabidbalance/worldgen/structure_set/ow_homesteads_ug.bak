@@ -11,6 +11,14 @@
     "salt": 1201
   },
   "structures": [
+        {
+      "structure": "kobolds:kobold_den",
+      "weight": 10
+    },
+    {
+      "structure": "kobolds:kobold_den_pirate",
+      "weight": 5
+    },
     {
       "structure": "taxbt:structure_trader_lushcave",
       "weight": 10
