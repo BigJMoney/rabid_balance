@@ -30,6 +30,10 @@
     {
       "structure": "minecraft:village_taiga",
       "weight": 10
+    },
+    {
+      "structure": "ribbits:ribbit_village",
+      "weight": 10
     }
   ]
 }

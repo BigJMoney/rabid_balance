@@ -300,6 +300,18 @@
       "weight": 10
     },
     {
+      "structure": "toxony:old_adventure_guild",
+      "weight": 10
+    },
+    {
+      "structure": "toxony:old_experiment_house",
+      "weight": 10
+    },
+    {
+      "structure": "toxony:hunter_watchtower",
+      "weight": 10
+    },
+    {
       "structure": "apotheosis:tower_leaf",
       "weight": 10
     },

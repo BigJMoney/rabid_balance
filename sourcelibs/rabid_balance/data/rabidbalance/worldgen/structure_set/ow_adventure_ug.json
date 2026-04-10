@@ -14,6 +14,14 @@
     {
       "structure": "minecraft:trial_chambers",
       "weight": 10
+    },
+    {
+      "structure": "toxony:large_silver_mine",
+      "weight": 10
+    },
+    {
+      "structure": "toxony:lost_silver_mine",
+      "weight": 10
     }
   ]
 }

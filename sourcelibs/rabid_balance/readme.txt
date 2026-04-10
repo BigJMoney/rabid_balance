@@ -29,6 +29,8 @@ Supplementaries waysign and adventure map changes:
 
 Rotten Creatures miner zombies now have the can_be_miner tag used by Enhanced AI
 
+Aquatic Frontiers sponge squid has a very low chance of dropping sponges (but still can)
+
 
 ~ STRUCTURE REBALANCING ~
 

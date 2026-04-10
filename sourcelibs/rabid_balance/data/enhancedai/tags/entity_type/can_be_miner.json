@@ -1,9 +1,18 @@
 {
 	"replace": false,
+	"neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "rottencreatures"
+        }
+    ],
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "enhancedai"
+        }
+    ],
 	"values": [
-		{ "id": "rottencreatures:undead_diamond_miner", "required": false },
-		{ "id": "rottencreatures:undead_gold_miner", "required": false },
-		{ "id": "rottencreatures:undead_iron_miner", "required": false },
-		{ "id": "rottencreatures:undead_stone_miner", "required": false }
+		"rottencreatures:undead_miner"
 	]
 }

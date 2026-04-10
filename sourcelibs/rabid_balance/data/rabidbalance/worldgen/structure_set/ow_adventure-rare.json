@@ -16,6 +16,10 @@
       "weight": 10
     },
     {
+      "structure": "illagerinvasion:illager_fort",
+      "weight": 10
+    },
+    {
       "structure": "minecraft:mansion",
       "weight": 10
     }
