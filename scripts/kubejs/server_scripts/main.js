@@ -1,7 +1,7 @@
 // Visit the wiki for more info - https://kubejs.com/
 
 // To write a Json export of all game item ids or not
-const DO_EXPORT = false;
+const DO_EXPORT = true;
 
 const ROPES = '#c:ropes'
 

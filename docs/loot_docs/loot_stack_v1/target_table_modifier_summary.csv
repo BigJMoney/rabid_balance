@@ -1,4 +1,6 @@
 target_table_id,modifier_count,supported_modifier_count,unsupported_modifier_count,added_leaf_row_count,added_unique_item_count,novel_item_count,overlap_item_count,modifier_pack_ids,modifier_ids_json
+aether:chests/dungeon/gold/gold_dungeon_reward,1,0,1,0,0,0,0,aether,"[""aether:gloves_loot_chain""]"
+aether:chests/ruined_portal,1,0,1,0,0,0,0,aether,"[""aether:gloves_loot_iron""]"
 minecraft:chests/abandoned_mineshaft,1,1,0,6,5,5,0,sophisticatedbackpacks,"[""sophisticatedbackpacks:chests/abandoned_mineshaft""]"
 minecraft:chests/bastion_treasure,1,1,0,4,3,3,0,sophisticatedbackpacks,"[""sophisticatedbackpacks:chests/bastion_treasure""]"
 minecraft:chests/desert_pyramid,1,1,0,5,4,4,0,sophisticatedbackpacks,"[""sophisticatedbackpacks:chests/desert_pyramid""]"
@@ -9,3 +11,4 @@ minecraft:chests/simple_dungeon,1,1,0,4,3,3,0,sophisticatedbackpacks,"[""sophist
 minecraft:chests/spawn_bonus_chest,1,1,0,0,0,0,0,rabid_balance,"[""sophisticatedbackpacks:chests/spawn_bonus_chest""]"
 minecraft:chests/village/village_desert_house,1,1,0,3,2,2,0,rabid_balance,"[""rabidbalance:supplementaries_desert_house_bonus""]"
 minecraft:chests/woodland_mansion,1,1,0,4,3,3,0,sophisticatedbackpacks,"[""sophisticatedbackpacks:chests/woodland_mansion""]"
+minecraft:gameplay/piglin_bartering,1,0,1,0,0,0,0,toxony,"[""toxony:bloodroot_barter_drop""]"

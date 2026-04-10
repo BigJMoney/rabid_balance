@@ -10,37 +10,46 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Pack order source: `D:\keep\mods\Minecraft\my_tweaks\configs\loot_pack_order.json`
 - Last mod pin: `rabid_balance` from `D:\keep\mods\Minecraft\my_tweaks\configs\loot_pack_order.json`
 - Ignore roots: `D:\keep\mods\Minecraft\my_tweaks\libs\ignore`, `D:\keep\mods\Minecraft\my_tweaks\sourcelibs\ignore`
-- Selected pack count: 6
+- Selected pack count: 15
 - Classification source: `D:\keep\mods\Minecraft\my_tweaks\docs\loot_docs\resolved_loot_v10.csv`
 - Classification version: `10`
-- Named table rows: 72
-- Inline table rows: 3
-- Pool rows: 140
-- Entry rows: 801
-- Leaf candidate rows: 888
-- Root table item summary rows: 812
-- Table role rows: 72
-- Table role evidence rows: 196
-- GLM chain rows: 10
+- Named table rows: 131
+- Inline table rows: 4
+- Pool rows: 307
+- Entry rows: 1449
+- Leaf candidate rows: 1750
+- Root table item summary rows: 1557
+- Table role rows: 131
+- Table role evidence rows: 313
+- GLM chain rows: 32
 - Modifier-added leaf rows: 38
-- Target table modifier summary rows: 10
+- Target table modifier summary rows: 13
 - Target table added item summary rows: 29
-- Item classification rows: 2075
-- Item affinity rows: 1488
-- Classification coverage rows: 252
-- Structure rows: 38
-- Structure loot-link rows: 81
-- Structure loot-link audit rows: 154
-- Classified loot items: 249
-- Missing loot items: 3
+- Item classification rows: 3547
+- Item affinity rows: 1835
+- Classification coverage rows: 453
+- Structure rows: 73
+- Structure loot-link rows: 106
+- Structure loot-link audit rows: 233
+- Classified loot items: 449
+- Missing loot items: 4
 
 ## Selected Packs
 
 - `base` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\neoforge-21.1.162_ref`
+- `aether` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\aether-1.5.10-neoforge`
+- `allurement` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\allurement-1.21.1-5.0.1.jar`
+- `aquatic_frontiers` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\aquatic_frontiers-1.7-neoforge`
 - `bosses_of_mass_destruction` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\BOMD-NeoForge-1.3.2`
 - `copperagebackport` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\copperagebackport-neoforge-0.1.4`
+- `illagerinvasion` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\IllagerInvasion-v21.1.6-NeoForge`
+- `incubation` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\incubation-1.21.1-5.0.2.jar`
 - `kobolds` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\Kobolds-3.0.41`
+- `primity` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\primity-neoforge-0.1.4`
+- `ribbits` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\Ribbits-NeoForge-4.1.6`
 - `sophisticatedbackpacks` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\sophisticatedbackpacks-3.25.34.1581`
+- `toxony` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\toxony-0.10.6`
+- `twilightforest` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\twilightforest-4.8.3287-universal`
 - `rabid_balance` (directory) from `D:\keep\mods\Minecraft\my_tweaks\sourcelibs\rabid_balance`
 
 ## Files
@@ -87,19 +96,23 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 
 ## Allowed Folders
 
-- `chests`: 63 effective loot-table resources
+- `chests`: 122 effective loot-table resources
 - `equipment`: 3 effective loot-table resources
 - `pots`: 1 effective loot-table resources
 - `spawners`: 5 effective loot-table resources
 
 ## Excluded Folders
 
+- `advancements`: 1 effective loot-table resources
 - `archaeology`: 7 effective loot-table resources
-- `blocks`: 1064 effective loot-table resources
+- `blocks`: 1773 effective loot-table resources
 - `dispensers`: 3 effective loot-table resources
-- `entities`: 114 effective loot-table resources
-- `gameplay`: 25 effective loot-table resources
+- `entities`: 252 effective loot-table resources
+- `gameplay`: 26 effective loot-table resources
+- `items`: 1 effective loot-table resources
+- `selectors`: 2 effective loot-table resources
 - `shearing`: 1 effective loot-table resources
+- `stripping`: 1 effective loot-table resources
 
 ## Deferred Stage 2 Folders
 
@@ -107,7 +120,10 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 
 ## Warnings
 
-- None
+- `advancements` introduced by aether
+- `items` introduced by twilightforest
+- `selectors` introduced by aether
+- `stripping` introduced by aether
 
 ## Notes
 

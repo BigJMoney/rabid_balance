@@ -16,6 +16,22 @@
       "weight": 10
     },
     {
+      "structure": "illagerinvasion:illusioner_tower",
+      "weight": 10
+    },
+    {
+      "structure": "illagerinvasion:labyrinth",
+      "weight": 10
+    },
+    {
+      "structure": "illagerinvasion:firecaller_hut",
+      "weight": 10
+    },
+    {
+      "structure": "illagerinvasion:sorcerer_hut",
+      "weight": 10
+    },
+    {
       "structure": "minecraft:desert_pyramid",
       "weight": 10
     },

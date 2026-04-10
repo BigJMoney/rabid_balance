@@ -971,6 +971,54 @@ def write_json(path: Path, value: Any) -> None:
     path.write_text(json.dumps(value, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
+def strip_json_comments(text: str) -> str:
+    result: list[str] = []
+    index = 0
+    in_string = False
+    string_delimiter = ""
+    while index < len(text):
+        char = text[index]
+        next_char = text[index + 1] if index + 1 < len(text) else ""
+        if in_string:
+            result.append(char)
+            if char == "\\" and index + 1 < len(text):
+                result.append(text[index + 1])
+                index += 2
+                continue
+            if char == string_delimiter:
+                in_string = False
+                string_delimiter = ""
+            index += 1
+            continue
+        if char in {'"', "'"}:
+            in_string = True
+            string_delimiter = char
+            result.append(char)
+            index += 1
+            continue
+        if char == "/" and next_char == "/":
+            index += 2
+            while index < len(text) and text[index] not in "\r\n":
+                index += 1
+            continue
+        if char == "/" and next_char == "*":
+            index += 2
+            while index + 1 < len(text) and not (text[index] == "*" and text[index + 1] == "/"):
+                index += 1
+            index += 2 if index + 1 < len(text) else 0
+            continue
+        result.append(char)
+        index += 1
+    return "".join(result)
+
+
+def load_json_with_optional_comments(text: str, source_path: str) -> Any:
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        return json.loads(strip_json_comments(text))
+
+
 def split_resource_path(resource_path: str) -> tuple[str, ...]:
     return PurePosixPath(resource_path).parts
 
@@ -988,7 +1036,7 @@ def get_resource_family(resource_path: str) -> str:
 
 
 def overlap_requires_pack_order_manifest(resource_path: str) -> bool:
-    return get_resource_family(resource_path) != "tags"
+    return get_resource_family(resource_path) not in {"tags", "data_maps"}
 
 
 def get_loot_resource_metadata(resource_path: str) -> dict[str, str] | None:
@@ -1091,7 +1139,7 @@ def load_scope_settings(
             raise ValueError("scope config path is required")
         scope_path = Path(scope_config_path)
         raw_data = ensure_dict(
-            json.loads(scope_path.read_text(encoding="utf-8")),
+            load_json_with_optional_comments(scope_path.read_text(encoding="utf-8"), str(scope_path)),
             f"scope config {scope_path}",
         )
         source = str(scope_path)
@@ -1123,7 +1171,7 @@ def load_pack_order_manifest(path: Path | str | None) -> tuple[list[str], str | 
         return [], None, None
 
     manifest_path = Path(path)
-    raw_data = json.loads(manifest_path.read_text(encoding="utf-8"))
+    raw_data = load_json_with_optional_comments(manifest_path.read_text(encoding="utf-8"), str(manifest_path))
     last_mod_pack_id: str | None = None
     if isinstance(raw_data, list):
         pack_ids = raw_data
@@ -1699,7 +1747,7 @@ class LootStackExporter:
                 continue
             effective = self.effective_resources[resource_path]
             raw_table = ensure_dict(
-                json.loads(read_pack_text(effective.pack, resource_path)),
+                load_json_with_optional_comments(read_pack_text(effective.pack, resource_path), effective.display_source_path()),
                 f"loot table resource {resource_path}",
             )
             table_id = f"{metadata['namespace']}:{metadata['path']}"
@@ -2727,7 +2775,10 @@ class LootStackExporter:
         for contribution in self.resource_contributions.get(GLM_REGISTRY_RESOURCE_PATH, []):
             try:
                 raw_registry = ensure_dict(
-                    json.loads(read_pack_text(contribution.pack, GLM_REGISTRY_RESOURCE_PATH)),
+                    load_json_with_optional_comments(
+                        read_pack_text(contribution.pack, GLM_REGISTRY_RESOURCE_PATH),
+                        display_pack_resource_path(contribution.pack, GLM_REGISTRY_RESOURCE_PATH),
+                    ),
                     f"{contribution.pack.pack_id}:{GLM_REGISTRY_RESOURCE_PATH}",
                 )
             except Exception as exc:
@@ -2801,7 +2852,10 @@ class LootStackExporter:
             return row, []
 
         raw_modifier = ensure_dict(
-            json.loads(read_pack_text(effective.pack, modifier_resource_path)),
+            load_json_with_optional_comments(
+                read_pack_text(effective.pack, modifier_resource_path),
+                effective.display_source_path(),
+            ),
             f"modifier resource {modifier_resource_path}",
         )
         modifier_type = self._string_or_blank(raw_modifier.get("type"))
@@ -3085,7 +3139,7 @@ class LootStackExporter:
                 return None
             loading_table_ids.add(table_id_to_parse)
             raw_table = ensure_dict(
-                json.loads(read_pack_text(effective.pack, resource_path)),
+                load_json_with_optional_comments(read_pack_text(effective.pack, resource_path), effective.display_source_path()),
                 f"payload loot table {resource_path}",
             )
             namespace, path = split_loot_table_id(table_id_to_parse)
@@ -3370,8 +3424,9 @@ class LootStackExporter:
             structure_set_id = resource_path_to_resource_id(resource_path, "worldgen/structure_set", ".json")
             if structure_set_id is None:
                 continue
+            raw_text = read_pack_text(effective_set.pack, resource_path)
             raw_set = ensure_dict(
-                json.loads(read_pack_text(effective_set.pack, resource_path)),
+                load_json_with_optional_comments(raw_text, effective_set.display_source_path()),
                 effective_set.display_source_path(),
             )
             default_namespace = structure_set_id.split(":", 1)[0]
@@ -3999,7 +4054,10 @@ class LootStackExporter:
                 structure_source_path = structure_effective.display_source_path()
                 try:
                     raw_structure = ensure_dict(
-                        json.loads(read_pack_text(structure_effective.pack, structure_resource_path)),
+                        load_json_with_optional_comments(
+                            read_pack_text(structure_effective.pack, structure_resource_path),
+                            structure_source_path,
+                        ),
                         structure_source_path,
                     )
                     structure_type = self._string_or_blank(raw_structure.get("type"))
@@ -4156,7 +4214,7 @@ class LootStackExporter:
             return "missing_structure_resource", {}
         try:
             raw_structure = ensure_dict(
-                json.loads(read_pack_text(effective.pack, structure_resource_path)),
+                load_json_with_optional_comments(read_pack_text(effective.pack, structure_resource_path), effective.display_source_path()),
                 effective.display_source_path(),
             )
         except Exception:
@@ -4203,7 +4261,7 @@ class LootStackExporter:
                 continue
             try:
                 raw_pool = ensure_dict(
-                    json.loads(read_pack_text(effective.pack, resource_path)),
+                    load_json_with_optional_comments(read_pack_text(effective.pack, resource_path), effective.display_source_path()),
                     effective.display_source_path(),
                 )
             except Exception:
@@ -4337,7 +4395,7 @@ class LootStackExporter:
         if effective is None:
             return set()
         try:
-            raw_json = json.loads(read_pack_text(effective.pack, resource_path))
+            raw_json = load_json_with_optional_comments(read_pack_text(effective.pack, resource_path), effective.display_source_path())
         except Exception:
             return set()
         return {
@@ -4504,7 +4562,7 @@ class LootStackExporter:
             if get_resource_family(resource_path) not in DIRECT_ASSIGNMENT_DIRS:
                 continue
             effective = self.effective_resources[resource_path]
-            raw_json = json.loads(read_pack_text(effective.pack, resource_path))
+            raw_json = load_json_with_optional_comments(read_pack_text(effective.pack, resource_path), effective.display_source_path())
             for table_id, pointer in self._find_direct_assignment_matches(raw_json):
                 if table_id not in named_table_set:
                     continue

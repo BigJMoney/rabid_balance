@@ -52,6 +52,142 @@ loot_classification_by_trait:
       - hard caps for singleton or progression-sensitive items
 
   ignored_items:
+    - aether:aechor_petal
+    - aether:aerogel
+    - aether:aether_dirt
+    - aether:aether_dirt_path
+    - aether:aether_farmland
+    - aether:aether_grass_block
+    - aether:aether_portal_frame
+    - aether:agility_cape
+    - aether:altar
+    - aether:ambrosium_block
+    - aether:ambrosium_shard
+    - aether:ambrosium_torch
+    - aether:angelic_stone
+    - aether:berry_bush
+    - aether:berry_bush_stem
+    - aether:blue_aercloud
+    - aether:blue_cape
+    - aether:book_of_lore
+    - aether:boss_doorway_angelic_stone
+    - aether:boss_doorway_carved_stone
+    - aether:boss_doorway_hellfire_stone
+    - aether:boss_doorway_light_angelic_stone
+    - aether:boss_doorway_light_hellfire_stone
+    - aether:boss_doorway_sentry_stone
+    - aether:bronze_dungeon_key
+    - aether:carved_stone
+    - aether:chainmail_gloves
+    - aether:chest_mimic
+    - aether:cloud_staff
+    - aether:cold_aercloud
+    - aether:cold_parachute
+    - aether:diamond_gloves
+    - aether:enchanted_aether_grass_block
+    - aether:enchanted_dart
+    - aether:enchanted_gravitite
+    - aether:freezer
+    - aether:gold_dungeon_key
+    - aether:golden_aercloud
+    - aether:golden_amber
+    - aether:golden_dart
+    - aether:golden_feather
+    - aether:golden_gloves
+    - aether:golden_parachute
+    - aether:golden_pendant
+    - aether:golden_ring
+    - aether:gravitite_gloves
+    - aether:hellfire_stone
+    - aether:holystone
+    - aether:ice_pendant
+    - aether:ice_ring
+    - aether:icestone
+    - aether:incubator
+    - aether:invisibility_cloak
+    - aether:iron_bubble
+    - aether:iron_gloves
+    - aether:iron_pendant
+    - aether:iron_ring
+    - aether:leather_gloves
+    - aether:life_shard
+    - aether:light_angelic_stone
+    - aether:light_hellfire_stone
+    - aether:locked_angelic_stone
+    - aether:locked_carved_stone
+    - aether:locked_hellfire_stone
+    - aether:locked_light_angelic_stone
+    - aether:locked_light_hellfire_stone
+    - aether:locked_sentry_stone
+    - aether:mossy_holystone
+    - aether:nature_staff
+    - aether:neptune_gloves
+    - aether:netherite_gloves
+    - aether:obsidian_gloves
+    - aether:phoenix_gloves
+    - aether:pillar
+    - aether:pillar_top
+    - aether:poison_dart
+    - aether:present
+    - aether:quicksoil
+    - aether:red_cape
+    - aether:regeneration_stone
+    - aether:sentry_stone
+    - aether:shield_of_repulsion
+    - aether:silver_dungeon_key
+    - aether:skyroot_bookshelf
+    - aether:skyroot_fence_gate
+    - aether:skyroot_planks
+    - aether:skyroot_stick
+    - aether:sun_altar
+    - aether:swet_ball
+    - aether:swet_cape
+    - aether:trapped_angelic_stone
+    - aether:trapped_carved_stone
+    - aether:trapped_hellfire_stone
+    - aether:trapped_light_angelic_stone
+    - aether:trapped_light_hellfire_stone
+    - aether:trapped_sentry_stone
+    - aether:treasure_chest
+    - aether:treasure_doorway_angelic_stone
+    - aether:treasure_doorway_carved_stone
+    - aether:treasure_doorway_hellfire_stone
+    - aether:treasure_doorway_light_angelic_stone
+    - aether:treasure_doorway_light_hellfire_stone
+    - aether:treasure_doorway_sentry_stone
+    - aether:valkyrie_cape
+    - aether:valkyrie_gloves
+    - aether:victory_medal
+    - aether:white_cape
+    - aether:yellow_cape
+    - aether:zanite_block
+    - aether:zanite_gemstone
+    - aether:zanite_gloves
+    - aether:zanite_pendant
+    - aether:zanite_ring
+
+    - aquatic_frontiers:sandy_egg
+
+    - bosses_of_mass_destruction:ancient_anima
+    - bosses_of_mass_destruction:blazing_eye
+    - bosses_of_mass_destruction:brimstone_nectar
+    - bosses_of_mass_destruction:charged_ender_pearl
+    - bosses_of_mass_destruction:crystal_fruit
+    - bosses_of_mass_destruction:earthdive_spear
+    - bosses_of_mass_destruction:gauntlet_blackstone
+    - bosses_of_mass_destruction:levitation_block
+    - bosses_of_mass_destruction:mob_ward
+    - bosses_of_mass_destruction:monolith_block
+    - bosses_of_mass_destruction:obsidian_heart
+    - bosses_of_mass_destruction:obsidilith_end_frame
+    - bosses_of_mass_destruction:obsidilith_rune
+    - bosses_of_mass_destruction:sealed_blackstone
+    - bosses_of_mass_destruction:vine_wall
+    - bosses_of_mass_destruction:void_blossom
+    - bosses_of_mass_destruction:void_blossom_block
+    - bosses_of_mass_destruction:void_lily
+    - bosses_of_mass_destruction:void_thorn
+
     # todo: remove when tag bug is fixed
     - copperagebackport:copper_button
 
@@ -65,6 +201,185 @@ loot_classification_by_trait:
     - endermanoverhaul:snowy_hood
     - endermanoverhaul:tiny_skull
 
+    - ghosts:calibrated_haunted_eye
+    - ghosts:haunted_boat
+    - ghosts:haunted_button
+    - ghosts:haunted_chest_boat
+    - ghosts:haunted_fence
+    - ghosts:haunted_fence_gate
+    - ghosts:haunted_hanging_sign
+    - ghosts:haunted_sign
+    - ghosts:haunted_stairs
+    - ghosts:stripped_haunted_log
+
+    - immersive_aircraft:airship
+    - immersive_aircraft:bamboo_hopper
+    - immersive_aircraft:biplane
+    - immersive_aircraft:boiler
+    - immersive_aircraft:bomb_bay
+    - immersive_aircraft:cargo_airship
+    - immersive_aircraft:eco_engine
+    - immersive_aircraft:engine
+    - immersive_aircraft:enhanced_propeller
+    - immersive_aircraft:gyrodyne
+    - immersive_aircraft:gyroscope
+    - immersive_aircraft:gyroscope_dials
+    - immersive_aircraft:gyroscope_hud
+    - immersive_aircraft:heavy_crossbow
+    - immersive_aircraft:hull
+    - immersive_aircraft:hull_reinforcement
+    - immersive_aircraft:improved_landing_gear
+    - immersive_aircraft:industrial_gears
+    - immersive_aircraft:nether_engine
+    - immersive_aircraft:propeller
+    - immersive_aircraft:quadrocopter
+    - immersive_aircraft:rotary_cannon
+    - immersive_aircraft:sail
+    - immersive_aircraft:steel_boiler
+    - immersive_aircraft:sturdy_pipes
+    - immersive_aircraft:telescope
+    - immersive_aircraft:warship
+
+    - incubation:chicken_egg_crate
+    - incubation:hay_nest
+    - incubation:turtle_egg_crate
+    - incubation:twig_nest
+
+    - justdirethings:blazegold_block
+    - justdirethings:blazejet_wand
+    - justdirethings:blockbreakert1
+    - justdirethings:blockbreakert2
+    - justdirethings:blockplacert1
+    - justdirethings:blockplacert2
+    - justdirethings:blockswappert1
+    - justdirethings:blockswappert2
+    - justdirethings:bow_celestigem
+    - justdirethings:celestigem
+    - justdirethings:celestigem_block
+    - justdirethings:charcoal
+    - justdirethings:clickert1
+    - justdirethings:clickert2
+    - justdirethings:coal_t1
+    - justdirethings:coal_t2
+    - justdirethings:coal_t3
+    - justdirethings:coal_t4
+    - justdirethings:coalblock_t1
+    - justdirethings:coalblock_t2
+    - justdirethings:coalblock_t3
+    - justdirethings:coalblock_t4
+    - justdirethings:creaturecatcher
+    - justdirethings:droppert1
+    - justdirethings:droppert2
+    - justdirethings:eclipsealloy_block
+    - justdirethings:eclipsegate_wand
+    - justdirethings:energytransmitter
+    - justdirethings:experienceholder
+    - justdirethings:ferricore_block
+    - justdirethings:ferricore_wrench
+    - justdirethings:fluid_canister
+    - justdirethings:fluidcollectort1
+    - justdirethings:fluidcollectort2
+    - justdirethings:fluidplacert1
+    - justdirethings:fluidplacert2
+    - justdirethings:fuel_canister
+    - justdirethings:generatorfluidt1
+    - justdirethings:generatort1
+    - justdirethings:gooblock_tier1
+    - justdirethings:gooblock_tier2
+    - justdirethings:gooblock_tier3
+    - justdirethings:gooblock_tier4
+    - justdirethings:goosoil_tier1
+    - justdirethings:goosoil_tier2
+    - justdirethings:goosoil_tier3
+    - justdirethings:goosoil_tier4
+    - justdirethings:inventory_holder
+    - justdirethings:itemcollector
+    - justdirethings:machinesettingscopier
+    - justdirethings:paradoxmachine
+    - justdirethings:playeraccessor
+    - justdirethings:pocket_generator
+    - justdirethings:polymorphic_catalyst
+    - justdirethings:polymorphic_fluid_bucket
+    - justdirethings:polymorphic_wand
+    - justdirethings:polymorphic_wand_v2
+    - justdirethings:portal_fluid_bucket
+    - justdirethings:portal_fluid_catalyst
+    - justdirethings:portalgun
+    - justdirethings:portalgun_v2
+    - justdirethings:potion_canister
+    - justdirethings:refined_t2_fluid_bucket
+    - justdirethings:refined_t3_fluid_bucket
+    - justdirethings:refined_t4_fluid_bucket
+    - justdirethings:sensort1
+    - justdirethings:sensort2
+    - justdirethings:template_blazegold
+    - justdirethings:template_celestigem
+    - justdirethings:template_eclipsealloy
+    - justdirethings:template_ferricore
+    - justdirethings:time_crystal
+    - justdirethings:time_crystal_block
+    - justdirethings:time_crystal_budding_block
+    - justdirethings:time_crystal_cluster
+    - justdirethings:time_crystal_cluster_large
+    - justdirethings:time_crystal_cluster_medium
+    - justdirethings:time_crystal_cluster_small
+    - justdirethings:time_fluid_bucket
+    - justdirethings:time_wand
+    - justdirethings:totem_of_death_recall
+    - justdirethings:unrefined_t2_fluid_bucket
+    - justdirethings:unrefined_t3_fluid_bucket
+    - justdirethings:unrefined_t4_fluid_bucket
+    - justdirethings:unstable_portal_fluid_bucket
+    - justdirethings:upgrade_blank
+    - justdirethings:upgrade_cauterizewounds
+    - justdirethings:upgrade_deathprotection
+    - justdirethings:upgrade_debuffremover
+    - justdirethings:upgrade_decoy
+    - justdirethings:upgrade_dropteleport
+    - justdirethings:upgrade_earthquake
+    - justdirethings:upgrade_elytra
+    - justdirethings:upgrade_epicarrow
+    - justdirethings:upgrade_extinguish
+    - justdirethings:upgrade_flight
+    - justdirethings:upgrade_glowing
+    - justdirethings:upgrade_groundstomp
+    - justdirethings:upgrade_hammer
+    - justdirethings:upgrade_homing
+    - justdirethings:upgrade_instabreak
+    - justdirethings:upgrade_invulnerability
+    - justdirethings:upgrade_jumpboost
+    - justdirethings:upgrade_lavaimmunity
+    - justdirethings:upgrade_lawnmower
+    - justdirethings:upgrade_leafbreaker
+    - justdirethings:upgrade_lingering
+    - justdirethings:upgrade_mindfog
+    - justdirethings:upgrade_mobscanner
+    - justdirethings:upgrade_negatefalldamage
+    - justdirethings:upgrade_nightvision
+    - justdirethings:upgrade_noai
+    - justdirethings:upgrade_oreminer
+    - justdirethings:upgrade_orescanner
+    - justdirethings:upgrade_orexray
+    - justdirethings:upgrade_phase
+    - justdirethings:upgrade_potionarrow
+    - justdirethings:upgrade_runspeed
+    - justdirethings:upgrade_skysweeper
+    - justdirethings:upgrade_smelter
+    - justdirethings:upgrade_smoker
+    - justdirethings:upgrade_splash
+    - justdirethings:upgrade_stepheight
+    - justdirethings:upgrade_stupefy
+    - justdirethings:upgrade_swimspeed
+    - justdirethings:upgrade_time_protection
+    - justdirethings:upgrade_treefeller
+    - justdirethings:upgrade_walkspeed
+    - justdirethings:upgrade_waterbreathing
+    - justdirethings:voidshift_wand
+    - justdirethings:xp_fluid_bucket
+
+    - man_of_many_planes:economy_plane
+    - man_of_many_planes:scarlet_biplane
+
     # todo: remove when tag bug is fixed (vanilla backport)
     - minecraft:bush
     - minecraft:copper_chest
@@ -72,6 +387,25 @@ loot_classification_by_trait:
     - minecraft:copper_lantern
     - minecraft:copper_nugget
     - minecraft:copper_torch
+
+    - parcool:iron_zipline_hook
+    - parcool:parcool_guide
+    - parcool:wooden_zipline_hook
+    - parcool:zipline_rope
+    - patchouli:guide_book
+
+    - pipes:wooden_pipe
+    - pipes:wooden_pipe_allium
+    - pipes:wooden_pipe_azure_bluet
+    - pipes:wooden_pipe_blue_orchid
+    - pipes:wooden_pipe_cornflower
+    - pipes:wooden_pipe_dandelion
+    - pipes:wooden_pipe_lily_of_the_valley
+    - pipes:wooden_pipe_oxeye_daisy
+    - pipes:wooden_pipe_poppy
+    - pipes:wooden_pipe_torchflower
+    - pipes:wooden_pipe_tulips
+    - pipes:wooden_pipe_wither_rose
 
     # todo: remove when tag bug is fixed
     - reanimal:butterfly_pollen
@@ -120,6 +454,381 @@ loot_classification_by_trait:
     - rottencreatures:tnt_barrel
     - rottencreatures:treasure_chest
 
+    - smallships:acacia_brigg
+    - smallships:acacia_cog
+    - smallships:acacia_drakkar
+    - smallships:acacia_galley
+    - smallships:aether_skyroot_brigg
+    - smallships:aether_skyroot_cog
+    - smallships:aether_skyroot_drakkar
+    - smallships:aether_skyroot_galley
+    - smallships:bamboo_brigg
+    - smallships:bamboo_cog
+    - smallships:bamboo_drakkar
+    - smallships:bamboo_galley
+    - smallships:birch_brigg
+    - smallships:birch_cog
+    - smallships:birch_drakkar
+    - smallships:birch_galley
+    - smallships:cannon
+    - smallships:cannon_ball
+    - smallships:cherry_brigg
+    - smallships:cherry_cog
+    - smallships:cherry_drakkar
+    - smallships:cherry_galley
+    - smallships:dark_oak_brigg
+    - smallships:dark_oak_cog
+    - smallships:dark_oak_drakkar
+    - smallships:dark_oak_galley
+    - smallships:jungle_brigg
+    - smallships:jungle_cog
+    - smallships:jungle_drakkar
+    - smallships:jungle_galley
+    - smallships:mangrove_brigg
+    - smallships:mangrove_cog
+    - smallships:mangrove_drakkar
+    - smallships:mangrove_galley
+    - smallships:oak_brigg
+    - smallships:oak_cog
+    - smallships:oak_drakkar
+    - smallships:oak_galley
+    - smallships:sail
+    - smallships:spruce_brigg
+    - smallships:spruce_cog
+    - smallships:spruce_drakkar
+    - smallships:spruce_galley
+    - smallships:twilightforest_canopy_brigg
+    - smallships:twilightforest_canopy_cog
+    - smallships:twilightforest_canopy_drakkar
+    - smallships:twilightforest_canopy_galley
+    - smallships:twilightforest_dark_brigg
+    - smallships:twilightforest_dark_cog
+    - smallships:twilightforest_dark_drakkar
+    - smallships:twilightforest_dark_galley
+    - smallships:twilightforest_mangrove_brigg
+    - smallships:twilightforest_mangrove_cog
+    - smallships:twilightforest_mangrove_drakkar
+    - smallships:twilightforest_mangrove_galley
+    - smallships:twilightforest_mining_brigg
+    - smallships:twilightforest_mining_cog
+    - smallships:twilightforest_mining_drakkar
+    - smallships:twilightforest_mining_galley
+    - smallships:twilightforest_sorting_brigg
+    - smallships:twilightforest_sorting_cog
+    - smallships:twilightforest_sorting_drakkar
+    - smallships:twilightforest_sorting_galley
+    - smallships:twilightforest_time_brigg
+    - smallships:twilightforest_time_cog
+    - smallships:twilightforest_time_drakkar
+    - smallships:twilightforest_time_galley
+    - smallships:twilightforest_transformation_brigg
+    - smallships:twilightforest_transformation_cog
+    - smallships:twilightforest_transformation_drakkar
+    - smallships:twilightforest_transformation_galley
+    - smallships:twilightforest_twilight_oak_brigg
+    - smallships:twilightforest_twilight_oak_cog
+    - smallships:twilightforest_twilight_oak_drakkar
+    - smallships:twilightforest_twilight_oak_galley
+
+    - twilightforest:acacia_banister
+    - twilightforest:acacia_drying_rack
+    - twilightforest:alpha_yeti_boss_spawner
+    - twilightforest:alpha_yeti_fur
+    - twilightforest:alpha_yeti_trophy
+    - twilightforest:antibuilder
+    - twilightforest:arctic_fur
+    - twilightforest:arctic_fur_block
+    - twilightforest:armor_shard
+    - twilightforest:armor_shard_cluster
+    - twilightforest:aurora_block
+    - twilightforest:auroralized_glass
+    - twilightforest:bamboo_banister
+    - twilightforest:bamboo_drying_rack
+    - twilightforest:birch_banister
+    - twilightforest:birch_drying_rack
+    - twilightforest:blackberry_bush
+    - twilightforest:blightberry_bush
+    - twilightforest:block_and_chain
+    - twilightforest:blue_castle_door
+    - twilightforest:blue_castle_rune_brick
+    - twilightforest:blue_force_field
+    - twilightforest:blueberry_bush
+    - twilightforest:bold_castle_brick_tile
+    - twilightforest:borer_essence
+    - twilightforest:brazier
+    - twilightforest:brittle_potion_flask
+    - twilightforest:brown_thorns
+    - twilightforest:burnt_thorns
+    - twilightforest:candelabra
+    - twilightforest:canopy_banister
+    - twilightforest:canopy_bookshelf
+    - twilightforest:canopy_chest
+    - twilightforest:canopy_drying_rack
+    - twilightforest:canopy_trapped_chest
+    - twilightforest:canopy_window
+    - twilightforest:canopy_window_pane
+    - twilightforest:carminite
+    - twilightforest:carminite_block
+    - twilightforest:carminite_builder
+    - twilightforest:carminite_reactor
+    - twilightforest:castle_brick
+    - twilightforest:castle_roof_tile
+    - twilightforest:charm_of_keeping_1
+    - twilightforest:charm_of_keeping_2
+    - twilightforest:charm_of_keeping_3
+    - twilightforest:charm_of_life_1
+    - twilightforest:charm_of_life_2
+    - twilightforest:cherry_banister
+    - twilightforest:cherry_drying_rack
+    - twilightforest:cicada
+    - twilightforest:cicada_jar
+    - twilightforest:cinder_furnace
+    - twilightforest:cinder_log
+    - twilightforest:cinder_wood
+    - twilightforest:clover_patch
+    - twilightforest:copper_berry
+    - twilightforest:copper_oreberry
+    - twilightforest:coronation_carpet
+    - twilightforest:cracked_castle_brick
+    - twilightforest:cracked_deadrock
+    - twilightforest:cracked_etched_nagastone
+    - twilightforest:cracked_mazestone
+    - twilightforest:cracked_underbrick
+    - twilightforest:crimson_banister
+    - twilightforest:crimson_drying_rack
+    - twilightforest:crown_splinter
+    - twilightforest:crumble_horn
+    - twilightforest:cube_of_annihilation
+    - twilightforest:cube_talisman
+    - twilightforest:dark_banister
+    - twilightforest:dark_chest
+    - twilightforest:dark_drying_rack
+    - twilightforest:dark_oak_banister
+    - twilightforest:dark_oak_drying_rack
+    - twilightforest:dark_trapped_chest
+    - twilightforest:deadrock
+    - twilightforest:decorative_mazestone
+    - twilightforest:duskberry_bush
+    - twilightforest:emperors_cloth
+    - twilightforest:encased_castle_brick_tile
+    - twilightforest:encased_fire_jet
+    - twilightforest:encased_smoker
+    - twilightforest:encased_towerwood
+    - twilightforest:ender_bow
+    - twilightforest:essence_berry
+    - twilightforest:essence_oreberry
+    - twilightforest:etched_nagastone
+    - twilightforest:exanimate_essence
+    - twilightforest:fallen_leaves
+    - twilightforest:fiddlehead
+    - twilightforest:fiery_block
+    - twilightforest:fiery_blood
+    - twilightforest:fiery_tears
+    - twilightforest:filled_magic_map
+    - twilightforest:filled_maze_map
+    - twilightforest:filled_ore_map
+    - twilightforest:final_boss_boss_spawner
+    - twilightforest:fire_jet
+    - twilightforest:firefly
+    - twilightforest:firefly_jar
+    - twilightforest:firefly_particle_spawner
+    - twilightforest:fluffy_cloud
+    - twilightforest:fortification_scepter
+    - twilightforest:four_leaf_clover
+    - twilightforest:ghast_trap
+    - twilightforest:giant_cobblestone
+    - twilightforest:giant_leaves
+    - twilightforest:giant_log
+    - twilightforest:giant_obsidian
+    - twilightforest:gold_berry
+    - twilightforest:gold_oreberry
+    - twilightforest:greater_potion_flask
+    - twilightforest:green_force_field
+    - twilightforest:green_thorns
+    - twilightforest:hedge
+    - twilightforest:hollow_acacia_log
+    - twilightforest:hollow_birch_log
+    - twilightforest:hollow_canopy_log
+    - twilightforest:hollow_cherry_log
+    - twilightforest:hollow_crimson_stem
+    - twilightforest:hollow_dark_log
+    - twilightforest:hollow_dark_oak_log
+    - twilightforest:hollow_jungle_log
+    - twilightforest:hollow_mangrove_log
+    - twilightforest:hollow_mining_log
+    - twilightforest:hollow_oak_log
+    - twilightforest:hollow_sorting_log
+    - twilightforest:hollow_spruce_log
+    - twilightforest:hollow_time_log
+    - twilightforest:hollow_transformation_log
+    - twilightforest:hollow_twilight_oak_log
+    - twilightforest:hollow_vangrove_log
+    - twilightforest:hollow_warped_stem
+    - twilightforest:huge_lily_pad
+    - twilightforest:huge_mushgloom
+    - twilightforest:huge_mushgloom_stem
+    - twilightforest:huge_stalk
+    - twilightforest:huge_water_lily
+    - twilightforest:hydra_boss_spawner
+    - twilightforest:hydra_trophy
+    - twilightforest:ice_bomb
+    - twilightforest:ice_bow
+    - twilightforest:iron_berry
+    - twilightforest:iron_ladder
+    - twilightforest:iron_oreberry
+    - twilightforest:ironwood_block
+    - twilightforest:jungle_banister
+    - twilightforest:jungle_drying_rack
+    - twilightforest:keepsake_casket
+    - twilightforest:knight_phantom_boss_spawner
+    - twilightforest:knight_phantom_trophy
+    - twilightforest:knightmetal_block
+    - twilightforest:knightmetal_ring
+    - twilightforest:lamp_of_cinders
+    - twilightforest:lich_boss_spawner
+    - twilightforest:lich_tower_miniature_structure
+    - twilightforest:lich_trophy
+    - twilightforest:lifedrain_scepter
+    - twilightforest:liveroot
+    - twilightforest:liveroot_block
+    - twilightforest:locked_vanishing_block
+    - twilightforest:magic_beans
+    - twilightforest:magic_map
+    - twilightforest:magic_map_focus
+    - twilightforest:magic_painting
+    - twilightforest:maloberry_bush
+    - twilightforest:mangrove_banister
+    - twilightforest:mangrove_chest
+    - twilightforest:mangrove_drying_rack
+    - twilightforest:mangrove_root
+    - twilightforest:mangrove_trapped_chest
+    - twilightforest:mason_jar
+    - twilightforest:mayapple
+    - twilightforest:maze_map
+    - twilightforest:maze_map_focus
+    - twilightforest:maze_slime_ball
+    - twilightforest:maze_slime_block
+    - twilightforest:mazestone
+    - twilightforest:mazestone_border
+    - twilightforest:mazestone_brick
+    - twilightforest:mazestone_mosaic
+    - twilightforest:mining_banister
+    - twilightforest:mining_chest
+    - twilightforest:mining_drying_rack
+    - twilightforest:mining_log_core
+    - twilightforest:mining_trapped_chest
+    - twilightforest:minoshroom_boss_spawner
+    - twilightforest:minoshroom_trophy
+    - twilightforest:moon_dial
+    - twilightforest:moonworm
+    - twilightforest:moonworm_queen
+    - twilightforest:moss_patch
+    - twilightforest:mossy_castle_brick
+    - twilightforest:mossy_etched_nagastone
+    - twilightforest:mossy_mazestone
+    - twilightforest:mossy_underbrick
+    - twilightforest:mushgloom
+    - twilightforest:mystic_crown
+    - twilightforest:naga_boss_spawner
+    - twilightforest:naga_courtyard_miniature_structure
+    - twilightforest:naga_scale
+    - twilightforest:naga_trophy
+    - twilightforest:nagastone
+    - twilightforest:oak_banister
+    - twilightforest:oak_drying_rack
+    - twilightforest:orange_force_field
+    - twilightforest:ore_magnet
+    - twilightforest:ore_map
+    - twilightforest:ore_meter
+    - twilightforest:peacock_feather_fan
+    - twilightforest:pink_castle_door
+    - twilightforest:pink_castle_rune_brick
+    - twilightforest:pink_force_field
+    - twilightforest:pocket_watch
+    - twilightforest:quest_ram_trophy
+    - twilightforest:rainy_cloud
+    - twilightforest:raspberry_bush
+    - twilightforest:raven_feather
+    - twilightforest:reappearing_block
+    - twilightforest:red_thread
+    - twilightforest:root
+    - twilightforest:root_strand
+    - twilightforest:rope
+    - twilightforest:seeker_bow
+    - twilightforest:sinister_spawner
+    - twilightforest:skull_chest
+    - twilightforest:skyberry_bush
+    - twilightforest:slider
+    - twilightforest:smoker
+    - twilightforest:snow_queen_boss_spawner
+    - twilightforest:snow_queen_trophy
+    - twilightforest:snowy_cloud
+    - twilightforest:sorting_banister
+    - twilightforest:sorting_chest
+    - twilightforest:sorting_drying_rack
+    - twilightforest:sorting_log_core
+    - twilightforest:sorting_trapped_chest
+    - twilightforest:spruce_banister
+    - twilightforest:spruce_drying_rack
+    - twilightforest:stale_bread
+    - twilightforest:steeleaf_block
+    - twilightforest:stingberry_bush
+    - twilightforest:stronghold_shield
+    - twilightforest:tanned_leather
+    - twilightforest:tannin
+    - twilightforest:terrorcotta_arcs
+    - twilightforest:terrorcotta_curves
+    - twilightforest:terrorcotta_lines
+    - twilightforest:thick_castle_brick
+    - twilightforest:time_banister
+    - twilightforest:time_chest
+    - twilightforest:time_drying_rack
+    - twilightforest:time_log_core
+    - twilightforest:time_trapped_chest
+    - twilightforest:torchberry_plant
+    - twilightforest:tower_key
+    - twilightforest:transformation_banister
+    - twilightforest:transformation_chest
+    - twilightforest:transformation_drying_rack
+    - twilightforest:transformation_log_core
+    - twilightforest:transformation_powder
+    - twilightforest:transformation_trapped_chest
+    - twilightforest:treated_leather
+    - twilightforest:triple_bow
+    - twilightforest:trollber
+    - twilightforest:trollsteinn
+    - twilightforest:trollvidr
+    - twilightforest:trophy_pedestal
+    - twilightforest:twilight_oak_banister
+    - twilightforest:twilight_oak_chest
+    - twilightforest:twilight_oak_drying_rack
+    - twilightforest:twilight_oak_trapped_chest
+    - twilightforest:twilight_portal_miniature_structure
+    - twilightforest:twilight_scepter
+    - twilightforest:twisted_stone
+    - twilightforest:uberous_soil
+    - twilightforest:uncrafting_table
+    - twilightforest:underbrick
+    - twilightforest:underbrick_floor
+    - twilightforest:unripe_trollber
+    - twilightforest:ur_ghast_boss_spawner
+    - twilightforest:ur_ghast_trophy
+    - twilightforest:vangrove_banister
+    - twilightforest:vangrove_drying_rack
+    - twilightforest:vanishing_block
+    - twilightforest:violet_castle_door
+    - twilightforest:violet_castle_rune_brick
+    - twilightforest:violet_force_field
+    - twilightforest:warped_banister
+    - twilightforest:warped_drying_rack
+    - twilightforest:wispy_cloud
+    - twilightforest:worn_castle_brick
+    - twilightforest:wrought_iron_bar
+    - twilightforest:wrought_iron_fence
+    - twilightforest:yellow_castle_door
+    - twilightforest:yellow_castle_rune_brick
+    - twilightforest:zombie_scepter
+
     - upgrade_aquatic:beachgrass_thatch
     - upgrade_aquatic:boiled_pickerelweed_block
     - upgrade_aquatic:coralstone
@@ -152,6 +861,10 @@ loot_classification_by_trait:
     - upgrade_aquatic:tooth_block
     - upgrade_aquatic:tooth_lantern
     - upgrade_aquatic:mulberry_jam_block
+
+    - wildex:wildex_analyzer
+    - wildex:wildex_book
+    - wildex:wildex_pedestal
 
   
 #-----------------------------
@@ -190,6 +903,7 @@ loot_classification_by_trait:
         - minecraft:chorus_plant
         - gravestone:gravestone
         - gravestone:obituary
+        - moonlight:placeable_item
         - "*_spawn_egg"
         - "sculk*"                                # Change when Apotheosis is added if it doesn't add them globally (actually I think it does)
       assign:
@@ -464,10 +1178,14 @@ loot_classification_by_trait:
         - minecraft:recovery_compass
         - illagerinvasion:lost_candle
         - illagerinvasion:horn_of_sight
-        - "music_disc_*"
+        - map_atlases:atlas
+        - ribbits:maraca
+        - kobolds:music_disc_kobblestone
         - "*_jelly_torch"
         - "#minecraft:boats"
         - "#minecraft:bundles"
+        - "#c:music_discs"
+        - "#minecraft:music_discs"
       assign:
         function: misc_tool
         value:
@@ -480,7 +1198,9 @@ loot_classification_by_trait:
           epic:
             - illagerinvasion:lost_candle
             - illagerinvasion:horn_of_sight
-            - "music_disc_*"
+            - kobolds:music_disc_kobblestone
+            - "#c:music_discs"
+            - "#minecraft:music_discs"
           rare:
             - minecraft:compass
             - minecraft:clock
@@ -489,6 +1209,7 @@ loot_classification_by_trait:
             - minecraft:carrot_on_a_stick
             - minecraft:warped_fungus_on_a_stick
             - minecraft:writable_book
+            - ribbits:maraca
           common:
             - minecraft:bowl
         amount_class:
@@ -605,6 +1326,7 @@ loot_classification_by_trait:
         - minecraft:dried_ghast
         - minecraft:resin_block
         - minecraft:resin_clump
+        - bettertridents:trident_fragment
         # Leg
         - minecraft:heart_of_the_sea
         - minecraft:netherite_scrap
@@ -674,6 +1396,7 @@ loot_classification_by_trait:
             - minecraft:dried_ghast
             - minecraft:resin_block
             - minecraft:resin_clump
+            - bettertridents:trident_fragment
             - "#sophisticatedbackpacks:upgrade"
           uncommon:
             - dried_kelp_block
@@ -964,6 +1687,8 @@ loot_classification_by_trait:
         - minecraft:rooted_dirt
         - minecraft:hay_block
         - upgrade_aquatic:bedroll
+        - dummmmmmy:target_dummy
+        - ribbits:swamp_lantern
         - "infested_*"
         - "*_froglight"
         - "#minecraft:fence_gates"
@@ -1004,6 +1729,7 @@ loot_classification_by_trait:
             - minecraft:armor_stand
             - minecraft:pointed_dripstone
             - minecraft:blue_ice
+            - ribbits:swamp_lantern
             - "#minecraft:banners"
           common:
             - minecraft:torch
@@ -1066,6 +1792,10 @@ loot_classification_by_trait:
         - minecraft:end_stone
         - minecraft:mangrove_roots
         - minecraft:bamboo_block
+        - minecraft:firefly_bush
+        - minecraft:pale_hanging_moss
+        - minecraft:pale_moss_carpet
+        - minecraft:resin_brick
         - "*_bricks"
         - "#c:buds"
         - "#c:stripped_logs"
@@ -1096,6 +1826,7 @@ loot_classification_by_trait:
             - minecraft:prismarine
             - minecraft:dark_prismarine
             - minecraft:purpur_block
+            - minecraft:resin_brick
             - "#c:stripped_logs"
             - "#c:buds"
           uncommon:

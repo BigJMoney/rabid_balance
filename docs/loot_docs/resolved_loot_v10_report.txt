@@ -1,103 +1,192 @@
 classification version: 10
-total items: 2075
-ignored count: 91
-fallback count: 23
+total items: 3547
+ignored count: 791
+fallback count: 111
 
 functions:
-  block_building: 650
-  item_material: 306
-  nonloot: 199
-  block_misc_use: 188
-  block_material: 146
-  ignore: 91
-  misc_tool: 87
-  wearable: 79
-  consumable: 78
-  block_technical: 70
-  gather_tool: 53
+  ignore: 791
+  block_building: 755
+  item_material: 355
+  nonloot: 300
+  block_misc_use: 240
+  block_material: 205
+  wearable: 172
+  misc_tool: 125
+  consumable: 121
+  gather_tool: 117
+  unmatched: 111
+  block_technical: 91
+  weapon: 59
+  garden: 46
   block_storage: 38
-  garden: 25
-  unmatched: 23
-  weapon: 22
-  block_crafting: 20
+  block_crafting: 21
 
 affinities:
-  sea: 263
-  village: 125
-  masonry: 122
-  nether: 102
-  household: 99
-  fortification: 79
-  woolworking: 73
-  treasure: 71
-  wooden: 62
-  underground: 58
-  food: 53
+  sea: 282
+  village: 166
+  household: 159
+  masonry: 124
+  nether: 106
+  wooden: 106
+  food: 96
+  treasure: 94
+  fortification: 89
+  woolworking: 82
+  underground: 81
+  smithing: 48
   desert: 44
+  swamp: 43
   jungle: 41
   deep_under: 40
-  smithing: 38
   end: 36
-  leatherworking: 31
-  swamp: 26
+  leatherworking: 35
   archaeology: 25
-  clerical: 22
+  forest: 23
+  clerical: 23
   plains: 20
   farming: 17
-  butchery: 11
+  butchery: 16
+  fletching: 14
   fishing: 10
-  fletching: 9
-  forest: 9
-  library: 6
+  library: 8
   arctic: 5
   cartography: 1
   ruins: 1
- Total Affinities: 1499
+ Total Affinities: 1835
 
 values:
-  uncommon: 634
-  filler: 392
-  rare: 331
-  none: 321
-  epic: 142
-  common: 134
-  junk: 66
-  legendary: 42
+  none: 1210
+  uncommon: 938
+  filler: 514
+  rare: 393
+  common: 186
+  epic: 165
+  junk: 85
+  legendary: 43
   unique: 13
 
 amount_classes:
-  large: 731
-  singleton: 728
-  small: 562
+  singleton: 1881
+  large: 842
+  small: 752
+  bulk: 27
   tiny: 25
-  medium: 15
-  bulk: 14
+  medium: 20
 
 dead rules:
 
 dead affinities:
 
 fallback items:
-  bosses_of_mass_destruction:ancient_anima
-  bosses_of_mass_destruction:blazing_eye
-  bosses_of_mass_destruction:brimstone_nectar
-  bosses_of_mass_destruction:charged_ender_pearl
-  bosses_of_mass_destruction:crystal_fruit
-  bosses_of_mass_destruction:earthdive_spear
-  bosses_of_mass_destruction:gauntlet_blackstone
-  bosses_of_mass_destruction:levitation_block
-  bosses_of_mass_destruction:mob_ward
-  bosses_of_mass_destruction:monolith_block
-  bosses_of_mass_destruction:obsidian_heart
-  bosses_of_mass_destruction:obsidilith_end_frame
-  bosses_of_mass_destruction:obsidilith_rune
-  bosses_of_mass_destruction:sealed_blackstone
-  bosses_of_mass_destruction:vine_wall
-  bosses_of_mass_destruction:void_blossom
-  bosses_of_mass_destruction:void_blossom_block
-  bosses_of_mass_destruction:void_lily
-  bosses_of_mass_destruction:void_thorn
-  minecraft:firefly_bush
-  minecraft:pale_hanging_moss
-  minecraft:pale_moss_carpet
-  minecraft:resin_brick
+  ribbits:brown_toadstool
+  ribbits:giant_lilypad
+  ribbits:red_toadstool
+  ribbits:toadstool
+  ribbits:toadstool_stem
+  ribbits:umbrella_leaf
+  
+  toxony:acid_oil_pot
+  toxony:acid_slimeball
+  toxony:acid_tox_pot
+  toxony:affinity_fusion_mix
+  toxony:affinity_solution
+  toxony:affinity_unknown_substance
+  toxony:alchemical_forge_part
+  toxony:alembic
+  toxony:alembic_base
+  toxony:ancient_silver
+  toxony:bell_jar
+  toxony:bloodroot
+  toxony:bog_bone
+  toxony:bolt
+  toxony:bolt_cartridge
+  toxony:bone_saw
+  toxony:clay_oil_pot
+  toxony:cold_substance
+  toxony:coldsnap
+  toxony:copper_crucible
+  toxony:copper_needle
+  toxony:copper_scale
+  toxony:cyclebow
+  toxony:dark_chocolate
+  toxony:decay_substance
+  toxony:empty_oil_pot
+  toxony:empty_tox_pot
+  toxony:eternal_plague
+  toxony:false_berries
+  toxony:fatigue_oil_pot
+  toxony:fire_resistance_oil_pot
+  toxony:flail
+  toxony:flintlock
+  toxony:flintlock_components
+  toxony:forest_substance
+  toxony:glass_vial
+  toxony:glowing_bolt
+  toxony:glowing_oil_pot
+  toxony:heat_substance
+  toxony:iron_round
+  toxony:loose_paper
+  toxony:lost_journal
+  toxony:magnifying_glass
+  toxony:mending_oil_pot
+  toxony:milk_chocolate
+  toxony:mint_chocolate
+  toxony:moonlight_hemlock
+  toxony:mortar_pestle
+  toxony:nether_substance
+  toxony:nightshade
+  toxony:ocean_substance
+  toxony:ocelot_mint
+  toxony:oil_base
+  toxony:oil_pot_bandolier
+  toxony:oil_pot_sash
+  toxony:poison_blend
+  toxony:poison_bolt
+  toxony:poison_farmland
+  toxony:poison_oil_pot
+  toxony:poison_paste
+  toxony:poison_sac
+  toxony:potion_flask
+  toxony:pure_blend
+  toxony:redstone_mixture
+  toxony:redstone_mortar
+  toxony:redstone_solution
+  toxony:regeneration_bolt
+  toxony:regeneration_tox_pot
+  toxony:silver_scrap
+  toxony:silver_steel_blend
+  toxony:silver_steel_ingot
+  toxony:silver_steel_upgrade_smithing_template
+  toxony:smoke_bolt
+  toxony:smoke_tox_pot
+  toxony:snow_mint
+  toxony:sunspot
+  toxony:tox_gauge
+  toxony:tox_needle
+  toxony:tox_vial
+  toxony:toxic_blend
+  toxony:toxic_cake
+  toxony:toxic_cake_slice
+  toxony:toxic_formula
+  toxony:toxic_leather
+  toxony:toxic_paste
+  toxony:toxic_spit
+  toxony:toxin
+  toxony:toxin_bolt
+  toxony:toxin_canister
+  toxony:toxin_flask
+  toxony:toxin_tox_pot
+  toxony:valentines_box
+  toxony:venom_club
+  toxony:venom_tooth
+  toxony:vial_rack
+  toxony:warproot
+  toxony:water_hemlock
+  toxony:whirlsnap
+  toxony:wild_bloodroot
+  toxony:wild_coldsnap
+  toxony:wild_nightshade
+  toxony:wild_ocelot_mint
+  toxony:wild_water_hemlock
+  toxony:witchfire_bolt
+  toxony:witchfire_tox_pot

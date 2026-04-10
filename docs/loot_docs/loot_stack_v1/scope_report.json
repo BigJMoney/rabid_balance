@@ -13,7 +13,7 @@
   "included_dirs": [
     {
       "name": "chests",
-      "file_count": 63
+      "file_count": 122
     },
     {
       "name": "equipment",
@@ -30,12 +30,16 @@
   ],
   "excluded_dirs": [
     {
+      "name": "advancements",
+      "file_count": 1
+    },
+    {
       "name": "archaeology",
       "file_count": 7
     },
     {
       "name": "blocks",
-      "file_count": 1064
+      "file_count": 1773
     },
     {
       "name": "dispensers",
@@ -43,14 +47,26 @@
     },
     {
       "name": "entities",
-      "file_count": 114
+      "file_count": 252
     },
     {
       "name": "gameplay",
-      "file_count": 25
+      "file_count": 26
+    },
+    {
+      "name": "items",
+      "file_count": 1
+    },
+    {
+      "name": "selectors",
+      "file_count": 2
     },
     {
       "name": "shearing",
+      "file_count": 1
+    },
+    {
+      "name": "stripping",
       "file_count": 1
     }
   ],
@@ -104,16 +120,20 @@
   ],
   "stack_encountered_loot_dirs": [
     {
+      "name": "advancements",
+      "file_count": 1
+    },
+    {
       "name": "archaeology",
       "file_count": 7
     },
     {
       "name": "blocks",
-      "file_count": 1064
+      "file_count": 1773
     },
     {
       "name": "chests",
-      "file_count": 63
+      "file_count": 122
     },
     {
       "name": "dispensers",
@@ -121,7 +141,7 @@
     },
     {
       "name": "entities",
-      "file_count": 114
+      "file_count": 252
     },
     {
       "name": "equipment",
@@ -129,15 +149,23 @@
     },
     {
       "name": "gameplay",
-      "file_count": 25
+      "file_count": 26
     },
     {
       "name": "inject",
       "file_count": 11
     },
     {
+      "name": "items",
+      "file_count": 1
+    },
+    {
       "name": "pots",
       "file_count": 1
+    },
+    {
+      "name": "selectors",
+      "file_count": 2
     },
     {
       "name": "shearing",
@@ -146,11 +174,85 @@
     {
       "name": "spawners",
       "file_count": 5
+    },
+    {
+      "name": "stripping",
+      "file_count": 1
     }
   ],
-  "included_table_total": 72,
-  "excluded_table_total": 1214,
+  "included_table_total": 131,
+  "excluded_table_total": 2067,
   "deferred_table_total": 11,
-  "new_excluded_loot_dirs_from_mods": [],
-  "warnings": []
+  "new_excluded_loot_dirs_from_mods": [
+    {
+      "name": "advancements",
+      "pack_ids": [
+        "aether"
+      ],
+      "file_counts_by_pack": {
+        "aether": 1
+      }
+    },
+    {
+      "name": "items",
+      "pack_ids": [
+        "twilightforest"
+      ],
+      "file_counts_by_pack": {
+        "twilightforest": 1
+      }
+    },
+    {
+      "name": "selectors",
+      "pack_ids": [
+        "aether"
+      ],
+      "file_counts_by_pack": {
+        "aether": 2
+      }
+    },
+    {
+      "name": "stripping",
+      "pack_ids": [
+        "aether"
+      ],
+      "file_counts_by_pack": {
+        "aether": 1
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "type": "new_excluded_loot_dir_from_mod",
+      "name": "advancements",
+      "pack_ids": [
+        "aether"
+      ],
+      "message": "Mod-introduced excluded loot_table dir `advancements` was not present in the base pack."
+    },
+    {
+      "type": "new_excluded_loot_dir_from_mod",
+      "name": "items",
+      "pack_ids": [
+        "twilightforest"
+      ],
+      "message": "Mod-introduced excluded loot_table dir `items` was not present in the base pack."
+    },
+    {
+      "type": "new_excluded_loot_dir_from_mod",
+      "name": "selectors",
+      "pack_ids": [
+        "aether"
+      ],
+      "message": "Mod-introduced excluded loot_table dir `selectors` was not present in the base pack."
+    },
+    {
+      "type": "new_excluded_loot_dir_from_mod",
+      "name": "stripping",
+      "pack_ids": [
+        "aether"
+      ],
+      "message": "Mod-introduced excluded loot_table dir `stripping` was not present in the base pack."
+    }
+  ]
 }

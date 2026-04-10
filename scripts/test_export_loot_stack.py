@@ -894,11 +894,12 @@ class ExportLootStackTests(unittest.TestCase):
                             "start_pool": "customstructures:desert_tomb/start_pool",
                         }
                     ),
-                    "data/customstructures/worldgen/structure_set/desert_tomb.json": json.dumps(
-                        {
-                            "structures": [{"structure": "customstructures:desert_tomb", "weight": 1}],
-                            "placement": {},
-                        }
+                    "data/customstructures/worldgen/structure_set/desert_tomb.json": (
+                        "{\n"
+                        "  // Commented structure sets should still parse like Minecraft resources.\n"
+                        "  \"structures\": [{\"structure\": \"customstructures:desert_tomb\", \"weight\": 1}],\n"
+                        "  \"placement\": {}\n"
+                        "}\n"
                     ),
                     "data/customstructures/worldgen/template_pool/desert_tomb/start_pool.json": json.dumps(
                         {
@@ -1028,6 +1029,44 @@ class ExportLootStackTests(unittest.TestCase):
             self.assertEqual(precheck["resolved_overlaps"][0]["resolution_mode"], "nonfatal_exempt_family")
             self.assertEqual(precheck["resolved_overlaps"][0]["resource_family"], "tags")
 
+    def test_precheck_without_manifest_allows_data_map_overlaps(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            mods_root = Path(tempdir) / "mods"
+            output_dir = Path(tempdir) / "out"
+            shared_a = json.dumps({"values": {"moda:compostable": {"chance": 0.3}}})
+            shared_b = json.dumps({"values": {"modb:compostable": {"chance": 0.5}}})
+            write_mod_pack(
+                mods_root / "mod_a",
+                "moda",
+                {
+                    "data/neoforge/data_maps/item/compostables.json": shared_a,
+                },
+            )
+            write_mod_pack(
+                mods_root / "mod_b",
+                "modb",
+                {
+                    "data/neoforge/data_maps/item/compostables.json": shared_b,
+                },
+            )
+
+            export_with_temp_resolution_maps(
+                output_dir=output_dir,
+                mods_root=mods_root,
+                archive_roots=[],
+                explicit_packs=[],
+            )
+
+            precheck = json.loads((output_dir / "precheck_report.json").read_text(encoding="utf-8"))
+            self.assertEqual(precheck["effective_order"], ["base", "moda", "modb"])
+            self.assertEqual(len(precheck["overlap_groups"]), 1)
+            self.assertEqual(precheck["fatal_errors"], [])
+            self.assertEqual(len(precheck["resolved_overlaps"]), 1)
+            self.assertEqual(precheck["resolved_overlaps"][0]["resource_path"], "neoforge/data_maps/item/compostables.json")
+            self.assertEqual(precheck["resolved_overlaps"][0]["winner_pack_id"], "modb")
+            self.assertEqual(precheck["resolved_overlaps"][0]["resolution_mode"], "nonfatal_exempt_family")
+            self.assertEqual(precheck["resolved_overlaps"][0]["resource_family"], "data_maps")
+
     def test_auto_discovery_scans_multiple_mod_roots(self) -> None:
         with tempfile.TemporaryDirectory() as tempdir:
             libs_root = Path(tempdir) / "libs"
@@ -1115,6 +1154,88 @@ class ExportLootStackTests(unittest.TestCase):
             tables = read_csv_rows(output_dir / "tables.csv")
             common_row = next(row for row in tables if row["table_id"] == "shared:chests/common")
             self.assertEqual(common_row["source_pack"], "modb")
+
+    def test_precheck_with_commented_manifest_resolves_overlaps(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            mods_root = Path(tempdir) / "mods"
+            output_dir = Path(tempdir) / "out"
+            manifest_path = Path(tempdir) / "pack_order.json"
+            manifest_path.write_text("// pack order comment\n[\"moda\", \"modb\"]\n", encoding="utf-8")
+
+            shared_a = json.dumps(
+                {
+                    "type": "minecraft:chest",
+                    "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:stick"}]}],
+                }
+            )
+            shared_b = json.dumps(
+                {
+                    "type": "minecraft:chest",
+                    "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:diamond"}]}],
+                }
+            )
+            write_mod_pack(
+                mods_root / "mod_a",
+                "moda",
+                {
+                    "data/shared/loot_table/chests/common.json": shared_a,
+                },
+            )
+            write_mod_pack(
+                mods_root / "mod_b",
+                "modb",
+                {
+                    "data/shared/loot_table/chests/common.json": shared_b,
+                },
+            )
+
+            export_with_temp_resolution_maps(
+                output_dir=output_dir,
+                mods_root=mods_root,
+                archive_roots=[],
+                explicit_packs=[],
+                pack_order_manifest=manifest_path,
+            )
+
+            precheck = json.loads((output_dir / "precheck_report.json").read_text(encoding="utf-8"))
+            self.assertEqual(precheck["effective_order"], ["base", "moda", "modb"])
+
+    def test_export_accepts_commented_scope_config(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            mods_root = Path(tempdir) / "mods"
+            output_dir = Path(tempdir) / "out"
+            scope_path = Path(tempdir) / "scope.json"
+            scope_path.write_text(
+                '{\n'
+                '  // Scope comment\n'
+                '  "allowed_loot_dirs": ["chests"],\n'
+                '  "deferred_loot_dirs": []\n'
+                '}\n',
+                encoding="utf-8",
+            )
+            write_mod_pack(
+                mods_root / "mod_a",
+                "moda",
+                {
+                    "data/moda/loot_table/chests/example.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:apple"}]}],
+                        }
+                    )
+                },
+            )
+
+            export_with_temp_resolution_maps(
+                output_dir=output_dir,
+                mods_root=mods_root,
+                archive_roots=[],
+                explicit_packs=[],
+                scope_config_path=scope_path,
+            )
+
+            tables = read_csv_rows(output_dir / "tables.csv")
+            self.assertTrue(any(row["table_id"] == "moda:chests/example" for row in tables))
 
     def test_precheck_with_last_mod_pack_id_resolves_only_its_own_overlaps(self) -> None:
         with tempfile.TemporaryDirectory() as tempdir:
