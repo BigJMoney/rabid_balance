@@ -35,7 +35,7 @@ function hullRecipe(recipeEvent) {
       'AAA'
     ],
     {
-      A: 'minecraft:logs',
+      A: '#minecraft:logs',
       B: 'minecraft:iron_block'
     }
   );

@@ -4,6 +4,9 @@
  *
  */
 
+const IA_SAILCLOTH = 'immersive_aircraft:sail';
+const IA_HULL = 'immersive_aircraft:hull';
+const SHIPWOODS = ['spruce', 'cherry', 'mangrove', 'oak', 'dark_oak', 'birch', 'jungle', 'acacia', 'bamboo'];
 
 // Sails require supplementaries (or twilight_forest) rope and immersive aircraft sailcloth
 function sailRecipe(recipeEvent) {
@@ -31,7 +34,7 @@ function cogRecipes(recipeEvent) {
   SHIPWOODS.forEach(wood => {
     recipeEvent.remove({ output: `smallships:${wood}_cog` });
     recipeEvent.shaped(
-      Item.of(`minecraft:${wood}_cog`, 1),
+      Item.of(`smallships:${wood}_cog`, 1),
       [
         'ABA',
         ' C ',
@@ -44,7 +47,7 @@ function cogRecipes(recipeEvent) {
         D: `${wood}_planks`,
         E: IA_HULL,
       }
-    ).id(`minecraft:${wood}_cog`);
+    ).id(`smallships:${wood}_cog`);
   })
 
 }
@@ -55,7 +58,7 @@ function galleyRecipes(recipeEvent) {
   SHIPWOODS.forEach(wood => {
     recipeEvent.remove({ output: `smallships:${wood}_galley` });
     recipeEvent.shaped(
-      Item.of(`minecraft:${wood}_galley`, 1),
+      Item.of(`smallships:${wood}_galley`, 1),
       [
         'ABA',
         'CCC',
@@ -68,7 +71,7 @@ function galleyRecipes(recipeEvent) {
         D: `${wood}_planks`,
         E: IA_HULL,
       }
-    ).id(`minecraft:${wood}_galley`);
+    ).id(`smallships:${wood}_galley`);
   })
 
 }
@@ -79,7 +82,7 @@ function drakkarRecipes(recipeEvent) {
   SHIPWOODS.forEach(wood => {
     recipeEvent.remove({ output: `smallships:${wood}_drakkar` });
     recipeEvent.shaped(
-      Item.of(`minecraft:${wood}_drakkar`, 1),
+      Item.of(`smallships:${wood}_drakkar`, 1),
       [
         'ABA',
         'DCD',
@@ -92,7 +95,7 @@ function drakkarRecipes(recipeEvent) {
         D: `${wood}_planks`,
         E: IA_HULL,
       }
-    ).id(`minecraft:${wood}_drakkar`);
+    ).id(`smallships:${wood}_drakkar`);
   })
 
 }
@@ -103,7 +106,7 @@ function briggRecipes(recipeEvent) {
   SHIPWOODS.forEach(wood => {
     recipeEvent.remove({ output: `smallships:${wood}_brigg` });
     recipeEvent.shaped(
-      Item.of(`minecraft:${wood}_brigg`, 1),
+      Item.of(`smallships:${wood}_brigg`, 1),
       [
         'BAB',
         'CAC',
@@ -116,7 +119,7 @@ function briggRecipes(recipeEvent) {
         D: `${wood}_planks`,
         E: IA_HULL,
       }
-    ).id(`minecraft:${wood}_brigg`);
+    ).id(`smallships:${wood}_brigg`);
   })
 
 }
