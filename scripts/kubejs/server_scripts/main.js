@@ -3,6 +3,8 @@
 // To write a Json export of all game item ids or not
 const DO_EXPORT = false;
 
+const ROPES = '#c:ropes'
+
 // Export all game items
 ServerEvents.loaded(event => {
   if (DO_EXPORT) {

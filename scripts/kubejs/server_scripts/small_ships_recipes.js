@@ -4,13 +4,6 @@
  *
  */
 
-const SHIPKINDS = ['cog', 'galley', 'drakkar', 'brigg']
-const SHIPWOODS = ['spruce', 'cherry', 'mangrove', 'oak', 'dark_oak', 'birch', 'jungle', 'acacia', 'bamboo'];
-
-const IA_HULL = 'immersive_aircraft:hull';
-const IA_SAILCLOTH = 'immersive_aircraft:sail';
-const S_ROPES = '#c:ropes'
-
 
 // Sails require supplementaries (or twilight_forest) rope and immersive aircraft sailcloth
 function sailRecipe(recipeEvent) {
@@ -25,7 +18,7 @@ function sailRecipe(recipeEvent) {
     {
       A: IA_SAILCLOTH,
       B: '#minecraft:logs',
-      C: S_ROPES
+      C: ROPES
     }
   );
 }
@@ -45,7 +38,7 @@ function cogRecipes(recipeEvent) {
         'DED'
       ],
       {
-        A: S_ROPES,
+        A: ROPES,
         B: 'smallships:sail',
         C: 'minecraft:chest',
         D: `${wood}_planks`,
@@ -69,7 +62,7 @@ function galleyRecipes(recipeEvent) {
         'DED'
       ],
       {
-        A: S_ROPES,
+        A: ROPES,
         B: 'smallships:sail',
         C: 'minecraft:leather',
         D: `${wood}_planks`,
@@ -93,7 +86,7 @@ function drakkarRecipes(recipeEvent) {
         'DED'
       ],
       {
-        A: S_ROPES,
+        A: ROPES,
         B: 'smallships:sail',
         C: 'minecraft:shield',
         D: `${wood}_planks`,
@@ -117,7 +110,7 @@ function briggRecipes(recipeEvent) {
         'EDE'
       ],
       {
-        A: S_ROPES,
+        A: ROPES,
         B: 'smallships:sail',
         C: 'minecraft:chest',
         D: `${wood}_planks`,
@@ -133,8 +126,8 @@ function briggRecipes(recipeEvent) {
 if (
   Platform.isLoaded('smallships') &&
   Platform.isLoaded('immersive_aircraft') &&
-  Platform.isLoaded('supplementaries')  // todo: Find out if twilight forest can also work (depends on if it adds a
-) {                                     //  ropes tag)
+  Platform.isLoaded('twilightforest')
+) {
   ServerEvents.recipes(sailRecipe);
 
   ServerEvents.recipes(cogRecipes);
