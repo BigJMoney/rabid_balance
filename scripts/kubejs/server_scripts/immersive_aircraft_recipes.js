@@ -21,7 +21,7 @@ function engineRecipe(recipeEvent) {
       C: 'minecraft:blast_furnace',
       D: 'immersive_aircraft:boiler'
     }
-  );
+  ).id(`immersive_aircraft:engine`);
 }
 
 // Hull requires more iron
@@ -38,7 +38,7 @@ function hullRecipe(recipeEvent) {
       A: '#minecraft:logs',
       B: 'minecraft:iron_block'
     }
-  );
+  ).id(`immersive_aircraft:hull`);
 }
 
 // Replace the sail's name with "Sailcloth" (to distinguish from small ships mod)
@@ -55,7 +55,7 @@ function sailclothRecipe(recipeEvent) {
       A: 'minecraft:white_carpet',
       B: ROPES
     }
-  );
+  ).id(`immersive_aircraft:sailcloth`);
 }
 
 
