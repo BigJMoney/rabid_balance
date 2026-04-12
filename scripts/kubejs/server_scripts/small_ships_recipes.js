@@ -6,6 +6,9 @@
 
 const IA_SAILCLOTH = 'immersive_aircraft:sail';
 const IA_HULL = 'immersive_aircraft:hull';
+const CAST_IRON_BLOCK = 'primity:cast_iron_block'
+const CAST_IRON_NUGGET = 'primity:cast_iron_nugget'
+
 const SHIPWOODS = ['spruce', 'cherry', 'mangrove', 'oak', 'dark_oak', 'birch', 'jungle', 'acacia', 'bamboo'];
 
 // Sails require supplementaries (or twilight_forest) rope and immersive aircraft sailcloth
@@ -23,7 +26,41 @@ function sailRecipe(recipeEvent) {
       B: '#minecraft:logs',
       C: ROPES
     }
-  );
+  ).id(`smallships:sail`);
+}
+
+// Cannon and cannonball require primity's cast iron
+function cannonRecipe(recipeEvent) {
+  recipeEvent.remove({ output: 'smallships:cannon' });
+  recipeEvent.shaped(
+    Item.of('smallships:cannon', 1),
+    [
+      '  A',
+      'BBB',
+      ' CC'
+    ],
+    {
+      A: 'minecraft:string',
+      B: CAST_IRON_BLOCK,
+      C: '#minecraft:logs'
+    }
+  ).id(`smallships:cannon`);
+}
+
+function cannonBallRecipe(recipeEvent) {
+  recipeEvent.remove({ output: 'smallships:cannon_ball' });
+  recipeEvent.shaped(
+    Item.of('smallships:cannon_ball', 1),
+    [
+      'BBB',
+      'BAB',
+      'BBB'
+    ],
+    {
+      A: 'minecraft:gunpowder',
+      B: CAST_IRON_NUGGET
+    }
+  ).id(`smallships:cannon_ball`);
 }
 
 // Ships require immersive aircraft hulls and supplementaries (or twilight_forest) rope
@@ -137,4 +174,9 @@ if (
   ServerEvents.recipes(galleyRecipes);
   ServerEvents.recipes(drakkarRecipes);
   ServerEvents.recipes(briggRecipes);
+}
+
+if (Platform.isLoaded('primity')) {
+  ServerEvents.recipes(cannonRecipe);
+  ServerEvents.recipes(cannonBallRecipe);
 }
