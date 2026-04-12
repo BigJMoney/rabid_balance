@@ -1,0 +1,53 @@
+{
+  "neoforge:conditions": [
+      {
+          "type": "neoforge:mod_loaded",
+          "modid": "immersive_aircraft"
+      }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_items": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "immersive_aircraft:airship",
+              "immersive_aircraft:biplane",
+              "immersive_aircraft:gyrodyne",
+              "immersive_aircraft:quadrocopter"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "immersive_aircraft:industrial_gears",
+        "recipe": "immersive_aircraft:sturdy_pipes",
+        "recipe": "immersive_aircraft:gyroscope",
+        "recipe": "immersive_aircraft:gyroscope_hud",
+        "recipe": "immersive_aircraft:gyroscope_dials",
+        "recipe": "immersive_aircraft:improved_landing_gear"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_items"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "immersive_aircraft:industrial_gears",
+      "immersive_aircraft:sturdy_pipes",
+      "immersive_aircraft:gyroscope",
+      "immersive_aircraft:gyroscope_hud",
+      "immersive_aircraft:gyroscope_dials",
+      "immersive_aircraft:improved_landing_gear"
+    ]
+  }
+}

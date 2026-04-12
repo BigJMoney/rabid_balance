@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+      {
+          "type": "neoforge:mod_loaded",
+          "modid": "immersive_aircraft"
+      }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "immersive_aircraft:boiler"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "immersive_aircraft:engine",
+        "recipe": "immersive_aircraft:steel_boiler"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_item"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "immersive_aircraft:engine",
+      "immersive_aircraft:steel_boiler"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "neoforge:conditions": [
+      {
+          "type": "neoforge:mod_loaded",
+          "modid": "immersive_aircraft"
+      }
+  ],
+  "neoforge:conditions": [
+      {
+          "type": "neoforge:mod_loaded",
+          "modid": "man_of_many_planes"
+      }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_biplane": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "immersive_aircraft:biplane"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "man_of_many_planes:scarlet_biplane",
+        "recipe": "man_of_many_planes:economy_plane"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_biplane"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "man_of_many_planes:scarlet_biplane",
+      "man_of_many_planes:economy_plane"
+    ]
+  }
+}

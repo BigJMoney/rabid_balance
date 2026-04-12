@@ -31,6 +31,9 @@ Rotten Creatures miner zombies now have the can_be_miner tag used by Enhanced AI
 
 Aquatic Frontiers sponge squid has a very low chance of dropping sponges (but still can)
 
+~ ADVANCEMENT RECIPES ~
+
+Many mods don't have proper advancements that provide crafting table recipes. Said advancements are added by this datapack.
 
 ~ STRUCTURE REBALANCING ~
 

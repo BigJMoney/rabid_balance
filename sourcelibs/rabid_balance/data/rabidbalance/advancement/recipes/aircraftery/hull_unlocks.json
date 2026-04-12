@@ -1,0 +1,44 @@
+{
+  "neoforge:conditions": [
+      {
+          "type": "neoforge:mod_loaded",
+          "modid": "immersive_aircraft"
+      }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hull": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "immersive_aircraft:hull"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "immersive_aircraft:airship",
+        "recipe": "immersive_aircraft:biplane",
+        "recipe": "immersive_aircraft:gyrodyne",
+        "recipe": "immersive_aircraft:hull_reinforcement"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_hull"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "immersive_aircraft:airship",
+      "immersive_aircraft:biplane",
+      "immersive_aircraft:gyrodyne",
+      "immersive_aircraft:hull_reinforcement"
+    ]
+  }
+}

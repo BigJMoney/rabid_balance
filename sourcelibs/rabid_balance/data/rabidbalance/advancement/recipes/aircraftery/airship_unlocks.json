@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+      {
+          "type": "neoforge:mod_loaded",
+          "modid": "immersive_aircraft"
+      }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_airship": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "immersive_aircraft:airship"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "immersive_aircraft:cargo_airship",
+        "recipe": "immersive_aircraft:warship"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_airship"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "immersive_aircraft:cargo_airship",
+      "immersive_aircraft:warship"
+    ]
+  }
+}
