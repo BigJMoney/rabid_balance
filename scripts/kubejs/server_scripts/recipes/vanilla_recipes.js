@@ -5,7 +5,17 @@
  */
 
 
-const WOODS = ['spruce', 'cherry', 'mangrove', 'oak', 'dark_oak', 'birch', 'jungle', 'acacia'];
+const WOODS = [
+  'spruce',
+  'cherry',
+  'mangrove',
+  'oak',
+  'dark_oak',
+  'birch',
+  'jungle',
+  'acacia',
+  'pale_oak'
+];
 
 // NOTE: Disabled for now to test if backport mods fix this
 // Lodestone is easier to craft (for 1.21.1)
@@ -40,7 +50,7 @@ function boatRecipes(recipeEvent) {
         A: `minecraft:${wood}_planks`,
         B: 'minecraft:iron_nugget'
       }
-    ).id(`minecraft:${wood}_boat`);
+    ).group('boat').id(`minecraft:${wood}_boat`);
   })
 
   // ...except the bamboo raft cause that's fun
@@ -54,7 +64,7 @@ function boatRecipes(recipeEvent) {
     {
       A: 'minecraft:bamboo_planks'
     }
-  ).id('minecraft:bamboo_raft');
+  ).group('boat').id('minecraft:bamboo_raft');
 
 }
 
