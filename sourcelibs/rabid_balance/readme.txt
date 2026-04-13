@@ -6,7 +6,10 @@ Rabid Balance v.0.1.1
 Leather joinery items are used in place of some leather pieces when making leather armor (also requires my Crafttweaker script):
 - Bone, iron nugget or string
 
-Todo: add copper nugget
+Todo: add copper and cast iron nuggets
+
+Hero of the Village gift improvements:
+- Toolsmith gives iron tools (diamond, if pickaxe)
 
 
 ~ MOD ADJUSTMENTS ~
