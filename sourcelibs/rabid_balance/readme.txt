@@ -14,7 +14,7 @@ Hero of the Village gift improvements:
 
 ~ MOD ADJUSTMENTS ~
 
-Aptheosis loot affix entries added for:
+Apotheosis loot affix entries added for:
 - Simply Weapons (standard weapons)
 - Immersive Armors
 - Kobold equipment
@@ -30,9 +30,14 @@ Supplementaries waysign and adventure map changes:
 - Added more village types to waysign destinations
 - Removed villages from adventure maps
 
+Immersive Aircraft:
+- Rebalanced aircraft values, especially around fuel consumption
+
 Rotten Creatures miner zombies now have the can_be_miner tag used by Enhanced AI
 
 Aquatic Frontiers sponge squid has a very low chance of dropping sponges (but still can)
+
+Twilight Forest jerkies now work with all items tagged with raw meat and make chicken jerky (all other jerkies are OP)
 
 ~ ADVANCEMENT RECIPES ~
 
