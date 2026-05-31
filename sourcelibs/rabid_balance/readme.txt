@@ -39,6 +39,8 @@ Aquatic Frontiers sponge squid has a very low chance of dropping sponges (but st
 
 Twilight Forest jerkies now work with all items tagged with raw meat and make chicken jerky (all other jerkies are OP)
 
+Immersive Enchanting now includes the mending ancient book
+
 ~ ADVANCEMENT RECIPES ~
 
 Many mods don't have proper advancements that provide crafting table recipes. Said advancements are added by this datapack.
