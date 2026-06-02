@@ -1,0 +1,11 @@
+{
+ "enabled": true,
+ "levels": {
+   "1": [
+     {
+       "item": "minecraft:nether_star",
+       "amount": 1
+     }
+   ]
+ }
+}
