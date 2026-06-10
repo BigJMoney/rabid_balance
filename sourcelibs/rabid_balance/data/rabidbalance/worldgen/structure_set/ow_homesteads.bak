@@ -116,6 +116,34 @@
       "weight": 10
     },
     {
+      "structure": "nvr:villager_outpost/desert",
+      "weight": 10
+    },
+    {
+      "structure": "nvr:villager_outpost/jungle",
+      "weight": 10
+    },
+    {
+      "structure": "nvr:villager_outpost/plains",
+      "weight": 10
+    },
+    {
+      "structure": "nvr:villager_outpost/savanna",
+      "weight": 10
+    },
+    {
+      "structure": "nvr:villager_outpost/snow",
+      "weight": 10
+    },
+    {
+      "structure": "nvr:villager_outpost/swamp",
+      "weight": 10
+    },
+    {
+      "structure": "nvr:villager_outpost/taiga",
+      "weight": 10
+    },
+    {
       "structure": "repurposed_structures:village_badlands",
       "weight": 10
     },

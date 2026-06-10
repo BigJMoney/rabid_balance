@@ -8,6 +8,10 @@
   },
   "structures": [
     {
+      "structure": "immersiveenchanting:ancient_library_end",
+      "weight": 10
+    },
+    {
       "structure": "repurposed_structures:ruined_portal_end",
       "weight": 10
     }
