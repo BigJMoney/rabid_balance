@@ -10,29 +10,29 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - Pack order source: `D:\keep\mods\Minecraft\my_tweaks\configs\loot_pack_order.json`
 - Last mod pin: `rabid_balance` from `D:\keep\mods\Minecraft\my_tweaks\configs\loot_pack_order.json`
 - Ignore roots: `D:\keep\mods\Minecraft\my_tweaks\libs\ignore`, `D:\keep\mods\Minecraft\my_tweaks\sourcelibs\ignore`
-- Selected pack count: 15
+- Selected pack count: 19
 - Classification source: `D:\keep\mods\Minecraft\my_tweaks\docs\loot_docs\resolved_loot_v10.csv`
 - Classification version: `10`
-- Named table rows: 131
+- Named table rows: 132
 - Inline table rows: 4
-- Pool rows: 307
-- Entry rows: 1449
-- Leaf candidate rows: 1750
-- Root table item summary rows: 1557
-- Table role rows: 131
-- Table role evidence rows: 313
-- GLM chain rows: 32
+- Pool rows: 308
+- Entry rows: 1468
+- Leaf candidate rows: 1919
+- Root table item summary rows: 1650
+- Table role rows: 132
+- Table role evidence rows: 339
+- GLM chain rows: 55
 - Modifier-added leaf rows: 38
-- Target table modifier summary rows: 13
+- Target table modifier summary rows: 26
 - Target table added item summary rows: 29
-- Item classification rows: 3547
-- Item affinity rows: 1835
+- Item classification rows: 2805
+- Item affinity rows: 2170
 - Classification coverage rows: 453
-- Structure rows: 73
-- Structure loot-link rows: 106
-- Structure loot-link audit rows: 233
-- Classified loot items: 449
-- Missing loot items: 4
+- Structure rows: 83
+- Structure loot-link rows: 111
+- Structure loot-link audit rows: 249
+- Classified loot items: 295
+- Missing loot items: 158
 
 ## Selected Packs
 
@@ -43,10 +43,14 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - `bosses_of_mass_destruction` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\BOMD-NeoForge-1.3.2`
 - `copperagebackport` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\copperagebackport-neoforge-0.1.4`
 - `illagerinvasion` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\IllagerInvasion-v21.1.6-NeoForge`
+- `immersive_aircraft` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\immersive_aircraft-1.4.3-neoforge`
+- `immersiveenchanting` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\immersiveenchanting-5.0.1`
 - `incubation` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\incubation-1.21.1-5.0.2.jar`
 - `kobolds` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\Kobolds-3.0.41`
+- `nice_villagers_remastered_1` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\nice-villagers-remastered-1.0`
 - `primity` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\primity-neoforge-0.1.4`
 - `ribbits` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\Ribbits-NeoForge-4.1.6`
+- `smallships` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\smallships-neoforge-1.21.1-2.0.0-b2.1`
 - `sophisticatedbackpacks` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\sophisticatedbackpacks-3.25.34.1581`
 - `toxony` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\toxony-0.10.6`
 - `twilightforest` (directory) from `D:\keep\mods\Minecraft\my_tweaks\libs\twilightforest-4.8.3287-universal`
@@ -74,7 +78,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - `structures.csv`: one row per active structure_id with source metadata, active structure-set provenance, and structure detection status.
 - `structure_loot_links.csv`: one row per applied structure_id plus loot_table_id link after exact-match detection, ambiguous autoresolve, and manual no-match mapping.
 - `structure_loot_link_audit.csv`: audit trail for exact-match detections, ambiguous-match candidates, manual no-match mappings, and stale skipped rows.
-- `scope_report.json`: allowed, excluded, and deferred top-level loot_table folder scope with warnings.
+- `scope_report.json`: allowed, excluded, and deferred top-level loot_table folder scope plus explicitly allowed root loot tables.
 - `manifest.json`: export counts for tables, pools, entries, references, and leaf rows.
 
 ## Join Keys
@@ -100,6 +104,10 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 - `equipment`: 3 effective loot-table resources
 - `pots`: 1 effective loot-table resources
 - `spawners`: 5 effective loot-table resources
+
+## Allowed Root Loot Tables
+
+- `nvr:villager_outpost`
 
 ## Excluded Folders
 
@@ -128,6 +136,7 @@ Effective layered Stage 1 loot-table export built from the implicit vanilla base
 ## Notes
 
 - The scope config is always authoritative for Stage 1 allowed and deferred top-level loot_table directories.
+- Root-level loot tables such as `namespace/loot_table/name.json` are only included when their full table ID is listed in `allowed_root_loot_tables`.
 - Descendants of the configured ignore roots are skipped during auto-discovery and archive-root scans unless you include them explicitly with `--pack`.
 - `--last-mod-pack-id` pins one selected mod to the end of the mod order so it wins overlaps it participates in without requiring a full pack-order manifest. Overlaps among the remaining mods still require a manifest.
 - Top-level `loot_table/inject/...` is treated as deferred Stage 2 and is intentionally omitted from Stage 1 outputs.
