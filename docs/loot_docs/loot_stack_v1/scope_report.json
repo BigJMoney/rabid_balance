@@ -6,6 +6,9 @@
     "pots",
     "spawners"
   ],
+  "allowed_root_loot_tables": [
+    "nvr:villager_outpost"
+  ],
   "deferred_loot_dirs": [
     "inject"
   ],
@@ -26,6 +29,11 @@
     {
       "name": "spawners",
       "file_count": 5
+    }
+  ],
+  "included_root_tables": [
+    {
+      "table_id": "nvr:villager_outpost"
     }
   ],
   "excluded_dirs": [
@@ -68,6 +76,110 @@
     {
       "name": "stripping",
       "file_count": 1
+    }
+  ],
+  "excluded_root_tables": [
+    {
+      "table_id": "nvr:illusioner"
+    },
+    {
+      "table_id": "nvr:treasure_book"
+    },
+    {
+      "table_id": "nvr:villager_quest"
+    },
+    {
+      "table_id": "twilightforest:aurora_cache"
+    },
+    {
+      "table_id": "twilightforest:aurora_room"
+    },
+    {
+      "table_id": "twilightforest:camp_armor_rack"
+    },
+    {
+      "table_id": "twilightforest:camp_drying_rack"
+    },
+    {
+      "table_id": "twilightforest:camp_pot"
+    },
+    {
+      "table_id": "twilightforest:camp_tent"
+    },
+    {
+      "table_id": "twilightforest:darktower_boss"
+    },
+    {
+      "table_id": "twilightforest:darktower_cache"
+    },
+    {
+      "table_id": "twilightforest:darktower_key"
+    },
+    {
+      "table_id": "twilightforest:fallen_trunk_loot"
+    },
+    {
+      "table_id": "twilightforest:fancy_well"
+    },
+    {
+      "table_id": "twilightforest:foundation_basement"
+    },
+    {
+      "table_id": "twilightforest:graveyard"
+    },
+    {
+      "table_id": "twilightforest:hedge_cloth"
+    },
+    {
+      "table_id": "twilightforest:hedge_maze"
+    },
+    {
+      "table_id": "twilightforest:hill_1"
+    },
+    {
+      "table_id": "twilightforest:hill_2"
+    },
+    {
+      "table_id": "twilightforest:hill_3"
+    },
+    {
+      "table_id": "twilightforest:labyrinth_dead_end"
+    },
+    {
+      "table_id": "twilightforest:labyrinth_room"
+    },
+    {
+      "table_id": "twilightforest:labyrinth_vault"
+    },
+    {
+      "table_id": "twilightforest:labyrinth_vault_jackpot"
+    },
+    {
+      "table_id": "twilightforest:quest_grove_dropper"
+    },
+    {
+      "table_id": "twilightforest:stronghold_cache"
+    },
+    {
+      "table_id": "twilightforest:stronghold_room"
+    },
+    {
+      "table_id": "twilightforest:tree_cache"
+    },
+    {
+      "table_id": "twilightforest:troll_garden"
+    },
+    {
+      "table_id": "twilightforest:troll_vault"
+    },
+    {
+      "table_id": "twilightforest:troll_vault_with_lamp"
+    },
+    {
+      "table_id": "twilightforest:useless"
+    },
+    {
+      "table_id": "twilightforest:well"
     }
   ],
   "deferred_dirs": [
@@ -180,8 +292,8 @@
       "file_count": 1
     }
   ],
-  "included_table_total": 131,
-  "excluded_table_total": 2067,
+  "included_table_total": 132,
+  "excluded_table_total": 2101,
   "deferred_table_total": 11,
   "new_excluded_loot_dirs_from_mods": [
     {

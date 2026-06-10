@@ -1,15 +1,15 @@
 {
-  "exact_match_table_count": 59,
-  "exact_match_row_count": 72,
-  "ambiguous_match_candidate_table_count": 43,
-  "ambiguous_match_candidate_row_count": 96,
+  "exact_match_table_count": 60,
+  "exact_match_row_count": 79,
+  "ambiguous_match_candidate_table_count": 47,
+  "ambiguous_match_candidate_row_count": 107,
   "ambiguous_match_autoresolved_table_count": 18,
   "ambiguous_match_autoresolved_row_count": 27,
-  "ambiguous_match_pending_table_count": 25,
-  "ambiguous_match_pending_row_count": 69,
-  "no_match_table_count": 55,
-  "no_match_mapped_table_count": 5,
-  "no_match_mapped_row_count": 7,
+  "ambiguous_match_pending_table_count": 30,
+  "ambiguous_match_pending_row_count": 80,
+  "no_match_table_count": 53,
+  "no_match_mapped_table_count": 3,
+  "no_match_mapped_row_count": 5,
   "no_match_unresolved_table_count": 48,
   "no_match_unresolved_row_count": 48,
   "stale_ambiguous_rows": [
@@ -110,7 +110,20 @@
       "notes": ""
     }
   ],
-  "stale_manual_rows": [],
+  "stale_manual_rows": [
+    {
+      "loot_table_id": "minecraft:chests/jungle_temple",
+      "status": "mapped",
+      "structure_id": "minecraft:jungle_pyramid",
+      "notes": ""
+    },
+    {
+      "loot_table_id": "minecraft:chests/jungle_temple_dispenser",
+      "status": "mapped",
+      "structure_id": "minecraft:jungle_pyramid",
+      "notes": ""
+    }
+  ],
   "skipped_active_stale_rows": [
     {
       "resolution_source": "ambiguous_match",
@@ -162,6 +175,18 @@
     },
     {
       "resolution_source": "manual_no_match",
+      "loot_table_id": "minecraft:chests/jungle_temple",
+      "structure_id": "minecraft:jungle_pyramid",
+      "warning": "stale manual no-match mapping skipped for minecraft:chests/jungle_temple -> minecraft:jungle_pyramid"
+    },
+    {
+      "resolution_source": "manual_no_match",
+      "loot_table_id": "minecraft:chests/jungle_temple_dispenser",
+      "structure_id": "minecraft:jungle_pyramid",
+      "warning": "stale manual no-match mapping skipped for minecraft:chests/jungle_temple_dispenser -> minecraft:jungle_pyramid"
+    },
+    {
+      "resolution_source": "manual_no_match",
       "loot_table_id": "bosses_of_mass_destruction:chests/gauntlet",
       "structure_id": "bosses_of_mass_destruction:gauntlet",
       "warning": "manual no-match mapping target missing from current active structures for bosses_of_mass_destruction:chests/gauntlet -> bosses_of_mass_destruction:gauntlet"
@@ -182,6 +207,8 @@
     "stale ambiguous autoresolve skipped for toxony:chests/old_adventure_guild/old_adventure_guild_rare -> toxony:old_adventure_guild",
     "stale ambiguous autoresolve skipped for toxony:chests/old_experiment_house/attic_chest -> toxony:old_experiment_house",
     "stale ambiguous autoresolve skipped for toxony:chests/old_experiment_house/old_experiment_house -> toxony:old_experiment_house",
+    "stale manual no-match mapping skipped for minecraft:chests/jungle_temple -> minecraft:jungle_pyramid",
+    "stale manual no-match mapping skipped for minecraft:chests/jungle_temple_dispenser -> minecraft:jungle_pyramid",
     "manual no-match mapping target missing from current active structures for bosses_of_mass_destruction:chests/gauntlet -> bosses_of_mass_destruction:gauntlet",
     "manual no-match mapping target missing from current active structures for bosses_of_mass_destruction:chests/obsidilith -> bosses_of_mass_destruction:obsidilith"
   ]

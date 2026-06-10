@@ -80,6 +80,24 @@
       "resource_count": 145
     },
     {
+      "pack_id": "immersive_aircraft",
+      "role": "mod",
+      "kind": "directory",
+      "explicit": false,
+      "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
+      "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge",
+      "resource_count": 50
+    },
+    {
+      "pack_id": "immersiveenchanting",
+      "role": "mod",
+      "kind": "directory",
+      "explicit": false,
+      "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
+      "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1",
+      "resource_count": 87
+    },
+    {
       "pack_id": "incubation",
       "role": "mod",
       "kind": "directory",
@@ -98,6 +116,15 @@
       "resource_count": 126
     },
     {
+      "pack_id": "nice_villagers_remastered_1",
+      "role": "mod",
+      "kind": "directory",
+      "explicit": false,
+      "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
+      "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\nice-villagers-remastered-1.0",
+      "resource_count": 312
+    },
+    {
       "pack_id": "primity",
       "role": "mod",
       "kind": "directory",
@@ -113,7 +140,7 @@
       "explicit": false,
       "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs",
       "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance",
-      "resource_count": 584
+      "resource_count": 702
     },
     {
       "pack_id": "ribbits",
@@ -123,6 +150,15 @@
       "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
       "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\Ribbits-NeoForge-4.1.6",
       "resource_count": 110
+    },
+    {
+      "pack_id": "smallships",
+      "role": "mod",
+      "kind": "directory",
+      "explicit": false,
+      "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
+      "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\smallships-neoforge-1.21.1-2.0.0-b2.1",
+      "resource_count": 82
     },
     {
       "pack_id": "sophisticatedbackpacks",
@@ -224,6 +260,26 @@
       "order_index": 6
     },
     {
+      "pack_id": "immersive_aircraft",
+      "role": "mod",
+      "kind": "directory",
+      "explicit": false,
+      "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
+      "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge",
+      "resource_count": 50,
+      "order_index": 7
+    },
+    {
+      "pack_id": "immersiveenchanting",
+      "role": "mod",
+      "kind": "directory",
+      "explicit": false,
+      "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
+      "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1",
+      "resource_count": 87,
+      "order_index": 8
+    },
+    {
       "pack_id": "incubation",
       "role": "mod",
       "kind": "directory",
@@ -231,7 +287,7 @@
       "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
       "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\incubation-1.21.1-5.0.2.jar",
       "resource_count": 75,
-      "order_index": 7
+      "order_index": 9
     },
     {
       "pack_id": "kobolds",
@@ -241,7 +297,17 @@
       "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
       "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\Kobolds-3.0.41",
       "resource_count": 126,
-      "order_index": 8
+      "order_index": 10
+    },
+    {
+      "pack_id": "nice_villagers_remastered_1",
+      "role": "mod",
+      "kind": "directory",
+      "explicit": false,
+      "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
+      "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\nice-villagers-remastered-1.0",
+      "resource_count": 312,
+      "order_index": 11
     },
     {
       "pack_id": "primity",
@@ -251,7 +317,7 @@
       "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
       "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\primity-neoforge-0.1.4",
       "resource_count": 107,
-      "order_index": 9
+      "order_index": 12
     },
     {
       "pack_id": "ribbits",
@@ -261,7 +327,17 @@
       "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
       "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\Ribbits-NeoForge-4.1.6",
       "resource_count": 110,
-      "order_index": 10
+      "order_index": 13
+    },
+    {
+      "pack_id": "smallships",
+      "role": "mod",
+      "kind": "directory",
+      "explicit": false,
+      "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
+      "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\smallships-neoforge-1.21.1-2.0.0-b2.1",
+      "resource_count": 82,
+      "order_index": 14
     },
     {
       "pack_id": "sophisticatedbackpacks",
@@ -271,7 +347,7 @@
       "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
       "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\sophisticatedbackpacks-3.25.34.1581",
       "resource_count": 220,
-      "order_index": 11
+      "order_index": 15
     },
     {
       "pack_id": "toxony",
@@ -281,7 +357,7 @@
       "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
       "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\toxony-0.10.6",
       "resource_count": 344,
-      "order_index": 12
+      "order_index": 16
     },
     {
       "pack_id": "twilightforest",
@@ -291,7 +367,7 @@
       "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\libs",
       "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal",
       "resource_count": 3159,
-      "order_index": 13
+      "order_index": 17
     },
     {
       "pack_id": "rabid_balance",
@@ -300,8 +376,8 @@
       "explicit": false,
       "discovery_source": "auto_dir:D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs",
       "path": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance",
-      "resource_count": 584,
-      "order_index": 14
+      "resource_count": 702,
+      "order_index": 18
     }
   ],
   "effective_order": [
@@ -312,10 +388,14 @@
     "bosses_of_mass_destruction",
     "copperagebackport",
     "illagerinvasion",
+    "immersive_aircraft",
+    "immersiveenchanting",
     "incubation",
     "kobolds",
+    "nice_villagers_remastered_1",
     "primity",
     "ribbits",
+    "smallships",
     "sophisticatedbackpacks",
     "toxony",
     "twilightforest",
@@ -708,6 +788,160 @@
       "source_paths": {
         "illagerinvasion": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\IllagerInvasion-v21.1.6-NeoForge\\data\\illagerinvasion\\worldgen\\structure_set\\sorcerer_hut.json",
         "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\illagerinvasion\\worldgen\\structure_set\\sorcerer_hut.json"
+      }
+    },
+    {
+      "resource_path": "immersive_aircraft/aircraft/airship.json",
+      "pack_ids": [
+        "immersive_aircraft",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersive_aircraft": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge\\data\\immersive_aircraft\\aircraft\\airship.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersive_aircraft\\aircraft\\airship.json"
+      }
+    },
+    {
+      "resource_path": "immersive_aircraft/aircraft/bamboo_hopper.json",
+      "pack_ids": [
+        "immersive_aircraft",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersive_aircraft": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge\\data\\immersive_aircraft\\aircraft\\bamboo_hopper.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersive_aircraft\\aircraft\\bamboo_hopper.json"
+      }
+    },
+    {
+      "resource_path": "immersive_aircraft/aircraft/biplane.json",
+      "pack_ids": [
+        "immersive_aircraft",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersive_aircraft": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge\\data\\immersive_aircraft\\aircraft\\biplane.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersive_aircraft\\aircraft\\biplane.json"
+      }
+    },
+    {
+      "resource_path": "immersive_aircraft/aircraft/cargo_airship.json",
+      "pack_ids": [
+        "immersive_aircraft",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersive_aircraft": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge\\data\\immersive_aircraft\\aircraft\\cargo_airship.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersive_aircraft\\aircraft\\cargo_airship.json"
+      }
+    },
+    {
+      "resource_path": "immersive_aircraft/aircraft/gyrodyne.json",
+      "pack_ids": [
+        "immersive_aircraft",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersive_aircraft": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge\\data\\immersive_aircraft\\aircraft\\gyrodyne.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersive_aircraft\\aircraft\\gyrodyne.json"
+      }
+    },
+    {
+      "resource_path": "immersive_aircraft/aircraft/quadrocopter.json",
+      "pack_ids": [
+        "immersive_aircraft",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersive_aircraft": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge\\data\\immersive_aircraft\\aircraft\\quadrocopter.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersive_aircraft\\aircraft\\quadrocopter.json"
+      }
+    },
+    {
+      "resource_path": "immersive_aircraft/aircraft/warship.json",
+      "pack_ids": [
+        "immersive_aircraft",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersive_aircraft": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge\\data\\immersive_aircraft\\aircraft\\warship.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersive_aircraft\\aircraft\\warship.json"
+      }
+    },
+    {
+      "resource_path": "immersiveenchanting/enchantment_costs/minecraft/mending.json",
+      "pack_ids": [
+        "immersiveenchanting",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\immersiveenchanting\\enchantment_costs\\minecraft\\mending.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersiveenchanting\\enchantment_costs\\minecraft\\mending.json"
+      }
+    },
+    {
+      "resource_path": "immersiveenchanting/loot_modifiers/abandoned_mineshaft_ancient_books.json",
+      "pack_ids": [
+        "immersiveenchanting",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\immersiveenchanting\\loot_modifiers\\abandoned_mineshaft_ancient_books.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersiveenchanting\\loot_modifiers\\abandoned_mineshaft_ancient_books.json"
+      }
+    },
+    {
+      "resource_path": "immersiveenchanting/loot_modifiers/simple_dungeon_ancient_books.json",
+      "pack_ids": [
+        "immersiveenchanting",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\immersiveenchanting\\loot_modifiers\\simple_dungeon_ancient_books.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersiveenchanting\\loot_modifiers\\simple_dungeon_ancient_books.json"
+      }
+    },
+    {
+      "resource_path": "immersiveenchanting/loot_modifiers/trial_chambers_reward_ancient_books.json",
+      "pack_ids": [
+        "immersiveenchanting",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\immersiveenchanting\\loot_modifiers\\trial_chambers_reward_ancient_books.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersiveenchanting\\loot_modifiers\\trial_chambers_reward_ancient_books.json"
+      }
+    },
+    {
+      "resource_path": "immersiveenchanting/worldgen/structure_set/ancient_library_desert.json",
+      "pack_ids": [
+        "immersiveenchanting",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\immersiveenchanting\\worldgen\\structure_set\\ancient_library_desert.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersiveenchanting\\worldgen\\structure_set\\ancient_library_desert.json"
+      }
+    },
+    {
+      "resource_path": "immersiveenchanting/worldgen/structure_set/ancient_library_end.json",
+      "pack_ids": [
+        "immersiveenchanting",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\immersiveenchanting\\worldgen\\structure_set\\ancient_library_end.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersiveenchanting\\worldgen\\structure_set\\ancient_library_end.json"
+      }
+    },
+    {
+      "resource_path": "immersiveenchanting/worldgen/structure_set/ancient_library_jungle.json",
+      "pack_ids": [
+        "immersiveenchanting",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\immersiveenchanting\\worldgen\\structure_set\\ancient_library_jungle.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersiveenchanting\\worldgen\\structure_set\\ancient_library_jungle.json"
       }
     },
     {
@@ -1387,10 +1621,12 @@
       "resource_path": "minecraft/tags/item/bookshelf_books.json",
       "pack_ids": [
         "aether",
+        "immersiveenchanting",
         "toxony"
       ],
       "source_paths": {
         "aether": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\aether-1.5.10-neoforge\\data\\minecraft\\tags\\item\\bookshelf_books.json",
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\minecraft\\tags\\item\\bookshelf_books.json",
         "toxony": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\toxony-0.10.6\\data\\minecraft\\tags\\item\\bookshelf_books.json"
       }
     },
@@ -1435,10 +1671,12 @@
       "resource_path": "minecraft/tags/item/dyeable.json",
       "pack_ids": [
         "aether",
+        "immersive_aircraft",
         "twilightforest"
       ],
       "source_paths": {
         "aether": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\aether-1.5.10-neoforge\\data\\minecraft\\tags\\item\\dyeable.json",
+        "immersive_aircraft": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge\\data\\minecraft\\tags\\item\\dyeable.json",
         "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\minecraft\\tags\\item\\dyeable.json"
       }
     },
@@ -1923,6 +2161,7 @@
       "pack_ids": [
         "aether",
         "allurement",
+        "immersiveenchanting",
         "sophisticatedbackpacks",
         "toxony",
         "twilightforest",
@@ -1931,10 +2170,88 @@
       "source_paths": {
         "aether": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\aether-1.5.10-neoforge\\data\\neoforge\\loot_modifiers\\global_loot_modifiers.json",
         "allurement": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\allurement-1.21.1-5.0.1.jar\\data\\neoforge\\loot_modifiers\\global_loot_modifiers.json",
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\neoforge\\loot_modifiers\\global_loot_modifiers.json",
         "sophisticatedbackpacks": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\sophisticatedbackpacks-3.25.34.1581\\data\\neoforge\\loot_modifiers\\global_loot_modifiers.json",
         "toxony": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\toxony-0.10.6\\data\\neoforge\\loot_modifiers\\global_loot_modifiers.json",
         "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\neoforge\\loot_modifiers\\global_loot_modifiers.json",
         "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\neoforge\\loot_modifiers\\global_loot_modifiers.json"
+      }
+    },
+    {
+      "resource_path": "nvr/worldgen/structure_set/villager_outpost/desert.json",
+      "pack_ids": [
+        "nice_villagers_remastered_1",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "nice_villagers_remastered_1": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\nice-villagers-remastered-1.0\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\desert.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\desert.json"
+      }
+    },
+    {
+      "resource_path": "nvr/worldgen/structure_set/villager_outpost/jungle.json",
+      "pack_ids": [
+        "nice_villagers_remastered_1",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "nice_villagers_remastered_1": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\nice-villagers-remastered-1.0\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\jungle.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\jungle.json"
+      }
+    },
+    {
+      "resource_path": "nvr/worldgen/structure_set/villager_outpost/plains.json",
+      "pack_ids": [
+        "nice_villagers_remastered_1",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "nice_villagers_remastered_1": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\nice-villagers-remastered-1.0\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\plains.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\plains.json"
+      }
+    },
+    {
+      "resource_path": "nvr/worldgen/structure_set/villager_outpost/savanna.json",
+      "pack_ids": [
+        "nice_villagers_remastered_1",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "nice_villagers_remastered_1": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\nice-villagers-remastered-1.0\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\savanna.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\savanna.json"
+      }
+    },
+    {
+      "resource_path": "nvr/worldgen/structure_set/villager_outpost/snow.json",
+      "pack_ids": [
+        "nice_villagers_remastered_1",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "nice_villagers_remastered_1": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\nice-villagers-remastered-1.0\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\snow.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\snow.json"
+      }
+    },
+    {
+      "resource_path": "nvr/worldgen/structure_set/villager_outpost/swamp.json",
+      "pack_ids": [
+        "nice_villagers_remastered_1",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "nice_villagers_remastered_1": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\nice-villagers-remastered-1.0\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\swamp.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\swamp.json"
+      }
+    },
+    {
+      "resource_path": "nvr/worldgen/structure_set/villager_outpost/taiga.json",
+      "pack_ids": [
+        "nice_villagers_remastered_1",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "nice_villagers_remastered_1": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\nice-villagers-remastered-1.0\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\taiga.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\taiga.json"
       }
     },
     {
@@ -1960,6 +2277,17 @@
       }
     },
     {
+      "resource_path": "smallships/advancement/recipes/combat/cannon.json",
+      "pack_ids": [
+        "smallships",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "smallships": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\smallships-neoforge-1.21.1-2.0.0-b2.1\\data\\smallships\\advancement\\recipes\\combat\\cannon.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\smallships\\advancement\\recipes\\combat\\cannon.json"
+      }
+    },
+    {
       "resource_path": "sophisticatedbackpacks/loot_modifiers/chests/spawn_bonus_chest.json",
       "pack_ids": [
         "sophisticatedbackpacks",
@@ -1968,6 +2296,127 @@
       "source_paths": {
         "sophisticatedbackpacks": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\sophisticatedbackpacks-3.25.34.1581\\data\\sophisticatedbackpacks\\loot_modifiers\\chests\\spawn_bonus_chest.json",
         "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\sophisticatedbackpacks\\loot_modifiers\\chests\\spawn_bonus_chest.json"
+      }
+    },
+    {
+      "resource_path": "twilightforest/recipe/beef_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\beef_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\beef_jerky.json"
+      }
+    },
+    {
+      "resource_path": "twilightforest/recipe/chicken_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\chicken_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\chicken_jerky.json"
+      }
+    },
+    {
+      "resource_path": "twilightforest/recipe/cod_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\cod_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\cod_jerky.json"
+      }
+    },
+    {
+      "resource_path": "twilightforest/recipe/fugu_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\fugu_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\fugu_jerky.json"
+      }
+    },
+    {
+      "resource_path": "twilightforest/recipe/meef_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\meef_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\meef_jerky.json"
+      }
+    },
+    {
+      "resource_path": "twilightforest/recipe/mutton_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\mutton_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\mutton_jerky.json"
+      }
+    },
+    {
+      "resource_path": "twilightforest/recipe/pork_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\pork_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\pork_jerky.json"
+      }
+    },
+    {
+      "resource_path": "twilightforest/recipe/rabbit_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\rabbit_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\rabbit_jerky.json"
+      }
+    },
+    {
+      "resource_path": "twilightforest/recipe/salmon_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\salmon_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\salmon_jerky.json"
+      }
+    },
+    {
+      "resource_path": "twilightforest/recipe/tropical_fish_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\tropical_fish_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\tropical_fish_jerky.json"
+      }
+    },
+    {
+      "resource_path": "twilightforest/recipe/venison_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\venison_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\venison_jerky.json"
       }
     }
   ],
@@ -2446,6 +2895,188 @@
       "source_paths": {
         "illagerinvasion": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\IllagerInvasion-v21.1.6-NeoForge\\data\\illagerinvasion\\worldgen\\structure_set\\sorcerer_hut.json",
         "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\illagerinvasion\\worldgen\\structure_set\\sorcerer_hut.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "immersive_aircraft/aircraft/airship.json",
+      "pack_ids": [
+        "immersive_aircraft",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersive_aircraft": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge\\data\\immersive_aircraft\\aircraft\\airship.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersive_aircraft\\aircraft\\airship.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "immersive_aircraft/aircraft/bamboo_hopper.json",
+      "pack_ids": [
+        "immersive_aircraft",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersive_aircraft": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge\\data\\immersive_aircraft\\aircraft\\bamboo_hopper.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersive_aircraft\\aircraft\\bamboo_hopper.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "immersive_aircraft/aircraft/biplane.json",
+      "pack_ids": [
+        "immersive_aircraft",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersive_aircraft": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge\\data\\immersive_aircraft\\aircraft\\biplane.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersive_aircraft\\aircraft\\biplane.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "immersive_aircraft/aircraft/cargo_airship.json",
+      "pack_ids": [
+        "immersive_aircraft",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersive_aircraft": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge\\data\\immersive_aircraft\\aircraft\\cargo_airship.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersive_aircraft\\aircraft\\cargo_airship.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "immersive_aircraft/aircraft/gyrodyne.json",
+      "pack_ids": [
+        "immersive_aircraft",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersive_aircraft": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge\\data\\immersive_aircraft\\aircraft\\gyrodyne.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersive_aircraft\\aircraft\\gyrodyne.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "immersive_aircraft/aircraft/quadrocopter.json",
+      "pack_ids": [
+        "immersive_aircraft",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersive_aircraft": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge\\data\\immersive_aircraft\\aircraft\\quadrocopter.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersive_aircraft\\aircraft\\quadrocopter.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "immersive_aircraft/aircraft/warship.json",
+      "pack_ids": [
+        "immersive_aircraft",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersive_aircraft": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge\\data\\immersive_aircraft\\aircraft\\warship.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersive_aircraft\\aircraft\\warship.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "immersiveenchanting/enchantment_costs/minecraft/mending.json",
+      "pack_ids": [
+        "immersiveenchanting",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\immersiveenchanting\\enchantment_costs\\minecraft\\mending.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersiveenchanting\\enchantment_costs\\minecraft\\mending.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "immersiveenchanting/loot_modifiers/abandoned_mineshaft_ancient_books.json",
+      "pack_ids": [
+        "immersiveenchanting",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\immersiveenchanting\\loot_modifiers\\abandoned_mineshaft_ancient_books.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersiveenchanting\\loot_modifiers\\abandoned_mineshaft_ancient_books.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "immersiveenchanting/loot_modifiers/simple_dungeon_ancient_books.json",
+      "pack_ids": [
+        "immersiveenchanting",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\immersiveenchanting\\loot_modifiers\\simple_dungeon_ancient_books.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersiveenchanting\\loot_modifiers\\simple_dungeon_ancient_books.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "immersiveenchanting/loot_modifiers/trial_chambers_reward_ancient_books.json",
+      "pack_ids": [
+        "immersiveenchanting",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\immersiveenchanting\\loot_modifiers\\trial_chambers_reward_ancient_books.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersiveenchanting\\loot_modifiers\\trial_chambers_reward_ancient_books.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "immersiveenchanting/worldgen/structure_set/ancient_library_desert.json",
+      "pack_ids": [
+        "immersiveenchanting",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\immersiveenchanting\\worldgen\\structure_set\\ancient_library_desert.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersiveenchanting\\worldgen\\structure_set\\ancient_library_desert.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "immersiveenchanting/worldgen/structure_set/ancient_library_end.json",
+      "pack_ids": [
+        "immersiveenchanting",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\immersiveenchanting\\worldgen\\structure_set\\ancient_library_end.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersiveenchanting\\worldgen\\structure_set\\ancient_library_end.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "immersiveenchanting/worldgen/structure_set/ancient_library_jungle.json",
+      "pack_ids": [
+        "immersiveenchanting",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\immersiveenchanting\\worldgen\\structure_set\\ancient_library_jungle.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\immersiveenchanting\\worldgen\\structure_set\\ancient_library_jungle.json"
       },
       "winner_pack_id": "rabid_balance",
       "resolution_mode": "last_mod"
@@ -3296,10 +3927,12 @@
       "resource_path": "minecraft/tags/item/bookshelf_books.json",
       "pack_ids": [
         "aether",
+        "immersiveenchanting",
         "toxony"
       ],
       "source_paths": {
         "aether": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\aether-1.5.10-neoforge\\data\\minecraft\\tags\\item\\bookshelf_books.json",
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\minecraft\\tags\\item\\bookshelf_books.json",
         "toxony": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\toxony-0.10.6\\data\\minecraft\\tags\\item\\bookshelf_books.json"
       },
       "winner_pack_id": "toxony",
@@ -3356,10 +3989,12 @@
       "resource_path": "minecraft/tags/item/dyeable.json",
       "pack_ids": [
         "aether",
+        "immersive_aircraft",
         "twilightforest"
       ],
       "source_paths": {
         "aether": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\aether-1.5.10-neoforge\\data\\minecraft\\tags\\item\\dyeable.json",
+        "immersive_aircraft": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersive_aircraft-1.4.3-neoforge\\data\\minecraft\\tags\\item\\dyeable.json",
         "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\minecraft\\tags\\item\\dyeable.json"
       },
       "winner_pack_id": "twilightforest",
@@ -3961,6 +4596,7 @@
       "pack_ids": [
         "aether",
         "allurement",
+        "immersiveenchanting",
         "sophisticatedbackpacks",
         "toxony",
         "twilightforest",
@@ -3969,6 +4605,7 @@
       "source_paths": {
         "aether": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\aether-1.5.10-neoforge\\data\\neoforge\\loot_modifiers\\global_loot_modifiers.json",
         "allurement": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\allurement-1.21.1-5.0.1.jar\\data\\neoforge\\loot_modifiers\\global_loot_modifiers.json",
+        "immersiveenchanting": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\immersiveenchanting-5.0.1\\data\\neoforge\\loot_modifiers\\global_loot_modifiers.json",
         "sophisticatedbackpacks": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\sophisticatedbackpacks-3.25.34.1581\\data\\neoforge\\loot_modifiers\\global_loot_modifiers.json",
         "toxony": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\toxony-0.10.6\\data\\neoforge\\loot_modifiers\\global_loot_modifiers.json",
         "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\neoforge\\loot_modifiers\\global_loot_modifiers.json",
@@ -3976,6 +4613,97 @@
       },
       "winner_pack_id": "rabid_balance",
       "merge_mode": "glm_registry"
+    },
+    {
+      "resource_path": "nvr/worldgen/structure_set/villager_outpost/desert.json",
+      "pack_ids": [
+        "nice_villagers_remastered_1",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "nice_villagers_remastered_1": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\nice-villagers-remastered-1.0\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\desert.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\desert.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "nvr/worldgen/structure_set/villager_outpost/jungle.json",
+      "pack_ids": [
+        "nice_villagers_remastered_1",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "nice_villagers_remastered_1": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\nice-villagers-remastered-1.0\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\jungle.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\jungle.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "nvr/worldgen/structure_set/villager_outpost/plains.json",
+      "pack_ids": [
+        "nice_villagers_remastered_1",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "nice_villagers_remastered_1": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\nice-villagers-remastered-1.0\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\plains.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\plains.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "nvr/worldgen/structure_set/villager_outpost/savanna.json",
+      "pack_ids": [
+        "nice_villagers_remastered_1",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "nice_villagers_remastered_1": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\nice-villagers-remastered-1.0\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\savanna.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\savanna.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "nvr/worldgen/structure_set/villager_outpost/snow.json",
+      "pack_ids": [
+        "nice_villagers_remastered_1",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "nice_villagers_remastered_1": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\nice-villagers-remastered-1.0\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\snow.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\snow.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "nvr/worldgen/structure_set/villager_outpost/swamp.json",
+      "pack_ids": [
+        "nice_villagers_remastered_1",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "nice_villagers_remastered_1": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\nice-villagers-remastered-1.0\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\swamp.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\swamp.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "nvr/worldgen/structure_set/villager_outpost/taiga.json",
+      "pack_ids": [
+        "nice_villagers_remastered_1",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "nice_villagers_remastered_1": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\nice-villagers-remastered-1.0\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\taiga.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\nvr\\worldgen\\structure_set\\villager_outpost\\taiga.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
     },
     {
       "resource_path": "randomium/tags/item/blacklist.json",
@@ -4005,6 +4733,19 @@
       "resolution_mode": "last_mod"
     },
     {
+      "resource_path": "smallships/advancement/recipes/combat/cannon.json",
+      "pack_ids": [
+        "smallships",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "smallships": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\smallships-neoforge-1.21.1-2.0.0-b2.1\\data\\smallships\\advancement\\recipes\\combat\\cannon.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\smallships\\advancement\\recipes\\combat\\cannon.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
       "resource_path": "sophisticatedbackpacks/loot_modifiers/chests/spawn_bonus_chest.json",
       "pack_ids": [
         "sophisticatedbackpacks",
@@ -4013,6 +4754,149 @@
       "source_paths": {
         "sophisticatedbackpacks": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\sophisticatedbackpacks-3.25.34.1581\\data\\sophisticatedbackpacks\\loot_modifiers\\chests\\spawn_bonus_chest.json",
         "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\sophisticatedbackpacks\\loot_modifiers\\chests\\spawn_bonus_chest.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "twilightforest/recipe/beef_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\beef_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\beef_jerky.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "twilightforest/recipe/chicken_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\chicken_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\chicken_jerky.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "twilightforest/recipe/cod_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\cod_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\cod_jerky.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "twilightforest/recipe/fugu_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\fugu_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\fugu_jerky.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "twilightforest/recipe/meef_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\meef_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\meef_jerky.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "twilightforest/recipe/mutton_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\mutton_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\mutton_jerky.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "twilightforest/recipe/pork_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\pork_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\pork_jerky.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "twilightforest/recipe/rabbit_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\rabbit_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\rabbit_jerky.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "twilightforest/recipe/salmon_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\salmon_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\salmon_jerky.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "twilightforest/recipe/tropical_fish_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\tropical_fish_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\tropical_fish_jerky.json"
+      },
+      "winner_pack_id": "rabid_balance",
+      "resolution_mode": "last_mod"
+    },
+    {
+      "resource_path": "twilightforest/recipe/venison_jerky.json",
+      "pack_ids": [
+        "twilightforest",
+        "rabid_balance"
+      ],
+      "source_paths": {
+        "twilightforest": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\twilightforest-4.8.3287-universal\\data\\twilightforest\\recipe\\venison_jerky.json",
+        "rabid_balance": "D:\\keep\\mods\\Minecraft\\my_tweaks\\sourcelibs\\rabid_balance\\data\\twilightforest\\recipe\\venison_jerky.json"
       },
       "winner_pack_id": "rabid_balance",
       "resolution_mode": "last_mod"

@@ -252,6 +252,7 @@ minecraft:spawners/trial_chamber/consumables#pool:0,minecraft:spawners/trial_cha
 minecraft:spawners/trial_chamber/items_to_drop_when_ominous#pool:0,minecraft:spawners/trial_chamber/items_to_drop_when_ominous,0,literal,1.0,1.0,1.0,literal,0.0,0.0,0.0,,false,,[]
 minecraft:spawners/trial_chamber/items_to_drop_when_ominous#pool:1,minecraft:spawners/trial_chamber/items_to_drop_when_ominous,1,literal,1.0,1.0,1.0,literal,0.0,0.0,0.0,,false,,[]
 minecraft:spawners/trial_chamber/key#pool:0,minecraft:spawners/trial_chamber/key,0,literal,1.0,1.0,1.0,literal,0.0,0.0,0.0,,false,,[]
+nvr:villager_outpost#pool:0,nvr:villager_outpost,0,,1.0,2.0,"{""max"":2,""min"":1}",,,,,,false,,[]
 ribbits:chests/fisherman_main#pool:0,ribbits:chests/fisherman_main,0,minecraft:uniform,2.0,4.0,"{""max"":4.0,""min"":2.0,""type"":""minecraft:uniform""}",literal,0.0,0.0,0.0,,false,,[]
 ribbits:chests/fisherman_main#pool:1,ribbits:chests/fisherman_main,1,literal,1.0,1.0,1.0,literal,0.0,0.0,0.0,,false,,[]
 ribbits:chests/fisherman_storage#pool:0,ribbits:chests/fisherman_storage,0,minecraft:uniform,1.0,4.0,"{""max"":4.0,""min"":1.0,""type"":""minecraft:uniform""}",literal,0.0,0.0,0.0,,false,,[]
