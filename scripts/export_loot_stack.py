@@ -345,6 +345,7 @@ class PrecheckFailed(RuntimeError):
 @dataclass(frozen=True)
 class ScopeSettings:
     allowed_loot_dirs: tuple[str, ...]
+    allowed_root_loot_tables: tuple[str, ...]
     deferred_loot_dirs: tuple[str, ...]
     source: str
 
@@ -569,7 +570,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--scope-config",
         type=Path,
         default=DEFAULT_SCOPE_CONFIG,
-        help="JSON scope config with allowed_loot_dirs and deferred_loot_dirs.",
+        help="JSON scope config with allowed_loot_dirs, allowed_root_loot_tables, and deferred_loot_dirs.",
     )
     parser.add_argument(
         "--pack-order-manifest",
@@ -1041,13 +1042,22 @@ def overlap_requires_pack_order_manifest(resource_path: str) -> bool:
 
 def get_loot_resource_metadata(resource_path: str) -> dict[str, str] | None:
     parts = split_resource_path(resource_path)
-    if len(parts) < 4 or parts[1] != "loot_table" or not resource_path.endswith(".json"):
+    if len(parts) < 3 or parts[1] != "loot_table" or not resource_path.endswith(".json"):
         return None
+    if len(parts) == 3:
+        return {
+            "namespace": parts[0],
+            "loot_dir": "",
+            "path": PurePosixPath(parts[2]).with_suffix("").as_posix(),
+            "source_file": parts[2],
+            "is_root_level": "true",
+        }
     return {
         "namespace": parts[0],
         "loot_dir": parts[2],
         "path": PurePosixPath(*parts[2:]).with_suffix("").as_posix(),
         "source_file": PurePosixPath(*parts[2:]).as_posix(),
+        "is_root_level": "false",
     }
 
 
@@ -1149,6 +1159,11 @@ def load_scope_settings(
         for item in ensure_list(raw_data.get("allowed_loot_dirs"), "allowed_loot_dirs")
         if isinstance(item, str) and item.strip()
     )
+    allowed_root_tables = tuple(
+        item.strip()
+        for item in ensure_list(raw_data.get("allowed_root_loot_tables", []), "allowed_root_loot_tables")
+        if isinstance(item, str) and item.strip()
+    )
     deferred = tuple(
         item.strip()
         for item in ensure_list(raw_data.get("deferred_loot_dirs"), "deferred_loot_dirs")
@@ -1161,6 +1176,7 @@ def load_scope_settings(
         raise ValueError("scope config must declare at least one allowed_loot_dir")
     return ScopeSettings(
         allowed_loot_dirs=allowed,
+        allowed_root_loot_tables=allowed_root_tables,
         deferred_loot_dirs=deferred,
         source=source,
     )
@@ -1652,6 +1668,7 @@ class LootStackExporter:
         base_pack = self.selected_packs_by_id["base"]
         base_dir_counts = self._count_loot_dirs_for_resource_paths(base_pack.resource_paths)
         stack_dir_counts = self._count_loot_dirs_for_resource_paths(self.resource_contributions.keys())
+        root_table_ids = self._collect_root_loot_table_ids(self.resource_contributions.keys())
 
         included = [
             {"name": name, "file_count": stack_dir_counts[name]}
@@ -1667,6 +1684,16 @@ class LootStackExporter:
             {"name": name, "file_count": stack_dir_counts[name]}
             for name in sorted(stack_dir_counts)
             if name not in self.scope_settings.allowed_loot_dirs and name not in self.scope_settings.deferred_loot_dirs
+        ]
+        included_root_tables = [
+            {"table_id": table_id}
+            for table_id in sorted(root_table_ids)
+            if table_id in self.scope_settings.allowed_root_loot_tables
+        ]
+        excluded_root_tables = [
+            {"table_id": table_id}
+            for table_id in sorted(root_table_ids)
+            if table_id not in self.scope_settings.allowed_root_loot_tables
         ]
 
         base_encountered = [{"name": name, "file_count": base_dir_counts[name]} for name in sorted(base_dir_counts)]
@@ -1712,26 +1739,38 @@ class LootStackExporter:
         return {
             "scope_config_source": self.scope_settings.source,
             "allowed_loot_dirs": list(self.scope_settings.allowed_loot_dirs),
+            "allowed_root_loot_tables": list(self.scope_settings.allowed_root_loot_tables),
             "deferred_loot_dirs": list(self.scope_settings.deferred_loot_dirs),
             "base_source_root": str((base_pack.root_path / "data").resolve()),
             "included_dirs": included,
+            "included_root_tables": included_root_tables,
             "excluded_dirs": excluded,
+            "excluded_root_tables": excluded_root_tables,
             "deferred_dirs": deferred,
             "base_encountered_loot_dirs": base_encountered,
             "stack_encountered_loot_dirs": stack_encountered,
-            "included_table_total": sum(item["file_count"] for item in included),
-            "excluded_table_total": sum(item["file_count"] for item in excluded),
+            "included_table_total": sum(item["file_count"] for item in included) + len(included_root_tables),
+            "excluded_table_total": sum(item["file_count"] for item in excluded) + len(excluded_root_tables),
             "deferred_table_total": sum(item["file_count"] for item in deferred),
             "new_excluded_loot_dirs_from_mods": new_excluded_dirs,
             "warnings": warnings,
         }
+
+    def _collect_root_loot_table_ids(self, resource_paths: Any) -> set[str]:
+        found: set[str] = set()
+        for resource_path in resource_paths:
+            metadata = get_loot_resource_metadata(resource_path)
+            if metadata is None or metadata["is_root_level"] != "true":
+                continue
+            found.add(f"{metadata['namespace']}:{metadata['path']}")
+        return found
 
     def _count_loot_dirs_for_resource_paths(self, resource_paths: Any) -> Counter[str]:
         counts: Counter[str] = Counter()
         seen: set[str] = set()
         for resource_path in resource_paths:
             metadata = get_loot_resource_metadata(resource_path)
-            if metadata is None or resource_path in seen:
+            if metadata is None or metadata["is_root_level"] == "true" or resource_path in seen:
                 continue
             seen.add(resource_path)
             counts[metadata["loot_dir"]] += 1
@@ -1743,14 +1782,18 @@ class LootStackExporter:
             if metadata is None:
                 continue
             category = metadata["loot_dir"]
-            if category not in self.scope_settings.allowed_loot_dirs:
+            table_id = f"{metadata['namespace']}:{metadata['path']}"
+            if metadata["is_root_level"] == "true":
+                if table_id not in self.scope_settings.allowed_root_loot_tables:
+                    continue
+                category = "root"
+            elif category not in self.scope_settings.allowed_loot_dirs:
                 continue
             effective = self.effective_resources[resource_path]
             raw_table = ensure_dict(
                 load_json_with_optional_comments(read_pack_text(effective.pack, resource_path), effective.display_source_path()),
                 f"loot table resource {resource_path}",
             )
-            table_id = f"{metadata['namespace']}:{metadata['path']}"
             table = self._register_table(
                 table_id=table_id,
                 table_id_kind="named",
@@ -4804,6 +4847,10 @@ class LootStackExporter:
             f"- `{item['name']}`: {item['file_count']} effective loot-table resources"
             for item in scope_report["deferred_dirs"]
         ]
+        included_root_table_lines = [
+            f"- `{item['table_id']}`"
+            for item in scope_report.get("included_root_tables", [])
+        ]
         warning_lines: list[str] = []
         for warning in scope_report["warnings"]:
             if warning.get("type") == "new_excluded_loot_dir_from_mod":
@@ -4878,7 +4925,7 @@ class LootStackExporter:
             "- `structures.csv`: one row per active structure_id with source metadata, active structure-set provenance, and structure detection status.",
             "- `structure_loot_links.csv`: one row per applied structure_id plus loot_table_id link after exact-match detection, ambiguous autoresolve, and manual no-match mapping.",
             "- `structure_loot_link_audit.csv`: audit trail for exact-match detections, ambiguous-match candidates, manual no-match mappings, and stale skipped rows.",
-            "- `scope_report.json`: allowed, excluded, and deferred top-level loot_table folder scope with warnings.",
+            "- `scope_report.json`: allowed, excluded, and deferred top-level loot_table folder scope plus explicitly allowed root loot tables.",
             "- `manifest.json`: export counts for tables, pools, entries, references, and leaf rows.",
             "",
             "## Join Keys",
@@ -4902,6 +4949,10 @@ class LootStackExporter:
             "",
             *(included_lines or ["- None"]),
             "",
+            "## Allowed Root Loot Tables",
+            "",
+            *(included_root_table_lines or ["- None"]),
+            "",
             "## Excluded Folders",
             "",
             *(excluded_lines or ["- None"]),
@@ -4917,6 +4968,7 @@ class LootStackExporter:
             "## Notes",
             "",
             "- The scope config is always authoritative for Stage 1 allowed and deferred top-level loot_table directories.",
+            "- Root-level loot tables such as `namespace/loot_table/name.json` are only included when their full table ID is listed in `allowed_root_loot_tables`.",
             "- Descendants of the configured ignore roots are skipped during auto-discovery and archive-root scans unless you include them explicitly with `--pack`.",
             "- `--last-mod-pack-id` pins one selected mod to the end of the mod order so it wins overlaps it participates in without requiring a full pack-order manifest. Overlaps among the remaining mods still require a manifest.",
             "- Top-level `loot_table/inject/...` is treated as deferred Stage 2 and is intentionally omitted from Stage 1 outputs.",

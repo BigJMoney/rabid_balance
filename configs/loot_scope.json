@@ -5,6 +5,9 @@
     "pots",
     "spawners"
   ],
+  "allowed_root_loot_tables": [
+    "nvr:villager_outpost"
+  ],
   "deferred_loot_dirs": [
     "inject"
   ]

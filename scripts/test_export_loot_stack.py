@@ -1237,6 +1237,59 @@ class ExportLootStackTests(unittest.TestCase):
             tables = read_csv_rows(output_dir / "tables.csv")
             self.assertTrue(any(row["table_id"] == "moda:chests/example" for row in tables))
 
+    def test_export_supports_explicit_root_level_loot_tables(self) -> None:
+        with tempfile.TemporaryDirectory() as tempdir:
+            mods_root = Path(tempdir) / "mods"
+            output_dir = Path(tempdir) / "out"
+            scope_path = Path(tempdir) / "scope.json"
+            scope_path.write_text(
+                json.dumps(
+                    {
+                        "allowed_loot_dirs": ["chests"],
+                        "allowed_root_loot_tables": ["moda:root_reward"],
+                        "deferred_loot_dirs": [],
+                    },
+                    indent=2,
+                ),
+                encoding="utf-8",
+            )
+            write_mod_pack(
+                mods_root / "mod_a",
+                "moda",
+                {
+                    "data/moda/loot_table/root_reward.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:diamond"}]}],
+                        }
+                    ),
+                    "data/moda/loot_table/unlisted_root.json": json.dumps(
+                        {
+                            "type": "minecraft:chest",
+                            "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:stick"}]}],
+                        }
+                    ),
+                },
+            )
+
+            export_with_temp_resolution_maps(
+                output_dir=output_dir,
+                mods_root=mods_root,
+                archive_roots=[],
+                explicit_packs=[],
+                scope_config_path=scope_path,
+            )
+
+            tables = read_csv_rows(output_dir / "tables.csv")
+            scope_report = json.loads((output_dir / "scope_report.json").read_text(encoding="utf-8"))
+            root_row = next(row for row in tables if row["table_id"] == "moda:root_reward")
+            self.assertEqual(root_row["path"], "root_reward")
+            self.assertEqual(root_row["category"], "root")
+            self.assertFalse(any(row["table_id"] == "moda:unlisted_root" for row in tables))
+            self.assertEqual(scope_report["allowed_root_loot_tables"], ["moda:root_reward"])
+            self.assertEqual(scope_report["included_root_tables"], [{"table_id": "moda:root_reward"}])
+            self.assertEqual(scope_report["excluded_root_tables"], [{"table_id": "moda:unlisted_root"}])
+
     def test_precheck_with_last_mod_pack_id_resolves_only_its_own_overlaps(self) -> None:
         with tempfile.TemporaryDirectory() as tempdir:
             mods_root = Path(tempdir) / "mods"

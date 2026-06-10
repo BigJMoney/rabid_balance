@@ -94,6 +94,60 @@ entries:
     match_mode: underscore_prefix
   autoresolve: false
   notes: ''
+- loot_table_id: minecraft:chests/ancient_city
+  structure_id: immersiveenchanting:ancient_library_desert
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: ancient
+    matched_value: ancient
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/ancient_city
+  structure_id: immersiveenchanting:ancient_library_end
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: ancient
+    matched_value: ancient
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/ancient_city
+  structure_id: immersiveenchanting:ancient_library_jungle
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: ancient
+    matched_value: ancient
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/ancient_city_ice_box
+  structure_id: immersiveenchanting:ancient_library_desert
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: ancient
+    matched_value: ancient
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/ancient_city_ice_box
+  structure_id: immersiveenchanting:ancient_library_end
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: ancient
+    matched_value: ancient
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/ancient_city_ice_box
+  structure_id: immersiveenchanting:ancient_library_jungle
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: ancient
+    matched_value: ancient
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
 - loot_table_id: minecraft:chests/buried_treasure
   structure_id: minecraft:buried_treasure
   match_rule: ambiguous_structure_id_match
@@ -112,6 +166,15 @@ entries:
     match_mode: first_segment
   autoresolve: true
   notes: ''
+- loot_table_id: minecraft:chests/desert_pyramid
+  structure_id: nvr:villager_outpost/desert
+  match_rule: ambiguous_structure_id_match
+  evidence_data:
+    structure_id_stem: desert
+    matched_value: desert
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
 - loot_table_id: minecraft:chests/end_city_treasure
   structure_id: minecraft:end_city
   match_rule: ambiguous_structure_root_match
@@ -129,6 +192,42 @@ entries:
     matched_value: igloo
     match_mode: underscore_prefix
   autoresolve: true
+  notes: ''
+- loot_table_id: minecraft:chests/jungle_temple
+  structure_id: minecraft:jungle_pyramid
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: jungle
+    matched_value: jungle
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/jungle_temple
+  structure_id: nvr:villager_outpost/jungle
+  match_rule: ambiguous_structure_id_match
+  evidence_data:
+    structure_id_stem: jungle
+    matched_value: jungle
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/jungle_temple_dispenser
+  structure_id: minecraft:jungle_pyramid
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: jungle
+    matched_value: jungle
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/jungle_temple_dispenser
+  structure_id: nvr:villager_outpost/jungle
+  match_rule: ambiguous_structure_id_match
+  evidence_data:
+    structure_id_stem: jungle
+    matched_value: jungle
+    match_mode: underscore_prefix
+  autoresolve: false
   notes: ''
 - loot_table_id: minecraft:chests/ruined_portal
   structure_id: minecraft:ruined_portal
