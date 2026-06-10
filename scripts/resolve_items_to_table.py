@@ -65,7 +65,13 @@ class AffinitySchema:
 class LootSchema:
     rules: list[RuleSchema]
     affinity_rules: list[AffinitySchema]
-    ignored_items: frozenset[str]
+    ignored_items: "IgnoredItems"
+
+
+@dataclass(frozen=True)
+class IgnoredItems:
+    exact_ids: frozenset[str]
+    namespaces: frozenset[str]
 
 
 @dataclass(frozen=True)
@@ -341,29 +347,36 @@ def parse_selector_list(raw_value: Any, where: str) -> list[str]:
     return selectors
 
 
-def parse_ignored_items(raw_value: Any, where: str) -> frozenset[str]:
+def parse_ignored_items(raw_value: Any, where: str) -> IgnoredItems:
     if raw_value is None:
-        return frozenset()
+        return IgnoredItems(exact_ids=frozenset(), namespaces=frozenset())
     if not isinstance(raw_value, list):
         raise ValueError(f"{where} must be a list")
 
     ignored_items: list[str] = []
+    ignored_namespaces: list[str] = []
     seen: set[str] = set()
 
     for i, raw_item_id in enumerate(raw_value):
         if not isinstance(raw_item_id, str):
-            raise ValueError(f"{where}[{i}] must be an explicit item id string")
+            raise ValueError(f"{where}[{i}] must be an explicit item id string or namespace wildcard")
 
         item_id = raw_item_id.strip()
-        if not item_id or not looks_like_explicit_item_id(item_id):
-            raise ValueError(f"{where}[{i}] must be an explicit item id string")
+        if not item_id or not (looks_like_explicit_item_id(item_id) or looks_like_namespace_wildcard(item_id)):
+            raise ValueError(f"{where}[{i}] must be an explicit item id string or namespace wildcard")
         if item_id in seen:
             raise ValueError(f"duplicate ignored item id: {item_id}")
 
         seen.add(item_id)
-        ignored_items.append(item_id)
+        if looks_like_namespace_wildcard(item_id):
+            ignored_namespaces.append(item_id[:-2])
+        else:
+            ignored_items.append(item_id)
 
-    return frozenset(ignored_items)
+    return IgnoredItems(
+        exact_ids=frozenset(ignored_items),
+        namespaces=frozenset(ignored_namespaces),
+    )
 
 
 def parse_assign_block(raw_value: Any, where: str) -> AssignBlock:
@@ -443,9 +456,10 @@ def resolve_item(
         item: ItemRecord,
         rules: list[CompiledRule],
         arules: list[AffinityRule],
-        ignored_items: frozenset[str],
+        ignored_items: IgnoredItems,
 ) -> ResolvedItem:
-    if item.item_id in ignored_items:
+    ignored_detail = match_exact_ignored_item(item, ignored_items)
+    if ignored_detail is not None:
         return ResolvedItem(
             item_id=item.item_id,
             value=IGNORED_VALUE,
@@ -457,11 +471,29 @@ def resolve_item(
             matched_rule_id=IGNORED_RULE_ID,
             amatched_rule_ids=[],
             matched_via="ignored",
-            matched_detail=item.item_id,
+            matched_detail=ignored_detail,
             amatched_details=[],
         )
 
     rule, match = find_first_matching_rule(item, rules)
+
+    if match.via == "fallback":
+        ignored_detail = match_namespace_ignored_item(item, ignored_items)
+        if ignored_detail is not None:
+            return ResolvedItem(
+                item_id=item.item_id,
+                value=IGNORED_VALUE,
+                value_detail="default",
+                function=IGNORED_FUNCTION,
+                amount_class=IGNORED_AMOUNT_CLASS,
+                amount_detail="default",
+                affinities=[],
+                matched_rule_id=IGNORED_RULE_ID,
+                amatched_rule_ids=[],
+                matched_via="ignored",
+                matched_detail=ignored_detail,
+                amatched_details=[],
+            )
 
     function = resolve_assign_function(rule.assign_function)
     value, _value_detail = resolve_assign_property(item, rule.assign_value)
@@ -491,6 +523,21 @@ def resolve_item(
         matched_detail=match.detail,
         amatched_details=amatched_details,
     )
+
+
+def match_exact_ignored_item(item: ItemRecord, ignored_items: IgnoredItems) -> str | None:
+    if item.item_id in ignored_items.exact_ids:
+        return item.item_id
+
+    return None
+
+
+def match_namespace_ignored_item(item: ItemRecord, ignored_items: IgnoredItems) -> str | None:
+    namespace, separator, _path = item.item_id.partition(":")
+    if separator and namespace in ignored_items.namespaces:
+        return f"{namespace}:*"
+
+    return None
 
 
 def find_first_matching_rule(
@@ -546,6 +593,11 @@ def match_selector(item: ItemRecord, selector: str) -> MatchResult:
             return MatchResult(True, "explicit", selector)
         return MatchResult()
 
+    if looks_like_item_id_pattern(selector):
+        if fnmatch(item.item_id, selector):
+            return MatchResult(True, "id_pattern", selector)
+        return MatchResult()
+
     if fnmatch(item.short_name, selector):
         return MatchResult(True, "name_pattern", selector)
 
@@ -561,6 +613,15 @@ def match_selector(item: ItemRecord, selector: str) -> MatchResult:
 
 def looks_like_explicit_item_id(selector: str) -> bool:
     return ":" in selector and not any(ch in selector for ch in "*?[]#")
+
+
+def looks_like_item_id_pattern(selector: str) -> bool:
+    return ":" in selector and not selector.startswith("#") and any(ch in selector for ch in "*?[]")
+
+
+def looks_like_namespace_wildcard(selector: str) -> bool:
+    namespace, separator, path = selector.partition(":")
+    return bool(namespace) and separator == ":" and path == "*" and not any(ch in namespace for ch in "*?[]#")
 
 
 # ---- Resolve Item Property Rules
