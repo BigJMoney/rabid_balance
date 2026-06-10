@@ -680,10 +680,15 @@ def build_classification_status(item: ResolvedItem) -> str:
     return "fallback" if item.matched_via == "fallback" else "matched"
 
 
+def filter_exported_results(results: list[ResolvedItem]) -> list[ResolvedItem]:
+    return [r for r in results if r.matched_rule_id != IGNORED_RULE_ID]
+
+
 def write_csv(results: list[ResolvedItem], path: Path | str, classification_version: str):
 
     full_path = resolve_path(path)
     full_path.parent.mkdir(parents=True, exist_ok=True)
+    exported_results = filter_exported_results(results)
 
     fieldnames = [
         "item_id",
@@ -703,7 +708,7 @@ def write_csv(results: list[ResolvedItem], path: Path | str, classification_vers
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
 
-        for r in results:
+        for r in exported_results:
             writer.writerow({
                 "item_id": r.item_id,
                 "function": r.function,
@@ -718,18 +723,19 @@ def write_csv(results: list[ResolvedItem], path: Path | str, classification_vers
                 "classification_version": classification_version,
             })
 
-    print(f"Wrote {len(results)} rows to {full_path}")
+    print(f"Wrote {len(exported_results)} rows to {full_path}")
 
 
 def write_json(results: list[ResolvedItem], path: Path | str, classification_version: str):
 
     full_path = resolve_path(path)
     full_path.parent.mkdir(parents=True, exist_ok=True)
+    exported_results = filter_exported_results(results)
 
     json_results = {}
     with open(full_path, "w", newline="", encoding="utf-8") as f:
 
-        for r in results:
+        for r in exported_results:
             json_item = {
                 "function": r.function,
                 "affinities": r.affinities,

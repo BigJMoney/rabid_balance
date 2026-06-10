@@ -196,18 +196,13 @@ class ResolveItemsToTableTests(unittest.TestCase):
             json_rows = json.loads(output_prefix.with_suffix(".json").read_text(encoding="utf-8"))
             report_text = output_prefix.with_name("resolved_loot_v10_report.txt").read_text(encoding="utf-8")
 
-            ignored_row = next(row for row in csv_rows if row["item_id"] == "moda:driftwood_scrap")
-            self.assertEqual(ignored_row["function"], "ignore")
-            self.assertEqual(ignored_row["matched_rule_id"], "ignored_items")
-            self.assertEqual(ignored_row["classification_status"], "matched")
-            self.assertEqual(ignored_row["is_fallback_match"], "false")
+            self.assertFalse(any(row["item_id"] == "moda:driftwood_scrap" for row in csv_rows))
 
             fallback_row = next(row for row in csv_rows if row["item_id"] == "moda:unknown")
             self.assertEqual(fallback_row["classification_status"], "fallback")
             self.assertEqual(fallback_row["is_fallback_match"], "true")
 
-            self.assertEqual(json_rows["moda:driftwood_scrap"]["function"], "ignore")
-            self.assertFalse(json_rows["moda:driftwood_scrap"]["is_fallback_match"])
+            self.assertNotIn("moda:driftwood_scrap", json_rows)
 
             self.assertIn("ignored count: 1", report_text)
             self.assertIn("fallback count: 1", report_text)
@@ -330,13 +325,7 @@ loot_classification_by_trait:
             self.assertEqual(tag_override_row["classification_status"], "matched")
             self.assertEqual(tag_override_row["affinities"], "['food']")
 
-            namespace_ignored_row = next(row for row in csv_rows if row["item_id"] == "moda:unmatched")
-            self.assertEqual(namespace_ignored_row["function"], "ignore")
-            self.assertEqual(namespace_ignored_row["matched_rule_id"], "ignored_items")
-            self.assertEqual(namespace_ignored_row["matched_detail"], "moda:*")
-            self.assertEqual(namespace_ignored_row["classification_status"], "matched")
-            self.assertEqual(namespace_ignored_row["is_fallback_match"], "false")
-            self.assertEqual(namespace_ignored_row["affinities"], "[]")
+            self.assertFalse(any(row["item_id"] == "moda:unmatched" for row in csv_rows))
 
             fallback_row = next(row for row in csv_rows if row["item_id"] == "modb:unknown")
             self.assertEqual(fallback_row["classification_status"], "fallback")
@@ -345,8 +334,7 @@ loot_classification_by_trait:
             self.assertEqual(json_rows["moda:rune"]["affinities"], ["treasure"])
             self.assertEqual(json_rows["moda:rune_alpha"]["matched_detail"], "moda:rune_*")
             self.assertEqual(json_rows["moda:unknown"]["function"], "consumable")
-            self.assertEqual(json_rows["moda:unmatched"]["matched_detail"], "moda:*")
-            self.assertEqual(json_rows["moda:unmatched"]["affinities"], [])
+            self.assertNotIn("moda:unmatched", json_rows)
 
             self.assertIn("ignored count: 1", report_text)
             self.assertIn("fallback count: 1", report_text)
