@@ -11,7 +11,7 @@
             },
             {
                 "function": "hordes:set_start_message",
-                "value": "A horde of creatures has arrived, drawn by your linking of your world with the ancient lands of Nether.",
+                "value": "A horde of monsters has arrived, drawn to the one who stepped from your world into the hellish lands of Nether for the first time.",
                 "conditions": []
             },
             {

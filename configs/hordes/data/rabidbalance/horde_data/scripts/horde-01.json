@@ -11,7 +11,7 @@
             },
             {
                 "function": "hordes:set_start_message",
-                "value": "A horde of creatures has arrived, drawn by your use of enchantments.",
+                "value": "A horde of monsters has arrived, drawn to the one who imbued an item with enchantments for the first time.",
                 "conditions": []
             },
             {
