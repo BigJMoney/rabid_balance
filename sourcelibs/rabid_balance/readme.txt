@@ -11,6 +11,9 @@ Todo: add copper and cast iron nuggets
 Hero of the Village gift improvements:
 - Toolsmith gives iron tools (diamond, if pickaxe)
 
+More mobs are considered miners by Enhanced AI:
+- All zombies and raiders (including from mods)
+- All kobolds from that mod
 
 ~ MOD ADJUSTMENTS ~
 

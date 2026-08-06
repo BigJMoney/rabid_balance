@@ -1,0 +1,51 @@
+{
+  "replace": true,
+  "values": [
+    {
+      "id": "#c:barrels",
+      "required": false
+    },
+    {
+      "id": "#c:chests",
+      "required": false
+    },
+    {
+      "id": "#c:fence_gates",
+      "required": false
+    },
+    {
+      "id": "#c:fences",
+      "required": false
+    },
+    {
+      "id": "#c:glass_blocks",
+      "required": false
+    },
+    {
+      "id": "#c:glass_panes",
+      "required": false
+    },
+    {
+      "id": "#c:pumpkins",
+      "required": false
+    },
+
+    "#minecraft:dirt",
+    "#minecraft:fence_gates",
+    "#minecraft:planks",
+    "#minecraft:wooden_doors",
+
+    "minecraft:calcite",
+    "minecraft:coarse_dirt",
+    "minecraft:cobblestone",
+    "minecraft:grass_block",
+    "minecraft:gravel",
+    "minecraft:hay_block",
+    "minecraft:ice",
+    "minecraft:moss_block",
+    "minecraft:mycelium",
+    "minecraft:red_sand",
+    "minecraft:sand",
+    "minecraft:snow_block"
+  ]
+}
