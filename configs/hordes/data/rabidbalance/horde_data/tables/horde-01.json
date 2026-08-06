@@ -1,0 +1,42 @@
+[
+	{
+		"entity": "minecraft:skeleton",
+		"weight": 30
+	},
+	{
+		"entity": "minecraft:zombie",
+		"weight": 10,
+		"nbt": "{HandItems:[{id:stone_pickaxe,Count:1}]}"
+	},
+	{
+		"entity": "minecraft:zombie",
+		"weight": 10,
+		"nbt": "{HandItems:[{id:stone_axe,Count:1}]}"
+	},
+	{
+		"entity": "minecraft:zombie",
+		"weight": 10,
+		"nbt": "{HandItems:[{id:stone_shovel,Count:1}]}"
+	},
+	{
+		"entity": "minecraft:spider",
+		"weight": 15
+	},
+	{
+		"entity": "minecraft:creeper",
+		"weight": 10,
+		"min_spawns": 1
+	},
+	{
+		"entity": "minecraft:witch",
+		"weight": 5,
+		"min_spawns": 1,
+		"max_spawns": 1
+	},
+	{
+		"entity": "minecraft:phantom",
+		"weight": 5,
+		"min_spawns": 2,
+		"max_spawns": 3
+	}
+]

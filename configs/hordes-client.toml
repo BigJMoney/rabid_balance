@@ -1,8 +1,8 @@
 ["Horde Event"]
 	#How do players get notified of a horde event. 0: Off, 1: Chat, 2:Action Bar, 3:Title
-	eventNotifyMode = 2
+	eventNotifyMode = 3
 	#How long in ticks does the horde notification appear? (Only applies to modes 2 and 3)
-	eventNotifyDuration = 60
+	eventNotifyDuration = 100
 	#Play a sound when a horde wave spawns.
 	hordeSpawnSound = true
 	#Colour of horde notification messages in the rgb format.
@@ -34,4 +34,4 @@
 	#Colour tint for husk players.
 	huskPlayerColour = [222, 215, 172]
 	#Render zombie players with capes if the player that got infected has one equipped?
-	zombiePlayerCapes = true
+	zombiePlayerCapes = false

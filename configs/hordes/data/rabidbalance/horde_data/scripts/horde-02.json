@@ -1,0 +1,50 @@
+[
+    {
+        "function": "hordes:multiple",
+        "value": [
+            {
+                "function": "hordes:set_spawntable",
+                "value": [
+                    "rabidbalance:horde-02"
+                ],
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_start_message",
+                "value": "A horde of creatures has arrived, drawn by your linking of your world with the ancient lands of Nether.",
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_start_message",
+                "value": "The horde begins to peter out...",
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_spawn_duration",
+                "value": 18001,
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_spawn_interval",
+                "value": 1200,
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_spawn_amount",
+                "value": 20,
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_entity_speed",
+                "value": 1.2,
+                "conditions": []
+            }
+        ],
+        "conditions": [
+            {
+                "name": "hordes:advancement",
+                "value": "minecraft:nether/root"
+            }
+        ]
+    }
+]

@@ -1,0 +1,9 @@
+{
+  "lastVersionSeen": "",
+  "telemetry": true,
+  "frequencyPercentage": 10.0,
+  "sounds": [
+    "minecraft:entity.wolf_sad.ambient"
+  ],
+  "infrequent": []
+}
