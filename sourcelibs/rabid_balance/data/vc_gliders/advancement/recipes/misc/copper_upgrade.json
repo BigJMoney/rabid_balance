@@ -1,0 +1,65 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_paraglider_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vc_gliders:paraglider_iron"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_paraglider_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vc_gliders:paraglider_netherite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_paraglider_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vc_gliders:paraglider_gold"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_paraglider_diamond": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vc_gliders:paraglider_diamond"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vc_gliders:copper_upgrade"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_paraglider_iron",
+      "has_paraglider_gold",
+      "has_paraglider_diamond",
+      "has_paraglider_netherite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vc_gliders:copper_upgrade"
+    ]
+  }
+}
