@@ -1,0 +1,98 @@
+{
+	"replace": false,
+	"values": [
+		"#minecraft:zombies",
+		"#minecraft:raiders",
+		"minecraft:piglin_brute",
+		"minecraft:piglin",
+		{
+			"id": "kobolds:kobold",
+			"required": false
+		},
+		{
+			"id": "kobolds:kobold_engineer",
+			"required": false
+		}
+	],
+	"remove": [
+    	"minecraft:drowned",
+    	"minecraft:zombie_horse",
+    	"minecraft:zoglin",
+    	"minecraft:evoker",
+	    "minecraft:pillager",
+	    "minecraft:ravager",
+	    "minecraft:illusioner",
+	    "minecraft:witch",
+	    {
+			"id": "hominid:bellman",
+			"required": false
+		},
+	    {
+			"id": "hominid:famished",
+			"required": false
+		},
+	    {
+			"id": "hominid:incendiary",
+			"required": false
+		},
+	    {
+			"id": "hominid:juggernaut",
+			"required": false
+		},
+	    {
+			"id": "hominid:mellified",
+			"required": false
+		},
+	    {
+			"id": "hominid:vampire",
+			"required": false
+		},
+
+    	{
+			"id": "twilightforest:lich_minion",
+			"required": false
+		},
+
+		{
+			"id": "variantsandventures:gelid",
+			"required": false
+		},
+		{
+			"id": "variantsandventures:thicket",
+			"required": false
+		},
+
+	    {
+			"id": "illagerinvasion:basher",
+			"required": false
+		},
+		{
+			"id": "illagerinvasion:provoker",
+			"required": false
+		},
+		{
+			"id": "illagerinvasion:necromancer",
+			"required": false
+		},
+		{
+			"id": "illagerinvasion:sorcerer",
+			"required": false
+		},
+		{
+			"id": "illagerinvasion:archivist",
+			"required": false
+		},
+		{
+			"id": "illagerinvasion:inquisitor",
+			"required": false
+		},
+		{
+			"id": "illagerinvasion:alchemist",
+			"required": false
+		},
+		{
+			"id": "illagerinvasion:invoker",
+			"required": false
+		}
+	]
+}

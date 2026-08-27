@@ -1,0 +1,28 @@
+{
+    "values": [
+        "#minecraft:zombies",
+        "#minecraft:illager",
+        "#minecraft:raiders",
+        {
+            "id": "#kobolds:kobolds",
+            "required": false
+        }
+    ],
+    "remove": [
+        "minecraft:drowned",
+        "minecraft:zoglin",
+        "minecraft:zombie_horse",
+        {
+            "id": "variantsandventures:gelid",
+            "required": false
+        },
+        {
+            "id": "variantsandventures:thicket",
+            "required": false
+        },
+        {
+            "id": "hominid:bellman",
+            "required": false
+        }
+    ]
+}

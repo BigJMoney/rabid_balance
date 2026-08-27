@@ -1,1 +1,11 @@
-/rabid_balance.zip
+/libs/
+/sourcelibs/ignore/
+/docs/loot_docs/_tmp_debug/
+/scripts/__pycache__/
+/%TEMP%/
+
+*~Tableau*
+*.hyper
+*.twb
+
+sourcelibs/rabid_balance/rabid_balance.zip

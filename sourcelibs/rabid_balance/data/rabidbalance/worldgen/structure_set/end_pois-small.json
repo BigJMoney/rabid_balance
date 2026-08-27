@@ -1,0 +1,15 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 60,
+    "separation": 30,
+    "spread_type": "linear",
+    "salt": 3300
+  },
+  "structures": [
+    {
+      "structure": "immersiveenchanting:ancient_library_end",
+      "weight": 10
+    }
+  ]
+}

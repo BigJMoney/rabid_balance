@@ -1,0 +1,215 @@
+{
+  "exact_match_table_count": 60,
+  "exact_match_row_count": 79,
+  "ambiguous_match_candidate_table_count": 47,
+  "ambiguous_match_candidate_row_count": 107,
+  "ambiguous_match_autoresolved_table_count": 18,
+  "ambiguous_match_autoresolved_row_count": 27,
+  "ambiguous_match_pending_table_count": 30,
+  "ambiguous_match_pending_row_count": 80,
+  "no_match_table_count": 53,
+  "no_match_mapped_table_count": 3,
+  "no_match_mapped_row_count": 5,
+  "no_match_unresolved_table_count": 48,
+  "no_match_unresolved_row_count": 48,
+  "stale_ambiguous_rows": [
+    {
+      "loot_table_id": "toxony:chests/hunter_watchtower/hunter_watchtower_common",
+      "structure_id": "toxony:hunter_watchtower",
+      "match_rule": "ambiguous_structure_id_match",
+      "evidence_data": {
+        "structure_id_stem": "hunter_watchtower",
+        "matched_value": "hunter_watchtower",
+        "match_mode": "first_segment"
+      },
+      "autoresolve": true,
+      "notes": ""
+    },
+    {
+      "loot_table_id": "toxony:chests/lost_silver_mine/lost_silver_mine_common",
+      "structure_id": "toxony:lost_silver_mine",
+      "match_rule": "ambiguous_structure_id_match",
+      "evidence_data": {
+        "structure_id_stem": "lost_silver_mine",
+        "matched_value": "lost_silver_mine",
+        "match_mode": "first_segment"
+      },
+      "autoresolve": true,
+      "notes": ""
+    },
+    {
+      "loot_table_id": "toxony:chests/old_adventure_guild/candle_room_loot",
+      "structure_id": "toxony:old_adventure_guild",
+      "match_rule": "ambiguous_structure_id_match",
+      "evidence_data": {
+        "structure_id_stem": "old_adventure_guild",
+        "matched_value": "old_adventure_guild",
+        "match_mode": "first_segment"
+      },
+      "autoresolve": true,
+      "notes": ""
+    },
+    {
+      "loot_table_id": "toxony:chests/old_adventure_guild/old_adventure_guild_common",
+      "structure_id": "toxony:old_adventure_guild",
+      "match_rule": "ambiguous_structure_id_match",
+      "evidence_data": {
+        "structure_id_stem": "old_adventure_guild",
+        "matched_value": "old_adventure_guild",
+        "match_mode": "first_segment"
+      },
+      "autoresolve": true,
+      "notes": ""
+    },
+    {
+      "loot_table_id": "toxony:chests/old_adventure_guild/old_adventure_guild_kitchen",
+      "structure_id": "toxony:old_adventure_guild",
+      "match_rule": "ambiguous_structure_id_match",
+      "evidence_data": {
+        "structure_id_stem": "old_adventure_guild",
+        "matched_value": "old_adventure_guild",
+        "match_mode": "first_segment"
+      },
+      "autoresolve": true,
+      "notes": ""
+    },
+    {
+      "loot_table_id": "toxony:chests/old_adventure_guild/old_adventure_guild_rare",
+      "structure_id": "toxony:old_adventure_guild",
+      "match_rule": "ambiguous_structure_id_match",
+      "evidence_data": {
+        "structure_id_stem": "old_adventure_guild",
+        "matched_value": "old_adventure_guild",
+        "match_mode": "first_segment"
+      },
+      "autoresolve": true,
+      "notes": ""
+    },
+    {
+      "loot_table_id": "toxony:chests/old_experiment_house/attic_chest",
+      "structure_id": "toxony:old_experiment_house",
+      "match_rule": "ambiguous_structure_id_match",
+      "evidence_data": {
+        "structure_id_stem": "old_experiment_house",
+        "matched_value": "old_experiment_house",
+        "match_mode": "first_segment"
+      },
+      "autoresolve": true,
+      "notes": ""
+    },
+    {
+      "loot_table_id": "toxony:chests/old_experiment_house/old_experiment_house",
+      "structure_id": "toxony:old_experiment_house",
+      "match_rule": "ambiguous_structure_id_match",
+      "evidence_data": {
+        "structure_id_stem": "old_experiment_house",
+        "matched_value": "old_experiment_house",
+        "match_mode": "first_segment"
+      },
+      "autoresolve": true,
+      "notes": ""
+    }
+  ],
+  "stale_manual_rows": [
+    {
+      "loot_table_id": "minecraft:chests/jungle_temple",
+      "status": "mapped",
+      "structure_id": "minecraft:jungle_pyramid",
+      "notes": ""
+    },
+    {
+      "loot_table_id": "minecraft:chests/jungle_temple_dispenser",
+      "status": "mapped",
+      "structure_id": "minecraft:jungle_pyramid",
+      "notes": ""
+    }
+  ],
+  "skipped_active_stale_rows": [
+    {
+      "resolution_source": "ambiguous_match",
+      "loot_table_id": "toxony:chests/hunter_watchtower/hunter_watchtower_common",
+      "structure_id": "toxony:hunter_watchtower",
+      "warning": "stale ambiguous autoresolve skipped for toxony:chests/hunter_watchtower/hunter_watchtower_common -> toxony:hunter_watchtower"
+    },
+    {
+      "resolution_source": "ambiguous_match",
+      "loot_table_id": "toxony:chests/lost_silver_mine/lost_silver_mine_common",
+      "structure_id": "toxony:lost_silver_mine",
+      "warning": "stale ambiguous autoresolve skipped for toxony:chests/lost_silver_mine/lost_silver_mine_common -> toxony:lost_silver_mine"
+    },
+    {
+      "resolution_source": "ambiguous_match",
+      "loot_table_id": "toxony:chests/old_adventure_guild/candle_room_loot",
+      "structure_id": "toxony:old_adventure_guild",
+      "warning": "stale ambiguous autoresolve skipped for toxony:chests/old_adventure_guild/candle_room_loot -> toxony:old_adventure_guild"
+    },
+    {
+      "resolution_source": "ambiguous_match",
+      "loot_table_id": "toxony:chests/old_adventure_guild/old_adventure_guild_common",
+      "structure_id": "toxony:old_adventure_guild",
+      "warning": "stale ambiguous autoresolve skipped for toxony:chests/old_adventure_guild/old_adventure_guild_common -> toxony:old_adventure_guild"
+    },
+    {
+      "resolution_source": "ambiguous_match",
+      "loot_table_id": "toxony:chests/old_adventure_guild/old_adventure_guild_kitchen",
+      "structure_id": "toxony:old_adventure_guild",
+      "warning": "stale ambiguous autoresolve skipped for toxony:chests/old_adventure_guild/old_adventure_guild_kitchen -> toxony:old_adventure_guild"
+    },
+    {
+      "resolution_source": "ambiguous_match",
+      "loot_table_id": "toxony:chests/old_adventure_guild/old_adventure_guild_rare",
+      "structure_id": "toxony:old_adventure_guild",
+      "warning": "stale ambiguous autoresolve skipped for toxony:chests/old_adventure_guild/old_adventure_guild_rare -> toxony:old_adventure_guild"
+    },
+    {
+      "resolution_source": "ambiguous_match",
+      "loot_table_id": "toxony:chests/old_experiment_house/attic_chest",
+      "structure_id": "toxony:old_experiment_house",
+      "warning": "stale ambiguous autoresolve skipped for toxony:chests/old_experiment_house/attic_chest -> toxony:old_experiment_house"
+    },
+    {
+      "resolution_source": "ambiguous_match",
+      "loot_table_id": "toxony:chests/old_experiment_house/old_experiment_house",
+      "structure_id": "toxony:old_experiment_house",
+      "warning": "stale ambiguous autoresolve skipped for toxony:chests/old_experiment_house/old_experiment_house -> toxony:old_experiment_house"
+    },
+    {
+      "resolution_source": "manual_no_match",
+      "loot_table_id": "minecraft:chests/jungle_temple",
+      "structure_id": "minecraft:jungle_pyramid",
+      "warning": "stale manual no-match mapping skipped for minecraft:chests/jungle_temple -> minecraft:jungle_pyramid"
+    },
+    {
+      "resolution_source": "manual_no_match",
+      "loot_table_id": "minecraft:chests/jungle_temple_dispenser",
+      "structure_id": "minecraft:jungle_pyramid",
+      "warning": "stale manual no-match mapping skipped for minecraft:chests/jungle_temple_dispenser -> minecraft:jungle_pyramid"
+    },
+    {
+      "resolution_source": "manual_no_match",
+      "loot_table_id": "bosses_of_mass_destruction:chests/gauntlet",
+      "structure_id": "bosses_of_mass_destruction:gauntlet",
+      "warning": "manual no-match mapping target missing from current active structures for bosses_of_mass_destruction:chests/gauntlet -> bosses_of_mass_destruction:gauntlet"
+    },
+    {
+      "resolution_source": "manual_no_match",
+      "loot_table_id": "bosses_of_mass_destruction:chests/obsidilith",
+      "structure_id": "bosses_of_mass_destruction:obsidilith",
+      "warning": "manual no-match mapping target missing from current active structures for bosses_of_mass_destruction:chests/obsidilith -> bosses_of_mass_destruction:obsidilith"
+    }
+  ],
+  "warnings": [
+    "stale ambiguous autoresolve skipped for toxony:chests/hunter_watchtower/hunter_watchtower_common -> toxony:hunter_watchtower",
+    "stale ambiguous autoresolve skipped for toxony:chests/lost_silver_mine/lost_silver_mine_common -> toxony:lost_silver_mine",
+    "stale ambiguous autoresolve skipped for toxony:chests/old_adventure_guild/candle_room_loot -> toxony:old_adventure_guild",
+    "stale ambiguous autoresolve skipped for toxony:chests/old_adventure_guild/old_adventure_guild_common -> toxony:old_adventure_guild",
+    "stale ambiguous autoresolve skipped for toxony:chests/old_adventure_guild/old_adventure_guild_kitchen -> toxony:old_adventure_guild",
+    "stale ambiguous autoresolve skipped for toxony:chests/old_adventure_guild/old_adventure_guild_rare -> toxony:old_adventure_guild",
+    "stale ambiguous autoresolve skipped for toxony:chests/old_experiment_house/attic_chest -> toxony:old_experiment_house",
+    "stale ambiguous autoresolve skipped for toxony:chests/old_experiment_house/old_experiment_house -> toxony:old_experiment_house",
+    "stale manual no-match mapping skipped for minecraft:chests/jungle_temple -> minecraft:jungle_pyramid",
+    "stale manual no-match mapping skipped for minecraft:chests/jungle_temple_dispenser -> minecraft:jungle_pyramid",
+    "manual no-match mapping target missing from current active structures for bosses_of_mass_destruction:chests/gauntlet -> bosses_of_mass_destruction:gauntlet",
+    "manual no-match mapping target missing from current active structures for bosses_of_mass_destruction:chests/obsidilith -> bosses_of_mass_destruction:obsidilith"
+  ]
+}

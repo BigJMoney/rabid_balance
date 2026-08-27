@@ -1,0 +1,27 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 120,
+    "separation": 30,
+    "spread_type": "triangular",
+    "exclusion_zone": {
+      "chunk_count": 10,
+      "other_set": "rabidbalance:ow_adventure"
+    },
+    "salt": 1120
+  },
+  "structures": [
+    {
+      "structure": "bosses_of_mass_destruction:lich_tower",
+      "weight": 10
+    },
+    {
+      "structure": "illagerinvasion:illager_fort",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:mansion",
+      "weight": 10
+    }
+  ]
+}

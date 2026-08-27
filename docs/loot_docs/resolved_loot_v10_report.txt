@@ -1,0 +1,80 @@
+classification version: 10
+total items: 4030
+ignored count: 1225
+fallback count: 0
+
+functions:
+  ignore: 1225
+  block_building: 742
+  nonloot: 414
+  item_material: 331
+  block_misc_use: 253
+  block_material: 236
+  consumable: 193
+  wearable: 153
+  misc_tool: 129
+  block_technical: 107
+  gather_tool: 106
+  weapon: 45
+  garden: 40
+  block_storage: 35
+  block_crafting: 21
+
+affinities:
+  sea: 368
+  household: 236
+  village: 173
+  food: 169
+  masonry: 133
+  wooden: 118
+  nether: 101
+  underground: 97
+  treasure: 91
+  fortification: 87
+  woolworking: 84
+  fishing: 65
+  smithing: 58
+  desert: 44
+  swamp: 42
+  deep_under: 41
+  jungle: 40
+  end: 36
+  leatherworking: 34
+  archaeology: 25
+  clerical: 23
+  plains: 20
+  butchery: 20
+  forest: 20
+  farming: 18
+  fletching: 13
+  library: 7
+  arctic: 5
+  cartography: 1
+  ruins: 1
+ Total Affinities: 2170
+
+values:
+  none: 1647
+  uncommon: 966
+  filler: 526
+  rare: 377
+  common: 263
+  epic: 110
+  junk: 84
+  legendary: 45
+  unique: 12
+
+amount_classes:
+  singleton: 2292
+  large: 843
+  small: 811
+  bulk: 32
+  tiny: 26
+  medium: 26
+
+dead rules:
+  fallback
+
+dead affinities:
+
+fallback items:

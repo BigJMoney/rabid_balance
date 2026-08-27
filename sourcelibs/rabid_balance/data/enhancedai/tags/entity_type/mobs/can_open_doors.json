@@ -1,0 +1,20 @@
+{
+    "values": [
+        "#minecraft:illager",
+        "#minecraft:raiders",
+        "minecraft:piglin",
+        "minecraft:piglin_brute",
+        {
+            "id": "#kobolds:kobolds",
+            "required": false
+        },
+        {
+            "id": "hominid:vampire",
+            "required": false
+        },
+        {
+            "id": "hominid:bellman",
+            "required": false
+        }
+    ]
+}

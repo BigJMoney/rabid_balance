@@ -1,0 +1,23 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 20,
+    "separation": 10,
+    "spread_type": "linear",
+    "exclusion_zone": {
+      "chunk_count": 10,
+      "other_set": "rabidbalance:ow_adventure_ug"
+    },
+    "salt": 1201
+  },
+  "structures": [
+    {
+      "structure": "kobolds:kobold_den",
+      "weight": 10
+    },
+    {
+      "structure": "kobolds:kobold_den_pirate",
+      "weight": 10
+    }
+  ]
+}

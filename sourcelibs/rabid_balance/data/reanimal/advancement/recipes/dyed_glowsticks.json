@@ -1,0 +1,68 @@
+{
+  "neoforge:conditions": [
+      {
+          "type": "neoforge:mod_loaded",
+          "modid": "reanimal"
+      }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "reanimal:glow_stick_light_blue"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "reanimal:glow_stick_dye_light_blue",
+        "recipe": "reanimal:glow_stick_dye_white",
+        "recipe": "reanimal:glow_stick_dye_orange",
+        "recipe": "reanimal:glow_stick_dye_magenta",
+        "recipe": "reanimal:glow_stick_dye_yellow",
+        "recipe": "reanimal:glow_stick_dye_lime",
+        "recipe": "reanimal:glow_stick_dye_pink",
+        "recipe": "reanimal:glow_stick_dye_gray",
+        "recipe": "reanimal:glow_stick_dye_light_gray",
+        "recipe": "reanimal:glow_stick_dye_cyan",
+        "recipe": "reanimal:glow_stick_dye_purple",
+        "recipe": "reanimal:glow_stick_dye_blue",
+        "recipe": "reanimal:glow_stick_dye_brown",
+        "recipe": "reanimal:glow_stick_dye_green",
+        "recipe": "reanimal:glow_stick_dye_red",
+        "recipe": "reanimal:glow_stick_dye_black"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_item"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "reanimal:glow_stick_dye_light_blue",
+      "reanimal:glow_stick_dye_white",
+      "reanimal:glow_stick_dye_orange",
+      "reanimal:glow_stick_dye_magenta",
+      "reanimal:glow_stick_dye_yellow",
+      "reanimal:glow_stick_dye_lime",
+      "reanimal:glow_stick_dye_pink",
+      "reanimal:glow_stick_dye_gray",
+      "reanimal:glow_stick_dye_light_gray",
+      "reanimal:glow_stick_dye_cyan",
+      "reanimal:glow_stick_dye_purple",
+      "reanimal:glow_stick_dye_blue",
+      "reanimal:glow_stick_dye_brown",
+      "reanimal:glow_stick_dye_green",
+      "reanimal:glow_stick_dye_red",
+      "reanimal:glow_stick_dye_black"
+    ]
+  }
+}

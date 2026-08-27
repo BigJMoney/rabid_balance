@@ -1,0 +1,1 @@
+This folder contains configs for my scripts, as well as Minecraft mod configs. Mod configs will be occasionally dumped here from my game.

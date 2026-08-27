@@ -1,0 +1,48 @@
+[
+    {
+        "function": "hordes:multiple",
+        "value": [
+            {
+                "function": "hordes:set_spawntable",
+                "value": [
+                    "rabidbalance:horde-00"
+                ],
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_start_message",
+                "value": "This is a BABY horde because you have no enchantments yet",
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_spawn_duration",
+                "value": 601,
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_spawn_interval",
+                "value": 200,
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_spawn_amount",
+                "value": 3,
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_entity_speed",
+                "value": 1.0,
+                "conditions": []
+            }
+        ],
+        "conditions": [
+            {
+                "name": "hordes:not",
+                "value": {
+                    "name": "hordes:advancement",
+                    "value": "minecraft:story/enchant_item"
+                }
+            }
+        ]
+    }
+]

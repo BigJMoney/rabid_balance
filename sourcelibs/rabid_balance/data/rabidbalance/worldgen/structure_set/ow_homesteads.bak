@@ -1,0 +1,223 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 40,
+    "separation": 10,
+    "spread_type": "linear",
+      "exclusion_zone": {
+      "chunk_count": 10,
+      "other_set": "rabidbalance:ow_pois-large"
+    },
+    "salt": 1200
+  },
+  "structures": [
+    {
+      "structure": "explorify:dark_forest_settlement",
+      "weight": 10
+    },
+    {
+      "structure": "explorify:farmstead",
+      "weight": 10
+    },
+    {
+      "structure": "explorify:tavern",
+      "weight": 10
+    },
+    {
+      "structure": "friendsandfoes:beekeeper_hut",
+      "weight": 10
+    },
+    {
+      "structure": "friendsandfoes:iceologer_cabin",
+      "weight": 10
+    },
+    {
+      "structure": "friendsandfoes:illusioner_shack",
+      "weight": 10
+    },
+    {
+      "structure": "friendsandfoes:illusioner_training_grounds",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:village_desert",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:village_plains",
+      "weight": 15
+    },
+    {
+      "structure": "minecraft:village_savanna",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:village_snowy",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:village_taiga",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:tavern_acacia",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:tavern_birch",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:tavern_cherry",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:tavern_dark_oak",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:tavern_desert",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:tavern_jungle",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:tavern_mangrove",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:tavern_oak",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:tavern_snowy",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:tavern_spruce",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:tavern_swamp",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:village_birch",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:village_jungle",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:village_swamp",
+      "weight": 10
+    },
+    {
+      "structure": "nvr:villager_outpost/desert",
+      "weight": 10
+    },
+    {
+      "structure": "nvr:villager_outpost/jungle",
+      "weight": 10
+    },
+    {
+      "structure": "nvr:villager_outpost/plains",
+      "weight": 10
+    },
+    {
+      "structure": "nvr:villager_outpost/savanna",
+      "weight": 10
+    },
+    {
+      "structure": "nvr:villager_outpost/snow",
+      "weight": 10
+    },
+    {
+      "structure": "nvr:villager_outpost/swamp",
+      "weight": 10
+    },
+    {
+      "structure": "nvr:villager_outpost/taiga",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:village_badlands",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:village_bamboo",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:village_birch",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:village_cherry",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:village_dark_forest",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:village_giant_taiga",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:village_jungle",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:village_mountains",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:village_mushroom",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:village_oak",
+      "weight": 10
+    },
+    {
+      "structure": "repurposed_structures:village_swamp",
+      "weight": 10
+    },
+    {
+      "structure": "ribbits:ribbit_village",
+      "weight": 10
+    },
+    {
+      "structure": "taxbt:structure_trader_desert",
+      "weight": 10
+    },
+    {
+      "structure": "taxbt:structure_trader_illager",
+      "weight": 10
+    },
+    {
+      "structure": "taxbt:structure_trader_jungle",
+      "weight": 10
+    },
+    {
+      "structure": "taxbt:structure_trader_mushroom",
+      "weight": 10
+    },
+    {
+      "structure": "taxbt:structure_trader_ocean",
+      "weight": 10
+    },
+    {
+      "structure": "taxbt:structure_trader_plains",
+      "weight": 5
+    },
+    {
+      "structure": "mowziesmobs:monastery",
+      "weight": 10
+    }
+  ]
+}

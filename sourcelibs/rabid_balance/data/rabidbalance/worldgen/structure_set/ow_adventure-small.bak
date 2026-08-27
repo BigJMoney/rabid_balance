@@ -1,0 +1,13 @@
+# All of these items were moved to ow_adventure
+
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 32,
+    "separation": 8,
+    "spread_type": "linear",
+    "salt": 1110
+  },
+  "structures": [
+  ]
+}

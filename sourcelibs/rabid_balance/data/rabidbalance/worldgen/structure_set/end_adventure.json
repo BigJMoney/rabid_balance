@@ -1,0 +1,19 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 75,
+    "separation": 25,
+    "spread_type": "triangular",
+    "salt": 3100
+  },
+  "structures": [
+    {
+      "structure": "bosses_of_mass_destruction:obsidilith_arena",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:end_city",
+      "weight": 10
+    }
+  ]
+}

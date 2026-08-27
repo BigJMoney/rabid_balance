@@ -1,0 +1,27 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 32,
+    "separation": 16,
+    "spread_type": "linear",
+    "salt": 1101
+  },
+  "structures": [
+    {
+      "structure": "minecraft:ancient_city",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:trial_chambers",
+      "weight": 10
+    },
+    {
+      "structure": "toxony:large_silver_mine",
+      "weight": 10
+    },
+    {
+      "structure": "toxony:lost_silver_mine",
+      "weight": 10
+    }
+  ]
+}

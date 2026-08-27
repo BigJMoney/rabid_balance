@@ -1,0 +1,56 @@
+{
+	"values": [
+		"#minecraft:zombies",
+        "#minecraft:skeletons"
+	],
+	"remove": [
+	    "minecraft:drowned",
+	    "minecraft:skeleton_horse",
+	    "minecraft:zoglin",
+	    "minecraft:zombie_horse",
+	    "minecraft:zombie_villager",
+    	"minecraft:zombified_piglin",
+    	{
+			"id": "twilightforest:lich_minion",
+			"required": false
+		},
+		{
+			"id": "twilightforest:loyal_zombie",
+			"required": false
+		},
+		{
+			"id": "twilightforest:rising_zombie",
+			"required": false
+		},
+		{
+			"id": "twilightforest:knight_phantom",
+			"required": false
+		},
+		{
+			"id": "twilightforest:lich",
+			"required": false
+		},
+
+		{
+			"id": "variantsandventures:gelid",
+			"required": false
+		},
+		{
+			"id": "variantsandventures:thicket",
+			"required": false
+		},
+		{
+			"id": "variantsandventures:murk",
+			"required": false
+		},
+		{
+			"id": "variantsandventures:verdant",
+			"required": false
+		},
+		
+	    {
+			"id": "hominid:bellman",
+			"required": false
+		}
+	]
+}

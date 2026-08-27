@@ -1,0 +1,45 @@
+# Structure root overrides:
+# Structures default to owning a template root equal to their own structure_id path stem.
+# Add entries here only for exceptions or extra roots.
+version: 1
+entries:
+  - structure_id: minecraft:mansion
+    template_roots:
+      - woodland_mansion
+    notes: "Vanilla mansion templates live under woodland_mansion."
+  - structure_id: minecraft:ocean_ruin_cold
+    template_roots:
+      - underwater_ruin
+    notes: "Cold ocean ruins share the underwater_ruin template root."
+  - structure_id: minecraft:ocean_ruin_warm
+    template_roots:
+      - underwater_ruin
+    notes: "Warm ocean ruins share the underwater_ruin template root."
+  - structure_id: minecraft:ruined_portal_desert
+    template_roots:
+      - ruined_portal
+    notes: "Ruined portal variants share the ruined_portal template root."
+  - structure_id: minecraft:ruined_portal_jungle
+    template_roots:
+      - ruined_portal
+    notes: "Ruined portal variants share the ruined_portal template root."
+  - structure_id: minecraft:ruined_portal_swamp
+    template_roots:
+      - ruined_portal
+    notes: "Ruined portal variants share the ruined_portal template root."
+  - structure_id: minecraft:ruined_portal_mountain
+    template_roots:
+      - ruined_portal
+    notes: "Ruined portal variants share the ruined_portal template root."
+  - structure_id: minecraft:ruined_portal_ocean
+    template_roots:
+      - ruined_portal
+    notes: "Ruined portal variants share the ruined_portal template root."
+  - structure_id: minecraft:ruined_portal_nether
+    template_roots:
+      - ruined_portal
+    notes: "Ruined portal variants share the ruined_portal template root."
+  - structure_id: minecraft:shipwreck_beached
+    template_roots:
+      - shipwreck
+    notes: "Beached shipwrecks share the shipwreck template root."

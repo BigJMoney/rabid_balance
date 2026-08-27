@@ -1,0 +1,31 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 120,
+    "separation": 60,
+    "spread_type": "linear",
+    "salt": 1130
+  },
+  "structures": [
+    {
+      "structure": "minecraft:monument",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:ocean_ruin_cold",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:ocean_ruin_warm",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:ruined_portal_ocean",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:shipwreck",
+      "weight": 10
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+[
+    {
+        "function": "hordes:multiple",
+        "value": [
+            {
+                "function": "hordes:set_spawntable",
+                "value": [
+                    "rabidbalance:horde-02"
+                ],
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_start_message",
+                "value": "A horde of monsters has arrived, drawn to the one who stepped from your world into the hellish lands of Nether for the first time.",
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_end_message",
+                "value": "The horde begins to peter out...",
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_spawn_duration",
+                "value": 18001,
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_spawn_interval",
+                "value": 1200,
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_spawn_amount",
+                "value": 20,
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_entity_speed",
+                "value": 1.2,
+                "conditions": []
+            }
+        ],
+        "conditions": [
+            {
+                "name": "hordes:advancement",
+                "value": "minecraft:nether/root"
+            }
+        ]
+    }
+]

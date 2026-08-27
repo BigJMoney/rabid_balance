@@ -1,0 +1,33 @@
+{
+  "type": "immersiveenchanting:ancient_book_loot_modifier",
+  "mode": "random_enchantment_from_list",
+  "enchantments": [
+    "minecraft:bane_of_arthropods",
+    "minecraft:blast_protection",
+    "minecraft:knockback",
+    "minecraft:looting",
+    "minecraft:projectile_protection",
+    "minecraft:protection",
+    "minecraft:sharpness",
+    "minecraft:smite",
+    "minecraft:sweeping_edge",
+    "minecraft:thorns",
+    "minecraft:mending"
+  ],
+  "min_rolls": 1,
+  "max_rolls": 1,
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {"condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/simple_dungeon"},
+            {"condition": "minecraft:random_chance", "chance": 0.25}
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+[
+    {
+        "function": "hordes:multiple",
+        "value": [
+            {
+                "function": "hordes:set_spawntable",
+                "value": [
+                    "rabidbalance:horde-01"
+                ],
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_start_message",
+                "value": "A horde of monsters has arrived, drawn to the one who imbued an item with enchantments for the first time.",
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_end_message",
+                "value": "The horde begins to peter out...",
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_spawn_duration",
+                "value": 12001,
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_spawn_interval",
+                "value": 600,
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_spawn_amount",
+                "value": 8,
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_entity_speed",
+                "value": 1.1,
+                "conditions": []
+            }
+        ],
+        "conditions": [
+            {
+                "name": "hordes:advancement",
+                "value": "minecraft:story/enchant_item"
+            },
+            {
+                "name": "hordes:not",
+                "value": {
+                    "name": "hordes:advancement",
+                    "value": "minecraft:nether/root"
+                }
+            }
+        ]
+    }
+]

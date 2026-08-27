@@ -1,0 +1,37 @@
+WeaponValues
+
+Wood Sword			DPS: 6.4
+Gold Sword			DPS: 6.4
+Stone Sword			DPS: 8.0
+Iron Sword			DPS: 9.6	(6/swing)
+Diamond Sword		DPS: 11.2   (7/swing)
+Netherite Sword		DPS: 12.8   (8/swing)
+
+Wood Axe			DPS: 5.6    (7/swing)
+Gold Axe			DPS: 7		(7/swing)
+Stone Axe			DPS: 7.1    (9/swing)
+Iron Axe			DPS: 8.1    (9/swing)
+Diamond Axe			DPS: 9		(9/swing)
+Netherite Axe		DPS: 10		(10/swing)
+
+Pickaxes: 2, 2, 3, 4, 5, 6
+Shovel: 2, 2, 3, 4, 5, 6 (+ 0.5)
+Hoe: 1, 1, 2, 3, 4, 4 (Speed)
+
+Iron Longsword		DPS: 9.6 (6/swing)
+Iron Chakram
+Iron Claymore
+Iron Cutlass
+Iron Glaive
+Iron Greataxe
+Iron Greathammer
+Iron Halberd
+Iron Katana
+Iron Melting
+Iron Rapier
+Iron Said
+Iron Sai
+Iron Scythe
+Iron Spear
+Iron Twinblade
+Iron Warglaive

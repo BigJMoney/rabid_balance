@@ -1,0 +1,51 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 32,
+    "separation": 16,
+    "spread_type": "linear",
+    "salt": 1101
+  },
+  "structures": [
+    {
+      "structure": "betterdungeons:skeleton_dungeon",
+      "weight": 10
+    },
+    {
+      "structure": "betterdungeons:small_dungeon",
+      "weight": 10
+    },
+    {
+      "structure": "betterdungeons:spider_dungeon",
+      "weight": 10
+    },
+    {
+      "structure": "betterdungeons:zombie_dungeon",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:ancient_city",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:trial_chambers",
+      "weight": 10
+    },
+    {
+      "structure": "nova_structures:underground_house",
+      "weight": 10
+    },
+    {
+      "structure": "seadwellers:axolotl_seadwellers",
+      "weight": 10
+    },
+    {
+      "structure": "toxony:large_silver_mine",
+      "weight": 10
+    },
+    {
+      "structure": "toxony:lost_silver_mine",
+      "weight": 10
+    }
+  ]
+}
