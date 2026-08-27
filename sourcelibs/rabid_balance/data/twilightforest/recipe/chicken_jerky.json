@@ -1,11 +1,23 @@
 {
   "type": "twilightforest:drying",
   "filter_time": 6000,
-  "input": {
-    "tag": "c:foods/raw_meat"
-  },
+  "input": [
+    { "tag": "c:foods/raw_meat" },
+    { "tag": "c:foods/raw_meats" },
+    { "tag": "c:foods/raw_fish" },
+    { "tag": "c:foods/raw_pike" },
+    { "tag": "c:foods/raw_perch" },
+    { "tag": "c:foods/raw_lionfish" },
+    { "tag": "c:foods/raw_fishes" },
+    { "tag": "c:raw_meat" },
+    { "tag": "c:raw_fish" },
+    { "tag": "alexscaves:raw_meats" }
+  ],
   "result": {
     "count": 1,
-    "id": "twilightforest:chicken_jerky"
+    "id": "twilightforest:chicken_jerky",
+    "components": {
+      "minecraft:custom_name": "{\"text\":\"Jerky\",\"italic\":false}"
+    }
   }
 }
