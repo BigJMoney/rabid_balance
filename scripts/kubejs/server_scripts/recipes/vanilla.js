@@ -14,7 +14,7 @@ const WOODS = [
   'birch',
   'jungle',
   'acacia',
-  'pale_oak'
+  'pale_oak'  // Does this fail when Vanilla Backport is disabled?
 ];
 
 // NOTE: Disabled for now to test if backport mods fix this
@@ -68,8 +68,6 @@ function boatRecipes(recipeEvent) {
 
 }
 
-
-// TODO: ? Update the Twilight boat recipes? (IDK anything about Twilight, yet)
 
 // Skipping the Honey Lead (again to test backport mods)
 

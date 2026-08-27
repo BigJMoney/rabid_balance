@@ -8,8 +8,7 @@
 //  Campfires are now made by hand
 function removeCampfire(recipeEvent) {
   recipeEvent.remove({ output: 'minecraft:campfire' });
-  // TODO: Remove the soul campfire recipes when this mod's bug is fixed
-  //   (Currently cannot manually build soul campfires)
+  recipeEvent.remove({ output: 'minecraft:soul_campfire' });
 }
 
 // Conditionally register mod recipe event callbacks
