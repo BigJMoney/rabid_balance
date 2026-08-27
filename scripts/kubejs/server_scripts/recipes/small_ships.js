@@ -84,7 +84,7 @@ function cogRecipes(recipeEvent) {
         D: `${wood}_planks`,
         E: IA_HULL,
       }
-    ).id(`smallships:${wood}_cog`);
+    ).group('ss_cog').id(`smallships:${wood}_cog`);
   })
 
 }
@@ -108,7 +108,7 @@ function galleyRecipes(recipeEvent) {
         D: `${wood}_planks`,
         E: IA_HULL,
       }
-    ).id(`smallships:${wood}_galley`);
+    ).group('ss_galley').id(`smallships:${wood}_galley`);
   })
 
 }
@@ -132,7 +132,7 @@ function drakkarRecipes(recipeEvent) {
         D: `${wood}_planks`,
         E: IA_HULL,
       }
-    ).id(`smallships:${wood}_drakkar`);
+    ).group('ss_drakkar').id(`smallships:${wood}_drakkar`);
   })
 
 }
@@ -156,7 +156,7 @@ function briggRecipes(recipeEvent) {
         D: `${wood}_planks`,
         E: IA_HULL,
       }
-    ).id(`smallships:${wood}_brigg`);
+    ).group('ss_brigg').id(`smallships:${wood}_brigg`);
   })
 
 }
