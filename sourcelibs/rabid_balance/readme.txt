@@ -5,15 +5,13 @@ Rabid Balance v.0.1.1
 
 Leather joinery items are used in place of some leather pieces when making leather armor (also requires my Crafttweaker script):
 - Bone, iron nugget or string
-
-Todo: add copper and cast iron nuggets
+  Todo: add copper and cast iron nuggets
 
 Hero of the Village gift improvements:
 - Toolsmith gives iron tools (diamond, if pickaxe)
 
-More mobs are considered miners by Enhanced AI:
-- All zombies and raiders (including from mods)
-- All kobolds from that mod
+Spyglass is crafted with glass instead of Amethyst
+(Future me will probably add some kind of a mod to make an advanced spyglass to show stats or something)
 
 ~ MOD ADJUSTMENTS ~
 
@@ -24,6 +22,19 @@ Apotheosis loot affix entries added for:
 - Armor, weapons and tools for Tax's mods
 - Armor, weapons and tools rebalanced for Twilight Forest (much more rare)
 
+Aquatic Frontiers sponge squid has a very low chance of dropping sponges (but still can)
+
+Enhaced AI: More mobs are considered miners
+- All zombies and raiders (including from mods)
+- All kobolds from that mod
+
+Immersive Aircraft:
+- Rebalanced aircraft values, especially around fuel consumption
+
+Immersive Enchanting now includes the mending ancient book
+
+Rotten Creatures miner zombies now have the can_be_miner tag used by Enhanced AI
+
 Supplementaries flax item additions/changes:
 - Added to desert house loot
 - Bale decor added to desert and savanna village template_pool's
@@ -33,16 +44,7 @@ Supplementaries waysign and adventure map changes:
 - Added more village types to waysign destinations
 - Removed villages from adventure maps
 
-Immersive Aircraft:
-- Rebalanced aircraft values, especially around fuel consumption
-
-Rotten Creatures miner zombies now have the can_be_miner tag used by Enhanced AI
-
-Aquatic Frontiers sponge squid has a very low chance of dropping sponges (but still can)
-
 Twilight Forest jerkies now work with all items tagged with raw meat and make chicken jerky (all other jerkies are OP)
-
-Immersive Enchanting now includes the mending ancient book
 
 ~ ADVANCEMENT RECIPES ~
 
