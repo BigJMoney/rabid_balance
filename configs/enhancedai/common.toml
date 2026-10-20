@@ -17,10 +17,10 @@
 "Enable Witches" = true
 
 [Ghast]
-	#Various changes to ghast shooting. Only ghast in enhancedai:ghast/change_shooting entity type tag are affected by this feature.
+	#Various changes to ghast shooting. Only ghast in enhancedai:ghast/change_shoot entity type tag are affected by this feature.
 	"Enable Ghast shooting" = true
 
-	#Various changes to ghast shooting. Only ghast in enhancedai:ghast/change_shooting entity type tag are affected by this feature.
+	#Various changes to ghast shooting. Only ghast in enhancedai:ghast/change_shoot entity type tag are affected by this feature.
 	[Ghast."Ghast shooting"]
 		#Chance for a Ghast to try and shoot the target even if can't see it. If enabled and the Ghast can't see the target, he will shoot 4 times as fast to breach.
 		# Default: 0.3
@@ -149,7 +149,7 @@
 
 [Witches]
 	#Witches drink more potions.
-	"Enable Thirsty witches" = false
+	"Enable Thirsty witches" = true
 	#Witches summon Villagers and cast a lightning upon them. Only entity types in the `enhancedai:witch/can_perform_dark_arts` tag will be affected (can be used for any mob, not only witches).
 	"Enable Dark art" = true
 	#Witches throw potions farther, faster and more potion types. Also no longer chase player if they can't see him. Use the enhancedai:witch/better_potion_throwing entity type tag to add more witches that are affected by this feature.
@@ -164,7 +164,7 @@
 		#When witches are this many blocks away from the player will be able to drink the potions in 'Drinkable potions if targeting player'
 		# Default: 6.0
 		# Range: 0.0 ~ 1.7976931348623157E308
-		"Custom drink distance safe" = 6.0
+		"Custom drink distance safe" = 16.0
 		#Chance for a witch to drink a healing potion when not full health. Defaults to Vanilla
 		# Default: 0.05
 		# Range: 0.0 ~ 1.0
@@ -180,15 +180,15 @@
 		#Chance each tick for a witch to drink a water breathing potion when in water and air meter is at half. Vanilla is 15% and doesn't check the air meter.
 		# Default: 1.0
 		# Range: 0.0 ~ 1.0
-		"Water breathing chance" = 0.5
+		"Water breathing chance" = 1.0
 		#Chance each tick for a witch to drink a fire resistance potion when on fire. Vanilla is 15%.
 		# Default: 1.0
 		# Range: 0.0 ~ 1.0
-		"Fire resistance chance" = 0.5
+		"Fire resistance chance" = 1.0
 		#Chance each tick for a witch to drink milk when they have a negative effect.
 		# Default: 0.1
 		# Range: 0.0 ~ 1.0
-		"Milk chance" = 0.1
+		"Milk chance" = 0.0
 		"Play sound when drinking" = true
 
 	#Witches summon Villagers and cast a lightning upon them. Only entity types in the `enhancedai:witch/can_perform_dark_arts` tag will be affected (can be used for any mob, not only witches).
@@ -196,11 +196,11 @@
 		#Chance for a witch to get the Dark Art AI (as soon as they have a target and are less than 10 blocks away from the target will summon a Villager and cast a lightning bolt on them
 		# Default: 0.333
 		# Range: 0.0 ~ 1.0
-		Chance = 0.333
+		Chance = 0.1
 		#At which distance from the witch will she start performing the Dark Art
 		# Default: 10
 		# Range: > 0
-		"Trigger distance" = 10
+		"Trigger distance" = 12
 		#At which distance from the villager will the witch will cancel the summoning
 		# Default: 16
 		# Range: > 0
@@ -210,20 +210,20 @@
 	#Witches throw potions farther, faster and more potion types. Also no longer chase player if they can't see him. Use the enhancedai:witch/better_potion_throwing entity type tag to add more witches that are affected by this feature.
 	[Witches."Witch potion throwing"]
 		#A list of potions that the witch can throw at enemies. Format is effect_id,duration,amplifier. The potions are thrown in order and witches will not throw a potion if the target has already the effect.
-		"Bad Potions List" = ["minecraft:weakness", "minecraft:slowness", "minecraft:hunger,600,0", "minecraft:mining_fatigue,600,0", "minecraft:poison", "minecraft:blindness,120,0", "minecraft:harming"]
+		"Bad Potions List" = ["minecraft:weakness", "minecraft:slowness", "minecraft:poison", "minecraft:blindness,120,0", "minecraft:harming", "minecraft:hunger,600,0"]
 		#A list of potions that the witch can throw at allies (in raids). Format is effect_id,duration,amplifier. The potions are thrown in order and witches will not throw a potion if the target has already the effect. Witches will throw harming potions instead of healing if the target is undead.
-		"Good Potions List" = ["minecraft:regeneration", "minecraft:swiftness", "minecraft:strength", "minecraft:invisibility", "minecraft:healing"]
+		"Good Potions List" = ["minecraft:swiftness", "minecraft:strength", "minecraft:regeneration", "minecraft:invisibility", "minecraft:healing"]
 		#Chance for the potions thrown by the Witch to be lingering.
 		# Default: 0.15
 		# Range: 0.0 ~ 1.0
-		"Lingering chance" = 0.1
+		"Lingering chance" = 0.15
 		# Default: 1.0
 		# Range: 0.0 ~ 1.7976931348623157E308
 		Inaccuracy = 1.0
 		#Chance for a Witch to be an apprentice. Apprentice Witches throw random potions instead of in order, and have a chance to throw a wrong (good) potion.
 		# Default: 0.5
 		# Range: 0.0 ~ 1.0
-		"Apprentice chance" = 0.5
+		"Apprentice chance" = 0.0
 		#If true, witches will throw a potion of slow falling at their feet when they're falling for more than 8 blocks.
 		"Use slow falling" = true
 		#When below this health percentage Witches will throw Invisibility potions at their feet.
@@ -235,7 +235,7 @@
 		[Witches."Witch potion throwing"."Attack cooldown"]
 			# Default: 70.0
 			# Range: 1.0 ~ 1.7976931348623157E308
-			Minimum = 90.0
+			Minimum = 60.0
 			# Default: 90.0
 			# Range: 1.0 ~ 1.7976931348623157E308
 			Maximum = 90.0
@@ -244,10 +244,10 @@
 		[Witches."Witch potion throwing"."Attack range"]
 			# Default: 16.0
 			# Range: 8.0 ~ 64.0
-			Minimum = 16.0
+			Minimum = 20.0
 			# Default: 24.0
 			# Range: 8.0 ~ 64.0
-			Maximum = 16.0
+			Maximum = 20.0
 
 [Skeletons]
 	#Wither skeletons can shoot Wither arrows.
@@ -339,7 +339,7 @@
 	#Creepers will no longer ignite when falling. Only entity types in the enhancedai:creeper/disable_falling_swelling tag will be affected by this feature.
 	"Enable Disable falling swelling" = false
 	#Creepers can ignite and throw themselves at players. Only entity types in the enhancedai:creeper/can_launch tag will be affected by this feature.
-	"Enable Creeper launch" = false
+	"Enable Creeper launch" = true
 	#Various changes to Creepers exploding. Ignoring Walls, Walking Fuse and smarter exploding based off explosion size. Only creepers in the enhancedai:creeper/change_swell entity type tag are affected by this feature.
 	"Enable Creeper swell" = true
 	#Creepers will ignite when they take explosion damage. Only entity types in the enhancedai:creeper/tnt_like tag will be affected by this feature.
@@ -377,8 +377,8 @@
 		# Range: 0.0 ~ 1.0
 		"Ignore walls chance" = 0.0
 		#Makes creepers blow up on death like when they were added back in 0.30
-		#Allowed Values: NONE, CHARGED, ALL
-		"Blow up on death" = "CHARGED"
+		#Allowed Values: NO, CHARGED_ONLY, YES
+		"Blow up on death" = "CHARGED_ONLY"
 		#If Insane's Survival Overhaul is installed and Explosion Overhaul feature is enabled, Angry creeper will deal more knockback and break more blocks, breaching creepers will break more blocks
 		"Insane survival overhaul integration" = false
 
@@ -400,7 +400,7 @@
 			#How far away (horizontally) from the target breaching creepers can breach.
 			# Default: 24
 			# Range: > 0
-			"Horizontal range" = 8
+			"Horizontal range" = 24
 
 		[Creepers."Creeper swell"."Beta strafe"]
 			#Creepers with beta strafing will walk around the target, like the in pre-1.2. This takes precedence over walking fuse.
@@ -435,7 +435,7 @@
 	[Creepers."Tnt like creepers"]
 		# Default: 0.25
 		# Range: 0.0 ~ 1.0
-		Chance = 0.50
+		Chance = 0.5
 
 [Illagers]
 	#Use the enhancedai:illager/better_shooting entity type tag to add more skeletons that are affected by this feature
@@ -612,10 +612,10 @@
 		"Flee range if seen" = 32
 
 [Blazes]
-	#Make blazes fire faster/more fireballs. Only mobs in enhancedai:blaze/change_attack entity type tag are affected by this feature.
+	#Make blazes fire faster/more fireballs. Only mobs in enhancedai:blaze_attack/change_attack entity type tag are affected by this feature.
 	"Enable Blaze attack" = true
 
-	#Make blazes fire faster/more fireballs. Only mobs in enhancedai:blaze/change_attack entity type tag are affected by this feature.
+	#Make blazes fire faster/more fireballs. Only mobs in enhancedai:blaze_attack/change_attack entity type tag are affected by this feature.
 	[Blazes."Blaze attack"]
 
 		#How many ticks pass between shooting fireballs. Vanilla is 6
@@ -749,11 +749,9 @@
 	"Enable Leaders" = true
 	#Changes mobs attacks to use the attack speed attribute. Only entities in the `enhancedai:mobs/melee_attacking` entity type tag will be affected.
 	"Enable Melee attacking" = false
-	#Makes mobs panic when on fire.
-	"Enable Panic" = false
 	#Makes mobs ride other mobs. Mobs in the `enhancedai:mobs/riding/can_be_mounted` tag will be able to be mounted, while mobs in the `enhancedai:mobs/riding/can_mount` tag will be able to mount other mobs.
 	"Enable Riding" = false
-	#Let mobs use ender pearls as long as they have them in the off hand and when far enough from the target. Only mobs in the enhancedai:mobs/can_equip_pearl entity type tag will try to be equipped ender pearls.
+	#Let mobs use ender pearls as long as they have them in the either hands and when far enough from the target. Only mobs in the enhancedai:mobs/can_equip_pearl entity type tag will try to be equipped ender pearls.
 	"Enable Pearler mobs" = false
 	#Makes mobs be able to leap over a few blocks. Only entity types in the `enhancedai:mobs/can_parkour` tag can leap.
 	"Enable Parkour" = false
@@ -765,7 +763,7 @@
 	#Makes mobs be able to jump in place when their target is a few blocks above them. Only entity types in the `enhancedai:mobs/can_jump_in_place` tag can jump
 	"Enable Jump" = false
 	#Change how mobs target players. Check the config options below for entity type tags.
-	"Enable Targeting" = false
+	"Enable Targeting" = true
 	#Make mobs flee from the target. Use the enhancedai:mobs/can_flee entity type tag to add/remove entities that are affected by this feature. Mobs like animals have they're own feature for fleeing the target due to having different conditions.
 	"Enable Flee target" = false
 	#Makes mobs be able to climb ladders and similar blocks. Only entity types in `enhancedai:mobs/can_climb` tag are affected by this feature.
@@ -779,19 +777,19 @@
 	"Enable Open doors" = false
 	#Makes mobs pick up and throw other mobs. Mobs in the `enhancedai:mobs/pick_up_and_throw/can_be_picked_up` tag will be able to be picked up, while mobs in the `enhancedai:mobs/pick_up_and_throw/can_pick_up` tag will be able to pick up other mobs.
 	"Enable Pick up and throw" = false
-	#Mobs can mine blocks to reach the target. Uses offhand item to mine. Only mobs in the entity type tag enhancedai:mobs/can_mine can spawn with the ability to mine and blocks in the tag enhancedai:miner_blacklist cannot be mined. This feature also adds the block reach attribute to all entities.
+	#Mobs can mine blocks to reach the target. Uses off-hand item to mine by default, can be changed with Data Keys. Only mobs in the entity type tag enhancedai:mobs/can_mine can spawn with the ability to mine and blocks in the tag enhancedai:miner_blacklist cannot be mined. This feature also adds the block reach attribute to all entities.
 	"Enable Miner mobs" = true
 	#Only entity types in the enhancedai:mobs/air_stealer tag are affected by this feature.
 	"Enable Air steal" = false
 	#Prevent players from abusing water or 2 high gaps to bully endermen.
-	"Enable Teleport anti-cheese" = false
+	"Enable Teleport anti-cheese" = true
 	#Make mobs angry when a block is broken. Check the mod's config folder Mobs/Break anger/break_anger_config.json to change blocks and entities triggered.
 	"Enable Break anger" = false
 	#Allows mobs to break vehicles to escape.
-	"Enable Anti-Cheese" = false
+	"Enable Anti-Cheese" = true
 	#Enables a Mobs Properties Randomness data pack that adds even more buffs to mobs. Only gets enabled if MPR is installed
 	"Enable MPR data pack" = false
-	#Makes mobs be able to move in more ways, like climbing or swim. Only entity types in `enhancedai:mobs/can_sprint` tag are affected by this feature.
+	#Makes mobs be able to sprint when near their target. Only entity types in `enhancedai:mobs/can_sprint` tag are affected by this feature.
 	"Enable Sprint" = false
 	#Mobs will jump off the ground to emit a shockwave when falling damaging nearby entities. Only entity types in enhancedai:mobs/shockwave/can_use tag are affected by this feature and entity types in the enhancedai:mobs/shockwave/damage_invulnerable tag will not be damaged by the shockwave.
 	"Enable Falling shockwave" = false
@@ -803,11 +801,19 @@
 	"Enable Custom targeting" = false
 	#Makes mobs throw a web at a player, slowing them. Only entity types in the `enhancedai:mobs/throwing_web/can_throw_webs` tag will be affected. Entity types in `enhancedai:mobs/throwing_web/poisonous_webs` will throw poisonous webs and apply poison the same way as when a cave spider attacks an entity.
 	"Enable Web thrower" = true
+	#Makes mobs panic when on fire.
+	"Enable Panic on fire" = true
+	#Increases the distance of the leap based off the current delta movement.
+	"Enable Better leap at target goal" = true
+	#Mobs with this feature enabled will move back to the position they spawned in if getting too far away from it.
+	"Enable Patrol" = true
 
 	[Mobs.Pathfinding]
 		#If true, mobs will try to pathfind to the standing position of the player, not the current position. Fixes mobs unable to pathfind to players that have no blocks below them (e.g. when crouching over an edge)
 		"Pathfind to standing position" = true
 		"Fix walking over open trapdoors" = true
+		#If true, mobs can freely pathfind over rails even when not already walking on one (by default only mobs already standing on a rail can walk over other rails)
+		"Mobs can walk on rails" = true
 
 	#Only entity types in `enhancedai:mobs/random_stroll` tag are affected by this feature.
 	[Mobs."Random stroll"]
@@ -906,13 +912,6 @@
 				# Range: 0.0 ~ 4.0
 				Hard = 0.25
 
-	#Makes mobs panic when on fire.
-	[Mobs.Panic]
-		#Chance for a mob to get the panic on fire AI
-		# Default: 0.8
-		# Range: 0.0 ~ 1.0
-		Chance = 0.8
-
 	#Makes mobs ride other mobs. Mobs in the `enhancedai:mobs/riding/can_be_mounted` tag will be able to be mounted, while mobs in the `enhancedai:mobs/riding/can_mount` tag will be able to mount other mobs.
 	[Mobs.Riding]
 		#If true, riding mobs will dismount if take too much suffocation damage.
@@ -930,7 +929,7 @@
 			# Range: 0.0 ~ 1.0
 			Hard = 0.1
 
-	#Let mobs use ender pearls as long as they have them in the off hand and when far enough from the target. Only mobs in the enhancedai:mobs/can_equip_pearl entity type tag will try to be equipped ender pearls.
+	#Let mobs use ender pearls as long as they have them in the either hands and when far enough from the target. Only mobs in the enhancedai:mobs/can_equip_pearl entity type tag will try to be equipped ender pearls.
 	[Mobs."Pearler mobs"]
 		#Chance for a mob to spawn with Ender Pearls in the offhand.
 		#I recommend Mobs Properties Randomness to have more control over mobs equipment.
@@ -972,7 +971,7 @@
 		#Chance for a mob the get the xray range override.
 		# Default: 0.5
 		# Range: 0.0 ~ 1.0
-		"Xray range override chance" = 0.5
+		"Xray range override chance" = 0.0
 		"See glowing entities" = true
 		#Mobs will be able to find better and longer paths to the target the higher this value is. The higher the more performance heavy. Only entity types in the tag `enhancedai:mobs/targeting/visited_nodes_multiplier` tag will be affected by this. Vanilla is 1.0
 		# Default: 4.0
@@ -981,7 +980,7 @@
 		#Chance for a mob to have to sense the target to keep targeting it. If the mob must sense the target might stop following it if can't sense it (through seeing, xray or glowing)
 		# Default: 0.5
 		# Range: 0.0 ~ 1.0
-		"Must sense target" = 0.5
+		"Must sense target" = 1.0
 		#After how many ticks a mob will forget about the target if can't sense it anymore
 		# Default: 300
 		# Range: > -2147483648
@@ -991,10 +990,10 @@
 		[Mobs.Targeting."Follow range override"]
 			# Default: 32.0
 			# Range: 0.0 ~ 128.0
-			Minimum = 32.0
+			Minimum = 20.0
 			# Default: 48.0
 			# Range: 0.0 ~ 128.0
-			Maximum = 64.0
+			Maximum = 20.0
 
 		#How far away can the mobs see targets even through walls. This only works with 'Better Nearby Targeting' enabled. Setting 'Max' to 0 will make mobs not able to see through walls. Use mods like Mobs Properties Randomness to have more control over the attribute; the attribute name is 'enhancedai:xray_follow_range'. Only mobs in the entity type tag `enhancedai:mobs/targeting/apply_xray` will be affected by this override.
 		[Mobs.Targeting."Xray range override"]
@@ -1153,9 +1152,9 @@
 			# Range: 0.0 ~ 1.0
 			Hard = 0.1
 
-	#Mobs can mine blocks to reach the target. Uses offhand item to mine. Only mobs in the entity type tag enhancedai:mobs/can_mine can spawn with the ability to mine and blocks in the tag enhancedai:miner_blacklist cannot be mined. This feature also adds the block reach attribute to all entities.
+	#Mobs can mine blocks to reach the target. Uses off-hand item to mine by default, can be changed with Data Keys. Only mobs in the entity type tag enhancedai:mobs/can_mine can spawn with the ability to mine and blocks in the tag enhancedai:miner_blacklist cannot be mined. This feature also adds the block reach attribute to all entities.
 	[Mobs."Miner mobs"]
-		#Chance for a mob in the entity type tag enhancedai:can_be_miner to spawn with the miner ability
+		#Chance for a mob in the entity type tag enhancedai:mobs/can_mine to spawn with the miner ability
 		# Default: 0.07
 		# Range: 0.0 ~ 1.0
 		"Miner chance" = 0.1
@@ -1176,11 +1175,11 @@
 		"Time to break multiplier" = 3.0
 		#Dimensions where mobs can mine.
 		"Dimension whitelist" = ["minecraft:overworld", "minecraft:the_nether", "minecraft:the_end"]
-		#If true, the block tag `enhancedai:miner_mobs/blacklist` will be treated as a whitelist instead of blacklist
+		#If true, the block tag enhancedai:miner_blacklist will be treated as a whitelist instead of blacklist
 		"Block blacklist as whitelist" = true
 		#Mobs with Miner AI will not be able to break tile entities
 		"Blacklist tile entities" = true
-		#Mobs with Miner AI will spawn with a Stone Pickaxe that never drops.
+		#Mobs with Miner AI will spawn with a Stone Pickaxe in the off-hand that never drops.
 		"Equip stone pick" = true
 
 	#Only entity types in the enhancedai:mobs/air_stealer tag are affected by this feature.
@@ -1192,19 +1191,19 @@
 
 	#Prevent players from abusing water or 2 high gaps to bully endermen.
 	[Mobs."Teleport anti-cheese"]
-		#Chance for entity types in the enhancedai:anti_cheese/teleport tag to get the Teleport Anti-Cheese AI, teleporting the target near them after not being able to reach them. Entity types in the tag enhancedai:anti_cheese/cant_be_teleported can't be teleported
+		#Chance for entity types in the enhancedai:mobs/teleport_anti_cheese/can_use tag to get the Teleport Anti-Cheese AI, teleporting the target near them after not being able to reach them. Entity types in the tag enhancedai:mobs/teleport_anti_cheese/cant_be_teleported can't be teleported
 		# Default: 1.0
 		# Range: 0.0 ~ 1.0
 		Chance = 1.0
 
 	#Allows mobs to break vehicles to escape.
 	[Mobs.Anti-Cheese]
-		#If true, entity types in the enhancedai:vehicle_anti_cheese/prevent_riding tag will not be able to mount vehicles in `enhancedai:mobs/vehicle_anti_cheese/valid_vehicles`.
+		#If true, entity types in the enhancedai:mobs/vehicle_anti_cheese/prevent_riding tag will not be able to mount vehicles in `enhancedai:mobs/vehicle_anti_cheese/valid_vehicles`.
 		"Prevent riding vehicles" = true
 		#If true, entity types in the enhancedai:mobs/vehicle_anti_cheese/break_vehicle tag will get an AI to break vehicles in `enhancedai:mobs/vehicle_anti_cheese/valid_vehicles` tag.
 		"Break vehicles" = true
 
-	#Makes mobs be able to move in more ways, like climbing or swim. Only entity types in `enhancedai:mobs/can_sprint` tag are affected by this feature.
+	#Makes mobs be able to sprint when near their target. Only entity types in `enhancedai:mobs/can_sprint` tag are affected by this feature.
 	[Mobs.Sprint]
 		# Default: 0.25
 		# Range: 0.0 ~ 1.0
@@ -1265,7 +1264,7 @@
 
 	#Let mobs use Fishing Rods, reeling players in. Either put a Fishing Rod in main or off hand and when near enough from the target they will use it. Only mobs in enhancedai:mobs/can_equip_fishing_rod entity type tag are affected by this feature.
 	[Mobs."Fisher mobs"]
-		#Chance for entity types in the enhancedai:fisher_mobs/can_equip_rod tag to spawn with a Fishing Rod in the offhand.
+		#Chance for entity types in the enhancedai:mobs/can_equip_fishing_rod tag to spawn with a Fishing Rod in the offhand.
 		#If you require more control, use Mobs Properties Randomness
 		# Default: 0.07
 		# Range: 0.0 ~ 1.0
@@ -1373,6 +1372,30 @@
 			# Default: 2
 			# Range: 0 ~ 128
 			"Max slowness amplifier" = 2
+
+	#Makes mobs panic when on fire.
+	[Mobs."Panic on fire"]
+		#Chance for a mob to get the panic on fire AI
+		# Default: 0.8
+		# Range: 0.0 ~ 1.0
+		Chance = 1.0
+
+	#Increases the distance of the leap based off the current delta movement.
+	[Mobs."Better leap at target goal"]
+		#Vanilla is 0.4
+		# Default: 0.4
+		# Range: 0.0 ~ 1.7976931348623157E308
+		"Distance speed multiplier" = 0.4
+		#Vanilla is 0.2
+		# Default: 0.6
+		# Range: 0.0 ~ 1.7976931348623157E308
+		"Delta movement speed multiplier" = 0.6
+
+	#Mobs with this feature enabled will move back to the position they spawned in if getting too far away from it.
+	[Mobs.Patrol]
+		# Default: 32.0
+		# Range: 0.0 ~ 1.7976931348623157E308
+		Range = 32.0
 
 [Endermen]
 	#Changes the angular size of the enderman's 'face' that angers them when looked at. Higher values make endermen anger from a wider viewing angle.
