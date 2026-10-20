@@ -1,0 +1,42 @@
+{
+    "values": [
+        "minecraft:cave_spider",
+        "#enhancedai:zombies",
+        "minecraft:enderman",
+        "minecraft:iron_golem",
+        "minecraft:piglin",
+        "minecraft:polar_bear",
+        "minecraft:spider",
+        "minecraft:blaze",
+        "minecraft:creeper",
+        "minecraft:elder_guardian",
+        "minecraft:endermite",
+        "minecraft:evoker",
+        "minecraft:ghast",
+        "minecraft:guardian",
+        "minecraft:hoglin",
+        "minecraft:magma_cube",
+        "minecraft:phantom",
+        "minecraft:piglin_brute",
+        "minecraft:pillager",
+        "minecraft:ravager",
+        "minecraft:shulker",
+        "minecraft:silverfish",
+        "#enhancedai:skeletons",
+        "minecraft:breeze",
+        "minecraft:slime",
+        "minecraft:vex",
+        "minecraft:vindicator",
+        "minecraft:warden",
+        "minecraft:witch",
+        "minecraft:zoglin",
+        {
+            "required": false,
+            "id": "caverns_and_chasms:deeper"
+        },
+        {
+            "required": false,
+            "id": "caverns_and_chasms:mime"
+        }
+    ]
+}

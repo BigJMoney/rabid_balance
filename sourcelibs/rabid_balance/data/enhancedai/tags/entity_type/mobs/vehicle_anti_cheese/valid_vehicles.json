@@ -1,0 +1,52 @@
+{
+    "values": [
+        "minecraft:boat",
+        "minecraft:chest_boat",
+        "minecraft:minecart",
+
+        {
+            "required": false,
+            "id": "boatload:furnace_boat"
+        },
+        {
+            "required": false,
+            "id": "boatload:large_boat"
+        },
+
+        {
+            "required": false,
+            "id": "blueprint:boat"
+        },
+        {
+            "required": false,
+            "id": "blueprint:chest_boat"
+        },
+
+        {
+            "required": false,
+            "id": "quark:quark_boat"
+        },
+        {
+            "required": false,
+            "id": "quark:quark_chest_boat"
+        },
+
+        {
+            "required": false,
+            "id": "smallships:brigg"
+        },
+        {
+            "required": false,
+            "id": "smallships:cog"
+        },
+        {
+            "required": false,
+            "id": "smallships:drakkar"
+        },
+        {
+            "required": false,
+            "id": "smallships:galley"
+        }
+
+    ]
+}
