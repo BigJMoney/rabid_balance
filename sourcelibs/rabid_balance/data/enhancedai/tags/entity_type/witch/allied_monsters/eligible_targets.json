@@ -1,0 +1,12 @@
+{
+    "values": [
+        "minecraft:witch",
+        "minecraft:pillager",
+        "minecraft:vindicator",
+        "#enhancedai:zombies",
+        "#enhancedai:skeletons",
+        "minecraft:creeper",
+        "minecraft:spider",
+        "minecraft:cave_spider"
+    ]
+}
