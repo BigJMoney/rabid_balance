@@ -5,10 +5,10 @@
 "Enable Drowned" = false
 "Enable Endermen" = false
 "Enable Ghast" = false
-"Enable Illagers" = false
+"Enable Illagers" = true
 "Enable Mobs" = true
 "Enable Shulkers" = false
-"Enable Skeletons" = false
+"Enable Skeletons" = true
 "Enable Slimes" = true
 "Enable Snow Golems" = false
 "Enable Spiders" = false
@@ -251,11 +251,11 @@
 
 [Skeletons]
 	#Wither skeletons can shoot Wither arrows.
-	"Enable Wither skeletons" = true
+	"Enable Wither skeletons" = false
 	#Skeletons are more precise when shooting and can hit a target farther away. Only entity types in `enhancedai:skeleton/better_shooting` tag are affected by this feature
 	"Enable Skeleton shoot" = true
 	#Skeletons try to stay away from the target. Only entity types in `enhancedai:skeleton/can_flee` tag are affected by this feature. This disables itself if Skeleton Shoot feature is disabled
-	"Enable Skeleton flee target" = true
+	"Enable Skeleton flee target" = false
 
 	#Wither skeletons can shoot Wither arrows.
 	[Skeletons."Wither skeletons"]
@@ -267,22 +267,22 @@
 		#Chance for a Skeleton to spawn with the ability to strafe (like vanilla)
 		# Default: 0.333
 		# Range: 0.0 ~ 1.0
-		"Strafe chance" = 0.0
+		"Strafe chance" = 0.333
 
 		#The range from where a skeleton will shoot a player
 		[Skeletons."Skeleton shoot"."Shooting range"]
 			# Default: 24.0
 			# Range: 1.0 ~ 64.0
-			Minimum = 15.0
+			Minimum = 20.0
 			# Default: 32.0
 			# Range: 1.0 ~ 64.0
-			Maximum = 15.0
+			Maximum = 20.0
 
 		#The ticks cooldown after shooting
 		[Skeletons."Skeleton shoot"."Shooting cooldown"]
 			# Default: 35.0
 			# Range: 0.0 ~ 1.7976931348623157E308
-			Minimum = 40.0
+			Minimum = 35.0
 			# Default: 40.0
 			# Range: 0.0 ~ 1.7976931348623157E308
 			Maximum = 40.0
@@ -294,7 +294,7 @@
 			Minimum = 20.0
 			# Default: 30.0
 			# Range: 0.0 ~ 1.7976931348623157E308
-			Maximum = 20.0
+			Maximum = 30.0
 
 		#How much inaccuracy does the arrow fired by skeletons have. Vanilla skeletons have 10/6/2 inaccuracy in easy/normal/hard difficulty.
 		[Skeletons."Skeleton shoot".Inaccuracy]
@@ -448,10 +448,10 @@
 		[Illagers."Pillager shoot"."Shooting range"]
 			# Default: 24.0
 			# Range: 1.0 ~ 64.0
-			Minimum = 24.0
+			Minimum = 20.0
 			# Default: 32.0
 			# Range: 1.0 ~ 64.0
-			Maximum = 32.0
+			Maximum = 20.0
 
 		#The ticks cooldown before shooting. Vanilla is random between 20 and 40
 		[Illagers."Pillager shoot"."Shooting cooldown"]
@@ -466,13 +466,13 @@
 		[Illagers."Pillager shoot".Inaccuracy]
 			# Default: 5.0
 			# Range: 0.0 ~ 30.0
-			"Easy/Peaceful" = 5.0
+			"Easy/Peaceful" = 10.0
 			# Default: 3.0
 			# Range: 0.0 ~ 30.0
-			Normal = 3.0
+			Normal = 6.0
 			# Default: 1.0
 			# Range: 0.0 ~ 30.0
-			Hard = 1.0
+			Hard = 2.0
 
 ["Snow Golems"]
 	#Snow golems snowballs freeze entities hit. Only entity types in enhancedai:snow_golem/freezing_snowballs tag are affected by this feature.
@@ -1378,7 +1378,7 @@
 		#Chance for a mob to get the panic on fire AI
 		# Default: 0.8
 		# Range: 0.0 ~ 1.0
-		Chance = 1.0
+		Chance = 0.8
 
 	#Increases the distance of the leap based off the current delta movement.
 	[Mobs."Better leap at target goal"]
