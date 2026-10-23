@@ -1,0 +1,497 @@
+~~~~~~~~ NEXT ~~~~~~~~
+
+Why not have right click actually build the block first, then capture the data, and replace the block with the simulated block? That seems like it could eliminate a lot of needed functionality.
+
+Triggering neighbor updates is good, consider things like connected textures and corner stairs. In fact, I can't imagine trying to re-implement all of MC's building steps manually, that seems like a terrible idea.
+
+~~~~~~~~ NEXT ~~~~~~~~
+
+
+Agreed. **Reimplementing Minecraft's placement/update behavior would be the wrong architecture.** Corner stairs alone are enough to demonstrate why: the final state depends on neighboring stairs, and placing another stair can change the state of one already placed.
+
+I'd therefore change the architecture around a **sandboxed/virtual world view**. When you're in Simulation Mode, placement should go through as much of Minecraft's real placement pipeline as possible:
+
+```text
+player right-clicks
+      ↓
+normal BlockItem placement logic
+      ↓
+virtual/sandbox Level
+      ↓
+block is really "placed" there
+      ↓
+neighbor updates run normally
+      ↓
+stairs/fences/walls/etc. update normally
+      ↓
+resulting states become the HCM simulation
+```
+
+The crucial difference is that this isn't the **real ServerLevel**. It's an overlay representing:
+
+```text
+Physical world blocks
+        +
+HCM simulated blocks
+```
+
+So from a simulated stair's perspective, its neighbors actually exist. Minecraft can therefore do its normal `updateShape`, neighbor-change, placement-state, fluid-state, etc. processing instead of us trying to predict what it would do.
+
+This also solves an important case you brought up. Suppose you build:
+
+```text
+██
+ █
+```
+
+with simulated stairs. When the third stair is added, Minecraft's normal neighbor-update machinery can change one or more existing simulated stair states into the appropriate inner/outer corner shapes. Your HCM simply records the resulting states.
+
+**Connected textures are a slightly different issue.** Many CTM systems don't actually change the `BlockState`; the renderer looks at neighboring blocks while drawing. For those, the hologram renderer needs to expose the same combined **physical + simulated neighborhood** to the rendering system. That's another strong reason to have a virtual world/view abstraction rather than just a `Map<BlockPos, BlockState>` handed directly to the renderer.
+
+I would *not*, however, place the blocks briefly into the actual world and remove them. Neighbor updates themselves are desirable, but unrelated side effects aren't—redstone signals, block entities, sounds, scheduled ticks, advancement hooks, mod events, entity spawning, fluid changes, etc. A sandbox gives us the **real Minecraft building semantics without letting the simulation alter reality**.
+
+So the core technical challenge of this mod becomes much clearer: **build a virtual Level/LevelAccessor representing the SBA, and let vanilla/NeoForge/modded blocks operate against it normally.** If that can be done cleanly, a huge percentage of the difficult compatibility work disappears.
+
+
+
+
+~~~~~~~~ NEXT ~~~~~~~~
+
+Assuming I only want to add 1 new block to the game, the machine the player interacts with, what would be the basic architecture for creating a mod like this using NeoForge? The design is:
+
+```
+# Holographic Construction Machine (HCM)
+- A block that looks sort of like a computer terminal
+- Has a custom GUI when interacting with it
+  - Can designate a 3D cubic region (xyz) Simulated Building Area (SBA)
+  - Can add and remove blocks to its Builder Palette (these blocks are not removed from the player's inventory)
+  - Can see all the blocks that are currently its palette
+  - Can see a number beside each block to represent both how many physical and simulated blocks presently exist within the SBA
+  - Can switch between two modes: Simulated Building and Physical Building
+# Simulated Building Area
+- While the player is within this area...
+- In Simulated Building Mode:
+  - The inventory button brings up the simulated inventory, which is made up from blocks in the Builder Palette
+  - Placing these blocks does not remove them from this inventory (like in Creative Mode)
+  - They can be placed farther away than blocks normally can (like in Creative Mode)
+  - They cannot be placed outside the SBA (even if the player is standing inside it)
+  - Left-clicking instantly destroys them (like in Creative Mode)
+  - They can't be otherwise interacted with
+  - They don't block entities
+  - All simulated (and physical) blocks are completely visible
+- In Physical Building Mode:
+  - Inventory and block placement work normally
+  - Simulated blocks are translucent / transparent, and cannot be interacted with in any way (they likely are not blocks)
+  - Physical blocks can be placed as if the simulated blocks weren't there
+- When the SBA region reduces in size:
+  - (Either because it is modified, or the HCM is destroyed)
+  - All simulated block and simulated building mode functionality ceases
+  - Any players inside a reverted area have a normal inventory again
+```
+
+~~~~~~~~ NEXT ~~~~~~~~
+
+
+Yes. With the constraint that **HCM is the only new block**, I would build this primarily as a **server-owned virtual blueprint system with client-side rendering and interaction**. The simulated blocks should never enter the Minecraft world as `BlockState`s.
+
+The HCM itself would be a normal NeoForge `EntityBlock` with an `HCMBlockEntity`. Block entities are exactly what NeoForge provides for per-block data too complex for blockstates. ([NeoForged Documentation][1]) The block entity would own essentially this state:
+
+```text
+HCMBlockEntity
+ ├─ BlockPos minSBA
+ ├─ BlockPos maxSBA
+ ├─ Mode
+ │    ├─ SIMULATION
+ │    └─ PHYSICAL
+ │
+ ├─ BuilderPalette
+ │    ├─ oak_planks
+ │    ├─ stone_bricks
+ │    └─ ...
+ │
+ └─ SimulatedStructure
+      relative BlockPos -> BlockState
+```
+
+I would store simulated positions **relative to the HCM or SBA origin**, rather than absolute world coordinates. That makes resizing, serialization and potentially moving/copying designs easier.
+
+### The critical architectural decision
+
+A simulated oak plank at `(12, 4, 7)` is **not an oak-plank block**.
+
+It's simply:
+
+```java
+simulation.put(new BlockPos(12, 4, 7), Blocks.OAK_PLANKS.defaultBlockState());
+```
+
+The client receives that information and renders an oak-plank model at that location.
+
+Consequently Minecraft naturally sees:
+
+```text
+collision             none
+entity obstruction    none
+lighting              none
+redstone               none
+block ticking          none
+block entities         none
+fluid interaction      none
+explosions             none
+normal block targeting none
+```
+
+That's almost exactly the behavior you want.
+
+---
+
+### Rendering
+
+I'd make a dedicated **SBA renderer**, rather than a renderer attached visually to every simulated block.
+
+For every visible simulated position:
+
+```text
+lookup simulated BlockState
+        ↓
+obtain its normal baked Minecraft model
+        ↓
+render model at virtual world position
+```
+
+So simulated stairs actually look like stairs, logs retain orientation, fences connect appropriately if you implement neighbor-state handling, etc.
+
+In **Simulation mode**, render them essentially normally.
+
+In **Physical mode**, render the same models with translucency, probably something like 30–50% opacity.
+
+NeoForge provides custom rendering facilities including block-entity renderers for dynamic rendering, although because your rendered volume can extend far away from the HCM, I would probably use a **world-level client renderer/cache** rather than rely solely on a conventional BER. ([NeoForged Documentation][2])
+
+That's one of the more technically involved pieces of the mod, but it's very feasible.
+
+---
+
+### Simulated "inventory"
+
+I would **not modify or replace the player's real `Inventory` object**.
+
+Instead, while all of these are true:
+
+```text
+player inside SBA
+HCM exists
+HCM.mode == SIMULATION
+```
+
+intercept the inventory key and open:
+
+```text
+SimulatedInventoryScreen
+```
+
+It displays one infinite stack for every palette entry:
+
+```text
+Oak Planks      ∞
+Stone Bricks    ∞
+Glass           ∞
+...
+```
+
+Selecting one merely sets something like:
+
+```java
+ClientSimulationState.selectedBlock = Blocks.OAK_PLANKS.defaultBlockState();
+```
+
+Nothing goes into the player's actual inventory.
+
+That means leaving the SBA doesn't require restoring an inventory. **There was never an alternate real inventory to restore.** You simply stop intercepting the inventory key.
+
+This also makes destruction of the HCM very safe.
+
+---
+
+### Placing simulated blocks
+
+Don't try to convince vanilla Minecraft that the player has an infinite fake ItemStack.
+
+Implement **virtual placement** instead.
+
+When the player right-clicks while in Simulation mode:
+
+```text
+client performs extended-distance raycast
+             ↓
+determine desired simulated position
+             ↓
+send:
+PlaceSimulatedBlockPayload(
+    HCM position,
+    target position,
+    selected blockstate
+)
+             ↓
+server validates:
+    HCM exists?
+    player inside SBA?
+    HCM in simulation mode?
+    target inside SBA?
+    block is in palette?
+             ↓
+HCM simulation map updated
+             ↓
+nearby clients notified
+```
+
+NeoForge's custom payload system is designed for exactly this sort of client/server communication. ([NeoForged Documentation][3])
+
+Importantly, **the server owns the blueprint**. The client asks to place something; it never dictates authoritative state.
+
+The same mechanism handles left-click removal.
+
+```text
+RemoveSimulatedBlockPayload(HCM, simulatedPos)
+```
+
+Instant destruction is therefore trivial.
+
+### Your increased build reach
+
+This becomes surprisingly easy because you're no longer using normal block placement.
+
+You can simply raycast to, say:
+
+```text
+Survival reach:     ~4.5 blocks
+HCM simulation:     12 blocks
+```
+
+and let the server accept virtual placements within whatever configurable range you choose.
+
+There's no need to modify the player's actual block interaction range.
+
+---
+
+### One subtle issue: targeting holograms
+
+This is probably the trickiest gameplay-input problem.
+
+Because holograms aren't blocks, vanilla raycasting won't see them.
+
+You'll need your own raycast against:
+
+```text
+physical world blocks
++
+simulated block geometry
+```
+
+That lets you point at this:
+
+```text
+        [virtual wall]
+             ↑
+Player ------+
+```
+
+and place another simulated block against its face despite there being no real block there.
+
+Similarly:
+
+```text
+left click virtual block
+        ↓
+virtual raycast identifies it
+        ↓
+remove from simulation
+```
+
+You'd likely want simulated blocks to participate in **your targeting algorithm but never Minecraft's collision system**.
+
+---
+
+### Physical Building mode
+
+This is considerably simpler.
+
+Stop intercepting normal inventory/use/break controls entirely.
+
+Minecraft behaves normally:
+
+```text
+inventory → normal
+placement → normal
+breaking → normal
+reach → normal
+```
+
+Your renderer continues drawing:
+
+```text
+simulation block exists
+AND real block does not satisfy blueprint
+        ↓
+render translucent ghost
+```
+
+So a ghost oak plank at `(x,y,z)` does not prevent:
+
+```java
+level.setBlock(x, y, z, realOakPlank);
+```
+
+because as far as the server is concerned, that space was always empty.
+
+Once the player places the correct physical block, I'd probably **stop rendering that hologram entirely** rather than draw the hologram through the real block.
+
+You could optionally distinguish:
+
+```text
+Correct physical block     → no hologram
+Missing physical block     → translucent hologram
+Wrong physical block       → tinted/error overlay
+```
+
+without introducing any additional blocks.
+
+---
+
+### Palette
+
+I'd make this part of the HCM GUI rather than a real container.
+
+You could drag an existing block from the player's inventory into:
+
+```text
++ ADD TO PALETTE
+```
+
+The server verifies that the player actually possesses that block, then stores its identity **without consuming it**.
+
+So unlocking polished blackstone legitimately requires obtaining one polished-blackstone block first.
+
+The HCM GUI itself can be implemented using NeoForge's normal Menu/Screen architecture; menus provide the synchronized backend while the client screen presents it. ([NeoForged Documentation][4])
+
+Something like:
+
+```text
+┌──────────────────────────────────────────────────┐
+│ HOLOGRAPHIC CONSTRUCTION MACHINE                 │
+│                                                  │
+│ Region                                           │
+│ X: -20 → +20   Y: 0 → +30   Z: -20 → +20       │
+│                                                  │
+│ Mode:   [ SIMULATION ]    Physical               │
+│                                                  │
+│ BUILDER PALETTE                                  │
+│                                                  │
+│ Oak Planks          Physical: 124   Simulated: 834│
+│ Stone Bricks        Physical: 531   Simulated: 612│
+│ Glass               Physical:  22   Simulated: 108│
+│                                                  │
+│ [+ Add from inventory]                           │
+└──────────────────────────────────────────────────┘
+```
+
+### Material counts
+
+I'd maintain the **simulated count incrementally**:
+
+```java
+Map<Block, Integer> simulatedCounts;
+```
+
+Every placement/removal modifies the count by one.
+
+Don't repeatedly scan thousands of virtual positions merely to count them.
+
+Physical counts are harder because players can modify real blocks through anything—pistons, other players, explosions, WorldEdit-like mods, etc. The simplest first implementation is to scan the SBA when the GUI opens or when the player requests **Refresh Material Counts**.
+
+For a normal house-sized area, that's perfectly reasonable.
+
+Later you could optimize it with chunk/block-change tracking if necessary.
+
+---
+
+### Resizing or destroying the HCM
+
+This part becomes almost free because of the architecture.
+
+Suppose:
+
+```text
+Old SBA: 80 × 50 × 80
+New SBA: 40 × 30 × 40
+```
+
+Server:
+
+```text
+delete simulated entries outside new bounds
+send updated SBA/simulation state
+```
+
+Client:
+
+```text
+no longer considers removed region an SBA
+        ↓
+normal inventory key
+normal reach
+normal interaction
+no holograms
+```
+
+Breaking the HCM is essentially:
+
+```java
+remove HCMBlockEntity
+notify tracking clients that SBA no longer exists
+```
+
+There are **no fake blocks to clean out of the world**.
+
+---
+
+I'd therefore divide the implementation into roughly these modules:
+
+```text
+HCMBlock
+HCMBlockEntity
+    └─ owns authoritative blueprint/SBA/palette
+
+HCMMenu
+HCMScreen
+    └─ configuration and palette GUI
+
+SimulationManager (server)
+    └─ determines which HCM/SBA applies to each player
+
+ClientSimulationState
+    └─ local cached blueprint + selected simulated block
+
+HologramRenderer
+    └─ renders simulated BlockStates
+
+SimulationInteractionHandler
+    └─ virtual raycasting, placement, destruction,
+       inventory-key interception
+
+Networking
+    ├─ HCMDataPayload
+    ├─ PlaceSimulatedBlockPayload
+    ├─ RemoveSimulatedBlockPayload
+    ├─ SetModePayload
+    ├─ SetRegionPayload
+    └─ PalettePayload
+```
+
+So despite the feature set, **you genuinely could have only one registered gameplay block**. Most of the mod isn't blocks/items at all; it's a blueprint data structure, renderer, input layer and networking.
+
+And I think that architecture fits your design exceptionally well because **Simulation mode never changes the Minecraft world at all**. When the HCM disappears, the simulation can disappear instantaneously with essentially zero world cleanup.
+
+[1]: https://docs.neoforged.net/docs/1.21.1/blockentities/?utm_source=chatgpt.com "Block Entities | NeoForged docs"
+[2]: https://docs.neoforged.net/docs/1.21.1/blockentities/ber/?utm_source=chatgpt.com "BlockEntityRenderer | NeoForged docs"
+[3]: https://docs.neoforged.net/docs/networking/payload/?utm_source=chatgpt.com "Registering Payloads | NeoForged docs"
+[4]: https://docs.neoforged.net/docs/1.21.1/gui/menus/?utm_source=chatgpt.com "Menus | NeoForged docs"
