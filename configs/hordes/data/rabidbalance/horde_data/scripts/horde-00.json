@@ -37,11 +37,16 @@
         ],
         "conditions": [
             {
-                "name": "hordes:not",
-                "value": {
-                    "name": "hordes:advancement",
-                    "value": "minecraft:story/enchant_item"
-                }
+              "name": "hordes:comparison",
+              "value": {
+                "type": "int",
+                "operation": "<",
+                "value1": {
+                  "name": "hordes:player_nbt",
+                  "value": "KubeJSPersistentData.rb_horde_threat"
+                },
+                "value2": 20
+              }
             }
         ]
     }

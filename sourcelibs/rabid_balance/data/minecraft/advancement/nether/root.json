@@ -28,7 +28,7 @@
     ]
   ],
   "rewards": {
-    "function": "rabidbalance:hordes/trigger"
+    "function": "rabidbalance:hordes/threat2"
   },
   "sends_telemetry_event": true
 }

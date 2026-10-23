@@ -11,7 +11,7 @@
     ]
   ],
   "rewards": {
-    "function": "rabidbalance:hordes/trigger"
+    "function": "rabidbalance:hordes/threat1"
   },
   "display": {
     "description": {

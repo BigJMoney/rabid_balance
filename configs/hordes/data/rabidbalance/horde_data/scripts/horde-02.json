@@ -42,8 +42,16 @@
         ],
         "conditions": [
             {
-                "name": "hordes:advancement",
-                "value": "minecraft:nether/root"
+              "name": "hordes:comparison",
+              "value": {
+                "type": "int",
+                "operation": ">=",
+                "value1": {
+                  "name": "hordes:player_nbt",
+                  "value": "KubeJSPersistentData.rb_horde_threat"
+                },
+                "value2": 20
+              }
             }
         ]
     }

@@ -1,0 +1,2 @@
+horde_threat_1
+function rabidbalance:hordes/trigger

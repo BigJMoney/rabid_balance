@@ -31,7 +31,7 @@
             },
             {
                 "function": "hordes:set_spawn_amount",
-                "value": 8,
+                "value": 10,
                 "conditions": []
             },
             {
@@ -42,15 +42,16 @@
         ],
         "conditions": [
             {
-                "name": "hordes:advancement",
-                "value": "minecraft:story/enchant_item"
-            },
-            {
-                "name": "hordes:not",
-                "value": {
-                    "name": "hordes:advancement",
-                    "value": "minecraft:nether/root"
-                }
+              "name": "hordes:comparison",
+              "value": {
+                "type": "int",
+                "operation": ">=",
+                "value1": {
+                  "name": "hordes:player_nbt",
+                  "value": "KubeJSPersistentData.rb_horde_threat"
+                },
+                "value2": 10
+              }
             }
         ]
     }
