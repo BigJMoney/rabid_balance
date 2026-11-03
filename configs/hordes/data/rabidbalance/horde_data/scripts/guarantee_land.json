@@ -1,0 +1,93 @@
+[
+    {
+        "function": "hordes:random",
+        "value": [
+            {
+                "function": "hordes:multiple",
+                "value": [
+                    {
+                        "function": "hordes:set_entity_type",
+                        "value": "minecraft:zombie",
+                        "conditions": []
+                    },
+                    {
+                        "function": "hordes:set_entity_nbt",
+                        "value": "{HandItems:[{},{id:stone_pickaxe,count:1}],ArmorItems:[{},{},{},{id:leather_helmet,count:1}]}",
+                        "conditions": []
+                    }
+                ],
+                "conditions": []
+            },
+            {
+                "function": "hordes:multiple",
+                "value": [
+                    {
+                        "function": "hordes:set_entity_type",
+                        "value": "minecraft:skeleton",
+                        "conditions": []
+                    },
+                    {
+                        "function": "hordes:set_entity_nbt",
+                        "value": "{ArmorItems:[{},{},{},{id:leather_helmet,count:1}]}",
+                        "conditions": []
+                    }
+                ],
+                "conditions": []
+            }
+        ],
+        "conditions": [
+            {
+                "name": "hordes:or",
+                "value": [
+                    {
+                        "name": "hordes:not",
+                        "value": {
+                            "name": "hordes:biome",
+                            "value": "#minecraft:is_ocean"
+                        }
+                    },
+                    {
+                        "name": "hordes:biome",
+                        "value": [
+                            "minecraft:frozen_ocean",
+                            "minecraft:deep_frozen_ocean"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "hordes:entity_type",
+                "value": "minecraft:drowned"
+            }
+        ]
+    },
+    {
+        "function": "hordes:set_entity_type",
+        "value": "minecraft:spider",
+        "conditions": [
+            {
+                "name": "hordes:or",
+                "value": [
+                    {
+                        "name": "hordes:not",
+                        "value": {
+                            "name": "hordes:biome",
+                            "value": "#minecraft:is_ocean"
+                        }
+                    },
+                    {
+                        "name": "hordes:biome",
+                        "value": [
+                            "minecraft:frozen_ocean",
+                            "minecraft:deep_frozen_ocean"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "hordes:entity_type",
+                "value": "alexsmobs:skelewag"
+            }
+        ]
+    }
+]
