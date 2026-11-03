@@ -14,31 +14,60 @@ function initHordeThreat(loginEvent) {
 
 // Command to set first big horde threat increase
 function setHordeThreat1(commandEvent) {
-    commandEvent.player.persistentData.putInt('rb_horde_threat', 10)
+    commandEvent.source.player.persistentData.putInt('rb_horde_threat', 10)
+    return 1
 }
 
 // Command to set second big horde threat increase
 function setHordeThreat2(commandEvent) {
-    commandEvent.player.persistentData.putInt('rb_horde_threat', 20)
+    commandEvent.source.player.persistentData.putInt('rb_horde_threat', 20)
+    return 1
 }
 
 // Command to reset all horde threat
 function resetHordeThreat(commandEvent) {
-    commandEvent.player.persistentData.putInt('rb_horde_threat', 0)
+    commandEvent.source.player.persistentData.putInt('rb_horde_threat', 0)
+    return 1
 }
 
 // Command to report horde threat
 function getHordeThreat(commandEvent) {
-    const threat = commandEvent.player.persistentData.getInt('rb_horde_threat')
-    commandEvent.player.tell(`Current horde threat: ${threat}`)
+    const threat = commandEvent.source.player.persistentData.getInt('rb_horde_threat')
+    commandEvent.source.player.tell(`Current horde threat: ${threat}`)
+    return 1
 }
 
+// Register commands with operator permissions
+function registerHordeCommands(registryEvent) {
+    const Commands = registryEvent.commands
+
+    registryEvent.register(
+        Commands.literal('horde_threat_1')
+            .requires(source => source.hasPermission(2))
+            .executes(setHordeThreat1)
+    )
+
+    registryEvent.register(
+        Commands.literal('horde_threat_2')
+            .requires(source => source.hasPermission(2))
+            .executes(setHordeThreat2)
+    )
+
+    registryEvent.register(
+        Commands.literal('horde_threat_reset')
+            .requires(source => source.hasPermission(2))
+            .executes(resetHordeThreat)
+    )
+
+    registryEvent.register(
+        Commands.literal('horde_threat_get')
+            .requires(source => source.hasPermission(2))
+            .executes(getHordeThreat)
+    )
+}
 
 // Register login callbacks
 PlayerEvents.loggedIn(initHordeThreat)
 
 // Register command callbacks
-ServerEvents.basicPublicCommand('horde_threat_1', setHordeThreat1)
-ServerEvents.basicPublicCommand('horde_threat_2', setHordeThreat2)
-ServerEvents.basicPublicCommand('horde_threat_reset', resetHordeThreat)
-ServerEvents.basicPublicCommand('horde_threat_get', getHordeThreat)
+ServerEvents.commandRegistry(registerHordeCommands)
