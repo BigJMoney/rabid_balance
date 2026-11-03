@@ -1,0 +1,19 @@
+[
+	{
+		"entity": "minecraft:drowned",
+		"weight": 20,
+		"nbt": "{HandItems:[{id:trident,count:1}],ArmorItems:[{},{},{},{id:diamond_helmet,count:1}]}",
+		"min_spawns": 3
+	},
+	{
+		"entity": "alexsmobs:skelewag",
+		"weight": 10,
+		"min_spawns": 1,
+		"max_spawns": 4
+	},
+	{
+		"entity": "upgrade_aquatic:flare",
+		"weight": 20,
+		"min_spawns": 3
+	}
+]

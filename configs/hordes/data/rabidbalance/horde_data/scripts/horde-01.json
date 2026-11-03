@@ -54,5 +54,55 @@
               }
             }
         ]
+    },
+    {
+        "function": "hordes:multiple",
+        "value": [
+            {
+                "function": "hordes:set_spawntable",
+                "value": [
+                    "rabidbalance:horde-01-ocean"
+                ],
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_start_message",
+                "value": "A horde of aquatic monsters has arrived, drawn to one with the smoke of enchantment wafting from their avatar.",
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_spawn_amount",
+                "value": 6,
+                "conditions": []
+            }
+        ],
+        "conditions": [
+            {
+              "name": "hordes:comparison",
+              "value": {
+                "type": "int",
+                "operation": ">=",
+                "value1": {
+                  "name": "hordes:player_nbt",
+                  "value": "KubeJSPersistentData.rb_horde_threat"
+                },
+                "value2": 10
+              }
+            },
+            {
+                "name": "hordes:biome",
+                "value": "#minecraft:is_ocean"
+            },
+            {
+                "name": "hordes:not",
+                "value": {
+                    "name": "hordes:biome",
+                    "value": [
+                        "minecraft:frozen_ocean",
+                        "minecraft:deep_frozen_ocean"
+                    ]
+                }
+            }
+        ]
     }
 ]
