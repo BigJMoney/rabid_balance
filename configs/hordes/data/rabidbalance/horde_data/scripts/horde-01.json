@@ -11,7 +11,7 @@
             },
             {
                 "function": "hordes:set_start_message",
-                "value": "A horde of monsters has arrived, drawn to the one who imbued an item with enchantments for the first time.",
+                "value": "A horde of monsters has arrived, drawn to one with the smoke of enchantment wafting from their avatar.",
                 "conditions": []
             },
             {

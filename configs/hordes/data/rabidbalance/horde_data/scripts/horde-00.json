@@ -11,22 +11,27 @@
             },
             {
                 "function": "hordes:set_start_message",
-                "value": "This is a BABY horde because you have no enchantments yet",
+                "value": "The earth is angered by your crawling presence upon its skin, thus it vomits vile creatures to destroy you.",
+                "conditions": []
+            },
+            {
+                "function": "hordes:set_end_message",
+                "value": "The earth is calmed... For now",
                 "conditions": []
             },
             {
                 "function": "hordes:set_spawn_duration",
-                "value": 601,
+                "value": 3001,
                 "conditions": []
             },
             {
                 "function": "hordes:set_spawn_interval",
-                "value": 200,
+                "value": 600,
                 "conditions": []
             },
             {
                 "function": "hordes:set_spawn_amount",
-                "value": 3,
+                "value": 4,
                 "conditions": []
             },
             {

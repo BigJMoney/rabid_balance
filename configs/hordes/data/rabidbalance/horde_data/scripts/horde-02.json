@@ -11,7 +11,7 @@
             },
             {
                 "function": "hordes:set_start_message",
-                "value": "A horde of monsters has arrived, drawn to the one who stepped from your world into the hellish lands of Nether for the first time.",
+                "value": "A horde of monsters has arrived, drawn to one with the corrupting scent of the Nether emanating from their soul.",
                 "conditions": []
             },
             {

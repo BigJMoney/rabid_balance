@@ -3,28 +3,33 @@
 		"entity": "minecraft:piglin",
 		"weight": 10,
 		"nbt": "{HandItems:[{id:stone_pickaxe,Count:1}]}",
-		"min_spawns": 1
+		"min_spawns": 1,
+		"max_spawns": 4
 	},
 	{
 		"entity": "minecraft:piglin",
 		"weight": 10,
 		"nbt": "{HandItems:[{id:stone_axe,Count:1}]}",
-		"min_spawns": 1
+		"min_spawns": 1,
+		"max_spawns": 2
 	},
 	{
 		"entity": "minecraft:piglin",
 		"weight": 10,
 		"nbt": "{HandItems:[{id:stone_shovel,Count:1}]}",
-		"min_spawns": 1
+		"min_spawns": 1,
+		"max_spawns": 1
 	},
 	{
 		"entity": "minecraft:hoglin",
-		"weight": 15
+		"weight": 15,
+		"max_spawns": 2
 	},
 	{
 		"entity": "minecraft:magma_cube",
 		"weight": 10,
-		"nbt": "{Size:3}"
+		"nbt": "{Size:3}",
+		"max_spawns": 2
 	},
 	{
 		"entity": "minecraft:ghast",
@@ -34,6 +39,7 @@
 	},
 	{
 		"entity": "minecraft:blaze",
-		"weight": 5
+		"weight": 5,
+		"max_spawns": 2
 	}
 ]
