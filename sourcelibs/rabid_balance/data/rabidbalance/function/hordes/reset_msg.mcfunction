@@ -1,0 +1,1 @@
+data modify storage rabidbalance:hordes trigger_msg set value "You sense the earth's anger is nigh, and a wandering horde of monsters will arrive soon!"

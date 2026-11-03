@@ -1,0 +1,4 @@
+horde_threat_1
+data modify storage rabidbalance:hordes trigger_msg set value "Threat 1 Message about Horde Spawning!"
+function rabidbalance:hordes/trigger
+function rabidbalance:hordes/reset_msg

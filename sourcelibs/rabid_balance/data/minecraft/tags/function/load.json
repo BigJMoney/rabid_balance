@@ -1,5 +1,6 @@
 {
   "values": [
-    "rabidbalance:loadfuncs/start_season_check"
+    "rabidbalance:loadfuncs/start_season_check",
+    "rabidbalance:loadfuncs/hordes_init"
   ]
 }
