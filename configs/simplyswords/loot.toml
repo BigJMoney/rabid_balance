@@ -6,15 +6,16 @@ standardLootTableWeight = 0.4
 rareLootTableWeight = 0.1
 runicLootTableWeight = 0.7
 uniqueLootTableWeight = 0.05
-uniqueSoftPityStart = 25
-uniqueSoftPityIncrement = 0.2
+uniqueSoftPityStart = 1
+uniqueSoftPityIncrement = 0.05
 uniqueHardPity = 75
-tabletHardPity = 60
+tabletHardPity = 25
 enableContainedRemnants = true
 disabledUniqueWeaponLoot = [  ]
 
 [uniqueLootTableOptions]
-"minecraft:entities/ender_dragon" = 5.0
+"minecraft:entities/ender_dragon" = 50.0
+"minecraft:entities/wither" = 5.0
 "minecraft:chests/ruined_portal" = 0.0
 "minecraft:chests/village/village_armorer" = 0.0
 "minecraft:chests/village/village_butcher" = 0.0
