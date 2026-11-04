@@ -38,6 +38,9 @@ Immersive Enchanting now includes the mending ancient book
 
 Rotten Creatures miner zombies now have the can_be_miner tag used by Enhanced AI
 
+Simply Swords glaive buffed:
+- Added SS-style stats for the glaive, which was underpowered from inheriting its stats directly from Better Combat
+
 Supplementaries flax item additions/changes:
 - Added to desert house loot
 - Bale decor added to desert and savanna village template_pool's
