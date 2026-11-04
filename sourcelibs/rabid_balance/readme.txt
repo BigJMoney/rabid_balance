@@ -13,6 +13,10 @@ Hero of the Village gift improvements:
 Spyglass is crafted with glass instead of Amethyst
 (Future me will probably add some kind of a mod to make an advanced spyglass to show stats or something)
 
+Village chests have been rebalanced
+- Weaponsmith no longer grants everything under the sun (many items moved to chests that make sense)
+  Don't worry, you can still find rare diamonds :)
+
 ~ MOD ADJUSTMENTS ~
 
 Apotheosis loot affix entries added for:
