@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "killed_something": {
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+    "description": "Defeating the Hordes",
+    "icon": {
+      "count": 1,
+      "id": "minecraft:iron_sword"
+    },
+    "show_toast": false,
+    "title": "Hordes"
+  },
+  "requirements": [
+    [
+      "killed_something"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

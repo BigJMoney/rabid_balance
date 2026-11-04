@@ -1,0 +1,22 @@
+{
+  "parent": "rabidbalance:hordes/defeat_horde1",
+  "criteria": {
+    "win_horde2": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": "Defeat the strongest wandering horde.",
+    "icon": {
+      "count": 1,
+      "id": "minecraft:piglin_head"
+    },
+    "title": "Horde Champion"
+  },
+  "requirements": [
+    [
+      "win_horde2"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

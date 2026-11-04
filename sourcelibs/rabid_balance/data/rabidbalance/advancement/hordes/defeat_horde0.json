@@ -1,0 +1,22 @@
+{
+  "parent": "rabidbalance:hordes/root",
+  "criteria": {
+    "win_horde0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": "Defeat the weakest of the wandering hordes.",
+    "icon": {
+      "count": 1,
+      "id": "minecraft:zombie_head"
+    },
+    "title": "Hordelet"
+  },
+  "requirements": [
+    [
+      "win_horde0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

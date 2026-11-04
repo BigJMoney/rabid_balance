@@ -1,0 +1,22 @@
+{
+  "parent": "rabidbalance:hordes/defeat_horde0",
+  "criteria": {
+    "win_horde1": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": "Defeat a strong wandering horde.",
+    "icon": {
+      "count": 1,
+      "id": "minecraft:skeleton_skull"
+    },
+    "title": "Horde Fighter"
+  },
+  "requirements": [
+    [
+      "win_horde1"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
