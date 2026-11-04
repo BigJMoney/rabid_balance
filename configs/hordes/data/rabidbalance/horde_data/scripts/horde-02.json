@@ -36,7 +36,12 @@
             },
             {
                 "function": "hordes:set_entity_speed",
-                "value": 1.2,
+                "value": 1.0,
+                "conditions": []
+            },
+            {
+                "function": "hordes:add_reward_command",
+                "value": "advancement grant @p only rabidbalance:hordes/defeat_horde2",
                 "conditions": []
             }
         ],
