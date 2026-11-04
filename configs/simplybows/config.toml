@@ -266,12 +266,12 @@ chaosCelestialSwiftnessMaxStacks = 15
 chaosCelestialBowPullBonusPerStack = 0.16
 
 [loot]
-baseStringChance = 0.02
-baseFrameChance = 0.02
-baseRuneChance = 0.003
-baseUniqueBowChance = 0.002
-boostedBowChance = 0.015
-boostedRuneChanceAncientCity = 0.02
+baseStringChance = 0.002
+baseFrameChance = 0.002
+baseRuneChance = 0.0005
+baseUniqueBowChance = 0.00025
+boostedBowChance = 0.0025
+boostedRuneChanceAncientCity = 0.005
 
 [upgrades]
 maxLevelPerType = 5
