@@ -43,7 +43,13 @@ LootJS.modifiers(lootModEvent => {
 
   // ---- Waystones
 
-  // Waystones drop obsidian instead of a waystone
+  if (Platform.isLoaded('waystones')) {
+
+    // Waystones drop obsidian instead of a waystone
+    lootModEvent
+      .addTableModifier('waystones:blocks/waystone')
+      .replaceLoot('waystones:waystone', 'minecraft:obsidian')
+  }
 
 
   // ---- Supplementaries
