@@ -1,11 +1,10 @@
 Rabid Balance v.0.1.1
 
 
-~ LIST OF CHANGES ~
+~ LIST OF VANILLA CHANGES ~
 
-Leather joinery items are used in place of some leather pieces when making leather armor (also requires my Crafttweaker script):
-- Bone, iron nugget or string
-  Todo: add copper and cast iron nuggets
+Leather joinery items are used in place of some leather pieces when making leather armor (also requires my KubeJS script):
+- Bone, iron nugget, copper nugget or string
 
 Hero of the Village gift improvements:
 - Toolsmith gives iron tools (diamond, if pickaxe)
@@ -13,7 +12,7 @@ Hero of the Village gift improvements:
 Spyglass is crafted with glass instead of Amethyst
 (Future me will probably add some kind of a mod to make an advanced spyglass to show stats or something)
 
-Village chests have been rebalanced
+Village chests have been rebalanced:
 - Weaponsmith no longer grants everything under the sun (many items moved to chests that make sense)
   Don't worry, you can still find rare diamonds :)
 
