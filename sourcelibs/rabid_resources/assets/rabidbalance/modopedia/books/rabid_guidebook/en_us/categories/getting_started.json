@@ -1,0 +1,8 @@
+{
+    "title": "Getting Started",
+    "icon": { "id": "minecraft:book", "count": 1 },
+    "landing_text": "Getting started in a new Rabid World",
+    "entries": [
+        "modpack_changes"
+    ]
+}

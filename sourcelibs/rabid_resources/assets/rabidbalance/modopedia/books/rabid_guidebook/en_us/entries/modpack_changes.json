@@ -1,0 +1,14 @@
+{
+    "title": "Changes from Vanilla",
+    "icon": { "id": "minecraft:stick", "count": 1 },
+    "pages": [
+        {
+            "components": [
+                {
+                    "type": "modopedia:text",
+                    "text": "You'll need sticks to make large sticks, and place and light them to make a campfire. You can light with two flint."
+                }
+            ]
+        }
+    ]
+}
