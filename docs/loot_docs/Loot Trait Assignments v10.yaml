@@ -54,24 +54,31 @@ loot_classification_by_trait:
   ignored_items:
     # Full mod wildcard ignores will be overriden by specific rules
     - aether:*
+    - alexsmobs:*
     - backpacked:*
     - bosses_of_mass_destruction:*
     - burnt:*
+    - citadel:*
     - endermanoverhaul:*
     - ghosts:*
+    - goblins_tyranny:*
     - hybrid-aquatic:*
     - hominid:*
     - immersive_aircraft:*
     - justdirethings:*
     - man_of_many_planes:*
+    - modopedia:*
     - reanimal:*
     - ribbits:*
     - rottencreatures:*
+    - simplybows:*
+    - simply_traps:*
     - smallships:*
     - twilightforest:*
     - undergarden:*
     - upgrade_aquatic:*
     - vc_gliders:*
+    - waystones:*
     - wildex:*
 
     # Explicitly declared item ignores will NOT be overrided by specific rules
@@ -179,15 +186,19 @@ loot_classification_by_trait:
         - minecraft:tnt
         - minecraft:firework_rocket
         - minecraft:firework_star
-        - minecraft:sponge
-        - minecraft:wet_sponge
         - minecraft:name_tag
         - minecraft:bone_meal
         - minecraft:trial_key
         - minecraft:ominous_trial_key
+        - goblins_tyranny:deadly_barrel
+        - goblins_tyranny:deadly_liquor_item
+        - goblins_tyranny:decoy
+        - "goblins_tyranny:*bomb*"
         - "#c:potions"                  # specific rules needed for generated instances? (lots of other places like this)
         - "#c:foods"
         - "#endermanoverhaul:ender_pearls"
+        - "#waystones:scrolls"
+        - "#waystones:single_use_warp_shards"
       assign:
         function: consumable
         value:
@@ -200,6 +211,8 @@ loot_classification_by_trait:
           legendary:
             - minecraft:totem_of_undying
             - minecraft:ender_eye
+            - "#waystones:scrolls"
+            - "#waystones:single_use_warp_shards"
           epic:
             - minecraft:enchanted_golden_apple
             - minecraft:firework_star
@@ -214,10 +227,12 @@ loot_classification_by_trait:
             - minecraft:tnt
             - minecraft:firework_rocket
             - minecraft:name_tag
-            - minecraft:sponge
-            - minecraft:wet_sponge
             - minecraft:chorus_fruit
+            - goblins_tyranny:deadly_barrel
+            - goblins_tyranny:deadly_liquor_item
+            - goblins_tyranny:decoy
             - "#c:potions"
+            - "goblins_tyranny:*bomb"
           uncommon:
             - minecraft:experience_bottle
         amount_class:
@@ -237,9 +252,11 @@ loot_classification_by_trait:
         - minecraft:elytra
         - minecraft:saddle
         - toolbelt:belt
+        - goblins_tyranny:goblin_shield
         - "vc_gliders:paraglider_*"
         - "*_horse_armor"
         - "*_head"
+        - "*_nautilus_armor"
         - "*backpack"                           # Sophisticated Backpacks
         - "#c:armors"
         - "#c:tools/shield"
@@ -258,6 +275,7 @@ loot_classification_by_trait:
             # - "#netherite"                    # These material-style tags don't exist yet (ex. #c:equipment/wooden)
           epic:
             - minecraft:diamond_horse_armor
+            - minecraft:diamond_nautilus_armor
             - sophisticatedbackpacks:gold_backpack
             - vc_gliders:paraglider_diamond
             - "diamond_*"
@@ -267,13 +285,17 @@ loot_classification_by_trait:
             - minecraft:wolf_armor
             - minecraft:iron_horse_armor
             - minecraft:golden_horse_armor
+            - minecraft:iron_nautilus_armor
+            - minecraft:gold_nautilus_armor
             - minecraft:turtle_helmet
+            - goblins_tyranny:goblin_shield
             - vc_gliders:paraglider_gold
             - "iron_*"
             # - "#iron"
             - "#minecraft:harnesses"
           uncommon:
             - minecraft:leather_horse_armor
+            - minecraft:leather_nautilus_armor
             - "golden_*"                        # This could cause issues, keep an eye out
             - "gold_*"
             - "chainmail_*"
@@ -299,10 +321,25 @@ loot_classification_by_trait:
         - minecraft:spectral_arrow
         - minecraft:tipped_arrow
         - minecraft:snowball
+        - alexsmobs:ancient_dart
+        - goblins_tyranny:goblin_sword
+        - goblins_tyranny:goblin_spear
+        - goblins_tyranny:goblin_axe
+        - goblins_tyranny:goblin_mace
+        - goblins_tyranny:goblin_upgraded_mace
         - illagerinvasion:platinum_infused_hatchet
+        - simplyswords:sword_on_a_stick
         - "kobold_iron_*"
+        - "#minecraft:spears"
         - "#minecraft:swords"
         - "#c:tools/ranged_weapon"
+        - "#simplybows:uniques"
+        - "#simplyswords:uniques"
+        - "#simplyswords:netherite_gear"
+        - "#simplyswords:runic_weapons"
+        - "#simplyswords:diamond_gear"
+        - "#simplyswords:iron_gear"
+        - "#simplyswords:gold_gear"
       assign:
         function: weapon
         value:
@@ -312,12 +349,22 @@ loot_classification_by_trait:
             - "wooden_*"
             # - "#wooden"                     # These material-style tags don't exist yet (ex. #c:equipment/wooden)
           legendary:
+            - goblins_tyranny:goblin_upgraded_mace
             - "#netherite"
+            - "#simplybows:uniques"
+            - "#simplyswords:netherite_gear"
+            - "#simplyswords:uniques"
           epic:
             - minecraft:trident
             - minecraft:mace
+            - goblins_tyranny:goblin_sword
+            - goblins_tyranny:goblin_spear
+            - goblins_tyranny:goblin_axe
+            - goblins_tyranny:goblin_mace
             - "diamond_*"
             # - "#diamond"
+            - "#simplyswords:runic_weapons"
+            - "#simplyswords:diamond_gear"
           rare:
             - minecraft:spectral_arrow
             - minecraft:tipped_arrow
@@ -325,11 +372,15 @@ loot_classification_by_trait:
             - illagerinvasion:platinum_infused_hatchet
             - "iron_*"
             # - "#iron"
+            - "#simplyswords:iron_gear"
           uncommon:
+            - alexsmobs:ancient_dart
+            - simplyswords:sword_on_a_stick
             - "golden_*"
             - "copper_*"
             - "kobold_iron_*"
             # - "#golden"
+            - "#simplyswords:gold_gear"
           common:
             - minecraft:arrow
             - "stone_*"
@@ -350,6 +401,7 @@ loot_classification_by_trait:
         - minecraft:shears
         - minecraft:fishing_rod
         - minecraft:brush
+        - minecraft:sulfur_cube_bucket
         - "#minecraft:axes"
         - "#minecraft:pickaxes"
         - "#minecraft:shovels"
@@ -367,8 +419,10 @@ loot_classification_by_trait:
             - "netherite_*"
             # - "#netherite"
           epic:
+            - minecraft:sulfur_cube_bucket
             - "diamond_*"
             # - "#diamond"
+            - "#c:buckets/entity_water"
           rare:
             - "iron_*"
             # - "#iron"
@@ -459,6 +513,7 @@ loot_classification_by_trait:
         # Filler
         - minecraft:stick
         - minecraft:leaf_litter
+        - better_campfires:firewood
         # Com
         - minecraft:coal
         - minecraft:charcoal
@@ -537,6 +592,7 @@ loot_classification_by_trait:
         - illagerinvasion:illusionary_dust
         - illagerinvasion:platinum_chunk
         - illagerinvasion:platinum_sheet
+        - enchanting_overhauled:enchanted_tome
         - primity:cast_iron_block
         - sophisticatedcore:xp_bucket
         # Epi
@@ -557,6 +613,7 @@ loot_classification_by_trait:
         - minecraft:resin_block
         - minecraft:resin_clump
         - bettertridents:trident_fragment
+        - simplyswords:runic_tablet
         # Leg
         - minecraft:heart_of_the_sea
         - minecraft:netherite_scrap
@@ -575,6 +632,7 @@ loot_classification_by_trait:
         - "*_fungus"
         - "*banner_pattern*"
         - "raw_*"                   # includes both raw_* and raw_*_block
+        - "simplyswords:*_remnant"
         - "#c:eggs"
         - "#c:ores"
         - "#c:nuggets"
@@ -584,6 +642,8 @@ loot_classification_by_trait:
         - "#c:dyes"
         - "#minecraft:trim_templates"
         - "#minecraft:decorated_pot_sherds"
+        - "#simplybows:upgrades"
+        - "#simplyswords:gems"
         - "#sophisticatedbackpacks:upgrade"
         - "#sophisticatedbackpacks:advanced_pickup_upgrade"
       assign:
@@ -600,6 +660,7 @@ loot_classification_by_trait:
           filler:
             - minecraft:stick
             - minecraft:leaf_litter
+            - better_campfires:firewood
           legendary:
             - minecraft:diamond_block
             - minecraft:emerald_block
@@ -627,6 +688,10 @@ loot_classification_by_trait:
             - minecraft:resin_block
             - minecraft:resin_clump
             - bettertridents:trident_fragment
+            - simplyswords:runic_tablet
+            - "simplyswords:*_remnant"
+            - "#simplybows:upgrades"
+            - "#simplyswords:gems"
             - "#sophisticatedbackpacks:upgrade"
           uncommon:
             - dried_kelp_block
@@ -726,6 +791,7 @@ loot_classification_by_trait:
       priority: 55
       match:
         - minecraft:chest
+        - minecraft:copper_chest
         - minecraft:trapped_chest
         - upgrade_aquatic:trapped_driftwood_chest
         - upgrade_aquatic:trapped_river_chest
@@ -749,6 +815,7 @@ loot_classification_by_trait:
             - minecraft:trapped_chest
           uncommon:
             - minecraft:decorated_pot
+            - minecraft:copper_chest
             - upgrade_aquatic:driftwood_chest
             - upgrade_aquatic:river_chest
             - "*_shelf"
@@ -781,6 +848,8 @@ loot_classification_by_trait:
         - minecraft:bee_nest
         - minecraft:beehive
         - illagerinvasion:imbuing_table
+        - simplyswords:runic_forge
+        - "enchanting_overhauled:*_enchanting_table"
       assign:
         function: block_crafting
         value:
@@ -790,10 +859,12 @@ loot_classification_by_trait:
           legendary:
             - minecraft:enchanting_table
             - illagerinvasion:imbuing_table
+            - "enchanting_overhauled:*_enchanting_table"
           epic:
             - minecraft:beehive
             - minecraft:soul_campfire
             - minecraft:anvil
+            - simplyswords:runic_forge
           uncommon:
             - minecraft:campfire
             - minecraft:crafting_table
@@ -878,9 +949,8 @@ loot_classification_by_trait:
       priority: 40
       match:
         - minecraft:torch
+        - minecraft:copper_torch
         - minecraft:soul_torch
-        - minecraft:lantern
-        - minecraft:soul_lantern
         - minecraft:ladder
         - minecraft:scaffolding
         - minecraft:flower_pot
@@ -902,6 +972,7 @@ loot_classification_by_trait:
         - minecraft:glowstone
         - minecraft:dripstone_block
         - minecraft:pointed_dripstone
+        - minecraft:sulfur_spike
         - minecraft:slime_block
         - minecraft:vine
         - minecraft:magma_block
@@ -916,14 +987,22 @@ loot_classification_by_trait:
         - minecraft:mycelium
         - minecraft:rooted_dirt
         - minecraft:hay_block
+        - minecraft:sponge
+        - minecraft:wet_sponge
+        - minecraft:straw_bed
+        - minecraft:copper_golem_statue
+        - minecraft:potent_sulfur
         - upgrade_aquatic:bedroll
         - dummmmmmy:target_dummy
         - ribbits:swamp_lantern
         - "infested_*"
         - "*_froglight"
+        - "*glow_stick*"
         - "#minecraft:fence_gates"
         - "#minecraft:beds"
+        - "#minecraft:cushions"
         - "#minecraft:doors"
+        - "#minecraft:lanterns"
         - "#minecraft:trapdoors"
         - "#minecraft:banners"
         - "#minecraft:signs"
@@ -958,8 +1037,12 @@ loot_classification_by_trait:
             - minecraft:glow_item_frame
             - minecraft:armor_stand
             - minecraft:pointed_dripstone
+            - minecraft:sulfur_spike
             - minecraft:blue_ice
             - ribbits:swamp_lantern
+            - minecraft:sponge
+            - minecraft:wet_sponge
+            - minecraft:copper_golem_statue
             - "#minecraft:banners"
           common:
             - minecraft:torch
@@ -977,6 +1060,7 @@ loot_classification_by_trait:
             - minecraft:armor_stand
             - minecraft:jukebox
             - minecraft:hay_block
+            - minecraft:straw_bed
             - upgrade_aquatic:bedroll
             - "#minecraft:beds"
       reason: >
@@ -1026,6 +1110,8 @@ loot_classification_by_trait:
         - minecraft:pale_hanging_moss
         - minecraft:pale_moss_carpet
         - minecraft:resin_brick
+        - minecraft:cinnabar
+        - minecraft:sulfur
         - "*_bricks"
         - "#c:buds"
         - "#c:stripped_logs"
@@ -1101,6 +1187,7 @@ loot_classification_by_trait:
         - minecraft:moss_carpet
         - minecraft:short_dry_grass
         - minecraft:tall_dry_grass
+        - minecraft:red_shrub
         - upgrade_aquatic:tall_beachgrass
         - upgrade_aquatic:beachgrass
         # Nicer
@@ -1143,6 +1230,8 @@ loot_classification_by_trait:
         - "#minecraft:skulls"
         - "#c:pumpkins"
         - "#c:concretes"
+        - "#minecraft:concrete_slabs"
+        - "#minecraft:concrete_stairs"
         - "#c:glazed_terracottas"
       assign:
         value:
@@ -1173,6 +1262,7 @@ loot_classification_by_trait:
             - minecraft:moss_carpet
             - minecraft:short_dry_grass
             - minecraft:tall_dry_grass
+            - minecraft:red_shrub
             - upgrade_aquatic:tall_beachgrass
             - upgrade_aquatic:beachgrass
             - "*_roots"
@@ -1197,6 +1287,8 @@ loot_classification_by_trait:
             - "#minecraft:skulls"
             - "kobold*skull"
             - "#c:concretes"
+            - "#minecraft:concrete_slabs"
+            - "#minecraft:concrete_stairs"
             - "#c:chains"
         function: block_building
         amount_class: 
