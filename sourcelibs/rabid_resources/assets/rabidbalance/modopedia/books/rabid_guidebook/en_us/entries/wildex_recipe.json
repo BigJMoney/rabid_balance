@@ -1,0 +1,22 @@
+{
+    "title": "Wildex Guide",
+    "icon": { "id": "minecraft:book", "count": 1 },
+    "pages": [
+        {
+            "components": [
+                {
+                    "type": "modopedia:text",
+                    "text": "How to craft the Wildex Bestiary:"
+                }
+            ]
+        },
+        {
+            "components": [
+                {
+                    "template": "modopedia:page/crafting",
+                    "recipe": "wildex:wildex_book"
+                }
+            ]
+        }
+    ]
+}

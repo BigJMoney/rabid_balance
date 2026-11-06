@@ -1,0 +1,22 @@
+{
+    "title": "Alex's Mobs Guide",
+    "icon": { "id": "minecraft:book", "count": 1 },
+    "pages": [
+        {
+            "components": [
+                {
+                    "type": "modopedia:text",
+                    "text": "How to craft the Alex's Mobs Bestiary:"
+                }
+            ]
+        },
+        {
+            "components": [
+                {
+                    "template": "modopedia:page/crafting",
+                    "recipe": "alexsmobs:animal_dictionary"
+                }
+            ]
+        }
+    ]
+}

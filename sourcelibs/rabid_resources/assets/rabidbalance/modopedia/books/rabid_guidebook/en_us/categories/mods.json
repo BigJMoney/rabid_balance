@@ -1,0 +1,9 @@
+{
+    "title": "Mod Introductions",
+    "icon": { "id": "minecraft:book", "count": 1 },
+    "landing_text": "How to craft mod guides",
+    "entries": [
+        "wildex_recipe",
+        "alexsmobs_recipe"
+    ]
+}
