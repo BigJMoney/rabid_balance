@@ -1,0 +1,10 @@
+{
+    "unlock_challenge": {
+        "formatter": "backpacked:percentage",
+        "challenge": {
+            "type": "backpacked:travel_distance",
+            "movement": "elytra_flying",
+            "total_distance": 1000000
+        }
+    }
+}

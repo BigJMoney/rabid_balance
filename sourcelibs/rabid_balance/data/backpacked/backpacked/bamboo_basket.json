@@ -1,0 +1,15 @@
+{
+    "unlock_challenge": {
+        "formatter": "backpacked:incomplete_complete",
+        "challenge": {
+            "type": "backpacked:feed_animal",
+            "animal": {
+                "type": "minecraft:panda",
+                "location": {
+                    "biome": "minecraft:bamboo_jungle"
+                }
+            },
+            "count": 50
+        }
+    }
+}

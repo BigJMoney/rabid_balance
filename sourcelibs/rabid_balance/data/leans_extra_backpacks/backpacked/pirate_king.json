@@ -1,0 +1,15 @@
+{
+  "unlock_challenge": {
+    "formatter": "backpacked:completed_x_of_x",
+    "challenge": {
+      "type": "backpacked:kill_mob",
+      "mob": {
+        "type": [
+          "minecraft:pillager",
+          "minecraft:vindicator"
+        ]
+      },
+      "count": 200
+    }
+  }
+}

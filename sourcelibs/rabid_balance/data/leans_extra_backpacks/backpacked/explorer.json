@@ -1,0 +1,10 @@
+{
+  "unlock_challenge": {
+    "formatter": "backpacked:travelled_blocks",
+    "challenge": {
+      "type": "backpacked:travel_distance",
+      "movement": "",
+      "total_distance": 3000000
+    }
+  }
+}

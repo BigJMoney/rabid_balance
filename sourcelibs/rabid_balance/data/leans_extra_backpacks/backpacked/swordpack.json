@@ -1,0 +1,14 @@
+{
+  "unlock_challenge": {
+    "formatter": "backpacked:crafted_x_of_x",
+    "challenge": {
+      "type": "backpacked:craft_item",
+      "crafted_item": {
+        "items": [
+          "minecraft:netherite_sword"
+        ]
+      },
+      "count": 1
+    }
+  }
+}

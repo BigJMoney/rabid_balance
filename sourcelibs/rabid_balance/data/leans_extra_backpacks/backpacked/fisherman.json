@@ -1,0 +1,14 @@
+{
+  "unlock_challenge": {
+    "formatter": "backpacked:fishing_rod_x_of_1",
+    "challenge": {
+      "type": "backpacked:craft_item",
+      "crafted_item": {
+        "items": [
+          "minecraft:fishing_rod"
+        ]
+      },
+      "count": 1
+    }
+  }
+}

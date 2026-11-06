@@ -1,0 +1,17 @@
+{
+    "unlock_challenge": {
+        "formatter": "backpacked:cut_x_of_x",
+        "challenge": {
+            "type": "backpacked:mine_block",
+            "block": {
+                "tag": "minecraft:logs"
+            },
+            "count": 1000
+        }
+    }
+}
+
+
+
+
+

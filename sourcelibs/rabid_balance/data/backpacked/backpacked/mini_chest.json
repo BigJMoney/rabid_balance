@@ -1,0 +1,15 @@
+{
+    "unlock_challenge": {
+        "formatter": "backpacked:incomplete_complete",
+        "challenge": {
+            "type": "backpacked:interact_with_block",
+            "block": {
+                "blocks": [
+                    "minecraft:chest"
+                ],
+                "nbt": "{\"LootTable\":\"minecraft:chests/buried_treasure\"}"
+            },
+            "count": 10
+        }
+    }
+}
