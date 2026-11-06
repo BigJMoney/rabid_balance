@@ -17,6 +17,14 @@ const WOODS = [
   'pale_oak'  // Does this fail when Vanilla Backport is disabled?
 ];
 
+//todo: add modded armors that are relevant
+const HEAVY_ARMOR_MATS = {
+  copper: 'copper_ingot',
+  golden: 'gold_ingot',
+  iron: 'iron_ingot',
+  diamond: 'diamond'
+};
+
 // NOTE: Disabled for now to test if backport mods fix this
 // Lodestone is easier to craft (for 1.21.1)
 // function lodestoneRecipe(recipeEvent) {
@@ -145,8 +153,9 @@ function activatorRailRecipe(recipeEvent) {
 
 
 // Leather armor recipes use joinery
+// todo: add cast_iron_nugget when Primity is enabled permanently
 function addLeatherJoineryTag(tagEvent) {
-  const joinery = ["minecraft:bone", "minecraft:string", "minecraft:copper_nugget", "minecraft:iron_nugget"];
+  const joinery = ["minecraft:bone", "minecraft:string", "minecraft:copper_nugget", "minecraft:iron_nugget"];  // Does this fail when Vanilla Backport is disabled?
   joinery.forEach(j => {
     tagEvent.add("rabidbalance:leather_joinery", j)
   });
@@ -242,6 +251,70 @@ function recycledLeatherRecipes(recipeEvent) {
   );
 }
 
+// Heavy armor requires leather
+function heavyArmorRecipes(recipeEvent) {
+
+  Object.entries(HEAVY_ARMOR_MATS).forEach(([armor_name, armor_mat]) => {
+
+    recipeEvent.remove({output: `minecraft:${armor_name}_helmet`});
+    recipeEvent.shaped(
+      Item.of(`minecraft:${armor_name}_helmet`, 1),
+      [
+        'ABA',
+        'A A'
+      ],
+      {
+        A: `minecraft:${armor_mat}`,
+        B: 'minecraft:leather'
+      }
+    ).id(`minecraft:${armor_name}_helmet`);
+
+    recipeEvent.remove({output: `minecraft:${armor_name}_chestplate`});
+    recipeEvent.shaped(
+      Item.of(`minecraft:${armor_name}_chestplate`, 1),
+      [
+        'A A',
+        'ABA',
+        'ABA'
+      ],
+      {
+        A: `minecraft:${armor_mat}`,
+        B: 'minecraft:leather'
+      }
+    ).id(`minecraft:${armor_name}_chestplate`);
+
+    recipeEvent.remove({output: `minecraft:${armor_name}_leggings`});
+    recipeEvent.shaped(
+      Item.of(`minecraft:${armor_name}_leggings`, 1),
+      [
+        'BBB',
+        'A A',
+        'A A'
+      ],
+      {
+        A: `minecraft:${armor_mat}`,
+        B: 'minecraft:leather'
+      }
+    ).id(`minecraft:${armor_name}_leggings`);
+
+    recipeEvent.remove({output: `minecraft:${armor_name}_boots`});
+    recipeEvent.shaped(
+      Item.of(`minecraft:${armor_name}_boots`, 1),
+      [
+        'A A',
+        'B B'
+      ],
+      {
+        A: `minecraft:${armor_mat}`,
+        B: 'minecraft:leather'
+      }
+    ).id(`minecraft:${armor_name}_boots`);
+
+  })
+
+}
+
+
 
 // Register recipe event callbacks
 //ServerEvents.recipes(lodestoneRecipe);
@@ -260,6 +333,7 @@ ServerEvents.recipes(leatherChestplateRecipe);
 ServerEvents.recipes(leatherLeggingsRecipe);
 ServerEvents.recipes(leatherBootsRecipe);
 ServerEvents.recipes(recycledLeatherRecipes);
+ServerEvents.recipes(heavyArmorRecipes);
 
 // Register tag event callbacks
 ServerEvents.tags("item", addLeatherJoineryTag);
