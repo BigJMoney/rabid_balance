@@ -1,11 +1,17 @@
 {
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "yo_hooks"
+        }
+    ],
     "pools": [
         {
             "entries": [
                 {
                     "type": "minecraft:item",
-                    "name": "yo_hooks:netherite_grappling_hook",
-                    "weight": 4,
+                    "name": "yo_hooks:iron_grappling_hook",
+                    "weight": 6,
                     "functions": [
                         {
                             "function": "minecraft:set_damage", 
@@ -13,14 +19,14 @@
                             "damage": {
                                 "type": "minecraft:uniform",
                                 "max": 0.5,
-                                "min": 0.15
+                                "min": 0.2
                             }
                         }
                     ]
                 },
                 {
                     "type": "empty",
-                    "weight": 3
+                    "weight": 6
                 }
             ],
             "rolls": 1.0
