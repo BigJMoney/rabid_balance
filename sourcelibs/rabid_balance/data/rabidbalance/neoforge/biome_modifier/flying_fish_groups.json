@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#rabidbalance:alexsmobs/flying_fish_spawns",
+  "spawners": {
+    "type": "alexsmobs:flying_fish",
+    "weight": 5,
+    "minCount": 2,
+    "maxCount": 3
+  }
+}

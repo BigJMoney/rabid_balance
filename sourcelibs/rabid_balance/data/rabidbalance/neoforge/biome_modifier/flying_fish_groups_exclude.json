@@ -1,0 +1,5 @@
+{
+  "type": "neoforge:remove_spawns",
+  "biomes": "#rabidbalance:alexsmobs/flying_fish_exclusions",
+  "entity_types": "alexsmobs:flying_fish"
+}
