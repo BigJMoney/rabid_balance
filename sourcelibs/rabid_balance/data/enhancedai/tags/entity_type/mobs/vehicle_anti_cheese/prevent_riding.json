@@ -1,7 +1,6 @@
 {
     "values": [
         "minecraft:cave_spider",
-        "#enhancedai:zombies",
         "minecraft:enderman",
         "minecraft:iron_golem",
         "minecraft:piglin",
@@ -22,7 +21,6 @@
         "minecraft:ravager",
         "minecraft:shulker",
         "minecraft:silverfish",
-        "#enhancedai:skeletons",
         "minecraft:breeze",
         "minecraft:slime",
         "minecraft:vex",
@@ -30,6 +28,16 @@
         "minecraft:warden",
         "minecraft:witch",
         "minecraft:zoglin",
+
+        {
+            "required": false,
+            "id": "#enhancedai:zombies"
+        },
+        {
+            "required": false,
+            "id": "#enhancedai:skeletons"
+        },
+
         {
             "required": false,
             "id": "caverns_and_chasms:deeper"

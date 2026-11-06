@@ -3,10 +3,18 @@
         "minecraft:witch",
         "minecraft:pillager",
         "minecraft:vindicator",
-        "#enhancedai:zombies",
-        "#enhancedai:skeletons",
         "minecraft:creeper",
         "minecraft:spider",
-        "minecraft:cave_spider"
+        "minecraft:cave_spider",
+
+        {
+            "required": false,
+            "id": "#enhancedai:zombies"
+        },
+        {
+            "required": false,
+            "id": "#enhancedai:skeletons"
+        },
+
     ]
 }
