@@ -1,0 +1,21 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "enchanting_overhauled"
+        }
+    ],
+  "type": "enchanting_overhauled:tome_injection",
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:chests/village/village_armorer"
+        }
+      ]
+    }
+  ],
+  "rarity": "common"
+}

@@ -1,4 +1,10 @@
 {
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "enchanting_overhauled"
+        }
+    ],
   "type": "minecraft:crafting_shaped",
   "pattern": [
     " C ",
