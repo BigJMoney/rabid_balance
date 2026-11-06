@@ -50,7 +50,9 @@ Supplementaries waysign and adventure map changes:
 - Added more village types to waysign destinations
 - Removed villages from adventure maps
 
-Twilight Forest jerkies now work with all items tagged with raw meat and make chicken jerky (all other jerkies are OP)
+Twilight Forest:
+- Jerkies now work with all items tagged with raw meat and make "jerky" which is a balanced; average jerky
+- Drying jerky into leather takes one full day
 
 ~ ADVANCEMENT RECIPES ~
 
