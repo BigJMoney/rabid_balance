@@ -1,11 +1,16 @@
 {
- "enabled": true,
- "levels": {
-   "1": [
-     {
-       "item": "minecraft:nether_star",
-       "amount": 1
-     }
-   ]
- }
+    "enabled": true,
+    "levels":
+    {
+        "1":
+        [
+            {
+                "item_cost":
+                {
+                    "count": 1,
+                    "item": "minecraft:nether_star"
+                }
+            }
+        ]
+    }
 }
