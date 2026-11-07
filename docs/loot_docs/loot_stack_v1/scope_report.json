@@ -1,5 +1,5 @@
 {
-  "scope_config_source": "D:\\keep\\mods\\Minecraft\\my_tweaks\\configs\\loot_scope.json",
+  "scope_config_source": "D:\\keep\\mods\\Minecraft\\rabid_balance\\configs\\loot_scope.json",
   "allowed_loot_dirs": [
     "chests",
     "equipment",
@@ -12,11 +12,11 @@
   "deferred_loot_dirs": [
     "inject"
   ],
-  "base_source_root": "D:\\keep\\mods\\Minecraft\\my_tweaks\\libs\\neoforge-21.1.162_ref\\data",
+  "base_source_root": "D:\\keep\\mods\\Minecraft\\rabid_balance\\libs\\neoforge-21.1.162_ref\\data",
   "included_dirs": [
     {
       "name": "chests",
-      "file_count": 122
+      "file_count": 96
     },
     {
       "name": "equipment",
@@ -24,7 +24,7 @@
     },
     {
       "name": "pots",
-      "file_count": 1
+      "file_count": 2
     },
     {
       "name": "spawners",
@@ -38,16 +38,16 @@
   ],
   "excluded_dirs": [
     {
-      "name": "advancements",
-      "file_count": 1
-    },
-    {
       "name": "archaeology",
       "file_count": 7
     },
     {
+      "name": "barrels",
+      "file_count": 1
+    },
+    {
       "name": "blocks",
-      "file_count": 1773
+      "file_count": 2089
     },
     {
       "name": "dispensers",
@@ -55,26 +55,22 @@
     },
     {
       "name": "entities",
-      "file_count": 252
+      "file_count": 357
     },
     {
       "name": "gameplay",
-      "file_count": 26
+      "file_count": 37
     },
     {
       "name": "items",
       "file_count": 1
     },
     {
-      "name": "selectors",
-      "file_count": 2
+      "name": "minecraft",
+      "file_count": 10
     },
     {
       "name": "shearing",
-      "file_count": 1
-    },
-    {
-      "name": "stripping",
       "file_count": 1
     }
   ],
@@ -232,20 +228,20 @@
   ],
   "stack_encountered_loot_dirs": [
     {
-      "name": "advancements",
-      "file_count": 1
-    },
-    {
       "name": "archaeology",
       "file_count": 7
     },
     {
+      "name": "barrels",
+      "file_count": 1
+    },
+    {
       "name": "blocks",
-      "file_count": 1773
+      "file_count": 2089
     },
     {
       "name": "chests",
-      "file_count": 122
+      "file_count": 96
     },
     {
       "name": "dispensers",
@@ -253,7 +249,7 @@
     },
     {
       "name": "entities",
-      "file_count": 252
+      "file_count": 357
     },
     {
       "name": "equipment",
@@ -261,7 +257,7 @@
     },
     {
       "name": "gameplay",
-      "file_count": 26
+      "file_count": 37
     },
     {
       "name": "inject",
@@ -272,11 +268,11 @@
       "file_count": 1
     },
     {
-      "name": "pots",
-      "file_count": 1
+      "name": "minecraft",
+      "file_count": 10
     },
     {
-      "name": "selectors",
+      "name": "pots",
       "file_count": 2
     },
     {
@@ -286,23 +282,19 @@
     {
       "name": "spawners",
       "file_count": 5
-    },
-    {
-      "name": "stripping",
-      "file_count": 1
     }
   ],
-  "included_table_total": 132,
-  "excluded_table_total": 2101,
+  "included_table_total": 107,
+  "excluded_table_total": 2540,
   "deferred_table_total": 11,
   "new_excluded_loot_dirs_from_mods": [
     {
-      "name": "advancements",
+      "name": "barrels",
       "pack_ids": [
-        "aether"
+        "vanillabackport"
       ],
       "file_counts_by_pack": {
-        "aether": 1
+        "vanillabackport": 1
       }
     },
     {
@@ -315,32 +307,23 @@
       }
     },
     {
-      "name": "selectors",
+      "name": "minecraft",
       "pack_ids": [
-        "aether"
+        "rabid_balance"
       ],
       "file_counts_by_pack": {
-        "aether": 2
-      }
-    },
-    {
-      "name": "stripping",
-      "pack_ids": [
-        "aether"
-      ],
-      "file_counts_by_pack": {
-        "aether": 1
+        "rabid_balance": 10
       }
     }
   ],
   "warnings": [
     {
       "type": "new_excluded_loot_dir_from_mod",
-      "name": "advancements",
+      "name": "barrels",
       "pack_ids": [
-        "aether"
+        "vanillabackport"
       ],
-      "message": "Mod-introduced excluded loot_table dir `advancements` was not present in the base pack."
+      "message": "Mod-introduced excluded loot_table dir `barrels` was not present in the base pack."
     },
     {
       "type": "new_excluded_loot_dir_from_mod",
@@ -352,19 +335,11 @@
     },
     {
       "type": "new_excluded_loot_dir_from_mod",
-      "name": "selectors",
+      "name": "minecraft",
       "pack_ids": [
-        "aether"
+        "rabid_balance"
       ],
-      "message": "Mod-introduced excluded loot_table dir `selectors` was not present in the base pack."
-    },
-    {
-      "type": "new_excluded_loot_dir_from_mod",
-      "name": "stripping",
-      "pack_ids": [
-        "aether"
-      ],
-      "message": "Mod-introduced excluded loot_table dir `stripping` was not present in the base pack."
+      "message": "Mod-introduced excluded loot_table dir `minecraft` was not present in the base pack."
     }
   ]
 }

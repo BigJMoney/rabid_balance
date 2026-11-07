@@ -4,90 +4,6 @@
 # Once mapped rows exist for a loot_table_id, unresolved placeholder rows for that table are considered replaced.
 version: 1
 entries:
-- loot_table_id: aether:chests/dungeon/bronze/bronze_dungeon
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/bronze/bronze_dungeon_disc
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/bronze/bronze_dungeon_gummies
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/bronze/bronze_dungeon_loot
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/bronze/bronze_dungeon_neptune
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/bronze/bronze_dungeon_reward
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/bronze/bronze_dungeon_trash
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/bronze/bronze_dungeon_treasure
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/gold/gold_dungeon_reward
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/gold/gold_dungeon_treasure
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/silver/silver_dungeon
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/silver/silver_dungeon_cape_config
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/silver/silver_dungeon_disc
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/silver/silver_dungeon_gravitite
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/silver/silver_dungeon_gummies
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/silver/silver_dungeon_loot
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/silver/silver_dungeon_reward
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/silver/silver_dungeon_trash
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/silver/silver_dungeon_treasure
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aether:chests/dungeon/silver/silver_dungeon_valkyrie
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: aquatic_frontiers:chests/underwater_ruin_big
-  status: unresolved
-  structure_id: ''
-  notes: ''
 - loot_table_id: bosses_of_mass_destruction:chests/gauntlet
   status: mapped
   structure_id: bosses_of_mass_destruction:gauntlet
@@ -149,40 +65,32 @@ entries:
   structure_id: minecraft:ocean_ruin_warm
   notes: ''
 - loot_table_id: ribbits:chests/fisherman_main
-  status: unresolved
-  structure_id: ''
+  status: mapped
+  structure_id: ribbits:ribbit_village
   notes: ''
 - loot_table_id: ribbits:chests/fisherman_storage
-  status: unresolved
-  structure_id: ''
+  status: mapped
+  structure_id: ribbits:ribbit_village
   notes: ''
 - loot_table_id: ribbits:chests/gardener
-  status: unresolved
-  structure_id: ''
+  status: mapped
+  structure_id: ribbits:ribbit_village
   notes: ''
 - loot_table_id: ribbits:chests/merchant
-  status: unresolved
-  structure_id: ''
+  status: mapped
+  structure_id: ribbits:ribbit_village
   notes: ''
 - loot_table_id: ribbits:chests/nitwit
-  status: unresolved
-  structure_id: ''
+  status: mapped
+  structure_id: ribbits:ribbit_village
   notes: ''
 - loot_table_id: ribbits:chests/sorcerer
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: toxony:chests/basic_oils
-  status: unresolved
-  structure_id: ''
-  notes: ''
-- loot_table_id: toxony:chests/toxony_ingredients
-  status: unresolved
-  structure_id: ''
+  status: mapped
+  structure_id: ribbits:ribbit_village
   notes: ''
 - loot_table_id: twilightforest:chests/basement
-  status: unresolved
-  structure_id: ''
+  status: mapped
+  structure_id: ribbits:ribbit_village
   notes: ''
 - loot_table_id: twilightforest:chests/casket_loot
   status: unresolved

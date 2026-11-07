@@ -4,69 +4,6 @@
 # Do not assume loot_table_id is unique within this document.
 version: 1
 entries:
-- loot_table_id: aether:chests/ruined_portal
-  structure_id: minecraft:ruined_portal
-  match_rule: ambiguous_structure_root_match
-  evidence_data:
-    structure_root: ruined_portal
-    matched_value: ruined_portal
-    match_mode: first_segment
-  autoresolve: false
-  notes: ''
-- loot_table_id: aether:chests/ruined_portal
-  structure_id: minecraft:ruined_portal_desert
-  match_rule: ambiguous_structure_id_submatch
-  evidence_data:
-    structure_id_submatch: ruined_portal
-    matched_value: ruined_portal
-    match_mode: first_segment
-  autoresolve: false
-  notes: ''
-- loot_table_id: aether:chests/ruined_portal
-  structure_id: minecraft:ruined_portal_jungle
-  match_rule: ambiguous_structure_id_submatch
-  evidence_data:
-    structure_id_submatch: ruined_portal
-    matched_value: ruined_portal
-    match_mode: first_segment
-  autoresolve: false
-  notes: ''
-- loot_table_id: aether:chests/ruined_portal
-  structure_id: minecraft:ruined_portal_mountain
-  match_rule: ambiguous_structure_id_submatch
-  evidence_data:
-    structure_id_submatch: ruined_portal
-    matched_value: ruined_portal
-    match_mode: first_segment
-  autoresolve: false
-  notes: ''
-- loot_table_id: aether:chests/ruined_portal
-  structure_id: minecraft:ruined_portal_nether
-  match_rule: ambiguous_structure_id_submatch
-  evidence_data:
-    structure_id_submatch: ruined_portal
-    matched_value: ruined_portal
-    match_mode: first_segment
-  autoresolve: false
-  notes: ''
-- loot_table_id: aether:chests/ruined_portal
-  structure_id: minecraft:ruined_portal_ocean
-  match_rule: ambiguous_structure_id_submatch
-  evidence_data:
-    structure_id_submatch: ruined_portal
-    matched_value: ruined_portal
-    match_mode: first_segment
-  autoresolve: false
-  notes: ''
-- loot_table_id: aether:chests/ruined_portal
-  structure_id: minecraft:ruined_portal_swamp
-  match_rule: ambiguous_structure_id_submatch
-  evidence_data:
-    structure_id_submatch: ruined_portal
-    matched_value: ruined_portal
-    match_mode: first_segment
-  autoresolve: false
-  notes: ''
 - loot_table_id: bosses_of_mass_destruction:chests/lich_tower
   structure_id: twilightforest:lich_tower
   match_rule: ambiguous_structure_root_match
@@ -74,6 +11,24 @@ entries:
     structure_root: lich_tower
     matched_value: lich_tower
     match_mode: first_segment
+  autoresolve: false
+  notes: ''
+- loot_table_id: cataclysm:chests/desert_treasure
+  structure_id: minecraft:desert_pyramid
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: desert
+    matched_value: desert
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
+- loot_table_id: cataclysm:chests/desert_treasure
+  structure_id: nvr:villager_outpost/desert
+  match_rule: ambiguous_structure_id_match
+  evidence_data:
+    structure_id_stem: desert
+    matched_value: desert
+    match_mode: underscore_prefix
   autoresolve: false
   notes: ''
 - loot_table_id: illagerinvasion:chests/labyrinth
@@ -158,6 +113,15 @@ entries:
   autoresolve: true
   notes: ''
 - loot_table_id: minecraft:chests/desert_pyramid
+  structure_id: cataclysm:desert_occupied_village
+  match_rule: ambiguous_structure_id_submatch
+  evidence_data:
+    structure_id_submatch: desert
+    matched_value: desert
+    match_mode: underscore_prefix
+  autoresolve: false
+  notes: ''
+- loot_table_id: minecraft:chests/desert_pyramid
   structure_id: minecraft:desert_pyramid
   match_rule: ambiguous_structure_id_match
   evidence_data:
@@ -200,7 +164,7 @@ entries:
     structure_id_submatch: jungle
     matched_value: jungle
     match_mode: underscore_prefix
-  autoresolve: false
+  autoresolve: true
   notes: ''
 - loot_table_id: minecraft:chests/jungle_temple
   structure_id: nvr:villager_outpost/jungle
@@ -956,86 +920,5 @@ entries:
     structure_root: trial_chambers
     matched_value: trial_chambers
     match_mode: first_segment_plural
-  autoresolve: true
-  notes: ''
-- loot_table_id: toxony:chests/hunter_watchtower/hunter_watchtower_common
-  structure_id: toxony:hunter_watchtower
-  match_rule: ambiguous_structure_id_match
-  evidence_data:
-    structure_id_stem: hunter_watchtower
-    matched_value: hunter_watchtower
-    match_mode: first_segment
-  autoresolve: true
-  notes: ''
-- loot_table_id: toxony:chests/lost_silver_mine/lost_silver_mine_common
-  structure_id: toxony:lost_silver_mine
-  match_rule: ambiguous_structure_id_match
-  evidence_data:
-    structure_id_stem: lost_silver_mine
-    matched_value: lost_silver_mine
-    match_mode: first_segment
-  autoresolve: true
-  notes: ''
-- loot_table_id: toxony:chests/lost_silver_mine/lost_silver_mine_rare
-  structure_id: toxony:lost_silver_mine
-  match_rule: ambiguous_structure_id_match
-  evidence_data:
-    structure_id_stem: lost_silver_mine
-    matched_value: lost_silver_mine
-    match_mode: first_segment
-  autoresolve: true
-  notes: ''
-- loot_table_id: toxony:chests/old_adventure_guild/candle_room_loot
-  structure_id: toxony:old_adventure_guild
-  match_rule: ambiguous_structure_id_match
-  evidence_data:
-    structure_id_stem: old_adventure_guild
-    matched_value: old_adventure_guild
-    match_mode: first_segment
-  autoresolve: true
-  notes: ''
-- loot_table_id: toxony:chests/old_adventure_guild/old_adventure_guild_common
-  structure_id: toxony:old_adventure_guild
-  match_rule: ambiguous_structure_id_match
-  evidence_data:
-    structure_id_stem: old_adventure_guild
-    matched_value: old_adventure_guild
-    match_mode: first_segment
-  autoresolve: true
-  notes: ''
-- loot_table_id: toxony:chests/old_adventure_guild/old_adventure_guild_kitchen
-  structure_id: toxony:old_adventure_guild
-  match_rule: ambiguous_structure_id_match
-  evidence_data:
-    structure_id_stem: old_adventure_guild
-    matched_value: old_adventure_guild
-    match_mode: first_segment
-  autoresolve: true
-  notes: ''
-- loot_table_id: toxony:chests/old_adventure_guild/old_adventure_guild_rare
-  structure_id: toxony:old_adventure_guild
-  match_rule: ambiguous_structure_id_match
-  evidence_data:
-    structure_id_stem: old_adventure_guild
-    matched_value: old_adventure_guild
-    match_mode: first_segment
-  autoresolve: true
-  notes: ''
-- loot_table_id: toxony:chests/old_experiment_house/attic_chest
-  structure_id: toxony:old_experiment_house
-  match_rule: ambiguous_structure_id_match
-  evidence_data:
-    structure_id_stem: old_experiment_house
-    matched_value: old_experiment_house
-    match_mode: first_segment
-  autoresolve: true
-  notes: ''
-- loot_table_id: toxony:chests/old_experiment_house/old_experiment_house
-  structure_id: toxony:old_experiment_house
-  match_rule: ambiguous_structure_id_match
-  evidence_data:
-    structure_id_stem: old_experiment_house
-    matched_value: old_experiment_house
-    match_mode: first_segment
   autoresolve: true
   notes: ''
