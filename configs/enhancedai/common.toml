@@ -1172,7 +1172,7 @@
 		#Multiplier for the time a mob takes to break blocks. E.g. with this set to 2, mobs will take twice the time to mine a block.
 		# Default: 1.25
 		# Range: 0.0 ~ 128.0
-		"Time to break multiplier" = 50.0
+		"Time to break multiplier" = 1.25
 		#Dimensions where mobs can mine.
 		"Dimension whitelist" = ["minecraft:overworld", "minecraft:the_nether", "minecraft:the_end"]
 		#If true, the block tag enhancedai:miner_blacklist will be treated as a whitelist instead of blacklist

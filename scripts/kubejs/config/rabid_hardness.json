@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "applyGenerated": true,
+  "generateOnWorldLoad": false,
+  "allowProtectedBlocks": false,
+  "categories": [
+    {
+      "name": "hardened",
+      "hardness": 10,
+      "blastResistance": 20,
+      "include": [
+        { "type": "regex", "value": "brick" },
+        { "type": "regex", "value": "emerald" },
+        { "type": "tag", "value": "minecraft:needs_stone_tool" },
+        { "type": "regex", "value": "^minecraft:.*_concrete$" }
+      ],
+      "exclude": [
+        { "type": "regex", "value": "ore" },
+        { "type": "id", "value": "minecraft:iron_block" }
+      ]
+    },
+    {
+      "name": "reinforced",
+      "hardness": 50,
+      "blastResistance": 100,
+      "include": [
+        { "type": "regex", "value": "iron" },
+        { "type": "regex", "value": "diamond" },
+        { "type": "tag", "value": "minecraft:needs_iron_tool" },
+        { "type": "tag", "value": "minecraft:needs_diamond_tool" },
+        { "type": "hardness", "gte": 30 }
+      ],
+      "exclude": [
+        { "type": "regex", "value": "emerald" },
+        { "type": "regex", "value": "gold" },
+        { "type": "regex", "value": "ore" },
+        { "type": "regex", "value": "raw" }
+      ]
+    }
+  ]
+}
