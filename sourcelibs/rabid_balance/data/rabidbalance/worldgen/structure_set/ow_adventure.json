@@ -52,6 +52,79 @@
       "weight": 10
     },
     {
+      "structure": "minecraft:abandoned_camp_bamboo_jungle",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:abandoned_camp_birch_forest",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:abandoned_camp_cherry_grove",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:abandoned_camp_dappled_forest",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:abandoned_camp_flower_forest",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:abandoned_camp_forest",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:abandoned_camp_meadow",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:abandoned_camp_old_growth_birch_forest",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:abandoned_camp_old_growth_pine_taiga",
+      "weight": 10
+    },
+
+    {
+      "structure": "minecraft:abandoned_camp_old_growth_spruce_taiga",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:abandoned_camp_pale_garden",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:abandoned_camp_savanna",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:abandoned_camp_snowy_taiga",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:abandoned_camp_sparse_jungle",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:abandoned_camp_swamp",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:abandoned_camp_taiga",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:abandoned_camp_windswept_forest",
+      "weight": 10
+    },
+    {
+      "structure": "minecraft:abandoned_camp_wooded_badlands",
+      "weight": 10
+    },
+    {
       "structure": "minecraft:desert_pyramid",
       "weight": 10
     },
@@ -61,18 +134,6 @@
     },
     {
       "structure": "minecraft:shipwreck_beached",
-      "weight": 10
-    },
-    {
-      "structure": "toxony:old_adventure_guild",
-      "weight": 10
-    },
-    {
-      "structure": "toxony:old_experiment_house",
-      "weight": 10
-    },
-    {
-      "structure": "toxony:hunter_watchtower",
       "weight": 10
     }
   ]
