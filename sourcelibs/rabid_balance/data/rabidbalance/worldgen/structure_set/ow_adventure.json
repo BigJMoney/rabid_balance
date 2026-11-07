@@ -36,6 +36,18 @@
       "weight": 10
     },
     {
+      "structure": "goblins_tyranny:goblins_caravan",
+      "weight": 10
+    },
+    {
+      "structure": "goblins_tyranny:goblins_spot",
+      "weight": 10
+    },
+    {
+      "structure": "goblins_tyranny:goblinscamp",
+      "weight": 10
+    },
+    {
       "structure": "illagerinvasion:illusioner_tower",
       "weight": 10
     },
