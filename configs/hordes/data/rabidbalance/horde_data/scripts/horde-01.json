@@ -31,7 +31,7 @@
             },
             {
                 "function": "hordes:set_spawn_amount",
-                "value": 10,
+                "value": 8,
                 "conditions": []
             },
             {

@@ -1,24 +1,28 @@
 [
 	{
-		"entity": "minecraft:piglin",
-		"weight": 10,
-		"nbt": "{HandItems:[{id:stone_pickaxe,Count:1}]}",
+		"entity": "minecraft:zombified_piglin",
+		"weight": 5,
+		"nbt": "{HandItems:[{},{id:iron_pickaxe,count:1}],ArmorItems:[{},{},{},{id:golden_helmet,count:1}]}",
 		"min_spawns": 1,
 		"max_spawns": 4
 	},
 	{
-		"entity": "minecraft:piglin",
-		"weight": 10,
-		"nbt": "{HandItems:[{id:stone_axe,Count:1}]}",
+		"entity": "minecraft:zombified_piglin",
+		"weight": 5,
+		"nbt": "{HandItems:[{},{id:iron_axe,count:1}],ArmorItems:[{},{},{},{id:golden_helmet,count:1}]}",
 		"min_spawns": 1,
 		"max_spawns": 2
 	},
 	{
-		"entity": "minecraft:piglin",
-		"weight": 10,
-		"nbt": "{HandItems:[{id:stone_shovel,Count:1}]}",
+		"entity": "minecraft:zombified_piglin",
+		"weight": 5,
+		"nbt": "{HandItems:[{},{id:iron_shovel,count:1}],ArmorItems:[{},{},{},{id:golden_helmet,count:1}]}",
 		"min_spawns": 1,
 		"max_spawns": 1
+	},
+	{
+		"entity": "minecraft:piglin",
+		"weight": 15
 	},
 	{
 		"entity": "minecraft:hoglin",
@@ -34,7 +38,6 @@
 	{
 		"entity": "minecraft:ghast",
 		"weight": 5,
-		"min_spawns": 1,
 		"max_spawns": 1
 	},
 	{

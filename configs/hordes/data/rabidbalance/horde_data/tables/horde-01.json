@@ -19,24 +19,29 @@
 	},
 	{
 		"entity": "minecraft:zombie",
-		"weight": 10,
+		"weight": 5,
 		"nbt": "{HandItems:[{},{id:stone_pickaxe,count:1}],ArmorItems:[{},{},{},{id:leather_helmet,count:1}]}",
 		"min_spawns": 1,
 		"max_spawns": 3
 	},
 	{
 		"entity": "minecraft:zombie",
-		"weight": 10,
+		"weight": 5,
 		"nbt": "{HandItems:[{},{id:stone_axe,count:1}],ArmorItems:[{},{},{},{id:leather_helmet,count:1}]}",
 		"min_spawns": 1,
 		"max_spawns": 2
 	},
 	{
 		"entity": "minecraft:zombie",
-		"weight": 10,
+		"weight": 5,
 		"nbt": "{HandItems:[{},{id:stone_shovel,count:1}],ArmorItems:[{},{},{},{id:leather_helmet,count:1}]}",
 		"min_spawns": 1,
 		"max_spawns": 1
+	},
+	{
+		"entity": "minecraft:zombie",
+		"nbt": "{ArmorItems:[{},{},{},{id:leather_helmet,count:1}]}",
+		"weight": 15
 	},
 	{
 		"entity": "minecraft:skeleton",

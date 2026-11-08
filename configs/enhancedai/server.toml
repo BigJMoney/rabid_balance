@@ -344,7 +344,7 @@
 	"Enable Falling shockwave" = false
 	#Let mobs use Fishing Rods, reeling players in. Either put a Fishing Rod in main or off hand and when near enough from the target they will use it. Only mobs in enhancedai:mobs/can_equip_fishing_rod entity type tag are affected by this feature.
 	"Enable Fisher mobs" = false
-	#Mobs can mine blocks to reach the target. Uses off-hand item to mine by default, can be changed with Data Keys. Only mobs in the entity type tag enhancedai:mobs/can_mine can spawn with the ability to mine and blocks in the tag enhancedai:miner_blacklist cannot be mined. This feature also adds the block reach attribute to all entities.
+	#Mobs can mine blocks to reach the target. Uses off-hand item to mine by default, can be changed with the config or Data Keys. Only mobs in the entity type tag enhancedai:mobs/can_mine can spawn with the ability to mine and blocks in the tag enhancedai:miner_blacklist cannot be mined. This feature also adds the block reach attribute to all entities.
 	"Enable Miner mobs" = true
 	#Makes mobs be able to leap over a few blocks. Only entity types in the `enhancedai:mobs/can_parkour` tag can leap.
 	"Enable Parkour" = false
@@ -689,7 +689,7 @@
 			# Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
 			Hard = 60.0
 
-	#Mobs can mine blocks to reach the target. Uses off-hand item to mine by default, can be changed with Data Keys. Only mobs in the entity type tag enhancedai:mobs/can_mine can spawn with the ability to mine and blocks in the tag enhancedai:miner_blacklist cannot be mined. This feature also adds the block reach attribute to all entities.
+	#Mobs can mine blocks to reach the target. Uses off-hand item to mine by default, can be changed with the config or Data Keys. Only mobs in the entity type tag enhancedai:mobs/can_mine can spawn with the ability to mine and blocks in the tag enhancedai:miner_blacklist cannot be mined. This feature also adds the block reach attribute to all entities.
 	[Mobs."Miner mobs"]
 		#Chance for a mob in the entity type tag enhancedai:mobs/can_mine to spawn with the miner ability
 		# Default: 0.07
@@ -720,8 +720,10 @@
 		"Block blacklist as whitelist" = false
 		#Mobs with Miner AI will not be able to break tile entities
 		"Blacklist tile entities" = true
-		#Mobs with Miner AI will spawn with a Stone Pickaxe in the off-hand that never drops.
+		#Mobs with Miner AI will spawn with a Stone Pickaxe that never drops in the hand used to mine, if empty.
 		"Equip stone pick" = false
+		#If true, mobs with Miner AI use the item in the off-hand to mine, otherwise the one in the main hand.
+		Offhand = true
 
 	#Mobs with this feature enabled will move back to the position they spawned in if getting too far away from it.
 	[Mobs.Patrol]
