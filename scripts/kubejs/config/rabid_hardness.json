@@ -7,34 +7,44 @@
     {
       "name": "hardened",
       "hardness": 10,
-      "blastResistance": 20,
+      "blastResistance": 10,
       "include": [
+        { "type": "tag", "value": "minecraft:needs_stone_tool" },
         { "type": "regex", "value": "brick" },
         { "type": "regex", "value": "emerald" },
-        { "type": "tag", "value": "minecraft:needs_stone_tool" },
-        { "type": "regex", "value": "^minecraft:.*_concrete$" }
+        { "type": "regex", "value": ".*_concrete$" },
+        { "type": "regex", "value": "barbed_wire" }
       ],
       "exclude": [
-        { "type": "regex", "value": "ore" },
-        { "type": "id", "value": "minecraft:iron_block" }
+        { "type": "regex", "value": "_ore$" },
+        { "type": "regex", "value": "raw_" },
+        { "type": "regex", "value": ".*copper_bulb" },
+        { "type": "regex", "value": "cobble" },
+        { "type": "regex", "value": "infested" },
+        { "type": "regex", "value": "oreberry" }
       ]
     },
     {
       "name": "reinforced",
+      "priority": 1,
       "hardness": 50,
       "blastResistance": 100,
       "include": [
-        { "type": "regex", "value": "iron" },
-        { "type": "regex", "value": "diamond" },
         { "type": "tag", "value": "minecraft:needs_iron_tool" },
         { "type": "tag", "value": "minecraft:needs_diamond_tool" },
-        { "type": "hardness", "gte": 30 }
+        { "type": "regex", "value": "iron_" },
+        { "type": "regex", "value": "diamond" },
+        { "type": "hardness", "gte": 30, "lte": 50 }
       ],
       "exclude": [
         { "type": "regex", "value": "emerald" },
-        { "type": "regex", "value": "gold" },
-        { "type": "regex", "value": "ore" },
-        { "type": "regex", "value": "raw" }
+        { "type": "regex", "value": "gold_" },
+        { "type": "regex", "value": "golden_" },
+        { "type": "regex", "value": "_ore$" },
+        { "type": "regex", "value": "raw_" },
+        { "type": "regex", "value": "barbed_wire" },
+        { "type": "regex", "value": "twilightforest.*mazestone.*" },
+        { "type": "regex", "value": "oreberry" }
       ]
     }
   ]
