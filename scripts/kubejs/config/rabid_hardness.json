@@ -28,7 +28,7 @@
       "name": "reinforced",
       "priority": 1,
       "hardness": 50,
-      "blastResistance": 100,
+      "blastResistance": 1200,
       "include": [
         { "type": "tag", "value": "minecraft:needs_iron_tool" },
         { "type": "tag", "value": "minecraft:needs_diamond_tool" },
